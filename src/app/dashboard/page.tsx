@@ -6,10 +6,11 @@ import Navbar from "@/components/Navbar";
 import StreakCalendar from "@/components/StreakCalendar";
 import XPProgress from "@/components/XPProgress";
 import LessonCard from "@/components/LessonCard";
-import { Flame, Shield, LogOut, Snowflake, Gem, Calendar, Zap, ArrowRight, Share2 } from "lucide-react";
+import { Flame, Shield, LogOut, Snowflake, Gem, Calendar, Zap, ArrowRight, Share2, Target, RotateCcw } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import ShareCard from "@/components/ShareCard";
+import StreakCelebration from "@/components/StreakCelebration";
 
 interface Category {
   id: string;
@@ -37,6 +38,8 @@ export default function DashboardPage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [showShare, setShowShare] = useState(false);
+  const [earnBack, setEarnBack] = useState<any>(null);
+  const [milestone, setMilestone] = useState<string | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -59,6 +62,15 @@ export default function DashboardPage() {
         setUser(userData.user);
         setStats(statsData);
         setCategories(lessonsData.categories);
+
+        // Check earn-back eligibility
+        try {
+          const ebRes = await fetch("/api/earn-back");
+          if (ebRes.ok) {
+            const ebData = await ebRes.json();
+            if (ebData.eligible) setEarnBack(ebData);
+          }
+        } catch { /* ignore */ }
       } catch {
         router.push("/login");
       } finally {
@@ -97,14 +109,37 @@ export default function DashboardPage() {
       <Navbar streakCount={user.streakCount} xp={user.xp} gems={user.gems} />
 
       <main className="max-w-2xl mx-auto px-4 py-6 space-y-6 pb-24">
-        {/* Welcome & Streak Banner */}
-        {stats?.streak?.streakBroken && (
+        {/* Earn-Back Banner */}
+        {earnBack && (
+          <div className="bg-gradient-to-r from-[var(--orange-primary)]/20 to-[var(--red-primary)]/20 border border-[var(--orange-primary)]/30 rounded-2xl p-4">
+            <div className="flex items-start gap-3">
+              <RotateCcw size={24} className="text-[var(--orange-primary)] flex-shrink-0 mt-0.5" />
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-bold">Earn back your {earnBack.lostStreak}-day streak!</p>
+                <p className="text-xs text-[var(--text-secondary)] mb-2">
+                  Complete 2 lessons within {earnBack.hoursRemaining}h to restore it.
+                  {earnBack.completedToday ? " (1 done — 1 more to go!)" : ""}
+                </p>
+                <a
+                  href="#lessons"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[var(--orange-primary)] hover:bg-[var(--orange-primary)]/80 text-white text-xs font-bold transition-colors"
+                >
+                  <Flame size={12} /> Start a Lesson Now
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Streak Broken Banner */}
+        {stats?.streak?.streakBroken && !earnBack && (
           <div className="bg-[var(--red-primary)]/10 border border-[var(--red-primary)]/30 rounded-2xl p-4 text-center">
             <p className="text-[var(--red-primary)] font-bold">Your streak was broken!</p>
             <p className="text-xs text-[var(--text-secondary)] mt-1">Start a new streak today</p>
           </div>
         )}
 
+        {/* Welcome & Streak */}
         <div className="bg-[var(--bg-card)] rounded-2xl p-5">
           <div className="flex items-center justify-between">
             <div>
@@ -112,7 +147,7 @@ export default function DashboardPage() {
               <p className="text-sm text-[var(--text-secondary)]">
                 {user.streakCount > 0
                   ? `${user.streakCount} day streak! Keep it going!`
-                  : "Start your streak today!"}
+                  : "Complete a lesson to start your streak."}
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -120,12 +155,44 @@ export default function DashboardPage() {
                 size={36}
                 className={cn(
                   "streak-flame",
+                  stats?.streak?.perfectStreak >= 7 ? "text-[var(--gold-primary)]" :
                   user.streakCount > 0 ? "text-[var(--orange-primary)]" : "text-gray-500"
                 )}
               />
               <span className="text-2xl font-bold">{user.streakCount}</span>
             </div>
           </div>
+          {/* Streak goal progress */}
+          {user.streakGoal > 0 && user.streakCount > 0 && (
+            <div className="mt-3">
+              <div className="flex items-center justify-between text-xs mb-1">
+                <span className="text-[var(--text-secondary)] flex items-center gap-1">
+                  <Target size={10} /> Goal: {user.streakGoal} days
+                </span>
+                <span className="text-[var(--text-secondary)]">
+                  {Math.min(user.streakCount, user.streakGoal)}/{user.streakGoal}
+                </span>
+              </div>
+              <div className="h-2 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
+                <div
+                  className={cn(
+                    "h-full rounded-full progress-fill",
+                    user.streakCount >= user.streakGoal ? "bg-[var(--gold-primary)]" : "bg-[var(--orange-primary)]"
+                  )}
+                  style={{ width: `${Math.min((user.streakCount / user.streakGoal) * 100, 100)}%` }}
+                />
+              </div>
+              {user.streakCount >= user.streakGoal && (
+                <p className="text-[10px] text-[var(--gold-primary)] font-bold mt-1">Goal reached! Set a new one in settings.</p>
+              )}
+            </div>
+          )}
+          {/* Perfect streak badge */}
+          {stats?.streak?.perfectStreak >= 7 && (
+            <div className="mt-2 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[var(--gold-primary)]/10 text-[var(--gold-primary)] text-[10px] font-bold">
+              <Flame size={10} /> Perfect Streak: {stats.streak.perfectStreak} days
+            </div>
+          )}
         </div>
 
         {/* Daily Challenge CTA */}
@@ -192,6 +259,7 @@ export default function DashboardPage() {
         {stats?.calendar && <StreakCalendar calendar={stats.calendar} />}
 
         {/* Lesson Categories */}
+        <div id="lessons" />
         {categories.map((category) => (
           <div key={category.id}>
             <div className="flex items-center gap-2 mb-3">
@@ -240,6 +308,12 @@ export default function DashboardPage() {
       </main>
 
       <ShareCard isOpen={showShare} onClose={() => setShowShare(false)} />
+      <StreakCelebration
+        milestone={milestone}
+        streakCount={user.streakCount}
+        perfectStreak={stats?.streak?.perfectStreak ?? 0}
+        onClose={() => setMilestone(null)}
+      />
     </div>
   );
 }

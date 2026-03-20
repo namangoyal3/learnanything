@@ -27,7 +27,7 @@ export default function DailyChallengePage() {
 
   const handleComplete = useCallback(
     async (answers: { questionId: string; selectedIndex: number }[]) => {
-      if (!challenge) return;
+      if (!challenge) return null;
 
       const correctCount = answers.filter((a) => {
         const q = challenge.lesson.questions.find(
@@ -45,7 +45,7 @@ export default function DailyChallengePage() {
           return sum + (q && q.correctIndex === a.selectedIndex ? q.xpReward : 0);
         }, 0);
 
-      await fetch(`/api/lessons/${challenge.lesson.id}/complete`, {
+      const lessonRes = await fetch(`/api/lessons/${challenge.lesson.id}/complete`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ score: correctCount, answers }),
@@ -60,6 +60,9 @@ export default function DailyChallengePage() {
           xpEarned,
         }),
       });
+
+      if (lessonRes.ok) return await lessonRes.json();
+      return null;
     },
     [challenge]
   );

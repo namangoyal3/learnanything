@@ -3,8 +3,9 @@
 import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, Zap, ArrowRight, Trophy } from "lucide-react";
+import { Check, X, Zap, ArrowRight, Trophy, Flame, Target } from "lucide-react";
 import YouTubeEmbed from "./YouTubeEmbed";
+import StreakCelebration from "./StreakCelebration";
 
 interface Question {
   id: string;
@@ -14,6 +15,13 @@ interface Question {
   correctIndex: number;
   explanation: string;
   xpReward: number;
+}
+
+interface StreakResult {
+  newStreak: number;
+  milestone: string | null;
+  perfectStreak: number;
+  xpEarned: number;
 }
 
 interface QuizViewProps {
@@ -26,12 +34,14 @@ interface QuizViewProps {
   youtubeEnd?: number | null;
   guestName?: string | null;
   episodeTitle?: string | null;
-  onComplete: (answers: { questionId: string; selectedIndex: number }[]) => void;
+  currentStreak?: number;
+  streakGoal?: number;
+  onComplete: (answers: { questionId: string; selectedIndex: number }[]) => Promise<StreakResult | null>;
 }
 
 type Phase = "lesson" | "quiz" | "result";
 
-export default function QuizView({ lessonTitle, content, questions, xpReward, youtubeId, youtubeStart, youtubeEnd, guestName, episodeTitle, onComplete }: QuizViewProps) {
+export default function QuizView({ lessonTitle, content, questions, xpReward, youtubeId, youtubeStart, youtubeEnd, guestName, episodeTitle, currentStreak = 0, streakGoal = 7, onComplete }: QuizViewProps) {
   const [phase, setPhase] = useState<Phase>("lesson");
   const [currentQ, setCurrentQ] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -40,6 +50,8 @@ export default function QuizView({ lessonTitle, content, questions, xpReward, yo
   const [correctCount, setCorrectCount] = useState(0);
   const [xpGained, setXpGained] = useState(0);
   const [showXPPop, setShowXPPop] = useState(false);
+  const [streakResult, setStreakResult] = useState<StreakResult | null>(null);
+  const [milestoneToShow, setMilestoneToShow] = useState<string | null>(null);
 
   const question = questions[currentQ];
   const isCorrect = selected === question?.correctIndex;
@@ -60,14 +72,18 @@ export default function QuizView({ lessonTitle, content, questions, xpReward, yo
     }
   }, [selected, answers, question, isCorrect]);
 
-  const handleNext = useCallback(() => {
+  const handleNext = useCallback(async () => {
     if (currentQ < questions.length - 1) {
       setCurrentQ((q) => q + 1);
       setSelected(null);
       setConfirmed(false);
     } else {
       setPhase("result");
-      onComplete(answers);
+      const result = await onComplete(answers);
+      if (result) {
+        setStreakResult(result);
+        if (result.milestone) setMilestoneToShow(result.milestone);
+      }
     }
   }, [currentQ, questions.length, answers, onComplete]);
 
@@ -93,7 +109,7 @@ export default function QuizView({ lessonTitle, content, questions, xpReward, yo
           onClick={() => setPhase("quiz")}
           className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
         >
-          Start Quiz <ArrowRight size={16} />
+          Test My Knowledge <ArrowRight size={16} />
         </button>
       </div>
     );
@@ -102,68 +118,112 @@ export default function QuizView({ lessonTitle, content, questions, xpReward, yo
   if (phase === "result") {
     const score = questions.length > 0 ? Math.round((correctCount / questions.length) * 100) : 0;
     const totalXP = xpGained + xpReward;
+    const newStreak = streakResult?.newStreak ?? currentStreak + 1;
+    const perfectStreak = streakResult?.perfectStreak ?? 0;
+    const isGoldStreak = perfectStreak >= 7;
+    const goalProgress = Math.min((newStreak / streakGoal) * 100, 100);
+    const goalReached = newStreak >= streakGoal;
 
     return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="max-w-2xl mx-auto px-4 py-12 text-center"
-      >
-        <div className="mb-6">
-          <Trophy size={64} className="mx-auto text-[var(--gold-primary)] mb-4" />
-          <h1 className="text-2xl font-bold mb-2">Lesson Complete!</h1>
-          <p className="text-[var(--text-secondary)]">
-            {score >= 80 ? "Amazing work!" : score >= 50 ? "Good job!" : "Keep practicing!"}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          <div className="bg-[var(--bg-card)] rounded-2xl p-4">
-            <div className="text-3xl font-bold text-[var(--green-primary)]">{score}%</div>
-            <div className="text-xs text-[var(--text-secondary)] mt-1">Score</div>
-          </div>
-          <div className="bg-[var(--bg-card)] rounded-2xl p-4">
-            <div className="text-3xl font-bold text-[var(--gold-primary)] flex items-center justify-center gap-1">
-              <Zap size={24} /> {totalXP}
-            </div>
-            <div className="text-xs text-[var(--text-secondary)] mt-1">XP Earned</div>
-          </div>
-          <div className="bg-[var(--bg-card)] rounded-2xl p-4">
-            <div className="text-3xl font-bold text-[var(--blue-primary)]">
-              {correctCount}/{questions.length}
-            </div>
-            <div className="text-xs text-[var(--text-secondary)] mt-1">Correct</div>
-          </div>
-          <div className="bg-[var(--bg-card)] rounded-2xl p-4">
-            <div className="text-3xl font-bold text-[var(--purple-primary)]">
-              {questions.length}
-            </div>
-            <div className="text-xs text-[var(--text-secondary)] mt-1">Questions</div>
-          </div>
-        </div>
-
-        <a
-          href="/dashboard"
-          className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors mb-3"
+      <>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="max-w-2xl mx-auto px-4 py-8 text-center"
         >
-          Continue Learning
-        </a>
+          {/* Streak hero */}
+          <div className="mb-6">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+              className="flex items-center justify-center gap-3 mb-3"
+            >
+              <Flame
+                size={56}
+                className={cn("streak-flame", isGoldStreak ? "text-[var(--gold-primary)]" : "text-[var(--orange-primary)]")}
+              />
+              <span className={cn("text-6xl font-bold", isGoldStreak ? "text-[var(--gold-primary)]" : "text-[var(--orange-primary)]")}>
+                {newStreak}
+              </span>
+            </motion.div>
+            <h1 className="text-2xl font-bold mb-1">
+              {newStreak === 1 ? "Streak started!" : `Day ${newStreak} streak!`}
+            </h1>
+            <p className="text-[var(--text-secondary)] text-sm">
+              {score >= 80 ? "Crushed it — keep this streak alive." : score >= 50 ? "Good work — come back tomorrow." : "Done for today. See you tomorrow!"}
+            </p>
+          </div>
 
-        <button
-          onClick={() => {
-            const text = `I just scored ${score}% on "${lessonTitle}" on PM Streak! Learning PM skills in 2-3 mins/day from Lenny's Podcast.`;
-            if (navigator.share) {
-              navigator.share({ title: "PM Streak", text, url: window.location.origin });
-            } else {
-              const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.origin)}`;
-              window.open(twitterUrl, "_blank");
-            }
-          }}
-          className="w-full py-3 rounded-2xl border-2 border-[var(--purple-primary)] text-[var(--purple-primary)] hover:bg-[var(--purple-primary)]/10 font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
-        >
-          Share Result
-        </button>
-      </motion.div>
+          {/* Streak goal progress */}
+          {streakGoal > 0 && (
+            <div className="bg-[var(--bg-card)] rounded-2xl p-4 mb-4 text-left">
+              <div className="flex items-center justify-between text-xs mb-2">
+                <span className="flex items-center gap-1 text-[var(--text-secondary)]">
+                  <Target size={12} /> Streak goal
+                </span>
+                <span className={cn("font-bold", goalReached ? "text-[var(--gold-primary)]" : "text-[var(--text-secondary)]")}>
+                  {Math.min(newStreak, streakGoal)}/{streakGoal} days
+                </span>
+              </div>
+              <div className="h-3 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: `${goalProgress}%` }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className={cn("h-full rounded-full", goalReached ? "bg-[var(--gold-primary)]" : "bg-[var(--orange-primary)]")}
+                />
+              </div>
+              {goalReached && (
+                <p className="text-[10px] text-[var(--gold-primary)] font-bold mt-1 text-center">🏆 Goal reached!</p>
+              )}
+            </div>
+          )}
+
+          {/* XP + Score stats */}
+          <div className="grid grid-cols-2 gap-3 mb-6">
+            <div className="bg-[var(--bg-card)] rounded-2xl p-4">
+              <div className="text-3xl font-bold text-[var(--gold-primary)] flex items-center justify-center gap-1">
+                <Zap size={22} /> {totalXP}
+              </div>
+              <div className="text-xs text-[var(--text-secondary)] mt-1">XP Earned</div>
+            </div>
+            <div className="bg-[var(--bg-card)] rounded-2xl p-4">
+              <div className="text-3xl font-bold text-[var(--green-primary)]">{score}%</div>
+              <div className="text-xs text-[var(--text-secondary)] mt-1">{correctCount}/{questions.length} Correct</div>
+            </div>
+          </div>
+
+          <a
+            href="/dashboard"
+            className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors mb-3 flex items-center justify-center gap-2"
+          >
+            Keep My Streak Going <ArrowRight size={16} />
+          </a>
+
+          <button
+            onClick={() => {
+              const text = `Day ${newStreak} streak on PM Streak! Just finished "${lessonTitle}" — learning PM skills in 2-3 mins/day from Lenny's Podcast.`;
+              if (navigator.share) {
+                navigator.share({ title: "PM Streak", text, url: window.location.origin });
+              } else {
+                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.origin)}`;
+                window.open(twitterUrl, "_blank");
+              }
+            }}
+            className="w-full py-3 rounded-2xl border-2 border-[var(--purple-primary)] text-[var(--purple-primary)] hover:bg-[var(--purple-primary)]/10 font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
+          >
+            Share My Streak
+          </button>
+        </motion.div>
+
+        <StreakCelebration
+          milestone={milestoneToShow}
+          streakCount={newStreak}
+          perfectStreak={perfectStreak}
+          onClose={() => setMilestoneToShow(null)}
+        />
+      </>
     );
   }
 

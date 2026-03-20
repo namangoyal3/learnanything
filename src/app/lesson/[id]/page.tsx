@@ -36,17 +36,27 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
   const [lesson, setLesson] = useState<LessonData | null>(null);
   const [loading, setLoading] = useState(true);
   const [completed, setCompleted] = useState(false);
+  const [currentStreak, setCurrentStreak] = useState(0);
+  const [streakGoal, setStreakGoal] = useState(7);
 
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch(`/api/lessons/${id}`);
-        if (!res.ok) {
+        const [lessonRes, userRes] = await Promise.all([
+          fetch(`/api/lessons/${id}`),
+          fetch("/api/auth/me"),
+        ]);
+        if (!lessonRes.ok) {
           router.push("/dashboard");
           return;
         }
-        const data = await res.json();
+        const data = await lessonRes.json();
         setLesson(data.lesson);
+        if (userRes.ok) {
+          const userData = await userRes.json();
+          setCurrentStreak(userData.user?.streakCount ?? 0);
+          setStreakGoal(userData.user?.streakGoal ?? 7);
+        }
       } catch {
         router.push("/dashboard");
       } finally {
@@ -58,11 +68,11 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
 
   const handleComplete = useCallback(
     async (answers: { questionId: string; selectedIndex: number }[]) => {
-      if (!lesson || completed) return;
+      if (!lesson || completed) return null;
       setCompleted(true);
 
       try {
-        await fetch(`/api/lessons/${id}/complete`, {
+        const res = await fetch(`/api/lessons/${id}/complete`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -73,9 +83,11 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
             answers,
           }),
         });
+        if (res.ok) return await res.json();
       } catch (err) {
         console.error("Failed to save completion:", err);
       }
+      return null;
     },
     [lesson, id, completed]
   );
@@ -116,6 +128,8 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
         youtubeEnd={lesson.youtubeEnd}
         guestName={lesson.guestName}
         episodeTitle={lesson.episodeTitle}
+        currentStreak={currentStreak}
+        streakGoal={streakGoal}
         onComplete={handleComplete}
       />
     </div>

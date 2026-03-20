@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Flame, BookOpen, Trophy, Users, Calendar, Sparkles, Gem } from "lucide-react";
+import { Flame, BookOpen, Trophy, Users, Calendar, Sparkles, Gem, Lock } from "lucide-react";
 
 interface NavbarProps {
   streakCount: number;
@@ -13,13 +13,14 @@ interface NavbarProps {
 
 export default function Navbar({ streakCount, xp, gems }: NavbarProps) {
   const pathname = usePathname();
+  const unlocked = streakCount >= 7;
 
   const navItems = [
-    { href: "/dashboard", label: "Learn", icon: BookOpen },
-    { href: "/daily-challenge", label: "Daily", icon: Calendar },
-    { href: "/explore", label: "Explore", icon: Sparkles },
-    { href: "/leaderboard", label: "Ranks", icon: Trophy },
-    { href: "/social", label: "Social", icon: Users },
+    { href: "/dashboard", label: "Learn", icon: BookOpen, locked: false },
+    { href: "/daily-challenge", label: "Daily", icon: Calendar, locked: false },
+    { href: "/explore", label: "Explore", icon: Sparkles, locked: false },
+    { href: "/leaderboard", label: "Ranks", icon: Trophy, locked: !unlocked },
+    { href: "/social", label: "Social", icon: Users, locked: !unlocked },
   ];
 
   return (
@@ -53,6 +54,21 @@ export default function Navbar({ streakCount, xp, gems }: NavbarProps) {
         {navItems.map((item) => {
           const Icon = item.icon;
           const active = pathname === item.href;
+          if (item.locked) {
+            return (
+              <div
+                key={item.href}
+                title="Unlocks at 7-day streak"
+                className="flex-1 flex flex-col items-center py-2 text-xs border-b-2 border-transparent text-[var(--border-color)] cursor-not-allowed relative"
+              >
+                <div className="relative">
+                  <Icon size={20} />
+                  <Lock size={9} className="absolute -top-0.5 -right-1" />
+                </div>
+                <span className="mt-0.5">{item.label}</span>
+              </div>
+            );
+          }
           return (
             <Link
               key={item.href}

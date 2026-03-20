@@ -5,6 +5,8 @@ export async function checkAndUpdateStreak(userId: string): Promise<{
   streakCount: number;
   streakBroken: boolean;
   frozenToday: boolean;
+  earnBackEligible: boolean;
+  perfectStreak: number;
 }> {
   const today = getToday();
   const yesterday = getYesterday();
@@ -15,7 +17,13 @@ export async function checkAndUpdateStreak(userId: string): Promise<{
     where: { userId_date: { userId, date: today } },
   });
   if (todayEntry) {
-    return { streakCount: user.streakCount, streakBroken: false, frozenToday: todayEntry.frozen };
+    return {
+      streakCount: user.streakCount,
+      streakBroken: false,
+      frozenToday: todayEntry.frozen,
+      earnBackEligible: false,
+      perfectStreak: user.perfectStreak,
+    };
   }
 
   const yesterdayEntry = await prisma.streakDay.findUnique({
@@ -29,18 +37,49 @@ export async function checkAndUpdateStreak(userId: string): Promise<{
       });
       await prisma.user.update({
         where: { id: userId },
-        data: { streakFreezes: { decrement: 1 } },
+        data: { streakFreezes: { decrement: 1 }, perfectStreak: 0 },
       });
-      return { streakCount: user.streakCount, streakBroken: false, frozenToday: false };
+      return {
+        streakCount: user.streakCount,
+        streakBroken: false,
+        frozenToday: false,
+        earnBackEligible: false,
+        perfectStreak: 0,
+      };
     }
+    // Streak broken — save for earn-back
+    const lostStreak = user.streakCount;
     await prisma.user.update({
       where: { id: userId },
-      data: { streakCount: 0 },
+      data: {
+        streakCount: 0,
+        perfectStreak: 0,
+        streakLostAt: new Date(),
+        lostStreakVal: lostStreak,
+      },
     });
-    return { streakCount: 0, streakBroken: true, frozenToday: false };
+    return {
+      streakCount: 0,
+      streakBroken: true,
+      frozenToday: false,
+      earnBackEligible: true,
+      perfectStreak: 0,
+    };
   }
 
-  return { streakCount: user.streakCount, streakBroken: false, frozenToday: false };
+  // Check if earn-back is still available
+  const earnBackEligible =
+    user.streakLostAt !== null &&
+    user.lostStreakVal > 0 &&
+    (Date.now() - new Date(user.streakLostAt).getTime()) / 3600000 < 48;
+
+  return {
+    streakCount: user.streakCount,
+    streakBroken: false,
+    frozenToday: false,
+    earnBackEligible,
+    perfectStreak: user.perfectStreak,
+  };
 }
 
 export async function recordLessonCompletion(userId: string, xpEarned: number) {
@@ -62,6 +101,10 @@ export async function recordLessonCompletion(userId: string, xpEarned: number) {
   const newStreak = existingEntry ? user.streakCount : user.streakCount + 1;
   const newXP = user.xp + xpEarned;
   const newLevel = Math.floor(newXP / 100) + 1;
+  const newPerfectStreak = existingEntry ? user.perfectStreak : user.perfectStreak + 1;
+
+  // Milestone detection
+  const milestone = detectMilestone(user.streakCount, newStreak);
 
   await prisma.user.update({
     where: { id: userId },
@@ -70,9 +113,18 @@ export async function recordLessonCompletion(userId: string, xpEarned: number) {
       level: newLevel,
       streakCount: newStreak,
       longestStreak: Math.max(user.longestStreak, newStreak),
+      perfectStreak: newPerfectStreak,
       lastActiveAt: new Date(),
     },
   });
 
-  return { newStreak, newXP, newLevel };
+  return { newStreak, newXP, newLevel, perfectStreak: newPerfectStreak, milestone };
+}
+
+function detectMilestone(oldStreak: number, newStreak: number): string | null {
+  const milestones = [3, 7, 14, 30, 50, 100, 365];
+  for (const m of milestones) {
+    if (oldStreak < m && newStreak >= m) return `${m}-day streak`;
+  }
+  return null;
 }

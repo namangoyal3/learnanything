@@ -31,7 +31,7 @@ export default function SignupPage() {
         return;
       }
 
-      router.push("/dashboard");
+      router.push("/onboarding");
     } catch {
       setError("Something went wrong");
     } finally {
