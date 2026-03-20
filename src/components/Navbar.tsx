@@ -29,7 +29,7 @@ export default function Navbar({ streakCount, xp, gems, avatarUrl, name }: Navba
     <>
       {/* Top header bar */}
       <header className="sticky top-0 z-50 bg-[var(--bg-primary)] border-b border-[var(--border-color)]">
-        <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           {/* Logo */}
           <Link href="/dashboard" className="flex items-center gap-1.5 font-black text-xl tracking-tight">
             <Flame size={22} className="text-[var(--orange-primary)] streak-flame" />
@@ -81,7 +81,7 @@ export default function Navbar({ streakCount, xp, gems, avatarUrl, name }: Navba
 
       {/* Bottom navigation - fixed, Duolingo-style */}
       <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--bg-secondary)] border-t border-[var(--border-color)] safe-area-pb">
-        <div className="max-w-2xl mx-auto px-2 flex h-16">
+        <div className="max-w-5xl mx-auto px-2 flex h-16">
           {navItems.map((item) => {
             const Icon = item.icon;
             const active = pathname === item.href;
@@ -97,8 +97,8 @@ export default function Navbar({ streakCount, xp, gems, avatarUrl, name }: Navba
                       <Lock size={8} className="text-[var(--border-color)]" />
                     </div>
                   </div>
-                  <span className="text-[9px] font-bold uppercase tracking-wide leading-tight">{item.label}</span>
-                  <span className="text-[8px] text-[var(--orange-primary)]/70 font-bold leading-tight">🔥 7 days</span>
+                  <span className="text-[10px] font-bold leading-tight">{item.label}</span>
+                  <span className="text-[9px] text-[var(--orange-primary)]/70 font-bold leading-tight">7-day streak</span>
                 </div>
               );
             }
@@ -120,7 +120,7 @@ export default function Navbar({ streakCount, xp, gems, avatarUrl, name }: Navba
                   <Icon size={22} strokeWidth={active ? 2.5 : 2} />
                 </div>
                 <span className={cn(
-                  "text-[10px] font-bold uppercase tracking-wide",
+                  "text-[10px] font-bold",
                   active ? "text-[var(--green-primary)]" : ""
                 )}>
                   {item.label}
