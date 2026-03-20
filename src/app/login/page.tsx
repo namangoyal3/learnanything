@@ -76,7 +76,7 @@ function LoginForm() {
             <span className="text-xs font-bold text-white">XP System</span>
           </div>
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)]">
-            <Trophy size={13} className="text-[var(--purple-primary)]" />
+            <Trophy size={13} className="text-[var(--gold-primary)]" />
             <span className="text-xs font-bold text-white">Ranks</span>
           </div>
         </div>
