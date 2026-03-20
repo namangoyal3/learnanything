@@ -233,7 +233,7 @@ export default function DashboardPage() {
                 )}>
                   {user.streakCount}
                 </span>
-                <span className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide mt-0.5">
+                <span className="text-xs text-[var(--text-secondary)] font-bold mt-0.5">
                   day streak
                 </span>
               </div>
@@ -250,7 +250,7 @@ export default function DashboardPage() {
                   <span className="text-xs font-bold text-[var(--text-secondary)]">Today&apos;s Goal</span>
                 </div>
                 {completedToday ? (
-                  <span className="text-[10px] font-black text-[var(--green-primary)] uppercase tracking-wide">
+                  <span className="text-xs font-black text-[var(--green-primary)]">
                     ✓ Complete!
                   </span>
                 ) : (
@@ -287,7 +287,7 @@ export default function DashboardPage() {
             {isPerfect && (
               <div className="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--gold-primary)]/15 border border-[var(--gold-primary)]/30">
                 <Flame size={11} className="text-[var(--gold-primary)]" />
-                <span className="text-[10px] font-black text-[var(--gold-primary)] uppercase tracking-wide">
+                <span className="text-xs font-black text-[var(--gold-primary)]">
                   Perfect streak: {stats.streak.perfectStreak} days
                 </span>
               </div>
@@ -341,14 +341,14 @@ export default function DashboardPage() {
               <Zap size={14} className="text-[var(--gold-primary)]" />
             </div>
             <div className="text-2xl font-black text-[var(--gold-primary)] tabular-nums">{user.xp}</div>
-            <div className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide mt-0.5">Total XP</div>
+            <div className="text-xs text-[var(--text-secondary)] font-bold mt-0.5">Total XP</div>
           </div>
           <div className="bg-[var(--bg-card)] rounded-2xl p-3.5 text-center border border-[var(--border-color)]">
             <div className="flex items-center justify-center gap-1 mb-1">
               <Trophy size={14} className="text-[var(--orange-primary)]" />
             </div>
             <div className="text-2xl font-black text-[var(--orange-primary)] tabular-nums">{user.longestStreak}</div>
-            <div className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide mt-0.5">Best Streak</div>
+            <div className="text-xs text-[var(--text-secondary)] font-bold mt-0.5">Best Streak</div>
           </div>
           <div className="bg-[var(--bg-card)] rounded-2xl p-3.5 text-center border border-[var(--border-color)]">
             <div className="flex items-center justify-center gap-1 mb-1">
@@ -357,7 +357,7 @@ export default function DashboardPage() {
             <div className="text-2xl font-black text-[var(--blue-primary)] tabular-nums">
               {totalCompleted}<span className="text-sm text-[var(--text-secondary)]">/{totalArchive}+</span>
             </div>
-            <div className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide mt-0.5">Lessons</div>
+            <div className="text-xs text-[var(--text-secondary)] font-bold mt-0.5">Lessons</div>
           </div>
         </div>
 
@@ -534,13 +534,13 @@ export default function DashboardPage() {
                   </div>
                   {/* 2B: Category Completion CTA */}
                   {catCompleted === catTotal && catTotal > 0 ? (
-                    <p className="text-[10px] font-black mt-1" style={{ color: "var(--gold-primary)" }}>
+                    <p className="text-xs font-black mt-1" style={{ color: "var(--gold-primary)" }}>
                       ✓ Track complete!
                     </p>
                   ) : catCompleted > 0 && catCompleted < catTotal ? (
                     <a
                       href="#lessons"
-                      className="text-[10px] font-bold mt-1 inline-flex items-center gap-0.5 hover:underline"
+                      className="text-xs font-bold mt-1 inline-flex items-center gap-0.5 hover:underline"
                       style={{ color: category.color || "var(--green-primary)" }}
                     >
                       {catTotal - catCompleted} more lesson{catTotal - catCompleted !== 1 ? "s" : ""} to complete this track →
