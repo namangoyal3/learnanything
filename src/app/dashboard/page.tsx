@@ -459,7 +459,7 @@ export default function DashboardPage() {
           <div className="bg-[var(--bg-card)] rounded-2xl p-4 border border-[var(--border-color)]">
             <div className="flex items-center gap-2 mb-4">
               <MapPin size={16} className="text-[var(--blue-primary)]" />
-              <h2 className="text-sm font-black uppercase tracking-wider">Your PM Knowledge Map</h2>
+              <h2 className="text-base font-black">Your PM Knowledge Map</h2>
             </div>
             <div className="grid grid-cols-3 gap-4">
               {categories.map((category) => {
@@ -500,7 +500,7 @@ export default function DashboardPage() {
         <div id="lessons" className="pt-2">
           <div className="flex items-center gap-2 mb-4">
             <Sparkles size={18} className="text-[var(--green-primary)]" />
-            <h2 className="text-base font-black uppercase tracking-wider">Your Curriculum</h2>
+            <h2 className="text-base font-black">Your Curriculum</h2>
           </div>
         </div>
 
