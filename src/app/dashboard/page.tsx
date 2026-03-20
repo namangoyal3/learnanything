@@ -9,7 +9,8 @@ import LessonCard from "@/components/LessonCard";
 import {
   Flame, Shield, LogOut, Snowflake, Gem, Calendar, Zap,
   ArrowRight, Share2, Target, RotateCcw, Trophy, Star,
-  TrendingUp, BookOpen, ChevronRight, Sparkles, Lock, MapPin
+  TrendingUp, BookOpen, ChevronRight, Sparkles, Lock, MapPin,
+  Bot, MessageSquare, Brain, Cpu
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -592,14 +593,14 @@ export default function DashboardPage() {
           {/* Upcoming previews */}
           <div className="divide-y divide-[var(--border-color)]">
             {[
-              { title: "Marc Andreessen on the AI Boom", guest: "Marc Andreessen (a16z)", icon: "🤖", cat: "Product Strategy" },
-              { title: "Ben Horowitz: Why Founders Fail", guest: "Ben Horowitz (a16z)", icon: "💡", cat: "Leadership & Execution" },
-              { title: "Stewart Butterfield: Building Slack", guest: "Stewart Butterfield (Slack founder)", icon: "💬", cat: "Product Strategy" },
-              { title: "Dr. Fei-Fei Li on AI & Jobs", guest: "Dr. Fei-Fei Li (Stanford)", icon: "🧬", cat: "User Psychology" },
+              { title: "Marc Andreessen on the AI Boom", guest: "Marc Andreessen (a16z)", Icon: Bot, color: "var(--blue-primary)" },
+              { title: "Ben Horowitz: Why Founders Fail", guest: "Ben Horowitz (a16z)", Icon: Target, color: "var(--orange-primary)" },
+              { title: "Stewart Butterfield: Building Slack", guest: "Stewart Butterfield (Slack founder)", Icon: MessageSquare, color: "var(--green-primary)" },
+              { title: "Dr. Fei-Fei Li on AI & Jobs", guest: "Dr. Fei-Fei Li (Stanford)", Icon: Brain, color: "var(--gold-primary)" },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 px-5 py-3.5 opacity-60">
-                <div className="w-9 h-9 rounded-xl bg-[var(--bg-secondary)] flex items-center justify-center text-base flex-shrink-0">
-                  {item.icon}
+                <div className="w-9 h-9 rounded-xl bg-[var(--bg-secondary)] flex items-center justify-center flex-shrink-0">
+                  <item.Icon size={18} style={{ color: item.color }} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-bold text-[var(--text-primary)] truncate">{item.title}</p>
@@ -615,9 +616,9 @@ export default function DashboardPage() {
             <div className="px-5 py-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <div className="flex -space-x-2">
-                  {["🎙️", "📊", "🚀", "💰", "🧠"].map((emoji, i) => (
-                    <div key={i} className="w-7 h-7 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] flex items-center justify-center text-xs">
-                      {emoji}
+                  {[BookOpen, Zap, TrendingUp, Trophy, Sparkles].map((Icon, i) => (
+                    <div key={i} className="w-7 h-7 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] flex items-center justify-center">
+                      <Icon size={12} className="text-[var(--text-secondary)]" />
                     </div>
                   ))}
                 </div>
