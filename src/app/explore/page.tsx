@@ -86,7 +86,7 @@ export default function ExplorePage() {
 
       <main className="max-w-2xl mx-auto px-4 py-6 pb-28 space-y-6">
         <div className="text-center">
-          <Sparkles size={40} className="mx-auto text-[var(--purple-primary)] mb-2" />
+          <Sparkles size={40} className="mx-auto text-[var(--green-primary)] mb-2" />
           <h1 className="text-xl font-bold">Explore & Generate</h1>
           <p className="text-sm text-[var(--text-secondary)] mt-1">
             Generate custom lessons from Lenny&apos;s Podcast on any PM topic
@@ -106,12 +106,12 @@ export default function ExplorePage() {
             onChange={(e) => setTopic(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleGenerate()}
             disabled={generating}
-            className="w-full pl-10 pr-24 py-3 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] text-white placeholder:text-[var(--text-secondary)] focus:border-[var(--purple-primary)] focus:outline-none text-sm"
+            className="w-full pl-10 pr-24 py-3 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] text-white placeholder:text-[var(--text-secondary)] focus:border-[var(--green-primary)] focus:outline-none text-sm"
           />
           <button
             onClick={() => handleGenerate()}
             disabled={generating || topic.length < 2}
-            className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 rounded-xl bg-[var(--purple-primary)] text-white text-xs font-bold disabled:opacity-50 flex items-center gap-1"
+            className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 rounded-xl bg-[var(--green-primary)] text-white text-xs font-bold disabled:opacity-50 flex items-center gap-1"
           >
             {generating ? (
               <>
@@ -143,7 +143,7 @@ export default function ExplorePage() {
                   handleGenerate(t);
                 }}
                 disabled={generating}
-                className="px-3 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-xs text-[var(--text-secondary)] hover:text-white hover:border-[var(--purple-primary)] transition-colors disabled:opacity-50"
+                className="px-3 py-1.5 rounded-full bg-[var(--bg-card)] border border-[var(--border-color)] text-xs text-[var(--text-secondary)] hover:text-white hover:border-[var(--green-primary)] transition-colors disabled:opacity-50"
               >
                 {t}
               </button>
@@ -160,10 +160,10 @@ export default function ExplorePage() {
             <div className="space-y-3">
               {generatedLessons.map((lesson) => (
                 <Link key={lesson.id} href={`/lesson/${lesson.id}`}>
-                  <div className="bg-gradient-to-br from-[var(--purple-primary)]/20 to-[var(--blue-primary)]/20 border border-[var(--purple-primary)]/30 rounded-2xl p-4 lesson-card">
+                  <div className="bg-gradient-to-br from-[var(--green-primary)]/20 to-[var(--blue-primary)]/20 border border-[var(--green-primary)]/30 rounded-2xl p-4 lesson-card">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[var(--purple-primary)]/20 flex items-center justify-center">
-                        <Sparkles size={18} className="text-[var(--purple-primary)]" />
+                      <div className="w-10 h-10 rounded-full bg-[var(--green-primary)]/20 flex items-center justify-center">
+                        <Sparkles size={18} className="text-[var(--green-primary)]" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-bold truncate">{lesson.title}</h3>
@@ -193,19 +193,19 @@ export default function ExplorePage() {
           <h3 className="text-sm font-bold mb-2">How it works</h3>
           <div className="space-y-2 text-xs text-[var(--text-secondary)]">
             <div className="flex items-start gap-2">
-              <span className="text-[var(--purple-primary)] font-bold">1.</span>
+              <span className="text-[var(--green-primary)] font-bold">1.</span>
               <span>Enter any PM topic you want to learn about</span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-[var(--purple-primary)] font-bold">2.</span>
+              <span className="text-[var(--green-primary)] font-bold">2.</span>
               <span>We search Lenny&apos;s 300+ podcast transcripts for relevant insights</span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-[var(--purple-primary)] font-bold">3.</span>
+              <span className="text-[var(--green-primary)] font-bold">3.</span>
               <span>A micro-lesson with quiz is generated from real podcast content</span>
             </div>
             <div className="flex items-start gap-2">
-              <span className="text-[var(--purple-primary)] font-bold">4.</span>
+              <span className="text-[var(--green-primary)] font-bold">4.</span>
               <span>Complete it to earn XP and keep your streak alive</span>
             </div>
           </div>
