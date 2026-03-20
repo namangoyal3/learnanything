@@ -1,0 +1,134 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  name          String
+  passwordHash  String
+  avatarUrl     String?
+  xp            Int      @default(0)
+  level         Int      @default(1)
+  streakCount   Int      @default(0)
+  longestStreak Int      @default(0)
+  streakFreezes Int      @default(2)
+  gems          Int      @default(50)
+  lastActiveAt  DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  completedLessons CompletedLesson[]
+  quizAttempts     QuizAttempt[]
+  achievements     UserAchievement[]
+  streakHistory    StreakDay[]
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String
+  icon        String
+  color       String
+  sortOrder   Int      @default(0)
+  lessons     Lesson[]
+}
+
+model Lesson {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String
+  content     String
+  xpReward    Int      @default(10)
+  difficulty  Int      @default(1) // 1-3
+  dayNumber   Int
+  categoryId  String
+  category    Category @relation(fields: [categoryId], references: [id])
+  createdAt   DateTime @default(now())
+
+  questions        Question[]
+  completedLessons CompletedLesson[]
+}
+
+model Question {
+  id           String   @id @default(cuid())
+  lessonId     String
+  lesson       Lesson   @relation(fields: [lessonId], references: [id])
+  questionText String
+  questionType String   @default("multiple_choice") // multiple_choice, true_false, fill_blank
+  options      String   // JSON array of options
+  correctIndex Int
+  explanation  String
+  xpReward     Int      @default(5)
+  sortOrder    Int      @default(0)
+
+  quizAttempts QuizAttempt[]
+}
+
+model CompletedLesson {
+  id          String   @id @default(cuid())
+  userId      String
+  lessonId    String
+  score       Int
+  xpEarned    Int
+  completedAt DateTime @default(now())
+
+  user   User   @relation(fields: [userId], references: [id])
+  lesson Lesson @relation(fields: [lessonId], references: [id])
+
+  @@unique([userId, lessonId])
+}
+
+model QuizAttempt {
+  id         String   @id @default(cuid())
+  userId     String
+  questionId String
+  selectedIndex Int
+  correct    Boolean
+  xpEarned   Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  question Question @relation(fields: [questionId], references: [id])
+}
+
+model Achievement {
+  id          String @id @default(cuid())
+  name        String @unique
+  description String
+  icon        String
+  requirement String // JSON: { type: "streak", value: 7 }
+
+  users UserAchievement[]
+}
+
+model UserAchievement {
+  id            String   @id @default(cuid())
+  userId        String
+  achievementId String
+  unlockedAt    DateTime @default(now())
+
+  user        User        @relation(fields: [userId], references: [id])
+  achievement Achievement @relation(fields: [achievementId], references: [id])
+
+  @@unique([userId, achievementId])
+}
+
+model StreakDay {
+  id        String   @id @default(cuid())
+  userId    String
+  date      String   // YYYY-MM-DD
+  completed Boolean  @default(true)
+  frozen    Boolean  @default(false)
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, date])
+}
