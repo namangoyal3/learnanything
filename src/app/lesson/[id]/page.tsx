@@ -11,6 +11,11 @@ interface LessonData {
   title: string;
   content: string;
   xpReward: number;
+  youtubeId: string | null;
+  youtubeStart: number | null;
+  youtubeEnd: number | null;
+  guestName: string | null;
+  episodeTitle: string | null;
   category: { name: string; icon: string };
   questions: {
     id: string;
@@ -106,6 +111,11 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
         content={lesson.content}
         questions={lesson.questions}
         xpReward={lesson.xpReward}
+        youtubeId={lesson.youtubeId}
+        youtubeStart={lesson.youtubeStart}
+        youtubeEnd={lesson.youtubeEnd}
+        guestName={lesson.guestName}
+        episodeTitle={lesson.episodeTitle}
         onComplete={handleComplete}
       />
     </div>

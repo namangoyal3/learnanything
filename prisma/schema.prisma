@@ -23,10 +23,15 @@ model User {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 
-  completedLessons CompletedLesson[]
-  quizAttempts     QuizAttempt[]
-  achievements     UserAchievement[]
-  streakHistory    StreakDay[]
+  completedLessons   CompletedLesson[]
+  quizAttempts       QuizAttempt[]
+  achievements       UserAchievement[]
+  streakHistory      StreakDay[]
+  dailyChallenges    DailyChallenge[]
+  following          Follow[]         @relation("follower")
+  followers          Follow[]         @relation("following")
+  sentChallenges     FriendChallenge[] @relation("challenger")
+  receivedChallenges FriendChallenge[] @relation("challengee")
 }
 
 model Category {
@@ -41,20 +46,28 @@ model Category {
 }
 
 model Lesson {
-  id          String   @id @default(cuid())
-  title       String
-  slug        String   @unique
-  description String
-  content     String
-  xpReward    Int      @default(10)
-  difficulty  Int      @default(1) // 1-3
-  dayNumber   Int
-  categoryId  String
-  category    Category @relation(fields: [categoryId], references: [id])
-  createdAt   DateTime @default(now())
+  id           String   @id @default(cuid())
+  title        String
+  slug         String   @unique
+  description  String
+  content      String
+  xpReward     Int      @default(10)
+  difficulty   Int      @default(1) // 1-3
+  dayNumber    Int
+  categoryId   String
+  category     Category @relation(fields: [categoryId], references: [id])
+  youtubeId    String?  // YouTube video ID
+  youtubeStart Int?     // Start timestamp in seconds
+  youtubeEnd   Int?     // End timestamp in seconds
+  guestName    String?  // Podcast guest name
+  episodeTitle String?  // Full episode title
+  sourceTranscript String? // Raw transcript excerpt from Lenny MCP
+  aiGenerated  Boolean  @default(false)
+  createdAt    DateTime @default(now())
 
   questions        Question[]
   completedLessons CompletedLesson[]
+  dailyChallenges  DailyChallenge[]
 }
 
 model Question {
@@ -131,4 +144,45 @@ model StreakDay {
   user User @relation(fields: [userId], references: [id])
 
   @@unique([userId, date])
+}
+
+model DailyChallenge {
+  id          String   @id @default(cuid())
+  userId      String
+  lessonId    String
+  date        String   // YYYY-MM-DD
+  completed   Boolean  @default(false)
+  score       Int?
+  xpEarned    Int      @default(0)
+  completedAt DateTime?
+
+  user   User   @relation(fields: [userId], references: [id])
+  lesson Lesson @relation(fields: [lessonId], references: [id])
+
+  @@unique([userId, date])
+}
+
+model Follow {
+  id          String   @id @default(cuid())
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+
+  follower  User @relation("follower", fields: [followerId], references: [id])
+  following User @relation("following", fields: [followingId], references: [id])
+
+  @@unique([followerId, followingId])
+}
+
+model FriendChallenge {
+  id           String   @id @default(cuid())
+  challengerId String
+  challengeeId String
+  lessonId     String?
+  message      String?
+  status       String   @default("pending") // pending, accepted, completed, declined
+  createdAt    DateTime @default(now())
+
+  challenger User @relation("challenger", fields: [challengerId], references: [id])
+  challengee User @relation("challengee", fields: [challengeeId], references: [id])
 }

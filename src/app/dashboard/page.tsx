@@ -6,7 +6,8 @@ import Navbar from "@/components/Navbar";
 import StreakCalendar from "@/components/StreakCalendar";
 import XPProgress from "@/components/XPProgress";
 import LessonCard from "@/components/LessonCard";
-import { Flame, Shield, LogOut, Snowflake, Gem } from "lucide-react";
+import { Flame, Shield, LogOut, Snowflake, Gem, Calendar, Zap, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface Category {
@@ -124,6 +125,26 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
+
+        {/* Daily Challenge CTA */}
+        <Link href="/daily-challenge">
+          <div className="bg-gradient-to-r from-[var(--orange-primary)] to-[var(--red-primary)] rounded-2xl p-4 lesson-card">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                  <Calendar size={20} className="text-white" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-white">Daily Challenge</div>
+                  <div className="text-xs text-white/80 flex items-center gap-1">
+                    <Zap size={10} /> Earn bonus XP today
+                  </div>
+                </div>
+              </div>
+              <ArrowRight size={20} className="text-white/80" />
+            </div>
+          </div>
+        </Link>
 
         {/* Stats Row */}
         <div className="grid grid-cols-3 gap-3">

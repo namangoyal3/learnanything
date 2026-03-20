@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, X, Zap, ArrowRight, Trophy } from "lucide-react";
+import YouTubeEmbed from "./YouTubeEmbed";
 
 interface Question {
   id: string;
@@ -20,12 +21,17 @@ interface QuizViewProps {
   content: string;
   questions: Question[];
   xpReward: number;
+  youtubeId?: string | null;
+  youtubeStart?: number | null;
+  youtubeEnd?: number | null;
+  guestName?: string | null;
+  episodeTitle?: string | null;
   onComplete: (answers: { questionId: string; selectedIndex: number }[]) => void;
 }
 
 type Phase = "lesson" | "quiz" | "result";
 
-export default function QuizView({ lessonTitle, content, questions, xpReward, onComplete }: QuizViewProps) {
+export default function QuizView({ lessonTitle, content, questions, xpReward, youtubeId, youtubeStart, youtubeEnd, guestName, episodeTitle, onComplete }: QuizViewProps) {
   const [phase, setPhase] = useState<Phase>("lesson");
   const [currentQ, setCurrentQ] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -67,14 +73,25 @@ export default function QuizView({ lessonTitle, content, questions, xpReward, on
 
   if (phase === "lesson") {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-6">
-        <h1 className="text-xl font-bold mb-4">{lessonTitle}</h1>
+      <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
+        <h1 className="text-xl font-bold">{lessonTitle}</h1>
+
+        {youtubeId && (
+          <YouTubeEmbed
+            videoId={youtubeId}
+            startTime={youtubeStart ?? undefined}
+            endTime={youtubeEnd ?? undefined}
+            guestName={guestName ?? undefined}
+            episodeTitle={episodeTitle ?? undefined}
+          />
+        )}
+
         <div className="bg-[var(--bg-card)] rounded-2xl p-6 text-sm leading-relaxed whitespace-pre-line text-[var(--text-secondary)]">
           {content}
         </div>
         <button
           onClick={() => setPhase("quiz")}
-          className="mt-6 w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
+          className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
         >
           Start Quiz <ArrowRight size={16} />
         </button>

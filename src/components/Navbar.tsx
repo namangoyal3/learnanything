@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { Flame, BookOpen, Trophy, User, Gem } from "lucide-react";
+import { Flame, BookOpen, Trophy, Users, Calendar, Sparkles, Gem } from "lucide-react";
 
 interface NavbarProps {
   streakCount: number;
@@ -16,7 +16,10 @@ export default function Navbar({ streakCount, xp, gems }: NavbarProps) {
 
   const navItems = [
     { href: "/dashboard", label: "Learn", icon: BookOpen },
+    { href: "/daily-challenge", label: "Daily", icon: Calendar },
+    { href: "/explore", label: "Explore", icon: Sparkles },
     { href: "/leaderboard", label: "Ranks", icon: Trophy },
+    { href: "/social", label: "Social", icon: Users },
   ];
 
   return (

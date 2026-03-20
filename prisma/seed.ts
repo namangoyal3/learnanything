@@ -5,6 +5,9 @@ const prisma = new PrismaClient();
 
 async function main() {
   // Clean existing data
+  await prisma.friendChallenge.deleteMany();
+  await prisma.follow.deleteMany();
+  await prisma.dailyChallenge.deleteMany();
   await prisma.quizAttempt.deleteMany();
   await prisma.completedLesson.deleteMany();
   await prisma.userAchievement.deleteMany();
@@ -15,7 +18,7 @@ async function main() {
   await prisma.achievement.deleteMany();
   await prisma.user.deleteMany();
 
-  // Create demo user
+  // Create demo users
   const passwordHash = await bcrypt.hash("demo123", 10);
   await prisma.user.create({
     data: {
@@ -28,6 +31,28 @@ async function main() {
       gems: 100,
     },
   });
+
+  const botUsers = [
+    { name: "Sarah Chen", xp: 450, level: 5, streakCount: 12, longestStreak: 15 },
+    { name: "Marcus Johnson", xp: 320, level: 4, streakCount: 8, longestStreak: 14 },
+    { name: "Priya Patel", xp: 580, level: 6, streakCount: 21, longestStreak: 21 },
+    { name: "Alex Rivera", xp: 210, level: 3, streakCount: 5, longestStreak: 9 },
+    { name: "Emma Wright", xp: 390, level: 4, streakCount: 10, longestStreak: 18 },
+    { name: "Kai Tanaka", xp: 150, level: 2, streakCount: 3, longestStreak: 7 },
+    { name: "Olivia Morgan", xp: 670, level: 7, streakCount: 30, longestStreak: 30 },
+    { name: "David Kim", xp: 280, level: 3, streakCount: 6, longestStreak: 11 },
+  ];
+
+  for (const bot of botUsers) {
+    await prisma.user.create({
+      data: {
+        email: `${bot.name.toLowerCase().replace(" ", ".")}@pmstreak.com`,
+        passwordHash,
+        ...bot,
+        gems: 50,
+      },
+    });
+  }
 
   // Create categories
   const categories = await Promise.all([
@@ -103,6 +128,10 @@ async function main() {
     description: "How Stripe's PM leader thinks about what to build next",
     difficulty: 1,
     xpReward: 15,
+    youtubeId: "YP_QghPLG-8",
+    youtubeStart: 222,
+    guestName: "Shreyas Doshi",
+    episodeTitle: "The art of product management | Shreyas Doshi (Stripe, Twitter, Google, Yahoo)",
     content: `Shreyas Doshi, former PM at Stripe, Twitter, and Google, shared his prioritization framework on Lenny's Podcast. He argues most PMs confuse "urgency" with "importance."
 
 His framework breaks work into four quadrants:
@@ -161,6 +190,10 @@ He also introduced the concept of "LNO tasks" — Labor tasks (just get them don
     description: "The former VP of Design at Facebook on building intuition",
     difficulty: 1,
     xpReward: 15,
+    youtubeId: "0Z5FCYDeZXs",
+    youtubeStart: 0,
+    guestName: "Julie Zhuo",
+    episodeTitle: "How To Win Friends & Influence Decisions | Lenny & Friends Summit",
     content: `Julie Zhuo, former VP of Design at Facebook, explained on Lenny's Podcast that "product sense" isn't magical intuition — it's a skill built through deliberate practice.
 
 Her framework for developing product sense:
@@ -220,6 +253,10 @@ She also emphasizes the "zoom in, zoom out" skill — great PMs can switch betwe
     description: "How Airbnb's CEO rebuilt the company by going deep",
     difficulty: 2,
     xpReward: 20,
+    youtubeId: "4ef0juAMqoE",
+    youtubeStart: 180,
+    guestName: "Brian Chesky",
+    episodeTitle: "Brian Chesky's new playbook",
     content: `Brian Chesky, CEO of Airbnb, shared on Lenny's Podcast how he radically restructured Airbnb's product development after the COVID crisis.
 
 THE OLD WAY: Airbnb had a divisional structure with many autonomous teams. Each team optimized locally but nobody owned the holistic experience. Result: 1,800 people and fragmented product.
@@ -284,6 +321,10 @@ Key insight: "The best product strategy is actually a marketing strategy." Chesk
     description: "How top companies choose the one metric that matters",
     difficulty: 1,
     xpReward: 15,
+    youtubeId: "WlRfyEpAKxw",
+    youtubeStart: 0,
+    guestName: "Casey Winters",
+    episodeTitle: "Why most product managers are unprepared for the demands of a real startup",
     content: `Multiple guests on Lenny's Podcast have discussed the North Star Metric — a single metric that captures the core value your product delivers.
 
 THE FRAMEWORK:
@@ -351,6 +392,10 @@ Lenny recommends the "input tree" approach — break your North Star into its co
     description: "Product-led, sales-led, or community-led? How to choose.",
     difficulty: 2,
     xpReward: 20,
+    youtubeId: "UTmFuSZfJ9U",
+    youtubeStart: 0,
+    guestName: "Elena Verna",
+    episodeTitle: "Why product-led growth is the future | Elena Verna (Amplitude, Miro, Surveymonkey)",
     content: `Elena Verna, growth advisor to companies like Amplitude, Miro, and MongoDB, has appeared multiple times on Lenny's Podcast sharing her growth frameworks.
 
 THE THREE GROWTH ENGINES:
@@ -412,6 +457,10 @@ Elena's "growth loops" concept: The best growth comes from loops, not funnels. A
     description: "Why retention is the #1 metric most teams ignore",
     difficulty: 2,
     xpReward: 20,
+    youtubeId: "6XMUDEYf2OE",
+    youtubeStart: 0,
+    guestName: "Casey Winters",
+    episodeTitle: "How to sell your ideas and rise within your company | Casey Winters",
     content: `Across dozens of episodes, Lenny's guests consistently rank retention as the most underappreciated growth metric.
 
 Casey Winters (former growth lead at Pinterest, Grubhub) explained: "If your retention is bad, growth is a leaky bucket. You can pour users in the top, but they'll all leak out."
@@ -473,6 +522,10 @@ Lenny's rule: Identify your aha moment → measure % of users who reach it → o
     description: "The four-step cycle that creates habit-forming products",
     difficulty: 1,
     xpReward: 15,
+    youtubeId: "WSscIIY609c",
+    youtubeStart: 0,
+    guestName: "Nir Eyal",
+    episodeTitle: "Strategies for becoming less distractible and improving focus | Nir Eyal",
     content: `Nir Eyal, author of "Hooked," shared his habit-forming product framework on Lenny's Podcast.
 
 THE HOOK MODEL — Four Steps:
@@ -539,6 +592,10 @@ KEY INSIGHT: The cycle must repeat enough times that the external trigger become
     description: "How to get users to the 'aha moment' before they leave",
     difficulty: 2,
     xpReward: 20,
+    youtubeId: "UTmFuSZfJ9U",
+    youtubeStart: 1200,
+    guestName: "Elena Verna",
+    episodeTitle: "Why product-led growth is the future | Elena Verna",
     content: `Multiple Lenny's Podcast guests have shared insights about onboarding psychology:
 
 THE AHA MOMENT:
@@ -596,6 +653,10 @@ COMMON MISTAKE: Asking for information you don't need yet. Every field in a sign
     description: "The anatomy of product specs that actually get built well",
     difficulty: 1,
     xpReward: 15,
+    youtubeId: "YP_QghPLG-8",
+    youtubeStart: 2700,
+    guestName: "Shreyas Doshi",
+    episodeTitle: "The art of product management | Shreyas Doshi",
     content: `Lenny dedicated an entire episode to the art of writing Product Requirements Documents. His research across dozens of top PMs revealed a clear pattern.
 
 THE GREAT PRD TEMPLATE:
@@ -660,6 +721,10 @@ Lenny's "one-pager test": If you can't explain the problem and solution in one p
     description: "How top PMs influence without authority",
     difficulty: 2,
     xpReward: 20,
+    youtubeId: "0Z5FCYDeZXs",
+    youtubeStart: 300,
+    guestName: "Julie Zhuo",
+    episodeTitle: "How To Win Friends & Influence Decisions | Julie Zhuo",
     content: `Several Lenny's Podcast guests have discussed the art of influence without authority — the most critical PM skill.
 
 THE FRAMEWORK FOR INFLUENCE (synthesized from multiple episodes):
@@ -728,6 +793,10 @@ Key insight from Julie Zhuo: "The best PMs never say 'I decided.' They say 'Here
     description: "How 600+ experiments created the world's stickiest streak system",
     difficulty: 2,
     xpReward: 25,
+    youtubeId: "_CCwoQZH5hI",
+    youtubeStart: 0,
+    guestName: "Jackson Shuttleworth",
+    episodeTitle: "Behind the product: Duolingo streaks | Jackson Shuttleworth (Group PM, Retention Team)",
     content: `Jackson Shuttleworth, Duolingo's head of growth, revealed on Lenny's Podcast how streaks became their most powerful retention tool.
 
 THE NUMBERS: Duolingo ran 600+ experiments on streaks alone. Here's what they learned:
@@ -793,6 +862,10 @@ KEY INSIGHT: Streaks work because they convert an abstract goal ("learn Spanish"
     description: "How competitive ranking drove 4.5x DAU growth",
     difficulty: 2,
     xpReward: 25,
+    youtubeId: "_CCwoQZH5hI",
+    youtubeStart: 2400,
+    guestName: "Jackson Shuttleworth",
+    episodeTitle: "Behind the product: Duolingo streaks | Jackson Shuttleworth",
     content: `Jorge Mazal, former CPO of Duolingo, detailed on Lenny's Podcast how leaderboards became their biggest growth lever.
 
 THE 4.5x DAU GROWTH STORY:
@@ -861,6 +934,10 @@ KEY METRIC: Leaderboards increased daily active users by 17% with minimal impact
     description: "How top companies price their products using behavioral science",
     difficulty: 2,
     xpReward: 20,
+    youtubeId: "A6veeCbKIzw",
+    youtubeStart: 0,
+    guestName: "Madhavan Ramanujam",
+    episodeTitle: "The art and science of pricing | Madhavan Ramanujam (Monetizing Innovation)",
     content: `Madhavan Ramanujam, author of "Monetizing Innovation," shared pricing psychology insights on Lenny's Podcast.
 
 THE 5 PRICING PRINCIPLES:
@@ -926,6 +1003,10 @@ KEY INSIGHT: "People don't buy products. They buy outcomes. Price the outcome, n
     description: "When to charge flat rates vs. pay-per-use",
     difficulty: 3,
     xpReward: 25,
+    youtubeId: "NR85H55eYkM",
+    youtubeStart: 0,
+    guestName: "Madhavan Ramanujam",
+    episodeTitle: "Pricing your AI product: Lessons from 400+ companies | Madhavan Ramanujam",
     content: `Kyle Poyar of OpenView Partners shared his subscription economy research on Lenny's Podcast.
 
 THE PRICING MODEL SPECTRUM:
@@ -1019,6 +1100,11 @@ interface LessonInput {
   difficulty: number;
   xpReward: number;
   content: string;
+  youtubeId?: string;
+  youtubeStart?: number;
+  youtubeEnd?: number;
+  guestName?: string;
+  episodeTitle?: string;
   questions: {
     questionText: string;
     options: string[];
@@ -1038,6 +1124,11 @@ async function createLesson(categoryId: string, input: LessonInput) {
       difficulty: input.difficulty,
       dayNumber: input.dayNumber,
       categoryId,
+      youtubeId: input.youtubeId ?? null,
+      youtubeStart: input.youtubeStart ?? null,
+      youtubeEnd: input.youtubeEnd ?? null,
+      guestName: input.guestName ?? null,
+      episodeTitle: input.episodeTitle ?? null,
     },
   });
 
