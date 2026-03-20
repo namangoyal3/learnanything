@@ -144,10 +144,25 @@ export default function QuizView({ lessonTitle, content, questions, xpReward, yo
 
         <a
           href="/dashboard"
-          className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors"
+          className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors mb-3"
         >
           Continue Learning
         </a>
+
+        <button
+          onClick={() => {
+            const text = `I just scored ${score}% on "${lessonTitle}" on PM Streak! Learning PM skills in 2-3 mins/day from Lenny's Podcast.`;
+            if (navigator.share) {
+              navigator.share({ title: "PM Streak", text, url: window.location.origin });
+            } else {
+              const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.origin)}`;
+              window.open(twitterUrl, "_blank");
+            }
+          }}
+          className="w-full py-3 rounded-2xl border-2 border-[var(--purple-primary)] text-[var(--purple-primary)] hover:bg-[var(--purple-primary)]/10 font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
+        >
+          Share Result
+        </button>
       </motion.div>
     );
   }

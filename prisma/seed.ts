@@ -54,6 +54,35 @@ async function main() {
     });
   }
 
+  // Auto-follow some bot users for the demo user
+  const demoUser = await prisma.user.findUnique({ where: { email: "demo@pmstreak.com" } });
+  const botUsersDb = await prisma.user.findMany({
+    where: { email: { not: "demo@pmstreak.com" } },
+    take: 4,
+  });
+  if (demoUser) {
+    for (const bot of botUsersDb) {
+      await prisma.follow.create({
+        data: { followerId: demoUser.id, followingId: bot.id },
+      });
+    }
+    // One bot follows demo back
+    if (botUsersDb.length > 0) {
+      await prisma.follow.create({
+        data: { followerId: botUsersDb[0].id, followingId: demoUser.id },
+      });
+      // Add a pending challenge from a bot
+      await prisma.friendChallenge.create({
+        data: {
+          challengerId: botUsersDb[0].id,
+          challengeeId: demoUser.id,
+          message: "Let's see who can complete more lessons this week!",
+          status: "pending",
+        },
+      });
+    }
+  }
+
   // Create categories
   const categories = await Promise.all([
     prisma.category.create({

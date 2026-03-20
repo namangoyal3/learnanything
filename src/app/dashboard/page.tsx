@@ -6,9 +6,10 @@ import Navbar from "@/components/Navbar";
 import StreakCalendar from "@/components/StreakCalendar";
 import XPProgress from "@/components/XPProgress";
 import LessonCard from "@/components/LessonCard";
-import { Flame, Shield, LogOut, Snowflake, Gem, Calendar, Zap, ArrowRight } from "lucide-react";
+import { Flame, Shield, LogOut, Snowflake, Gem, Calendar, Zap, ArrowRight, Share2 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import ShareCard from "@/components/ShareCard";
 
 interface Category {
   id: string;
@@ -35,6 +36,7 @@ export default function DashboardPage() {
   const [stats, setStats] = useState<any>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showShare, setShowShare] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -220,6 +222,14 @@ export default function DashboardPage() {
           </div>
         ))}
 
+        {/* Invite Friends */}
+        <button
+          onClick={() => setShowShare(true)}
+          className="w-full py-3 rounded-2xl bg-[var(--purple-primary)] hover:bg-[var(--purple-primary)]/80 text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+        >
+          <Share2 size={16} /> Invite Friends & Share Streak
+        </button>
+
         {/* Logout */}
         <button
           onClick={handleLogout}
@@ -228,6 +238,8 @@ export default function DashboardPage() {
           <LogOut size={16} /> Sign Out
         </button>
       </main>
+
+      <ShareCard isOpen={showShare} onClose={() => setShowShare(false)} />
     </div>
   );
 }

@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import ShareCard from "@/components/ShareCard";
 import { cn } from "@/lib/utils";
 import {
   Users,
   Search,
   UserPlus,
+  Share2,
   UserCheck,
   Swords,
   Flame,
@@ -50,6 +52,7 @@ export default function SocialPage() {
   const [followerCount, setFollowerCount] = useState(0);
   const [followingCount, setFollowingCount] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [showShare, setShowShare] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -166,6 +169,14 @@ export default function SocialPage() {
             <span><strong className="text-white">{followingCount}</strong> following</span>
           </div>
         </div>
+
+        {/* Invite Friends CTA */}
+        <button
+          onClick={() => setShowShare(true)}
+          className="w-full py-3 rounded-2xl bg-gradient-to-r from-[var(--purple-primary)] to-[var(--blue-primary)] text-white font-bold text-sm flex items-center justify-center gap-2 transition-transform hover:scale-[1.02]"
+        >
+          <Share2 size={16} /> Invite Friends via Link, Email, or Social
+        </button>
 
         {/* Tabs */}
         <div className="flex gap-1 bg-[var(--bg-card)] rounded-2xl p-1">
@@ -383,6 +394,8 @@ export default function SocialPage() {
           </div>
         )}
       </main>
+
+      <ShareCard isOpen={showShare} onClose={() => setShowShare(false)} />
     </div>
   );
 }
