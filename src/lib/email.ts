@@ -6,7 +6,8 @@ function getResend() {
 }
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://duolingo-for-pms.vercel.app";
-const FROM = "PM Streak <noreply@pmstreak.app>";
+const FROM = "PM Streak <onboarding@resend.dev>";
+const REPLY_TO = "namangoyal21197@gmail.com";
 
 export async function sendChallengeReceivedEmail({
   toEmail,
@@ -22,6 +23,7 @@ export async function sendChallengeReceivedEmail({
   if (!process.env.RESEND_API_KEY) return;
   await getResend().emails.send({
     from: FROM,
+    replyTo: REPLY_TO,
     to: toEmail,
     subject: `${fromName} challenged you on PM Streak! ⚔️`,
     html: `
@@ -52,6 +54,7 @@ export async function sendChallengeAcceptedEmail({
   if (!process.env.RESEND_API_KEY) return;
   await getResend().emails.send({
     from: FROM,
+    replyTo: REPLY_TO,
     to: toEmail,
     subject: `${fromName} accepted your challenge! 🔥`,
     html: `
@@ -94,6 +97,7 @@ export async function sendWeeklyDigestEmail({
 
   await getResend().emails.send({
     from: FROM,
+    replyTo: REPLY_TO,
     to: toEmail,
     subject: `Your weekly PM Streak update 🔥`,
     html: `
