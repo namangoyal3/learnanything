@@ -85,42 +85,48 @@ export default async function Home() {
 
       {/* ── HOW IT WORKS ── */}
       <section className="max-w-5xl mx-auto px-5 py-20">
-        <h2 className="text-3xl font-black text-center mb-3">How it works</h2>
-        <p className="text-[var(--text-secondary)] text-center mb-12 max-w-md mx-auto">
-          Like Duolingo, but for product managers. 3 simple steps to PM mastery.
-        </p>
+        <div className="max-w-xs mb-12">
+          <p className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-2">How it works</p>
+          <h2 className="text-4xl font-black leading-[1.1] tracking-tight">Three steps.<br />Two minutes.<br />Every day.</h2>
+        </div>
 
-        <div className="grid sm:grid-cols-3 gap-5">
+        <div className="space-y-0 divide-y divide-[var(--border-color)] border border-[var(--border-color)] rounded-3xl overflow-hidden">
           {[
             {
-              step: "01",
-              emoji: "📖",
+              n: "1",
               title: "Read a 2-minute lesson",
-              desc: "Each lesson distills one key insight from Lenny's best podcast episodes — prioritisation, strategy, hiring, growth.",
+              desc: "Each lesson pulls one sharp insight from Lenny's 300+ podcast episodes — prioritisation, strategy, growth, hiring. No fluff.",
+              tag: "2 min read",
               color: "var(--green-primary)",
             },
             {
-              step: "02",
-              emoji: "🧠",
+              n: "2",
               title: "Answer 3 quiz questions",
-              desc: "Bite-sized questions reinforce the concept. Get a perfect score to earn bonus XP and gems.",
+              desc: "Active recall beats passive reading. Three targeted questions lock the concept in. Perfect score earns bonus gems.",
+              tag: "+10 XP bonus",
               color: "var(--blue-primary)",
             },
             {
-              step: "03",
-              emoji: "🔥",
-              title: "Build your streak",
-              desc: "Come back every day to keep your streak alive. Climb the leaderboard and challenge friends.",
+              n: "3",
+              title: "Keep your streak alive",
+              desc: "One lesson a day. That's it. Consistency is the whole game — the leaderboard and streak counter make it impossible to ignore.",
+              tag: "Streak + XP",
               color: "var(--orange-primary)",
             },
-          ].map(({ step, emoji, title, desc, color }) => (
-            <div key={step} className="bg-[var(--bg-card)] rounded-3xl p-6 border border-[var(--border-color)]">
-              <div className="text-3xl mb-4">{emoji}</div>
-              <div className="text-xs font-black uppercase tracking-widest mb-2" style={{ color }}>
-                Step {step}
+          ].map(({ n, title, desc, tag, color }) => (
+            <div key={n} className="flex gap-6 px-6 py-7 bg-[var(--bg-card)] hover:bg-[var(--bg-secondary)]/60 transition-colors group">
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center font-black text-xl" style={{ background: `color-mix(in srgb, ${color} 15%, transparent)`, color }}>
+                {n}
               </div>
-              <h3 className="text-base font-black mb-2 leading-snug">{title}</h3>
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{desc}</p>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-start justify-between gap-4 mb-1.5">
+                  <h3 className="text-base font-black leading-snug">{title}</h3>
+                  <span className="text-[10px] font-black uppercase tracking-wide px-2 py-1 rounded-lg flex-shrink-0" style={{ background: `color-mix(in srgb, ${color} 12%, transparent)`, color }}>
+                    {tag}
+                  </span>
+                </div>
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed">{desc}</p>
+              </div>
             </div>
           ))}
         </div>
