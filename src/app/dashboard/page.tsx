@@ -215,48 +215,46 @@ export default function DashboardPage() {
             ? "bg-gradient-to-br from-[#1a1200] to-[#2a1f00] border border-[var(--gold-primary)]/30"
             : user.streakCount > 0
             ? "bg-gradient-to-br from-[#1a0c00] to-[#2a1500] border border-[var(--orange-primary)]/30"
-            : "bg-[var(--bg-card)] border border-[var(--border-color)]"
+            : "bg-gradient-to-br from-[#0a1f10] to-[#0d2a18] border border-[var(--green-primary)]/30"
         )}>
           {/* Background glow */}
-          {user.streakCount > 0 && (
-            <div className={cn(
-              "absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-30",
-              isPerfect ? "bg-[var(--gold-primary)]" : "bg-[var(--orange-primary)]"
-            )} />
-          )}
+          <div className={cn(
+            "absolute -top-8 -right-8 w-32 h-32 rounded-full blur-3xl opacity-25",
+            isPerfect ? "bg-[var(--gold-primary)]" : user.streakCount > 0 ? "bg-[var(--orange-primary)]" : "bg-[var(--green-primary)]"
+          )} />
 
           <div className="relative">
             {/* Top row */}
             <div className="flex items-start justify-between mb-4">
-              <div>
+              <div className="flex-1 min-w-0 pr-4">
                 <p className="text-[var(--text-secondary)] text-xs font-bold uppercase tracking-wider mb-1">
                   Welcome back
                 </p>
-                <h1 className="text-xl font-black text-white leading-tight">
+                <h1 className="text-2xl font-black text-white leading-tight">
                   {user.name?.split(" ")[0] ?? "PM"}
                 </h1>
                 <p className={cn(
-                  "text-sm mt-0.5 font-semibold",
-                  isPerfect ? "text-[var(--gold-primary)]" : user.streakCount > 0 ? "text-[var(--orange-primary)]" : "text-[var(--text-secondary)]"
+                  "text-sm mt-1 font-semibold",
+                  isPerfect ? "text-[var(--gold-primary)]" : user.streakCount > 0 ? "text-[var(--orange-primary)]" : "text-[var(--green-primary)]"
                 )}>
                   {streakMsg}
                 </p>
               </div>
 
               {/* Big streak number */}
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center flex-shrink-0">
                 <Flame
                   size={44}
                   className={cn(
                     "streak-flame",
                     isPerfect ? "text-[var(--gold-primary)]" :
-                    user.streakCount > 0 ? "text-[var(--orange-primary)]" : "text-gray-600"
+                    user.streakCount > 0 ? "text-[var(--orange-primary)]" : "text-[var(--green-primary)]"
                   )}
                 />
                 <span className={cn(
                   "text-4xl font-black tabular-nums leading-none -mt-1",
                   isPerfect ? "text-[var(--gold-primary)]" :
-                  user.streakCount > 0 ? "text-[var(--orange-primary)]" : "text-gray-600"
+                  user.streakCount > 0 ? "text-[var(--orange-primary)]" : "text-[var(--green-primary)]"
                 )}>
                   {user.streakCount}
                 </span>
@@ -268,25 +266,27 @@ export default function DashboardPage() {
 
             {/* Today's goal progress */}
             <div className={cn(
-              "rounded-2xl p-3",
-              completedToday ? "bg-[var(--green-primary)]/10 border border-[var(--green-primary)]/20" : "bg-black/20"
+              "rounded-2xl p-3.5 border",
+              completedToday
+                ? "bg-[var(--green-primary)]/10 border-[var(--green-primary)]/25"
+                : user.streakCount > 0
+                ? "bg-black/20 border-white/5"
+                : "bg-[var(--green-primary)]/8 border-[var(--green-primary)]/20"
             )}>
-              <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-1.5">
-                  <Target size={13} className={completedToday ? "text-[var(--green-primary)]" : "text-[var(--text-secondary)]"} />
-                  <span className="text-xs font-bold text-[var(--text-secondary)]">Today&apos;s Goal</span>
+                  <Target size={13} className={completedToday ? "text-[var(--green-primary)]" : user.streakCount > 0 ? "text-[var(--text-secondary)]" : "text-[var(--green-primary)]"} />
+                  <span className="text-xs font-bold text-white">Today&apos;s Goal</span>
                 </div>
                 {completedToday ? (
-                  <span className="text-xs font-black text-[var(--green-primary)]">
-                    ✓ Complete!
-                  </span>
+                  <span className="text-xs font-black text-[var(--green-primary)]">✓ Done!</span>
                 ) : (
-                  <span className="text-[10px] text-[var(--text-secondary)]">1 lesson needed</span>
+                  <span className="text-xs font-bold text-[var(--text-secondary)]">1 lesson</span>
                 )}
               </div>
-              <div className="h-2.5 bg-black/30 rounded-full overflow-hidden">
+              <div className="h-2 bg-black/30 rounded-full overflow-hidden">
                 <div
-                  className={cn("h-full rounded-full progress-fill", completedToday ? "bg-[var(--green-primary)]" : "bg-[var(--orange-primary)]/50")}
+                  className={cn("h-full rounded-full progress-fill", completedToday ? "bg-[var(--green-primary)]" : "bg-[var(--green-primary)]/30")}
                   style={{ width: completedToday ? "100%" : "0%" }}
                 />
               </div>
@@ -362,30 +362,18 @@ export default function DashboardPage() {
         )}
 
         {/* ── Stats Row ── */}
-        <div className="grid grid-cols-3 gap-3">
-          <div className="bg-[var(--bg-card)] rounded-2xl p-3.5 text-center border border-[var(--border-color)]">
-            <div className="flex items-center justify-center gap-1 mb-1">
-              <Zap size={14} className="text-[var(--gold-primary)]" />
+        <div className="grid grid-cols-3 gap-2.5">
+          {[
+            { icon: <Zap size={16} className="text-[var(--gold-primary)]" />, value: user.xp, label: "Total XP", color: "text-[var(--gold-primary)]", bg: "bg-[var(--gold-primary)]/8 border-[var(--gold-primary)]/15" },
+            { icon: <Trophy size={16} className="text-[var(--orange-primary)]" />, value: user.longestStreak, label: "Best Streak", color: "text-[var(--orange-primary)]", bg: "bg-[var(--orange-primary)]/8 border-[var(--orange-primary)]/15" },
+            { icon: <BookOpen size={16} className="text-[var(--blue-primary)]" />, value: totalCompleted, label: "Lessons", color: "text-[var(--blue-primary)]", bg: "bg-[var(--blue-primary)]/8 border-[var(--blue-primary)]/15" },
+          ].map(({ icon, value, label, color, bg }) => (
+            <div key={label} className={cn("rounded-2xl p-3.5 text-center border", bg)}>
+              <div className="flex items-center justify-center mb-1.5">{icon}</div>
+              <div className={cn("text-2xl font-black tabular-nums", color)}>{value}</div>
+              <div className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide mt-0.5">{label}</div>
             </div>
-            <div className="text-2xl font-black text-[var(--gold-primary)] tabular-nums">{user.xp}</div>
-            <div className="text-xs text-[var(--text-secondary)] font-bold mt-0.5">Total XP</div>
-          </div>
-          <div className="bg-[var(--bg-card)] rounded-2xl p-3.5 text-center border border-[var(--border-color)]">
-            <div className="flex items-center justify-center gap-1 mb-1">
-              <Trophy size={14} className="text-[var(--orange-primary)]" />
-            </div>
-            <div className="text-2xl font-black text-[var(--orange-primary)] tabular-nums">{user.longestStreak}</div>
-            <div className="text-xs text-[var(--text-secondary)] font-bold mt-0.5">Best Streak</div>
-          </div>
-          <div className="bg-[var(--bg-card)] rounded-2xl p-3.5 text-center border border-[var(--border-color)]">
-            <div className="flex items-center justify-center gap-1 mb-1">
-              <BookOpen size={14} className="text-[var(--blue-primary)]" />
-            </div>
-            <div className="text-2xl font-black text-[var(--blue-primary)] tabular-nums">
-              {totalCompleted}<span className="text-sm text-[var(--text-secondary)]">/{totalArchive}+</span>
-            </div>
-            <div className="text-xs text-[var(--text-secondary)] font-bold mt-0.5">Lessons</div>
-          </div>
+          ))}
         </div>
 
         {/* ── Daily Challenge CTA ── */}
@@ -443,7 +431,7 @@ export default function DashboardPage() {
         </div>
 
         {/* ── Streak Freeze ── */}
-        <div className="bg-[var(--bg-card)] rounded-2xl p-4 border border-[var(--border-color)]">
+        {user.streakCount > 0 && <div className="bg-[var(--bg-card)] rounded-2xl p-4 border border-[var(--border-color)]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-2xl bg-[var(--blue-primary)]/10 border border-[var(--blue-primary)]/20 flex items-center justify-center">
@@ -503,7 +491,7 @@ export default function DashboardPage() {
               ))}
             </div>
           </div>
-        </div>
+        </div>}
 
         </div>{/* end left sidebar */}
         <div className="space-y-4 mt-4 lg:mt-0">

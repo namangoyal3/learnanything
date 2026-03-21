@@ -1,44 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { Flame, Zap, BookOpen } from "lucide-react";
+import { Flame, BookOpen, Zap } from "lucide-react";
 
 export default function SignupPage() {
-  const router = useRouter();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
-      });
-
-      if (!res.ok) {
-        const data = await res.json();
-        setError(data.error || "Signup failed");
-        return;
-      }
-
-      router.push("/onboarding");
-    } catch {
-      setError("Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
       <div className="w-full max-w-sm">
@@ -78,7 +42,7 @@ export default function SignupPage() {
         {/* Google Sign-In */}
         <a
           href="/api/auth/google"
-          className="flex items-center justify-center gap-3 w-full py-3.5 rounded-2xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] hover:bg-white/5 hover:border-white/20 text-white text-sm font-bold transition-all mb-4"
+          className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] hover:bg-white/5 hover:border-white/20 text-white text-sm font-bold transition-all"
         >
           <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
@@ -89,59 +53,8 @@ export default function SignupPage() {
           Continue with Google
         </a>
 
-        <div className="flex items-center gap-3 mb-4">
-          <div className="flex-1 h-px bg-[var(--border-color)]" />
-          <span className="text-xs text-[var(--text-secondary)] font-medium">or</span>
-          <div className="flex-1 h-px bg-[var(--border-color)]" />
-        </div>
-
-        <form onSubmit={handleSubmit} className="space-y-3">
-          <input
-            type="text"
-            placeholder="Your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className="w-full px-4 py-3.5 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] text-white placeholder:text-[var(--text-secondary)] focus:border-[var(--green-primary)] focus:outline-none text-sm font-medium transition-colors"
-          />
-          <input
-            type="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full px-4 py-3.5 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] text-white placeholder:text-[var(--text-secondary)] focus:border-[var(--green-primary)] focus:outline-none text-sm font-medium transition-colors"
-          />
-          <input
-            type="password"
-            placeholder="Password (min 6 chars)"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            minLength={6}
-            className="w-full px-4 py-3.5 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] text-white placeholder:text-[var(--text-secondary)] focus:border-[var(--green-primary)] focus:outline-none text-sm font-medium transition-colors"
-          />
-
-          {error && (
-            <div className="bg-[var(--red-primary)]/10 border border-[var(--red-primary)]/30 rounded-xl p-3">
-              <p className="text-[var(--red-primary)] text-xs font-bold text-center">{error}</p>
-            </div>
-          )}
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-black text-sm transition-all disabled:opacity-50 shadow-lg shadow-[var(--green-primary)]/20"
-          >
-            {loading ? "Creating account..." : "Create Account"}
-          </button>
-        </form>
-
-        <p className="text-center mt-5 text-sm text-[var(--text-secondary)]">
-          Already have an account?{" "}
-          <Link href="/login" className="text-[var(--green-primary)] font-black hover:underline inline-block py-2 px-1">
-            Log in
-          </Link>
+        <p className="text-center mt-6 text-[10px] text-[var(--text-secondary)]/60">
+          Powered by insights from Lenny&apos;s Podcast
         </p>
       </div>
     </div>
