@@ -106,7 +106,7 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
     <div className="min-h-screen">
       <header className="sticky top-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-secondary)]">
         <div className="max-w-2xl mx-auto px-4 h-14 flex items-center gap-3">
-          <Link href="/dashboard" className="text-[var(--text-secondary)] hover:text-white">
+          <Link href="/dashboard" className="text-[var(--text-secondary)] hover:text-white p-2 -ml-2 rounded-xl">
             <ArrowLeft size={20} />
           </Link>
           <div className="flex-1 min-w-0">

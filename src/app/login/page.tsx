@@ -136,7 +136,7 @@ function LoginForm() {
 
         <p className="text-center mt-5 text-sm text-[var(--text-secondary)]">
           New here?{" "}
-          <Link href="/signup" className="text-[var(--green-primary)] font-black hover:underline">
+          <Link href="/signup" className="text-[var(--green-primary)] font-black hover:underline inline-block py-2 px-1">
             Create account
           </Link>
         </p>

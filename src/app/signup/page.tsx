@@ -139,7 +139,7 @@ export default function SignupPage() {
 
         <p className="text-center mt-5 text-sm text-[var(--text-secondary)]">
           Already have an account?{" "}
-          <Link href="/login" className="text-[var(--green-primary)] font-black hover:underline">
+          <Link href="/login" className="text-[var(--green-primary)] font-black hover:underline inline-block py-2 px-1">
             Log in
           </Link>
         </p>

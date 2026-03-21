@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Flame, BookOpen, Trophy, Users, Calendar, Sparkles, Gem, Lock, Zap } from "lucide-react";
 
@@ -14,9 +15,28 @@ interface NavbarProps {
   unreadNotifications?: number;
 }
 
-export default function Navbar({ streakCount, xp, gems, avatarUrl, name, unreadNotifications = 0 }: NavbarProps) {
+export default function Navbar({ streakCount, xp, gems, avatarUrl, name, unreadNotifications: propUnread }: NavbarProps) {
   const pathname = usePathname();
   const unlocked = streakCount >= 7;
+  const [unreadNotifications, setUnreadNotifications] = useState(propUnread ?? 0);
+
+  // Keep in sync with prop (dashboard passes it directly)
+  useEffect(() => {
+    if (propUnread !== undefined) setUnreadNotifications(propUnread);
+  }, [propUnread]);
+
+  // On pages that don't pass the prop, fetch it ourselves
+  useEffect(() => {
+    if (propUnread !== undefined) return; // already provided by parent
+    if (pathname === "/social") {
+      setUnreadNotifications(0);
+      return;
+    }
+    fetch("/api/notifications")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => { if (data) setUnreadNotifications(data.unreadCount ?? 0); })
+      .catch(() => {});
+  }, [pathname, propUnread]);
 
   const navItems = [
     { href: "/dashboard", label: "Learn", icon: BookOpen, locked: false },
@@ -39,26 +59,26 @@ export default function Navbar({ streakCount, xp, gems, avatarUrl, name, unreadN
           </Link>
 
           {/* Stats row */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {/* Avatar */}
             {avatarUrl ? (
-              <img src={avatarUrl} alt={name ?? "User"} className="w-7 h-7 rounded-full object-cover border border-[var(--border-color)]" />
+              <img src={avatarUrl} alt={name ?? "User"} className="w-7 h-7 rounded-full object-cover border border-[var(--border-color)] flex-shrink-0" />
             ) : name ? (
-              <div className="w-7 h-7 rounded-full bg-[var(--green-primary)] flex items-center justify-center text-xs font-black text-white">
+              <div className="w-7 h-7 rounded-full bg-[var(--green-primary)] flex items-center justify-center text-xs font-black text-white flex-shrink-0">
                 {name.charAt(0).toUpperCase()}
               </div>
             ) : null}
             {/* Streak */}
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-0.5 flex-shrink-0">
               <Flame
-                size={20}
+                size={18}
                 className={cn(
                   "streak-flame",
                   streakCount > 0 ? "text-[var(--orange-primary)]" : "text-gray-500"
                 )}
               />
               <span className={cn(
-                "font-black text-base tabular-nums",
+                "font-black text-sm tabular-nums",
                 streakCount > 0 ? "text-[var(--orange-primary)]" : "text-gray-500"
               )}>
                 {streakCount}
@@ -66,15 +86,15 @@ export default function Navbar({ streakCount, xp, gems, avatarUrl, name, unreadN
             </div>
 
             {/* Gems */}
-            <div className="flex items-center gap-1">
-              <Gem size={18} className="text-[var(--blue-primary)]" />
-              <span className="font-black text-base tabular-nums text-[var(--blue-primary)]">{gems}</span>
+            <div className="flex items-center gap-0.5 flex-shrink-0">
+              <Gem size={16} className="text-[var(--blue-primary)]" />
+              <span className="font-black text-sm tabular-nums text-[var(--blue-primary)]">{gems}</span>
             </div>
 
             {/* XP */}
-            <div className="flex items-center gap-1 bg-[var(--gold-primary)]/10 px-2.5 py-1 rounded-full">
-              <Zap size={14} className="text-[var(--gold-primary)]" />
-              <span className="font-black text-sm tabular-nums text-[var(--gold-primary)]">{xp}</span>
+            <div className="flex items-center gap-1 bg-[var(--gold-primary)]/10 px-2 py-1 rounded-full flex-shrink-0">
+              <Zap size={13} className="text-[var(--gold-primary)]" />
+              <span className="font-black text-xs tabular-nums text-[var(--gold-primary)]">{xp}</span>
             </div>
           </div>
         </div>
