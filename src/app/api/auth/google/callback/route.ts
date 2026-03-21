@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { signToken } from "@/lib/auth";
 import { cookies } from "next/headers";
+import { sendWelcomeEmail } from "@/lib/email";
 
 export async function GET(req: NextRequest) {
   const appUrl = process.env.NEXT_PUBLIC_APP_URL || req.nextUrl.origin;
@@ -63,6 +64,8 @@ export async function GET(req: NextRequest) {
           gems: 50,
         },
       });
+      // Fire-and-forget welcome email
+      sendWelcomeEmail({ toEmail: email, toName: user.name }).catch(() => {});
     } else {
       // Existing user — link Google and sync name + avatar from Google
       user = await prisma.user.update({

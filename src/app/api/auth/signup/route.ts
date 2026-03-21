@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { signToken } from "@/lib/auth";
+import { sendWelcomeEmail } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   const { email, name, password } = await req.json();
@@ -19,6 +20,9 @@ export async function POST(req: NextRequest) {
   const user = await prisma.user.create({
     data: { email, name, passwordHash },
   });
+
+  // Fire-and-forget welcome email
+  sendWelcomeEmail({ toEmail: email, toName: name }).catch(() => {});
 
   const token = await signToken(user.id);
   const response = NextResponse.json({ user: { id: user.id, name: user.name, email: user.email } });
