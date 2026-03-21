@@ -226,9 +226,10 @@ export default async function Home() {
 
       {/* ── SAMPLE LESSON PREVIEW ── */}
       <section className="max-w-5xl mx-auto px-5 py-20">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-black mb-3">A lesson looks like this</h2>
-          <p className="text-[var(--text-secondary)]">Real insights. Real frameworks. Actually useful.</p>
+        <div className="mb-10">
+          <p className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-2">See for yourself</p>
+          <h2 className="text-3xl font-black mb-2">A real lesson.</h2>
+          <p className="text-[var(--text-secondary)] text-sm">Real frameworks. Real questions. Actually useful.</p>
         </div>
 
         <div className="max-w-lg mx-auto bg-[var(--bg-card)] rounded-3xl border border-[var(--border-color)] overflow-hidden">
