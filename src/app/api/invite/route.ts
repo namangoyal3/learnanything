@@ -38,7 +38,7 @@ export async function GET() {
       twitter: `I'm on a ${user.streakCount}-day streak learning PM skills on PM Streak! Daily micro-lessons from Lenny's Podcast. Join me:`,
       linkedin: `Building my product management skills with daily micro-lessons from Lenny's Podcast on PM Streak. ${user.xp} XP and counting!`,
       whatsapp: `Hey! I've been using PM Streak to learn product management in 2-3 mins/day. I'm on a ${user.streakCount}-day streak! Check it out:`,
-      email: `I thought you'd like PM Streak - it's like Duolingo but for product management, powered by Lenny's Podcast. I'm on a ${user.streakCount}-day streak!`,
+      email: `I thought you'd like PM Streak - daily PM micro-lessons powered by Lenny's Podcast. I'm on a ${user.streakCount}-day streak!`,
     },
   });
 }
@@ -66,6 +66,6 @@ function buildWhatsAppLink(name: string, streak: number, code: string) {
 
 function buildEmailLink(name: string, streak: number, code: string) {
   const subject = `${name} invited you to PM Streak`;
-  const body = `Hey!\n\nI've been using PM Streak to learn product management in 2-3 minutes a day. It's like Duolingo but for PMs, powered by insights from Lenny's Podcast.\n\nI'm on a ${streak}-day streak with the goal of learning something new every day.\n\nJoin me here: ${buildReferralUrl(code)}\n\n- ${name}`;
+  const body = `Hey!\n\nI've been using PM Streak to learn product management in 2-3 minutes a day — daily micro-lessons powered by insights from Lenny's Podcast.\n\nI'm on a ${streak}-day streak with the goal of learning something new every day.\n\nJoin me here: ${buildReferralUrl(code)}\n\n- ${name}`;
   return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

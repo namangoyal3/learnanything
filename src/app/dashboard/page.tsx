@@ -311,7 +311,7 @@ export default function DashboardPage() {
                   {7 - user.streakCount} day{7 - user.streakCount !== 1 ? "s" : ""} away from locking in your learning habit!
                 </p>
                 <p className="text-[11px] mt-0.5 mb-2.5" style={{ color: "var(--text-secondary)" }}>
-                  Duolingo&apos;s data shows day 7 is when your streak becomes unstoppable.
+                  Research shows 7 consecutive days is when a learning habit becomes automatic.
                 </p>
                 <div>
                   <div className="flex justify-between text-[10px] font-bold mb-1" style={{ color: "var(--text-secondary)" }}>
