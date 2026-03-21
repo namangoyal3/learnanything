@@ -133,21 +133,61 @@ export default async function Home() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="bg-[var(--bg-secondary)]/40 border-y border-[var(--border-color)]">
+      <section className="border-y border-[var(--border-color)] bg-[var(--bg-secondary)]/30">
         <div className="max-w-5xl mx-auto px-5 py-20">
-          <h2 className="text-3xl font-black text-center mb-12">Everything you need to level up</h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {/* Hero features — 2 large cards */}
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="bg-[var(--bg-card)] rounded-3xl p-7 border border-[var(--border-color)]">
+              <div className="w-10 h-10 rounded-2xl bg-[var(--orange-primary)]/15 flex items-center justify-center mb-5">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--orange-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <h3 className="text-xl font-black mb-2 leading-tight">Streaks that actually stick</h3>
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">Daily streak tracking with freeze protection. Miss a day? Use a streak freeze. Built your longest streak yet? The leaderboard notices.</p>
+              <div className="flex items-center gap-3">
+                <div className="text-center">
+                  <div className="text-2xl font-black text-[var(--orange-primary)]">7</div>
+                  <div className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide">day habit</div>
+                </div>
+                <div className="h-8 w-px bg-[var(--border-color)]" />
+                <div className="text-center">
+                  <div className="text-2xl font-black text-[var(--gold-primary)]">5×</div>
+                  <div className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide">freeze slots</div>
+                </div>
+                <div className="h-8 w-px bg-[var(--border-color)]" />
+                <div className="text-center">
+                  <div className="text-2xl font-black text-[var(--green-primary)]">∞</div>
+                  <div className="text-[10px] text-[var(--text-secondary)] font-bold uppercase tracking-wide">potential</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[var(--bg-card)] rounded-3xl p-7 border border-[var(--border-color)]">
+              <div className="w-10 h-10 rounded-2xl bg-[var(--gold-primary)]/15 flex items-center justify-center mb-5">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3 className="text-xl font-black mb-2 leading-tight">XP, levels &amp; a real leaderboard</h3>
+              <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">Every lesson earns XP. Perfect scores earn bonus gems. Hit a 7-day streak to unlock the leaderboard and see where you rank among PMs worldwide.</p>
+              <div className="h-2 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
+                <div className="h-full w-[62%] rounded-full bg-gradient-to-r from-[var(--gold-primary)] to-[var(--orange-primary)]" />
+              </div>
+              <div className="flex justify-between mt-1.5">
+                <span className="text-[10px] text-[var(--text-secondary)] font-bold">Senior PM · 620 XP</span>
+                <span className="text-[10px] text-[var(--gold-primary)] font-black">Expert PM at 1000</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Secondary features — 4 compact items in 2×2 */}
+          <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { emoji: "🔥", title: "Daily Streaks", desc: "Streak freezes let you skip a day without losing progress." },
-              { emoji: "⚡", title: "XP & Levels", desc: "Earn XP for every lesson. Level up through Beginner to Expert PM." },
-              { emoji: "🏆", title: "Leaderboard", desc: "Compete with others. Unlock rankings after a 7-day streak." },
-              { emoji: "👥", title: "Social Challenges", desc: "Challenge friends to see who learns more this week." },
-              { emoji: "✨", title: "AI Lesson Generator", desc: "Ask about any PM topic and get a custom lesson in seconds." },
-              { emoji: "📅", title: "Daily Challenge", desc: "A fresh bonus challenge every day. Earn 2× XP on top of your lesson." },
-            ].map(({ emoji, title, desc }) => (
+              { title: "Head-to-head challenges", desc: "Challenge any follower to a 7-day learning duel. Bragging rights included.", color: "var(--blue-primary)" },
+              { title: "AI custom lessons", desc: "Type any PM topic — pricing, retention, roadmaps — and get a tailored lesson in under 10 seconds.", color: "var(--green-primary)" },
+              { title: "Daily bonus challenge", desc: "A fresh lesson drops every day at midnight. Complete it for 2× XP on top of your regular lesson.", color: "var(--orange-primary)" },
+              { title: "Gem economy", desc: "Earn gems for lessons and streaks. Spend them on XP Boosts, Streak Freezes, or repairing a broken streak.", color: "var(--gold-primary)" },
+            ].map(({ title, desc, color }) => (
               <div key={title} className="flex gap-4 p-5 bg-[var(--bg-card)] rounded-2xl border border-[var(--border-color)]">
-                <div className="text-2xl flex-shrink-0">{emoji}</div>
+                <div className="w-1 rounded-full flex-shrink-0 mt-1" style={{ background: color, minHeight: "2.5rem" }} />
                 <div>
                   <div className="font-black text-sm mb-1">{title}</div>
                   <div className="text-xs text-[var(--text-secondary)] leading-relaxed">{desc}</div>
