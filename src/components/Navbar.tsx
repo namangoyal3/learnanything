@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -64,7 +65,14 @@ export default function Navbar({ streakCount, xp, gems, avatarUrl, name, unreadN
           <div className="flex items-center gap-2">
             {/* Avatar */}
             {avatarUrl ? (
-              <img src={avatarUrl} alt={name ?? "User"} className="w-7 h-7 rounded-full object-cover border border-[var(--border-color)] flex-shrink-0" />
+              <Image
+                src={avatarUrl}
+                alt={name ?? "User"}
+                width={28}
+                height={28}
+                unoptimized
+                className="h-7 w-7 flex-shrink-0 rounded-full border border-[var(--border-color)] object-cover"
+              />
             ) : name ? (
               <div className="w-7 h-7 rounded-full bg-[var(--green-primary)] flex items-center justify-center text-xs font-black text-white flex-shrink-0">
                 {name.charAt(0).toUpperCase()}
