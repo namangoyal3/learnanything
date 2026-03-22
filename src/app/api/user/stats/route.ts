@@ -10,6 +10,7 @@ import {
 import { prisma } from "@/lib/prisma";
 import {
   catalogEpisodesNotYetImported,
+  LENNY_ARCHIVE_CATEGORY_SLUG,
   LENNY_PODCAST_CATALOG_EPISODES,
 } from "@/lib/lenny-catalog";
 
@@ -51,7 +52,12 @@ export async function GET() {
         },
       }),
       getArchiveUnlockProgressForUser(userId),
-      prisma.lesson.count({ where: CORE_LESSON_WHERE }),
+      prisma.lesson.count({
+        where: {
+          ...CORE_LESSON_WHERE,
+          category: { slug: LENNY_ARCHIVE_CATEGORY_SLUG },
+        },
+      }),
     ]);
   const visibleLessons = curriculum.flatMap((category) => category.lessons);
   const completedCount = visibleLessons.filter((lesson) => lesson.completed).length;

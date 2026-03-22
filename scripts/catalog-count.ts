@@ -27,15 +27,17 @@ if (existsSync(envPath)) {
 }
 
 const CORE = { aiGenerated: false } as const;
+const ARCHIVE = { slug: "podcast-archive" } as const;
 const CATALOG = 289;
 
 async function main() {
   const prisma = new PrismaClient();
   try {
-    const [core, locked, unlocked, aiGen] = await Promise.all([
+    const [coreAll, core, locked, unlocked, aiGen] = await Promise.all([
       prisma.lesson.count({ where: CORE }),
-      prisma.lesson.count({ where: { ...CORE, isLocked: true } }),
-      prisma.lesson.count({ where: { ...CORE, isLocked: false } }),
+      prisma.lesson.count({ where: { ...CORE, category: ARCHIVE } }),
+      prisma.lesson.count({ where: { ...CORE, category: ARCHIVE, isLocked: true } }),
+      prisma.lesson.count({ where: { ...CORE, category: ARCHIVE, isLocked: false } }),
       prisma.lesson.count({ where: { aiGenerated: true } }),
     ]);
     const notImported = Math.max(0, CATALOG - core);
@@ -43,9 +45,10 @@ async function main() {
     console.log("PM Streak — catalog vs database");
     console.log("--------------------------------");
     console.log(`Lenny catalog (reference):     ${CATALOG} episodes`);
-    console.log(`Core lessons in DB:          ${core} (unlocked free: ${unlocked}, gated/locked rows: ${locked})`);
+    console.log(`Podcast-archive core rows:   ${core} (unlocked: ${unlocked}, locked: ${locked})`);
+    console.log(`All non-AI lessons (any cat): ${coreAll}`);
     console.log(`AI-generated (Explore) rows:   ${aiGen}`);
-    console.log(`Catalog not in DB yet:       ${notImported} (max(0, ${CATALOG} − ${core}))`);
+    console.log(`Catalog not in DB yet:       ${notImported} (max(0, ${CATALOG} − archive rows ${core}))`);
     console.log("");
     console.log(
       "After `npm run db:seed`: expect small core count (seed). After `npx tsx scripts/backfill-podcast-archive.ts`, core grows toward the catalog."

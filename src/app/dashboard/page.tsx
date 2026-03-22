@@ -20,7 +20,7 @@ import StreakCelebration from "@/components/StreakCelebration";
 interface Category {
   id: string;
   name: string;
-  slug: string;
+  slug: string; // e.g. podcast-archive — split out for collapsible long list
   description: string;
   icon: string;
   color: string;
@@ -62,8 +62,8 @@ export default function DashboardPage() {
     count: number;
     lessons: { id: string; title: string }[];
   } | null>(null);
-  /** Collapsed by default to shorten the page; user expands from header or floating anchor. */
-  const [curriculumOpen, setCurriculumOpen] = useState(false);
+  /** Long-tail archive (podcast-archive category + Coming Up Next) — collapsed by default. */
+  const [gradualArchiveOpen, setGradualArchiveOpen] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -192,6 +192,79 @@ export default function DashboardPage() {
     | undefined;
   const progressPct = totalLessons > 0 ? Math.round((totalCompleted / totalLessons) * 100) : 0;
 
+  const coreCategories = categories.filter((c) => c.slug !== "podcast-archive");
+  const archiveCategory = categories.find((c) => c.slug === "podcast-archive");
+  const lockedPreviewCount = categories.flatMap((c) => c.lessons).filter((l) => l.isLocked).length;
+  const showGradualSection =
+    Boolean(archiveCategory && archiveCategory.lessons.length > 0) || lockedPreviewCount > 0;
+
+  function renderCategoryTrack(category: Category) {
+    const catCompleted = category.lessons.filter((l) => l.completed).length;
+    const catTotal = category.lessons.length;
+    const catPct = catTotal > 0 ? Math.round((catCompleted / catTotal) * 100) : 0;
+    const nextOpenLesson = category.lessons.find((lesson) => !lesson.completed && !lesson.isLocked);
+    const nextLockedLesson = category.lessons.find((lesson) => !lesson.completed && lesson.isLocked);
+    const categoryExploreHref = `/explore?topic=${encodeURIComponent(category.name)}`;
+
+    return (
+      <div key={category.id} className="-mt-2">
+        <div className="flex items-center gap-2.5 mb-3">
+          <div className="w-9 h-9 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-center justify-center text-lg">
+            {category.icon}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-black">{category.name}</h3>
+              <span className="text-xs font-bold text-[var(--text-secondary)]">
+                {catCompleted}/{catTotal}
+              </span>
+            </div>
+            <div className="h-1 bg-[var(--bg-secondary)] rounded-full mt-1 overflow-hidden">
+              <div
+                className="h-full bg-[var(--green-primary)] rounded-full progress-fill"
+                style={{ width: `${catPct}%` }}
+              />
+            </div>
+            {catCompleted === catTotal && catTotal > 0 ? (
+              <Link
+                href={categoryExploreHref}
+                className="text-xs font-black mt-1 inline-flex items-center gap-1 hover:underline"
+                style={{ color: "var(--gold-primary)" }}
+              >
+                ✓ Track complete! Create a bonus lesson →
+              </Link>
+            ) : nextOpenLesson ? (
+              <p className="text-xs font-bold mt-1" style={{ color: category.color || "var(--green-primary)" }}>
+                Next up: {nextOpenLesson.title}
+              </p>
+            ) : nextLockedLesson ? (
+              <p className="text-xs font-bold mt-1 text-[var(--text-secondary)]">
+                {nextLockedLesson.lockedReason}
+              </p>
+            ) : null}
+          </div>
+        </div>
+
+        <div className="space-y-2.5">
+          {category.lessons.map((lesson, i) => (
+            <LessonCard
+              key={lesson.id}
+              id={lesson.id}
+              title={lesson.title}
+              description={lesson.description}
+              difficulty={lesson.difficulty}
+              xpReward={lesson.xpReward}
+              completed={lesson.completed}
+              locked={lesson.isLocked}
+              lockedReason={lesson.lockedReason}
+              index={i}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
       <Navbar streakCount={user.streakCount} xp={user.xp} gems={user.gems} avatarUrl={user.avatarUrl} name={user.name} unreadNotifications={user.unreadNotifications} />
@@ -237,7 +310,6 @@ export default function DashboardPage() {
                 href="#lessons"
                 onClick={(e) => {
                   e.preventDefault();
-                  setCurriculumOpen(true);
                   requestAnimationFrame(() =>
                     document.getElementById("lessons")?.scrollIntoView({ behavior: "smooth", block: "start" })
                   );
@@ -725,106 +797,50 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* ── Your Curriculum (collapsible — reduces long scroll) ── */}
+        {/* ── Your Curriculum (core path always visible) ── */}
         <div id="lessons" className="pt-2 scroll-mt-24">
-          <button
-            type="button"
-            onClick={() => setCurriculumOpen((o) => !o)}
-            className="w-full flex items-center justify-between gap-3 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-card)] px-4 py-3 text-left hover:bg-[var(--bg-secondary)]/80 transition-colors"
-            aria-expanded={curriculumOpen}
-            aria-controls="curriculum-panel"
-          >
-            <div className="flex items-center gap-2 min-w-0">
-              <Sparkles size={18} className="text-[var(--green-primary)] flex-shrink-0" />
-              <div className="min-w-0">
-                <h2 className="text-base font-black">Your Curriculum</h2>
-                <p className="text-[11px] text-[var(--text-secondary)] font-bold truncate">
-                  {categories.length} categories · {totalLessons} lessons
-                  {!curriculumOpen ? " · Tap to expand" : ""}
-                </p>
-              </div>
-            </div>
-            <ChevronDown
-              size={22}
-              className={cn(
-                "text-[var(--green-primary)] flex-shrink-0 transition-transform duration-200",
-                curriculumOpen && "rotate-180"
-              )}
-            />
-          </button>
+          <div className="flex items-center gap-2 mb-4">
+            <Sparkles size={18} className="text-[var(--green-primary)]" />
+            <h2 className="text-base font-black">Your Curriculum</h2>
+          </div>
         </div>
 
-        {curriculumOpen && (
-        <div id="curriculum-panel" className="space-y-4">
+        {coreCategories.map((c) => renderCategoryTrack(c))}
 
-        {categories.map((category) => {
-          const catCompleted = category.lessons.filter((l) => l.completed).length;
-          const catTotal = category.lessons.length;
-          const catPct = catTotal > 0 ? Math.round((catCompleted / catTotal) * 100) : 0;
-          const nextOpenLesson = category.lessons.find((lesson) => !lesson.completed && !lesson.isLocked);
-          const nextLockedLesson = category.lessons.find((lesson) => !lesson.completed && lesson.isLocked);
-          const categoryExploreHref = `/explore?topic=${encodeURIComponent(category.name)}`;
-
-          return (
-            <div key={category.id} className="-mt-2">
-              {/* Category header */}
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className="w-9 h-9 rounded-xl bg-[var(--bg-card)] border border-[var(--border-color)] flex items-center justify-center text-lg">
-                  {category.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-black">{category.name}</h3>
-                    <span className="text-xs font-bold text-[var(--text-secondary)]">
-                      {catCompleted}/{catTotal}
-                    </span>
-                  </div>
-                  <div className="h-1 bg-[var(--bg-secondary)] rounded-full mt-1 overflow-hidden">
-                    <div
-                      className="h-full bg-[var(--green-primary)] rounded-full progress-fill"
-                      style={{ width: `${catPct}%` }}
-                    />
-                  </div>
-                  {/* 2B: Category Completion CTA */}
-                  {catCompleted === catTotal && catTotal > 0 ? (
-                    <Link
-                      href={categoryExploreHref}
-                      className="text-xs font-black mt-1 inline-flex items-center gap-1 hover:underline"
-                      style={{ color: "var(--gold-primary)" }}
-                    >
-                      ✓ Track complete! Create a bonus lesson →
-                    </Link>
-                  ) : nextOpenLesson ? (
-                    <p className="text-xs font-bold mt-1" style={{ color: category.color || "var(--green-primary)" }}>
-                      Next up: {nextOpenLesson.title}
+        {showGradualSection && (
+          <>
+            <div id="gradual-archive" className="scroll-mt-24 pt-4 mt-2 border-t border-[var(--border-color)]">
+              <button
+                type="button"
+                onClick={() => setGradualArchiveOpen((o) => !o)}
+                className="w-full flex items-center justify-between gap-3 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-card)] px-4 py-3 text-left hover:bg-[var(--bg-secondary)]/80 transition-colors"
+                aria-expanded={gradualArchiveOpen}
+                aria-controls="gradual-archive-panel"
+              >
+                <div className="flex items-center gap-2 min-w-0">
+                  <BookOpen size={18} className="text-[var(--blue-primary)] flex-shrink-0" />
+                  <div className="min-w-0">
+                    <h2 className="text-base font-black">Podcast archive & gradual unlocks</h2>
+                    <p className="text-[11px] text-[var(--text-secondary)] font-bold truncate">
+                      {archiveCategory ? `${archiveCategory.lessons.length} archive lessons` : "Lenny archive"}
+                      {lockedPreviewCount > 0 ? ` · ${lockedPreviewCount} in preview queue` : ""}
+                      {!gradualArchiveOpen ? " · Tap arrow to expand" : ""}
                     </p>
-                  ) : nextLockedLesson ? (
-                    <p className="text-xs font-bold mt-1 text-[var(--text-secondary)]">
-                      {nextLockedLesson.lockedReason}
-                    </p>
-                  ) : null}
+                  </div>
                 </div>
-              </div>
-
-              <div className="space-y-2.5">
-                {category.lessons.map((lesson, i) => (
-                  <LessonCard
-                    key={lesson.id}
-                    id={lesson.id}
-                    title={lesson.title}
-                    description={lesson.description}
-                    difficulty={lesson.difficulty}
-                    xpReward={lesson.xpReward}
-                    completed={lesson.completed}
-                    locked={lesson.isLocked}
-                    lockedReason={lesson.lockedReason}
-                    index={i}
-                  />
-                ))}
-              </div>
+                <ChevronDown
+                  size={22}
+                  className={cn(
+                    "text-[var(--green-primary)] flex-shrink-0 transition-transform duration-200",
+                    gradualArchiveOpen && "rotate-180"
+                  )}
+                />
+              </button>
             </div>
-          );
-        })}
+
+            {gradualArchiveOpen && (
+              <div id="gradual-archive-panel" className="space-y-4">
+                {archiveCategory ? renderCategoryTrack(archiveCategory) : null}
 
         {(() => {
           const previewLessons = categories.flatMap((category) =>
@@ -888,8 +904,8 @@ export default function DashboardPage() {
                 <div className="px-5 py-4 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="flex -space-x-2">
-                      {[BookOpen, Zap, TrendingUp, Trophy, Sparkles].map(
-                        (Icon, i) => (
+                      {[BookOpen, Zap, TrendingUp, Trophy, Sparkles].map((Icon, i) => {
+                        return (
                           <div
                             key={i}
                             className="w-7 h-7 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] flex items-center justify-center"
@@ -899,8 +915,8 @@ export default function DashboardPage() {
                               className="text-[var(--text-secondary)]"
                             />
                           </div>
-                        )
-                      )}
+                        );
+                      })}
                     </div>
                     <span className="text-xs text-[var(--text-secondary)] font-bold">
                       + {episodesNotYetImported} catalog episode
@@ -915,8 +931,9 @@ export default function DashboardPage() {
             </div>
           );
         })()}
-
-        </div>
+              </div>
+            )}
+          </>
         )}
 
         <Link href="/explore" className="block">
@@ -955,13 +972,13 @@ export default function DashboardPage() {
         </div>{/* end grid */}
       </main>
 
-      {!curriculumOpen && (
+      {showGradualSection && !gradualArchiveOpen && (
         <button
           type="button"
           onClick={() => {
-            setCurriculumOpen(true);
+            setGradualArchiveOpen(true);
             requestAnimationFrame(() => {
-              document.getElementById("lessons")?.scrollIntoView({
+              document.getElementById("gradual-archive")?.scrollIntoView({
                 behavior: "smooth",
                 block: "start",
               });
@@ -970,7 +987,7 @@ export default function DashboardPage() {
           className="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-2xl border border-[var(--green-primary)]/40 bg-[var(--bg-card)]/95 px-4 py-3 text-sm font-black text-[var(--green-primary)] shadow-lg backdrop-blur-sm hover:bg-[var(--bg-secondary)] transition-colors"
         >
           <Anchor size={18} className="opacity-90" />
-          <span>Curriculum</span>
+          <span>Archive</span>
           <ChevronDown size={18} />
         </button>
       )}
@@ -1016,9 +1033,9 @@ export default function DashboardPage() {
               <button
                 onClick={() => {
                   setArchiveUnlock(null);
-                  setCurriculumOpen(true);
+                  setGradualArchiveOpen(true);
                   requestAnimationFrame(() =>
-                    document.getElementById("lessons")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                    document.getElementById("gradual-archive")?.scrollIntoView({ behavior: "smooth", block: "start" })
                   );
                 }}
                 className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-black text-sm transition-colors flex items-center justify-center gap-2"

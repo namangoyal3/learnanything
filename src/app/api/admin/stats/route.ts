@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { CORE_LESSON_WHERE } from "@/lib/lesson-access";
 import {
   catalogEpisodesNotYetImported,
+  LENNY_ARCHIVE_CATEGORY_SLUG,
   LENNY_PODCAST_CATALOG_EPISODES,
 } from "@/lib/lenny-catalog";
 
@@ -42,6 +43,11 @@ export async function GET() {
   todayStart.setHours(0, 0, 0, 0);
 
   // Basic counts
+  const archiveWhere = {
+    ...CORE_LESSON_WHERE,
+    category: { slug: LENNY_ARCHIVE_CATEGORY_SLUG },
+  } as const;
+
   const [
     totalUsers,
     coreLessonCount,
@@ -50,9 +56,9 @@ export async function GET() {
     aiLessonCount,
   ] = await Promise.all([
     prisma.user.count(),
-    prisma.lesson.count({ where: CORE_LESSON_WHERE }),
-    prisma.lesson.count({ where: { ...CORE_LESSON_WHERE, isLocked: true } }),
-    prisma.lesson.count({ where: { ...CORE_LESSON_WHERE, isLocked: false } }),
+    prisma.lesson.count({ where: archiveWhere }),
+    prisma.lesson.count({ where: { ...archiveWhere, isLocked: true } }),
+    prisma.lesson.count({ where: { ...archiveWhere, isLocked: false } }),
     prisma.lesson.count({ where: { aiGenerated: true } }),
   ]);
   const catalogEpisodes = LENNY_PODCAST_CATALOG_EPISODES;
