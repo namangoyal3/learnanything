@@ -179,6 +179,7 @@ export default function DashboardPage() {
   const totalLessons = stats?.totalLessons ?? 0;
   const totalArchive = stats?.totalArchive ?? 289;
   const episodesNotYetImported = stats?.episodesNotYetImported ?? 0;
+  const coreLessonCount = stats?.coreLessonCount ?? 0;
   const archiveUnlockProgress = stats?.archiveUnlockProgress as
     | {
         remainingToNextUnlock: number;
@@ -476,6 +477,24 @@ export default function DashboardPage() {
                   !archiveUnlockProgress.hasLockedArchiveRemaining
                 ? " · Every podcast lesson in the app is unlocked"
                 : ` · ${totalArchive}+ episodes in Lenny's catalog, unlocking batch by batch`}
+          </p>
+          <p className="text-[10px] text-[var(--text-secondary)] mt-2 leading-relaxed border-t border-[var(--border-color)] pt-2">
+            <span className="font-bold text-[var(--text-primary)]">
+              {coreLessonCount} of {totalArchive}
+            </span>{" "}
+            Lenny catalog episodes are in the database as core lessons
+            {episodesNotYetImported > 0 ? (
+              <>
+                {" "}
+                ·{" "}
+                <span className="font-bold text-[var(--orange-primary)]">
+                  {episodesNotYetImported} not imported yet
+                </span>{" "}
+                (run the archive backfill on the server to grow toward full catalog)
+              </>
+            ) : (
+              <> · Full catalog imported</>
+            )}
           </p>
         </div>
 

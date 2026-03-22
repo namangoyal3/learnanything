@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Check, Loader2, Sparkles } from "lucide-react";
+import { getIndiaUpiPlans } from "@/lib/billing/india-upi";
 
 type PricesPayload = {
   country: string;
@@ -25,6 +26,8 @@ const PRO_FEATURES = [
 ];
 
 const RC_PUBLIC_KEY = process.env.NEXT_PUBLIC_REVENUECAT_API_KEY ?? "";
+const SUPPORT_EMAIL =
+  process.env.NEXT_PUBLIC_SUPPORT_EMAIL ?? "support@pmstreak.app";
 
 export default function PricingPage() {
   const router = useRouter();
@@ -33,6 +36,13 @@ export default function PricingPage() {
   const [loading, setLoading] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [rcReady, setRcReady] = useState(false);
+  /** VPN / expat: still show India UPI when geo is not IN */
+  const [indiaUpiOverride, setIndiaUpiOverride] = useState(false);
+
+  const indiaUpiPlans = useMemo(() => getIndiaUpiPlans(), []);
+  const showIndiaUpiBlock =
+    indiaUpiPlans.length > 0 &&
+    (prices?.country === "IN" || indiaUpiOverride);
 
   useEffect(() => {
     fetch("/api/billing/prices")
@@ -247,6 +257,67 @@ export default function PricingPage() {
             ))}
           </ul>
         </div>
+
+        {indiaUpiPlans.length > 0 && prices && prices.country !== "IN" && (
+          <p className="text-xs text-[var(--text-secondary)] mb-4">
+            <button
+              type="button"
+              onClick={() => setIndiaUpiOverride((v) => !v)}
+              className="font-bold text-[var(--green-primary)] hover:underline"
+            >
+              {indiaUpiOverride ? "Hide UPI (India) options" : "Paying from India with UPI?"}
+            </button>
+          </p>
+        )}
+
+        {showIndiaUpiBlock && (
+          <div className="rounded-3xl border border-emerald-500/25 bg-emerald-950/20 p-6 mb-8">
+            <div className="flex items-center gap-2 text-emerald-400 text-xs font-black uppercase tracking-widest mb-2">
+              India · UPI
+            </div>
+            <h2 className="text-lg font-black text-white mb-2">Pay with UPI (fixed amount)</h2>
+            <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-4">
+              Scan the QR for your plan in any UPI app. After payment, email{" "}
+              <a
+                href={`mailto:${SUPPORT_EMAIL}?subject=PM%20Streak%20Pro%20-%20UPI%20payment`}
+                className="text-emerald-400 font-bold hover:underline"
+              >
+                {SUPPORT_EMAIL}
+              </a>{" "}
+              with your registered PM Streak email
+              {user?.email ? (
+                <>
+                  {" "}
+                  (<span className="text-[var(--text-primary)] font-mono text-xs">{user.email}</span>)
+                </>
+              ) : (
+                " (sign in first so we can match your account)"
+              )}{" "}
+              and approximate payment time. We activate Pro after we confirm the transfer.
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {indiaUpiPlans.map((plan) => (
+                <div
+                  key={`${plan.title}-${plan.qrImageUrl}`}
+                  className="rounded-2xl border border-[var(--border-color)] bg-black/20 p-4 flex flex-col items-center text-center"
+                >
+                  <p className="text-sm font-black text-white mb-1">{plan.title}</p>
+                  <p className="text-xs text-emerald-300/90 font-bold mb-3">{plan.amountLabel}</p>
+                  {/* eslint-disable-next-line @next/next/no-img-element -- user-hosted QR URLs */}
+                  <img
+                    src={plan.qrImageUrl}
+                    alt={`UPI QR — ${plan.title}`}
+                    className="w-44 h-44 object-contain rounded-xl bg-white p-2"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="text-[10px] text-[var(--text-secondary)] mt-4">
+              Card or international checkout: use &quot;Subscribe with RevenueCat&quot; above. UPI does not
+              unlock the app automatically — we grant access after verification.
+            </p>
+          </div>
+        )}
 
         <div className="rounded-2xl border border-[var(--border-color)] bg-[var(--bg-secondary)]/40 p-4 text-xs text-[var(--text-secondary)] space-y-2">
           <p>

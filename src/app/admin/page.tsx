@@ -10,6 +10,12 @@ import {
 
 interface AdminStats {
   totalUsers: number;
+  catalogEpisodes: number;
+  coreLessonCount: number;
+  coreLockedCount: number;
+  coreUnlockedCount: number;
+  aiLessonCount: number;
+  episodesNotYetImported: number;
   activeToday: number;
   newUsersThisWeek: number;
   newUsersToday: number;
@@ -269,6 +275,46 @@ export default function AdminPage() {
               <StatCard icon={<Trophy size={20} style={{ color: "#ffc800" }} />} label="Max Streak Ever" value={`${stats.maxStreak}d`} color="#ffc800" />
               <StatCard icon={<Lock size={20} style={{ color: "#58cc02" }} />} label="7+ Day Streaks" value={stats.usersWithStreakOver7} color="#58cc02" sub="Loss aversion locked in 🔒" />
             </div>
+
+            <Section title="Lenny catalog vs database (live)">
+              <div
+                className="rounded-2xl p-4 space-y-2 text-sm"
+                style={{
+                  background: "var(--bg-secondary)",
+                  border: "1px solid var(--border-color)",
+                }}
+              >
+                <p style={{ color: "var(--text-secondary)" }}>
+                  <span className="font-black" style={{ color: "var(--text-primary)" }}>
+                    {stats.coreLessonCount} / {stats.catalogEpisodes}
+                  </span>{" "}
+                  core lesson rows in Postgres (Lenny catalog reference ={" "}
+                  {stats.catalogEpisodes} episodes).
+                </p>
+                <p style={{ color: "var(--text-secondary)" }}>
+                  Breakdown:{" "}
+                  <span className="font-bold text-[var(--green-primary)]">
+                    {stats.coreUnlockedCount}
+                  </span>{" "}
+                  always-unlocked core ·{" "}
+                  <span className="font-bold text-[var(--orange-primary)]">
+                    {stats.coreLockedCount}
+                  </span>{" "}
+                  gated (batch unlock) ·{" "}
+                  <span className="font-bold text-[var(--purple-primary)]">
+                    {stats.aiLessonCount}
+                  </span>{" "}
+                  AI / Explore lessons.
+                </p>
+                <p style={{ color: "var(--text-secondary)" }}>
+                  Catalog not yet in DB:{" "}
+                  <span className="font-black" style={{ color: stats.episodesNotYetImported > 0 ? "#ff9600" : "var(--green-primary)" }}>
+                    {stats.episodesNotYetImported}
+                  </span>{" "}
+                  episodes (run archive backfill to approach full catalog).
+                </p>
+              </div>
+            </Section>
 
             <Section title="Streak Distribution">
               <div className="space-y-3">

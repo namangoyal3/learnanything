@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { CORE_LESSON_WHERE } from "@/lib/lesson-access";
+import {
+  catalogEpisodesNotYetImported,
+  LENNY_PODCAST_CATALOG_EPISODES,
+} from "@/lib/lenny-catalog";
 
 function isAdmin(email: string): boolean {
   const adminEmail = process.env.ADMIN_EMAIL || "namangoyal21197@gmail.com";
@@ -37,7 +42,21 @@ export async function GET() {
   todayStart.setHours(0, 0, 0, 0);
 
   // Basic counts
-  const totalUsers = await prisma.user.count();
+  const [
+    totalUsers,
+    coreLessonCount,
+    coreLockedCount,
+    coreUnlockedCount,
+    aiLessonCount,
+  ] = await Promise.all([
+    prisma.user.count(),
+    prisma.lesson.count({ where: CORE_LESSON_WHERE }),
+    prisma.lesson.count({ where: { ...CORE_LESSON_WHERE, isLocked: true } }),
+    prisma.lesson.count({ where: { ...CORE_LESSON_WHERE, isLocked: false } }),
+    prisma.lesson.count({ where: { aiGenerated: true } }),
+  ]);
+  const catalogEpisodes = LENNY_PODCAST_CATALOG_EPISODES;
+  const episodesNotYetImported = catalogEpisodesNotYetImported(coreLessonCount);
 
   // Active today: users who completed a lesson today or have a streakDay today
   const activeTodayUsers = await prisma.user.findMany({
@@ -217,6 +236,12 @@ export async function GET() {
 
   return NextResponse.json({
     totalUsers,
+    catalogEpisodes,
+    coreLessonCount,
+    coreLockedCount,
+    coreUnlockedCount,
+    aiLessonCount,
+    episodesNotYetImported,
     activeToday,
     newUsersThisWeek,
     newUsersToday,

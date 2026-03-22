@@ -8,9 +8,10 @@ import {
   syncArchiveUnlocksForUser,
 } from "@/lib/lesson-access";
 import { prisma } from "@/lib/prisma";
-
-/** Lenny's Podcast catalog size (marketing); core lessons in DB may be lower until import. */
-const LENNY_PODCAST_CATALOG_EPISODES = 289;
+import {
+  catalogEpisodesNotYetImported,
+  LENNY_PODCAST_CATALOG_EPISODES,
+} from "@/lib/lenny-catalog";
 
 export async function GET() {
   const userId = await getCurrentUserId();
@@ -56,10 +57,7 @@ export async function GET() {
   const completedCount = visibleLessons.filter((lesson) => lesson.completed).length;
   const totalLessons = visibleLessons.length;
   const totalArchive = LENNY_PODCAST_CATALOG_EPISODES;
-  const episodesNotYetImported = Math.max(
-    0,
-    LENNY_PODCAST_CATALOG_EPISODES - coreLessonCount
-  );
+  const episodesNotYetImported = catalogEpisodesNotYetImported(coreLessonCount);
 
   const last30Days: string[] = [];
   for (let i = 29; i >= 0; i--) {
