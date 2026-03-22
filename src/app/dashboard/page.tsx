@@ -9,8 +9,8 @@ import LessonCard from "@/components/LessonCard";
 import {
   Flame, Shield, LogOut, Snowflake, Gem, Calendar, Zap,
   ArrowRight, Share2, Target, RotateCcw, Trophy, Star,
-  TrendingUp, BookOpen, ChevronRight, Sparkles, Lock, MapPin,
-  Bot, MessageSquare, Brain, Cpu, Swords
+  TrendingUp, BookOpen, ChevronRight, Sparkles, Lock,
+  Bot, MessageSquare, Brain, Cpu, Swords, ChevronDown, Anchor,
 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -62,6 +62,8 @@ export default function DashboardPage() {
     count: number;
     lessons: { id: string; title: string }[];
   } | null>(null);
+  /** Collapsed by default to shorten the page; user expands from header or floating anchor. */
+  const [curriculumOpen, setCurriculumOpen] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -194,7 +196,7 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-[var(--bg-primary)]">
       <Navbar streakCount={user.streakCount} xp={user.xp} gems={user.gems} avatarUrl={user.avatarUrl} name={user.name} unreadNotifications={user.unreadNotifications} />
 
-      <main className="max-w-5xl mx-auto px-4 lg:px-8 pt-4 pb-28">
+      <main className="w-full max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-28">
         {/* ── Pending challenge alert ── */}
         {pendingChallenges.length > 0 && (
           <Link href="/social" className="block mb-4">
@@ -214,8 +216,8 @@ export default function DashboardPage() {
             </div>
           </Link>
         )}
-        <div className="lg:grid lg:grid-cols-[340px_1fr] lg:gap-6 lg:items-start">
-        <div className="space-y-4">
+        <div className="lg:grid lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)] xl:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:gap-6 lg:items-start w-full min-w-0">
+        <div className="space-y-4 min-w-0">
 
         {/* ── Earn-Back Banner ── */}
         {earnBack && (
@@ -233,6 +235,13 @@ export default function DashboardPage() {
               </p>
               <a
                 href="#lessons"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setCurriculumOpen(true);
+                  requestAnimationFrame(() =>
+                    document.getElementById("lessons")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  );
+                }}
                 className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[var(--orange-primary)] hover:bg-[var(--orange-primary)]/80 text-white text-xs font-black transition-colors"
               >
                 <Flame size={13} /> Start a Lesson Now
@@ -672,7 +681,7 @@ export default function DashboardPage() {
         </div>
 
         </div>{/* end left sidebar */}
-        <div className="space-y-4 mt-4 lg:mt-0">
+        <div className="space-y-4 mt-4 lg:mt-0 min-w-0">
 
         {/* ── Activity Calendar ── */}
         {stats?.calendar && <StreakCalendar calendar={stats.calendar} />}
@@ -716,13 +725,37 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* ── Lesson Categories ── */}
-        <div id="lessons" className="pt-2">
-          <div className="flex items-center gap-2 mb-4">
-            <Sparkles size={18} className="text-[var(--green-primary)]" />
-            <h2 className="text-base font-black">Your Curriculum</h2>
-          </div>
+        {/* ── Your Curriculum (collapsible — reduces long scroll) ── */}
+        <div id="lessons" className="pt-2 scroll-mt-24">
+          <button
+            type="button"
+            onClick={() => setCurriculumOpen((o) => !o)}
+            className="w-full flex items-center justify-between gap-3 rounded-2xl border border-[var(--border-color)] bg-[var(--bg-card)] px-4 py-3 text-left hover:bg-[var(--bg-secondary)]/80 transition-colors"
+            aria-expanded={curriculumOpen}
+            aria-controls="curriculum-panel"
+          >
+            <div className="flex items-center gap-2 min-w-0">
+              <Sparkles size={18} className="text-[var(--green-primary)] flex-shrink-0" />
+              <div className="min-w-0">
+                <h2 className="text-base font-black">Your Curriculum</h2>
+                <p className="text-[11px] text-[var(--text-secondary)] font-bold truncate">
+                  {categories.length} categories · {totalLessons} lessons
+                  {!curriculumOpen ? " · Tap to expand" : ""}
+                </p>
+              </div>
+            </div>
+            <ChevronDown
+              size={22}
+              className={cn(
+                "text-[var(--green-primary)] flex-shrink-0 transition-transform duration-200",
+                curriculumOpen && "rotate-180"
+              )}
+            />
+          </button>
         </div>
+
+        {curriculumOpen && (
+        <div id="curriculum-panel" className="space-y-4">
 
         {categories.map((category) => {
           const catCompleted = category.lessons.filter((l) => l.completed).length;
@@ -803,7 +836,7 @@ export default function DashboardPage() {
           }
 
           return (
-            <div className="rounded-3xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)]">
+            <div className="rounded-3xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)] max-h-[min(70vh,520px)] overflow-y-auto">
               <div className="bg-gradient-to-r from-[#1a1a2e] to-[#16213e] px-5 py-4 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0">
                   <BookOpen size={20} className="text-white" />
@@ -883,6 +916,9 @@ export default function DashboardPage() {
           );
         })()}
 
+        </div>
+        )}
+
         <Link href="/explore" className="block">
           <div className="rounded-3xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)]">
             <div className="bg-gradient-to-r from-[#10271a] to-[#153726] px-5 py-4 flex items-center gap-3">
@@ -918,6 +954,26 @@ export default function DashboardPage() {
         </div>{/* end right content */}
         </div>{/* end grid */}
       </main>
+
+      {!curriculumOpen && (
+        <button
+          type="button"
+          onClick={() => {
+            setCurriculumOpen(true);
+            requestAnimationFrame(() => {
+              document.getElementById("lessons")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            });
+          }}
+          className="fixed bottom-24 right-4 z-40 flex items-center gap-2 rounded-2xl border border-[var(--green-primary)]/40 bg-[var(--bg-card)]/95 px-4 py-3 text-sm font-black text-[var(--green-primary)] shadow-lg backdrop-blur-sm hover:bg-[var(--bg-secondary)] transition-colors"
+        >
+          <Anchor size={18} className="opacity-90" />
+          <span>Curriculum</span>
+          <ChevronDown size={18} />
+        </button>
+      )}
 
       <ShareCard isOpen={showShare} onClose={() => setShowShare(false)} />
 
@@ -960,7 +1016,10 @@ export default function DashboardPage() {
               <button
                 onClick={() => {
                   setArchiveUnlock(null);
-                  document.getElementById("lessons")?.scrollIntoView({ behavior: "smooth" });
+                  setCurriculumOpen(true);
+                  requestAnimationFrame(() =>
+                    document.getElementById("lessons")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  );
                 }}
                 className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-black text-sm transition-colors flex items-center justify-center gap-2"
               >
