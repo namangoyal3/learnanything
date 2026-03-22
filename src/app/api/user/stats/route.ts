@@ -1,8 +1,16 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/auth";
-import { prisma } from "@/lib/prisma";
 import { checkAndUpdateStreak } from "@/lib/streak";
-import { CORE_LESSON_WHERE } from "@/lib/lesson-access";
+import {
+  CORE_LESSON_WHERE,
+  getArchiveUnlockProgressForUser,
+  getCoreCurriculumForUser,
+  syncArchiveUnlocksForUser,
+} from "@/lib/lesson-access";
+import { prisma } from "@/lib/prisma";
+
+/** Lenny's Podcast catalog size (marketing); core lessons in DB may be lower until import. */
+const LENNY_PODCAST_CATALOG_EPISODES = 289;
 
 export async function GET() {
   const userId = await getCurrentUserId();
@@ -11,6 +19,10 @@ export async function GET() {
   }
 
   const streakInfo = await checkAndUpdateStreak(userId);
+
+  // Catch up archive unlocks if the user already completed all playable lessons
+  // (e.g. unlock logic shipped after they finished the curriculum).
+  await syncArchiveUnlocksForUser(userId);
 
   const user = await prisma.user.findUnique({
     where: { id: userId },
@@ -27,23 +39,27 @@ export async function GET() {
   });
 
   const today = new Date().toISOString().split("T")[0];
-  const [completedCount, totalLessons, completedToday] = await Promise.all([
-    prisma.completedLesson.count({
-      where: {
-        userId,
-        lesson: { is: CORE_LESSON_WHERE },
-      },
-    }),
-    prisma.lesson.count({ where: CORE_LESSON_WHERE }),
-    prisma.completedLesson.count({
-      where: {
-        userId,
-        completedAt: { gte: new Date(today) },
-        lesson: { is: CORE_LESSON_WHERE },
-      },
-    }),
-  ]);
-  const totalArchive = 289; // Full Lenny's Podcast archive available
+  const [curriculum, completedToday, archiveUnlockProgress, coreLessonCount] =
+    await Promise.all([
+      getCoreCurriculumForUser(userId),
+      prisma.completedLesson.count({
+        where: {
+          userId,
+          completedAt: { gte: new Date(today) },
+          lesson: { is: CORE_LESSON_WHERE },
+        },
+      }),
+      getArchiveUnlockProgressForUser(userId),
+      prisma.lesson.count({ where: CORE_LESSON_WHERE }),
+    ]);
+  const visibleLessons = curriculum.flatMap((category) => category.lessons);
+  const completedCount = visibleLessons.filter((lesson) => lesson.completed).length;
+  const totalLessons = visibleLessons.length;
+  const totalArchive = LENNY_PODCAST_CATALOG_EPISODES;
+  const episodesNotYetImported = Math.max(
+    0,
+    LENNY_PODCAST_CATALOG_EPISODES - coreLessonCount
+  );
 
   const last30Days: string[] = [];
   for (let i = 29; i >= 0; i--) {
@@ -72,6 +88,9 @@ export async function GET() {
     totalLessons,
     completedToday: completedToday > 0,
     totalArchive,
+    coreLessonCount,
+    episodesNotYetImported,
+    archiveUnlockProgress,
     calendar,
   });
 }

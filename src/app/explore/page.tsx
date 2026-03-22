@@ -271,7 +271,7 @@ function ExplorePageContent() {
             </div>
             <div className="flex items-start gap-2">
               <span className="text-[var(--green-primary)] font-bold">4.</span>
-              <span>Custom lessons keep your streak alive, but your core curriculum still unlocks category by category</span>
+              <span>Custom lessons keep your streak alive, but the main podcast curriculum still unlocks gradually in batches as you finish what&apos;s open</span>
             </div>
           </div>
         </div>

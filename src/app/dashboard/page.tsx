@@ -58,7 +58,10 @@ export default function DashboardPage() {
   const [earnBack, setEarnBack] = useState<any>(null);
   const [milestone, setMilestone] = useState<string | null>(null);
   const [pendingChallenges, setPendingChallenges] = useState<any[]>([]);
-  const [lessonUnlocked, setLessonUnlocked] = useState<{ title: string } | null>(null);
+  const [archiveUnlock, setArchiveUnlock] = useState<{
+    count: number;
+    lessons: { id: string; title: string }[];
+  } | null>(null);
 
   useEffect(() => {
     async function load() {
@@ -82,12 +85,12 @@ export default function DashboardPage() {
         setStats(statsData);
         setCategories(lessonsData.categories);
 
-        // Check if a next lesson was just unlocked (set by QuizView on completion)
+        // Check if a new archive batch was just unlocked (set by QuizView on completion)
         try {
-          const unlocked = sessionStorage.getItem("lessonUnlocked");
+          const unlocked = sessionStorage.getItem("archiveUnlock");
           if (unlocked) {
-            setLessonUnlocked(JSON.parse(unlocked));
-            sessionStorage.removeItem("lessonUnlocked");
+            setArchiveUnlock(JSON.parse(unlocked));
+            sessionStorage.removeItem("archiveUnlock");
           }
         } catch { /* ignore */ }
 
@@ -175,6 +178,15 @@ export default function DashboardPage() {
   const totalCompleted = stats?.completedCount ?? 0;
   const totalLessons = stats?.totalLessons ?? 0;
   const totalArchive = stats?.totalArchive ?? 289;
+  const episodesNotYetImported = stats?.episodesNotYetImported ?? 0;
+  const archiveUnlockProgress = stats?.archiveUnlockProgress as
+    | {
+        remainingToNextUnlock: number;
+        hasLockedArchiveRemaining: boolean;
+        availableLessonTotal: number;
+        completedAvailable: number;
+      }
+    | undefined;
   const progressPct = totalLessons > 0 ? Math.round((totalCompleted / totalLessons) * 100) : 0;
 
   return (
@@ -455,9 +467,63 @@ export default function DashboardPage() {
             />
           </div>
           <p className="text-xs text-[var(--text-secondary)] mt-1.5">
-            {totalCompleted} of {totalLessons} core lessons completed · {totalArchive}+ transcript episodes available for bonus practice
+            {totalCompleted} of {totalLessons} visible lessons completed
+            {archiveUnlockProgress &&
+            archiveUnlockProgress.remainingToNextUnlock > 0 &&
+            archiveUnlockProgress.hasLockedArchiveRemaining
+              ? ` · ${archiveUnlockProgress.remainingToNextUnlock} left to unlock the next podcast batch`
+              : archiveUnlockProgress &&
+                  !archiveUnlockProgress.hasLockedArchiveRemaining
+                ? " · Every podcast lesson in the app is unlocked"
+                : ` · ${totalArchive}+ episodes in Lenny's catalog, unlocking batch by batch`}
           </p>
         </div>
+
+        {/* ── Podcast archive unlock (core curriculum) ── */}
+        {stats?.archiveUnlockProgress?.hasLockedArchiveRemaining && (
+          <div className="bg-[var(--bg-card)] rounded-2xl p-4 border border-[var(--border-color)]">
+            <div className="flex items-center gap-2 mb-2">
+              <BookOpen size={16} className="text-[var(--blue-primary)]" />
+              <span className="text-sm font-black">Podcast lesson unlocks</span>
+            </div>
+            <p className="text-xs text-[var(--text-secondary)] mb-2">
+              <span className="text-[var(--text-primary)] font-bold">
+                {stats.archiveUnlockProgress.completedAvailable}/
+                {stats.archiveUnlockProgress.availableLessonTotal}
+              </span>{" "}
+              core lessons on your map completed. When you finish{" "}
+              <span className="text-[var(--text-primary)] font-bold">every</span>{" "}
+              open lesson here, the next{" "}
+              {stats.archiveUnlockProgress.batchSize} Lenny podcast lessons
+              unlock. Bonus lessons from Explore don&apos;t count toward this
+              gate.
+            </p>
+            <div className="h-2 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full bg-[var(--blue-primary)]/80"
+                style={{
+                  width:
+                    stats.archiveUnlockProgress.availableLessonTotal > 0
+                      ? `${Math.round(
+                          (stats.archiveUnlockProgress.completedAvailable /
+                            stats.archiveUnlockProgress.availableLessonTotal) *
+                            100
+                        )}%`
+                      : "0%",
+                }}
+              />
+            </div>
+            {stats.archiveUnlockProgress.remainingToNextUnlock > 0 && (
+              <p className="text-[10px] text-[var(--text-secondary)] mt-2 font-bold">
+                {stats.archiveUnlockProgress.remainingToNextUnlock} lesson
+                {stats.archiveUnlockProgress.remainingToNextUnlock === 1
+                  ? ""
+                  : "s"}{" "}
+                left until the next batch unlocks.
+              </p>
+            )}
+          </div>
+        )}
 
         {/* ── Gem Shop ── */}
         <div className="bg-[var(--bg-card)] rounded-2xl border border-[var(--border-color)] overflow-hidden">
@@ -708,6 +774,96 @@ export default function DashboardPage() {
           );
         })}
 
+        {(() => {
+          const previewLessons = categories.flatMap((category) =>
+            category.lessons.filter((lesson) => lesson.isLocked)
+          );
+
+          if (previewLessons.length === 0) {
+            return null;
+          }
+
+          return (
+            <div className="rounded-3xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)]">
+              <div className="bg-gradient-to-r from-[#1a1a2e] to-[#16213e] px-5 py-4 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <BookOpen size={20} className="text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-black text-white">
+                      Coming Up Next
+                    </span>
+                    <span className="px-1.5 py-0.5 rounded-md bg-[var(--green-primary)]/20 text-[var(--green-primary)] text-[9px] font-black uppercase tracking-wide border border-[var(--green-primary)]/30">
+                      LENNY&apos;S ARCHIVE
+                    </span>
+                  </div>
+                  <p className="text-xs text-white/50 mt-0.5">
+                    {previewLessons.length} lesson
+                    {previewLessons.length === 1 ? "" : "s"} queued. Finish your
+                    open lessons to unlock this next batch.
+                  </p>
+                </div>
+              </div>
+
+              <div className="divide-y divide-[var(--border-color)]">
+                {previewLessons.map((lesson) => (
+                  <div
+                    key={lesson.id}
+                    className="flex items-center gap-3 px-5 py-3.5 opacity-60"
+                  >
+                    <div className="w-9 h-9 rounded-xl bg-[var(--bg-secondary)] flex items-center justify-center flex-shrink-0">
+                      <Lock
+                        size={16}
+                        className="text-[var(--text-secondary)]"
+                      />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-bold text-[var(--text-primary)] truncate">
+                        {lesson.title}
+                      </p>
+                      <p className="text-[10px] text-[var(--text-secondary)] truncate">
+                        {lesson.description}
+                      </p>
+                    </div>
+                    <Lock
+                      size={13}
+                      className="text-[var(--text-secondary)]"
+                    />
+                  </div>
+                ))}
+
+                <div className="px-5 py-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex -space-x-2">
+                      {[BookOpen, Zap, TrendingUp, Trophy, Sparkles].map(
+                        (Icon, i) => (
+                          <div
+                            key={i}
+                            className="w-7 h-7 rounded-full bg-[var(--bg-secondary)] border border-[var(--border-color)] flex items-center justify-center"
+                          >
+                            <Icon
+                              size={12}
+                              className="text-[var(--text-secondary)]"
+                            />
+                          </div>
+                        )
+                      )}
+                    </div>
+                    <span className="text-xs text-[var(--text-secondary)] font-bold">
+                      + {episodesNotYetImported} catalog episode
+                      {episodesNotYetImported === 1 ? "" : "s"} not in the app yet
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs text-[var(--green-primary)] font-black">
+                    <Sparkles size={12} /> Gradual unlocks
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
         <Link href="/explore" className="block">
           <div className="rounded-3xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)]">
             <div className="bg-gradient-to-r from-[#10271a] to-[#153726] px-5 py-4 flex items-center gap-3">
@@ -746,9 +902,9 @@ export default function DashboardPage() {
 
       <ShareCard isOpen={showShare} onClose={() => setShowShare(false)} />
 
-      {/* Next lesson unlocked overlay */}
-      {lessonUnlocked && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center" onClick={() => setLessonUnlocked(null)}>
+      {/* Archive unlock overlay */}
+      {archiveUnlock && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center" onClick={() => setArchiveUnlock(null)}>
           <div className="absolute inset-0 bg-black/70" />
           <div className="relative w-full max-w-xs mx-4">
             <div className="bg-gradient-to-br from-[#0d2a18] to-[#1a3a25] border border-[var(--green-primary)]/40 rounded-3xl p-6 text-center shadow-2xl">
@@ -772,19 +928,24 @@ export default function DashboardPage() {
                 );
               })}
               <div className="text-5xl mb-3">🎉</div>
-              <h2 className="text-2xl font-black text-white mb-2">Next Lesson Ready</h2>
+              <h2 className="text-2xl font-black text-white mb-2">New Podcast Lessons Unlocked</h2>
               <p className="text-sm text-white/70 mb-1">
-                {lessonUnlocked.title}
+                {archiveUnlock.count} new lesson{archiveUnlock.count === 1 ? "" : "s"} just opened up in your curriculum.
               </p>
-              <p className="text-xs text-[var(--green-primary)] font-bold mb-5">Your category progression just moved forward.</p>
+              {archiveUnlock.lessons[0] && (
+                <p className="text-xs text-white/60 mb-2">
+                  Starting with {archiveUnlock.lessons[0].title}
+                </p>
+              )}
+              <p className="text-xs text-[var(--green-primary)] font-bold mb-5">Keep the streak alive and the archive keeps opening.</p>
               <button
                 onClick={() => {
-                  setLessonUnlocked(null);
+                  setArchiveUnlock(null);
                   document.getElementById("lessons")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-black text-sm transition-colors flex items-center justify-center gap-2"
               >
-                <Sparkles size={16} /> See My Curriculum
+                <Sparkles size={16} /> See New Lessons
               </button>
             </div>
           </div>

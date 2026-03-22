@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { recordLessonCompletion } from "@/lib/streak";
 import {
   getCoreLessonAccess,
-  getNextUnlockedCoreLesson,
+  syncArchiveUnlocksForUser,
 } from "@/lib/lesson-access";
 
 export async function POST(
@@ -114,10 +114,10 @@ export async function POST(
   const streakResult = await recordLessonCompletion(userId, totalXP);
   const totalGemsEarned = gemsEarned + (streakResult.milestoneGems ?? 0);
 
-  let nextUnlockedLesson = null;
+  let archiveUnlock = null;
 
   if (!existing && !lesson.aiGenerated) {
-    nextUnlockedLesson = await getNextUnlockedCoreLesson(lesson.categoryId, userId);
+    archiveUnlock = await syncArchiveUnlocksForUser(userId);
   }
 
   return NextResponse.json({
@@ -126,7 +126,9 @@ export async function POST(
     totalQuestions: lesson.questions.length,
     gemsEarned: totalGemsEarned,
     xpBoostApplied: boostApplied,
-    nextUnlockedLesson,
+    newBatchUnlocked: Boolean(archiveUnlock),
+    newBatchCount: archiveUnlock?.count ?? 0,
+    unlockedLessons: archiveUnlock?.lessons ?? [],
     ...streakResult,
   });
 }

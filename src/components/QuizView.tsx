@@ -34,10 +34,12 @@ interface StreakResult {
   milestone: string | null;
   perfectStreak: number;
   xpEarned: number;
-  nextUnlockedLesson?: {
+  newBatchUnlocked?: boolean;
+  newBatchCount?: number;
+  unlockedLessons?: {
     id: string;
     title: string;
-  } | null;
+  }[];
 }
 
 interface QuizViewProps {
@@ -102,9 +104,12 @@ export default function QuizView({
   const [showXPPop, setShowXPPop] = useState(false);
   const [streakResult, setStreakResult] = useState<StreakResult | null>(null);
   const [milestoneToShow, setMilestoneToShow] = useState<string | null>(null);
-  const [nextUnlockedLesson, setNextUnlockedLesson] = useState<{
-    id: string;
-    title: string;
+  const [archiveUnlock, setArchiveUnlock] = useState<{
+    count: number;
+    lessons: {
+      id: string;
+      title: string;
+    }[];
   } | null>(null);
   const [generatingDeepDive, setGeneratingDeepDive] = useState(false);
   const [deepDiveError, setDeepDiveError] = useState("");
@@ -148,15 +153,23 @@ export default function QuizView({
 
     setStreakResult(result);
     if (result.milestone) setMilestoneToShow(result.milestone);
-    if (result.nextUnlockedLesson) {
-      setNextUnlockedLesson(result.nextUnlockedLesson);
-      try {
-        sessionStorage.setItem(
-          "lessonUnlocked",
-          JSON.stringify(result.nextUnlockedLesson)
-        );
-      } catch {
-        /* ignore */
+    if (result.newBatchUnlocked) {
+      const lessons = result.unlockedLessons ?? [];
+      const unlockSummary = {
+        count: result.newBatchCount ?? lessons.length,
+        lessons,
+      };
+
+      if (unlockSummary.count > 0 || lessons.length > 0) {
+        setArchiveUnlock(unlockSummary);
+        try {
+          sessionStorage.setItem(
+            "archiveUnlock",
+            JSON.stringify(unlockSummary)
+          );
+        } catch {
+          /* ignore */
+        }
       }
     }
   }, [answers, currentQ, onComplete, questions.length]);
@@ -439,7 +452,7 @@ export default function QuizView({
             </div>
           </div>
 
-          {nextUnlockedLesson && (
+          {archiveUnlock && (
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -448,10 +461,14 @@ export default function QuizView({
             >
               <div className="text-3xl mb-1">🎉</div>
               <div className="text-sm font-black text-[var(--green-primary)]">
-                Next lesson unlocked
+                New podcast lessons unlocked
               </div>
               <div className="text-xs text-[var(--text-secondary)] mt-1">
-                {nextUnlockedLesson.title} is now ready on your dashboard.
+                {archiveUnlock.count} new archive lesson
+                {archiveUnlock.count === 1 ? "" : "s"} just unlocked
+                {archiveUnlock.lessons[0]
+                  ? `, starting with ${archiveUnlock.lessons[0].title}.`
+                  : "."}
               </div>
             </motion.div>
           )}
@@ -460,7 +477,7 @@ export default function QuizView({
             href="/dashboard"
             className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors mb-3 flex items-center justify-center gap-2"
           >
-            {nextUnlockedLesson ? "See Next Lesson" : "Keep My Streak Going"}{" "}
+            {archiveUnlock ? "See New Lessons" : "Keep My Streak Going"}{" "}
             <ArrowRight size={16} />
           </a>
 

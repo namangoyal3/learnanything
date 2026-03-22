@@ -1,6 +1,9 @@
 import { prisma } from "./prisma";
 
 const CORE_LESSON_WHERE = { aiGenerated: false } as const;
+const ARCHIVE_UNLOCK_BATCH_SIZE = 5;
+const ARCHIVE_LOCKED_REASON =
+  "Complete all currently available lessons to unlock the next podcast batch.";
 
 type CompletedLessonSummary = {
   score: number;
@@ -28,6 +31,12 @@ type CategoryWithLessons = {
   color: string;
   sortOrder: number;
   lessons: LessonWithCompletion[];
+};
+
+type ArchiveVisibility = {
+  lockedLessons: Array<Pick<LessonWithCompletion, "id" | "title" | "dayNumber">>;
+  unlockedLockedIds: Set<string>;
+  previewIds: Set<string>;
 };
 
 export type CurriculumLesson = {
@@ -67,44 +76,50 @@ export type LessonAccess = {
   prerequisiteLessonTitle: string | null;
 };
 
-function getSequentialLockState(
-  lessons: LessonWithCompletion[],
-  lessonIndex: number
-) {
-  const completed = lessons[lessonIndex].completedLessons.length > 0;
-  if (completed || lessonIndex === 0) {
-    return {
-      isLocked: false,
-      lockedReason: null,
-      prerequisiteLessonId: null,
-      prerequisiteLessonTitle: null,
-    };
-  }
+export type ArchiveUnlockResult = {
+  count: number;
+  lessons: Array<{ id: string; title: string }>;
+} | null;
 
-  const firstIncompletePrior = lessons.find(
-    (lesson, index) =>
-      index < lessonIndex && lesson.completedLessons.length === 0
-  );
+/** Progress toward unlocking the next podcast batch (core curriculum only). */
+export type ArchiveUnlockProgress = {
+  unlockedBatchCount: number;
+  batchSize: number;
+  availableLessonTotal: number;
+  completedAvailable: number;
+  remainingToNextUnlock: number;
+  hasLockedArchiveRemaining: boolean;
+};
 
-  if (!firstIncompletePrior) {
-    return {
-      isLocked: false,
-      lockedReason: null,
-      prerequisiteLessonId: null,
-      prerequisiteLessonTitle: null,
-    };
-  }
+function sortLessonsByDayNumber<T extends { dayNumber: number }>(a: T, b: T) {
+  return a.dayNumber - b.dayNumber;
+}
+
+function getArchiveVisibility(
+  lessons: Pick<LessonWithCompletion, "id" | "title" | "dayNumber" | "isLocked">[],
+  unlockedBatch: number
+): ArchiveVisibility {
+  const lockedLessons = lessons
+    .filter((lesson) => lesson.isLocked)
+    .sort(sortLessonsByDayNumber);
+  const unlockedCount = unlockedBatch * ARCHIVE_UNLOCK_BATCH_SIZE;
 
   return {
-    isLocked: true,
-    lockedReason: `Complete "${firstIncompletePrior.title}" to unlock this lesson.`,
-    prerequisiteLessonId: firstIncompletePrior.id,
-    prerequisiteLessonTitle: firstIncompletePrior.title,
+    lockedLessons,
+    unlockedLockedIds: new Set(
+      lockedLessons.slice(0, unlockedCount).map((lesson) => lesson.id)
+    ),
+    previewIds: new Set(
+      lockedLessons
+        .slice(unlockedCount, unlockedCount + ARCHIVE_UNLOCK_BATCH_SIZE)
+        .map((lesson) => lesson.id)
+    ),
   };
 }
 
-export function mapCurriculumCategory(
-  category: CategoryWithLessons
+function mapCurriculumCategory(
+  category: CategoryWithLessons,
+  visibility: ArchiveVisibility
 ): CurriculumCategory {
   return {
     id: category.id,
@@ -114,29 +129,47 @@ export function mapCurriculumCategory(
     icon: category.icon,
     color: category.color,
     sortOrder: category.sortOrder,
-    lessons: category.lessons.map((lesson, lessonIndex) => {
-      const lockState = getSequentialLockState(category.lessons, lessonIndex);
-      return {
-        id: lesson.id,
-        title: lesson.title,
-        slug: lesson.slug,
-        description: lesson.description,
-        xpReward: lesson.xpReward,
-        difficulty: lesson.difficulty,
-        dayNumber: lesson.dayNumber,
-        completed: lesson.completedLessons.length > 0,
-        isLocked: lockState.isLocked,
-        score: lesson.completedLessons[0]?.score ?? null,
-        lockedReason: lockState.lockedReason,
-        prerequisiteLessonId: lockState.prerequisiteLessonId,
-        prerequisiteLessonTitle: lockState.prerequisiteLessonTitle,
-      };
-    }),
+    lessons: category.lessons
+      .filter(
+        (lesson) =>
+          !lesson.isLocked ||
+          visibility.unlockedLockedIds.has(lesson.id) ||
+          visibility.previewIds.has(lesson.id)
+      )
+      .map((lesson) => {
+        const isLocked =
+          lesson.isLocked && !visibility.unlockedLockedIds.has(lesson.id);
+
+        return {
+          id: lesson.id,
+          title: lesson.title,
+          slug: lesson.slug,
+          description: lesson.description,
+          xpReward: lesson.xpReward,
+          difficulty: lesson.difficulty,
+          dayNumber: lesson.dayNumber,
+          completed: lesson.completedLessons.length > 0,
+          isLocked,
+          score: lesson.completedLessons[0]?.score ?? null,
+          lockedReason: isLocked ? ARCHIVE_LOCKED_REASON : null,
+          prerequisiteLessonId: null,
+          prerequisiteLessonTitle: null,
+        };
+      }),
   };
 }
 
-export async function getCoreCurriculumForUser(userId: string) {
-  const categories = await prisma.category.findMany({
+async function getUserUnlockedBatch(userId: string) {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { unlockedBatch: true },
+  });
+
+  return user?.unlockedBatch ?? 0;
+}
+
+async function getCoreCategoriesWithCompletion(userId: string) {
+  return prisma.category.findMany({
     where: {
       lessons: {
         some: CORE_LESSON_WHERE,
@@ -156,9 +189,21 @@ export async function getCoreCurriculumForUser(userId: string) {
       },
     },
   });
+}
+
+export async function getCoreCurriculumForUser(userId: string) {
+  const [unlockedBatch, categories] = await Promise.all([
+    getUserUnlockedBatch(userId),
+    getCoreCategoriesWithCompletion(userId),
+  ]);
+
+  const visibility = getArchiveVisibility(
+    categories.flatMap((category) => category.lessons),
+    unlockedBatch
+  );
 
   return categories
-    .map((category) => mapCurriculumCategory(category))
+    .map((category) => mapCurriculumCategory(category, visibility))
     .filter((category) => category.lessons.length > 0);
 }
 
@@ -170,9 +215,9 @@ export async function getCoreLessonAccess(
     where: { id: lessonId },
     select: {
       id: true,
-      categoryId: true,
       aiGenerated: true,
       generatedForUserId: true,
+      isLocked: true,
     },
   });
 
@@ -190,101 +235,58 @@ export async function getCoreLessonAccess(
 
   if (lesson.aiGenerated) {
     const canAccess = lesson.generatedForUserId === userId;
+
     return {
       exists: true,
       canAccess,
       isCustomLesson: true,
       isLocked: false,
-      lockedReason: canAccess ? null : "This custom lesson belongs to another user.",
+      lockedReason: canAccess
+        ? null
+        : "This custom lesson belongs to another user.",
       prerequisiteLessonId: null,
       prerequisiteLessonTitle: null,
     };
   }
 
-  const category = await prisma.category.findUnique({
-    where: { id: lesson.categoryId },
-    include: {
-      lessons: {
-        where: CORE_LESSON_WHERE,
-        orderBy: { dayNumber: "asc" },
-        include: {
-          completedLessons: {
-            where: { userId },
-            select: { score: true, xpEarned: true },
-          },
-        },
+  if (!lesson.isLocked) {
+    return {
+      exists: true,
+      canAccess: true,
+      isCustomLesson: false,
+      isLocked: false,
+      lockedReason: null,
+      prerequisiteLessonId: null,
+      prerequisiteLessonTitle: null,
+    };
+  }
+
+  const [unlockedBatch, coreLessons] = await Promise.all([
+    getUserUnlockedBatch(userId),
+    prisma.lesson.findMany({
+      where: CORE_LESSON_WHERE,
+      select: {
+        id: true,
+        title: true,
+        dayNumber: true,
+        isLocked: true,
       },
-    },
-  });
+      orderBy: { dayNumber: "asc" },
+    }),
+  ]);
 
-  if (!category) {
-    return {
-      exists: true,
-      canAccess: false,
-      isCustomLesson: false,
-      isLocked: false,
-      lockedReason: null,
-      prerequisiteLessonId: null,
-      prerequisiteLessonTitle: null,
-    };
-  }
-
-  const mappedCategory = mapCurriculumCategory(category);
-  const mappedLesson = mappedCategory.lessons.find(
-    (candidate) => candidate.id === lessonId
-  );
-
-  if (!mappedLesson) {
-    return {
-      exists: true,
-      canAccess: false,
-      isCustomLesson: false,
-      isLocked: false,
-      lockedReason: null,
-      prerequisiteLessonId: null,
-      prerequisiteLessonTitle: null,
-    };
-  }
+  const visibility = getArchiveVisibility(coreLessons, unlockedBatch);
+  const canAccess = visibility.unlockedLockedIds.has(lessonId);
 
   return {
     exists: true,
-    canAccess: !mappedLesson.isLocked,
+    canAccess,
     isCustomLesson: false,
-    isLocked: mappedLesson.isLocked,
-    lockedReason: mappedLesson.lockedReason,
-    prerequisiteLessonId: mappedLesson.prerequisiteLessonId,
-    prerequisiteLessonTitle: mappedLesson.prerequisiteLessonTitle,
+    isLocked: !canAccess,
+    lockedReason: canAccess ? null : ARCHIVE_LOCKED_REASON,
+    prerequisiteLessonId: null,
+    prerequisiteLessonTitle: null,
   };
-}
-
-export async function getNextUnlockedCoreLesson(
-  categoryId: string,
-  userId: string
-) {
-  const category = await prisma.category.findUnique({
-    where: { id: categoryId },
-    include: {
-      lessons: {
-        where: CORE_LESSON_WHERE,
-        orderBy: { dayNumber: "asc" },
-        include: {
-          completedLessons: {
-            where: { userId },
-            select: { score: true, xpEarned: true },
-          },
-        },
-      },
-    },
-  });
-
-  if (!category) return null;
-
-  const mappedCategory = mapCurriculumCategory(category);
-  return (
-    mappedCategory.lessons.find(
-      (lesson) => !lesson.completed && !lesson.isLocked
-    ) ?? null
-  );
 }
 
 export async function getRelatedCoreLessons(
@@ -293,25 +295,40 @@ export async function getRelatedCoreLessons(
   excludeLessonIds: string[],
   limit = 3
 ) {
-  const category = await prisma.category.findUnique({
-    where: { id: categoryId },
-    include: {
-      lessons: {
-        where: CORE_LESSON_WHERE,
-        orderBy: { dayNumber: "asc" },
-        include: {
-          completedLessons: {
-            where: { userId },
-            select: { score: true, xpEarned: true },
+  const [unlockedBatch, allCoreLessons, category] = await Promise.all([
+    getUserUnlockedBatch(userId),
+    prisma.lesson.findMany({
+      where: CORE_LESSON_WHERE,
+      select: {
+        id: true,
+        title: true,
+        dayNumber: true,
+        isLocked: true,
+      },
+      orderBy: { dayNumber: "asc" },
+    }),
+    prisma.category.findUnique({
+      where: { id: categoryId },
+      include: {
+        lessons: {
+          where: CORE_LESSON_WHERE,
+          orderBy: { dayNumber: "asc" },
+          include: {
+            completedLessons: {
+              where: { userId },
+              select: { score: true, xpEarned: true },
+            },
           },
         },
       },
-    },
-  });
+    }),
+  ]);
 
   if (!category) return [];
 
-  return mapCurriculumCategory(category).lessons
+  const visibility = getArchiveVisibility(allCoreLessons, unlockedBatch);
+
+  return mapCurriculumCategory(category, visibility).lessons
     .filter((lesson) => !excludeLessonIds.includes(lesson.id))
     .sort((a, b) => {
       if (a.isLocked !== b.isLocked) return a.isLocked ? 1 : -1;
@@ -319,6 +336,145 @@ export async function getRelatedCoreLessons(
       return a.dayNumber - b.dayNumber;
     })
     .slice(0, limit);
+}
+
+export async function getArchiveUnlockProgressForUser(
+  userId: string
+): Promise<ArchiveUnlockProgress> {
+  const [unlockedBatch, lessons] = await Promise.all([
+    getUserUnlockedBatch(userId),
+    prisma.lesson.findMany({
+      where: CORE_LESSON_WHERE,
+      select: {
+        id: true,
+        title: true,
+        dayNumber: true,
+        isLocked: true,
+      },
+      orderBy: { dayNumber: "asc" },
+    }),
+  ]);
+
+  const visibility = getArchiveVisibility(lessons, unlockedBatch);
+  const availableLessonIds = lessons
+    .filter(
+      (lesson) =>
+        !lesson.isLocked || visibility.unlockedLockedIds.has(lesson.id)
+    )
+    .map((lesson) => lesson.id);
+
+  const completedAvailable =
+    availableLessonIds.length === 0
+      ? 0
+      : await prisma.completedLesson.count({
+          where: {
+            userId,
+            lessonId: { in: availableLessonIds },
+          },
+        });
+
+  const remainingToNextUnlock = Math.max(
+    0,
+    availableLessonIds.length - completedAvailable
+  );
+
+  const hasLockedArchiveRemaining =
+    visibility.lockedLessons.length >
+    unlockedBatch * ARCHIVE_UNLOCK_BATCH_SIZE;
+
+  return {
+    unlockedBatchCount: unlockedBatch,
+    batchSize: ARCHIVE_UNLOCK_BATCH_SIZE,
+    availableLessonTotal: availableLessonIds.length,
+    completedAvailable,
+    remainingToNextUnlock,
+    hasLockedArchiveRemaining,
+  };
+}
+
+/**
+ * Unlocks as many archive batches as the user has earned (e.g. after completing
+ * all available lessons while the unlock feature was off, or after importing data).
+ * Returns a merged result for UI toasts.
+ */
+export async function syncArchiveUnlocksForUser(
+  userId: string
+): Promise<ArchiveUnlockResult> {
+  const merged: { count: number; lessons: Array<{ id: string; title: string }> } =
+    { count: 0, lessons: [] };
+  let safety = 0;
+  while (safety++ < 200) {
+    const batch = await unlockNextArchiveBatchIfReady(userId);
+    if (!batch) break;
+    merged.count += batch.count;
+    merged.lessons.push(...batch.lessons);
+  }
+  if (merged.count === 0) return null;
+  return { count: merged.count, lessons: merged.lessons };
+}
+
+export async function unlockNextArchiveBatchIfReady(
+  userId: string
+): Promise<ArchiveUnlockResult> {
+  const [unlockedBatch, lessons] = await Promise.all([
+    getUserUnlockedBatch(userId),
+    prisma.lesson.findMany({
+      where: CORE_LESSON_WHERE,
+      select: {
+        id: true,
+        title: true,
+        dayNumber: true,
+        isLocked: true,
+      },
+      orderBy: { dayNumber: "asc" },
+    }),
+  ]);
+
+  const visibility = getArchiveVisibility(lessons, unlockedBatch);
+  const availableLessonIds = lessons
+    .filter(
+      (lesson) =>
+        !lesson.isLocked || visibility.unlockedLockedIds.has(lesson.id)
+    )
+    .map((lesson) => lesson.id);
+
+  if (availableLessonIds.length === 0) {
+    return null;
+  }
+
+  const completedCount = await prisma.completedLesson.count({
+    where: {
+      userId,
+      lessonId: { in: availableLessonIds },
+    },
+  });
+
+  if (completedCount < availableLessonIds.length) {
+    return null;
+  }
+
+  const nextBatchStart = unlockedBatch * ARCHIVE_UNLOCK_BATCH_SIZE;
+  const nextBatchLessons = visibility.lockedLessons.slice(
+    nextBatchStart,
+    nextBatchStart + ARCHIVE_UNLOCK_BATCH_SIZE
+  );
+
+  if (nextBatchLessons.length === 0) {
+    return null;
+  }
+
+  await prisma.user.update({
+    where: { id: userId },
+    data: { unlockedBatch: unlockedBatch + 1 },
+  });
+
+  return {
+    count: nextBatchLessons.length,
+    lessons: nextBatchLessons.map((lesson) => ({
+      id: lesson.id,
+      title: lesson.title,
+    })),
+  };
 }
 
 export async function getGeneratedLessonsForUser(userId: string) {
@@ -348,4 +504,4 @@ export async function getGeneratedLessonsForUser(userId: string) {
   });
 }
 
-export { CORE_LESSON_WHERE };
+export { ARCHIVE_UNLOCK_BATCH_SIZE, ARCHIVE_LOCKED_REASON, CORE_LESSON_WHERE };
