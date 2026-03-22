@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getCurrentUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { isProEffective } from "@/lib/entitlements";
+import { isUserPro } from "@/lib/entitlements";
 import { getPriceBandFromCountry } from "@/lib/billing/price-bands";
 import {
   countAiLessonsThisMonth,
@@ -34,7 +34,7 @@ export async function GET() {
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
 
-  const isPro = isProEffective(user);
+  const isPro = await isUserPro(userId);
   const band = user.priceBand ?? getPriceBandFromCountry(user.country);
   const aiUsed = await countAiLessonsThisMonth(userId);
 

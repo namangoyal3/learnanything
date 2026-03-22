@@ -1,6 +1,19 @@
 import { prisma } from "@/lib/prisma";
+import {
+  applyProEntitlementsForUpi,
+  getActiveUpiSubscription,
+} from "@/lib/billing/upi-india-server";
 
 const RC_API = "https://api.revenuecat.com/v1";
+
+const PRO_KEYS = [
+  "unlimited_ai_lessons",
+  "deep_dives",
+  "interview_sprint",
+  "role_roadmaps",
+  "saved_notes",
+  "premium_recaps",
+] as const;
 
 export function getRevenueCatEntitlementId(): string {
   return process.env.REVENUECAT_ENTITLEMENT_ID ?? "pro";
@@ -21,8 +34,50 @@ function isEntitlementActive(ent: RcEntitlement | undefined): boolean {
   return false;
 }
 
+async function demoteToFree(appUserId: string) {
+  await prisma.user.update({
+    where: { id: appUserId },
+    data: {
+      plan: "free",
+      billingStatus: "none",
+      billingProvider: null,
+      renewsAt: null,
+      cancelsAt: null,
+    },
+  });
+  await prisma.entitlement.deleteMany({
+    where: { userId: appUserId, source: "subscription" },
+  });
+  await prisma.entitlement.deleteMany({
+    where: { userId: appUserId, source: "upi_india" },
+  });
+}
+
+/** When RevenueCat has no active sub, keep Pro if India UPI period is still valid. */
+async function restoreProFromUpiIfNeeded(appUserId: string): Promise<boolean> {
+  const upi = await getActiveUpiSubscription(appUserId);
+  if (!upi?.currentPeriodEnd) return false;
+
+  await prisma.user.update({
+    where: { id: appUserId },
+    data: {
+      plan: "pro",
+      billingStatus: "active",
+      billingProvider: "upi_india",
+      renewsAt: upi.currentPeriodEnd,
+      cancelsAt: null,
+    },
+  });
+  await applyProEntitlementsForUpi(appUserId, upi.currentPeriodEnd);
+  await prisma.entitlement.deleteMany({
+    where: { userId: appUserId, source: "subscription" },
+  });
+  return true;
+}
+
 /**
- * Sync Prisma user + DB entitlements from RevenueCat REST API (source of truth).
+ * Sync Prisma user + DB entitlements from RevenueCat REST API (source of truth for RC).
+ * India UPI Pro is preserved when RC is inactive but the UPI subscription row is still in period.
  */
 export async function syncSubscriberFromRevenueCat(appUserId: string): Promise<{
   active: boolean;
@@ -55,6 +110,8 @@ export async function syncSubscriberFromRevenueCat(appUserId: string): Promise<{
 
   const text = await res.text();
   if (res.status === 404) {
+    const restored = await restoreProFromUpiIfNeeded(appUserId);
+    if (!restored) await demoteToFree(appUserId);
     return { active: false, managementUrl: null };
   }
   if (!res.ok) {
@@ -77,44 +134,39 @@ export async function syncSubscriberFromRevenueCat(appUserId: string): Promise<{
   const expiresAt =
     ent?.expires_date && active ? new Date(ent.expires_date) : null;
 
-  await prisma.user.update({
-    where: { id: appUserId },
-    data: {
-      plan: active ? "pro" : "free",
-      billingStatus: active ? "active" : "none",
-      billingProvider: "revenuecat",
-      renewsAt: expiresAt,
-      ...(active
-        ? {}
-        : {
-            cancelsAt: null,
-          }),
-    },
-  });
-
   if (active) {
-    const keys = [
-      "unlimited_ai_lessons",
-      "deep_dives",
-      "interview_sprint",
-      "role_roadmaps",
-      "saved_notes",
-      "premium_recaps",
-    ] as const;
-    for (const key of keys) {
+    await prisma.user.update({
+      where: { id: appUserId },
+      data: {
+        plan: "pro",
+        billingStatus: "active",
+        billingProvider: "revenuecat",
+        renewsAt: expiresAt,
+      },
+    });
+
+    await prisma.entitlement.deleteMany({
+      where: { userId: appUserId, source: "upi_india" },
+    });
+
+    for (const key of PRO_KEYS) {
       await prisma.entitlement.upsert({
         where: { userId_key: { userId: appUserId, key } },
         create: { userId: appUserId, key, source: "subscription" },
-        update: { expiresAt: null },
+        update: { expiresAt: null, source: "subscription" },
       });
     }
-  } else {
-    await prisma.entitlement.deleteMany({
-      where: { userId: appUserId, source: "subscription" },
-    });
+
+    return { active, managementUrl };
   }
 
-  return { active, managementUrl };
+  const restored = await restoreProFromUpiIfNeeded(appUserId);
+  if (restored) {
+    return { active: false, managementUrl };
+  }
+
+  await demoteToFree(appUserId);
+  return { active: false, managementUrl };
 }
 
 export async function fetchManagementUrlForUser(

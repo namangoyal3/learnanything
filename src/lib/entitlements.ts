@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import { expireStaleUpiAndReconcileUser } from "@/lib/billing/upi-india-server";
 
 export type EntitlementKey =
   | "unlimited_ai_lessons"
@@ -11,11 +12,19 @@ export type EntitlementKey =
 type UserRow = {
   plan: string;
   trialEndsAt: Date | null;
+  renewsAt?: Date | null;
 };
 
+/**
+ * Sync check for API routes that already have a user row (no extra DB round-trip for UPI).
+ * Prefer `isUserPro` when you need UPI + expiry to be correct.
+ */
 export function isProEffective(user: UserRow): boolean {
-  if (user.plan === "pro") return true;
   if (user.trialEndsAt && user.trialEndsAt > new Date()) return true;
+  if (user.plan === "pro") {
+    if (user.renewsAt && user.renewsAt <= new Date()) return false;
+    return true;
+  }
   return false;
 }
 
@@ -23,12 +32,7 @@ export async function hasEntitlement(
   userId: string,
   key: EntitlementKey
 ): Promise<boolean> {
-  const user = await prisma.user.findUnique({
-    where: { id: userId },
-    select: { plan: true, trialEndsAt: true },
-  });
-  if (!user) return false;
-  if (isProEffective(user)) {
+  if (await isUserPro(userId)) {
     return true;
   }
 
@@ -41,9 +45,28 @@ export async function hasEntitlement(
 }
 
 export async function isUserPro(userId: string): Promise<boolean> {
+  await expireStaleUpiAndReconcileUser(userId);
+
   const user = await prisma.user.findUnique({
     where: { id: userId },
-    select: { plan: true, trialEndsAt: true },
+    select: { plan: true, trialEndsAt: true, renewsAt: true },
   });
-  return user ? isProEffective(user) : false;
+  if (!user) return false;
+  if (user.trialEndsAt && user.trialEndsAt > new Date()) return true;
+
+  const upi = await prisma.subscription.findFirst({
+    where: {
+      userId,
+      provider: "upi_india",
+      status: "active",
+      currentPeriodEnd: { gt: new Date() },
+    },
+  });
+  if (upi) return true;
+
+  if (user.plan === "pro") {
+    if (user.renewsAt && user.renewsAt <= new Date()) return false;
+    return true;
+  }
+  return false;
 }

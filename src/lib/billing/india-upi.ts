@@ -1,7 +1,21 @@
 /**
  * Fixed-amount UPI QR images for India (static QR per plan).
- * Set NEXT_PUBLIC_* URLs in .env — same build-time rules as other public env.
+ * Bundled assets in /public (see BUNDLED); override with NEXT_PUBLIC_* in .env if needed.
  */
+
+/** Default QR assets shipped in `public/` — amounts match fixed UPI QR totals. */
+const BUNDLED = {
+  yearly: {
+    path: "/india-upi-yearly.png",
+    amount: "₹1,899 / year",
+    title: "Yearly Pro",
+  },
+  monthly: {
+    path: "/india-upi-monthly.png",
+    amount: "₹299 / month",
+    title: "Monthly Pro",
+  },
+} as const;
 
 export type IndiaUpiPlan = {
   /** Public URL to QR image (PNG/WebP) */
@@ -32,9 +46,9 @@ export function getIndiaUpiPlans(): IndiaUpiPlan[] {
   const out: IndiaUpiPlan[] = [];
   push(
     out,
-    process.env.NEXT_PUBLIC_INDIA_UPI_YEARLY_QR_URL,
-    process.env.NEXT_PUBLIC_INDIA_UPI_YEARLY_AMOUNT,
-    process.env.NEXT_PUBLIC_INDIA_UPI_YEARLY_TITLE,
+    process.env.NEXT_PUBLIC_INDIA_UPI_YEARLY_QR_URL?.trim() || BUNDLED.yearly.path,
+    process.env.NEXT_PUBLIC_INDIA_UPI_YEARLY_AMOUNT?.trim() || BUNDLED.yearly.amount,
+    process.env.NEXT_PUBLIC_INDIA_UPI_YEARLY_TITLE?.trim() || BUNDLED.yearly.title,
   );
   push(
     out,
@@ -44,9 +58,9 @@ export function getIndiaUpiPlans(): IndiaUpiPlan[] {
   );
   push(
     out,
-    process.env.NEXT_PUBLIC_INDIA_UPI_MONTHLY_QR_URL,
-    process.env.NEXT_PUBLIC_INDIA_UPI_MONTHLY_AMOUNT,
-    process.env.NEXT_PUBLIC_INDIA_UPI_MONTHLY_TITLE,
+    process.env.NEXT_PUBLIC_INDIA_UPI_MONTHLY_QR_URL?.trim() || BUNDLED.monthly.path,
+    process.env.NEXT_PUBLIC_INDIA_UPI_MONTHLY_AMOUNT?.trim() || BUNDLED.monthly.amount,
+    process.env.NEXT_PUBLIC_INDIA_UPI_MONTHLY_TITLE?.trim() || BUNDLED.monthly.title,
   );
   // Single fallback when only one generic QR is set
   if (out.length === 0) {

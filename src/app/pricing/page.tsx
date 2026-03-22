@@ -293,7 +293,11 @@ export default function PricingPage() {
               ) : (
                 " (sign in first so we can match your account)"
               )}{" "}
-              and approximate payment time. We activate Pro after we confirm the transfer.
+              and the UPI reference or amount. We confirm the payment in our bank/UPI app, then
+              activate Pro on your account: <span className="text-[var(--text-primary)] font-bold">30 days</span>{" "}
+              from that moment for monthly, or{" "}
+              <span className="text-[var(--text-primary)] font-bold">one year</span> for yearly — not
+              automatic from the QR alone.
             </p>
             <div className="grid gap-6 sm:grid-cols-2">
               {indiaUpiPlans.map((plan) => (
@@ -314,7 +318,8 @@ export default function PricingPage() {
             </div>
             <p className="text-[10px] text-[var(--text-secondary)] mt-4">
               Card or international checkout: use &quot;Subscribe with RevenueCat&quot; above. UPI does not
-              unlock the app automatically — we grant access after verification.
+              unlock the app automatically. Our team verifies each UPI payment, then we enable Pro
+              for the correct period in the database.
             </p>
           </div>
         )}
