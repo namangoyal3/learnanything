@@ -14,14 +14,28 @@ export async function POST(req: NextRequest) {
 
   const user = await prisma.user.findUnique({ where: { email } });
   if (user) {
+    if (!process.env.RESEND_API_KEY) {
+      return NextResponse.json(
+        { error: "Password reset email service is unavailable. Try again shortly." },
+        { status: 503 }
+      );
+    }
+
     const token = await signPasswordResetToken(user.id);
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || req.nextUrl.origin;
     const resetUrl = `${appUrl}/reset-password?token=${encodeURIComponent(token)}`;
-    await sendPasswordResetEmail({
-      toEmail: user.email,
-      toName: user.name,
-      resetUrl,
-    }).catch(() => {});
+    try {
+      await sendPasswordResetEmail({
+        toEmail: user.email,
+        toName: user.name,
+        resetUrl,
+      });
+    } catch {
+      return NextResponse.json(
+        { error: "Could not send reset email. Please retry in a minute." },
+        { status: 502 }
+      );
+    }
   }
 
   // Avoid user enumeration: always return success.
