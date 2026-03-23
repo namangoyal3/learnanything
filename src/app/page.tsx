@@ -86,9 +86,15 @@ export default async function Home() {
           <div className="flex items-center gap-2">
             <BrowserLink
               href="/login"
+              className="px-4 py-2 rounded-xl border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-white hover:border-[var(--green-primary)]/40 text-sm font-bold transition-colors"
+            >
+              Log in
+            </BrowserLink>
+            <BrowserLink
+              href="/signup"
               className="px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-sm font-black transition-colors"
             >
-              Sign up with Google
+              Sign Up
             </BrowserLink>
           </div>
         </div>
@@ -115,18 +121,26 @@ export default async function Home() {
               </p>
             </div>
 
-            <BrowserLink
-              href="/login"
-              className="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-base font-black transition-all shadow-lg shadow-[var(--green-primary)]/20 hover:scale-[1.02] active:scale-[0.98]"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="white" fillOpacity="0.9"/>
-                <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="white" fillOpacity="0.9"/>
-                <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="white" fillOpacity="0.9"/>
-                <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="white" fillOpacity="0.9"/>
-              </svg>
-              Sign up with Google
-            </BrowserLink>
+            <div className="flex flex-wrap items-center gap-3">
+              <BrowserLink
+                href="/signup"
+                className="inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-base font-black transition-all shadow-lg shadow-[var(--green-primary)]/20 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="white" fillOpacity="0.9"/>
+                  <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="white" fillOpacity="0.9"/>
+                  <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="white" fillOpacity="0.9"/>
+                  <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="white" fillOpacity="0.9"/>
+                </svg>
+                Sign Up with Google
+              </BrowserLink>
+              <BrowserLink
+                href="/login"
+                className="inline-flex items-center px-5 py-4 rounded-2xl border border-[var(--border-color)] text-[var(--text-secondary)] text-sm font-bold hover:text-white hover:border-[var(--green-primary)]/40 transition-colors"
+              >
+                Already have an account?
+              </BrowserLink>
+            </div>
             <p className="mt-3 text-xs text-[var(--text-secondary)]">No credit card · 30 seconds to set up</p>
           </div>
 
@@ -303,7 +317,7 @@ export default async function Home() {
             </div>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <BrowserLink
-                href="/login"
+                href="/signup"
                 className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-sm font-black transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[var(--green-primary)]/20"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
@@ -312,7 +326,7 @@ export default async function Home() {
                   <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="white" fillOpacity="0.9"/>
                   <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="white" fillOpacity="0.9"/>
                 </svg>
-                Sign up with Google
+                Sign Up with Google
               </BrowserLink>
               <p className="text-center text-xs text-[var(--text-secondary)]">No password · Takes 30 seconds</p>
             </div>
