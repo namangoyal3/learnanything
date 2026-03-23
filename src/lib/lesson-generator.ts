@@ -1,17 +1,8 @@
 import { prisma } from "./prisma";
-import {
-  buildExploreInsightQuestions,
-  extractSentences,
-  truncateOption,
-} from "./podcast-quiz-helpers";
+import { buildSourceTranscript } from "./podcast-quiz-helpers";
+import { generateActionablePMLesson, SearchResult } from "./llm-lessons";
 
 type GenerationMode = "explore" | "deep_dive";
-
-interface SearchResult {
-  guest: string;
-  episodeTitle: string | null;
-  snippet: string;
-}
 
 interface GenerateLessonInput {
   topic: string;
@@ -181,96 +172,6 @@ async function searchLennyTranscripts(query: string): Promise<SearchResult[]> {
   }
 }
 
-function cleanSnippet(snippet: string, maxLength = 320) {
-  const cleaned = snippet
-    .replace(/\b[A-Za-z .'()-]+ \(\d{2}:\d{2}:\d{2}\):\s*/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-
-  return cleaned.length > maxLength
-    ? `${cleaned.slice(0, maxLength).trim()}...`
-    : cleaned;
-}
-
-function extractLeadSentence(snippet: string, topic: string) {
-  const cleaned = cleanSnippet(snippet, 220);
-  const firstSentence = cleaned.match(/.*?[.!?](?:\s|$)/)?.[0]?.trim();
-  if (firstSentence && firstSentence.length >= 45) {
-    return firstSentence;
-  }
-
-  return `${topic} gets stronger when the team reduces friction, makes the user outcome obvious, and turns insight into a concrete product decision.`;
-}
-
-function buildSourceTranscript(topic: string, results: SearchResult[]) {
-  const sections = results.map((result, index) => {
-    const episodeLine = result.episodeTitle ? `Episode: ${result.episodeTitle}` : "Episode: archive excerpt";
-    return `${index + 1}. ${result.guest}\n${episodeLine}\n${cleanSnippet(result.snippet, 420)}`;
-  });
-
-  return `Transcript highlights for ${topic}:\n\n${sections.join("\n\n")}`;
-}
-
-function buildLessonContent(
-  topic: string,
-  results: SearchResult[],
-  generationMode: GenerationMode,
-  sourceLessonTitle?: string | null
-) {
-  const lead = results[0];
-  const additional = results.slice(1, 3);
-  const introLabel =
-    generationMode === "deep_dive"
-      ? `This deeper dive builds on "${sourceLessonTitle ?? topic}" and pulls in adjacent transcript insights from Lenny's Podcast.`
-      : `This custom lesson is built from transcript highlights across Lenny's Podcast for "${topic}".`;
-
-  const summary = extractLeadSentence(lead.snippet, topic);
-  const leadClean = cleanSnippet(lead.snippet, 620);
-  const takeawayLines = [
-    extractSentences(leadClean, 45, 2)[0],
-    ...results.slice(1, 3).flatMap((r) => extractSentences(cleanSnippet(r.snippet, 620), 45, 1)),
-    extractSentences(leadClean, 40, 3)[1],
-  ]
-    .filter(Boolean)
-    .slice(0, 3)
-    .map((line, i) => `${i + 1}. ${truncateOption(line!, 165)}`);
-
-  const highlightLines = [
-    `FOUNDATIONAL IDEA`,
-    summary,
-    "",
-    `KEY PM TAKEAWAYS (from Lenny transcript excerpts)`,
-    takeawayLines.join("\n"),
-    "",
-    `WHY THIS TOPIC MATTERS`,
-    `${topic} keeps surfacing in strong PM conversations because it changes how teams prioritize, where they look for evidence, and how quickly users reach value.`,
-    "",
-    `TRANSCRIPT HIGHLIGHTS`,
-    `${lead.guest}${lead.episodeTitle ? ` — ${lead.episodeTitle}` : ""}: ${cleanSnippet(lead.snippet)}`,
-    ...additional.flatMap((result) => [
-      `${result.guest}${result.episodeTitle ? ` — ${result.episodeTitle}` : ""}: ${cleanSnippet(result.snippet)}`,
-    ]),
-    "",
-    `HOW TO APPLY THIS THIS WEEK`,
-    `1. Name the user outcome you want ${topic} to improve.`,
-    `2. Audit the biggest friction or ambiguity in the current experience.`,
-    `3. Turn one insight from this lesson into an experiment, decision, or team discussion this week.`,
-  ];
-
-  return `${introLabel}\n\n${highlightLines.join("\n")}`;
-}
-
-function buildQuestions(topic: string, results: SearchResult[]) {
-  return buildExploreInsightQuestions(
-    topic,
-    results.map((r) => ({
-      guest: r.guest,
-      episodeTitle: r.episodeTitle,
-      snippet: r.snippet,
-    }))
-  );
-}
-
 async function ensureAiCategory() {
   let aiCategory = await prisma.category.findUnique({
     where: { slug: "ai-generated" },
@@ -355,14 +256,13 @@ export async function generateLesson({
     generationMode === "deep_dive"
       ? `A deeper follow-up lesson on ${normalizedTopic}`
       : `Custom lesson on ${normalizedTopic} from Lenny's Podcast insights`;
-  const content = buildLessonContent(
-    normalizedTopic,
-    searchResults,
-    generationMode,
-    sourceLesson?.title ?? null
-  );
-  const questions = buildQuestions(normalizedTopic, searchResults);
+
+  // Use Groq for smarter content and questions
+  const llmResult = await generateActionablePMLesson(normalizedTopic, searchResults);
+  const content = llmResult.content;
+  const questions = llmResult.questions;
   const sourceTranscript = buildSourceTranscript(normalizedTopic, searchResults);
+
   const leadResult = searchResults[0];
 
   const lesson = await prisma.lesson.create({

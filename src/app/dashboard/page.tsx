@@ -65,6 +65,8 @@ export default function DashboardPage() {
   } | null>(null);
   /** Long-tail archive (podcast-archive category + Coming Up Next) — collapsed by default. */
   const [gradualArchiveOpen, setGradualArchiveOpen] = useState(false);
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
+
 
   useEffect(() => {
     async function load() {
@@ -87,6 +89,15 @@ export default function DashboardPage() {
         setUser(userData.user);
         setStats(statsData);
         setCategories(lessonsData.categories);
+
+        // Auto-expand the first category that has an open lesson
+        const activeCatId = lessonsData.categories.find((c: any) =>
+          c.lessons.some((l: any) => !l.completed && !l.isLocked)
+        )?.id;
+        if (activeCatId) {
+          setExpandedCategories([activeCatId]);
+        }
+
 
         // Check if a new archive batch was just unlocked (set by QuizView on completion)
         try {
@@ -201,6 +212,7 @@ export default function DashboardPage() {
     Boolean(archiveCategory && archiveCategory.lessons.length > 0) || lockedPreviewCount > 0;
 
   function renderCategoryTrack(category: Category) {
+    const isExpanded = expandedCategories.includes(category.id);
     const catCompleted = category.lessons.filter((l) => l.completed).length;
     const catTotal = category.lessons.length;
     const catPct = catTotal > 0 ? Math.round((catCompleted / catTotal) * 100) : 0;
@@ -208,18 +220,51 @@ export default function DashboardPage() {
     const nextLockedLesson = category.lessons.find((lesson) => !lesson.completed && lesson.isLocked);
     const categoryExploreHref = `/explore?topic=${encodeURIComponent(category.name)}`;
 
+    const toggleExpand = () => {
+      setExpandedCategories((prev) =>
+        prev.includes(category.id)
+          ? prev.filter((id) => id !== category.id)
+          : [...prev, category.id]
+      );
+    };
+
+    // Progressive disclosure: show all completed, the next open, and up to 5 locked lessons.
+    // The rest are "under an anchor".
+    const visibleLessons = (() => {
+      const emptyState = { lessons: [] as Category["lessons"], hiddenLockedCount: 0 };
+      if (!isExpanded) return emptyState;
+      
+      const finished = category.lessons.filter(l => l.completed);
+      const open = category.lessons.filter(l => !l.completed && !l.isLocked);
+      const locked = category.lessons.filter(l => l.isLocked);
+      
+      // If we have an open lesson, show up to 5 locked ones after it.
+      // If no open lesson (all locked or all done), just show the first 5 locked if any.
+      const lockedToShow = locked.slice(0, 5);
+      const hiddenLockedCount = Math.max(0, locked.length - lockedToShow.length);
+      
+      return {
+        lessons: [...finished, ...open, ...lockedToShow],
+        hiddenLockedCount
+      };
+    })();
+
     return (
-      <div key={category.id} className="-mt-2">
-        <div className="flex items-center gap-2.5 mb-3">
+      <div key={category.id} className="-mt-2 border-b border-[var(--border-color)] pb-4 last:border-0">
+        <button
+          onClick={toggleExpand}
+          className="flex w-full items-center gap-2.5 mb-3 text-left transition-opacity hover:opacity-80"
+        >
           <div className={cn(ds.iconBox, "h-9 w-9 text-lg")}>
             {category.icon}
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-black">{category.name}</h3>
-              <span className="text-xs font-bold text-[var(--text-secondary)]">
-                {catCompleted}/{catTotal}
-              </span>
+              <div className="flex items-center gap-2 text-xs font-bold text-[var(--text-secondary)]">
+                <span>{catCompleted}/{catTotal}</span>
+                <ChevronDown size={14} className={cn("transition-transform", isExpanded && "rotate-180")} />
+              </div>
             </div>
             <div className="mt-1 h-1 overflow-hidden rounded-full bg-[var(--surface-1)]">
               <div
@@ -227,45 +272,60 @@ export default function DashboardPage() {
                 style={{ width: `${catPct}%` }}
               />
             </div>
-            {catCompleted === catTotal && catTotal > 0 ? (
-              <Link
-                href={categoryExploreHref}
-                className="text-xs font-black mt-1 inline-flex items-center gap-1 hover:underline"
-                style={{ color: "var(--gold-primary)" }}
-              >
-                ✓ Track complete! Create a bonus lesson →
-              </Link>
-            ) : nextOpenLesson ? (
-              <p className="text-xs font-bold mt-1" style={{ color: category.color || "var(--green-primary)" }}>
-                Next up: {nextOpenLesson.title}
-              </p>
-            ) : nextLockedLesson ? (
-              <p className="text-xs font-bold mt-1 text-[var(--text-secondary)]">
+          </div>
+        </button>
+
+        {isExpanded && (
+          <div className="space-y-2.5 animate-in fade-in slide-in-from-top-2 duration-200">
+            {visibleLessons.lessons.map((lesson) => (
+              <LessonCard
+                key={lesson.id}
+                id={lesson.id}
+                title={lesson.title}
+                description={lesson.description}
+                difficulty={lesson.difficulty}
+                xpReward={lesson.xpReward}
+                completed={lesson.completed}
+                locked={lesson.isLocked}
+                lockedReason={lesson.lockedReason}
+                isNext={nextOpenLesson?.id === lesson.id}
+              />
+            ))}
+
+            {visibleLessons.hiddenLockedCount > 0 && (
+              <div className="flex items-center justify-center py-2">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--surface-2)] border-2 border-[var(--border-color)]">
+                  <Anchor size={14} className="text-[var(--text-secondary)]" />
+                  <span className="text-[10px] font-black uppercase tracking-wider text-[var(--text-secondary)]">
+                    {visibleLessons.hiddenLockedCount} More {visibleLessons.hiddenLockedCount === 1 ? 'Lesson' : 'Lessons'} Locked
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {catCompleted === catTotal && catTotal > 0 && (
+              <div className="pt-2">
+                <Link
+                  href={categoryExploreHref}
+                  className="text-xs font-black inline-flex items-center gap-1 hover:underline p-2 rounded-lg bg-[var(--gold-primary)]/10"
+                  style={{ color: "var(--gold-primary)" }}
+                >
+                  <Sparkles size={12} /> Track complete! Create a bonus lesson →
+                </Link>
+              </div>
+            )}
+            
+            {!nextOpenLesson && nextLockedLesson && (
+              <p className="text-[10px] font-bold text-[var(--text-secondary)] p-2 bg-[var(--surface-1)] rounded-lg">
                 {nextLockedLesson.lockedReason}
               </p>
-            ) : null}
+            )}
           </div>
-        </div>
-
-        <div className="space-y-2.5">
-          {category.lessons.map((lesson) => (
-            <LessonCard
-              key={lesson.id}
-              id={lesson.id}
-              title={lesson.title}
-              description={lesson.description}
-              difficulty={lesson.difficulty}
-              xpReward={lesson.xpReward}
-              completed={lesson.completed}
-              locked={lesson.isLocked}
-              lockedReason={lesson.lockedReason}
-              isNext={nextOpenLesson?.id === lesson.id}
-            />
-          ))}
-        </div>
+        )}
       </div>
     );
   }
+
 
   return (
     <div className={ds.pageShell}>
