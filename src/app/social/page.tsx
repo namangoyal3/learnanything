@@ -11,13 +11,9 @@ import {
   UserPlus,
   Share2,
   UserCheck,
-  Swords,
   Flame,
   Zap,
   Clock,
-  Check,
-  X,
-  Send,
 } from "lucide-react";
 
 interface FriendUser {
@@ -40,15 +36,11 @@ interface Activity {
 export default function SocialPage() {
   const router = useRouter();
   const [user, setUser] = useState<any>(null);
-  const [tab, setTab] = useState<"friends" | "find" | "challenges">("friends");
+  const [tab, setTab] = useState<"friends" | "find">("friends");
   const [friends, setFriends] = useState<FriendUser[]>([]);
   const [activity, setActivity] = useState<Activity[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<FriendUser[]>([]);
-  const [challenges, setChallenges] = useState<{ received: any[]; sent: any[] }>({
-    received: [],
-    sent: [],
-  });
   const [followerCount, setFollowerCount] = useState(0);
   const [followingCount, setFollowingCount] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -64,10 +56,7 @@ export default function SocialPage() {
       const userData = await userRes.json();
       setUser(userData.user);
 
-      const [feedRes, challengeRes] = await Promise.all([
-        fetch("/api/social/feed"),
-        fetch("/api/social/challenges"),
-      ]);
+      const feedRes = await fetch("/api/social/feed");
 
       if (feedRes.ok) {
         const feedData = await feedRes.json();
@@ -75,10 +64,6 @@ export default function SocialPage() {
         setActivity(feedData.recentActivity);
         setFollowerCount(feedData.followerCount);
         setFollowingCount(feedData.followingCount);
-      }
-      if (challengeRes.ok) {
-        const challengeData = await challengeRes.json();
-        setChallenges(challengeData);
       }
       setLoading(false);
     }
@@ -117,32 +102,6 @@ export default function SocialPage() {
         setFollowingCount(feedData.followingCount);
       }
     }
-  };
-
-  const handleChallenge = async (targetId: string) => {
-    await fetch("/api/social/challenges", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ challengeeId: targetId }),
-    });
-    const challengeRes = await fetch("/api/social/challenges");
-    if (challengeRes.ok) setChallenges(await challengeRes.json());
-  };
-
-  const handleChallengeAction = async (challengeId: string, action: string) => {
-    await fetch("/api/social/challenges", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ challengeId, action }),
-    });
-    const challengeRes = await fetch("/api/social/challenges");
-    if (challengeRes.ok) setChallenges(await challengeRes.json());
-  };
-
-  const handleChallengesTabOpen = () => {
-    setTab("challenges");
-    // Mark all notifications as read
-    fetch("/api/notifications", { method: "PATCH" }).catch(() => {});
   };
 
   const timeAgo = (dateStr: string) => {
@@ -186,10 +145,10 @@ export default function SocialPage() {
 
         {/* Tabs */}
         <div className="flex gap-1 bg-[var(--bg-card)] rounded-2xl p-1">
-          {(["friends", "find", "challenges"] as const).map((t) => (
+          {(["friends", "find"] as const).map((t) => (
             <button
               key={t}
-              onClick={() => t === "challenges" ? handleChallengesTabOpen() : setTab(t)}
+              onClick={() => setTab(t)}
               className={cn(
                 "flex-1 py-2 rounded-xl text-xs font-bold transition-colors capitalize relative",
                 tab === t
@@ -198,11 +157,6 @@ export default function SocialPage() {
               )}
             >
               {t === "find" ? "Find Friends" : t}
-              {t === "challenges" && challenges.received.length > 0 && (
-                <span className="absolute top-1 right-2 min-w-[14px] h-3.5 bg-red-500 rounded-full text-[9px] font-black text-white flex items-center justify-center px-1">
-                  {challenges.received.length}
-                </span>
-              )}
             </button>
           ))}
         </div>
@@ -240,13 +194,6 @@ export default function SocialPage() {
                         </span>
                         <span className="text-[var(--gold-primary)] font-bold">{f.xp} XP</span>
                       </div>
-                      <button
-                        onClick={() => handleChallenge(f.id)}
-                        className="p-2 rounded-full bg-[var(--orange-primary)]/10 text-[var(--orange-primary)] hover:bg-[var(--orange-primary)]/20"
-                        title="Challenge"
-                      >
-                        <Swords size={14} />
-                      </button>
                     </div>
                   ))}
                 </div>
@@ -307,14 +254,6 @@ export default function SocialPage() {
                     </div>
                   </div>
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    {u.isFollowing && (
-                      <button
-                        onClick={() => handleChallenge(u.id)}
-                        className="flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold bg-[var(--orange-primary)]/15 text-[var(--orange-primary)] hover:bg-[var(--orange-primary)]/25 transition-colors"
-                      >
-                        <Swords size={12} /> Challenge
-                      </button>
-                    )}
                     <button
                       onClick={() => handleFollow(u.id)}
                       className={cn(
@@ -342,78 +281,6 @@ export default function SocialPage() {
           </div>
         )}
 
-        {tab === "challenges" && (
-          <div className="space-y-4">
-            {challenges.received.length > 0 && (
-              <div>
-                <h3 className="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-wide mb-2">
-                  Received Challenges
-                </h3>
-                <div className="space-y-2">
-                  {challenges.received.map((c: any) => (
-                    <div key={c.id} className="bg-[var(--bg-card)] rounded-2xl p-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Swords size={16} className="text-[var(--orange-primary)]" />
-                        <span className="text-sm font-bold">{c.challenger.name}</span>
-                        <span className="text-xs text-[var(--text-secondary)]">Level {c.challenger.level}</span>
-                      </div>
-                      <p className="text-xs text-[var(--text-secondary)] mb-3">{c.message}</p>
-                      <div className="flex gap-2">
-                        <button
-                          onClick={() => handleChallengeAction(c.id, "accept")}
-                          className="flex-1 py-2 rounded-xl bg-[var(--green-primary)] text-white text-xs font-bold flex items-center justify-center gap-1"
-                        >
-                          <Check size={14} /> Accept
-                        </button>
-                        <button
-                          onClick={() => handleChallengeAction(c.id, "decline")}
-                          className="flex-1 py-2 rounded-xl bg-[var(--bg-secondary)] text-[var(--text-secondary)] text-xs font-bold flex items-center justify-center gap-1"
-                        >
-                          <X size={14} /> Decline
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {challenges.sent.length > 0 && (
-              <div>
-                <h3 className="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-wide mb-2">
-                  Sent Challenges
-                </h3>
-                <div className="space-y-2">
-                  {challenges.sent.map((c: any) => (
-                    <div key={c.id} className="bg-[var(--bg-card)] rounded-xl p-3 flex items-center gap-3">
-                      <Send size={14} className="text-[var(--blue-primary)]" />
-                      <div className="flex-1">
-                        <span className="text-sm">{c.challengee.name}</span>
-                      </div>
-                      <span className={cn(
-                        "text-xs font-bold px-2 py-0.5 rounded-full",
-                        c.status === "pending" ? "bg-[var(--orange-primary)]/10 text-[var(--orange-primary)]" :
-                        c.status === "accepted" ? "bg-[var(--green-primary)]/10 text-[var(--green-primary)]" :
-                        "bg-[var(--red-primary)]/10 text-[var(--red-primary)]"
-                      )}>
-                        {c.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {challenges.received.length === 0 && challenges.sent.length === 0 && (
-              <div className="text-center py-8">
-                <Swords size={32} className="mx-auto text-[var(--text-secondary)] mb-2" />
-                <p className="text-[var(--text-secondary)] text-sm">
-                  No challenges yet. Challenge a friend to compete!
-                </p>
-              </div>
-            )}
-          </div>
-        )}
       </main>
 
       <ShareCard isOpen={showShare} onClose={() => setShowShare(false)} />
