@@ -14,21 +14,7 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ds } from "@/lib/ds";
-
-const SUGGESTED_TOPICS = [
-  "Product-market fit",
-  "User onboarding",
-  "A/B testing",
-  "Hiring PMs",
-  "AI product strategy",
-  "Building culture",
-  "Roadmap planning",
-  "OKRs and metrics",
-  "B2B vs B2C",
-  "Remote team management",
-  "Feature prioritization",
-  "Customer interviews",
-];
+import { EXPLORE_SEED_TOPICS } from "@/lib/explore-topics";
 
 type GeneratedLesson = {
   id: string;
@@ -38,6 +24,15 @@ type GeneratedLesson = {
   guestName?: string | null;
   generationMode?: string | null;
   category?: { name: string; icon: string } | null;
+};
+
+type AiUsage = {
+  usedToday: number;
+  usedThisMonth: number;
+  monthlyFreeLimit: number | null;
+  dailyFreeLimit: number | null;
+  remainingDailyCredits: number | null;
+  unlimited: boolean;
 };
 
 function mergeLessons(lessons: GeneratedLesson[]) {
@@ -58,6 +53,7 @@ function ExplorePageContent() {
   const [generatedLessons, setGeneratedLessons] = useState<GeneratedLesson[]>([]);
   const [error, setError] = useState("");
   const [paywallHard, setPaywallHard] = useState(false);
+  const [aiUsage, setAiUsage] = useState<AiUsage | null>(null);
 
   const sourceLessonId = searchParams.get("sourceLessonId");
   const generationMode =
@@ -81,6 +77,7 @@ function ExplorePageContent() {
       if (generatedRes.ok) {
         const generatedData = await generatedRes.json();
         setGeneratedLessons(generatedData.lessons ?? []);
+        setAiUsage(generatedData.aiUsage ?? null);
       }
     }
 
@@ -117,11 +114,13 @@ function ExplorePageContent() {
       if (!res.ok) {
         setPaywallHard(res.status === 402);
         setError(data.error || "Failed to generate");
+        if (data.aiUsage) setAiUsage(data.aiUsage);
         return;
       }
 
       setPaywallHard(false);
       setGeneratedLessons((prev) => mergeLessons([data.lesson, ...prev]));
+      if (data.aiUsage) setAiUsage(data.aiUsage);
       setTopic("");
     } catch {
       setError("Something went wrong");
@@ -149,9 +148,31 @@ function ExplorePageContent() {
           <Sparkles size={40} className="mx-auto text-[var(--green-primary)] mb-2" />
           <h1 className={cn(ds.sectionTitle, "text-xl")}>Explore & Generate</h1>
           <p className="text-sm text-[var(--text-secondary)] mt-1">
-            Bonus lessons for deeper learning, separate from your core curriculum unlocks
+            Lessons are served from your AI lesson library in the database (no live model dependency).
           </p>
         </div>
+
+        {aiUsage && (
+          <div
+            className={cn(
+              ds.panelFlat,
+              aiUsage.unlimited
+                ? "border-[var(--green-primary)]/30 bg-[var(--green-primary)]/10"
+                : "border-[var(--gold-primary)]/30 bg-[var(--gold-primary)]/10"
+            )}
+          >
+            <div className="text-sm font-black text-[var(--text-primary)]">
+              {aiUsage.unlimited
+                ? "PM Streak Pro: unlimited AI lesson access"
+                : `${aiUsage.remainingDailyCredits ?? 0} free AI lesson credit left today`}
+            </div>
+            {!aiUsage.unlimited && (
+              <p className="text-xs text-[var(--text-secondary)] mt-1">
+                You get 1 free credit each day and up to {aiUsage.monthlyFreeLimit ?? 5} per month.
+              </p>
+            )}
+          </div>
+        )}
 
         {generationMode === "deep_dive" && (
           <div
@@ -233,7 +254,7 @@ function ExplorePageContent() {
             Suggested Topics
           </h3>
           <div className="flex flex-wrap gap-2">
-            {SUGGESTED_TOPICS.map((suggestedTopic) => (
+            {EXPLORE_SEED_TOPICS.map((suggestedTopic) => (
               <button
                 key={suggestedTopic}
                 onClick={() => {
@@ -303,11 +324,11 @@ function ExplorePageContent() {
             </div>
             <div className="flex items-start gap-2">
               <span className="text-[var(--green-primary)] font-bold">2.</span>
-              <span>We search Lenny&apos;s transcript archive for the strongest relevant excerpts</span>
+              <span>We first look for a matching lesson from the stored AI lesson library</span>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-[var(--green-primary)] font-bold">3.</span>
-              <span>A richer lesson is generated just for you and saved here for later</span>
+              <span>If available, we instantly attach that lesson to your profile for later reuse</span>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-[var(--green-primary)] font-bold">4.</span>
