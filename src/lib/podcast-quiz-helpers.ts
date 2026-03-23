@@ -314,10 +314,16 @@ export function buildExploreInsightQuestions(topic: string, results: ExploreSnip
   ];
 }
 
-function cleanSnippetForExplore(snippet: string, maxLength = 620) {
+export function cleanSnippetForExplore(snippet: string, maxLength = 620) {
   const cleaned = snippet
     .replace(/\b[A-Za-z .'()-]+ \(\d{2}:\d{2}:\d{2}\):\s*/g, "")
     .replace(/\s+/g, " ")
     .trim();
   return cleaned.length > maxLength ? `${cleaned.slice(0, maxLength).trim()}...` : cleaned;
+}
+
+export function buildSourceTranscript(topic: string, results: ExploreSnippet[]) {
+  return results
+    .map((r) => `[${r.guest}${r.episodeTitle ? ` - ${r.episodeTitle}` : ""}]\n${cleanSnippetForExplore(r.snippet, 1000)}`)
+    .join("\n\n");
 }
