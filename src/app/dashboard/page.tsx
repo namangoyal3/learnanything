@@ -308,8 +308,8 @@ export default function DashboardPage() {
                 Complete 2 lessons within {earnBack.hoursRemaining}h to restore it.
                 {earnBack.completedToday ? " (1 done — 1 more to go!)" : ""}
               </p>
-              <a
-                href="#lessons"
+              <button
+                type="button"
                 onClick={(e) => {
                   e.preventDefault();
                   requestAnimationFrame(() =>
@@ -319,7 +319,7 @@ export default function DashboardPage() {
                 className="inline-flex items-center gap-1.5 rounded-[var(--ds-radius-md)] bg-[var(--orange-primary)] px-3.5 py-2 text-xs font-black text-white transition-colors hover:bg-[var(--orange-primary)]/80"
               >
                 <Flame size={13} /> Start a Lesson Now
-              </a>
+              </button>
             </div>
           </div>
         )}
