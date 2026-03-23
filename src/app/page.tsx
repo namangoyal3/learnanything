@@ -33,7 +33,7 @@ export default async function Home() {
               href="/login"
               className="px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-sm font-black transition-colors"
             >
-              Start Free
+              Sign up with Google
             </BrowserLink>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default async function Home() {
                 <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="white" fillOpacity="0.9"/>
                 <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="white" fillOpacity="0.9"/>
               </svg>
-              Start free with Google
+              Sign up with Google
             </BrowserLink>
             <p className="mt-3 text-xs text-[var(--text-secondary)]">No credit card · 30 seconds to set up</p>
           </div>
@@ -109,7 +109,6 @@ export default async function Home() {
             { value: "300+", label: "Podcast episodes" },
             { value: "2 min", label: "Per lesson" },
             { value: "10+", label: "PM frameworks" },
-            { value: "Free", label: "Forever" },
           ].map(({ value, label }) => (
             <div key={label} className="flex items-baseline gap-1.5">
               <span className="text-lg font-black text-white tabular-nums">{value}</span>
@@ -258,7 +257,7 @@ export default async function Home() {
                   <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="white" fillOpacity="0.9"/>
                   <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="white" fillOpacity="0.9"/>
                 </svg>
-                Start free with Google
+                Sign up with Google
               </BrowserLink>
               <p className="text-center text-xs text-[var(--text-secondary)]">No password · Takes 30 seconds</p>
             </div>
