@@ -2,15 +2,24 @@ import { prisma } from "@/lib/prisma";
 
 const FREE_DAILY_LIMIT = 1;
 const FREE_MONTHLY_LIMIT = 5;
+export const FREE_AI_LESSONS_PER_MONTH = FREE_MONTHLY_LIMIT;
 
 export type AiLessonGate =
-  | { allowed: true; usedToday: number; limit: number }
+  | {
+      allowed: true;
+      usedToday: number;
+      usedThisMonth: number;
+      limit: number;
+      softPaywall: boolean;
+    }
   | {
       allowed: false;
       usedToday: number;
+      usedThisMonth: number;
       limit: number;
       reason: string;
       type: "daily" | "monthly";
+      softPaywall: boolean;
     };
 
 export async function countAiLessonsToday(userId: string): Promise<number> {
@@ -46,33 +55,41 @@ export async function evaluateAiLessonGate(
   userId: string,
   isPro: boolean
 ): Promise<AiLessonGate> {
+  const [usedToday, usedThisMonth] = await Promise.all([
+    countAiLessonsToday(userId),
+    countAiLessonsThisMonth(userId),
+  ]);
+
   if (isPro) {
-    const used = await countAiLessonsToday(userId);
     return {
       allowed: true,
-      usedToday: used,
+      usedToday,
+      usedThisMonth,
       limit: Infinity,
+      softPaywall: false,
     };
   }
 
-  const usedToday = await countAiLessonsToday(userId);
   if (usedToday >= FREE_DAILY_LIMIT) {
     return {
       allowed: false,
       usedToday,
+      usedThisMonth,
       limit: FREE_DAILY_LIMIT,
       type: "daily",
+      softPaywall: false,
       reason: "You've reached your free daily limit for AI lessons. Deep Dives require a deep focus—and Pro access.",
     };
   }
 
-  const usedThisMonth = await countAiLessonsThisMonth(userId);
   if (usedThisMonth >= FREE_MONTHLY_LIMIT) {
      return {
       allowed: false,
-      usedToday: usedThisMonth,
+      usedToday,
+      usedThisMonth,
       limit: FREE_MONTHLY_LIMIT,
       type: "monthly",
+      softPaywall: false,
       reason: "You've used all 5 free AI lessons for this month. Upgrade to Pro for unlimited deeper insights.",
     };
   }
@@ -80,6 +97,8 @@ export async function evaluateAiLessonGate(
   return {
     allowed: true,
     usedToday,
+    usedThisMonth,
     limit: FREE_DAILY_LIMIT,
+    softPaywall: false,
   };
 }
