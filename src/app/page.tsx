@@ -1,9 +1,32 @@
 import { redirect } from "next/navigation";
+import type { Metadata } from "next";
 import { getCurrentUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import BrowserLink from "@/components/BrowserLink";
 import SafariBar from "@/components/SafariBar";
+
+export const metadata: Metadata = {
+  title: "PM Streak | Daily PM Lessons from Podcast Insights",
+  description:
+    "Sharpen your product intuition with daily PM lessons, streaks, XP, and rankings. Learn from 300+ podcast insights in 2 minutes a day.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "PM Streak | Daily PM Lessons from Podcast Insights",
+    description:
+      "Sharpen your product intuition with daily PM lessons, streaks, XP, and rankings.",
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Streak | Daily PM Lessons from Podcast Insights",
+    description:
+      "Sharpen your product intuition with daily PM lessons, streaks, XP, and rankings.",
+  },
+};
 
 export default async function Home() {
   // Logged-in users skip the landing page entirely
@@ -16,8 +39,40 @@ export default async function Home() {
     redirect(user?.onboarded ? "/dashboard" : "/onboarding");
   }
 
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "PM Streak",
+    url: process.env.NEXT_PUBLIC_APP_URL || "https://duolingo-for-pms.vercel.app",
+    description:
+      "Daily product management learning platform with streaks, XP, and rankings.",
+  };
+
+  const softwareJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "PM Streak",
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    description:
+      "Product management micro-lessons powered by podcast insights with streak-based learning.",
+  };
+
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
+      />
       <SafariBar />
 
       {/* ── NAV ── */}
