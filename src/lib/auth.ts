@@ -26,7 +26,9 @@ type ResetTokenPayload = {
   type: "password_reset";
 };
 
-export async function signPasswordResetToken(userId: string): Promise<string> {
+export async function signPasswordResetToken(
+  userId: string
+): Promise<string> {
   return new SignJWT({ userId, type: "password_reset" })
     .setProtectedHeader({ alg: "HS256" })
     .setExpirationTime("30m")
@@ -38,7 +40,10 @@ export async function verifyPasswordResetToken(
 ): Promise<ResetTokenPayload | null> {
   try {
     const { payload } = await jwtVerify(token, JWT_SECRET);
-    if (payload.type !== "password_reset" || typeof payload.userId !== "string") {
+    if (
+      payload.type !== "password_reset" ||
+      typeof payload.userId !== "string"
+    ) {
       return null;
     }
     return payload as unknown as ResetTokenPayload;
