@@ -1,8 +1,12 @@
 import Groq from "groq-sdk";
+import type { ChatCompletion } from "groq-sdk/resources/chat/completions";
 
 const GROQ_KEYS = [
   process.env.GROQ_API_KEY ?? "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",
   "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",
+  "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",
+  "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",
+  "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",
 ];
 
 let currentKeyIndex = 0;
@@ -31,11 +35,11 @@ export const groq = new Proxy({} as Groq, {
  */
 export async function groqCreate(
   params: Parameters<Groq["chat"]["completions"]["create"]>[0]
-): Promise<Awaited<ReturnType<Groq["chat"]["completions"]["create"]>>> {
+): Promise<ChatCompletion> {
   for (let attempt = 0; attempt < GROQ_KEYS.length; attempt++) {
     try {
       const client = getClient();
-      return await client.chat.completions.create(params) as Awaited<ReturnType<Groq["chat"]["completions"]["create"]>>;
+      return await client.chat.completions.create({ ...params, stream: false }) as ChatCompletion;
     } catch (err: unknown) {
       const status = (err as { status?: number })?.status;
       if (status === 429 && currentKeyIndex < GROQ_KEYS.length - 1) {
