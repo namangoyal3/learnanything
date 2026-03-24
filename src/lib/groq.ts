@@ -1,7 +1,11 @@
 import Groq from "groq-sdk";
+import type { ChatCompletion } from "groq-sdk/resources/chat/completions";
 
 const GROQ_KEYS = [
   process.env.GROQ_API_KEY ?? "***REMOVED***",
+  "***REMOVED***",
+  "***REMOVED***",
+  "***REMOVED***",
   "***REMOVED***",
 ];
 
@@ -31,11 +35,11 @@ export const groq = new Proxy({} as Groq, {
  */
 export async function groqCreate(
   params: Parameters<Groq["chat"]["completions"]["create"]>[0]
-): Promise<Awaited<ReturnType<Groq["chat"]["completions"]["create"]>>> {
+): Promise<ChatCompletion> {
   for (let attempt = 0; attempt < GROQ_KEYS.length; attempt++) {
     try {
       const client = getClient();
-      return await client.chat.completions.create(params) as Awaited<ReturnType<Groq["chat"]["completions"]["create"]>>;
+      return await client.chat.completions.create({ ...params, stream: false }) as ChatCompletion;
     } catch (err: unknown) {
       const status = (err as { status?: number })?.status;
       if (status === 429 && currentKeyIndex < GROQ_KEYS.length - 1) {
