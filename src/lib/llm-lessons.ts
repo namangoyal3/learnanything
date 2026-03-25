@@ -1,21 +1,68 @@
 import { groqCreate } from "./groq";
 import { isGenericLessonContent, isWeakQuestionSet } from "./lesson-quality";
 
-/** Strips markdown code fences and extracts the JSON object/array from a string. */
+/**
+ * Finds the index of the balanced closing brace/bracket matching the opener at `start`.
+ * Skips over strings, escaped chars, and nested structures.
+ */
+function findBalancedEnd(s: string, start: number): number {
+  const opener = s[start];
+  const closer = opener === "{" ? "}" : "]";
+  let depth = 0;
+  let inString = false;
+  let escape = false;
+  for (let i = start; i < s.length; i++) {
+    const c = s[i]!;
+    if (escape) { escape = false; continue; }
+    if (c === "\\" && inString) { escape = true; continue; }
+    if (c === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (c === opener) depth++;
+    else if (c === closer) { if (--depth === 0) return i; }
+  }
+  return -1;
+}
+
+/** Strips markdown code fences and extracts parseable JSON from a model response. */
 function extractJSON(raw: string): string {
-  // Remove leading/trailing whitespace
   const s = raw.trim();
   // Strip ```json ... ``` or ``` ... ``` fences
   const fenced = s.match(/^```(?:json)?\s*([\s\S]*?)\s*```$/);
-  if (fenced) return fenced[1]!.trim();
-  // Find first { or [ and last } or ]
+  let candidate = fenced ? fenced[1]!.trim() : s;
+  // Find the first { or [ then use balanced matching to find the correct closing char
   const start = Math.min(
-    s.indexOf("{") === -1 ? Infinity : s.indexOf("{"),
-    s.indexOf("[") === -1 ? Infinity : s.indexOf("[")
+    candidate.indexOf("{") === -1 ? Infinity : candidate.indexOf("{"),
+    candidate.indexOf("[") === -1 ? Infinity : candidate.indexOf("[")
   );
-  const end = Math.max(s.lastIndexOf("}"), s.lastIndexOf("]"));
-  if (start < Infinity && end > start) return s.slice(start, end + 1);
-  return s;
+  if (start < Infinity) {
+    const end = findBalancedEnd(candidate, start);
+    if (end !== -1) candidate = candidate.slice(start, end + 1);
+  }
+  return candidate;
+}
+
+/** Parse JSON from a model response, handling common free-model formatting issues. */
+function parseModelJSON<T>(raw: string): T {
+  const candidate = extractJSON(raw);
+
+  function tryParse(s: string): T {
+    return JSON.parse(s) as T;
+  }
+
+  // Attempt 1: raw candidate
+  try { return tryParse(candidate); } catch { /* fall through */ }
+
+  // Attempt 2: strip trailing commas before ] or }
+  const noTrailing = candidate.replace(/,\s*([}\]])/g, "$1");
+  try { return tryParse(noTrailing); } catch { /* fall through */ }
+
+  // Attempt 3: strip ALL control characters including raw newlines inside strings
+  const sanitized = noTrailing.replace(/[\x00-\x1F\x7F]/g, " ");
+  try { return tryParse(sanitized); } catch { /* fall through */ }
+
+  // Attempt 4: fix invalid JSON escape sequences (e.g. \- \: \. are not valid JSON)
+  const fixedEscapes = sanitized.replace(/\\([^"\\\/bfnrtu0-9])/g, "$1");
+  return tryParse(fixedEscapes);
 }
 
 export interface SearchResult {
@@ -92,7 +139,7 @@ OUTPUT FORMAT: Return a valid JSON object only.
 
   const rawResult = completion.choices[0]?.message?.content;
   if (!rawResult) throw new Error("No response from Groq");
-  const parsed = JSON.parse(extractJSON(rawResult)) as GeneratedLessonContent;
+  const parsed = parseModelJSON<GeneratedLessonContent>(rawResult);
   // Normalize content to string in case the model wraps it in an object
   if (typeof parsed.content !== "string") {
     parsed.content = typeof parsed.content === "object"
@@ -134,7 +181,7 @@ Rules:
   if (!retryRaw) {
     throw new Error("Could not generate high-quality PM lesson content.");
   }
-  const retryParsed = JSON.parse(extractJSON(retryRaw)) as GeneratedLessonContent;
+  const retryParsed = parseModelJSON<GeneratedLessonContent>(retryRaw);
   if (typeof retryParsed.content !== "string") {
     retryParsed.content = typeof retryParsed.content === "object"
       ? JSON.stringify(retryParsed.content)
