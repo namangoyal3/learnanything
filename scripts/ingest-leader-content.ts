@@ -13,6 +13,7 @@ import { resolve } from "node:path";
 import { PrismaClient } from "@prisma/client";
 import Parser from "rss-parser";
 import * as cheerio from "cheerio";
+import FirecrawlApp from "@mendable/firecrawl-js";
 import { generateLeaderLesson, SearchResult } from "../src/lib/llm-lessons";
 import { buildSourceTranscript } from "../src/lib/podcast-quiz-helpers";
 
@@ -90,7 +91,30 @@ async function fetchRssArticles(leader: Leader, limit: number) {
   }
 }
 
+// Firecrawl client — only used if FIRECRAWL_API_KEY is set
+let _firecrawl: FirecrawlApp | null = null;
+function getFirecrawl(): FirecrawlApp | null {
+  if (!process.env.FIRECRAWL_API_KEY) return null;
+  if (!_firecrawl) _firecrawl = new FirecrawlApp({ apiKey: process.env.FIRECRAWL_API_KEY });
+  return _firecrawl;
+}
+
+/** Fetch clean article text via Firecrawl (if API key set) with cheerio fallback */
 async function fetchArticleText(url: string): Promise<string> {
+  const fc = getFirecrawl();
+  if (fc) {
+    try {
+      const result = await fc.scrape(url, { formats: ["markdown"] });
+      if (result.markdown && result.markdown.length >= 200) {
+        console.log(`    [firecrawl] ${result.markdown.length} chars`);
+        return result.markdown.slice(0, 4000);
+      }
+    } catch (err) {
+      console.warn(`    [firecrawl] failed, falling back to cheerio:`, err instanceof Error ? err.message : String(err));
+    }
+  }
+
+  // Fallback: raw fetch + cheerio
   try {
     const res = await fetch(url, {
       headers: { "User-Agent": "pm-streak-bot/1.0" },
@@ -99,9 +123,7 @@ async function fetchArticleText(url: string): Promise<string> {
     if (!res.ok) return "";
     const html = await res.text();
     const $ = cheerio.load(html);
-    // Remove nav, footer, scripts, ads
     $("nav, footer, header, script, style, .ad, .sidebar, #sidebar, .menu").remove();
-    // Prefer article/main content
     const content = $("article, main, .post-content, .entry-content, .article-body").first().text()
       || $("body").text();
     return content.replace(/\s+/g, " ").trim().slice(0, 4000);

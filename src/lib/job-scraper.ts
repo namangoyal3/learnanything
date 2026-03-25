@@ -14,6 +14,7 @@
  *   8. Greenhouse boards   — public JSON APIs for PM-heavy companies
  */
 import * as cheerio from "cheerio";
+import { PlaywrightCrawler, Configuration } from "crawlee";
 
 // rss-parser ships CJS; dynamic import keeps Next.js edge/server happy
 async function getRssParser() {
@@ -324,37 +325,56 @@ export async function fetchLinkedIn(): Promise<NormJob[]> {
   return all;
 }
 
-// ─── Source 7: YC Work at a Startup ─────────────────────────────────────────
+// ─── Source 7: YC Work at a Startup (via Crawlee for retries + anti-bot) ────
 
 export async function fetchYCStartups(): Promise<NormJob[]> {
-  // YC jobs API endpoint (public, no auth needed)
-  const res = await safeFetch(
-    "https://www.workatastartup.com/jobs?role=pm&jobType=fulltime&remote=true",
-    { headers: { "Accept": "text/html" } }
-  );
-  if (!res) return [];
-  const html = await res.text();
-  const $ = cheerio.load(html);
   const all: NormJob[] = [];
-  // Each job card has data attributes
-  $("[data-job-id], .job-tile, .listing-item, article").each((_i, el) => {
-    const $el = $(el);
-    const titleEl = $el.find("h2, h3, .job-name, .role-name").first();
-    const companyEl = $el.find(".company-name, .startup-name, h4").first();
-    const linkEl = $el.find("a[href]").first();
-    const title = titleEl.text().trim();
-    const company = companyEl.text().trim();
-    const href = linkEl.attr("href") ?? "";
-    if (!title || !href) return;
-    const url = href.startsWith("http") ? href : `https://www.workatastartup.com${href}`;
-    all.push({
-      title, company: company || "YC Startup", applyUrl: url,
-      description: $el.find(".description, .job-description").first().text().slice(0, 500) || null,
-      remote: true, location: null,
-      tags: extractTags(title, ["YC"]),
-      postedAt: null, source: "yc",
-    });
+
+  // Silence Crawlee's internal storage/logging for library use
+  Configuration.getGlobalConfig().set("persistStorage", false);
+
+  const crawler = new PlaywrightCrawler({
+    maxRequestRetries: 3,
+    requestHandlerTimeoutSecs: 45,
+    navigationTimeoutSecs: 30,
+    launchContext: { launchOptions: { headless: true } },
+    async requestHandler({ page }) {
+      // Wait for job listings to render (YC site uses .job-name for each listing)
+      await page.waitForSelector(".job-name", { timeout: 15000 }).catch(() => {});
+      const html = await page.content();
+      const $ = cheerio.load(html);
+      // Each job row: .job-name a[href*="/jobs/"] is the title link
+      $(".job-name").each((_i, el) => {
+        const $el = $(el);
+        const $a = $el.find("a[href*='/jobs/']").first();
+        const title = $a.text().trim();
+        const href = $a.attr("href") ?? "";
+        if (!title || !href) return;
+        const url = href.startsWith("http") ? href : `https://www.workatastartup.com${href}`;
+        // Company name is in nearest ancestor row's company link
+        const $row = $el.closest(".mt-2").prev().find("a[href*='/companies/']").first();
+        const company = $row.text().trim() || "YC Startup";
+        all.push({
+          title, company, applyUrl: url,
+          description: null,
+          remote: true, location: null,
+          tags: extractTags(title, ["YC"]),
+          postedAt: null, source: "yc",
+        });
+      });
+    },
+    async failedRequestHandler({ request }) {
+      console.warn(`  ⚠ YC Crawlee failed after retries: ${request.url}`);
+    },
   });
+
+  try {
+    // Use the canonical PM jobs listing URL (remote)
+    await crawler.run(["https://www.workatastartup.com/jobs/r/product-manager"]);
+  } catch (err) {
+    console.warn(`  ⚠ YC Crawlee error:`, err instanceof Error ? err.message : String(err));
+  }
+
   return all;
 }
 

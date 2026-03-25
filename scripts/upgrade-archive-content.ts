@@ -11,6 +11,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { PrismaClient } from "@prisma/client";
+import { PrismaNeonHttp } from "@prisma/adapter-neon";
 import { generateActionablePMLesson } from "../src/lib/llm-lessons";
 import { isGenericLessonContent, isWeakQuestionSet } from "../src/lib/lesson-quality";
 import type { SearchResult } from "../src/lib/llm-lessons";
@@ -33,7 +34,10 @@ for (const p of [".env.local", ".env", ".env.production"].map((f) => resolve(pro
   }
 }
 
-const prisma = new PrismaClient();
+if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL not set after env load — check .env.local path");
+// Use Neon's HTTP-based adapter — no TCP port 5432 needed, works through HTTPS.
+const adapter = new PrismaNeonHttp(process.env.DATABASE_URL);
+const prisma = new PrismaClient({ adapter } as ConstructorParameters<typeof PrismaClient>[0]);
 
 const DEFAULT_CONCURRENCY = 3;
 
@@ -210,49 +214,48 @@ async function main() {
       }
 
       // Write to DB: update lesson content + update questions in-place (preserves quiz attempt history)
-      await prisma.$transaction(async (tx) => {
-        await tx.lesson.update({
-          where: { id: lesson.id },
-          data: { content: result.content },
-        });
-
-        // Fetch existing question IDs ordered by sortOrder
-        const existingQuestions = await tx.question.findMany({
-          where: { lessonId: lesson.id },
-          orderBy: { sortOrder: "asc" },
-          select: { id: true },
-        });
-
-        // Update existing rows, create new ones, leave extras (don't delete — FK from QuizAttempt)
-        for (let i = 0; i < result.questions.length; i++) {
-          const q = result.questions[i]!;
-          const existing = existingQuestions[i];
-          if (existing) {
-            await tx.question.update({
-              where: { id: existing.id },
-              data: {
-                questionText: q.questionText,
-                options: JSON.stringify(q.options),
-                correctIndex: q.correctIndex,
-                explanation: q.explanation,
-                sortOrder: i,
-              },
-            });
-          } else {
-            await tx.question.create({
-              data: {
-                lessonId: lesson.id,
-                questionText: q.questionText,
-                options: JSON.stringify(q.options),
-                correctIndex: q.correctIndex,
-                explanation: q.explanation,
-                xpReward: 5,
-                sortOrder: i,
-              },
-            });
-          }
-        }
+      // Note: HTTP adapter doesn't support transactions — using sequential writes instead.
+      await prisma.lesson.update({
+        where: { id: lesson.id },
+        data: { content: result.content },
       });
+
+      // Fetch existing question IDs ordered by sortOrder
+      const existingQuestions = await prisma.question.findMany({
+        where: { lessonId: lesson.id },
+        orderBy: { sortOrder: "asc" },
+        select: { id: true },
+      });
+
+      // Update existing rows, create new ones, leave extras (don't delete — FK from QuizAttempt)
+      for (let i = 0; i < result.questions.length; i++) {
+        const q = result.questions[i]!;
+        const existing = existingQuestions[i];
+        if (existing) {
+          await prisma.question.update({
+            where: { id: existing.id },
+            data: {
+              questionText: q.questionText,
+              options: JSON.stringify(q.options),
+              correctIndex: q.correctIndex,
+              explanation: q.explanation,
+              sortOrder: i,
+            },
+          });
+        } else {
+          await prisma.question.create({
+            data: {
+              lessonId: lesson.id,
+              questionText: q.questionText,
+              options: JSON.stringify(q.options),
+              correctIndex: q.correctIndex,
+              explanation: q.explanation,
+              xpReward: 5,
+              sortOrder: i,
+            },
+          });
+        }
+      }
 
       upgraded++;
       console.log(`[upgrade-content] upgraded ${label}`);

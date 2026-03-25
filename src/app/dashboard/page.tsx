@@ -434,6 +434,7 @@ export default function DashboardPage() {
         credits={user.credits}
         avatarUrl={user.avatarUrl}
         name={user.name}
+        plan={user.plan}
         unreadNotifications={user.unreadNotifications}
       />
 
@@ -527,28 +528,7 @@ export default function DashboardPage() {
               ))}
             </div>
 
-            <Link href="/daily-challenge" className="block">
-              <div className="relative overflow-hidden rounded-[var(--ds-radius-lg)] bg-gradient-to-r from-[#ff6b00] via-[var(--orange-primary)] to-[#ff4b4b] p-4 lesson-card">
-                <div className="absolute right-0 top-0 bottom-0 w-24 flex items-center justify-center opacity-10">
-                  <Calendar size={80} />
-                </div>
-                <div className="relative flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
-                      <Calendar size={22} className="text-white" />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm font-black text-white">Daily Bonus</span>
-                      </div>
-                      <div className="text-xs text-white/75 mt-0.5 flex items-center gap-1">
-                        <Zap size={11} /> Extra XP await
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
+
 
             <XPProgress xp={user.xp} />
             {streakCalendar.length > 0 && (
