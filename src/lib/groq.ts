@@ -42,16 +42,15 @@ export const groq = new Proxy({} as Groq, {
   },
 });
 
-// Free models to try in order when OpenRouter primary is rate-limited.
-// Note: response_format is NOT sent to OpenRouter — free models have inconsistent
-// support for JSON mode. The prompt asks for JSON; extractJSON() handles fences.
-// Ordered by reliability (verified 2025-03-25) — fast-failing models last.
+// Models to try in order when Groq keys are exhausted.
+// MiMo v2 flash is primary — ~$0.001/lesson, no rate limits, clean JSON output.
+// Free models are kept as zero-cost fallbacks.
 const OPENROUTER_FREE_MODELS = [
-  "google/gemma-3-12b-it:free",                // Google AI Studio — reliable & fast
-  "arcee-ai/trinity-large-preview:free",       // reliable backup
-  "google/gemma-3-27b-it:free",                // larger Gemma fallback
-  "meta-llama/llama-3.3-70b-instruct:free",    // Venice provider; often rate-limited
-  "nousresearch/hermes-3-llama-3.1-405b:free", // last resort
+  "xiaomi/mimo-v2-flash",                      // primary: $0.00000009/tok, fast, clean JSON
+  "google/gemma-3-12b-it:free",                // free backup
+  "arcee-ai/trinity-large-preview:free",       // free backup
+  "google/gemma-3-27b-it:free",                // free backup
+  "meta-llama/llama-3.3-70b-instruct:free",    // often rate-limited but worth a shot
 ];
 
 /**
@@ -69,18 +68,22 @@ async function groqCreateViaOpenRouter(
   }
 
   const p = params as { temperature?: number; max_tokens?: number };
+  // Cap max_tokens to avoid over-spending credits on paid models like MiMo.
+  // Lesson output is ~2-3k tokens; 3500 keeps us within low-credit budgets.
+  const maxTokens = Math.min(p.max_tokens ?? 3500, 3500);
 
   for (const model of OPENROUTER_FREE_MODELS) {
     const body = {
       model,
       messages: params.messages,
       temperature: p.temperature,
-      max_tokens: p.max_tokens,
+      max_tokens: maxTokens,
       // response_format intentionally omitted — free models have inconsistent support
     };
 
-    // Retry up to 2 times with backoff per model
-    for (let attempt = 0; attempt < 2; attempt++) {
+    // Primary model (MiMo) gets 2 attempts for transient 500s; others get 1
+    const maxAttempts = model === OPENROUTER_FREE_MODELS[0] ? 2 : 1;
+    for (let attempt = 0; attempt < maxAttempts; attempt++) {
       const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -91,15 +94,25 @@ async function groqCreateViaOpenRouter(
       });
 
       if (res.ok) {
+        const data = await res.json() as ChatCompletion & { error?: { code?: number; message?: string } };
+        // OpenRouter wraps provider errors as 200 with an error field — treat as 429/5xx
+        if (data.error) {
+          const isLastAttempt = attempt >= maxAttempts - 1;
+          console.warn(`[groq] OpenRouter ${model} error body (${data.error.code}): ${data.error.message}${isLastAttempt ? " — trying next model" : " — retrying in 5s"}`);
+          if (!isLastAttempt) { await new Promise((r) => setTimeout(r, 5_000)); continue; }
+          break;
+        }
+        if (!Array.isArray(data.choices) || data.choices.length === 0) {
+          console.warn(`[groq] OpenRouter ${model} returned no choices: ${JSON.stringify(data).slice(0, 200)}`);
+          break;
+        }
         console.log(`[groq] OpenRouter success with model: ${model}`);
-        return res.json() as Promise<ChatCompletion>;
+        return data;
       }
 
       if (res.status === 429) {
-        const waitMs = (attempt + 1) * 15_000; // 15s, 30s, 45s
-        console.warn(`[groq] OpenRouter 429 on ${model} (attempt ${attempt + 1}), waiting ${waitMs / 1000}s...`);
-        await new Promise((r) => setTimeout(r, waitMs));
-        continue;
+        console.warn(`[groq] OpenRouter 429 on ${model} — trying next model`);
+        break; // no per-model retry; move to next model immediately
       }
 
       // Non-429 error — skip to next model
@@ -107,6 +120,35 @@ async function groqCreateViaOpenRouter(
       console.warn(`[groq] OpenRouter error ${res.status} on ${model}: ${text.slice(0, 200)}`);
       break;
     }
+  }
+
+  // All models exhausted — wait 5 minutes and try the primary model one more time
+  // before giving up. This handles global rate-limit windows that reset periodically.
+  const waitMin = 5;
+  console.warn(`[groq] All OpenRouter models exhausted — waiting ${waitMin}min for rate limits to reset...`);
+  await new Promise((r) => setTimeout(r, waitMin * 60_000));
+
+  // One final attempt with the primary model
+  const finalRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: OPENROUTER_FREE_MODELS[0],
+      messages: params.messages,
+      temperature: p.temperature,
+      max_tokens: p.max_tokens,
+    }),
+  });
+  if (finalRes.ok) {
+    const finalData = await finalRes.json() as ChatCompletion;
+    if (!Array.isArray(finalData.choices) || finalData.choices.length === 0) {
+      throw new Error(`OpenRouter returned response with no choices: ${JSON.stringify(finalData).slice(0, 200)}`);
+    }
+    console.log(`[groq] OpenRouter success after wait with model: ${OPENROUTER_FREE_MODELS[0]}`);
+    return finalData;
   }
 
   throw new Error("All OpenRouter free models exhausted");

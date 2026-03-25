@@ -69,6 +69,8 @@ export type CurriculumCategory = {
   color: string;
   sortOrder: number;
   lessons: CurriculumLesson[];
+  /** Number of lessons hidden behind the pro gate (free users only; 0 for pro). */
+  proGatedCount: number;
 };
 
 export type LessonAccess = {
@@ -104,6 +106,25 @@ function sortLessonsByDayNumber<T extends { dayNumber: number }>(a: T, b: T) {
 const PRO_PREVIEW_WINDOW = 5;
 /** Lesson lockedReason value indicating pro-gate (UI renders upgrade CTA). */
 export const PRO_GATE_REASON = "UPGRADE_TO_PRO";
+/** Free users see this many lessons per category; the rest are pro-gated. */
+const FREE_LESSONS_PER_CATEGORY = 5;
+/**
+ * These categories are entirely premium for free users (show 0 free lessons,
+ * full pro-gate card regardless of how many lessons they contain).
+ * Typically thought-leader specific categories with few total lessons.
+ */
+const FULLY_PREMIUM_CATEGORY_SLUGS = new Set([
+  // Thought-leader specific categories — always fully premium for free users
+  "pm-leader-aakash",
+  "pm-leader-shreyas",
+  "pm-leader-wes",
+  "pm-leader-lenny",
+  "pm-leader-jason",
+  "pm-leader-elena",
+  "pm-leader-andrew",
+  "pm-leader-casey",
+  "pm-leader-brian",
+]);
 
 function getArchiveVisibility(
   lessons: Pick<LessonWithCompletion, "id" | "title" | "dayNumber" | "isLocked">[],
@@ -153,8 +174,56 @@ function getArchiveVisibility(
 
 function mapCurriculumCategory(
   category: CategoryWithLessons,
-  visibility: ArchiveVisibility
+  visibility: ArchiveVisibility,
+  isPro: boolean
 ): CurriculumCategory {
+  const sortedLessons = [...category.lessons].sort(sortLessonsByDayNumber);
+
+  // Free-tier enforcement: cap visible lessons per category regardless of DB isLocked.
+  // Pro users always see every lesson. Fully premium categories (e.g. thought-leader
+  // specific categories) show 0 free lessons regardless of total count.
+  const isFullyPremium = !isPro && FULLY_PREMIUM_CATEGORY_SLUGS.has(category.slug);
+  const freeLimit = isPro ? sortedLessons.length : isFullyPremium ? 0 : FREE_LESSONS_PER_CATEGORY;
+  const freeLessons = sortedLessons.slice(0, freeLimit);
+  const proGatedCount = Math.max(0, sortedLessons.length - freeLimit);
+
+  const mappedLessons = freeLessons
+    .filter(
+      (lesson) =>
+        !lesson.isLocked ||
+        visibility.unlockedLockedIds.has(lesson.id) ||
+        visibility.previewIds.has(lesson.id) ||
+        visibility.proLockedIds.has(lesson.id)
+    )
+    .map((lesson) => {
+      const isAccessible = visibility.unlockedLockedIds.has(lesson.id);
+      const isProLocked = lesson.isLocked && visibility.proLockedIds.has(lesson.id);
+      const isLocked = lesson.isLocked && !isAccessible;
+
+      let lockedReason: string | null = null;
+      if (isProLocked) {
+        lockedReason = PRO_GATE_REASON;
+      } else if (isLocked) {
+        lockedReason = ARCHIVE_LOCKED_REASON;
+      }
+
+      return {
+        id: lesson.id,
+        title: lesson.title,
+        slug: lesson.slug,
+        description: lesson.description,
+        xpReward: lesson.xpReward,
+        difficulty: lesson.difficulty,
+        dayNumber: lesson.dayNumber,
+        completed: lesson.completedLessons.length > 0,
+        isLocked,
+        score: lesson.completedLessons[0]?.score ?? null,
+        lockedReason,
+        prerequisiteLessonId: null,
+        prerequisiteLessonTitle: null,
+      };
+    });
+
   return {
     id: category.id,
     name: category.name,
@@ -163,42 +232,8 @@ function mapCurriculumCategory(
     icon: category.icon,
     color: category.color,
     sortOrder: category.sortOrder,
-    lessons: category.lessons
-      .filter(
-        (lesson) =>
-          !lesson.isLocked ||
-          visibility.unlockedLockedIds.has(lesson.id) ||
-          visibility.previewIds.has(lesson.id) ||
-          visibility.proLockedIds.has(lesson.id)
-      )
-      .map((lesson) => {
-        const isAccessible = visibility.unlockedLockedIds.has(lesson.id);
-        const isProLocked = lesson.isLocked && visibility.proLockedIds.has(lesson.id);
-        const isLocked = lesson.isLocked && !isAccessible;
-
-        let lockedReason: string | null = null;
-        if (isProLocked) {
-          lockedReason = PRO_GATE_REASON;
-        } else if (isLocked) {
-          lockedReason = ARCHIVE_LOCKED_REASON;
-        }
-
-        return {
-          id: lesson.id,
-          title: lesson.title,
-          slug: lesson.slug,
-          description: lesson.description,
-          xpReward: lesson.xpReward,
-          difficulty: lesson.difficulty,
-          dayNumber: lesson.dayNumber,
-          completed: lesson.completedLessons.length > 0,
-          isLocked,
-          score: lesson.completedLessons[0]?.score ?? null,
-          lockedReason,
-          prerequisiteLessonId: null,
-          prerequisiteLessonTitle: null,
-        };
-      }),
+    lessons: mappedLessons,
+    proGatedCount,
   };
 }
 
@@ -248,8 +283,8 @@ export async function getCoreCurriculumForUser(userId: string) {
   );
 
   return categories
-    .map((category) => mapCurriculumCategory(category, visibility))
-    .filter((category) => category.lessons.length > 0);
+    .map((category) => mapCurriculumCategory(category, visibility, isPro))
+    .filter((category) => category.lessons.length > 0 || category.proGatedCount > 0);
 }
 
 export async function getCoreLessonAccess(
@@ -387,7 +422,7 @@ export async function getRelatedCoreLessons(
 
   const visibility = getArchiveVisibility(allCoreLessons, unlockedBatch);
 
-  return mapCurriculumCategory(category, visibility).lessons
+  return mapCurriculumCategory(category, visibility, false).lessons
     .filter((lesson) => !excludeLessonIds.includes(lesson.id))
     .sort((a, b) => {
       if (a.isLocked !== b.isLocked) return a.isLocked ? 1 : -1;

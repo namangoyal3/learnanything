@@ -1,12 +1,22 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import { headers } from "next/headers";
 import {
   Flame, Check, X, Zap, Star, BookOpen, Brain, Target,
-  Users, Sparkles, MessageSquare, ChevronRight, Camera, Mail,
+  Users, Sparkles, MessageSquare, ChevronRight,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { getCurrentUserId } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
+import { isProEffective } from "@/lib/entitlements";
+
+// Countries billed in INR (India)
+const INR_COUNTRIES = new Set(["IN"]);
+
+type PricingRegion = "INR" | "USD";
+
+function getRegion(country: string | null): PricingRegion {
+  if (country && INR_COUNTRIES.has(country)) return "INR";
+  return "USD";
+}
 
 const FREE_FEATURES = [
   { text: "22 core curriculum lessons", yes: true },
@@ -37,63 +47,72 @@ const PRO_FEATURES = [
 ];
 
 const CREDIT_COSTS = [
-  { icon: <BookOpen size={14} />, action: "Unlock next lesson batch (5 lessons)", cost: 5 },
-  { icon: <Sparkles size={14} />, action: "AI Explore lesson", cost: 2 },
-  { icon: <Brain size={14} />, action: "Interview prep session (5 questions)", cost: 5 },
+  { action: "Unlock next lesson batch (5 lessons)", cost: 5 },
+  { action: "AI Explore lesson", cost: 2 },
+  { action: "Interview prep session (5 questions)", cost: 5 },
 ];
 
-interface PlanCard {
-  key: string;
-  title: string;
-  amount: string;
-  period: string;
-  badge?: string;
-  badgeColor?: string;
-  savings?: string;
-  qrPath: string;
-  highlight?: boolean;
+function buildCheckoutUrl(opts: {
+  productId: string;
+  email?: string;
+  userId?: string;
+  plan: string;
+}) {
+  const base = "/api/checkout";
+  const params = new URLSearchParams({ productId: opts.productId });
+  if (opts.email) params.set("email", opts.email);
+  if (opts.userId) params.set("metadata_userId", opts.userId);
+  if (opts.plan) params.set("metadata_plan", opts.plan);
+  return `${base}?${params.toString()}`;
 }
 
-const PLANS: PlanCard[] = [
-  {
-    key: "monthly",
-    title: "Monthly",
-    amount: "₹499",
-    period: "/ month",
-    qrPath: "/india-upi-monthly.png",
-  },
-  {
-    key: "quarterly",
-    title: "Quarterly",
-    amount: "₹1,699",
-    period: "/ 3 months",
-    badge: "Best Value",
-    badgeColor: "bg-purple-500",
-    savings: "Save ₹298 vs monthly",
-    qrPath: "/india-upi-quarterly.png",
-    highlight: true,
-  },
-  {
-    key: "yearly",
-    title: "Yearly",
-    amount: "₹1,899",
-    period: "/ year",
-    savings: "Save 68% vs monthly",
-    qrPath: "/india-upi-yearly.png",
-  },
-];
+export default async function PricingPage() {
+  const [userId, headersList] = await Promise.all([
+    getCurrentUserId(),
+    headers(),
+  ]);
 
-export default function PricingPage() {
-  const [selectedPlan, setSelectedPlan] = useState("quarterly");
-  const [upiCopied, setUpiCopied] = useState(false);
+  // Detect country from Vercel geo header (set automatically in production)
+  const country = headersList.get("x-vercel-ip-country") ?? null;
+  const region = getRegion(country);
+  const isIndia = region === "INR";
 
-  const activePlan = PLANS.find((p) => p.key === selectedPlan) ?? PLANS[1];
+  let userEmail: string | undefined;
+  let userPlan: string = "free";
+  let dodoCustomerId: string | null | undefined;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText("pmstreak@upi").catch(() => {});
-    setUpiCopied(true);
-    setTimeout(() => setUpiCopied(false), 2000);
-  };
+  if (userId) {
+    const user = await prisma.user.findUnique({
+      where: { id: userId },
+      select: { email: true, plan: true, trialEndsAt: true, renewsAt: true, paddleCustomerId: true },
+    });
+    userEmail = user?.email;
+    userPlan = user?.plan ?? "free";
+    dodoCustomerId = user?.paddleCustomerId ?? undefined;
+    if (user && isProEffective(user)) userPlan = "pro";
+  }
+
+  // INR product IDs (India)
+  const inrMonthlyId = process.env.NEXT_PUBLIC_DODO_MONTHLY_PRODUCT_ID ?? "";
+  const inrQuarterlyId = process.env.NEXT_PUBLIC_DODO_QUARTERLY_PRODUCT_ID ?? "";
+  const inrYearlyId = process.env.NEXT_PUBLIC_DODO_YEARLY_PRODUCT_ID ?? "";
+
+  // USD product IDs (International)
+  const usdMonthlyId = process.env.NEXT_PUBLIC_DODO_USD_MONTHLY_PRODUCT_ID ?? "";
+  const usdQuarterlyId = process.env.NEXT_PUBLIC_DODO_USD_QUARTERLY_PRODUCT_ID ?? "";
+  const usdYearlyId = process.env.NEXT_PUBLIC_DODO_USD_YEARLY_PRODUCT_ID ?? "";
+
+  const plans = isIndia
+    ? [
+        { key: "monthly",   title: "Monthly",   amount: "₹499",   period: "/ month",     productId: inrMonthlyId },
+        { key: "quarterly", title: "Quarterly", amount: "₹1,699", period: "/ 3 months",  badge: "Best Value", savings: "Save ₹298 vs monthly",  productId: inrQuarterlyId },
+        { key: "yearly",    title: "Yearly",    amount: "₹2,499", period: "/ year",       savings: "Save 58% vs monthly", productId: inrYearlyId },
+      ]
+    : [
+        { key: "monthly",   title: "Monthly",   amount: "$9",     period: "/ month",     productId: usdMonthlyId },
+        { key: "quarterly", title: "Quarterly", amount: "$24",    period: "/ 3 months",  badge: "Best Value", savings: "Save $3 vs monthly",     productId: usdQuarterlyId },
+        { key: "yearly",    title: "Yearly",    amount: "$49",    period: "/ year",       savings: "Save 55% vs monthly", productId: usdYearlyId },
+      ];
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-white">
@@ -126,7 +145,7 @@ export default function PricingPage() {
           </p>
         </div>
 
-        {/* Pricing Cards */}
+        {/* Free vs Pro Comparison */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {/* Free */}
           <div className="rounded-2xl border-2 border-white/10 p-6 bg-white/5">
@@ -137,7 +156,10 @@ export default function PricingPage() {
             </div>
             <ul className="space-y-2.5 mb-6">
               {FREE_FEATURES.map((f) => (
-                <li key={f.text} className={cn("flex items-start gap-2 text-xs", f.yes ? "text-white/80" : "text-white/30 line-through")}>
+                <li
+                  key={f.text}
+                  className={`flex items-start gap-2 text-xs ${f.yes ? "text-white/80" : "text-white/30 line-through"}`}
+                >
                   {f.yes
                     ? <Check size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                     : <X size={14} className="text-white/30 mt-0.5 flex-shrink-0" />
@@ -152,14 +174,24 @@ export default function PricingPage() {
           </div>
 
           {/* Pro */}
-          <div className="rounded-2xl border-2 border-purple-500/50 p-6 bg-gradient-to-br from-purple-900/40 to-purple-800/20 relative overflow-hidden">
+          <div className="rounded-2xl border-2 border-purple-500/50 p-6 bg-gradient-to-br from-purple-900/40 to-purple-800/20">
             <div className="mb-4">
-              <h2 className="text-lg font-black mb-1">Pro</h2>
+              <div className="flex items-center justify-between mb-1">
+                <h2 className="text-lg font-black">Pro</h2>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-white/10 text-white/50">
+                  {isIndia ? "🇮🇳 India pricing" : "🌍 International pricing"}
+                </span>
+              </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-3xl font-black">₹499</span>
+                <span className="text-3xl font-black">{isIndia ? "₹499" : "$9"}</span>
                 <span className="text-white/50 text-sm">/ month</span>
               </div>
-              <p className="text-xs text-purple-300/70 mt-1">Or ₹1,699 / 3 months · Or ₹1,899 / year (save 68%)</p>
+              <p className="text-xs text-purple-300/70 mt-1">
+                {isIndia
+                  ? "Or ₹1,699 / 3 months · Or ₹2,499 / year (save 58%)"
+                  : "Or $24 / 3 months · Or $49 / year (save 55%)"
+                }
+              </p>
             </div>
             <ul className="space-y-2.5 mb-6">
               {PRO_FEATURES.map((f) => (
@@ -170,79 +202,50 @@ export default function PricingPage() {
               ))}
             </ul>
 
-            {/* Plan Selector */}
-            <div className="grid grid-cols-3 gap-2 mb-4">
-              {PLANS.map((plan) => (
-                <button
-                  key={plan.key}
-                  onClick={() => setSelectedPlan(plan.key)}
-                  className={cn(
-                    "rounded-xl p-2.5 border-2 text-center transition-all relative",
-                    selectedPlan === plan.key
-                      ? "border-purple-500 bg-purple-500/20"
-                      : "border-white/10 bg-black/20 hover:border-white/30"
-                  )}
-                >
-                  {plan.badge && (
-                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[8px] font-black px-1.5 py-0.5 rounded-full bg-purple-500 text-white whitespace-nowrap">
-                      {plan.badge}
+            {userPlan === "pro" ? (
+              <div className="rounded-xl bg-green-900/20 border border-green-500/30 p-4 text-center">
+                <p className="text-sm font-black text-green-400">✓ You&apos;re already Pro!</p>
+                {dodoCustomerId && (
+                  <Link
+                    href={`/api/customer-portal?customer_id=${dodoCustomerId}`}
+                    className="mt-2 block text-xs text-white/50 hover:text-white transition-colors"
+                  >
+                    Manage subscription →
+                  </Link>
+                )}
+              </div>
+            ) : (
+              <div className="space-y-2">
+                {plans.map((plan) => (
+                  <a
+                    key={plan.key}
+                    href={plan.productId
+                      ? buildCheckoutUrl({ productId: plan.productId, email: userEmail, userId: userId ?? undefined, plan: plan.key })
+                      : "#"
+                    }
+                    aria-disabled={!plan.productId}
+                    className={`flex items-center justify-between w-full py-3 px-4 rounded-xl font-black text-sm transition-all ${
+                      plan.key === "quarterly"
+                        ? "bg-purple-500 hover:bg-purple-400 text-white"
+                        : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+                    } ${!plan.productId ? "opacity-50 pointer-events-none" : ""}`}
+                  >
+                    <span className="flex items-center gap-2">
+                      {plan.badge && (
+                        <span className="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-white/20">
+                          {plan.badge}
+                        </span>
+                      )}
+                      Subscribe {plan.title}
                     </span>
-                  )}
-                  <div className="text-sm font-black text-white">{plan.amount}</div>
-                  <div className="text-[10px] text-white/50">{plan.period}</div>
-                  {plan.savings && (
-                    <div className="text-[9px] text-green-400 font-bold mt-0.5">{plan.savings}</div>
-                  )}
-                </button>
-              ))}
-            </div>
-
-            {/* UPI Payment */}
-            <div className="bg-black/30 rounded-xl p-4 border border-purple-500/20">
-              <p className="text-xs font-black text-purple-300 mb-2 text-center">
-                Pay via UPI · {activePlan.amount}{activePlan.period}
-              </p>
-              <div className="flex items-center justify-center mb-3">
-                <div className="w-32 h-32 bg-white rounded-xl flex items-center justify-center text-[10px] text-black font-bold">
-                  <img
-                    src={activePlan.qrPath}
-                    alt="UPI QR"
-                    className="w-full h-full object-contain rounded-xl"
-                    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                  />
-                </div>
+                    <span className="text-right">
+                      <span className="font-black">{plan.amount}</span>
+                      <span className="text-white/60 text-xs ml-1">{plan.period}</span>
+                    </span>
+                  </a>
+                ))}
               </div>
-              <div className="flex items-center gap-2 bg-black/30 rounded-lg px-3 py-2 mb-3">
-                <span className="text-xs text-white/60 flex-1 font-mono">pmstreak@upi</span>
-                <button onClick={handleCopy} className="text-[10px] font-black text-purple-400 hover:text-purple-300 transition-colors">
-                  {upiCopied ? "Copied!" : "Copy"}
-                </button>
-              </div>
-
-              {/* Screenshot flow */}
-              <div className="rounded-lg bg-purple-900/20 border border-purple-500/20 p-3 space-y-2">
-                <p className="text-[10px] font-black text-purple-300 uppercase tracking-wider">After paying:</p>
-                <div className="flex items-start gap-2">
-                  <Camera size={12} className="text-purple-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-[10px] text-white/60">
-                    Take a screenshot of the payment confirmation
-                  </p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Mail size={12} className="text-purple-400 flex-shrink-0 mt-0.5" />
-                  <p className="text-[10px] text-white/60">
-                    Send it to{" "}
-                    <a href="mailto:namangoyal21197@gmail.com?subject=PM Streak Pro Payment" className="text-purple-400 underline underline-offset-2 font-bold">
-                      namangoyal21197@gmail.com
-                    </a>
-                    {" "}with your registered email
-                  </p>
-                </div>
-                <p className="text-[10px] text-green-400 font-bold">
-                  ✓ Pro activated within a few hours
-                </p>
-              </div>
-            </div>
+            )}
           </div>
         </div>
 
@@ -274,13 +277,12 @@ export default function PricingPage() {
             <h2 className="text-base font-black">How Credits Work</h2>
           </div>
           <p className="text-xs text-white/60 mb-4">
-            Credits are separate from gems. They reset monthly and are used to access premium features.
+            Credits reset monthly and gate premium features.
             Free users get <strong className="text-white">10 credits/month</strong>. Pro users get <strong className="text-white">50 credits/month</strong> (plus all lessons already unlocked).
           </p>
           <div className="space-y-2">
             {CREDIT_COSTS.map((c) => (
               <div key={c.action} className="flex items-center gap-3 text-xs">
-                <span className="text-purple-400">{c.icon}</span>
                 <span className="flex-1 text-white/70">{c.action}</span>
                 <span className="font-black text-purple-300 flex items-center gap-1">
                   <Zap size={10} /> {c.cost}
@@ -312,11 +314,16 @@ export default function PricingPage() {
         <div className="space-y-3">
           <h2 className="text-base font-black mb-4">FAQ</h2>
           {[
-            { q: "When will my Pro access activate?", a: "Within a few hours of payment confirmation. Send your payment screenshot to namangoyal21197@gmail.com with your registered email and we'll activate your account." },
+            { q: "When will my Pro access activate?", a: "Instantly after payment — Dodo Payments processes your subscription and your Pro access is activated automatically." },
             { q: "Are credits cumulative?", a: "No — they reset on the 1st of each month. Unused credits don't roll over." },
-            { q: "Can I cancel anytime?", a: "Yes. Plans are not auto-renewed — you pay each period manually." },
-            { q: "What's the quarterly plan?", a: "₹1,699 for 3 months (vs ₹1,497 at monthly rate — saves you the hassle of monthly payments, and cheaper than 3 separate months)." },
-            { q: "What's the yearly plan?", a: "₹1,899/year (vs ₹5,988 yearly at monthly rate) — pay once, stay Pro for 12 months." },
+            { q: "Can I cancel anytime?", a: "Yes. Cancel through the customer portal and you keep Pro access until your current period ends." },
+            isIndia
+              ? { q: "What's the quarterly plan?", a: "₹1,699 for 3 months — saves ₹298 vs paying monthly and no hassle of manual payments." }
+              : { q: "What's the quarterly plan?", a: "$24 for 3 months — saves $3 vs monthly and no hassle of monthly payments." },
+            isIndia
+              ? { q: "What's the yearly plan?", a: "₹2,499/year (vs ₹5,988 at monthly rate) — pay once, stay Pro for 12 months. Save 58%." }
+              : { q: "What's the yearly plan?", a: "$49/year (vs $108 at monthly rate) — pay once, stay Pro for 12 months. Save 55%." },
+            { q: "What payment methods are accepted?", a: isIndia ? "UPI, credit/debit cards, net banking, and more — via Dodo Payments secure checkout." : "Credit/debit cards, PayPal, and more — via Dodo Payments secure checkout." },
           ].map((item) => (
             <div key={item.q} className="rounded-xl border border-white/10 p-4 bg-white/5">
               <h3 className="text-xs font-black mb-1.5">{item.q}</h3>
