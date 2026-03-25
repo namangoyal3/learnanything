@@ -24,13 +24,13 @@ const FREE_FEATURES = [
   { text: "10 credits / month", yes: true },
   { text: "1 AI Explore lesson / day", yes: true },
   { text: "Streak tracking & gems", yes: true },
-  { text: "Daily challenge", yes: true },
+
   { text: "All 292+ archive lessons", yes: false },
   { text: "50 credits / month", yes: false },
   { text: "Unlimited AI Explore lessons", yes: false },
   { text: "PM Leader lessons (Shreyas, Aakash…)", yes: false },
-  { text: "AI Interview prep sessions", yes: false },
-  { text: "PM Jobs board", yes: false },
+  { text: "AI Interview prep sessions", yes: false, new: true },
+  { text: "PM Jobs board", yes: false, new: true },
   { text: "WhatsApp PM community", yes: false },
 ];
 
@@ -39,16 +39,18 @@ const PRO_FEATURES = [
   { text: "All 292+ archive lessons unlocked", yes: true },
   { text: "50 credits / month", yes: true },
   { text: "Unlimited AI Explore lessons", yes: true },
-  { text: "PM Leader lessons (Shreyas, Aakash, Marty…)", yes: true },
-  { text: "AI Interview prep (unlimited sessions)", yes: true },
-  { text: "PM Jobs board with apply links", yes: true },
-  { text: "WhatsApp PM community access", yes: true },
+  { text: "Unlimited Deeper Dives", yes: true, new: true },
+  { text: "AI Interview prep (unlimited session)", yes: true, new: true },
+  { text: "Full PM Jobs board", yes: true, new: true },
+  { text: "Save Notes & Recaps", yes: true },
+  { text: "Role-specific Roadmaps", yes: true },
   { text: "Priority support", yes: true },
 ];
 
 const CREDIT_COSTS = [
   { action: "Unlock next lesson batch (5 lessons)", cost: 5 },
   { action: "AI Explore lesson", cost: 2 },
+  { action: "AI Deeper Dive", cost: 2 },
   { action: "Interview prep session (5 questions)", cost: 5 },
 ];
 
@@ -155,7 +157,7 @@ export default async function PricingPage() {
               <p className="text-xs text-white/50 mt-1">Forever free, no credit card</p>
             </div>
             <ul className="space-y-2.5 mb-6">
-              {FREE_FEATURES.map((f) => (
+              {FREE_FEATURES.map((f: any) => (
                 <li
                   key={f.text}
                   className={`flex items-start gap-2 text-xs ${f.yes ? "text-white/80" : "text-white/30 line-through"}`}
@@ -164,7 +166,10 @@ export default async function PricingPage() {
                     ? <Check size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                     : <X size={14} className="text-white/30 mt-0.5 flex-shrink-0" />
                   }
-                  {f.text}
+                  <span className="flex-1">{f.text}</span>
+                  {f.new && (
+                    <span className="bg-green-500 text-[8px] font-black text-white px-1 py-0.5 rounded-sm flex-shrink-0 animate-pulse">NEW</span>
+                  )}
                 </li>
               ))}
             </ul>
@@ -194,10 +199,13 @@ export default async function PricingPage() {
               </p>
             </div>
             <ul className="space-y-2.5 mb-6">
-              {PRO_FEATURES.map((f) => (
+              {PRO_FEATURES.map((f: any) => (
                 <li key={f.text} className="flex items-start gap-2 text-xs text-white/85">
                   <Check size={14} className="text-purple-400 mt-0.5 flex-shrink-0" />
-                  {f.text}
+                  <span className="flex-1">{f.text}</span>
+                  {f.new && (
+                    <span className="bg-purple-500 text-[8px] font-black text-white px-1 py-0.5 rounded-sm flex-shrink-0 animate-pulse">NEW</span>
+                  )}
                 </li>
               ))}
             </ul>
