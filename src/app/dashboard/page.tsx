@@ -25,6 +25,7 @@ interface Category {
   description: string;
   icon: string;
   color: string;
+  proGatedCount: number;
   lessons: {
     id: string;
     title: string;
@@ -230,32 +231,101 @@ export default function DashboardPage() {
   const archiveUnlockProgress = stats?.archiveUnlockProgress;
   const progressPct = totalLessons > 0 ? Math.round((totalCompleted / totalLessons) * 100) : 0;
 
-  const lockedPreviewCount = categories.flatMap((c) => c.lessons).filter((l) => l.isLocked).length;
+  const lockedPreviewCount = categories.flatMap((c) => c.lessons).filter((l) => l.isLocked).length +
+    categories.reduce((sum, c) => sum + c.proGatedCount, 0);
+
+  function renderProGatedBanner(category: Category) {
+    const count = category.proGatedCount;
+    return (
+      <Link href="/pricing" className="block mt-2.5">
+        <div className="relative overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-gradient-to-br from-purple-950/60 via-indigo-950/40 to-purple-900/30 p-4">
+          {/* Decorative blur glow */}
+          <div className="absolute -top-6 -right-6 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl pointer-events-none" />
+          <div className="relative flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0 border border-purple-500/30">
+              <Lock size={18} className="text-purple-400" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-black text-purple-200">
+                {count} more lesson{count !== 1 ? "s" : ""} inside
+              </p>
+              <p className="text-[10px] text-purple-400/80 mt-0.5">
+                Unlock all lessons with Pro
+              </p>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-500 text-white text-[10px] font-black uppercase tracking-wider flex-shrink-0">
+              <Sparkles size={10} /> Pro
+            </div>
+          </div>
+        </div>
+      </Link>
+    );
+  }
 
   function renderCategoryTrack(category: Category) {
     const isExpanded = expandedCategory === category.id;
     const catCompleted = category.lessons.filter((l) => l.completed).length;
-    const catTotal = category.lessons.length;
+    const catTotal = category.lessons.length + category.proGatedCount;
+    const catFreeLessons = category.lessons.length;
     const catPct = catTotal > 0 ? Math.round((catCompleted / catTotal) * 100) : 0;
     const nextOpenLesson = category.lessons.find((lesson) => !lesson.completed && !lesson.isLocked);
     const nextLockedLesson = category.lessons.find((lesson) => !lesson.completed && lesson.isLocked);
     const categoryExploreHref = `/explore?topic=${encodeURIComponent(category.name)}`;
+    const isFullyGated = category.lessons.length === 0 && category.proGatedCount > 0;
 
     const toggleExpand = () => {
       setExpandedCategory((prev) => (prev === category.id ? null : category.id));
     };
 
+    // Fully premium-gated category: no free lessons at all
+    if (isFullyGated) {
+      return (
+        <div
+          key={category.id}
+          ref={(el) => {
+            if (el) categoryRefs.current.set(category.id, el);
+            else categoryRefs.current.delete(category.id);
+          }}
+          data-category-id={category.id}
+          className="-mt-2 border-b border-[var(--border-color)] pb-4 last:border-0"
+        >
+          <Link href="/pricing" className="block">
+            <div className="relative overflow-hidden rounded-2xl border-2 border-purple-500/35 bg-gradient-to-br from-purple-950/50 via-indigo-950/30 to-purple-900/20 p-4 hover:border-purple-500/60 transition-colors group">
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-purple-500/15 flex items-center justify-center flex-shrink-0 border border-purple-500/25 text-xl">
+                  {category.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-sm font-black text-white/70 truncate">{category.name}</h3>
+                    <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-purple-500/25 text-purple-400 uppercase tracking-wider flex-shrink-0">PRO</span>
+                  </div>
+                  <p className="text-[10px] text-purple-400 mt-1 font-bold">
+                    🔒 {category.proGatedCount} lessons — Upgrade to unlock
+                  </p>
+                </div>
+                <div className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 text-[10px] font-black flex-shrink-0">
+                  <Sparkles size={10} /> Unlock
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+      );
+    }
+
     const visibleLessons = (() => {
       const emptyState = { lessons: [] as Category["lessons"], hiddenLockedCount: 0 };
       if (!isExpanded) return emptyState;
-      
+
       const finished = category.lessons.filter(l => l.completed);
       const open = category.lessons.filter(l => !l.completed && !l.isLocked);
       const locked = category.lessons.filter(l => l.isLocked);
-      
+
       const lockedToShow = locked.slice(0, 5);
       const hiddenLockedCount = Math.max(0, locked.length - lockedToShow.length);
-      
+
       return {
         lessons: [...finished, ...open, ...lockedToShow],
         hiddenLockedCount
@@ -283,7 +353,12 @@ export default function DashboardPage() {
             <div className="flex items-center justify-between">
               <h3 className="text-sm font-black">{category.name}</h3>
               <div className="flex items-center gap-2 text-xs font-bold text-[var(--text-secondary)]">
-                <span>{catCompleted}/{catTotal}</span>
+                <span>
+                  {catCompleted}/{catFreeLessons}
+                  {category.proGatedCount > 0 && (
+                    <span className="text-purple-400 ml-1">+{category.proGatedCount}🔒</span>
+                  )}
+                </span>
                 <ChevronDown size={14} className={cn("transition-transform", isExpanded && "rotate-180")} />
               </div>
             </div>
@@ -324,7 +399,10 @@ export default function DashboardPage() {
               </div>
             )}
 
-            {catCompleted === catTotal && catTotal > 0 && (
+            {/* Pro-gated lessons banner */}
+            {category.proGatedCount > 0 && renderProGatedBanner(category)}
+
+            {catCompleted === catFreeLessons && catFreeLessons > 0 && category.proGatedCount === 0 && (
               <div className="pt-2">
                 <Link
                   href={categoryExploreHref}
@@ -335,7 +413,7 @@ export default function DashboardPage() {
                 </Link>
               </div>
             )}
-            
+
             {!nextOpenLesson && nextLockedLesson && (
               <p className="text-[10px] font-bold text-[var(--text-secondary)] p-2 bg-[var(--surface-1)] rounded-lg">
                 {nextLockedLesson.lockedReason}
@@ -370,7 +448,9 @@ export default function DashboardPage() {
                 "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-colors flex-shrink-0",
                 activeCategoryId === cat.id
                   ? "bg-[var(--green-primary)] text-white"
-                  : "bg-[var(--surface-2)] text-[var(--text-secondary)] border border-[var(--border-color)]"
+                  : cat.lessons.length === 0 && cat.proGatedCount > 0
+                    ? "bg-purple-500/15 text-purple-400 border border-purple-500/30"
+                    : "bg-[var(--surface-2)] text-[var(--text-secondary)] border border-[var(--border-color)]"
               )}
             >
               <span>{cat.icon}</span>
@@ -614,7 +694,7 @@ export default function DashboardPage() {
                   <nav className="hidden lg:flex flex-col gap-1 sticky top-20 w-36 xl:w-44 shrink-0">
                     {categories.map((cat) => {
                       const done = cat.lessons.filter((l) => l.completed).length;
-                      const total = cat.lessons.length;
+                      const total = cat.lessons.length + cat.proGatedCount;
                       const isActive = activeCategoryId === cat.id;
                       return (
                         <button
@@ -624,7 +704,9 @@ export default function DashboardPage() {
                             "w-full flex items-center gap-2 px-3 py-2 rounded-xl text-left transition-colors",
                             isActive
                               ? "bg-[var(--green-primary)]/15 text-[var(--green-primary)]"
-                              : "text-[var(--text-secondary)] hover:bg-[var(--surface-2)]"
+                              : cat.lessons.length === 0 && cat.proGatedCount > 0
+                                ? "text-purple-400/70 hover:bg-purple-500/10"
+                                : "text-[var(--text-secondary)] hover:bg-[var(--surface-2)]"
                           )}
                         >
                           <span className="text-base leading-none">{cat.icon}</span>
@@ -632,7 +714,11 @@ export default function DashboardPage() {
                             <div className={cn("truncate text-xs leading-tight", isActive ? "font-black" : "font-bold")}>
                               {cat.name}
                             </div>
-                            <div className="text-[9px] opacity-60 mt-0.5">{done}/{total}</div>
+                            <div className="text-[9px] opacity-60 mt-0.5">
+                              {cat.lessons.length === 0 && cat.proGatedCount > 0
+                                ? `🔒 ${cat.proGatedCount} lessons`
+                                : `${done}/${total}`}
+                            </div>
                           </div>
                         </button>
                       );
