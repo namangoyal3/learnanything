@@ -1,12 +1,21 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-function getResend() {
-  return new Resend(process.env.RESEND_API_KEY || "placeholder");
+function getTransporter() {
+  return nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // STARTTLS
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
 }
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://duolingo-for-pms.vercel.app";
-const FROM = "Naman @ PM Streak <onboarding@resend.dev>";
-const REPLY_TO = "namangoyal21197@gmail.com";
+const GMAIL_USER = process.env.GMAIL_USER || "namangoyal2117@gmail.com";
+const FROM = `Naman @ PM Streak <${GMAIL_USER}>`;
+const REPLY_TO = GMAIL_USER;
 
 // ── Shared layout wrapper ──────────────────────────────────────────────────
 function wrap(preheader: string, body: string) {
@@ -63,7 +72,7 @@ function statBox(value: string, label: string, color: string) {
 
 // ── Welcome ────────────────────────────────────────────────────────────────
 export async function sendWelcomeEmail({ toEmail, toName }: { toEmail: string; toName: string }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0];
   const body = `
     <h1 style="margin:0 0 8px;font-size:26px;font-weight:900;color:#111;letter-spacing:-0.5px">Welcome, ${first}! 👋</h1>
@@ -95,7 +104,7 @@ export async function sendWelcomeEmail({ toEmail, toName }: { toEmail: string; t
 
     <p style="margin:20px 0 0;font-size:13px;color:#9ca3af;text-align:center">Takes 2-3 minutes. You'll learn something real.</p>
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM, replyTo: REPLY_TO, to: toEmail,
     subject: `You're in, ${first}! Your first PM lesson is ready 🚀`,
     html: wrap(`Your PM Streak journey starts now — complete lesson 1 in 3 minutes`, body),
@@ -111,7 +120,7 @@ export async function sendPasswordResetEmail({
   toName: string;
   resetUrl: string;
 }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0] || "there";
   const body = `
     <h1 style="margin:0 0 8px;font-size:24px;font-weight:900;color:#111;letter-spacing:-0.5px">Reset your password</h1>
@@ -126,7 +135,7 @@ export async function sendPasswordResetEmail({
       If you did not request this, you can safely ignore this email.
     </p>
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM,
     replyTo: REPLY_TO,
     to: toEmail,
@@ -137,7 +146,7 @@ export async function sendPasswordResetEmail({
 
 // ── Day-2 nudge ────────────────────────────────────────────────────────────
 export async function sendDay2NudgeEmail({ toEmail, toName }: { toEmail: string; toName: string }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0];
   const body = `
     <div style="text-align:center;margin-bottom:24px">
@@ -155,7 +164,7 @@ export async function sendDay2NudgeEmail({ toEmail, toName }: { toEmail: string;
 
     ${btn("Complete lesson 1 right now →", `${APP_URL}/dashboard`, "#f59e0b")}
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM, replyTo: REPLY_TO, to: toEmail,
     subject: `${first}, you still haven't started 👀 (takes 3 mins)`,
     html: wrap(`Your PM Streak account is set up. Just need you to show up once.`, body),
@@ -166,7 +175,7 @@ export async function sendDay2NudgeEmail({ toEmail, toName }: { toEmail: string;
 export async function sendStreakAtRiskEmail({
   toEmail, toName, streakCount,
 }: { toEmail: string; toName: string; streakCount: number }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0];
   const isLong = streakCount >= 7;
   const body = `
@@ -193,7 +202,7 @@ export async function sendStreakAtRiskEmail({
       Low on time? Use a streak freeze (50 💎 gems) to skip today and keep your streak.
     </p>
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM, replyTo: REPLY_TO, to: toEmail,
     subject: isLong
       ? `⚠️ Your ${streakCount}-day streak resets tonight, ${first}`
@@ -209,7 +218,7 @@ export async function sendWeeklyDigestEmail({
   toEmail: string; toName: string; streakCount: number; xp: number;
   lessonsCompleted: number; friendActivity: { name: string; lessonsCompleted: number }[];
 }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0];
   const friendRows = friendActivity.slice(0, 3).map((f) => `
     <tr>
@@ -249,7 +258,7 @@ export async function sendWeeklyDigestEmail({
 
     ${btn("Continue learning →", `${APP_URL}/dashboard`)}
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM, replyTo: REPLY_TO, to: toEmail,
     subject: `Your PM week in review — ${streakCount} day streak 🔥`,
     html: wrap(`${lessonsCompleted} lessons done this week. Here's how you're doing.`, body),
@@ -260,7 +269,7 @@ export async function sendWeeklyDigestEmail({
 export async function sendChallengeReceivedEmail({
   toEmail, toName, fromName, message,
 }: { toEmail: string; toName: string; fromName: string; message: string }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0];
   const body = `
     <div style="text-align:center;margin-bottom:24px">
@@ -287,7 +296,7 @@ export async function sendChallengeReceivedEmail({
 
     <p style="margin:16px 0 0;font-size:12px;color:#9ca3af;text-align:center">Challenge expires in 48 hours</p>
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM, replyTo: REPLY_TO, to: toEmail,
     subject: `${fromName} challenged you to a PM duel ⚔️`,
     html: wrap(`${fromName} thinks they can out-learn you. Will you accept?`, body),
@@ -298,7 +307,7 @@ export async function sendChallengeReceivedEmail({
 export async function sendChallengeAcceptedEmail({
   toEmail, toName, fromName,
 }: { toEmail: string; toName: string; fromName: string }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0];
   const body = `
     <div style="text-align:center;margin-bottom:24px">
@@ -318,7 +327,7 @@ export async function sendChallengeAcceptedEmail({
 
     ${btn("Go learn now — don't let them win →", `${APP_URL}/dashboard`, "#ea580c")}
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM, replyTo: REPLY_TO, to: toEmail,
     subject: `${fromName} accepted 🔥 Don't let them beat you`,
     html: wrap(`${fromName} is ready. Are you?`, body),
@@ -328,7 +337,7 @@ export async function sendChallengeAcceptedEmail({
 export async function sendStreakMilestoneEmail({
   toEmail, toName, streakCount, gemsEarned,
 }: { toEmail: string; toName: string; streakCount: number; gemsEarned: number }) {
-  if (!process.env.RESEND_API_KEY) return;
+  if (!process.env.GMAIL_APP_PASSWORD) return;
   const first = toName.split(" ")[0];
   const milestoneEmoji: Record<number, string> = { 3: "🔥", 7: "⚡", 14: "💎", 30: "👑", 50: "🏆", 100: "🌟", 365: "🦉" };
   const emoji = milestoneEmoji[streakCount] ?? "🔥";
@@ -350,7 +359,7 @@ export async function sendStreakMilestoneEmail({
 
     ${btn(`Keep your streak alive →`, `${APP_URL}/dashboard`, "#58cc02")}
   `;
-  await getResend().emails.send({
+  await getTransporter().sendMail({
     from: FROM, replyTo: REPLY_TO, to: toEmail,
     subject: `${emoji} ${streakCount}-day streak! You're unstoppable`,
     html: wrap(`${streakCount} days in a row. ${emoji}`, body),

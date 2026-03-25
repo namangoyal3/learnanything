@@ -1,12 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import {
-  Flame, Brain, ChevronRight, Zap, ChevronDown, CheckCircle2,
-  AlertTriangle, Star, Loader2,
-} from "lucide-react";
+import { CheckCircle2, AlertTriangle, Star, Loader2, Brain, ChevronDown, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/Navbar";
 
 interface InterviewQuestion {
   question: string;
@@ -19,13 +17,26 @@ const TOPICS = ["Product Sense", "Metrics & Analytics", "Execution", "Strategy",
 const LEVELS = ["APM", "PM", "Senior PM", "Group PM / Director"];
 
 export default function InterviewPrepPage() {
+  const [user, setUser] = useState<any>(null);
   const [topic, setTopic] = useState("Product Sense");
   const [level, setLevel] = useState("PM");
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<InterviewQuestion[]>([]);
-  const [credits, setCredits] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [revealed, setRevealed] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then(r => {
+        if (!r.ok) {
+          window.location.href = "/login";
+          return;
+        }
+        return r.json();
+      })
+      .then(data => { if (data) setUser(data.user); })
+      .catch(() => {});
+  }, []);
 
   const generate = async () => {
     setLoading(true);
@@ -52,7 +63,7 @@ export default function InterviewPrepPage() {
     }
 
     setQuestions(data.questions ?? []);
-    if (data.credits !== undefined) setCredits(data.credits);
+    if (data.credits !== undefined) setUser((u: any) => ({ ...u, credits: data.credits }));
     setLoading(false);
   };
 
@@ -66,28 +77,18 @@ export default function InterviewPrepPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)] text-white">
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[var(--bg-primary)]/90 backdrop-blur-sm">
-        <div className="max-w-3xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/dashboard" className="flex items-center gap-1.5 font-black text-xl tracking-tight">
-            <Flame size={22} className="text-orange-400" />
-            <span className="text-green-400">PM</span>
-            <span className="text-white">Streak</span>
-          </Link>
-          <div className="flex items-center gap-3">
-            {credits !== null && (
-              <div className="flex items-center gap-1 bg-purple-500/20 px-2.5 py-1 rounded-full">
-                <Zap size={12} className="text-purple-400" />
-                <span className="text-xs font-black text-purple-400">{credits}</span>
-              </div>
-            )}
-            <Link href="/dashboard" className="text-xs font-bold text-white/60 hover:text-white transition-colors flex items-center gap-1">
-              Dashboard <ChevronRight size={12} />
-            </Link>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-[var(--surface-0)] text-white">
+      {user && (
+        <Navbar 
+          streakCount={user.streakCount}
+          xp={user.xp}
+          gems={user.gems}
+          credits={user.credits}
+          avatarUrl={user.avatarUrl}
+          name={user.name}
+          plan={user.plan}
+        />
+      )}
 
       <main className="max-w-3xl mx-auto px-4 py-8 pb-24">
         {/* Hero */}
@@ -98,7 +99,7 @@ export default function InterviewPrepPage() {
           </div>
           <p className="text-white/55 text-sm">
             Get 5 PM interview questions with answer frameworks — grounded in real PM thinking.
-            Costs <strong className="text-purple-300">5 ⚡</strong> per session (free for Pro).
+            Costs <strong className="text-purple-300">5 Credits</strong> per session (free for Pro).
           </p>
         </div>
 
@@ -153,7 +154,7 @@ export default function InterviewPrepPage() {
             {loading ? (
               <><Loader2 size={16} className="animate-spin" /> Generating…</>
             ) : (
-              <><Brain size={16} /> Generate 5 Questions (5 ⚡)</>
+              <><Brain size={16} /> Generate 5 Questions (Use 5 Credits)</>
             )}
           </button>
         </div>
@@ -244,9 +245,9 @@ export default function InterviewPrepPage() {
             <button
               onClick={generate}
               disabled={loading}
-              className="w-full py-3 rounded-xl border border-white/10 text-xs font-black text-white/50 hover:text-white hover:border-white/30 transition-colors"
+              className="w-full py-4 rounded-xl border-2 border-[var(--border-color)] bg-[var(--surface-2)] text-xs font-black text-white/70 hover:text-white hover:border-white/10 transition-all active:scale-[0.98] uppercase tracking-widest"
             >
-              Generate new set (5 ⚡)
+              Generate new set (Use 5 Credits)
             </button>
           </div>
         )}

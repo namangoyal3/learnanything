@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import ProBanner from "./ProBanner";
 import { cn } from "@/lib/utils";
 import { ds } from "@/lib/ds";
 import { Flame, BookOpen, Trophy, Users, Calendar, Sparkles, Gem, Lock, Zap } from "lucide-react";
@@ -19,7 +20,7 @@ interface NavbarProps {
   unreadNotifications?: number;
 }
 
-export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name, unreadNotifications: propUnread }: NavbarProps) {
+export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name, plan, unreadNotifications: propUnread }: NavbarProps) {
   const pathname = usePathname();
   const [unreadNotifications, setUnreadNotifications] = useState(propUnread ?? 0);
 
@@ -43,7 +44,6 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
 
   const navItems = [
     { href: "/dashboard", label: "Learn", icon: BookOpen, locked: false },
-    { href: "/daily-challenge", label: "Daily", icon: Calendar, locked: false },
     { href: "/explore", label: "Explore", icon: Sparkles, locked: false },
     { href: "/social", label: "Social", icon: Users, locked: false },
     { href: "/leaderboard", label: "Ranks", icon: Trophy, locked: false },
@@ -51,6 +51,7 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
 
   return (
     <>
+      <ProBanner plan={plan} />
       {/* Top header bar */}
       <header className={ds.headerShell}>
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
@@ -112,9 +113,10 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
 
             {/* Credits */}
             {credits !== undefined && (
-              <Link href="/pricing" className="flex items-center gap-0.5 bg-purple-500/10 px-2 py-1 rounded-full flex-shrink-0 hover:bg-purple-500/20 transition-colors">
-                <Zap size={13} className="text-purple-400" />
-                <span className="font-black text-xs tabular-nums text-purple-400">{credits}</span>
+              <Link href="/pricing" className="flex items-center gap-1.5 bg-purple-500/10 px-3 py-1 rounded-full flex-shrink-0 hover:bg-purple-500/20 transition-colors border border-purple-500/20">
+                <span className="font-black text-xs tabular-nums text-purple-400">
+                  {credits} {plan === "pro" ? "Credits" : "Free Credits"}
+                </span>
               </Link>
             )}
 
