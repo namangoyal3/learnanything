@@ -56,10 +56,15 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
       <header className={ds.headerShell}>
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/dashboard" className="flex items-center gap-1.5 font-black text-xl tracking-tight">
+          <Link href="/dashboard" className="flex items-center gap-1.5">
             <Flame size={22} className="text-[var(--orange-primary)] streak-flame" />
-            <span className="text-[var(--green-primary)]">PM</span>
-            <span className="text-white">Streak</span>
+            <div className="flex flex-col leading-none">
+              <div className="font-black text-xl tracking-tight flex items-center gap-1">
+                <span className="text-[var(--green-primary)]">PM</span>
+                <span className="text-white">Streak</span>
+              </div>
+              <span className="text-[9px] font-bold text-[var(--text-secondary)] tracking-wide">by learnanything.pro</span>
+            </div>
           </Link>
 
           {/* User Profile */}

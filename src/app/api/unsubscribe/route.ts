@@ -46,7 +46,7 @@ function unsubscribePage(message: string, success = false) {
     <div style="font-size:40px;margin-bottom:16px">${success ? "✅" : "❌"}</div>
     <h1 style="font-size:20px;font-weight:900;color:#111;margin:0 0 12px">${success ? "Unsubscribed" : "Error"}</h1>
     <p style="font-size:14px;color:#6b7280;line-height:1.6;margin:0 0 20px">${message}${success ? " You won't receive any more emails from PM Streak." : ""}</p>
-    <a href="https://duolingo-for-pms.vercel.app/dashboard" style="display:inline-block;background:#58cc02;color:#fff;font-weight:700;font-size:14px;text-decoration:none;padding:12px 24px;border-radius:10px">Back to PM Streak</a>
+    <a href="https://learnanything.pro/dashboard" style="display:inline-block;background:#58cc02;color:#fff;font-weight:700;font-size:14px;text-decoration:none;padding:12px 24px;border-radius:10px">Back to PM Streak</a>
   </div>
 </body></html>`;
 }
