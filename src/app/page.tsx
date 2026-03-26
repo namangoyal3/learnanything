@@ -43,7 +43,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "PM Streak",
-    url: process.env.NEXT_PUBLIC_APP_URL || "https://duolingo-for-pms.vercel.app",
+    url: process.env.NEXT_PUBLIC_APP_URL || "https://learnanything.pro",
     description:
       "Daily product management learning platform with streaks, XP, and rankings.",
   };
@@ -78,10 +78,15 @@ export default async function Home() {
       {/* ── NAV ── */}
       <nav className="sticky top-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-primary)]/90 backdrop-blur-md">
         <div className="max-w-5xl mx-auto px-5 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-1.5 font-black text-xl tracking-tight">
+          <div className="flex items-center gap-1.5">
             <span className="text-2xl">🔥</span>
-            <span className="text-[var(--green-primary)]">PM</span>
-            <span className="text-white">Streak</span>
+            <div className="flex flex-col leading-none">
+              <div className="font-black text-xl tracking-tight flex items-center gap-1">
+                <span className="text-[var(--green-primary)]">PM</span>
+                <span className="text-white">Streak</span>
+              </div>
+              <span className="text-[9px] font-bold text-[var(--text-secondary)] tracking-wide">by learnanything.pro</span>
+            </div>
           </div>
           <div className="flex items-center gap-2">
             <BrowserLink
@@ -323,10 +328,15 @@ export default async function Home() {
       {/* ── FOOTER ── */}
       <footer className="border-t border-[var(--border-color)] py-6">
         <div className="max-w-5xl mx-auto px-5 flex flex-wrap items-center justify-between gap-3 text-xs text-[var(--text-secondary)]">
-          <div className="flex items-center gap-1.5 font-black text-sm">
+          <div className="flex items-center gap-1.5">
             <span>🔥</span>
-            <span className="text-[var(--green-primary)]">PM</span>
-            <span className="text-white">Streak</span>
+            <div className="flex flex-col leading-none">
+              <div className="font-black text-sm flex items-center gap-1">
+                <span className="text-[var(--green-primary)]">PM</span>
+                <span className="text-white">Streak</span>
+              </div>
+              <span className="text-[8px] font-bold text-[var(--text-secondary)] tracking-wide">by learnanything.pro</span>
+            </div>
           </div>
           <p>Powered by insights from Lenny&apos;s Podcast. Not affiliated with Lenny&apos;s Newsletter.</p>
         </div>

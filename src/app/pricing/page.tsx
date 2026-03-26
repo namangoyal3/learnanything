@@ -121,10 +121,15 @@ export default async function PricingPage() {
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[var(--bg-primary)]/90 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/dashboard" className="flex items-center gap-1.5 font-black text-xl tracking-tight">
+          <Link href="/dashboard" className="flex items-center gap-1.5">
             <Flame size={22} className="text-orange-400" />
-            <span className="text-green-400">PM</span>
-            <span className="text-white">Streak</span>
+            <div className="flex flex-col leading-none">
+              <div className="font-black text-xl tracking-tight flex items-center gap-1">
+                <span className="text-green-400">PM</span>
+                <span className="text-white">Streak</span>
+              </div>
+              <span className="text-[9px] font-bold text-white/40 tracking-wide">by learnanything.pro</span>
+            </div>
           </Link>
           <Link href="/dashboard" className="text-xs font-bold text-white/60 hover:text-white transition-colors flex items-center gap-1">
             Back to dashboard <ChevronRight size={12} />

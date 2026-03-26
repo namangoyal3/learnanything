@@ -19,7 +19,7 @@ function getResend() {
   return new Resend(key);
 }
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://duolingo-for-pms.vercel.app";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://learnanything.pro";
 // EMAIL_FROM must be set to a verified Resend domain — e.g. "Naman @ PM Streak <naman@yourdomain.com>"
 // Without it, Resend's @resend.dev sandbox only delivers to the account owner's email.
 const FROM = process.env.EMAIL_FROM;
