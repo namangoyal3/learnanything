@@ -4,7 +4,7 @@ import {
   Text, Hr, Link, Img,
 } from "@react-email/components";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://duolingo-for-pms.vercel.app";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://learnanything.pro";
 
 export function EmailLayout({
   preview,

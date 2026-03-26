@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const APP_URL = "https://duolingo-for-pms.vercel.app";
+const APP_URL = "https://learnanything.pro";
 
 function isIOSWebView() {
   if (typeof navigator === "undefined") return false;

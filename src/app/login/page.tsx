@@ -24,9 +24,14 @@ function LoginForm() {
       {/* Left panel — branding */}
       <div className="hidden lg:flex flex-col justify-between w-80 bg-[var(--bg-secondary)] border-r border-[var(--border-color)] p-8 flex-shrink-0 shadow-2xl z-10 transition-colors">
         <div>
-          <div className="flex items-center gap-1.5 font-black text-2xl tracking-tight mb-12">
-            <span className="text-[var(--green-primary)]">PM</span>
-            <span>Streak</span>
+          <div className="flex items-center gap-1.5 mb-12">
+            <div className="flex flex-col leading-none">
+              <div className="font-black text-2xl tracking-tight flex items-center gap-1">
+                <span className="text-[var(--green-primary)]">PM</span>
+                <span>Streak</span>
+              </div>
+              <span className="text-[10px] font-bold text-[var(--text-secondary)] tracking-wide">by learnanything.pro</span>
+            </div>
           </div>
           <div className="space-y-8">
             {[

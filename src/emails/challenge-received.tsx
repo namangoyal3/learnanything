@@ -2,7 +2,7 @@ import * as React from "react";
 import { Text, Link } from "@react-email/components";
 import { EmailLayout } from "./layout";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://duolingo-for-pms.vercel.app";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://learnanything.pro";
 
 interface ChallengeReceivedEmailProps {
   firstName: string;

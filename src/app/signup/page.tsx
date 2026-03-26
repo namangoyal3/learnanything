@@ -16,9 +16,10 @@ export default function SignupPage() {
               <Flame size={44} className="text-white streak-flame" />
             </div>
           </div>
-          <h1 className="text-4xl font-black tracking-tight mb-2">
+          <h1 className="text-4xl font-black tracking-tight mb-0.5">
             Join <span className="text-[var(--green-primary)]">PM</span> Streak
           </h1>
+          <p className="text-[10px] font-bold text-[var(--text-secondary)] tracking-wide mb-2">by learnanything.pro</p>
           <p className="text-[var(--text-secondary)] text-sm font-bold opacity-80">
             New accounts are allowed via Google sign-in only.
           </p>
