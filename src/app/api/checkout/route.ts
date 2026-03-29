@@ -44,14 +44,6 @@ export async function GET(req: NextRequest) {
     `${DODO_BASE.replace("live.dodopayments.com", "checkout.dodopayments.com").replace("test.dodopayments.com", "test.checkout.dodopayments.com")}/buy/${productId}`
   );
 
-  // Apply FLAT70 coupon by default if it's one of our standard plans
-  // Unless we specifically received a productId that is one of the pre-discounted ones
-  const isPreDiscounted = Object.values(DISCOUNTED_PRODUCTS).includes(productId);
-  if (!isPreDiscounted && (plan || searchParams.has("metadata_plan"))) {
-    checkoutUrl.searchParams.set("coupon_code", "FLAT70");
-    checkoutUrl.searchParams.set("coupon", "FLAT70"); // Dodo sometimes uses 'coupon'
-  }
-
   checkoutUrl.searchParams.set("quantity", "1");
   checkoutUrl.searchParams.set("redirect_url", RETURN_URL);
 
