@@ -114,6 +114,13 @@ export default async function Home() {
             <p className="text-base sm:text-lg text-[var(--text-secondary)] mb-4 leading-relaxed max-w-md">
               One lesson a day. Streak tracking. XP and leaderboards. The best PM frameworks from Lenny&apos;s podcast — turned into 2-minute lessons that actually stick.
             </p>
+            <div className="mb-6 sm:mb-8 flex flex-wrap gap-2 max-w-md">
+              {["Strategy", "Growth", "Metrics", "Hiring", "Roadmaps", "Pricing"].map(topic => (
+                <span key={topic} className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black text-white/70">
+                  {topic}
+                </span>
+              ))}
+            </div>
             <div className="mb-6 sm:mb-8 p-4 rounded-2xl bg-[var(--green-primary)]/10 border border-[var(--green-primary)]/20 max-w-md">
               <p className="text-sm text-[var(--green-primary)] font-bold">
                 Built on 300+ episodes of Lenny&apos;s Podcast — the #1 resource for PMs.
@@ -167,7 +174,7 @@ export default async function Home() {
           <div className="h-4 w-px bg-[var(--border-color)] hidden sm:block" />
           {[
             { value: "300+", label: "Podcast episodes" },
-            { value: "2 min", label: "Per lesson" },
+            { value: "292+", label: "Archive lessons" },
             { value: "10+", label: "PM frameworks" },
           ].map(({ value, label }) => (
             <div key={label} className="flex items-baseline gap-1.5">
@@ -191,11 +198,25 @@ export default async function Home() {
           </ul>
           <details className="mt-3 rounded-xl border border-[var(--border-color)] bg-[var(--bg-secondary)]/40">
             <summary className="cursor-pointer list-none px-3 py-2.5 text-xs font-black text-white">
-              See full product breakdown
+              What you&apos;ll learn
             </summary>
             <div className="px-3 pb-3 text-xs text-[var(--text-secondary)] space-y-2">
-              <p>Includes leaderboard, social challenges, AI-generated lessons, and daily bonus challenges.</p>
-              <p>Designed to build consistency, not just consume content.</p>
+              <div className="flex flex-wrap gap-1.5">
+                {["Strategy", "Growth", "Metrics", "Hiring", "Roadmaps", "Pricing"].map(t => (
+                  <span key={t} className="px-2 py-0.5 rounded bg-white/5 text-[9px]">{t}</span>
+                ))}
+              </div>
+            </div>
+          </details>
+          <details className="mt-2 rounded-xl border border-[var(--purple-primary)]/30 bg-[var(--purple-primary)]/5">
+            <summary className="cursor-pointer list-none px-3 py-2.5 text-xs font-black text-[var(--purple-primary)]">
+              ⚡ Go Pro — Unlock everything
+            </summary>
+            <div className="px-3 pb-3 text-xs text-[var(--text-secondary)] space-y-1.5">
+              <p>292+ Archive Lessons, Unlimited AI Lessons, AI Interview Prep, PM Jobs Board, WhatsApp Community.</p>
+              <BrowserLink href="/pricing" className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-[var(--purple-primary)] text-white text-[9px] font-black">
+                View Pricing →
+              </BrowserLink>
             </div>
           </details>
         </div>
@@ -312,6 +333,45 @@ export default async function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PREMIUM FEATURES ── */}
+      <section className="border-y border-[var(--border-color)] bg-[var(--bg-secondary)]/30">
+        <div className="max-w-5xl mx-auto px-5 py-16">
+          <div className="text-center mb-10">
+            <p className="text-xs font-black uppercase tracking-widest text-[var(--purple-primary)] mb-2">Go Pro</p>
+            <h2 className="text-3xl font-black mb-3">Unlock everything</h2>
+            <p className="text-sm text-[var(--text-secondary)] max-w-md mx-auto">Get unlimited access to all lessons, AI features, and exclusive content.</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { icon: "📚", title: "292+ Archive Lessons", desc: "Full Lenny's Podcast library — Shreyas, Reforge, Figma, Stripe PMs and more." },
+              { icon: "🤖", title: "Unlimited AI Lessons", desc: "Generate lessons on any PM topic — pricing, retention, roadmaps." },
+              { icon: "🎤", title: "AI Interview Prep", desc: "5 PM interview questions with frameworks per session." },
+              { icon: "💼", title: "PM Jobs Board", desc: "Curated PM roles from Wellfound, LinkedIn, updated weekly." },
+              { icon: "👥", title: "PM Leader Lessons", desc: "Bite-sized lessons from Shreyas Doshi, Aakash Gupta, Marty Cagan." },
+              { icon: "💬", title: "WhatsApp Community", desc: "Private group with active PMs, job referrals, peer accountability." },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="flex gap-3 p-4 bg-[var(--bg-card)] rounded-2xl border border-[var(--border-color)]">
+                <span className="text-2xl flex-shrink-0">{icon}</span>
+                <div>
+                  <div className="font-black text-sm mb-1">{title}</div>
+                  <div className="text-xs text-[var(--text-secondary)] leading-relaxed">{desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <BrowserLink
+              href="/pricing"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--purple-primary)] hover:bg-[var(--purple-dark)] text-white text-sm font-black transition-all"
+            >
+              View Pro Pricing
+            </BrowserLink>
           </div>
         </div>
       </section>

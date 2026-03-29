@@ -79,7 +79,8 @@ function buildCheckoutUrl(opts: {
   plan: string;
 }) {
   const base = "/api/checkout";
-  const params = new URLSearchParams({ productId: opts.productId });
+  const params = new URLSearchParams({ plan: opts.plan });
+  if (opts.productId) params.set("productId", opts.productId);
   if (opts.email) params.set("email", opts.email);
   if (opts.userId) params.set("metadata_userId", opts.userId);
   if (opts.plan) params.set("metadata_plan", opts.plan);
