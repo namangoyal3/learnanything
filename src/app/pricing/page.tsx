@@ -132,14 +132,14 @@ async function PricingContent() {
 
   const plans = isIndia
     ? [
-        { key: "monthly",   title: "Monthly",   amount: increasePrice("₹499", true),   period: "/ month",     productId: inrMonthlyId },
-        { key: "quarterly", title: "Quarterly", amount: increasePrice("₹1,699", true), period: "/ 3 months",  badge: "Best Value", savings: "Save ₹900 vs monthly",  productId: inrQuarterlyId },
-        { key: "yearly",    title: "Yearly",    amount: increasePrice("₹2,499", true), period: "/ year",       savings: "Save ₹3,000 vs monthly", productId: inrYearlyId },
+        { key: "monthly",   title: "Monthly",   original: increasePrice("₹499", true),   discounted: "₹499",   period: "/ month",     productId: inrMonthlyId },
+        { key: "quarterly", title: "Quarterly", original: increasePrice("₹1,699", true), discounted: "₹510",   period: "/ 3 months",  badge: "Best Value", savings: "Save ₹2,400",  productId: inrQuarterlyId },
+        { key: "yearly",    title: "Yearly",    original: increasePrice("₹2,499", true), discounted: "₹750",   period: "/ year",       savings: "Save ₹4,000", productId: inrYearlyId },
       ]
     : [
-        { key: "monthly",   title: "Monthly",   amount: increasePrice("$9", false),     period: "/ month",     productId: usdMonthlyId },
-        { key: "quarterly", title: "Quarterly", amount: increasePrice("$24", false),    period: "/ 3 months",  badge: "Best Value", savings: "Save $15 vs monthly",     productId: usdQuarterlyId },
-        { key: "yearly",    title: "Yearly",    amount: increasePrice("$49", false),    period: "/ year",       savings: "Save $70 vs monthly", productId: usdYearlyId },
+        { key: "monthly",   title: "Monthly",   original: increasePrice("$9", false),     discounted: "$3",      period: "/ month",     productId: usdMonthlyId },
+        { key: "quarterly", title: "Quarterly", original: increasePrice("$24", false),   discounted: "$8",      period: "/ 3 months",  badge: "Best Value", savings: "Save $14",     productId: usdQuarterlyId },
+        { key: "yearly",    title: "Yearly",    original: increasePrice("$49", false),    discounted: "$15",     period: "/ year",       savings: "Save $40", productId: usdYearlyId },
       ];
 
   return (
@@ -240,14 +240,15 @@ async function PricingContent() {
                   {isIndia ? "🇮🇳 India pricing" : "🌍 International pricing"}
                 </span>
               </div>
-              <div className="flex items-baseline gap-1">
-                <span className="text-3xl font-black">{isIndia ? increasePrice("₹499", true) : increasePrice("$9", false)}</span>
+              <div className="flex items-baseline gap-2">
+                <span className="text-white/40 line-through text-2xl">₹849</span>
+                <span className="text-3xl font-black text-green-400">₹499</span>
                 <span className="text-white/50 text-sm">/ month</span>
               </div>
               <p className="text-xs text-purple-300/70 mt-1">
                 {isIndia
-                  ? `Or ${increasePrice("₹1,699", true)} / 3 months · Or ${increasePrice("₹2,499", true)} / year`
-                  : `Or ${increasePrice("$24", false)} / 3 months · Or ${increasePrice("$49", false)} / year`
+                  ? <><span className="line-through text-white/30">₹2,889</span> <span className="text-green-400 font-black">₹510</span> / 3 months · <span className="line-through text-white/30">₹4,249</span> <span className="text-green-400 font-black">₹750</span> / year</>
+                  : <><span className="line-through text-white/30">$15</span> <span className="text-green-400 font-black">$3</span> / month · <span className="line-through text-white/30">$41</span> <span className="text-green-400 font-black">$8</span> / 3 months · <span className="line-through text-white/30">$84</span> <span className="text-green-400 font-black">$15</span> / year</>
                 }
               </p>
             </div>
@@ -299,9 +300,12 @@ async function PricingContent() {
                       )}
                       Subscribe {plan.title}
                     </span>
-                    <span className="text-right">
-                      <span className="font-black">{plan.amount}</span>
-                      <span className="text-white/60 text-xs ml-1">{plan.period}</span>
+                    <span className="text-right flex flex-col items-end">
+                      <span className="flex items-center gap-1">
+                        <span className="text-white/40 line-through text-xs">{plan.original}</span>
+                        <span className="font-black text-green-400">{plan.discounted}</span>
+                      </span>
+                      <span className="text-white/60 text-[10px]">{plan.period}</span>
                     </span>
                   </a>
                 ))}
@@ -372,32 +376,7 @@ async function PricingContent() {
         </div>
 
         {/* FAQ */}
-        <details className="sm:hidden rounded-2xl border border-white/10 bg-white/5 p-4">
-          <summary className="text-xs font-black uppercase tracking-wide cursor-pointer text-white/75">
-            More details & FAQ
-          </summary>
-          <div className="mt-3 space-y-3">
-            {[
-              { q: "When will my Pro access activate?", a: "Instantly after payment — Dodo Payments processes your subscription and your Pro access is activated automatically." },
-              { q: "Are credits cumulative?", a: "No — they reset on the 1st of each month. Unused credits don't roll over." },
-              { q: "Can I cancel anytime?", a: "Yes. Cancel through the customer portal and you keep Pro access until your current period ends." },
-              isIndia
-                ? { q: "What's the quarterly plan?", a: `${increasePrice("₹1,699", true)} for 3 months — save ₹900 vs monthly` }
-                : { q: "What's the quarterly plan?", a: `${increasePrice("$24", false)} for 3 months — save $15 vs monthly` },
-              isIndia
-                ? { q: "What's the yearly plan?", a: `${increasePrice("₹2,499", true)}/year — pay once, stay Pro for 12 months. Save ₹3,000 vs monthly.` }
-                : { q: "What's the yearly plan?", a: `${increasePrice("$49", false)}/year — pay once, stay Pro for 12 months. Save $70 vs monthly.` },
-              { q: "What payment methods are accepted?", a: isIndia ? "UPI, credit/debit cards, net banking, and more — via Dodo Payments secure checkout." : "Credit/debit cards, PayPal, and more — via Dodo Payments secure checkout." },
-            ].map((item) => (
-              <div key={`mobile-${item.q}`} className="rounded-xl border border-white/10 p-4 bg-white/5">
-                <h3 className="text-xs font-black mb-1.5">{item.q}</h3>
-                <p className="text-[11px] text-white/55">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </details>
-
-        <div className="hidden sm:block space-y-3">
+        <div className="space-y-3">
           <h2 className="text-base font-black mb-4">FAQ</h2>
           {[
             { q: "When will my Pro access activate?", a: "Instantly after payment — Dodo Payments processes your subscription and your Pro access is activated automatically." },
