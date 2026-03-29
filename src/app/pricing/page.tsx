@@ -283,8 +283,8 @@ async function PricingContent() {
               </div>
               <p className="text-xs text-purple-300/70 mt-1">
                 {isIndia
-                  ? <><span className="line-through text-white/30">{calculateMRP("₹899", true)}</span> <span className="text-green-400 font-black">₹899</span> / 3 months · <span className="line-through text-white/30">{calculateMRP("₹2,699", true)}</span> <span className="text-green-400 font-black">₹2,699</span> / year</>
-                  : <><span className="line-through text-white/30">{calculateMRP("$8", false)}</span> <span className="text-green-400 font-black">$8</span> / 3 months · <span className="line-through text-white/30">{calculateMRP("$15", false)}</span> <span className="text-green-400 font-black">$15</span> / year</>
+                  ? <><span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("₹899", true)}</span> <span className="text-green-400 font-black whitespace-nowrap">₹899 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / 3 months · <span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("₹2,699", true)}</span> <span className="text-green-400 font-black whitespace-nowrap">₹2,699 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / year</>
+                  : <><span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("$8", false)}</span> <span className="text-green-400 font-black whitespace-nowrap">$8 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / 3 months · <span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("$15", false)}</span> <span className="text-green-400 font-black whitespace-nowrap">$15 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / year</>
                 }
               </p>
             </div>
