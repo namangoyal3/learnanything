@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import GoogleAnalyticsInit from "@/components/GoogleAnalyticsInit";
 import { PostHogProvider } from "@/components/providers/posthog-provider";
 import GoogleAnalyticsTracker from "@/components/GoogleAnalyticsTracker";
+import CampaignTracker from "@/components/CampaignTracker";
 import { Suspense } from "react";
 import "./globals.css";
 
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="antialiased min-h-screen">
         <PostHogProvider>
+          <CampaignTracker />
           {children}
         </PostHogProvider>
         {gaId && (
