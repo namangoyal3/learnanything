@@ -27,27 +27,27 @@ const FALLBACK_PRODUCTS: Record<string, string> = {
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
-  let productId = searchParams.get("productId");
   const plan = searchParams.get("metadata_plan") ?? searchParams.get("plan");
+  let productId = searchParams.get("productId");
 
+  // If no productId provided but plan is, use the base product for that plan
   if (!productId && plan) {
-    productId = DISCOUNTED_PRODUCTS[plan] || FALLBACK_PRODUCTS[plan];
+    productId = FALLBACK_PRODUCTS[plan];
   }
 
   if (!productId) {
     return NextResponse.json({ error: "productId is required" }, { status: 400 });
   }
 
-  let checkoutUrl: URL;
-  
-  if (DISCOUNTED_PRODUCTS[plan || ""]) {
-    checkoutUrl = new URL(
-      `${DODO_BASE.replace("live.dodopayments.com", "checkout.dodopayments.com").replace("test.dodopayments.com", "test.checkout.dodopayments.com")}/buy/${productId}`
-    );
-  } else {
-    checkoutUrl = new URL(
-      `${DODO_BASE.replace("live.dodopayments.com", "checkout.dodopayments.com").replace("test.dodopayments.com", "test.checkout.dodopayments.com")}/buy/${productId}`
-    );
+  // Construct the checkout URL
+  const checkoutUrl = new URL(
+    `${DODO_BASE.replace("live.dodopayments.com", "checkout.dodopayments.com").replace("test.dodopayments.com", "test.checkout.dodopayments.com")}/buy/${productId}`
+  );
+
+  // Apply FLAT70 coupon by default if it's one of our standard plans
+  // Unless we specifically received a productId that is one of the pre-discounted ones
+  const isPreDiscounted = Object.values(DISCOUNTED_PRODUCTS).includes(productId);
+  if (!isPreDiscounted && (plan || searchParams.has("metadata_plan"))) {
     checkoutUrl.searchParams.set("coupon_code", "FLAT70");
   }
 

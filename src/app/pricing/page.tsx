@@ -13,17 +13,18 @@ import PricingBannerModal from "@/components/PricingBannerModal";
 
 const PRICE_INCREASE_PERCENT = 70;
 
-function increasePrice(priceStr: string, isIndia: boolean): string {
-  const numMatch = priceStr.match(/[\d,.]+/);
-  if (!numMatch) return priceStr;
+function calculateMRP(discountedPrice: string, isIndia: boolean): string {
+  const numMatch = discountedPrice.match(/[\d,.]+/);
+  if (!numMatch) return discountedPrice;
   
   const num = parseFloat(numMatch[0].replace(/,/g, ""));
-  const newNum = Math.round(num * (1 + PRICE_INCREASE_PERCENT / 100));
+  // To get the MRP such that a 70% discount results in 'num', we do num / 0.3
+  const mrp = Math.round(num / 0.3);
   
   if (isIndia) {
-    return `₹${newNum.toLocaleString("en-IN")}`;
+    return `₹${mrp.toLocaleString("en-IN")}`;
   }
-  return `$${newNum}`;
+  return `$${mrp}`;
 }
 
 // Countries billed in INR (India)
@@ -133,14 +134,48 @@ async function PricingContent() {
 
   const plans = isIndia
     ? [
-        { key: "monthly",   title: "Monthly",   original: increasePrice("₹499", true),   discounted: "₹499",   period: "/ month",     productId: inrMonthlyId },
-        { key: "quarterly", title: "Quarterly", original: "₹2,999", discounted: "₹899",   period: "/ 3 months",  badge: "Best Value", savings: "Save ₹2,100",  productId: inrQuarterlyId },
-        { key: "yearly",    title: "Yearly",    original: "₹8,999", discounted: "₹2,699", period: "/ year",       savings: "Save ₹6,300", productId: inrYearlyId },
+        { key: "monthly",   title: "Monthly",   original: calculateMRP("₹499", true),   discounted: "₹499",   period: "/ month",     productId: inrMonthlyId },
+        { 
+          key: "quarterly", 
+          title: "Quarterly", 
+          original: calculateMRP("₹899", true),   
+          discounted: "₹899",   
+          period: "/ 3 months",  
+          badge: "Best Value", 
+          savings: `Save ₹${(Math.round(899/0.3) - 899).toLocaleString("en-IN")}`,  
+          productId: inrQuarterlyId 
+        },
+        { 
+          key: "yearly",    
+          title: "Yearly",    
+          original: calculateMRP("₹2,699", true), 
+          discounted: "₹2,699", 
+          period: "/ year",       
+          savings: `Save ₹${(Math.round(2699/0.3) - 2699).toLocaleString("en-IN")}`, 
+          productId: inrYearlyId 
+        },
       ]
     : [
-        { key: "monthly",   title: "Monthly",   original: increasePrice("$9", false),     discounted: "$3",      period: "/ month",     productId: usdMonthlyId },
-        { key: "quarterly", title: "Quarterly", original: increasePrice("$24", false),   discounted: "$8",      period: "/ 3 months",  badge: "Best Value", savings: "Save $14",     productId: usdQuarterlyId },
-        { key: "yearly",    title: "Yearly",    original: increasePrice("$49", false),    discounted: "$15",     period: "/ year",       savings: "Save $40", productId: usdYearlyId },
+        { key: "monthly",   title: "Monthly",   original: calculateMRP("$3", false),     discounted: "$3",      period: "/ month",     productId: usdMonthlyId },
+        { 
+          key: "quarterly", 
+          title: "Quarterly", 
+          original: calculateMRP("$8", false),     
+          discounted: "$8",      
+          period: "/ 3 months",  
+          badge: "Best Value", 
+          savings: `Save $${Math.round(8/0.3) - 8}`,     
+          productId: usdQuarterlyId 
+        },
+        { 
+          key: "yearly",    
+          title: "Yearly",    
+          original: calculateMRP("$15", false),    
+          discounted: "$15",     
+          period: "/ year",       
+          savings: `Save $${Math.round(15/0.3) - 15}`, 
+          productId: usdYearlyId 
+        },
       ];
 
   return (
@@ -242,14 +277,14 @@ async function PricingContent() {
                 </span>
               </div>
               <div className="flex items-baseline gap-2">
-                <span className="text-white/40 line-through text-2xl">₹849</span>
-                <span className="text-3xl font-black text-green-400">₹499</span>
+                <span className="text-white/40 line-through text-2xl">{calculateMRP(isIndia ? "₹499" : "$3", isIndia)}</span>
+                <span className="text-3xl font-black text-green-400">{isIndia ? "₹499" : "$3"}</span>
                 <span className="text-white/50 text-sm">/ month</span>
               </div>
               <p className="text-xs text-purple-300/70 mt-1">
                 {isIndia
-                  ? <><span className="line-through text-white/30">₹2,999</span> <span className="text-green-400 font-black">₹899</span> / 3 months · <span className="line-through text-white/30">₹8,999</span> <span className="text-green-400 font-black">₹2,699</span> / year</>
-                  : <><span className="line-through text-white/30">$15</span> <span className="text-green-400 font-black">$3</span> / month · <span className="line-through text-white/30">$41</span> <span className="text-green-400 font-black">$8</span> / 3 months · <span className="line-through text-white/30">$84</span> <span className="text-green-400 font-black">$15</span> / year</>
+                  ? <><span className="line-through text-white/30">{calculateMRP("₹899", true)}</span> <span className="text-green-400 font-black">₹899</span> / 3 months · <span className="line-through text-white/30">{calculateMRP("₹2,699", true)}</span> <span className="text-green-400 font-black">₹2,699</span> / year</>
+                  : <><span className="line-through text-white/30">{calculateMRP("$8", false)}</span> <span className="text-green-400 font-black">$8</span> / 3 months · <span className="line-through text-white/30">{calculateMRP("$15", false)}</span> <span className="text-green-400 font-black">$15</span> / year</>
                 }
               </p>
             </div>
@@ -384,11 +419,11 @@ async function PricingContent() {
             { q: "Are credits cumulative?", a: "No — they reset on the 1st of each month. Unused credits don't roll over." },
             { q: "Can I cancel anytime?", a: "Yes. Cancel through the customer portal and you keep Pro access until your current period ends." },
             isIndia
-              ? { q: "What's the quarterly plan?", a: `${increasePrice("₹1,699", true)} for 3 months — save ₹900 vs monthly` }
-              : { q: "What's the quarterly plan?", a: `${increasePrice("$24", false)} for 3 months — save $15 vs monthly` },
+              ? { q: "What's the quarterly plan?", a: `${calculateMRP("₹899", true)} for 3 months — results in ₹899 after FLAT70 discount.` }
+              : { q: "What's the quarterly plan?", a: `${calculateMRP("$8", false)} for 3 months — results in $8 after FLAT70 discount.` },
             isIndia
-              ? { q: "What's the yearly plan?", a: `${increasePrice("₹2,499", true)}/year — pay once, stay Pro for 12 months. Save ₹3,000 vs monthly.` }
-              : { q: "What's the yearly plan?", a: `${increasePrice("$49", false)}/year — pay once, stay Pro for 12 months. Save $70 vs monthly.` },
+              ? { q: "What's the yearly plan?", a: `${calculateMRP("₹2,699", true)}/year — results in ₹2,699 after FLAT70 discount.` }
+              : { q: "What's the yearly plan?", a: `${calculateMRP("$15", false)}/year — results in $15 after FLAT70 discount.` },
             { q: "What payment methods are accepted?", a: isIndia ? "UPI, credit/debit cards, net banking, and more — via Dodo Payments secure checkout." : "Credit/debit cards, PayPal, and more — via Dodo Payments secure checkout." },
           ].map((item) => (
             <div key={item.q} className="rounded-xl border border-white/10 p-4 bg-white/5">
