@@ -46,6 +46,7 @@ interface UserRow {
   lessonsCompleted: number;
   lastActiveAt: string | null;
   createdAt: string;
+  country: string | null;
 }
 
 interface EmailRow {
@@ -696,7 +697,7 @@ export default function AdminPage() {
                   <table className="w-full text-xs">
                     <thead>
                       <tr style={{ borderBottom: "1px solid var(--border-color)" }}>
-                        {["Name", "Email", "XP", "Streak", "Best", "Lessons", "Gems", "Joined", "Last Active"].map((h) => (
+                        {["Name", "Email", "Country", "XP", "Streak", "Best", "Lessons", "Gems", "Joined", "Last Active"].map((h) => (
                           <th key={h} className="py-2 px-2 text-left font-black uppercase tracking-wide" style={{ color: "var(--text-secondary)" }}>{h}</th>
                         ))}
                       </tr>
@@ -715,6 +716,9 @@ export default function AdminPage() {
                           </td>
                           <td className="py-2 px-2 font-mono" style={{ color: "var(--text-secondary)" }}>
                             <a href={`mailto:${u.email}`} className="hover:underline" style={{ color: "#1cb0f6" }}>{u.email}</a>
+                          </td>
+                          <td className="py-2 px-2 font-bold whitespace-nowrap" style={{ color: u.country === "IN" ? "#a855f7" : "#58cc02" }}>
+                            {u.country || "—"}
                           </td>
                           <td className="py-2 px-2 font-black tabular-nums" style={{ color: "#ffc800" }}>{u.xp}</td>
                           <td className="py-2 px-2 font-black tabular-nums" style={{ color: u.streakCount > 0 ? "#ff9600" : "var(--text-secondary)" }}>
