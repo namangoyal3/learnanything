@@ -132,27 +132,40 @@ export async function DELETE(req: NextRequest) {
     if (!code) return NextResponse.json({ error: "Code required" }, { status: 400 });
 
     // Delete from Dodo first (best effort)
+    let dodoDeleted = false;
     try {
-      const dodo = new DodoPayments({
-        bearerToken: process.env.DODO_PAYMENTS_API_KEY,
-        environment:
-          process.env.DODO_PAYMENTS_ENVIRONMENT === "test_mode" ? "test_mode" : "live_mode",
-      });
-      
-      // Dodo doesn't always have a direct 'delete by code', but we find it first
-      const discount = await dodo.discounts.retrieveByCode(code);
-      if (discount && discount.discount_id) {
-        await dodo.discounts.delete(discount.discount_id);
+      if (process.env.DODO_PAYMENTS_API_KEY) {
+        const dodo = new DodoPayments({
+          bearerToken: process.env.DODO_PAYMENTS_API_KEY,
+          environment:
+            process.env.DODO_PAYMENTS_ENVIRONMENT === "test_mode" ? "test_mode" : "live_mode",
+        });
+        
+        try {
+          const discount = await dodo.discounts.retrieveByCode(code);
+          if (discount && discount.discount_id) {
+            await dodo.discounts.delete(discount.discount_id);
+            dodoDeleted = true;
+          }
+        } catch (retrieveErr: any) {
+          // If 404, it's fine, it just doesn't exist in Dodo
+          console.warn(`Dodo retrieveByCode failed for ${code}:`, retrieveErr?.status || retrieveErr?.message);
+        }
       }
     } catch (dodoErr) {
-      console.warn("Failed to delete from Dodo (might not exist):", dodoErr);
+      console.warn("Outer Dodo error:", dodoErr);
     }
 
-    await prisma.coupon.delete({ where: { code } });
+    // Use deleteMany to avoid throwing if code not found
+    const { count } = await prisma.coupon.deleteMany({ where: { code } });
 
-    return NextResponse.json({ success: true });
+    if (count === 0 && !dodoDeleted) {
+      console.warn(`Coupon ${code} not found in DB or Dodo.`);
+    }
+
+    return NextResponse.json({ success: true, dbDeleted: count > 0, dodoDeleted });
   } catch (err) {
     console.error("Failed to delete coupon:", err);
-    return NextResponse.json({ error: "Internal error" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to delete coupon" }, { status: 500 });
   }
 }
