@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import {
   Users, Activity, TrendingUp, BookOpen, Zap, Flame, Trophy, Lock,
   RefreshCw, Search, Mail, CheckCircle, MousePointer, AlertCircle,
-  ChevronLeft, ChevronRight, ArrowUpDown, Eye, Crown,
+  ChevronLeft, ChevronRight, ArrowUpDown, Eye, Crown, Ticket
 } from "lucide-react";
 
 interface AdminStats {
@@ -112,13 +112,22 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [refreshing, setRefreshing] = useState(false);
-  const [activeTab, setActiveTab] = useState<"overview" | "users" | "emails" | "pro-grants">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "users" | "emails" | "pro-grants" | "coupons">("overview");
 
   // Pro grants state
   const [grantEmail, setGrantEmail] = useState("");
   const [grantInterval, setGrantInterval] = useState<"month" | "quarter" | "year">("month");
   const [grantLoading, setGrantLoading] = useState(false);
   const [grantResult, setGrantResult] = useState<{ ok: boolean; message: string } | null>(null);
+
+  // Coupon state
+  const [couponEmail, setCouponEmail] = useState("");
+  const [couponGlobal, setCouponGlobal] = useState(false);
+  const [couponDiscount, setCouponDiscount] = useState(70);
+  const [couponExpiry, setCouponExpiry] = useState(60 * 24); // 1 day
+  const [couponLimit, setCouponLimit] = useState(1);
+  const [couponLoading, setCouponLoading] = useState(false);
+  const [couponResult, setCouponResult] = useState<{ ok: boolean; message: string; code?: string } | null>(null);
 
   // Users table state
   const [users, setUsers] = useState<UserRow[]>([]);
@@ -287,6 +296,36 @@ export default function AdminPage() {
     }
   }, [grantEmail, grantInterval]);
 
+  const generateCoupon = useCallback(async () => {
+    if (!couponGlobal && !couponEmail.trim()) return;
+    setCouponLoading(true);
+    setCouponResult(null);
+    try {
+      const res = await fetch("/api/admin/coupon", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: couponGlobal ? "*" : couponEmail.trim().toLowerCase(),
+          isGlobal: couponGlobal,
+          discountPercent: couponDiscount,
+          expiresInMinutes: couponExpiry,
+          maxUses: couponLimit,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setCouponResult({ ok: true, message: "Coupon created!", code: data.code });
+        setCouponEmail("");
+      } else {
+        setCouponResult({ ok: false, message: data.error || "Generation failed" });
+      }
+    } catch (err) {
+      setCouponResult({ ok: false, message: "Network error" });
+    } finally {
+      setCouponLoading(false);
+    }
+  }, [couponEmail, couponGlobal, couponDiscount, couponExpiry, couponLimit]);
+
   useEffect(() => {
     async function init() {
       const meRes = await fetch("/api/auth/me");
@@ -352,18 +391,18 @@ export default function AdminPage() {
 
         {/* Tab bar */}
         <div className="max-w-6xl mx-auto mt-3 flex gap-1 flex-wrap">
-          {(["overview", "users", "emails", "pro-grants"] as const).map((tab) => (
+          {(["overview", "users", "emails", "pro-grants", "coupons"] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className="px-4 py-2 rounded-xl text-xs font-black capitalize transition-all"
               style={{
-                background: activeTab === tab ? (tab === "pro-grants" ? "#a855f7" : "#58cc02") : "var(--bg-secondary)",
+                background: activeTab === tab ? (tab === "pro-grants" || tab === "coupons" ? "#a855f7" : "#58cc02") : "var(--bg-secondary)",
                 color: activeTab === tab ? "white" : "var(--text-secondary)",
-                border: "1px solid " + (activeTab === tab ? (tab === "pro-grants" ? "#a855f7" : "#58cc02") : "var(--border-color)"),
+                border: "1px solid " + (activeTab === tab ? (tab === "pro-grants" || tab === "coupons" ? "#a855f7" : "#58cc02") : "var(--border-color)"),
               }}
             >
-              {tab === "users" ? `Users (${stats.totalUsers})` : tab === "emails" ? "Email Analytics" : tab === "pro-grants" ? "Pro Grants" : "Overview"}
+              {tab === "users" ? `Users (${stats.totalUsers})` : tab === "emails" ? "Email Analytics" : tab === "pro-grants" ? "Pro Grants" : tab === "coupons" ? "Coupons" : "Overview"}
             </button>
           ))}
         </div>
@@ -889,6 +928,133 @@ export default function AdminPage() {
                   </div>
                 )}
               </div>
+            </div>
+          </Section>
+        )}
+
+        {/* ── COUPONS TAB ── */}
+        {activeTab === "coupons" && (
+          <Section title="Manage Coupons">
+            <div className="space-y-4">
+              <p className="text-xs" style={{ color: "var(--text-secondary)" }}>
+                Generate discount codes valid on checkout. Enable &quot;Global&quot; to allow anyone to use it up to the selected limit.
+              </p>
+
+              <div className="space-y-4 p-4 rounded-xl" style={{ background: "var(--bg-secondary)", border: "1px solid var(--border-color)" }}>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="checkbox"
+                    id="couponGlobal"
+                    checked={couponGlobal}
+                    onChange={(e) => setCouponGlobal(e.target.checked)}
+                    className="w-4 h-4"
+                  />
+                  <label htmlFor="couponGlobal" className="text-sm font-bold text-[var(--text-primary)]">
+                    Make Global (Works for any email)
+                  </label>
+                </div>
+
+                {!couponGlobal && (
+                  <div>
+                    <label className="text-xs font-black uppercase tracking-wide block mb-1" style={{ color: "var(--text-secondary)" }}>
+                      Target User Email
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="user@example.com"
+                      value={couponEmail}
+                      onChange={(e) => setCouponEmail(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-xl text-sm"
+                      style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                    />
+                  </div>
+                )}
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <div>
+                    <label className="text-xs font-black uppercase tracking-wide block mb-1" style={{ color: "var(--text-secondary)" }}>
+                      Discount (%)
+                    </label>
+                    <input
+                      type="number"
+                      min="1"
+                      max="100"
+                      value={couponDiscount}
+                      onChange={(e) => setCouponDiscount(Number(e.target.value))}
+                      className="w-full px-3 py-2 rounded-xl text-sm"
+                      style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-xs font-black uppercase tracking-wide block mb-1" style={{ color: "var(--text-secondary)" }}>
+                      Usage Limit
+                    </label>
+                    <input
+                      type="number"
+                      min="1"
+                      value={couponLimit}
+                      onChange={(e) => setCouponLimit(Number(e.target.value))}
+                      className="w-full px-3 py-2 rounded-xl text-sm"
+                      style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label className="text-xs font-black uppercase tracking-wide block mb-1" style={{ color: "var(--text-secondary)" }}>
+                      Time Expiry
+                    </label>
+                    <select
+                      value={couponExpiry}
+                      onChange={(e) => setCouponExpiry(Number(e.target.value))}
+                      className="w-full px-3 py-2 rounded-xl text-sm"
+                      style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                    >
+                      <option value={60 * 1}>1 Hour</option>
+                      <option value={60 * 24}>24 Hours</option>
+                      <option value={60 * 24 * 7}>7 Days</option>
+                      <option value={60 * 24 * 30}>30 Days</option>
+                      <option value={60 * 24 * 365}>1 Year</option>
+                    </select>
+                  </div>
+                </div>
+
+                <button
+                  onClick={generateCoupon}
+                  disabled={couponLoading || (!couponGlobal && !couponEmail.trim())}
+                  className="w-full py-3 rounded-xl text-sm font-black text-white transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                  style={{ background: "#a855f7" }}
+                >
+                  <Ticket size={16} />
+                  {couponLoading ? "Generating..." : "Generate Coupon"}
+                </button>
+              </div>
+
+              {couponResult && (
+                <div
+                  className="rounded-xl px-5 py-4 flex flex-col gap-2"
+                  style={{
+                    background: couponResult.ok ? "rgba(88,204,2,0.1)" : "rgba(255,75,75,0.1)",
+                    border: `1px solid ${couponResult.ok ? "rgba(88,204,2,0.3)" : "rgba(255,75,75,0.3)"}`,
+                  }}
+                >
+                  <div className="font-bold text-sm" style={{ color: couponResult.ok ? "#58cc02" : "#ff4b4b" }}>
+                    {couponResult.message}
+                  </div>
+                  {couponResult.code && (
+                    <div className="flex items-center justify-between p-3 rounded-lg" style={{ background: "var(--bg-card)" }}>
+                      <span className="font-mono text-lg font-black tracking-widest">{couponResult.code}</span>
+                      <button 
+                        onClick={() => navigator.clipboard.writeText(couponResult.code!)}
+                        className="px-3 py-1.5 rounded-lg text-xs font-bold"
+                        style={{ background: "#58cc02", color: "white" }}
+                      >
+                        Copy
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </Section>
         )}
