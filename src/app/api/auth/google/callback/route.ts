@@ -63,6 +63,8 @@ export async function GET(req: NextRequest) {
 
     const { id: googleId, email, name, picture } = await userInfoRes.json();
 
+    const reqCountry = req.headers.get("x-vercel-ip-country") || req.headers.get("cf-ipcountry");
+
     // Find existing user by googleId or email
     let user = await prisma.user.findFirst({
       where: { OR: [{ googleId }, { email }] },
@@ -79,6 +81,7 @@ export async function GET(req: NextRequest) {
           avatarUrl: picture,
           streakFreezes: 2,
           gems: 50,
+          country: reqCountry || null,
         },
       });
       // Fire-and-forget welcome email
@@ -91,6 +94,7 @@ export async function GET(req: NextRequest) {
           googleId: user.googleId || googleId,
           name: name || user.name,
           avatarUrl: picture || user.avatarUrl,
+          country: reqCountry || user.country,
         },
       });
     }

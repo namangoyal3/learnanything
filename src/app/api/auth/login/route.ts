@@ -20,6 +20,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
+  const reqCountry = req.headers.get("x-vercel-ip-country") || req.headers.get("cf-ipcountry");
+  if (reqCountry && user.country !== reqCountry) {
+    await prisma.user.update({
+      where: { id: user.id },
+      data: { country: reqCountry },
+    });
+  }
+
   const token = await signToken(user.id);
   const response = NextResponse.json({
     user: { id: user.id, name: user.name, email: user.email },
