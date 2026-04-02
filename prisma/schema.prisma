@@ -136,6 +136,8 @@ model Coupon {
   expiresAt       DateTime
   usedAt          DateTime?
   usedByUserId    String?
+  maxUses         Int       @default(1)
+  usesCount       Int       @default(0)
   createdAt       DateTime  @default(now())
 
   @@index([code])

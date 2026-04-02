@@ -85,8 +85,8 @@ export async function POST(req: NextRequest) {
       return sanitizeError();
     }
 
-    if (coupon.usedAt) {
-      await logAttempt(code, ip, userId, false, "already_used");
+    if (coupon.usesCount >= coupon.maxUses) {
+      await logAttempt(code, ip, userId, false, "limit_reached");
       return sanitizeError();
     }
 
@@ -108,10 +108,12 @@ export async function POST(req: NextRequest) {
       return sanitizeError();
     }
 
+    const newUsesCount = coupon.usesCount + 1;
     await prisma.coupon.update({
       where: { id: coupon.id },
       data: {
-        usedAt: new Date(),
+        usesCount: newUsesCount,
+        usedAt: newUsesCount >= coupon.maxUses ? new Date() : null,
         usedByUserId: userId,
       },
     });
