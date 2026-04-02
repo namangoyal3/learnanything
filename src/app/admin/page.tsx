@@ -127,6 +127,7 @@ export default function AdminPage() {
 
   const [coupons, setCoupons] = useState<CouponRow[]>([]);
   const [couponsLoading, setCouponsLoading] = useState(false);
+  const [deletingCode, setDeletingCode] = useState<string | null>(null);
 
   // Pro grants state
   const [grantEmail, setGrantEmail] = useState("");
@@ -232,16 +233,20 @@ export default function AdminPage() {
 
   const disableCoupon = useCallback(async (code: string) => {
     if (!confirm(`Are you sure you want to delete ${code}? It will no longer work on checkout.`)) return;
+    setDeletingCode(code);
     try {
-      const res = await fetch(`/api/admin/coupon?code=${code}`, { method: "DELETE" });
+      const res = await fetch(`/api/admin/coupon?code=${encodeURIComponent(code)}`, { method: "DELETE" });
       if (res.ok) {
         await fetchCoupons();
       } else {
-        alert("Failed to delete coupon.");
+        const data = await res.json();
+        alert(data.error || "Failed to delete coupon.");
       }
     } catch (err) {
       console.error(err);
       alert("Error deleting coupon.");
+    } finally {
+      setDeletingCode(null);
     }
   }, [fetchCoupons]);
 
@@ -1190,9 +1195,10 @@ export default function AdminPage() {
                             <td className="py-3 px-2">
                               <button 
                                 onClick={() => disableCoupon(c.code)}
-                                className="px-2 py-1 rounded bg-red-500/10 hover:bg-red-500/20 text-red-500 font-bold"
+                                disabled={deletingCode === c.code}
+                                className="px-2 py-1 rounded bg-red-500/10 hover:bg-red-500/20 text-red-500 font-bold transition-opacity disabled:opacity-50"
                               >
-                                Delete
+                                {deletingCode === c.code ? "..." : "Delete"}
                               </button>
                             </td>
                           </tr>
