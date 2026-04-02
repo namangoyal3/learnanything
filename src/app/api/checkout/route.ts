@@ -51,7 +51,7 @@ export async function GET(req: NextRequest) {
   if (email) checkoutUrl.searchParams.set("email", email);
 
   for (const [key, value] of searchParams.entries()) {
-    if (key.startsWith("metadata_")) {
+    if (key.startsWith("metadata_") || key === "discount_code") {
       checkoutUrl.searchParams.set(key, value);
     }
   }
