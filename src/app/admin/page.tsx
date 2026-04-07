@@ -123,7 +123,7 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(true);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [refreshing, setRefreshing] = useState(false);
-  const [activeTab, setActiveTab] = useState<"overview" | "users" | "emails" | "pro-grants" | "coupons">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "users" | "emails" | "pro-grants" | "coupons" | "ai-company">("overview");
 
   const [coupons, setCoupons] = useState<CouponRow[]>([]);
   const [couponsLoading, setCouponsLoading] = useState(false);
@@ -144,6 +144,30 @@ export default function AdminPage() {
   const [couponCustomCode, setCouponCustomCode] = useState("");
   const [couponLoading, setCouponLoading] = useState(false);
   const [couponResult, setCouponResult] = useState<{ ok: boolean; message: string; code?: string } | null>(null);
+
+  // AI Swarm state
+  const [aiDirective, setAiDirective] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResult, setAiResult] = useState<{ ok: boolean; message: string } | null>(null);
+
+  const triggerAISwarm = useCallback(async () => {
+    setAiLoading(true);
+    setAiResult(null);
+    try {
+      const res = await fetch("/api/admin/ai-company", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ directive: aiDirective }),
+      });
+      const data = await res.json();
+      setAiResult({ ok: res.ok, message: data.message || data.error });
+      if (res.ok) setAiDirective("");
+    } catch (e: any) {
+      setAiResult({ ok: false, message: e.message || "Request failed" });
+    } finally {
+      setAiLoading(false);
+    }
+  }, [aiDirective]);
 
   // Users table state
   const [users, setUsers] = useState<UserRow[]>([]);
@@ -444,18 +468,18 @@ export default function AdminPage() {
 
         {/* Tab bar */}
         <div className="max-w-6xl mx-auto mt-3 flex gap-1 flex-wrap">
-          {(["overview", "users", "emails", "pro-grants", "coupons"] as const).map((tab) => (
+          {(["overview", "users", "emails", "pro-grants", "coupons", "ai-company"] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
               className="px-4 py-2 rounded-xl text-xs font-black capitalize transition-all"
               style={{
-                background: activeTab === tab ? (tab === "pro-grants" || tab === "coupons" ? "#a855f7" : "#58cc02") : "var(--bg-secondary)",
+                background: activeTab === tab ? (tab === "pro-grants" || tab === "coupons" ? "#a855f7" : tab === "ai-company" ? "#1cb0f6" : "#58cc02") : "var(--bg-secondary)",
                 color: activeTab === tab ? "white" : "var(--text-secondary)",
-                border: "1px solid " + (activeTab === tab ? (tab === "pro-grants" || tab === "coupons" ? "#a855f7" : "#58cc02") : "var(--border-color)"),
+                border: "1px solid " + (activeTab === tab ? (tab === "pro-grants" || tab === "coupons" ? "#a855f7" : tab === "ai-company" ? "#1cb0f6" : "#58cc02") : "var(--border-color)"),
               }}
             >
-              {tab === "users" ? `Users (${stats.totalUsers})` : tab === "emails" ? "Email Analytics" : tab === "pro-grants" ? "Pro Grants" : tab === "coupons" ? "Coupons" : "Overview"}
+              {tab === "users" ? `Users (${stats.totalUsers})` : tab === "emails" ? "Email Analytics" : tab === "pro-grants" ? "Pro Grants" : tab === "coupons" ? "Coupons" : tab === "ai-company" ? "Virtual C-Suite" : "Overview"}
             </button>
           ))}
         </div>
@@ -1205,6 +1229,58 @@ export default function AdminPage() {
                         ))}
                       </tbody>
                     </table>
+                  </div>
+                )}
+              </div>
+            </div>
+          </Section>
+        )}
+
+        {/* ── AI COMPANY TAB ── */}
+        {activeTab === "ai-company" && (
+          <Section title="Autonomous AI Swarm (Board Meeting)">
+            <div className="max-w-2xl">
+              <div className="p-4 rounded-xl mb-6 text-sm" style={{ background: "rgba(28,176,246,0.1)", border: "1px solid rgba(28,176,246,0.3)", color: "var(--text-primary)" }}>
+                <p className="font-bold mb-2" style={{ color: "#1cb0f6" }}>How this works:</p>
+                <ul className="list-disc pl-5 space-y-1" style={{ color: "var(--text-secondary)" }}>
+                  <li>This triggers the 8-agent AI C-suite currently living inside your PM Streak GitHub repo.</li>
+                  <li>The CEO analyzes the directive and passes it to the CDO for GA4 data analysis.</li>
+                  <li>The CTO writes code and autonomously opens a GitHub Pull Request with A/B testing variations.</li>
+                  <li>The CQO verifies the PR and testing methodology.</li>
+                </ul>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <label className="text-xs font-black uppercase tracking-wide block mb-2" style={{ color: "var(--text-secondary)" }}>
+                    Board Directive
+                  </label>
+                  <textarea
+                    placeholder="e.g. Review our recent metrics and deploy a new A/B test to improve Pro conversion rates by 5%..."
+                    value={aiDirective}
+                    onChange={(e) => setAiDirective(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl text-sm min-h-[120px]"
+                    style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)", color: "var(--text-primary)" }}
+                  />
+                </div>
+                <button
+                  onClick={triggerAISwarm}
+                  disabled={aiLoading}
+                  className="w-full py-3 rounded-xl text-sm font-black text-white transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                  style={{ background: "#1cb0f6" }}
+                >
+                  {aiLoading ? <RefreshCw size={16} className="animate-spin" /> : <Zap size={16} />}
+                  {aiLoading ? "Spawning Agents..." : "Initiate Board Meeting"}
+                </button>
+                {aiResult && (
+                  <div
+                    className="rounded-xl px-4 py-3 text-sm font-bold mt-4"
+                    style={{
+                      background: aiResult.ok ? "rgba(88,204,2,0.1)" : "rgba(255,75,75,0.1)",
+                      border: `1px solid ${aiResult.ok ? "rgba(88,204,2,0.3)" : "rgba(255,75,75,0.3)"}`,
+                      color: aiResult.ok ? "#58cc02" : "#ff4b4b",
+                    }}
+                  >
+                    {aiResult.message}
                   </div>
                 )}
               </div>
