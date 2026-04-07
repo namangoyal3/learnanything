@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # PM Streak SEO Article Publisher
-# Run this script to publish all 3 articles to learnanything.pro
-# Usage: bash publish-all.sh
+# Run this script to publish all articles to learnanything.pro
+# Usage: cd seo-articles && bash publish-all.sh
 
 AUTH="Bearer 335644a93f2103b28f2a82c96b5ede6e3dadc39013877954b4a555fdd3c012c2"
 ENDPOINT="https://learnanything.pro/api/content/publish"
@@ -28,4 +28,18 @@ curl -s -X POST "$ENDPOINT" \
   -d @article3-pm-job-market-2026.json
 echo -e "\n"
 
-echo "=== Done ==="
+echo "=== Publishing Article 4: Senior PM Promotion Playbook ==="
+curl -s -X POST "$ENDPOINT" \
+  -H "Authorization: $AUTH" \
+  -H "Content-Type: application/json" \
+  -d @article4-senior-pm-promotion.json
+echo -e "\n"
+
+echo "=== Publishing Article 5: RICE vs MoSCoW vs Kano ==="
+curl -s -X POST "$ENDPOINT" \
+  -H "Authorization: $AUTH" \
+  -H "Content-Type: application/json" \
+  -d @article5-rice-moscow-kano.json
+echo -e "\n"
+
+echo "=== Done — 5 articles published ==="
