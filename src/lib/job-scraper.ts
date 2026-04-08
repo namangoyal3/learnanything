@@ -11,11 +11,9 @@
  *   5. Indeed         — RSS feed (aggregates LinkedIn + others)
  *   6. LinkedIn       — jsearch via RapidAPI (requires RAPIDAPI_KEY env var).
  *                      Also ingested daily at 6:00 PM IST via /api/cron/linkedin-jobs.
- *   7. YC Work at a Startup — cheerio page scrape
+ *   7. YC Work at a Startup — Algolia API (no headless browser, serverless-safe)
  *   8. Greenhouse boards   — public JSON APIs for PM-heavy companies
  */
-import * as cheerio from "cheerio";
-import { PlaywrightCrawler, Configuration } from "crawlee";
 
 // rss-parser ships CJS; dynamic import keeps Next.js edge/server happy
 async function getRssParser() {
@@ -326,56 +324,53 @@ export async function fetchLinkedIn(): Promise<NormJob[]> {
   return all;
 }
 
-// ─── Source 7: YC Work at a Startup (via Crawlee for retries + anti-bot) ────
+// ─── Source 7: YC Work at a Startup (via Algolia API — no headless browser) ──
+// Uses YC's public Algolia search index. No Playwright needed — works in serverless.
 
 export async function fetchYCStartups(): Promise<NormJob[]> {
   const all: NormJob[] = [];
-
-  // Silence Crawlee's internal storage/logging for library use
-  Configuration.getGlobalConfig().set("persistStorage", false);
-
-  const crawler = new PlaywrightCrawler({
-    maxRequestRetries: 3,
-    requestHandlerTimeoutSecs: 45,
-    navigationTimeoutSecs: 30,
-    launchContext: { launchOptions: { headless: true } },
-    async requestHandler({ page }) {
-      // Wait for job listings to render (YC site uses .job-name for each listing)
-      await page.waitForSelector(".job-name", { timeout: 15000 }).catch(() => {});
-      const html = await page.content();
-      const $ = cheerio.load(html);
-      // Each job row: .job-name a[href*="/jobs/"] is the title link
-      $(".job-name").each((_i, el) => {
-        const $el = $(el);
-        const $a = $el.find("a[href*='/jobs/']").first();
-        const title = $a.text().trim();
-        const href = $a.attr("href") ?? "";
-        if (!title || !href) return;
-        const url = href.startsWith("http") ? href : `https://www.workatastartup.com${href}`;
-        // Company name is in nearest ancestor row's company link
-        const $row = $el.closest(".mt-2").prev().find("a[href*='/companies/']").first();
-        const company = $row.text().trim() || "YC Startup";
-        all.push({
-          title, company, applyUrl: url,
-          description: null,
-          remote: true, location: null,
-          tags: extractTags(title, ["YC"]),
-          postedAt: null, source: "yc",
-        });
-      });
-    },
-    async failedRequestHandler({ request }) {
-      console.warn(`  ⚠ YC Crawlee failed after retries: ${request.url}`);
-    },
-  });
-
   try {
-    // Use the canonical PM jobs listing URL (remote)
-    await crawler.run(["https://www.workatastartup.com/jobs/r/product-manager"]);
+    const res = await safeFetch(
+      "https://45bwzj1sgc-dsn.algolia.net/1/indexes/WaaSJobListing/query",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-algolia-application-id": "45BWZJ1SGC",
+          "x-algolia-api-key": "***REMOVED***",
+        },
+        body: JSON.stringify({
+          query: "product manager",
+          hitsPerPage: 50,
+          filters: "role_type:pm OR role_type:product",
+        }),
+      }
+    );
+    if (!res) return [];
+    const data = await res.json() as { hits?: Array<{
+      title?: string; company_name?: string; url?: string;
+      short_description?: string; remote?: boolean; location?: string;
+      created_at?: number;
+    }> };
+    for (const j of data.hits ?? []) {
+      const url = j.url ?? "";
+      if (!url) continue;
+      const applyUrl = url.startsWith("http") ? url : `https://www.workatastartup.com${url}`;
+      all.push({
+        title: j.title ?? "Product Manager",
+        company: j.company_name ?? "YC Startup",
+        applyUrl,
+        description: j.short_description?.slice(0, 500) ?? null,
+        remote: j.remote ?? true,
+        location: j.location ?? null,
+        tags: extractTags(j.title ?? "", ["YC"]),
+        postedAt: j.created_at ? new Date(j.created_at * 1000) : null,
+        source: "yc",
+      });
+    }
   } catch (err) {
-    console.warn(`  ⚠ YC Crawlee error:`, err instanceof Error ? err.message : String(err));
+    console.warn(`  ⚠ YC Algolia error:`, err instanceof Error ? err.message : String(err));
   }
-
   return all;
 }
 
