@@ -289,7 +289,15 @@ def execute_company_mission(
     llm0 = make_llm([key(0)], max_tokens=4096, temperature=0.3)
     llm1 = make_llm([key(1)], max_tokens=4096, temperature=0.3)
     llm2 = make_llm([key(2)], max_tokens=4096, temperature=0.3)
-    llm_code = make_llm([key(3)], max_tokens=8192, temperature=0.1)  # CTO
+    # CTO uses llama-3.3-70b — much better at structured tool calls (github_pr_creator)
+    from crewai import LLM as _LLM
+    llm_code = _LLM(
+        model="groq/llama-3.3-70b-versatile",
+        temperature=0.1,
+        api_key=key(3),
+        max_tokens=4096,
+        max_retries=3,
+    )
     llm4 = make_llm([key(4)], max_tokens=4096, temperature=0.3)
 
     ga4_tool = make_ga4_tool()
@@ -421,12 +429,22 @@ Keep it focused — one feature, not five.""",
     )
 
     task_coding = Task(
-        description="""CTO: Implement the feature from the CPO's PRD.
-Write the COMPLETE, production-ready file content (no placeholders, no truncation).
-Follow PM Streak patterns: Next.js 14 app-router, TypeScript, Prisma for DB, JWT auth.
-Then use the github_pr_creator tool to create a PR on 'namangoyal3/pm-streak'.
-Output the PR URL at the end of your response.""",
-        expected_output="PR URL (e.g. https://github.com/namangoyal3/pm-streak/pull/N) plus a summary of what was implemented.",
+        description="""CTO: Implement the feature from the CPO's PRD in ONE file only.
+
+STRICT RULES — follow exactly or the tool call will fail:
+1. Choose the SINGLE highest-impact file to modify (e.g. src/app/page.tsx).
+2. Call github_pr_creator exactly ONCE with these fields:
+   - repo_name: "namangoyal3/pm-streak"
+   - file_path: the single file path (e.g. "src/app/page.tsx")
+   - new_content: the COMPLETE raw TypeScript/TSX source code — no markdown fences, no explanations, just code
+   - commit_message: short imperative sentence
+   - pr_title: short feature title
+   - pr_body: 2-3 sentences describing the change
+3. Keep new_content under 200 lines to avoid tool call size limits.
+4. If multi-file changes are needed, implement only the most impactful file; list others as PR body follow-ups.
+
+Output the PR URL at the end.""",
+        expected_output="PR URL (https://github.com/namangoyal3/pm-streak/pull/N) and one sentence on what changed.",
         agent=cto,
         context=[task_prd],
     )
