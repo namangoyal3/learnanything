@@ -37,7 +37,7 @@ export default function HomepageTrialButton() {
     <button
       onClick={handleClick}
       disabled={loading}
-      className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-purple-500/50 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-sm font-black transition-all hover:scale-[1.02] active:scale-[0.98] w-full disabled:opacity-60 disabled:cursor-not-allowed"
+      className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl border border-purple-500/50 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-sm font-black transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
     >
       {loading ? "Starting…" : "Start Pro trial for 3 days →"}
     </button>

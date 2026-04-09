@@ -12,10 +12,15 @@ const COOKIE_NAME = "ab_uid";
 
 export async function getVariant(experiment: string): Promise<ABVariant> {
   const jar = await cookies();
-  const uid = jar.get(COOKIE_NAME)?.value ?? "";
+  const uid = jar.get(COOKIE_NAME)?.value;
+
+  // No cookie yet (first request — middleware sets it on the response, not the
+  // request, so it won't be readable until the next page load). Default to
+  // control so we never show treatment to unassigned visitors.
+  if (!uid) return "control";
 
   // Stable hash: deterministic split on uid + experiment name
-  const seed = `${uid}:${experiment}`;
+  const seed = `${uid}:${experiment}`; // uid is guaranteed non-empty here
   let hash = 0;
   for (let i = 0; i < seed.length; i++) {
     hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;

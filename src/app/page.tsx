@@ -209,7 +209,7 @@ export default async function Home() {
 
             {/* Trust line */}
             <p className="text-xs text-[var(--text-secondary)] mb-8">
-              No credit card · 30 seconds · 123+ PMs building the habit
+              No credit card · 30 seconds · 1000+ PMs building the habit
             </p>
 
             {/* Topic pills */}
@@ -277,7 +277,7 @@ export default async function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-5 py-5">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-8 gap-y-4">
             {[
-              { value: "123+", label: "PMs building the habit", color: "var(--green-primary)" },
+              { value: "1000+", label: "PMs building the habit", color: "var(--green-primary)" },
               { value: "300+", label: "Podcast episodes", color: "var(--text-secondary)" },
               { value: "292+", label: "Archive lessons", color: "var(--text-secondary)" },
               { value: "2 min", label: "per day, that's it", color: "var(--text-secondary)" },
