@@ -13,6 +13,7 @@ export function middleware(request: NextRequest) {
     response.cookies.set(COOKIE_NAME, uid, {
       maxAge: COOKIE_MAX_AGE,
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       path: "/",
     });

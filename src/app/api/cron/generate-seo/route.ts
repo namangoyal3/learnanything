@@ -87,6 +87,8 @@ export async function GET(req: Request) {
         publishedAt: new Date(),
         wordCount: articleData.body.split(/\s+/).length,
         sourceUrls: [],
+        faqPairs: (articleData.faqPairs ?? []) as object[],
+        howToSteps: (articleData.howToSteps ?? []) as object[],
       },
     });
 

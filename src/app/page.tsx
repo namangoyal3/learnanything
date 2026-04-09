@@ -7,6 +7,7 @@ import BrowserLink from "@/components/BrowserLink";
 import SafariBar from "@/components/SafariBar";
 import JsonLd, { breadcrumbSchema, howToSchema, faqSchema, speakableSchema, SITE_URL } from "@/components/JsonLd";
 import HomepageTrialButton from "@/components/HomepageTrialButton";
+import { getVariant } from "@/lib/ab";
 
 export const metadata: Metadata = {
   title: "PM Streak — Daily PM Lessons from Lenny's Podcast | Duolingo for Product Managers",
@@ -58,6 +59,8 @@ export default async function Home() {
     });
     redirect(user?.onboarded ? "/dashboard" : "/onboarding");
   }
+
+  const abVariant = await getVariant("pro_trial_cta_v1");
 
   const siteUrl = SITE_URL;
 
@@ -201,7 +204,7 @@ export default async function Home() {
                 {GOOGLE_ICON}
                 Sign up free
               </BrowserLink>
-              <HomepageTrialButton />
+              {abVariant === "treatment" && <HomepageTrialButton />}
             </div>
 
             {/* Trust line */}
@@ -538,7 +541,7 @@ export default async function Home() {
                   {GOOGLE_ICON}
                   Sign up with Google
                 </BrowserLink>
-                <HomepageTrialButton />
+                {abVariant === "treatment" && <HomepageTrialButton />}
                 <p className="text-center text-xs text-[var(--text-secondary)]">No password · Takes 30 seconds</p>
               </div>
             </div>
