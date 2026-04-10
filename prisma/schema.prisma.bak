@@ -73,8 +73,20 @@ model User {
   lessonAttempts     LessonAttempt[]
   skillProfiles      UserSkillProfile[]
   engagementMetrics  UserEngagementMetric?
-  notes              Note[]
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Subscription {
   id                   String    @id @default(cuid())
@@ -91,7 +103,20 @@ model Subscription {
 
   @@index([userId])
   @@index([userId, provider, status])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model BillingEvent {
   id         String   @id @default(cuid())
@@ -105,7 +130,20 @@ model BillingEvent {
 
   @@index([userId])
   @@index([eventType])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Entitlement {
   id        String    @id @default(cuid())
@@ -118,7 +156,20 @@ model Entitlement {
 
   @@unique([userId, key])
   @@index([userId])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model CountryPriceOverride {
   id          String   @id @default(cuid())
@@ -126,7 +177,20 @@ model CountryPriceOverride {
   priceBand   String   // A | B | C
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Coupon {
   id              String    @id @default(cuid())
@@ -143,7 +207,20 @@ model Coupon {
 
   @@index([code])
   @@index([email])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model CouponAttempt {
   id        String   @id @default(cuid())
@@ -156,7 +233,20 @@ model CouponAttempt {
 
   @@index([code, ip])
   @@index([ip, createdAt])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Notification {
   id         String    @id @default(cuid())
@@ -169,7 +259,20 @@ model Notification {
 
   user     User  @relation("notifRecipient", fields: [userId], references: [id])
   fromUser User? @relation("notifSender", fields: [fromUserId], references: [id])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Category {
   id          String   @id @default(cuid())
@@ -180,7 +283,20 @@ model Category {
   color       String
   sortOrder   Int      @default(0)
   lessons     Lesson[]
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Lesson {
   id           String   @id @default(cuid())
@@ -215,11 +331,23 @@ model Lesson {
   dailyChallenges  DailyChallenge[]
   planLessons      PlanLesson[]
   attempts         LessonAttempt[]
-  notes            Note[]
 
   @@index([aiGenerated, generatedForUserId, createdAt])
   @@index([generatedForUserId, topicKey, generationMode])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Question {
   id           String   @id @default(cuid())
@@ -234,7 +362,20 @@ model Question {
   sortOrder    Int      @default(0)
 
   quizAttempts QuizAttempt[]
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model CompletedLesson {
   id          String   @id @default(cuid())
@@ -248,7 +389,20 @@ model CompletedLesson {
   lesson Lesson @relation(fields: [lessonId], references: [id])
 
   @@unique([userId, lessonId])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model QuizAttempt {
   id         String   @id @default(cuid())
@@ -261,7 +415,20 @@ model QuizAttempt {
 
   user     User     @relation(fields: [userId], references: [id])
   question Question @relation(fields: [questionId], references: [id])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Achievement {
   id          String @id @default(cuid())
@@ -271,7 +438,20 @@ model Achievement {
   requirement String // JSON: { type: "streak", value: 7 }
 
   users UserAchievement[]
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model UserAchievement {
   id            String   @id @default(cuid())
@@ -283,7 +463,20 @@ model UserAchievement {
   achievement Achievement @relation(fields: [achievementId], references: [id])
 
   @@unique([userId, achievementId])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model StreakDay {
   id        String   @id @default(cuid())
@@ -295,7 +488,20 @@ model StreakDay {
   user User @relation(fields: [userId], references: [id])
 
   @@unique([userId, date])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model DailyChallenge {
   id          String   @id @default(cuid())
@@ -311,7 +517,20 @@ model DailyChallenge {
   lesson Lesson @relation(fields: [lessonId], references: [id])
 
   @@unique([userId, date])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Follow {
   id          String   @id @default(cuid())
@@ -323,7 +542,20 @@ model Follow {
   following User @relation("following", fields: [followingId], references: [id])
 
   @@unique([followerId, followingId])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model FriendChallenge {
   id           String   @id @default(cuid())
@@ -336,7 +568,20 @@ model FriendChallenge {
 
   challenger User @relation("challenger", fields: [challengerId], references: [id])
   challengee User @relation("challengee", fields: [challengeeId], references: [id])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model CreditTransaction {
   id        String   @id @default(cuid())
@@ -348,7 +593,20 @@ model CreditTransaction {
   createdAt DateTime @default(now())
 
   @@index([userId])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model EmailLog {
   id        String    @id @default(cuid())
@@ -363,7 +621,20 @@ model EmailLog {
   @@index([userId, emailType])
   @@index([userId, sentAt])
   @@index([resendId])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Job {
   id          String   @id @default(cuid())
@@ -387,7 +658,20 @@ model Job {
   userJobTargets UserJobTarget[]
 
   @@index([isActive])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model UserJobTarget {
   id           String   @id @default(cuid())
@@ -403,7 +687,20 @@ model UserJobTarget {
   plans        LearningPlan[]
 
   @@index([userId, createdAt])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model LearningPlan {
   id              String        @id @default(cuid())
@@ -414,7 +711,20 @@ model LearningPlan {
   planLessons     PlanLesson[]
 
   @@index([userJobTargetId, generatedAt])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model PlanLesson {
   id             String       @id @default(cuid())
@@ -427,7 +737,20 @@ model PlanLesson {
   lesson         Lesson?      @relation(fields: [lessonId], references: [id], onDelete: SetNull)
 
   @@index([learningPlanId, dayIndex])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model LessonAttempt {
   id               String   @id @default(cuid())
@@ -446,7 +769,20 @@ model LessonAttempt {
 
   @@index([userId, createdAt])
   @@index([lessonId, createdAt])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Skill {
   id          String   @id @default(cuid())
@@ -454,7 +790,20 @@ model Skill {
   displayName String
   createdAt   DateTime @default(now())
   profiles    UserSkillProfile[]
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model UserSkillProfile {
   id            String   @id @default(cuid())
@@ -467,7 +816,20 @@ model UserSkillProfile {
 
   @@unique([userId, skillId])
   @@index([userId])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model UserEngagementMetric {
   id                 String   @id @default(cuid())
@@ -480,7 +842,20 @@ model UserEngagementMetric {
   declineCount       Int      @default(0)
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model Article {
   id          String    @id @default(cuid())
@@ -502,7 +877,20 @@ model Article {
 
   @@index([published, vertical])
   @@index([slug])
-}
+
+model Note {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  lessonId  String?
+  lesson    Lesson?  @relation(fields: [lessonId], references: [id])
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([userId, lessonId])
+}}
 
 model SeoKeyword {
   id          String   @id @default(cuid())
@@ -517,7 +905,6 @@ model SeoKeyword {
   updatedAt   DateTime @updatedAt
 
   @@index([vertical, status, priority])
-}
 
 model Note {
   id        String   @id @default(cuid())
@@ -531,4 +918,4 @@ model Note {
 
   @@index([userId])
   @@index([userId, lessonId])
-}
+}}
