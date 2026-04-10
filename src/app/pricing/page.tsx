@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 import { Suspense } from "react";
 import PricingBannerModal from "@/components/PricingBannerModal";
 import JsonLd, { faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import PricingPageTrialCTA from "@/components/PricingPageTrialCTA";
+import { getVariant } from "@/lib/ab";
 
 const PRICE_INCREASE_PERCENT = 70;
 
@@ -125,9 +127,10 @@ export default async function PricingPage() {
 }
 
 async function PricingContent() {
-  const [userId, headersList] = await Promise.all([
+  const [userId, headersList, abVariant] = await Promise.all([
     getCurrentUserId(),
     headers(),
+    getVariant("pro_trial_cta_v1"),
   ]);
 
   // Detect country from Vercel geo header (set automatically in production)
@@ -259,6 +262,8 @@ async function PricingContent() {
             Unlock all 292+ Lenny&apos;s Podcast lessons, unlimited AI lessons, PM leader content, interview prep, and the job board.
           </p>
           
+          {userPlan !== "pro" && <PricingPageTrialCTA variant={abVariant} />}
+
           {/* Social Proof & Urgency */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <div className="flex items-center gap-2 text-xs text-white/70">
