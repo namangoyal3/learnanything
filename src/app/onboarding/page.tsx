@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Flame, Zap, Target, Trophy, ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import OnboardingProOffer from "@/components/OnboardingProOffer";
 
-type Step = "welcome" | "why" | "goal" | "streak" | "ready";
+type Step = "welcome" | "why" | "goal" | "streak" | "ready" | "offer";
 
 const WHY_OPTIONS = [
   { id: "career", label: "Level up my PM career", icon: "🚀" },
@@ -65,7 +66,7 @@ export default function OnboardingPage() {
     router.push("/dashboard");
   };
 
-  const steps: Step[] = ["welcome", "why", "goal", "streak", "ready"];
+  const steps: Step[] = ["welcome", "why", "goal", "streak", "ready", "offer"];
   const currentIdx = steps.indexOf(step);
   const progress = ((currentIdx + 1) / steps.length) * 100;
 
@@ -309,11 +310,29 @@ export default function OnboardingPage() {
                 )}
 
                 <button
-                  onClick={handleFinish}
+                  onClick={() => setStep("offer")}
                   disabled={saving}
                   className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm transition-colors disabled:opacity-50"
                 >
-                  {saving ? "Starting..." : "Commit to My Goal"}
+                  Commit to My Goal
+                </button>
+              </motion.div>
+            )}
+
+            {step === "offer" && (
+              <motion.div
+                key="offer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+              >
+                <OnboardingProOffer />
+                <button
+                  onClick={handleFinish}
+                  disabled={saving}
+                  className="w-full mt-4 py-3 text-center text-xs font-bold text-[var(--text-secondary)] hover:text-white transition-colors"
+                >
+                  No thanks, I'll stick to Free for now
                 </button>
               </motion.div>
             )}
