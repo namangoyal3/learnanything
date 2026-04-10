@@ -89,7 +89,7 @@ const PRO_FEATURES = [
   { text: "Save Notes & Recaps", yes: true },
   { text: "Personalized learning roadmap", yes: true },
   { text: "Certificate of completion", yes: true },
-  { text: "Priority email support", yes: true },
+  { text: "Priority email support (Coming Soon)", yes: false, comingSoon: true },
   { text: "30-day money-back guarantee", yes: true },
 ];
 
@@ -387,10 +387,17 @@ async function PricingContent() {
             <ul className="space-y-2.5 mb-6">
               {PRO_FEATURES.map((f: any) => (
                 <li key={f.text} className="flex items-start gap-2 text-xs text-white/85">
-                  <Check size={14} className="text-purple-400 mt-0.5 flex-shrink-0" />
+                  {f.comingSoon ? (
+                    <span className="text-yellow-400 mt-0.5 flex-shrink-0 text-xs">⏳</span>
+                  ) : (
+                    <Check size={14} className="text-purple-400 mt-0.5 flex-shrink-0" />
+                  )}
                   <span className="flex-1">{f.text}</span>
                   {f.new && (
                     <span className="bg-purple-500 text-[8px] font-black text-white px-1 py-0.5 rounded-sm flex-shrink-0 animate-pulse">NEW</span>
+                  )}
+                  {f.comingSoon && (
+                    <span className="bg-yellow-500/20 text-yellow-400 text-[8px] font-black px-1 py-0.5 rounded-sm flex-shrink-0">COMING SOON</span>
                   )}
                 </li>
               ))}
