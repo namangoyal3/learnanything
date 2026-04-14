@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM Social Products (2026) — Instagram, Snap, BeReal, Bluesky PM Lessons | PM Streak",
+  description:
+    "How PMs build social products. Network effects, content loops, cold start, and why most social apps die in the first 18 months.",
+  keywords: [
+    "PM social products", "social app PM",
+    "network effects", "social network 2026",
+  ],
+  alternates: { canonical: "/pm-social-products" },
+  openGraph: {
+    title: "PM Social Products 2026 — PM Streak",
+    description: "How PMs build social products — network effects, content loops, cold start.",
+    url: `${SITE_URL}/pm-social-products`,
+    type: "article",
+  },
+};
+
+const DYNAMICS = [
+  "Cold start is the real problem — the first 100k matter more than the next 10M",
+  "Content supply matters more than demand — one creator serves thousands",
+  "Graph density &gt; MAU — users with 7+ friends retain dramatically better",
+  "Fresh signals beat old graphs — users follow interest, not obligation",
+  "Moderation is infrastructure — without it, the network collapses into noise",
+];
+
+const METRICS = [
+  "Time spent per DAU",
+  "% of users creating content vs consuming",
+  "Friend-count distribution — median and long tail",
+  "D1/D7/D30 retention by first-session behaviour",
+  "Reports per 1000 pieces of content — trust signal",
+];
+
+const FAQS = [
+  {
+    q: "Can new social networks still break through in 2026?",
+    a: "Yes, but rarely from zero. Bluesky (Twitter refugees), BeReal (anti-curation niche), and Substack Notes (creator-led) all started from existing communities. Brand-new networks without an existing community to transplant have historically failed. Niche-first, general later is the only proven path.",
+  },
+];
+
+export default function PmSocialProductsPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Social Products", url: `${SITE_URL}/pm-social-products` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🌐</span> Social products live or die on cold start
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM Social Products<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 dynamics and 5 metrics for social product PMs.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build Social PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 Dynamics</h2>
+          <div className="space-y-2">
+            {DYNAMICS.map((d, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">5 Metrics</h2>
+            <div className="space-y-2">
+              {METRICS.map((m, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{m}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice Social Product Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

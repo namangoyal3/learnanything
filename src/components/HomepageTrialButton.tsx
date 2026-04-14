@@ -13,7 +13,7 @@ export default function HomepageTrialButton() {
     try {
       const res = await fetch("/api/billing/start-trial", { method: "POST" });
       if (res.status === 401) {
-        router.push("/auth/signup?redirect=/dashboard?trial=started");
+        router.push("/signup?redirect=/dashboard?trial=started");
         return;
       }
       if (res.status === 403) {

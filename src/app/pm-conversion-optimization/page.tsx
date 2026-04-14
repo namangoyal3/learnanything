@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM Conversion Optimization (2026) — CRO Playbook for Product Managers | PM Streak",
+  description:
+    "How PMs run conversion rate optimization. Friction audits, progressive disclosure, payment flows, and why small wins compound.",
+  keywords: [
+    "PM conversion optimization", "CRO PM",
+    "conversion rate PM 2026",
+  ],
+  alternates: { canonical: "/pm-conversion-optimization" },
+  openGraph: {
+    title: "PM Conversion Optimization 2026 — PM Streak",
+    description: "CRO playbook for product managers.",
+    url: `${SITE_URL}/pm-conversion-optimization`,
+    type: "article",
+  },
+};
+
+const TACTICS = [
+  "Friction audit — every field, click, and decision counts",
+  "Progressive disclosure — ask for less upfront",
+  "Social proof placement — above the decision moment, not below",
+  "Scarcity and urgency — use honestly, never manufactured",
+  "Payment flow optimisation — saved cards, one-click, Apple/Google Pay",
+  "Exit-intent interventions — recover with context, not desperation",
+];
+
+const PRINCIPLES = [
+  "Small wins compound — 1% per sprint = 26% per year",
+  "Measure downstream, not just step conversion — avoid shallow wins",
+  "Segment results — mobile vs desktop, new vs returning",
+  "Don&apos;t dark-pattern — short-term win, long-term churn",
+];
+
+const FAQS = [
+  {
+    q: "What&apos;s the highest-leverage place to focus CRO?",
+    a: "The step with the biggest drop-off that&apos;s closest to revenue. Usually that&apos;s checkout/payment for e-commerce, trial-to-paid for SaaS, or activation for consumer apps. Fix the biggest leak first; smaller optimisations come later. Most teams over-invest in top-of-funnel and under-invest in the conversion step closest to money.",
+  },
+];
+
+export default function PmConversionOptimizationPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Conversion Optimization", url: `${SITE_URL}/pm-conversion-optimization` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>📈</span> 1% per sprint. Compounds to 26% per year.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM Conversion Optimization<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            6 tactics and 4 principles for PMs running CRO.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build CRO PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">6 Tactics</h2>
+          <div className="space-y-2">
+            {TACTICS.map((t, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{t}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 Principles</h2>
+            <div className="space-y-2">
+              {PRINCIPLES.map((p, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{p}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice CRO Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}
