@@ -1,6 +1,6 @@
 "use client";
 
-import { Flame, ShieldCheck } from "lucide-react";
+import { Flame } from "lucide-react";
 import Link from "next/link";
 import BrowserLink from "@/components/BrowserLink";
 
@@ -26,16 +26,6 @@ export default function SignupPage() {
         </div>
 
         <div className="space-y-4">
-          <div className="bg-[var(--surface-1)] rounded-2xl border-2 border-[var(--border-color)] p-4 sm:p-6 mb-6 sm:mb-8">
-            <div className="flex items-center gap-3 mb-2">
-              <ShieldCheck size={18} className="text-[var(--green-primary)]" />
-              <p className="text-sm font-black">Email/password registration is disabled</p>
-            </div>
-            <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
-              For security hardening, new users can only create accounts using Google OAuth.
-            </p>
-          </div>
-
           <BrowserLink
             href="/api/auth/google"
             className="flex items-center justify-center gap-3 w-full py-4.5 sm:py-5 rounded-2xl border-2 border-white/5 bg-white text-black hover:bg-white/90 text-base font-black transition-all shadow-xl active:scale-[0.98]"
