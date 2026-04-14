@@ -10,6 +10,8 @@
     "build": "sh -c 'if [ -n \"$DATABASE_URL\" ] && [ \"$VERCEL\" != \"1\" ]; then DIRECT_URL=${DIRECT_URL:-$DATABASE_URL} npx prisma db push; else echo \"Skipping prisma db push (Vercel CI or no DATABASE_URL)\"; fi && npx prisma generate && next build'",
     "start": "next start",
     "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "db:push": "bash -lc 'export DATABASE_URL=\"${DATABASE_URL:-postgresql://pmstreak:pmstreak@localhost:5432/pmstreak_dev?schema=public}\"; export DIRECT_URL=\"${DIRECT_URL:-$DATABASE_URL}\"; npx prisma db push'",
     "db:seed": "npx tsx prisma/seed.ts",
     "db:studio": "npx prisma studio",
@@ -55,12 +57,14 @@
     "@types/nodemailer": "^7.0.11",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@vitest/ui": "^4.1.4",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.1.0",
     "postcss": "^8.5.0",
     "prisma": "^6.0.0",
     "tailwindcss": "^4.0.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.4"
   }
 }
