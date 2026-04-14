@@ -1,0 +1,116 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM for Bharat Users (2026) — Designing for India&apos;s Next 500M | PM Streak",
+  description:
+    "How PMs design for Bharat — the next 500M Indian internet users. Vernacular, voice, video, and the mistakes urban-first PMs keep making.",
+  keywords: [
+    "PM Bharat", "next 500M India",
+    "vernacular PM 2026",
+  ],
+  alternates: { canonical: "/pm-bharat-internet-users" },
+  openGraph: {
+    title: "PM for Bharat Users 2026 — PM Streak",
+    description: "Designing for India&apos;s next 500M internet users.",
+    url: `${SITE_URL}/pm-bharat-internet-users`,
+    type: "article",
+  },
+};
+
+const PRINCIPLES = [
+  "Vernacular by default — Hindi, regional languages, transliteration",
+  "Voice and video over text — literacy varies, video universal",
+  "Trust signals matter more than UX polish",
+  "Bandwidth-aware design — works on 2G/3G fallback",
+  "Family-shared device flows — phone often used by 3–4 family members",
+];
+
+const MISTAKES = [
+  "Translating English UX into Hindi without rethinking layout",
+  "Assuming smartphone behaviour mirrors metros",
+  "Ignoring offline-first patterns",
+  "Overloading screens with English jargon",
+];
+
+const FAQS = [
+  {
+    q: "Why do urban-first PMs underestimate Bharat?",
+    a: "Because their personal experience and friend circle differ fundamentally. Bharat users learn through video, transact through WhatsApp, share devices, and trust agents and shopkeepers more than apps. Building for Bharat requires field research, not assumption. PMs who shadow Bharat users for a week ship better products.",
+  },
+];
+
+export default function PmBharatInternetUsersPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Bharat", url: `${SITE_URL}/pm-bharat-internet-users` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🇮🇳</span> Field-research before assumption when building for Bharat
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM for Bharat Users<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 design principles and 4 mistakes urban PMs keep making.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build Bharat PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 Principles</h2>
+          <div className="space-y-2">
+            {PRINCIPLES.map((p, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{p}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 Mistakes</h2>
+            <div className="space-y-2">
+              {MISTAKES.map((m, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-red-400 flex-shrink-0">❌</span>
+                  <p className="text-sm text-white/70">{m}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice Bharat PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

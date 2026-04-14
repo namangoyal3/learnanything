@@ -15,12 +15,12 @@
   --orange-primary: #ff9600;
   --purple-primary: #ce82ff;
   --gold-primary: #ffc800;
-  --bg-primary: #131f24;
-  --bg-secondary: #1a2b32;
-  --bg-card: #1f3a45;
+  --bg-primary: #0e1113;
+  --bg-secondary: #16181c;
+  --bg-card: #1f2228;
   --text-primary: #ffffff;
-  --text-secondary: #afafaf;
-  --border-color: #37464f;
+  --text-secondary: #a8a8a8;
+  --border-color: #2a2e35;
 
   --surface-0: var(--bg-primary);
   --surface-1: var(--bg-secondary);

@@ -36,7 +36,7 @@ export default function PricingPageTrialCTA({ variant }: Props) {
       const res = await fetch("/api/billing/start-trial", { method: "POST" });
       if (res.status === 401) {
         // Not signed in — send to sign-up with redirect back to pricing
-        router.push("/auth/signup?redirect=/pricing");
+        router.push("/signup?redirect=/pricing");
         return;
       }
       if (res.status === 403) {

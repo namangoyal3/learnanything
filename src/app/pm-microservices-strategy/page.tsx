@@ -1,0 +1,114 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM Microservices Strategy (2026) — When PMs Should Care About Architecture | PM Streak",
+  description:
+    "When microservices help, when they hurt, and what PMs need to know to navigate architecture decisions without overstepping into engineering territory.",
+  keywords: [
+    "PM microservices", "PM architecture 2026",
+  ],
+  alternates: { canonical: "/pm-microservices-strategy" },
+  openGraph: {
+    title: "PM Microservices Strategy 2026 — PM Streak",
+    description: "When PMs should care about architecture.",
+    url: `${SITE_URL}/pm-microservices-strategy`,
+    type: "article",
+  },
+};
+
+const WHEN_PMS_CARE = [
+  "When architecture decides time-to-market for new features",
+  "When team boundaries map to service boundaries",
+  "When migration cost gates a roadmap",
+  "When cost-of-change shapes prioritisation",
+];
+
+const REALITIES = [
+  "Microservices solve org coordination, not always tech complexity",
+  "Premature decomposition is more painful than monolith debt",
+  "Modular monolith is the right answer for many teams",
+  "PM doesn&apos;t make the call — but should understand the tradeoff",
+];
+
+const FAQS = [
+  {
+    q: "Should PMs push for microservices?",
+    a: "No — that&apos;s an engineering call. PMs should understand the implications: ownership clarity, team independence, deployment velocity. If your engineering org is wrestling with monolith bottlenecks, microservices may help. If the bottleneck is testing, observability, or culture, microservices may make it worse.",
+  },
+];
+
+export default function PmMicroservicesStrategyPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Microservices Strategy", url: `${SITE_URL}/pm-microservices-strategy` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🧱</span> Architecture is engineering&apos;s call. Implications are PM&apos;s job to understand.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM Microservices Strategy<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            4 situations PMs should engage and 4 realities to keep in mind.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build Architecture-Aware PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">When PMs Care</h2>
+          <div className="space-y-2">
+            {WHEN_PMS_CARE.map((w, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{w}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 Realities</h2>
+            <div className="space-y-2">
+              {REALITIES.map((r, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice Architecture-Aware PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

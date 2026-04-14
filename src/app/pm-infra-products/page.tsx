@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM Infrastructure Products (2026) — Building for Infra Engineers | PM Streak",
+  description:
+    "How PMs build infrastructure products. SLAs, latency budgets, incident response, and what makes infra PM different from everything else.",
+  keywords: [
+    "PM infrastructure", "infra PM",
+    "platform infra PM", "SRE PM 2026",
+  ],
+  alternates: { canonical: "/pm-infra-products" },
+  openGraph: {
+    title: "PM Infrastructure Products 2026 — PM Streak",
+    description: "How PMs build infrastructure products.",
+    url: `${SITE_URL}/pm-infra-products`,
+    type: "article",
+  },
+};
+
+const PRIORITIES = [
+  "Reliability before features — a new feature that breaks existing uptime is a net negative",
+  "Latency is UX — p99 beats p50 in every infra conversation",
+  "Error budgets are a PM tool — they force explicit reliability/velocity tradeoffs",
+  "Breaking changes are existential — versioning and deprecation policies matter",
+  "Observability is a shipping requirement — if you can&apos;t debug it, you can&apos;t ship it",
+];
+
+const METRICS = [
+  "Uptime / availability against SLO",
+  "p50, p95, p99 latency",
+  "Error budget burn rate",
+  "Mean time to detect and mean time to recover",
+  "Adoption among internal/external consumers",
+];
+
+const FAQS = [
+  {
+    q: "Is infra PM a niche path?",
+    a: "Highly specialised but highly leveraged. A single infra decision can affect every product in the company. Career paths lead to platform VP roles, SRE leadership, or cross-over into developer tools. Compensation is strong; pace is slower but impact compounds for years.",
+  },
+];
+
+export default function PmInfraProductsPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Infrastructure", url: `${SITE_URL}/pm-infra-products` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🏗️</span> Infra PMs trade velocity for durability. That tradeoff is the job.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM Infrastructure<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 priorities and 5 metrics for infrastructure PMs.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build Infra PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 Priorities</h2>
+          <div className="space-y-2">
+            {PRIORITIES.map((p, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{p}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">5 Metrics</h2>
+            <div className="space-y-2">
+              {METRICS.map((m, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{m}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice Infra PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

@@ -1,0 +1,115 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM AI Distribution (2026) — How AI Products Reach Users | PM Streak",
+  description:
+    "How PMs distribute AI products. App stores, browser extensions, embedded in workflows, and the channels that work for AI specifically.",
+  keywords: [
+    "PM AI distribution", "AI go to market 2026",
+  ],
+  alternates: { canonical: "/pm-ai-distribution" },
+  openGraph: {
+    title: "PM AI Distribution 2026 — PM Streak",
+    description: "How AI products reach users.",
+    url: `${SITE_URL}/pm-ai-distribution`,
+    type: "article",
+  },
+};
+
+const CHANNELS = [
+  "Web app — easiest to ship, lowest activation friction",
+  "Browser extension — meet users in their workflow",
+  "API + SDK — distribute via other products",
+  "Embedded in incumbent products (Microsoft Copilot, Google Gemini)",
+  "Vertical SaaS where AI is integrated into existing workflow",
+];
+
+const REALITIES = [
+  "Distribution beats model quality at sub-frontier capability",
+  "Incumbents have built-in distribution AI startups must work around",
+  "Word-of-mouth carries AI products further than ads in early stages",
+  "API-first distribution often outlasts direct-app plays",
+];
+
+const FAQS = [
+  {
+    q: "Can a startup distribute AI features against Microsoft and Google?",
+    a: "Yes, but on different vectors. Incumbents win on default integration; startups win on speed, depth in narrow workflows, and tooling that incumbents won&apos;t prioritise. Cursor beat Copilot in serious developer workflows by going deeper. Pick wedges where you can outpace; don&apos;t play their game.",
+  },
+];
+
+export default function PmAiDistributionPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM AI Distribution", url: `${SITE_URL}/pm-ai-distribution` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>📡</span> Distribution beats model quality at the long tail
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM AI Distribution<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 channels and 4 realities for AI distribution PMs.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build AI Distribution PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 Channels</h2>
+          <div className="space-y-2">
+            {CHANNELS.map((c, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{c}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 Realities</h2>
+            <div className="space-y-2">
+              {REALITIES.map((r, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{r}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice AI Distribution Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

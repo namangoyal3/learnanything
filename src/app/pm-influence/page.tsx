@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM Influence Without Authority (2026) — The Core PM Skill | PM Streak",
+  description:
+    "How PMs influence engineers, designers, execs, and partners without formal authority. Trust, narrative, and the quiet tactics that work.",
+  keywords: [
+    "PM influence", "influence without authority",
+    "PM soft skills", "PM leadership 2026",
+  ],
+  alternates: { canonical: "/pm-influence" },
+  openGraph: {
+    title: "PM Influence 2026 — PM Streak",
+    description: "How PMs influence without formal authority.",
+    url: `${SITE_URL}/pm-influence`,
+    type: "article",
+  },
+};
+
+const LEVERS = [
+  "Trust — built in small interactions over months, lost in one",
+  "Clarity — the clearest thinker in the room often wins",
+  "Data — arguments backed by evidence beat arguments backed by rank",
+  "Narrative — turn bullet points into a story people can repeat",
+  "Reciprocity — help others before you need their help",
+  "Patience — most &apos;no&apos;s become &apos;yes&apos; with time and better context",
+];
+
+const ANTI_PATTERNS = [
+  "Escalation-first — using authority before persuasion destroys future trust",
+  "Blame — teammates stop collaborating with PMs who assign blame",
+  "Over-pitching — repeating the same argument harder doesn&apos;t win over skeptics",
+  "Covert lobbying — backroom alignment feels clever until it unravels",
+];
+
+const FAQS = [
+  {
+    q: "Why do PMs have no formal authority?",
+    a: "Because PMs span many functions without owning any. Engineers report to engineering managers; designers to design managers; and so on. PMs need influence to drive alignment across the entire team. This is the feature, not the bug — it forces PMs to build trust and reasoning rather than ordering people around.",
+  },
+];
+
+export default function PmInfluencePage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Influence", url: `${SITE_URL}/pm-influence` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🤝</span> The PM job is influence. The title is a rounding error.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM Influence Without Authority<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            6 influence levers and 4 anti-patterns to avoid.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build Influence PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">6 Levers</h2>
+          <div className="space-y-2">
+            {LEVERS.map((l, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{l}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 Anti-Patterns</h2>
+            <div className="space-y-2">
+              {ANTI_PATTERNS.map((a, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-red-400 flex-shrink-0">❌</span>
+                  <p className="text-sm text-white/70">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice Influence Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

@@ -1,0 +1,114 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM Context Windows (2026) — Long Context vs RAG vs Memory | PM Streak",
+  description:
+    "How PMs decide between long context, RAG, and memory architectures. Cost, latency, and accuracy tradeoffs for AI products.",
+  keywords: [
+    "PM context windows", "long context PM 2026",
+  ],
+  alternates: { canonical: "/pm-context-windows" },
+  openGraph: {
+    title: "PM Context Windows 2026 — PM Streak",
+    description: "Long context vs RAG vs memory.",
+    url: `${SITE_URL}/pm-context-windows`,
+    type: "article",
+  },
+};
+
+const TRADEOFFS = [
+  "Long context — simple but expensive and slow",
+  "RAG — flexible but quality depends on retrieval",
+  "Memory — persistent across sessions but adds complexity",
+  "Hybrid — most production systems combine all three",
+];
+
+const QUESTIONS = [
+  "How fresh does the context need to be?",
+  "Cost per query — what&apos;s the budget?",
+  "Latency tolerance — sync vs async?",
+  "Privacy — what can leave the user&apos;s account?",
+];
+
+const FAQS = [
+  {
+    q: "Does long context kill RAG?",
+    a: "No. Long-context models still cost more per query and have attention degradation in the middle of the context. RAG remains cheaper and often more accurate for needle-in-haystack queries. Most production AI uses both — RAG for breadth, long context for depth on the retrieved chunks.",
+  },
+];
+
+export default function PmContextWindowsPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Context Windows", url: `${SITE_URL}/pm-context-windows` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🪟</span> Most production AI uses RAG and long context together
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM Context Windows<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            4 architecture tradeoffs and 4 PM questions to ask.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build Context PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">4 Tradeoffs</h2>
+          <div className="space-y-2">
+            {TRADEOFFS.map((t, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{t}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 PM Questions</h2>
+            <div className="space-y-2">
+              {QUESTIONS.map((q, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{q}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice Context PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}
