@@ -107,7 +107,7 @@ const PRO_PREVIEW_WINDOW = 5;
 /** Lesson lockedReason value indicating pro-gate (UI renders upgrade CTA). */
 export const PRO_GATE_REASON = "UPGRADE_TO_PRO";
 /** Free users see this many lessons per category; the rest are pro-gated. */
-const FREE_LESSONS_PER_CATEGORY = 7;
+export const FREE_LESSONS_PER_CATEGORY = 7;
 /**
  * These categories are entirely premium for free users (show 0 free lessons,
  * full pro-gate card regardless of how many lessons they contain).
