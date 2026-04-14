@@ -62,14 +62,14 @@ function getRegion(country: string | null): PricingRegion {
 }
 
 const FREE_FEATURES = [
-  { text: "7 core curriculum lessons", yes: true },
-  { text: "5 archive lessons (batch-unlocked)", yes: true },
-  { text: "5 credits / month", yes: true },
+  { text: "14 core curriculum lessons", yes: true },
+  { text: "7 archive lessons (batch-unlocked)", yes: true },
+  { text: "10 credits / month", yes: true },
   { text: "1 AI Explore lesson / week", yes: true },
   { text: "Basic streak tracking", yes: true },
 
   { text: "All 292+ archive lessons", yes: false },
-  { text: "100 credits / month", yes: false },
+  { text: "50 credits / month", yes: false },
   { text: "Unlimited AI Explore lessons", yes: false },
   { text: "PM Leader lessons (Shreyas, Aakash, Marty Cagan)", yes: false },
   { text: "Unlimited AI Interview prep sessions", yes: false, new: true },
@@ -82,7 +82,7 @@ const FREE_FEATURES = [
 const PRO_FEATURES = [
   { text: "Everything in Free", yes: true },
   { text: "All 292+ archive lessons unlocked", yes: true },
-  { text: "100 credits / month", yes: true },
+  { text: "50 credits / month", yes: true },
   { text: "Unlimited AI Explore lessons", yes: true },
   { text: "Unlimited Deeper Dives", yes: true, new: true },
   { text: "Unlimited AI Interview prep sessions", yes: true, new: true },
@@ -217,7 +217,7 @@ async function PricingContent() {
     { question: "Are credits cumulative?", answer: "No — credits reset on the 1st of each month. Unused credits don't roll over." },
     { question: "Can I cancel anytime?", answer: "Yes. Cancel through the customer portal and you keep Pro access until your current period ends." },
     { question: "What payment methods are accepted?", answer: "UPI, credit/debit cards, net banking (India), PayPal (international) — via Dodo Payments secure checkout." },
-    { question: "What's the difference between Free and Pro?", answer: "Free includes 22 core lessons, 10 archive lessons, and 10 credits/month. Pro unlocks all 292+ lessons, unlimited AI Explore, interview prep, PM jobs board, and WhatsApp community." },
+    { question: "What's the difference between Free and Pro?", answer: "Free includes 14 core lessons, 7 archive lessons, and 10 credits/month. Pro unlocks all 292+ lessons, 50 credits/month, unlimited AI Explore, interview prep, PM jobs board, and WhatsApp community." },
   ]);
 
   const pricingBreadcrumbs = breadcrumbSchema([
