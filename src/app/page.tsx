@@ -372,6 +372,74 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* ── SAMPLE LESSON PREVIEW ── */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-5 py-14 sm:py-20">
+        <div className="max-w-xs mb-8">
+          <p className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-2">Try a lesson — no signup needed</p>
+          <h2 className="text-3xl sm:text-4xl font-black leading-[1.05] tracking-tight">See what you&apos;re getting.</h2>
+        </div>
+        <div className="rounded-3xl border border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden">
+          {/* Lesson header */}
+          <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border-color)] bg-[var(--bg-secondary)]/60">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-xl bg-[var(--green-primary)]/15 flex items-center justify-center text-sm">🎯</div>
+              <div>
+                <div className="text-xs font-black uppercase tracking-wide text-[var(--green-primary)]">Day 1 · Strategy</div>
+                <div className="text-sm font-black">The Shreyas Doshi Prioritisation Stack</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)] font-bold">
+              <span>+20 XP</span>
+              <span>·</span>
+              <span>2 min</span>
+            </div>
+          </div>
+          {/* Lesson body */}
+          <div className="px-6 py-6 space-y-4 text-sm text-[var(--text-primary)] leading-relaxed">
+            <p>
+              Shreyas Doshi — former Director of PM at Twitter, Stripe, and Google — built his career around one obsession: <span className="font-black text-white">why do good PMs ship the wrong things?</span>
+            </p>
+            <p>
+              His answer: most teams optimise for <em>output</em> (features shipped) instead of <em>outcome</em> (user behaviour changed). The result is a roadmap full of things nobody asked for and metrics that don&apos;t move.
+            </p>
+            <p>
+              His prioritisation stack fixes this with three questions in order:
+            </p>
+            <ol className="space-y-3 list-none pl-0">
+              {[
+                { n: "1", label: "Is this the right problem?", desc: "Before sizing any solution, confirm the problem is real, frequent, and painful enough to matter. Most PMs skip this." },
+                { n: "2", label: "Is this the right user?", desc: "Your best customers and your loudest customers are rarely the same people. Build for the former, not the latter." },
+                { n: "3", label: "Is this the right time?", desc: "A good idea at the wrong stage kills momentum. Prioritise by what the business needs to prove in the next 90 days." },
+              ].map(({ n, label, desc }) => (
+                <li key={n} className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-lg bg-[var(--green-primary)]/15 text-[var(--green-primary)] text-xs font-black flex items-center justify-center mt-0.5">{n}</span>
+                  <div>
+                    <span className="font-black text-white">{label}</span>
+                    <span className="text-[var(--text-secondary)]"> {desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <div className="rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-color)] p-4 mt-2">
+              <p className="text-xs font-black uppercase tracking-wider text-[var(--gold-primary)] mb-1.5">Key takeaway</p>
+              <p className="text-sm font-black text-white leading-snug">Great prioritisation is not about scoring features — it&apos;s about asking better questions before you score anything.</p>
+            </div>
+          </div>
+          {/* Quiz teaser */}
+          <div className="px-6 pb-6">
+            <div className="rounded-2xl border-2 border-dashed border-[var(--border-color)] p-5 text-center">
+              <p className="text-sm font-black text-[var(--text-secondary)] mb-3">🔒 Quiz unlocks after signup — 3 questions · +10 XP bonus</p>
+              <BrowserLink
+                href="/signup"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] text-black font-black text-sm hover:bg-[var(--green-light)] transition-colors"
+              >
+                Start for free — takes 30 seconds
+              </BrowserLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FEATURES ── */}
       <section className="hidden sm:block">
         <div className="max-w-5xl mx-auto px-5 py-28">
