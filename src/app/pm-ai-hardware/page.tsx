@@ -1,0 +1,116 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM AI Hardware (2026) — Rabbit, Humane, Friend PM Lessons | PM Streak",
+  description:
+    "How PMs build AI-first hardware. Why standalone AI devices keep failing, what&apos;s actually working, and the lessons from Rabbit R1 and Humane AI Pin.",
+  keywords: [
+    "PM AI hardware", "Rabbit PM",
+    "Humane AI Pin", "AI device 2026",
+  ],
+  alternates: { canonical: "/pm-ai-hardware" },
+  openGraph: {
+    title: "PM AI Hardware 2026 — PM Streak",
+    description: "How PMs build AI-first hardware.",
+    url: `${SITE_URL}/pm-ai-hardware`,
+    type: "article",
+  },
+};
+
+const DYNAMICS = [
+  "Smartphones are tough to beat — a general-purpose pocket computer is hard competition",
+  "Latency + battery + connectivity must all work — one failure ruins it",
+  "Utility beats novelty — demos win press, not users",
+  "Hardware cycle mismatch — software iterates weekly, hardware quarterly",
+  "Post-launch software updates define long-term viability",
+];
+
+const LESSONS = [
+  "Rabbit R1 shipped fast but under-delivered on LAM promises",
+  "Humane AI Pin launched expensive, under-utilised, discontinued in 2024",
+  "Meta Ray-Ban Smart Glasses succeeded by being glasses first, AI second",
+  "Friend (always-listening pendant) demonstrates adoption requires clear utility",
+];
+
+const FAQS = [
+  {
+    q: "Is AI-first hardware doomed or just early?",
+    a: "Mostly early, partly mis-framed. Products that replace the phone have failed; products that augment existing hardware (glasses, earbuds) have succeeded. The winning pattern: add AI to a form factor users already wear, not ask them to adopt a new category cold.",
+  },
+];
+
+export default function PmAiHardwarePage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM AI Hardware", url: `${SITE_URL}/pm-ai-hardware` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🔌</span> Augment existing hardware. Don&apos;t ask users to adopt new categories cold.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM AI Hardware<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 dynamics and 4 lessons from AI hardware launches so far.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build AI Hardware PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 Dynamics</h2>
+          <div className="space-y-2">
+            {DYNAMICS.map((d, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 Lessons</h2>
+            <div className="space-y-2">
+              {LESSONS.map((l, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice AI Hardware PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM MBA to PM (2026) — Breaking In From Top Indian and Global B-Schools | PM Streak",
+  description:
+    "How MBAs transition into PM roles. APM programs, company fit, and why the MBA-to-PM path has gotten more competitive in 2026.",
+  keywords: [
+    "MBA to PM", "APM program",
+    "PM recruiting 2026",
+  ],
+  alternates: { canonical: "/pm-mba-to-pm" },
+  openGraph: {
+    title: "PM MBA to PM 2026 — PM Streak",
+    description: "Breaking into PM from top MBA programs.",
+    url: `${SITE_URL}/pm-mba-to-pm`,
+    type: "article",
+  },
+};
+
+const PROGRAMS = [
+  "Google APM — the gold standard",
+  "Meta Rotational PM",
+  "Microsoft PM",
+  "Atlassian APM",
+  "Flipkart, Myntra, PhonePe APM programs in India",
+];
+
+const PREP = [
+  "Build product portfolio outside coursework",
+  "Case-prep with recent PM interview format",
+  "Network with current PMs at target companies",
+  "Ship something before you apply",
+  "Get sharp on metrics and prioritisation",
+];
+
+const FAQS = [
+  {
+    q: "Is an MBA still required for PM in 2026?",
+    a: "No, and in many cases it&apos;s a disadvantage. Tech PMs hire from engineering, design, and analyst backgrounds more than MBA pipelines. MBAs remain a valid path into APM programs at FAANG and top Indian tech, but the signal weight has decreased. Shipping a product matters more than the degree in most hiring loops.",
+  },
+];
+
+export default function PmMbaToPmPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM MBA to PM", url: `${SITE_URL}/pm-mba-to-pm` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🎓</span> MBA helps at APM programs. Shipping helps everywhere.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM MBA to PM<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 APM programs to know and 5 prep moves for MBA-PM candidates.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build MBA-PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 APM Programs</h2>
+          <div className="space-y-2">
+            {PROGRAMS.map((p, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{p}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">5 Prep Moves</h2>
+            <div className="space-y-2">
+              {PREP.map((p, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{p}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice MBA-PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

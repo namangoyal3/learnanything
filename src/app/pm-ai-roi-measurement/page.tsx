@@ -1,0 +1,115 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM AI ROI Measurement (2026) — Proving AI Pays Off | PM Streak",
+  description:
+    "How PMs measure AI ROI. Time saved, deflection rates, revenue lift, and why most AI ROI claims don&apos;t survive scrutiny.",
+  keywords: [
+    "PM AI ROI", "AI return on investment 2026",
+  ],
+  alternates: { canonical: "/pm-ai-roi-measurement" },
+  openGraph: {
+    title: "PM AI ROI Measurement 2026 — PM Streak",
+    description: "Proving AI pays off.",
+    url: `${SITE_URL}/pm-ai-roi-measurement`,
+    type: "article",
+  },
+};
+
+const METRICS = [
+  "Hours saved per user per week",
+  "Deflection rate (tickets, calls auto-resolved)",
+  "Revenue lift attributable to AI features",
+  "Cost saved on labour or vendor tools",
+  "Quality lift (NPS, error rate, throughput)",
+];
+
+const TRAPS = [
+  "Self-reported time savings inflate claims 2–3x",
+  "Counting features used, not outcomes delivered",
+  "Ignoring AI cost in ROI math",
+  "No baseline — can&apos;t prove the AI moved the needle",
+];
+
+const FAQS = [
+  {
+    q: "Why do AI ROI claims often look exaggerated?",
+    a: "Because vendors and PMs measure self-reported time savings, which inflate 2–3x over actual measured savings. Robust ROI requires before/after measurement, control groups, and counting the AI cost on the negative side. Honest ROI is usually 30–60% of headline claims.",
+  },
+];
+
+export default function PmAiRoiMeasurementPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM AI ROI", url: `${SITE_URL}/pm-ai-roi-measurement` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>📊</span> Honest ROI is usually 30–60% of headline claims
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM AI ROI Measurement<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 ROI metrics and 4 traps for AI product PMs.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build AI ROI PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 Metrics</h2>
+          <div className="space-y-2">
+            {METRICS.map((m, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{m}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">4 Traps</h2>
+            <div className="space-y-2">
+              {TRAPS.map((t, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-red-400 flex-shrink-0">❌</span>
+                  <p className="text-sm text-white/70">{t}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice AI ROI Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

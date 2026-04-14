@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM UPI Products (2026) — Building on India&apos;s Rails | PM Streak",
+  description:
+    "How PMs build UPI-first products. P2P, P2M, credit on UPI, and why UPI is the most important payments rail built this century.",
+  keywords: [
+    "PM UPI", "UPI products PM",
+    "PhonePe Paytm GPay PM 2026",
+  ],
+  alternates: { canonical: "/pm-upi-products" },
+  openGraph: {
+    title: "PM UPI Products 2026 — PM Streak",
+    description: "Building on India&apos;s payment rails.",
+    url: `${SITE_URL}/pm-upi-products`,
+    type: "article",
+  },
+};
+
+const DYNAMICS = [
+  "Zero MDR on P2P — product must monetise through adjacent services",
+  "UPI Lite, Credit on UPI, UPI Circle — rail evolves fast, build to keep pace",
+  "NPCI is the counterparty — regulation sets what&apos;s possible",
+  "Failure codes are UX — users see bank-level failures, blame your product",
+  "Offline modes (RuPay, UPI 123PAY) unlock rural scale",
+];
+
+const METRICS = [
+  "Success rate (PSR) by bank and handle",
+  "Time-to-payment-completion",
+  "Repeat usage per active user per month",
+  "Cross-sell rate (UPI user → credit, insurance, mutual funds)",
+  "Failed transaction recovery rate",
+];
+
+const FAQS = [
+  {
+    q: "Is building a new UPI app still viable in 2026?",
+    a: "Standalone P2P apps struggle — PhonePe, GPay, Paytm dominate. New entrants succeed by finding specific wedges (SME payments, creator payments, niche communities) and building adjacent monetisable services on top. UPI as sole product is a commodity; UPI as distribution plus adjacent services is durable.",
+  },
+];
+
+export default function PmUpiProductsPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM UPI Products", url: `${SITE_URL}/pm-upi-products` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🏦</span> UPI is free. Monetisation lives next to it.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM UPI Products<br />(India Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 dynamics and 5 metrics for UPI-first product PMs.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build UPI PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">5 Dynamics</h2>
+          <div className="space-y-2">
+            {DYNAMICS.map((d, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">5 Metrics</h2>
+            <div className="space-y-2">
+              {METRICS.map((m, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{m}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice UPI PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}

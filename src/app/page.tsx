@@ -324,10 +324,10 @@ export default async function Home() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="hidden sm:block max-w-5xl mx-auto px-5 py-20">
+      <section className="hidden sm:block max-w-5xl mx-auto px-5 py-28">
         <div className="max-w-xs mb-12">
           <p className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-2">How it works</p>
-          <h2 className="text-3xl sm:text-4xl font-black leading-[1.1] tracking-tight">Three steps.<br />Two minutes.<br />Every day.</h2>
+          <h2 className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight">Three steps.<br />Two minutes.<br />Every day.</h2>
         </div>
 
         <div className="space-y-0 divide-y divide-[var(--border-color)] border border-[var(--border-color)] rounded-3xl overflow-hidden">
@@ -360,7 +360,7 @@ export default async function Home() {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-start justify-between gap-4 mb-1.5">
-                  <h3 className="text-base font-black leading-snug">{title}</h3>
+                  <h3 className="text-lg font-black leading-snug">{title}</h3>
                   <span className="text-xs font-black uppercase tracking-wide px-2 py-1 rounded-lg flex-shrink-0" style={{ background: `color-mix(in srgb, ${color} 12%, transparent)`, color }}>
                     {tag}
                   </span>
@@ -373,8 +373,8 @@ export default async function Home() {
       </section>
 
       {/* ── FEATURES ── */}
-      <section className="hidden sm:block border-y border-[var(--border-color)] bg-[var(--bg-secondary)]/30">
-        <div className="max-w-5xl mx-auto px-5 py-20">
+      <section className="hidden sm:block">
+        <div className="max-w-5xl mx-auto px-5 py-28">
 
           {/* Hero features — 2 large cards */}
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
@@ -443,7 +443,7 @@ export default async function Home() {
         <div className="max-w-5xl mx-auto px-5 py-16">
           <div className="text-center mb-10">
             <p className="text-xs font-black uppercase tracking-widest text-[var(--purple-primary)] mb-2">Go Pro</p>
-            <h2 className="text-3xl font-black mb-3">Unlock everything</h2>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-[1.05] tracking-tight">Unlock everything</h2>
             <p className="text-sm text-[var(--text-secondary)] max-w-md mx-auto">Get unlimited access to all lessons, AI features, and exclusive content.</p>
           </div>
 
@@ -482,7 +482,7 @@ export default async function Home() {
         <div className="max-w-5xl mx-auto px-5 py-16">
           <div className="text-center mb-10">
             <p className="text-xs font-black uppercase tracking-widest text-[var(--blue-primary)] mb-2">PM Insights</p>
-            <h2 className="text-3xl font-black mb-3">Latest from our PM blog</h2>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-[1.05] tracking-tight">Latest from our PM blog</h2>
             <p className="text-sm text-[var(--text-secondary)] max-w-md mx-auto">
               Deep dives from our content team. Read by 10,000+ PMs monthly.
             </p>
@@ -547,7 +547,7 @@ export default async function Home() {
           <div className="bg-gradient-to-br from-[var(--green-primary)]/12 via-[var(--bg-card)] to-[var(--bg-card)] border border-[var(--green-primary)]/25 rounded-3xl px-8 py-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
             <div>
               <p className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-3">Ready to start?</p>
-              <h2 className="text-3xl sm:text-4xl font-black leading-tight tracking-tight mb-3">
+              <h2 className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight mb-4">
                 Day 1 starts<br />today.
               </h2>
               <p className="text-[var(--text-secondary)] text-sm max-w-xs leading-relaxed">

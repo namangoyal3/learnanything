@@ -1,0 +1,117 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title: "PM Incident Management (2026) — The PM Role When Production Is on Fire | PM Streak",
+  description:
+    "How PMs show up during incidents. Severity triage, customer communication, post-mortem, and what PMs should and shouldn&apos;t do on-call.",
+  keywords: [
+    "PM incident management", "on-call PM",
+    "incident PM 2026",
+  ],
+  alternates: { canonical: "/pm-incident-management" },
+  openGraph: {
+    title: "PM Incident Management 2026 — PM Streak",
+    description: "The PM role when production is on fire.",
+    url: `${SITE_URL}/pm-incident-management`,
+    type: "article",
+  },
+};
+
+const DURING = [
+  "Don&apos;t debug — let eng work; don&apos;t spectate in the channel",
+  "Own customer communication — status page, support macros, exec updates",
+  "Triage severity with eng — honest sev level avoids alert fatigue",
+  "Track scope — who&apos;s affected, which surfaces, how long",
+  "Handle escalations — protect eng from interruptions while they&apos;re fixing",
+];
+
+const AFTER = [
+  "Co-author blameless post-mortem with TL",
+  "Commit to follow-ups — action items with owners and dates",
+  "Communicate to customers — transparency builds trust after incidents",
+  "Update runbooks and docs — the next responder benefits",
+  "Retro the response itself — not just the root cause",
+];
+
+const FAQS = [
+  {
+    q: "Should PMs be on the incident rotation?",
+    a: "Usually no for technical rotation, yes for communications rotation. During an incident, engineers debug; PMs handle stakeholders, status pages, and comms. In small teams, PMs may wear both hats briefly — but long-term, separating these is healthier for speed of resolution and clarity of roles.",
+  },
+];
+
+export default function PmIncidentManagementPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbSchema([
+        { name: "Home", url: SITE_URL },
+        { name: "PM Incident Management", url: `${SITE_URL}/pm-incident-management` },
+      ])} />
+      <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
+
+      <main className="min-h-screen bg-[#0a0a0a] text-white">
+        <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
+          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+            <span>🚨</span> In incidents, PMs manage signal. Engineers manage code.
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            PM Incident Management<br />(2026 Edition)
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
+            5 during-incident behaviours and 5 after-incident follow-ups.
+          </p>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            Build Incident PM Skills — Free →
+          </Link>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-10">During the Incident (5)</h2>
+          <div className="space-y-2">
+            {DURING.map((d, i) => (
+              <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <p className="text-sm text-white/70">{d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-[#0f0f0f] py-16">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-center mb-10">After the Incident (5)</h2>
+            <div className="space-y-2">
+              {AFTER.map((a, i) => (
+                <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
+                  <span className="text-green-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <p className="text-sm text-white/70">{a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
+          <div className="space-y-5">
+            {FAQS.map(faq => (
+              <div key={faq.q} className="border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
+                <p className="text-sm text-white/60">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
+          <h2 className="text-2xl font-bold mb-3">Practice Incident PM Scenarios</h2>
+          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            Start Free Trial →
+          </Link>
+        </section>
+      </main>
+    </>
+  );
+}
