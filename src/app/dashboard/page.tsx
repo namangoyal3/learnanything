@@ -314,32 +314,30 @@ export default function DashboardPage() {
     const count = category.proGatedCount;
     return (
       <Link href="/pricing" className="block mt-2.5">
-        <div className="relative overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-gradient-to-br from-purple-950/60 via-indigo-950/40 to-purple-900/30 p-4 hover:border-purple-400/60 transition-all hover:scale-[1.02]">
-          {/* Decorative blur glow */}
-          <div className="absolute -top-6 -right-6 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl pointer-events-none" />
-          <div className="relative flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 border border-purple-400/50 shadow-lg shadow-purple-500/20">
-              <Lock size={18} className="text-white" />
+        <div className="rounded-2xl border-2 border-purple-500/40 bg-[var(--bg-card)] p-4 hover:border-[var(--purple-primary)]/60 transition-colors">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[var(--purple-primary)]/15 flex items-center justify-center flex-shrink-0 border border-[var(--purple-primary)]/25">
+              <Lock size={18} className="text-[var(--purple-primary)]" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
                 <p className="text-xs font-black text-white">
-                  🔒 {count} Premium Lesson{count !== 1 ? "s" : ""}
+                  {count} Premium Lesson{count !== 1 ? "s" : ""}
                 </p>
-                <span className="text-[8px] font-black bg-red-500/30 text-red-300 px-1.5 py-0.5 rounded-full">PRO ONLY</span>
+                <span className="text-[8px] font-black bg-[var(--purple-primary)]/20 text-[var(--purple-primary)] px-1.5 py-0.5 rounded-full">PRO</span>
               </div>
-              <p className="text-[10px] text-purple-300/90 mt-0.5">
-                Unlock expert content from PM leaders like Shreyas Doshi & Marty Cagan
+              <p className="text-[10px] text-[var(--text-secondary)] mt-0.5">
+                Expert content from PM leaders like Shreyas Doshi & Marty Cagan
               </p>
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[8px] text-white/60">🎯 Interview frameworks</span>
-                <span className="text-[8px] text-white/60">•</span>
-                <span className="text-[8px] text-white/60">📈 Case studies</span>
-                <span className="text-[8px] text-white/60">•</span>
-                <span className="text-[8px] text-white/60">💼 Real PM scenarios</span>
+                <span className="text-[8px] text-[var(--text-secondary)]">Interview frameworks</span>
+                <span className="text-[8px] text-[var(--text-secondary)]">·</span>
+                <span className="text-[8px] text-[var(--text-secondary)]">Case studies</span>
+                <span className="text-[8px] text-[var(--text-secondary)]">·</span>
+                <span className="text-[8px] text-[var(--text-secondary)]">Real PM scenarios</span>
               </div>
             </div>
-            <div className="flex flex-col items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 text-white text-[10px] font-black uppercase tracking-wider flex-shrink-0 shadow-lg shadow-purple-500/30">
+            <div className="flex flex-col items-center gap-1 px-3 py-2 rounded-lg bg-[var(--purple-primary)] text-black text-[10px] font-black uppercase tracking-wider flex-shrink-0">
               <Sparkles size={10} />
               <span>Unlock</span>
             </div>
@@ -377,22 +375,21 @@ export default function DashboardPage() {
           className="-mt-2 border-b border-[var(--border-color)] pb-4 last:border-0"
         >
           <Link href="/pricing" className="block">
-            <div className="relative overflow-hidden rounded-2xl border-2 border-purple-500/35 bg-gradient-to-br from-purple-950/50 via-indigo-950/30 to-purple-900/20 p-4 hover:border-purple-500/60 transition-colors group">
-              <div className="absolute -top-8 -right-8 w-32 h-32 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
-              <div className="relative flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-purple-500/15 flex items-center justify-center flex-shrink-0 border border-purple-500/25 text-xl">
+            <div className="rounded-2xl border-2 border-purple-500/35 bg-[var(--bg-card)] p-4 hover:border-[var(--purple-primary)]/60 transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl bg-[var(--purple-primary)]/15 flex items-center justify-center flex-shrink-0 border border-[var(--purple-primary)]/25 text-xl">
                   {category.icon}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <h3 className="text-sm font-black text-white/70 truncate">{category.name}</h3>
-                    <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-purple-500/25 text-purple-400 uppercase tracking-wider flex-shrink-0">PRO</span>
+                    <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-[var(--purple-primary)]/20 text-[var(--purple-primary)] uppercase tracking-wider flex-shrink-0">PRO</span>
                   </div>
-                  <p className="text-[10px] text-purple-400 mt-1 font-bold">
-                    🔒 {category.proGatedCount} lessons — Upgrade to unlock
+                  <p className="text-[10px] text-[var(--text-secondary)] mt-1 font-bold">
+                    {category.proGatedCount} lessons — Upgrade to unlock
                   </p>
                 </div>
-                <div className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-300 text-[10px] font-black flex-shrink-0">
+                <div className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-[var(--purple-primary)] text-black text-[10px] font-black flex-shrink-0">
                   <Sparkles size={10} /> Unlock
                 </div>
               </div>
@@ -528,73 +525,23 @@ export default function DashboardPage() {
      
  {/* Trial Active Banner */}
  {user.plan !== 'pro' && user.trialEndsAt && new Date(user.trialEndsAt) > new Date() && (
- <div className="bg-gradient-to-r from-green-900/80 to-emerald-900/80 border border-green-500/30 mx-4 mt-4 rounded-2xl px-4 py-3">
+ <div className="bg-[var(--bg-card)] border border-[var(--green-primary)]/30 mx-4 mt-4 rounded-2xl px-4 py-3">
  <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
  <div className="flex items-center gap-3">
- <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center">
- <Sparkles size={16} className="text-white" />
+ <div className="w-8 h-8 rounded-xl bg-[var(--green-primary)]/15 flex items-center justify-center border border-[var(--green-primary)]/25">
+ <Sparkles size={16} className="text-[var(--green-primary)]" />
  </div>
  <div>
- <p className="text-sm font-black text-white">&#127942; Your Pro Trial is Active!</p>
- <p className="text-xs text-green-200/80">Full Pro access while your trial is active</p>
+ <p className="text-sm font-black text-white">Your Pro Trial is Active!</p>
+ <p className="text-xs text-[var(--text-secondary)]">Full Pro access while your trial is active</p>
  </div>
  </div>
- <Link href="/pricing" className="px-4 py-2 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white text-sm font-black transition-all shadow-lg shadow-green-500/25 hover:scale-105 active:scale-95">
+ <Link href="/pricing" className="px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-primary)]/90 text-black text-sm font-black transition-colors active:scale-95">
  Start Subscription
  </Link>
  </div>
  </div>
  )}
-  {/* Free Tier Hard Stop — shown after 7 completed lessons */}
-      {user.plan === 'free' && totalCompleted >= 7 && (
-        <div className="mx-4 mt-4 p-4 rounded-2xl bg-gradient-to-r from-amber-900/40 to-orange-900/30 border border-amber-500/40">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-sm font-black text-amber-300">🔥 You&apos;ve completed {totalCompleted} lessons — you&apos;re in the top 10%</p>
-              <p className="text-xs text-amber-200/70 mt-1">Free plan includes 12 core lessons. Upgrade to unlock all 292+ and keep your momentum going.</p>
-            </div>
-            <Link
-              href="/pricing"
-              className="flex-shrink-0 px-3 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-black text-xs font-black transition-all"
-            >
-              Upgrade →
-            </Link>
-          </div>
-        </div>
-      )}
-
-  {/* Sticky Upgrade Bar for Free Users */}
-      {user.plan === 'free' && (
-        <div className="sticky top-14 z-50 bg-gradient-to-r from-purple-900/90 to-indigo-900/90 border-b border-purple-500/30 px-4 py-3 backdrop-blur-sm">
-          <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                <Sparkles size={16} className="text-white" />
-              </div>
-              <div>
-                <p className="text-sm font-black text-white">🚀 Unlock {lockedPreviewCount} Premium Lessons</p>
-                <p className="text-xs text-purple-200/80">Get AI interview prep, unlimited credits, and all PM leader content</p>
-              </div>
-            </div>
-            <Link
-              href="/pricing"
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white text-sm font-black transition-all shadow-lg shadow-purple-500/25 hover:scale-105 active:scale-95"
-              onClick={() => {
-                if (typeof window !== 'undefined' && (window as any).gtag) {
-                  (window as any).gtag('event', 'upgrade_clicked', {
-                    source: 'dashboard_sticky_bar',
-                    button_text: 'Upgrade to Pro',
-                    locked_lessons_count: lockedPreviewCount,
-                  });
-                }
-              }}
-            >
-              Upgrade to Pro
-            </Link>
-          </div>
-        </div>
-      )}
-
       {/* Mobile sticky category bar */}
       {categories.length > 0 && (
         <div className="lg:hidden sticky top-14 z-40 bg-[var(--bg-primary)] border-b-2 border-[var(--border-color)] px-4 py-2">
@@ -666,7 +613,7 @@ export default function DashboardPage() {
           <div className="space-y-4 min-w-0 order-2 lg:order-2">
             {/* ── Earn-Back Banner ── */}
             {earnBack && (
-              <div className="flex items-start gap-3 rounded-[var(--ds-radius-lg)] border-2 border-[var(--orange-primary)]/40 bg-gradient-to-r from-[var(--orange-primary)]/20 to-[var(--red-primary)]/20 p-4">
+              <div className="flex items-start gap-3 rounded-[var(--ds-radius-lg)] border-2 border-[var(--orange-primary)]/40 bg-[var(--bg-card)] p-4">
                 <div className="w-10 h-10 rounded-2xl bg-[var(--orange-primary)]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <RotateCcw size={18} className="text-[var(--orange-primary)]" />
                 </div>
@@ -902,11 +849,11 @@ export default function DashboardPage() {
 
               {/* Credits & Upgrade */}
               {user.plan !== "pro" ? (
-                <div className="rounded-[var(--ds-radius-lg)] border-2 border-purple-500/30 bg-gradient-to-br from-purple-900/20 to-purple-800/10 p-4">
+                <div className="rounded-[var(--ds-radius-lg)] border-2 border-purple-500/30 bg-[var(--bg-card)] p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <Zap size={16} className="text-purple-400" />
-                      <span className="text-sm font-black text-white">🚀 Level Up to Pro</span>
+                      <Zap size={16} className="text-[var(--purple-primary)]" />
+                      <span className="text-sm font-black text-white">Level Up to Pro</span>
                     </div>
                     <div className="flex items-center gap-1 bg-red-500/20 px-2.5 py-1 rounded-full">
                       <span className="text-[10px] font-black text-red-300">70% OFF</span>
@@ -938,7 +885,7 @@ export default function DashboardPage() {
                   
                   <Link
                     href="/pricing"
-                    className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-lg bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xs font-black uppercase tracking-wider hover:from-purple-400 hover:to-purple-500 transition-all shadow-lg shadow-purple-500/20"
+                    className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-lg bg-[var(--purple-primary)] text-black text-xs font-black uppercase tracking-wider hover:bg-[var(--purple-primary)]/90 transition-colors"
                   >
                     <Star size={12} /> Upgrade Now - Limited Time
                   </Link>
@@ -1013,7 +960,7 @@ export default function DashboardPage() {
           <div className="space-y-4 min-w-0 order-1 lg:order-1">
             <div className={cn(
               "relative overflow-hidden rounded-[var(--ds-radius-xl)] p-4 sm:p-5",
-              isPerfect ? "bg-gradient-to-br from-[#1a1200] to-[#2a1f00] border-2 border-[var(--gold-primary)]/30" : "bg-gradient-to-br from-[#10271a] to-[#153726] border-2 border-[var(--green-primary)]/30"
+              isPerfect ? "bg-[var(--bg-card)] border-2 border-[var(--gold-primary)]/30" : "bg-[var(--bg-card)] border-2 border-[var(--green-primary)]/30"
             )}>
               <div className="relative flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                 <div className="flex items-center gap-3 sm:gap-4">
@@ -1112,7 +1059,7 @@ export default function DashboardPage() {
       <StreakCelebration milestone={milestone} streakCount={user.streakCount} perfectStreak={stats?.streak?.perfectStreak ?? 0} onClose={() => setMilestone(null)} />
       {archiveUnlock && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80" onClick={() => setArchiveUnlock(null)}>
-          <div className="w-full max-w-sm bg-gradient-to-br from-[#0d2a18] to-[#1a3a25] border-2 border-[var(--green-primary)]/40 rounded-[2rem] p-8 text-center" onClick={(e) => e.stopPropagation()}>
+          <div className="w-full max-w-sm bg-[var(--bg-card)] border-2 border-[var(--green-primary)]/40 rounded-[2rem] p-8 text-center" onClick={(e) => e.stopPropagation()}>
             <div className="text-6xl mb-4">🎉</div>
             <h2 className="text-2xl font-black text-white mb-2">Batch Unlocked!</h2>
             <p className="text-white/70 text-sm mb-6">{archiveUnlock.count} new archive lessons are now waiting for you.</p>
