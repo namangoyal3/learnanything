@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Real Estate Tech 2026 — PM Streak",
     description: "How PMs build real estate tech products.",
     url: `${SITE_URL}/pm-real-estate-tech`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Real+Estate+Tech+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Real Estate Tech 2026 — PM Streak",
+    description: "How PMs build real estate tech products.",
+    images: [`${SITE_URL}/api/og?title=PM+Real+Estate+Tech+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

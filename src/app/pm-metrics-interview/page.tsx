@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Metrics Interview — Debug Drops & Define Success | PM Streak",
     description: "30+ PM metrics interview questions with frameworks for diagnosing drops, defining success, and A/B testing.",
     url: `${SITE_URL}/pm-metrics-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Metrics+Interview++Debug+Drops+&+Define+Success++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Metrics Interview — Debug Drops & Define Success | PM Streak",
+    description: "30+ PM metrics interview questions with frameworks for diagnosing drops, defining success, and A/B testing.",
+    images: [`${SITE_URL}/api/og?title=PM+Metrics+Interview++Debug+Drops+&+Define+Success++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

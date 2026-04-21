@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Mock Interview Guide 2026 — PM Streak",
     description: "How to run effective PM mock interviews, get unbiased feedback, and track improvement.",
     url: `${SITE_URL}/pm-mock-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Mock+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Mock Interview Guide 2026 — PM Streak",
+    description: "How to run effective PM mock interviews, get unbiased feedback, and track improvement.",
+    images: [`${SITE_URL}/api/og?title=PM+Mock+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

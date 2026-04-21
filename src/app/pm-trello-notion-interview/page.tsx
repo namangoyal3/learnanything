@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Notion, Linear, Atlassian PM Interview Guide 2026 — PM Streak",
     description: "PM interview prep for productivity tool companies — Notion, Linear, Atlassian, and more.",
     url: `${SITE_URL}/pm-trello-notion-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Notion+Linear+Atlassian+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Notion, Linear, Atlassian PM Interview Guide 2026 — PM Streak",
+    description: "PM interview prep for productivity tool companies — Notion, Linear, Atlassian, and more.",
+    images: [`${SITE_URL}/api/og?title=Notion+Linear+Atlassian+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

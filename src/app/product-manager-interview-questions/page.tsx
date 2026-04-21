@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "150+ PM Interview Questions (2026) — PM Streak",
     description: "The most comprehensive list of product manager interview questions with frameworks and example answers.",
     url: `${SITE_URL}/product-manager-interview-questions`,
+    images: [{ url: `${SITE_URL}/api/og?title=150++PM+Interview+Questions+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "150+ PM Interview Questions (2026) — PM Streak",
+    description: "The most comprehensive list of product manager interview questions with frameworks and example answers.",
+    images: [`${SITE_URL}/api/og?title=150++PM+Interview+Questions+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Senior PM Interview Questions 2026 — PM Streak",
     description: "Strategy, leadership, and systems thinking questions for senior PM roles.",
     url: `${SITE_URL}/senior-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Senior+PM+Interview+Questions+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Senior PM Interview Questions 2026 — PM Streak",
+    description: "Strategy, leadership, and systems thinking questions for senior PM roles.",
+    images: [`${SITE_URL}/api/og?title=Senior+PM+Interview+Questions+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

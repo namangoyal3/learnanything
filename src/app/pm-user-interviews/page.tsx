@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM User Interviews 2026 — PM Streak",
     description: "How to run interviews that actually change decisions.",
     url: `${SITE_URL}/pm-user-interviews`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+User+Interviews+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM User Interviews 2026 — PM Streak",
+    description: "How to run interviews that actually change decisions.",
+    images: [`${SITE_URL}/api/og?title=PM+User+Interviews+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

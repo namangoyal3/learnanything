@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Competitive Analysis for PMs 2026 — PM Streak",
     description: "How PMs study competitors effectively — frameworks, what to track, and when to differentiate.",
     url: `${SITE_URL}/pm-competitive-analysis`,
+    images: [{ url: `${SITE_URL}/api/og?title=Competitive+Analysis+for+PMs+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Competitive Analysis for PMs 2026 — PM Streak",
+    description: "How PMs study competitors effectively — frameworks, what to track, and when to differentiate.",
+    images: [`${SITE_URL}/api/og?title=Competitive+Analysis+for+PMs+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

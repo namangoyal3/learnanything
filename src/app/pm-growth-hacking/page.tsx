@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Growth Hacking 2026 — PM Streak",
     description: "What growth hacking really means — tactics that work, ones that don&apos;t, and the math.",
     url: `${SITE_URL}/pm-growth-hacking`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Growth+Hacking+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Growth Hacking 2026 — PM Streak",
+    description: "What growth hacking really means — tactics that work, ones that don&apos;t, and the math.",
+    images: [`${SITE_URL}/api/og?title=PM+Growth+Hacking+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

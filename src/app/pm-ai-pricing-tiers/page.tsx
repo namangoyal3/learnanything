@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM AI Pricing Tiers 2026 — PM Streak",
     description: "Designing plans for AI products.",
     url: `${SITE_URL}/pm-ai-pricing-tiers`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+AI+Pricing+Tiers+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM AI Pricing Tiers 2026 — PM Streak",
+    description: "Designing plans for AI products.",
+    images: [`${SITE_URL}/api/og?title=PM+AI+Pricing+Tiers+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

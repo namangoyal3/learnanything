@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM x Customer Success 2026 — PM Streak",
     description: "How PMs partner with CS teams to ship the right things.",
     url: `${SITE_URL}/pm-customer-success`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+x+Customer+Success+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM x Customer Success 2026 — PM Streak",
+    description: "How PMs partner with CS teams to ship the right things.",
+    images: [`${SITE_URL}/api/og?title=PM+x+Customer+Success+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Early-Stage Startup 2026 — PM Streak",
     description: "What early-stage PM work is actually like — scope, chaos, hats worn, real trade-offs.",
     url: `${SITE_URL}/pm-early-stage-startup`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Early-Stage+Startup+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Early-Stage Startup 2026 — PM Streak",
+    description: "What early-stage PM work is actually like — scope, chaos, hats worn, real trade-offs.",
+    images: [`${SITE_URL}/api/og?title=PM+Early-Stage+Startup+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

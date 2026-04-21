@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Infrastructure Products 2026 — PM Streak",
     description: "How PMs build infrastructure products.",
     url: `${SITE_URL}/pm-infra-products`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Infrastructure+Products+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Infrastructure Products 2026 — PM Streak",
+    description: "How PMs build infrastructure products.",
+    images: [`${SITE_URL}/api/og?title=PM+Infrastructure+Products+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

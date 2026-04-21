@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "E-commerce PM Guide 2026 — PM Streak",
     description: "Unit economics, category PM, buyer-seller dynamics — the e-commerce PM playbook.",
     url: `${SITE_URL}/ecommerce-pm-guide`,
+    images: [{ url: `${SITE_URL}/api/og?title=E-commerce+PM+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "E-commerce PM Guide 2026 — PM Streak",
+    description: "Unit economics, category PM, buyer-seller dynamics — the e-commerce PM playbook.",
+    images: [`${SITE_URL}/api/og?title=E-commerce+PM+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

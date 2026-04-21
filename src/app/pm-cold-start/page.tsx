@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Cold Start Problem 2026 — PM Streak",
     description: "How PMs solve cold start — network effects without network, content without creators.",
     url: `${SITE_URL}/pm-cold-start`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Cold+Start+Problem+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Cold Start Problem 2026 — PM Streak",
+    description: "How PMs solve cold start — network effects without network, content without creators.",
+    images: [`${SITE_URL}/api/og?title=PM+Cold+Start+Problem+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

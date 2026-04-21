@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Creator Economy 2026 — PM Streak",
     description: "How PMs build products for creators — monetisation, tools, audience.",
     url: `${SITE_URL}/pm-creator-economy`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Creator+Economy+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Creator Economy 2026 — PM Streak",
+    description: "How PMs build products for creators — monetisation, tools, audience.",
+    images: [`${SITE_URL}/api/og?title=PM+Creator+Economy+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Healthtech PM Guide 2026 — PM Streak",
     description: "Healthtech PM in India — companies, domain challenges, and how to break in.",
     url: `${SITE_URL}/healthtech-product-manager`,
+    images: [{ url: `${SITE_URL}/api/og?title=Healthtech+PM+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Healthtech PM Guide 2026 — PM Streak",
+    description: "Healthtech PM in India — companies, domain challenges, and how to break in.",
+    images: [`${SITE_URL}/api/og?title=Healthtech+PM+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

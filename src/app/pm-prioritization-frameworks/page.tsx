@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Prioritization Frameworks 2026 — PM Streak",
     description: "8 prioritization frameworks every PM should know — RICE, MoSCoW, Kano, and when to use each.",
     url: `${SITE_URL}/pm-prioritization-frameworks`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Prioritization+Frameworks+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Prioritization Frameworks 2026 — PM Streak",
+    description: "8 prioritization frameworks every PM should know — RICE, MoSCoW, Kano, and when to use each.",
+    images: [`${SITE_URL}/api/og?title=PM+Prioritization+Frameworks+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

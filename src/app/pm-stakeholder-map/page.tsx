@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Stakeholder Map 2026 — PM Streak",
     description: "How PMs map stakeholders systematically — informed, consulted, deciders.",
     url: `${SITE_URL}/pm-stakeholder-map`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Stakeholder+Map+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Stakeholder Map 2026 — PM Streak",
+    description: "How PMs map stakeholders systematically — informed, consulted, deciders.",
+    images: [`${SITE_URL}/api/og?title=PM+Stakeholder+Map+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

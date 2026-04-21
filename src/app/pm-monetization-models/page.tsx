@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Monetization Models 2026 — PM Streak",
     description: "Picking the right way to make money.",
     url: `${SITE_URL}/pm-monetization-models`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Monetization+Models+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Monetization Models 2026 — PM Streak",
+    description: "Picking the right way to make money.",
+    images: [`${SITE_URL}/api/og?title=PM+Monetization+Models+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

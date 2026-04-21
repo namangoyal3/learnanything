@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Privacy Products 2026 — PM Streak",
     description: "Building privacy-respecting products.",
     url: `${SITE_URL}/pm-privacy-products`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Privacy+Products+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Privacy Products 2026 — PM Streak",
+    description: "Building privacy-respecting products.",
+    images: [`${SITE_URL}/api/og?title=PM+Privacy+Products+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

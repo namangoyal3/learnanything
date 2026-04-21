@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Localization for India 2026 — PM Streak",
     description: "How PMs design for Bharat — languages, device constraints, cultural context.",
     url: `${SITE_URL}/pm-localization-india`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Localization+for+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Localization for India 2026 — PM Streak",
+    description: "How PMs design for Bharat — languages, device constraints, cultural context.",
+    images: [`${SITE_URL}/api/og?title=PM+Localization+for+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

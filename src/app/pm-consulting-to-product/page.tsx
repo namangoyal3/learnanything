@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Consulting to Product 2026 — PM Streak",
     description: "From consulting to PM.",
     url: `${SITE_URL}/pm-consulting-to-product`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Consulting+to+Product+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Consulting to Product 2026 — PM Streak",
+    description: "From consulting to PM.",
+    images: [`${SITE_URL}/api/og?title=PM+Consulting+to+Product+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

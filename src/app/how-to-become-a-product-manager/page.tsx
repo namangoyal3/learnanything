@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "How to Become a Product Manager in India (2026) — PM Streak",
     description: "The complete roadmap from zero to PM — skills, APM programs, portfolio, and interview prep.",
     url: `${SITE_URL}/how-to-become-a-product-manager`,
+    images: [{ url: `${SITE_URL}/api/og?title=How+to+Become+a+Product+Manager+in+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Become a Product Manager in India (2026) — PM Streak",
+    description: "The complete roadmap from zero to PM — skills, APM programs, portfolio, and interview prep.",
+    images: [`${SITE_URL}/api/og?title=How+to+Become+a+Product+Manager+in+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Growth Product Manager Guide 2026 — PM Streak",
     description: "What growth PMs do, interview questions, and how to break into growth PM roles.",
     url: `${SITE_URL}/growth-product-manager`,
+    images: [{ url: `${SITE_URL}/api/og?title=Growth+Product+Manager+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Growth Product Manager Guide 2026 — PM Streak",
+    description: "What growth PMs do, interview questions, and how to break into growth PM roles.",
+    images: [`${SITE_URL}/api/og?title=Growth+Product+Manager+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

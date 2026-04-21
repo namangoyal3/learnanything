@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Product Vision Guide 2026 — PM Streak",
     description: "How PMs write product visions that rally teams — structure, examples, tests.",
     url: `${SITE_URL}/pm-vision-statement`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Product+Vision+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Product Vision Guide 2026 — PM Streak",
+    description: "How PMs write product visions that rally teams — structure, examples, tests.",
+    images: [`${SITE_URL}/api/og?title=PM+Product+Vision+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

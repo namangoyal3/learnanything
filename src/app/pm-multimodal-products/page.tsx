@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Multimodal Products 2026 — PM Streak",
     description: "How PMs build multimodal AI products.",
     url: `${SITE_URL}/pm-multimodal-products`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Multimodal+Products+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Multimodal Products 2026 — PM Streak",
+    description: "How PMs build multimodal AI products.",
+    images: [`${SITE_URL}/api/og?title=PM+Multimodal+Products+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

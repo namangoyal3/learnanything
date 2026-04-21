@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Paywall Design 2026 — PM Streak",
     description: "Hard, soft, and hybrid paywalls.",
     url: `${SITE_URL}/pm-paywall-design`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Paywall+Design+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Paywall Design 2026 — PM Streak",
+    description: "Hard, soft, and hybrid paywalls.",
+    images: [`${SITE_URL}/api/og?title=PM+Paywall+Design+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Context Windows 2026 — PM Streak",
     description: "Long context vs RAG vs memory.",
     url: `${SITE_URL}/pm-context-windows`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Context+Windows+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Context Windows 2026 — PM Streak",
+    description: "Long context vs RAG vs memory.",
+    images: [`${SITE_URL}/api/og?title=PM+Context+Windows+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

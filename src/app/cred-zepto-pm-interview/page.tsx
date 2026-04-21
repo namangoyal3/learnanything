@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "CRED & Zepto PM Interview Guide 2026 — PM Streak",
     description: "What CRED and Zepto look for in PMs, real questions, and how to prep.",
     url: `${SITE_URL}/cred-zepto-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=CRED+&+Zepto+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CRED & Zepto PM Interview Guide 2026 — PM Streak",
+    description: "What CRED and Zepto look for in PMs, real questions, and how to prep.",
+    images: [`${SITE_URL}/api/og?title=CRED+&+Zepto+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Gaming 2026 — PM Streak",
     description: "How PMs build gaming products in India — retention, monetisation, regulation.",
     url: `${SITE_URL}/pm-gaming`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Gaming+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Gaming 2026 — PM Streak",
+    description: "How PMs build gaming products in India — retention, monetisation, regulation.",
+    images: [`${SITE_URL}/api/og?title=PM+Gaming+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

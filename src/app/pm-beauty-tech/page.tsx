@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Beauty Tech 2026 — PM Streak",
     description: "How PMs build beauty tech products.",
     url: `${SITE_URL}/pm-beauty-tech`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Beauty+Tech+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Beauty Tech 2026 — PM Streak",
+    description: "How PMs build beauty tech products.",
+    images: [`${SITE_URL}/api/og?title=PM+Beauty+Tech+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

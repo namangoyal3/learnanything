@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM + Data Analyst Partnership 2026 — PM Streak",
     description: "How PMs work with data analysts effectively — what to ask, what to skip, how to build partnership.",
     url: `${SITE_URL}/pm-data-analyst-partnership`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+++Data+Analyst+Partnership+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM + Data Analyst Partnership 2026 — PM Streak",
+    description: "How PMs work with data analysts effectively — what to ask, what to skip, how to build partnership.",
+    images: [`${SITE_URL}/api/og?title=PM+++Data+Analyst+Partnership+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

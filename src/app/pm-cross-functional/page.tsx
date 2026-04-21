@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Cross-Functional Leadership 2026 — PM Streak",
     description: "How PMs lead cross-functional teams without authority — building trust across every function.",
     url: `${SITE_URL}/pm-cross-functional`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Cross-Functional+Leadership+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Cross-Functional Leadership 2026 — PM Streak",
+    description: "How PMs lead cross-functional teams without authority — building trust across every function.",
+    images: [`${SITE_URL}/api/og?title=PM+Cross-Functional+Leadership+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

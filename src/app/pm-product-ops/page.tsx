@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Product Ops 2026 — PM Streak",
     description: "What product ops does, when you need it, and how it multiplies PM leverage.",
     url: `${SITE_URL}/pm-product-ops`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Product+Ops+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Product Ops 2026 — PM Streak",
+    description: "What product ops does, when you need it, and how it multiplies PM leverage.",
+    images: [`${SITE_URL}/api/og?title=PM+Product+Ops+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

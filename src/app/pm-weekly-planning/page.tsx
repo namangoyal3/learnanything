@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Weekly Planning Guide 2026 — PM Streak",
     description: "How great PMs plan their week — rituals, time splits, and protecting deep work.",
     url: `${SITE_URL}/pm-weekly-planning`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Weekly+Planning+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Weekly Planning Guide 2026 — PM Streak",
+    description: "How great PMs plan their week — rituals, time splits, and protecting deep work.",
+    images: [`${SITE_URL}/api/og?title=PM+Weekly+Planning+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

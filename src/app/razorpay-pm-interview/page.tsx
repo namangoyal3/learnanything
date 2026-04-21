@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Razorpay PM Interview Guide 2026 — PM Streak",
     description: "All Razorpay PM interview rounds, fintech questions, and a structured prep plan.",
     url: `${SITE_URL}/razorpay-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Razorpay+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Razorpay PM Interview Guide 2026 — PM Streak",
+    description: "All Razorpay PM interview rounds, fintech questions, and a structured prep plan.",
+    images: [`${SITE_URL}/api/og?title=Razorpay+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

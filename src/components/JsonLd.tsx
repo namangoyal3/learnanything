@@ -122,15 +122,25 @@ export function articleSchema(opts: {
   dateModified: string;
   author: { name: string; url: string };
   publisher: { name: string; url: string };
+  url?: string;
+  keywords?: string[];
 }): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: opts.headline,
     description: opts.description,
-    image: opts.image,
+    image: {
+      "@type": "ImageObject",
+      url: opts.image,
+      width: 1200,
+      height: 630,
+    },
     datePublished: opts.datePublished,
     dateModified: opts.dateModified,
+    inLanguage: "en-US",
+    ...(opts.url ? { url: opts.url, mainEntityOfPage: { "@type": "WebPage", "@id": opts.url } } : {}),
+    ...(opts.keywords ? { keywords: opts.keywords.join(", ") } : {}),
     author: {
       "@type": "Person",
       name: opts.author.name,
@@ -140,6 +150,36 @@ export function articleSchema(opts: {
       "@type": "Organization",
       name: opts.publisher.name,
       url: opts.publisher.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon.svg`,
+        width: 512,
+        height: 512,
+      },
     },
+  };
+}
+
+export function webPageSchema(opts: {
+  url: string;
+  name: string;
+  description: string;
+  dateModified?: string;
+}): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${opts.url.startsWith("http") ? opts.url : `${SITE_URL}${opts.url}`}#webpage`,
+    url: opts.url.startsWith("http") ? opts.url : `${SITE_URL}${opts.url}`,
+    name: opts.name,
+    description: opts.description,
+    inLanguage: "en-US",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    ...(opts.dateModified ? { dateModified: opts.dateModified } : {}),
   };
 }

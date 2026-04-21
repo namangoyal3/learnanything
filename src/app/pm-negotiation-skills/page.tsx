@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Negotiation Skills Guide 2026 — PM Streak",
     description: "How PMs negotiate scope, priorities, resources, and timelines effectively.",
     url: `${SITE_URL}/pm-negotiation-skills`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Negotiation+Skills+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Negotiation Skills Guide 2026 — PM Streak",
+    description: "How PMs negotiate scope, priorities, resources, and timelines effectively.",
+    images: [`${SITE_URL}/api/og?title=PM+Negotiation+Skills+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

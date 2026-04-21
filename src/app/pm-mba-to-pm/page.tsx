@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM MBA to PM 2026 — PM Streak",
     description: "Breaking into PM from top MBA programs.",
     url: `${SITE_URL}/pm-mba-to-pm`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+MBA+to+PM+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM MBA to PM 2026 — PM Streak",
+    description: "Breaking into PM from top MBA programs.",
+    images: [`${SITE_URL}/api/og?title=PM+MBA+to+PM+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

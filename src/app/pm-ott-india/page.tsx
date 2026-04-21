@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM OTT India 2026 — PM Streak",
     description: "How PMs build OTT products in India.",
     url: `${SITE_URL}/pm-ott-india`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+OTT+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM OTT India 2026 — PM Streak",
+    description: "How PMs build OTT products in India.",
+    images: [`${SITE_URL}/api/og?title=PM+OTT+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

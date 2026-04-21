@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Launch Metrics Guide 2026 — PM Streak",
     description: "What PMs should measure before, during, and after a launch — primary, guardrail, leading.",
     url: `${SITE_URL}/pm-launch-metrics`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Launch+Metrics+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Launch Metrics Guide 2026 — PM Streak",
+    description: "What PMs should measure before, during, and after a launch — primary, guardrail, leading.",
+    images: [`${SITE_URL}/api/og?title=PM+Launch+Metrics+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

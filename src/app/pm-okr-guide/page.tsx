@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "OKRs for Product Managers 2026 — PM Streak",
     description: "How to write, set, and track OKRs as a PM — with real examples and common mistakes.",
     url: `${SITE_URL}/pm-okr-guide`,
+    images: [{ url: `${SITE_URL}/api/og?title=OKRs+for+Product+Managers+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "OKRs for Product Managers 2026 — PM Streak",
+    description: "How to write, set, and track OKRs as a PM — with real examples and common mistakes.",
+    images: [`${SITE_URL}/api/og?title=OKRs+for+Product+Managers+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

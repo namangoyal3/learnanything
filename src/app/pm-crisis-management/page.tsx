@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Crisis Management 2026 — PM Streak",
     description: "How PMs handle production incidents, launch disasters, and customer escalations.",
     url: `${SITE_URL}/pm-crisis-management`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Crisis+Management+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Crisis Management 2026 — PM Streak",
+    description: "How PMs handle production incidents, launch disasters, and customer escalations.",
+    images: [`${SITE_URL}/api/og?title=PM+Crisis+Management+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

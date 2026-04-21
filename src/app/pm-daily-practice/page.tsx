@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Daily Practice Guide 2026 — PM Streak",
     description: "Why 15 minutes of daily practice beats cramming for PM interviews and mastery.",
     url: `${SITE_URL}/pm-daily-practice`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Daily+Practice+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Daily Practice Guide 2026 — PM Streak",
+    description: "Why 15 minutes of daily practice beats cramming for PM interviews and mastery.",
+    images: [`${SITE_URL}/api/og?title=PM+Daily+Practice+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

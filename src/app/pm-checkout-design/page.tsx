@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Checkout Design 2026 — PM Streak",
     description: "Designing checkouts that convert.",
     url: `${SITE_URL}/pm-checkout-design`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Checkout+Design+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Checkout Design 2026 — PM Streak",
+    description: "Designing checkouts that convert.",
+    images: [`${SITE_URL}/api/og?title=PM+Checkout+Design+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

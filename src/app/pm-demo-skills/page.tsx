@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Demo Skills Guide 2026 — PM Streak",
     description: "How PMs give demos that land — structure, storytelling, and live demo traps.",
     url: `${SITE_URL}/pm-demo-skills`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Demo+Skills+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Demo Skills Guide 2026 — PM Streak",
+    description: "How PMs give demos that land — structure, storytelling, and live demo traps.",
+    images: [`${SITE_URL}/api/og?title=PM+Demo+Skills+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM UPI Products 2026 — PM Streak",
     description: "Building on India&apos;s payment rails.",
     url: `${SITE_URL}/pm-upi-products`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+UPI+Products+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM UPI Products 2026 — PM Streak",
+    description: "Building on India&apos;s payment rails.",
+    images: [`${SITE_URL}/api/og?title=PM+UPI+Products+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

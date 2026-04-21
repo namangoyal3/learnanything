@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Pricing Page Design 2026 — PM Streak",
     description: "Designing pricing pages that convert.",
     url: `${SITE_URL}/pm-pricing-page-design`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Pricing+Page+Design+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Pricing Page Design 2026 — PM Streak",
+    description: "Designing pricing pages that convert.",
+    images: [`${SITE_URL}/api/og?title=PM+Pricing+Page+Design+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

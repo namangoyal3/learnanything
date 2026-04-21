@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Customer Research Guide 2026 — PM Streak",
     description: "Combine qualitative, quantitative, and passive signals into research that drives decisions.",
     url: `${SITE_URL}/pm-customer-research`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Customer+Research+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Customer Research Guide 2026 — PM Streak",
+    description: "Combine qualitative, quantitative, and passive signals into research that drives decisions.",
+    images: [`${SITE_URL}/api/og?title=PM+Customer+Research+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

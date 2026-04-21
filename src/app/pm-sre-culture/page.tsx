@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM SRE Culture 2026 — PM Streak",
     description: "How PMs work with SRE teams.",
     url: `${SITE_URL}/pm-sre-culture`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+SRE+Culture+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM SRE Culture 2026 — PM Streak",
+    description: "How PMs work with SRE teams.",
+    images: [`${SITE_URL}/api/og?title=PM+SRE+Culture+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PRD Template Guide 2026 — PM Streak",
     description: "The complete PRD template with real examples, section-by-section breakdown.",
     url: `${SITE_URL}/prd-template-guide`,
+    images: [{ url: `${SITE_URL}/api/og?title=PRD+Template+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PRD Template Guide 2026 — PM Streak",
+    description: "The complete PRD template with real examples, section-by-section breakdown.",
+    images: [`${SITE_URL}/api/og?title=PRD+Template+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

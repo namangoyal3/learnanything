@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM at Startup vs Big Tech 2026 — PM Streak",
     description: "Real differences between startup PM and big tech PM — scope, speed, comp, career.",
     url: `${SITE_URL}/pm-startup-vs-big-tech`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+at+Startup+vs+Big+Tech+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM at Startup vs Big Tech 2026 — PM Streak",
+    description: "Real differences between startup PM and big tech PM — scope, speed, comp, career.",
+    images: [`${SITE_URL}/api/og?title=PM+at+Startup+vs+Big+Tech+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

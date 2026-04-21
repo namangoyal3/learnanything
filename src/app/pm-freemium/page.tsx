@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Freemium Strategy 2026 — PM Streak",
     description: "How PMs design freemium that converts — what to give away, what to gate.",
     url: `${SITE_URL}/pm-freemium`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Freemium+Strategy+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Freemium Strategy 2026 — PM Streak",
+    description: "How PMs design freemium that converts — what to give away, what to gate.",
+    images: [`${SITE_URL}/api/og?title=PM+Freemium+Strategy+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

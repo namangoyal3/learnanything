@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM ONDC 2026 — PM Streak",
     description: "Building on India&apos;s open commerce protocol.",
     url: `${SITE_URL}/pm-ondc`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+ONDC+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM ONDC 2026 — PM Streak",
+    description: "Building on India&apos;s open commerce protocol.",
+    images: [`${SITE_URL}/api/og?title=PM+ONDC+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

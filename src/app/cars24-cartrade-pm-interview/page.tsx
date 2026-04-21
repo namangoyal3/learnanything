@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Auto PM Interview Guide 2026 — Cars24, Spinny, OLX Autos | PM Streak",
     description: "PM interview guide for India&apos;s used car marketplaces — dynamics, rounds, and questions.",
     url: `${SITE_URL}/cars24-cartrade-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Auto+PM+Interview+Guide+2026++Cars24+Spinny+OLX+Autos++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Auto PM Interview Guide 2026 — Cars24, Spinny, OLX Autos | PM Streak",
+    description: "PM interview guide for India&apos;s used car marketplaces — dynamics, rounds, and questions.",
+    images: [`${SITE_URL}/api/og?title=Auto+PM+Interview+Guide+2026++Cars24+Spinny+OLX+Autos++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

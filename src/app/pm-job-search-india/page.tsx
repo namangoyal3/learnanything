@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Job Search in India 2026 — PM Streak",
     description: "Where to find PM jobs in India and how to actually stand out in the application pile.",
     url: `${SITE_URL}/pm-job-search-india`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Job+Search+in+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Job Search in India 2026 — PM Streak",
+    description: "Where to find PM jobs in India and how to actually stand out in the application pile.",
+    images: [`${SITE_URL}/api/og?title=PM+Job+Search+in+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Reading PM Metrics Correctly 2026 — PM Streak",
     description: "How PMs spot signal vs noise, avoid bias, and act on metric moves correctly.",
     url: `${SITE_URL}/pm-reading-metrics`,
+    images: [{ url: `${SITE_URL}/api/og?title=Reading+PM+Metrics+Correctly+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reading PM Metrics Correctly 2026 — PM Streak",
+    description: "How PMs spot signal vs noise, avoid bias, and act on metric moves correctly.",
+    images: [`${SITE_URL}/api/og?title=Reading+PM+Metrics+Correctly+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

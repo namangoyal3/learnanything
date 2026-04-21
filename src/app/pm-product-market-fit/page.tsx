@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Product-Market Fit 2026 — PM Streak",
     description: "How PMs know they have PMF, what signals to watch, what to do if they don&apos;t.",
     url: `${SITE_URL}/pm-product-market-fit`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Product-Market+Fit+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Product-Market Fit 2026 — PM Streak",
+    description: "How PMs know they have PMF, what signals to watch, what to do if they don&apos;t.",
+    images: [`${SITE_URL}/api/og?title=PM+Product-Market+Fit+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

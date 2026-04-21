@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM LLM Routing 2026 — PM Streak",
     description: "Picking the right model for each request.",
     url: `${SITE_URL}/pm-llm-routing`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+LLM+Routing+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM LLM Routing 2026 — PM Streak",
+    description: "Picking the right model for each request.",
+    images: [`${SITE_URL}/api/og?title=PM+LLM+Routing+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Fintech Product Manager Guide 2026 — PM Streak",
     description: "Domain knowledge, top companies, interview questions, and salary for fintech PMs in India.",
     url: `${SITE_URL}/fintech-product-manager`,
+    images: [{ url: `${SITE_URL}/api/og?title=Fintech+Product+Manager+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fintech Product Manager Guide 2026 — PM Streak",
+    description: "Domain knowledge, top companies, interview questions, and salary for fintech PMs in India.",
+    images: [`${SITE_URL}/api/og?title=Fintech+Product+Manager+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

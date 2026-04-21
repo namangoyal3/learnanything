@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Salary Negotiation India 2026 — PM Streak",
     description: "Getting paid fairly as a PM in India.",
     url: `${SITE_URL}/pm-salary-negotiation-india`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Salary+Negotiation+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Salary Negotiation India 2026 — PM Streak",
+    description: "Getting paid fairly as a PM in India.",
+    images: [`${SITE_URL}/api/og?title=PM+Salary+Negotiation+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

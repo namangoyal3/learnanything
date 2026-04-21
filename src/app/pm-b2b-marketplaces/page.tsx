@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM B2B Marketplaces 2026 — PM Streak",
     description: "How PMs build B2B marketplaces.",
     url: `${SITE_URL}/pm-b2b-marketplaces`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+B2B+Marketplaces+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM B2B Marketplaces 2026 — PM Streak",
+    description: "How PMs build B2B marketplaces.",
+    images: [`${SITE_URL}/api/og?title=PM+B2B+Marketplaces+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

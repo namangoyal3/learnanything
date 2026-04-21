@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Interview Prep — PM Streak",
     description: "Daily PM interview practice with AI feedback. Real questions from Google, Meta, Amazon.",
     url: `${SITE_URL}/pm-interview-prep`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Interview+Prep++PM+Streak`, width: 1200, height: 630 }],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Interview Prep — PM Streak",
+    description: "Daily PM interview practice with AI feedback. Real questions from Google, Meta, Amazon.",
+    images: [`${SITE_URL}/api/og?title=PM+Interview+Prep++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

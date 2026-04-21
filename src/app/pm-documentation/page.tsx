@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Documentation Guide 2026 — PM Streak",
     description: "What great PMs actually write down — 7 essential PM documents and what to skip.",
     url: `${SITE_URL}/pm-documentation`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Documentation+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Documentation Guide 2026 — PM Streak",
+    description: "What great PMs actually write down — 7 essential PM documents and what to skip.",
+    images: [`${SITE_URL}/api/og?title=PM+Documentation+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

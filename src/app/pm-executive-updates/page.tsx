@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Executive Updates Guide 2026 — PM Streak",
     description: "How PMs write exec updates leadership actually reads — structure, length, and trust-building.",
     url: `${SITE_URL}/pm-executive-updates`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Executive+Updates+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Executive Updates Guide 2026 — PM Streak",
+    description: "How PMs write exec updates leadership actually reads — structure, length, and trust-building.",
+    images: [`${SITE_URL}/api/og?title=PM+Executive+Updates+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

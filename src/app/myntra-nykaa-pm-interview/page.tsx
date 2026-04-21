@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Myntra & Nykaa PM Interview Guide 2026 — PM Streak",
     description: "Fashion &amp; beauty commerce PM interview prep — dynamics, questions, and prep.",
     url: `${SITE_URL}/myntra-nykaa-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Myntra+&+Nykaa+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Myntra & Nykaa PM Interview Guide 2026 — PM Streak",
+    description: "Fashion &amp; beauty commerce PM interview prep — dynamics, questions, and prep.",
+    images: [`${SITE_URL}/api/og?title=Myntra+&+Nykaa+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "Product Manager vs Project Manager 2026 — PM Streak",
     description: "The real differences between product and project manager roles — responsibilities, salary, career path.",
     url: `${SITE_URL}/product-manager-vs-project-manager`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Manager+vs+Project+Manager+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Manager vs Project Manager 2026 — PM Streak",
+    description: "The real differences between product and project manager roles — responsibilities, salary, career path.",
+    images: [`${SITE_URL}/api/og?title=Product+Manager+vs+Project+Manager+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

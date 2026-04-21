@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "10 Essential PM Frameworks (2026) — PM Streak",
     description: "RICE, JTBD, north star, CIRCLES, and 6 more — explained with examples.",
     url: `${SITE_URL}/product-management-frameworks`,
+    images: [{ url: `${SITE_URL}/api/og?title=10+Essential+PM+Frameworks+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "10 Essential PM Frameworks (2026) — PM Streak",
+    description: "RICE, JTBD, north star, CIRCLES, and 6 more — explained with examples.",
+    images: [`${SITE_URL}/api/og?title=10+Essential+PM+Frameworks+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

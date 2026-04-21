@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Engineering Estimates 2026 — PM Streak",
     description: "How PMs work with engineering estimates without becoming a nuisance — probe, trust, handle slips.",
     url: `${SITE_URL}/pm-engineering-estimate`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Engineering+Estimates+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Engineering Estimates 2026 — PM Streak",
+    description: "How PMs work with engineering estimates without becoming a nuisance — probe, trust, handle slips.",
+    images: [`${SITE_URL}/api/og?title=PM+Engineering+Estimates+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

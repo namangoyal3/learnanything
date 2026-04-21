@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Urban Company PM Interview Guide 2026 — PM Streak",
     description: "Services marketplace PM interview — Urban Company&apos;s dynamics, rounds, and questions.",
     url: `${SITE_URL}/urban-company-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Urban+Company+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Urban Company PM Interview Guide 2026 — PM Streak",
+    description: "Services marketplace PM interview — Urban Company&apos;s dynamics, rounds, and questions.",
+    images: [`${SITE_URL}/api/og?title=Urban+Company+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

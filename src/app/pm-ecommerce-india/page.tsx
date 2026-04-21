@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM E-commerce India 2026 — PM Streak",
     description: "How PMs build e-commerce products in India.",
     url: `${SITE_URL}/pm-ecommerce-india`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+E-commerce+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM E-commerce India 2026 — PM Streak",
+    description: "How PMs build e-commerce products in India.",
+    images: [`${SITE_URL}/api/og?title=PM+E-commerce+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

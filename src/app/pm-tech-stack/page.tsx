@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Tech Stack Guide 2026 — PM Streak",
     description: "The technical concepts every PM should understand — APIs, databases, infra, explained for PMs.",
     url: `${SITE_URL}/pm-tech-stack`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Tech+Stack+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Tech Stack Guide 2026 — PM Streak",
+    description: "The technical concepts every PM should understand — APIs, databases, infra, explained for PMs.",
+    images: [`${SITE_URL}/api/og?title=PM+Tech+Stack+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

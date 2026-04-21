@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Building in Public 2026 — PM Streak",
     description: "Why more PMs should share their work.",
     url: `${SITE_URL}/pm-building-in-public`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Building+in+Public+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Building in Public 2026 — PM Streak",
+    description: "Why more PMs should share their work.",
+    images: [`${SITE_URL}/api/og?title=PM+Building+in+Public+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

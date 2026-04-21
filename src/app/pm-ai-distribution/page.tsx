@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM AI Distribution 2026 — PM Streak",
     description: "How AI products reach users.",
     url: `${SITE_URL}/pm-ai-distribution`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+AI+Distribution+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM AI Distribution 2026 — PM Streak",
+    description: "How AI products reach users.",
+    images: [`${SITE_URL}/api/og?title=PM+AI+Distribution+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

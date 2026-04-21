@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Estimation Questions 2026 — PM Streak",
     description: "Guesstimate framework, 20+ practice questions, and tips for PM estimation interviews.",
     url: `${SITE_URL}/pm-estimation-questions`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Estimation+Questions+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Estimation Questions 2026 — PM Streak",
+    description: "Guesstimate framework, 20+ practice questions, and tips for PM estimation interviews.",
+    images: [`${SITE_URL}/api/og?title=PM+Estimation+Questions+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

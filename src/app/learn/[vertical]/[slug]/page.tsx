@@ -16,24 +16,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, vertical } = await params;
   const article = await prisma.article.findUnique({
     where: { slug, published: true },
-    select: { title: true, description: true },
+    select: { title: true, description: true, publishedAt: true, updatedAt: true },
   });
   if (!article) return { title: "Article not found" };
-  const ogUrl = `/api/og?title=${encodeURIComponent(article.title)}&vertical=${encodeURIComponent(vertical)}`;
+  const canonicalUrl = `${SITE_URL}/learn/${vertical}/${slug}`;
+  const ogImageUrl = `${SITE_URL}/api/og?title=${encodeURIComponent(article.title)}&vertical=${encodeURIComponent(vertical)}`;
   return {
     title: article.title,
     description: article.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: article.title,
       description: article.description,
-      images: [{ url: ogUrl, width: 1200, height: 630 }],
+      url: canonicalUrl,
       type: "article",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: article.title }],
+      ...(article.publishedAt ? { publishedTime: article.publishedAt.toISOString() } : {}),
+      modifiedTime: article.updatedAt.toISOString(),
+      authors: ["PM Streak Editorial"],
+      siteName: "PM Streak",
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
-      images: [ogUrl],
+      images: [ogImageUrl],
+      site: "@pmstreak",
+    },
+    other: {
+      "article:modified_time": article.updatedAt.toISOString(),
+      ...(article.publishedAt ? { "article:published_time": article.publishedAt.toISOString() } : {}),
     },
   };
 }
@@ -78,18 +92,32 @@ export default async function ArticlePage({ params }: Props) {
   const howToSteps: { name: string; text: string }[] = [];
   const articleUrl = `${SITE_URL}/learn/${vertical}/${slug}`;
 
+  const ogImageUrl = `${SITE_URL}/api/og?title=${encodeURIComponent(article.title)}&vertical=${encodeURIComponent(vertical)}`;
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": articleUrl,
     headline: article.title,
     description: article.description,
     datePublished: article.publishedAt?.toISOString(),
     dateModified: article.updatedAt.toISOString(),
     url: articleUrl,
+    image: {
+      "@type": "ImageObject",
+      url: ogImageUrl,
+      width: 1200,
+      height: 630,
+    },
     publisher: {
       "@type": "Organization",
       name: "PM Streak",
       url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon.svg`,
+        width: 512,
+        height: 512,
+      },
     },
     author: {
       "@type": "Organization",
@@ -97,7 +125,14 @@ export default async function ArticlePage({ params }: Props) {
       url: SITE_URL,
     },
     keywords: article.tags.join(", "),
+    inLanguage: "en-US",
     mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "PM Streak",
+      url: SITE_URL,
+    },
   };
 
   const related = await prisma.article.findMany({

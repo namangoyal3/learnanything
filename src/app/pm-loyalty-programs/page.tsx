@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Loyalty Programs 2026 — PM Streak",
     description: "Designing rewards that change behaviour.",
     url: `${SITE_URL}/pm-loyalty-programs`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Loyalty+Programs+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Loyalty Programs 2026 — PM Streak",
+    description: "Designing rewards that change behaviour.",
+    images: [`${SITE_URL}/api/og?title=PM+Loyalty+Programs+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

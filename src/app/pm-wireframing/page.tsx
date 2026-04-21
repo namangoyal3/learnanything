@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Wireframing 2026 — PM Streak",
     description: "When PMs should wireframe, and how to do it right.",
     url: `${SITE_URL}/pm-wireframing`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Wireframing+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Wireframing 2026 — PM Streak",
+    description: "When PMs should wireframe, and how to do it right.",
+    images: [`${SITE_URL}/api/og?title=PM+Wireframing+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

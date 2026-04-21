@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM + Sales Collaboration 2026 — PM Streak",
     description: "How B2B PMs collaborate with sales without being owned by sales — structure, signal, and saying no.",
     url: `${SITE_URL}/pm-b2b-sales-collaboration`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+++Sales+Collaboration+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM + Sales Collaboration 2026 — PM Streak",
+    description: "How B2B PMs collaborate with sales without being owned by sales — structure, signal, and saying no.",
+    images: [`${SITE_URL}/api/og?title=PM+++Sales+Collaboration+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Viral Features 2026 — PM Streak",
     description: "Designing features that users naturally share — what makes virality work.",
     url: `${SITE_URL}/pm-viral-features`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Viral+Features+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Viral Features 2026 — PM Streak",
+    description: "Designing features that users naturally share — what makes virality work.",
+    images: [`${SITE_URL}/api/og?title=PM+Viral+Features+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

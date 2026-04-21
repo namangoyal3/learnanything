@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Quarterly Planning Guide 2026 — PM Streak",
     description: "How PMs plan a quarter that actually ships — cadence, OKRs, and capacity modelling.",
     url: `${SITE_URL}/pm-quarterly-planning`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Quarterly+Planning+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Quarterly Planning Guide 2026 — PM Streak",
+    description: "How PMs plan a quarter that actually ships — cadence, OKRs, and capacity modelling.",
+    images: [`${SITE_URL}/api/og?title=PM+Quarterly+Planning+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

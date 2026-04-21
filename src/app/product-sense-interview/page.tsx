@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Product Sense Interview — Frameworks & Examples | PM Streak",
     description: "Master product sense interviews with proven frameworks used by top PMs at Google, Meta, Stripe.",
     url: `${SITE_URL}/product-sense-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Sense+Interview++Frameworks+&+Examples++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Sense Interview — Frameworks & Examples | PM Streak",
+    description: "Master product sense interviews with proven frameworks used by top PMs at Google, Meta, Stripe.",
+    images: [`${SITE_URL}/api/og?title=Product+Sense+Interview++Frameworks+&+Examples++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 
