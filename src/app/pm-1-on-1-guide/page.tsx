@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM 1:1 Guide 2026 — PM Streak",
     description: "How PMs run great 1:1s — with managers, direct reports, and cross-functional peers.",
     url: `${SITE_URL}/pm-1-on-1-guide`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+1:1+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM 1:1 Guide 2026 — PM Streak",
+    description: "How PMs run great 1:1s — with managers, direct reports, and cross-functional peers.",
+    images: [`${SITE_URL}/api/og?title=PM+1:1+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

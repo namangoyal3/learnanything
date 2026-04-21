@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Interview Stories Guide 2026 — PM Streak",
     description: "Build 10 PM stories that cover 80% of behavioural interview questions.",
     url: `${SITE_URL}/pm-interview-stories`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Interview+Stories+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Interview Stories Guide 2026 — PM Streak",
+    description: "Build 10 PM stories that cover 80% of behavioural interview questions.",
+    images: [`${SITE_URL}/api/og?title=PM+Interview+Stories+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

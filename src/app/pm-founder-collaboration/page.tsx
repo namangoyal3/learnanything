@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM + Founder Collaboration 2026 — PM Streak",
     description: "How PMs work with founders — keeping decisions rigorous when the founder is the loudest voice.",
     url: `${SITE_URL}/pm-founder-collaboration`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+++Founder+Collaboration+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM + Founder Collaboration 2026 — PM Streak",
+    description: "How PMs work with founders — keeping decisions rigorous when the founder is the loudest voice.",
+    images: [`${SITE_URL}/api/og?title=PM+++Founder+Collaboration+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

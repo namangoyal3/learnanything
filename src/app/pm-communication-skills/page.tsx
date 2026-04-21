@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Communication Skills 2026 — PM Streak",
     description: "How great PMs communicate — executive presentations, meetings, async, and feedback.",
     url: `${SITE_URL}/pm-communication-skills`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Communication+Skills+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Communication Skills 2026 — PM Streak",
+    description: "How great PMs communicate — executive presentations, meetings, async, and feedback.",
+    images: [`${SITE_URL}/api/og?title=PM+Communication+Skills+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM AI Image Products 2026 — PM Streak",
     description: "How PMs build AI image products.",
     url: `${SITE_URL}/pm-ai-image`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+AI+Image+Products+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM AI Image Products 2026 — PM Streak",
+    description: "How PMs build AI image products.",
+    images: [`${SITE_URL}/api/og?title=PM+AI+Image+Products+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "product management course", "PM frameworks", "duolingo for PMs",
   ],
   alternates: {
-    canonical: "/",
+    canonical: "https://learnanything.pro/",
   },
   robots: {
     index: true,
@@ -69,18 +69,33 @@ export default async function Home() {
 
   const siteUrl = SITE_URL;
 
-  const orgJsonLd = {
+  // WebPage JSON-LD — references global Organization defined in layout.tsx
+  const webPageJsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "PM Streak",
-    alternateName: "Duolingo for Product Managers",
+    "@type": "WebPage",
+    "@id": `${siteUrl}/#webpage`,
     url: siteUrl,
+    name: "PM Streak — Duolingo for Product Managers",
     description:
-      "PM Streak is a daily product management learning platform that delivers 2-minute micro-lessons from 300+ expert PM lessons with streak tracking, XP, leaderboards, and AI-powered content generation.",
-    foundingDate: "2024",
-    sameAs: [
-      "https://www.producthunt.com/products/pm-streak",
-    ],
+      "PM Streak is a daily product management learning platform that delivers 2-minute micro-lessons from 300+ expert PM interviews with streak tracking, XP, leaderboards, and AI-powered content generation.",
+    inLanguage: "en-US",
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "PM Streak",
+      url: siteUrl,
+    },
+    about: {
+      "@type": "Thing",
+      name: "Product Management Education",
+    },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/api/og?title=PM+Streak`,
+      width: 1200,
+      height: 630,
+    },
+    dateModified: new Date().toISOString(),
   };
 
   const softwareJsonLd = {
@@ -139,7 +154,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-white">
-      <JsonLd data={orgJsonLd} />
+      <JsonLd data={webPageJsonLd} />
       <JsonLd data={softwareJsonLd} />
       <JsonLd data={breadcrumbs} />
       <JsonLd data={howTo} />

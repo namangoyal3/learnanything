@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Glossary 2026 — PM Streak",
     description: "50+ PM terms explained clearly with examples — organised by category.",
     url: `${SITE_URL}/pm-glossary`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Glossary+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Glossary 2026 — PM Streak",
+    description: "50+ PM terms explained clearly with examples — organised by category.",
+    images: [`${SITE_URL}/api/og?title=PM+Glossary+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM AI Monetization 2026 — PM Streak",
     description: "How AI products actually make money.",
     url: `${SITE_URL}/pm-ai-monetization`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+AI+Monetization+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM AI Monetization 2026 — PM Streak",
+    description: "How AI products actually make money.",
+    images: [`${SITE_URL}/api/og?title=PM+AI+Monetization+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

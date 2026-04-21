@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Scaling From PMF 2026 — PM Streak",
     description: "How PMs scale products after PMF — wider users, geography, protecting core.",
     url: `${SITE_URL}/pm-scaling-from-pmf`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Scaling+From+PMF+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Scaling From PMF 2026 — PM Streak",
+    description: "How PMs scale products after PMF — wider users, geography, protecting core.",
+    images: [`${SITE_URL}/api/og?title=PM+Scaling+From+PMF+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

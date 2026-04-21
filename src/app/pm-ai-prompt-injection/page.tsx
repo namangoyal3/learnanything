@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Prompt Injection Defense 2026 — PM Streak",
     description: "Securing AI products against prompt injection.",
     url: `${SITE_URL}/pm-ai-prompt-injection`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Prompt+Injection+Defense+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Prompt Injection Defense 2026 — PM Streak",
+    description: "Securing AI products against prompt injection.",
+    images: [`${SITE_URL}/api/og?title=PM+Prompt+Injection+Defense+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

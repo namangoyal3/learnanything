@@ -9,19 +9,22 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Learn Product Management — Free PM Articles & Guides | PM Streak",
   description:
-    "Free in-depth articles on product management, PM interviews, roadmaps, metrics, career growth, and leadership. Expert-reviewed PM guides, updated weekly.",
-  alternates: { canonical: "/learn" },
+    "Free in-depth articles on product management, PM interviews, roadmaps, metrics, career growth, and leadership. Expert-reviewed PM guides from 300+ PM interviews, updated weekly.",
+  alternates: { canonical: "https://learnanything.pro/learn" },
   openGraph: {
-    title: "Learn Product Management — Free PM Articles | PM Streak",
-    description: "Free articles on product management, PM interviews, roadmaps, metrics, and career growth.",
-    url: "/learn",
-    images: [{ url: "/api/og?title=Learn+Product+Management", width: 1200, height: 630 }],
+    title: "Learn Product Management — Free PM Articles & Guides",
+    description: "300+ free expert-reviewed articles on PM interviews, roadmaps, metrics, career growth, and leadership. Updated weekly.",
+    url: "https://learnanything.pro/learn",
+    type: "website",
+    siteName: "PM Streak",
+    images: [{ url: "https://learnanything.pro/api/og?title=Learn+Product+Management", width: 1200, height: 630, alt: "Learn Product Management — PM Streak" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Learn Product Management — Free PM Articles | PM Streak",
-    description: "Free PM articles on strategy, metrics, roadmaps, and career growth. Updated weekly.",
-    images: ["/api/og?title=Learn+Product+Management"],
+    description: "300+ free PM articles on strategy, metrics, roadmaps, and career growth. Expert-reviewed, updated weekly.",
+    images: ["https://learnanything.pro/api/og?title=Learn+Product+Management"],
+    site: "@pmstreak",
   },
 };
 

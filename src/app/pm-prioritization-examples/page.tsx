@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Prioritisation Examples 2026 — PM Streak",
     description: "Real-style prioritisation examples — RICE, impact-effort, Kano — and trade-off reasoning.",
     url: `${SITE_URL}/pm-prioritization-examples`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Prioritisation+Examples+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Prioritisation Examples 2026 — PM Streak",
+    description: "Real-style prioritisation examples — RICE, impact-effort, Kano — and trade-off reasoning.",
+    images: [`${SITE_URL}/api/og?title=PM+Prioritisation+Examples+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

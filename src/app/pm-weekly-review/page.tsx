@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Weekly Review Guide 2026 — PM Streak",
     description: "The 20-minute weekly review habit that compounds into PM mastery.",
     url: `${SITE_URL}/pm-weekly-review`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Weekly+Review+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Weekly Review Guide 2026 — PM Streak",
+    description: "The 20-minute weekly review habit that compounds into PM mastery.",
+    images: [`${SITE_URL}/api/og?title=PM+Weekly+Review+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

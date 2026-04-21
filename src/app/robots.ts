@@ -41,8 +41,32 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/api/", "/admin", "/dashboard"],
       },
+      {
+        // OpenAI search bot (ChatGPT web browsing / SearchGPT)
+        userAgent: "OAI-SearchBot",
+        allow: "/",
+        disallow: ["/api/", "/admin", "/dashboard"],
+      },
+      {
+        // Apple Intelligence / Applebot Extended (Siri citations)
+        userAgent: "Applebot-Extended",
+        allow: "/",
+        disallow: ["/api/", "/admin", "/dashboard"],
+      },
+      {
+        // Meta AI training crawler
+        userAgent: "FacebookBot",
+        allow: "/",
+        disallow: ["/api/", "/admin", "/dashboard"],
+      },
+      {
+        // Bytespider — TikTok/ByteDance AI training
+        userAgent: "Bytespider",
+        allow: "/",
+        disallow: ["/api/", "/admin", "/dashboard"],
+      },
     ],
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: [`${siteUrl}/sitemap.xml`],
     host: siteUrl,
   };
 }

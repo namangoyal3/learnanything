@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Analytics Tools 2026 — PM Streak",
     description: "Mixpanel, Amplitude, PostHog, Heap, GA4 compared for PMs.",
     url: `${SITE_URL}/pm-analytics-tools`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Analytics+Tools+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Analytics Tools 2026 — PM Streak",
+    description: "Mixpanel, Amplitude, PostHog, Heap, GA4 compared for PMs.",
+    images: [`${SITE_URL}/api/og?title=PM+Analytics+Tools+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

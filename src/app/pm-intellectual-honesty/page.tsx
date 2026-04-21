@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Intellectual Honesty for PMs 2026 — PM Streak",
     description: "How PMs practise intellectual honesty — the discipline that compounds into long-term trust.",
     url: `${SITE_URL}/pm-intellectual-honesty`,
+    images: [{ url: `${SITE_URL}/api/og?title=Intellectual+Honesty+for+PMs+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Intellectual Honesty for PMs 2026 — PM Streak",
+    description: "How PMs practise intellectual honesty — the discipline that compounds into long-term trust.",
+    images: [`${SITE_URL}/api/og?title=Intellectual+Honesty+for+PMs+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

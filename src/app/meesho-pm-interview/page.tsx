@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Meesho PM Interview Guide 2026 — PM Streak",
     description: "All Meesho PM interview rounds, Bharat-first questions, and a structured prep plan.",
     url: `${SITE_URL}/meesho-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Meesho+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meesho PM Interview Guide 2026 — PM Streak",
+    description: "All Meesho PM interview rounds, Bharat-first questions, and a structured prep plan.",
+    images: [`${SITE_URL}/api/og?title=Meesho+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

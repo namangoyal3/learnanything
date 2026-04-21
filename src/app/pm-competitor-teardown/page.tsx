@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Competitor Teardown Guide 2026 — PM Streak",
     description: "How PMs tear down competitor products — what to study, how to structure, and turn into insight.",
     url: `${SITE_URL}/pm-competitor-teardown`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Competitor+Teardown+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Competitor Teardown Guide 2026 — PM Streak",
+    description: "How PMs tear down competitor products — what to study, how to structure, and turn into insight.",
+    images: [`${SITE_URL}/api/og?title=PM+Competitor+Teardown+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

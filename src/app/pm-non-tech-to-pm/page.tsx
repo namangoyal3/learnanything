@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Non-Tech to PM 2026 — PM Streak",
     description: "Crossing into product from outside tech.",
     url: `${SITE_URL}/pm-non-tech-to-pm`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Non-Tech+to+PM+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Non-Tech to PM 2026 — PM Streak",
+    description: "Crossing into product from outside tech.",
+    images: [`${SITE_URL}/api/og?title=PM+Non-Tech+to+PM+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

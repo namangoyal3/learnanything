@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Remote PM Jobs Guide 2026 — PM Streak",
     description: "Where to find remote PM jobs, how to interview from India, and excel async.",
     url: `${SITE_URL}/pm-remote-work`,
+    images: [{ url: `${SITE_URL}/api/og?title=Remote+PM+Jobs+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Remote PM Jobs Guide 2026 — PM Streak",
+    description: "Where to find remote PM jobs, how to interview from India, and excel async.",
+    images: [`${SITE_URL}/api/og?title=Remote+PM+Jobs+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

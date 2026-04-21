@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "How to Measure PM Success 2026 — PM Streak",
     description: "What PMs are actually evaluated on — beyond &apos;did you ship features?&apos;",
     url: `${SITE_URL}/pm-measuring-pm-success`,
+    images: [{ url: `${SITE_URL}/api/og?title=How+to+Measure+PM+Success+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "How to Measure PM Success 2026 — PM Streak",
+    description: "What PMs are actually evaluated on — beyond &apos;did you ship features?&apos;",
+    images: [`${SITE_URL}/api/og?title=How+to+Measure+PM+Success+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

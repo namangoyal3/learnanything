@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Incident Management 2026 — PM Streak",
     description: "The PM role when production is on fire.",
     url: `${SITE_URL}/pm-incident-management`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Incident+Management+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Incident Management 2026 — PM Streak",
+    description: "The PM role when production is on fire.",
+    images: [`${SITE_URL}/api/og?title=PM+Incident+Management+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

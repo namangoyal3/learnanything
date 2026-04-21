@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "Consultant to PM 2026 — PM Streak",
     description: "How ex-consultants transition to PM — strengths, gaps, and repositioning.",
     url: `${SITE_URL}/pm-consulting-to-pm`,
+    images: [{ url: `${SITE_URL}/api/og?title=Consultant+to+PM+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Consultant to PM 2026 — PM Streak",
+    description: "How ex-consultants transition to PM — strengths, gaps, and repositioning.",
+    images: [`${SITE_URL}/api/og?title=Consultant+to+PM+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

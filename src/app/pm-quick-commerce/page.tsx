@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Quick Commerce 2026 — PM Streak",
     description: "How PMs build 10-minute delivery — dark stores, SKUs, ops.",
     url: `${SITE_URL}/pm-quick-commerce`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Quick+Commerce+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Quick Commerce 2026 — PM Streak",
+    description: "How PMs build 10-minute delivery — dark stores, SKUs, ops.",
+    images: [`${SITE_URL}/api/og?title=PM+Quick+Commerce+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

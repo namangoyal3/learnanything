@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "APM Program Preparation India 2026 — PM Streak",
     description: "Complete guide to cracking APM programs at Flipkart, Razorpay, Google, Meesho, and Swiggy.",
     url: `${SITE_URL}/apm-program-preparation`,
+    images: [{ url: `${SITE_URL}/api/og?title=APM+Program+Preparation+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "APM Program Preparation India 2026 — PM Streak",
+    description: "Complete guide to cracking APM programs at Flipkart, Razorpay, Google, Meesho, and Swiggy.",
+    images: [`${SITE_URL}/api/og?title=APM+Program+Preparation+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

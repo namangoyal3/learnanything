@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "Transition to Product Management 2026 — PM Streak",
     description: "How to switch to PM from engineering, design, consulting, or any background.",
     url: `${SITE_URL}/transition-to-product-manager`,
+    images: [{ url: `${SITE_URL}/api/og?title=Transition+to+Product+Management+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Transition to Product Management 2026 — PM Streak",
+    description: "How to switch to PM from engineering, design, consulting, or any background.",
+    images: [`${SITE_URL}/api/og?title=Transition+to+Product+Management+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

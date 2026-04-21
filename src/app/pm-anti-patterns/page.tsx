@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "12 PM Anti-Patterns 2026 — PM Streak",
     description: "12 habits that mark a weak PM — and how to recognise them in yourself.",
     url: `${SITE_URL}/pm-anti-patterns`,
+    images: [{ url: `${SITE_URL}/api/og?title=12+PM+Anti-Patterns+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "12 PM Anti-Patterns 2026 — PM Streak",
+    description: "12 habits that mark a weak PM — and how to recognise them in yourself.",
+    images: [`${SITE_URL}/api/og?title=12+PM+Anti-Patterns+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

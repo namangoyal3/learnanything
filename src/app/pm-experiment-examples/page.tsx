@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Experiment Examples 2026 — PM Streak",
     description: "5 real-style PM experiment designs with hypothesis, setup, metrics, and decision criteria.",
     url: `${SITE_URL}/pm-experiment-examples`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Experiment+Examples+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Experiment Examples 2026 — PM Streak",
+    description: "5 real-style PM experiment designs with hypothesis, setup, metrics, and decision criteria.",
+    images: [`${SITE_URL}/api/og?title=PM+Experiment+Examples+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Accessibility 2026 — PM Streak",
     description: "How PMs ship accessible products — WCAG, testing, business case.",
     url: `${SITE_URL}/pm-accessibility`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Accessibility+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Accessibility 2026 — PM Streak",
+    description: "How PMs ship accessible products — WCAG, testing, business case.",
+    images: [`${SITE_URL}/api/og?title=PM+Accessibility+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

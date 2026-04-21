@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Thinking in Systems 2026 — PM Streak",
     description: "Why senior PMs think in loops, not lists.",
     url: `${SITE_URL}/pm-thinking-in-systems`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Thinking+in+Systems+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Thinking in Systems 2026 — PM Streak",
+    description: "Why senior PMs think in loops, not lists.",
+    images: [`${SITE_URL}/api/og?title=PM+Thinking+in+Systems+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

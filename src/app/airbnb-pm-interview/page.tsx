@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Airbnb PM Interview Guide 2026 — PM Streak",
     description: "Marketplace, trust, and host/guest experience — Airbnb PM interview prep.",
     url: `${SITE_URL}/airbnb-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Airbnb+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Airbnb PM Interview Guide 2026 — PM Streak",
+    description: "Marketplace, trust, and host/guest experience — Airbnb PM interview prep.",
+    images: [`${SITE_URL}/api/og?title=Airbnb+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Case Study Interview Guide 2026 — PM Streak",
     description: "How to solve any PM case study — frameworks, worked examples, and what interviewers actually want.",
     url: `${SITE_URL}/pm-case-study-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Case+Study+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Case Study Interview Guide 2026 — PM Streak",
+    description: "How to solve any PM case study — frameworks, worked examples, and what interviewers actually want.",
+    images: [`${SITE_URL}/api/og?title=PM+Case+Study+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

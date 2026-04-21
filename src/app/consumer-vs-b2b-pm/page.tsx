@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "Consumer vs B2B PM 2026 — Key Differences | PM Streak",
     description: "Metrics, users, roadmaps, and career paths — the real differences between consumer and B2B product management.",
     url: `${SITE_URL}/consumer-vs-b2b-pm`,
+    images: [{ url: `${SITE_URL}/api/og?title=Consumer+vs+B2B+PM+2026++Key+Differences++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Consumer vs B2B PM 2026 — Key Differences | PM Streak",
+    description: "Metrics, users, roadmaps, and career paths — the real differences between consumer and B2B product management.",
+    images: [`${SITE_URL}/api/og?title=Consumer+vs+B2B+PM+2026++Key+Differences++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

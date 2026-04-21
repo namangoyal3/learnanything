@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "Product Growth Loops 2026 — PM Guide | PM Streak",
     description: "Viral, content, and paid growth loops — how PMs identify and strengthen them with real examples.",
     url: `${SITE_URL}/product-growth-loops`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Growth+Loops+2026++PM+Guide++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Growth Loops 2026 — PM Guide | PM Streak",
+    description: "Viral, content, and paid growth loops — how PMs identify and strengthen them with real examples.",
+    images: [`${SITE_URL}/api/og?title=Product+Growth+Loops+2026++PM+Guide++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

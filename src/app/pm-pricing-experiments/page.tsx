@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Pricing Experiments 2026 — PM Streak",
     description: "How PMs run pricing experiments that generate real signal — without breaking trust.",
     url: `${SITE_URL}/pm-pricing-experiments`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Pricing+Experiments+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Pricing Experiments 2026 — PM Streak",
+    description: "How PMs run pricing experiments that generate real signal — without breaking trust.",
+    images: [`${SITE_URL}/api/og?title=PM+Pricing+Experiments+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

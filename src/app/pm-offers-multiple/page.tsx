@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Handling Multiple PM Offers 2026 — PM Streak",
     description: "How to decide between PM offers beyond compensation — scope, manager, growth.",
     url: `${SITE_URL}/pm-offers-multiple`,
+    images: [{ url: `${SITE_URL}/api/og?title=Handling+Multiple+PM+Offers+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Handling Multiple PM Offers 2026 — PM Streak",
+    description: "How to decide between PM offers beyond compensation — scope, manager, growth.",
+    images: [`${SITE_URL}/api/og?title=Handling+Multiple+PM+Offers+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

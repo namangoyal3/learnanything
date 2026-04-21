@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Microservices Strategy 2026 — PM Streak",
     description: "When PMs should care about architecture.",
     url: `${SITE_URL}/pm-microservices-strategy`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Microservices+Strategy+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Microservices Strategy 2026 — PM Streak",
+    description: "When PMs should care about architecture.",
+    images: [`${SITE_URL}/api/og?title=PM+Microservices+Strategy+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

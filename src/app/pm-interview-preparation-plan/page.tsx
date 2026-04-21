@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Interview Preparation Plan 2026 — 8-Week Schedule | PM Streak",
     description: "8-week PM interview prep plan — week-by-week schedule, what to study, and readiness checklist.",
     url: `${SITE_URL}/pm-interview-preparation-plan`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Interview+Preparation+Plan+2026++8-Week+Schedule++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Interview Preparation Plan 2026 — 8-Week Schedule | PM Streak",
+    description: "8-week PM interview prep plan — week-by-week schedule, what to study, and readiness checklist.",
+    images: [`${SITE_URL}/api/og?title=PM+Interview+Preparation+Plan+2026++8-Week+Schedule++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

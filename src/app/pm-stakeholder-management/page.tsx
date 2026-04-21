@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Stakeholder Management for PMs 2026 — PM Streak",
     description: "Influence without authority — how PMs manage engineering, sales, leadership, and customers.",
     url: `${SITE_URL}/pm-stakeholder-management`,
+    images: [{ url: `${SITE_URL}/api/og?title=Stakeholder+Management+for+PMs+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stakeholder Management for PMs 2026 — PM Streak",
+    description: "Influence without authority — how PMs manage engineering, sales, leadership, and customers.",
+    images: [`${SITE_URL}/api/og?title=Stakeholder+Management+for+PMs+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

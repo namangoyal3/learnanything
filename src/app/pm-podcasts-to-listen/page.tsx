@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Podcasts 2026 — PM Streak",
     description: "Best podcasts for product managers.",
     url: `${SITE_URL}/pm-podcasts-to-listen`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Podcasts+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Podcasts 2026 — PM Streak",
+    description: "Best podcasts for product managers.",
+    images: [`${SITE_URL}/api/og?title=PM+Podcasts+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

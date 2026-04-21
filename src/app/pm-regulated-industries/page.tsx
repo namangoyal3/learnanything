@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Regulated Industries 2026 — PM Streak",
     description: "How PMs ship in regulated industries.",
     url: `${SITE_URL}/pm-regulated-industries`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Regulated+Industries+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Regulated Industries 2026 — PM Streak",
+    description: "How PMs ship in regulated industries.",
+    images: [`${SITE_URL}/api/og?title=PM+Regulated+Industries+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

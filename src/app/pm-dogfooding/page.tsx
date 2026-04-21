@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Dogfooding Guide 2026 — PM Streak",
     description: "Why dogfooding is non-negotiable for PMs — how to do it seriously, not for 10 minutes.",
     url: `${SITE_URL}/pm-dogfooding`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Dogfooding+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Dogfooding Guide 2026 — PM Streak",
+    description: "Why dogfooding is non-negotiable for PMs — how to do it seriously, not for 10 minutes.",
+    images: [`${SITE_URL}/api/og?title=PM+Dogfooding+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

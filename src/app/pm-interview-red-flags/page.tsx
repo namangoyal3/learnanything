@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Interview Red Flags 2026 — PM Streak",
     description: "10 red flags that get PM candidates rejected — and how to avoid each.",
     url: `${SITE_URL}/pm-interview-red-flags`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Interview+Red+Flags+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Interview Red Flags 2026 — PM Streak",
+    description: "10 red flags that get PM candidates rejected — and how to avoid each.",
+    images: [`${SITE_URL}/api/og?title=PM+Interview+Red+Flags+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

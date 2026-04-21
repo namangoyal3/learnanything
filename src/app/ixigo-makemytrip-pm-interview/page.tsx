@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Travel Tech PM Interview Guide 2026 — PM Streak",
     description: "PM interview prep for MakeMyTrip, ixigo, Cleartrip — travel tech dynamics and rounds.",
     url: `${SITE_URL}/ixigo-makemytrip-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Travel+Tech+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Travel Tech PM Interview Guide 2026 — PM Streak",
+    description: "PM interview prep for MakeMyTrip, ixigo, Cleartrip — travel tech dynamics and rounds.",
+    images: [`${SITE_URL}/api/og?title=Travel+Tech+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

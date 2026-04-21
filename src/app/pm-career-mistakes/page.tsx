@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "10 PM Career Mistakes 2026 — PM Streak",
     description: "The 10 career mistakes that stall PMs and how to avoid them.",
     url: `${SITE_URL}/pm-career-mistakes`,
+    images: [{ url: `${SITE_URL}/api/og?title=10+PM+Career+Mistakes+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "10 PM Career Mistakes 2026 — PM Streak",
+    description: "The 10 career mistakes that stall PMs and how to avoid them.",
+    images: [`${SITE_URL}/api/og?title=10+PM+Career+Mistakes+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

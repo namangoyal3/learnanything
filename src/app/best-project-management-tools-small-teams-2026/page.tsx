@@ -19,11 +19,19 @@ export const metadata: Metadata = {
     title: "Best Project Management Tools for Small Teams in 2026 | PM Streak",
     description: "Compare the top project management tools for small teams in 2026. Features, pricing, and AI capabilities analyzed.",
     url: `${SITE_URL}/best-project-management-tools-small-teams-2026`,
+    images: [{ url: `${SITE_URL}/api/og?title=Best+Project+Management+Tools+for+Small+Teams+in+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
     publishedTime: "2026-04-14T00:00:00Z",
     modifiedTime: "2026-04-14T00:00:00Z",
     authors: ["PM Streak Team"],
     tags: ["project-management", "small-teams", "productivity", "AI-tools"]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Project Management Tools for Small Teams in 2026 | PM Streak",
+    description: "Compare the top project management tools for small teams in 2026. Features, pricing, and AI capabilities analyzed.",
+    images: [`${SITE_URL}/api/og?title=Best+Project+Management+Tools+for+Small+Teams+in+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

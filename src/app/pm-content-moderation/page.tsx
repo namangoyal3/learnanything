@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Content Moderation 2026 — PM Streak",
     description: "How PMs build trust & safety systems — policy, automation, review.",
     url: `${SITE_URL}/pm-content-moderation`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Content+Moderation+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Content Moderation 2026 — PM Streak",
+    description: "How PMs build trust & safety systems — policy, automation, review.",
+    images: [`${SITE_URL}/api/og?title=PM+Content+Moderation+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

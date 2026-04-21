@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Search &amp; Discovery 2026 — PM Streak",
     description: "How PMs design search and discovery — ranking, relevance, personalisation.",
     url: `${SITE_URL}/pm-search-discovery`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Search+&amp;+Discovery+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Search &amp; Discovery 2026 — PM Streak",
+    description: "How PMs design search and discovery — ranking, relevance, personalisation.",
+    images: [`${SITE_URL}/api/og?title=PM+Search+&amp;+Discovery+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

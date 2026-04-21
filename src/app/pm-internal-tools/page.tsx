@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Internal Tools PM 2026 — PM Streak",
     description: "What internal tools PM is, what&apos;s hard about it, and why it&apos;s increasingly valuable.",
     url: `${SITE_URL}/pm-internal-tools`,
+    images: [{ url: `${SITE_URL}/api/og?title=Internal+Tools+PM+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Internal Tools PM 2026 — PM Streak",
+    description: "What internal tools PM is, what&apos;s hard about it, and why it&apos;s increasingly valuable.",
+    images: [`${SITE_URL}/api/og?title=Internal+Tools+PM+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 
