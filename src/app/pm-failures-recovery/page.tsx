@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Failure Recovery Guide 2026 — PM Streak",
     description: "When your launch fails, your metric misses, or your feature gets no adoption — what to do next.",
     url: `${SITE_URL}/pm-failures-recovery`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Failure+Recovery+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Failure Recovery Guide 2026 — PM Streak",
+    description: "When your launch fails, your metric misses, or your feature gets no adoption — what to do next.",
+    images: [`${SITE_URL}/api/og?title=PM+Failure+Recovery+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

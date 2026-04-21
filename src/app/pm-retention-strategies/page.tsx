@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Retention Strategies 2026 — PM Streak",
     description: "7 proven retention strategies with examples — habit loops, streaks, content, community, and more.",
     url: `${SITE_URL}/pm-retention-strategies`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Retention+Strategies+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Retention Strategies 2026 — PM Streak",
+    description: "7 proven retention strategies with examples — habit loops, streaks, content, community, and more.",
+    images: [`${SITE_URL}/api/og?title=PM+Retention+Strategies+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

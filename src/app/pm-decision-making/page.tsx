@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Decision Making Guide 2026 — PM Streak",
     description: "How great PMs decide under uncertainty — frameworks, risk models, and decision docs.",
     url: `${SITE_URL}/pm-decision-making`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Decision+Making+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Decision Making Guide 2026 — PM Streak",
+    description: "How great PMs decide under uncertainty — frameworks, risk models, and decision docs.",
+    images: [`${SITE_URL}/api/og?title=PM+Decision+Making+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

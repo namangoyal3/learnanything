@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "User Research for Product Managers 2026 — PM Streak",
     description: "Interviews, surveys, usability tests — the research methods every PM should know.",
     url: `${SITE_URL}/user-research-for-pms`,
+    images: [{ url: `${SITE_URL}/api/og?title=User+Research+for+Product+Managers+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "User Research for Product Managers 2026 — PM Streak",
+    description: "Interviews, surveys, usability tests — the research methods every PM should know.",
+    images: [`${SITE_URL}/api/og?title=User+Research+for+Product+Managers+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

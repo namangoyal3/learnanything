@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Product Sense Examples 2026 — PM Streak",
     description: "10 product sense questions with sample answers showing great PM thinking.",
     url: `${SITE_URL}/pm-product-sense-examples`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Product+Sense+Examples+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Product Sense Examples 2026 — PM Streak",
+    description: "10 product sense questions with sample answers showing great PM thinking.",
+    images: [`${SITE_URL}/api/og?title=PM+Product+Sense+Examples+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

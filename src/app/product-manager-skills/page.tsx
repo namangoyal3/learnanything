@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "Product Manager Skills 2026 — PM Streak",
     description: "The 12 skills every PM needs in 2026, with how to build each one.",
     url: `${SITE_URL}/product-manager-skills`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Manager+Skills+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Manager Skills 2026 — PM Streak",
+    description: "The 12 skills every PM needs in 2026, with how to build each one.",
+    images: [`${SITE_URL}/api/og?title=Product+Manager+Skills+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

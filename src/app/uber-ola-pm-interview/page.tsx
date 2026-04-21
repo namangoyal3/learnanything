@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Uber & Ola PM Interview Guide 2026 — PM Streak",
     description: "PM interview guide for mobility companies — marketplace, pricing, supply-demand questions.",
     url: `${SITE_URL}/uber-ola-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Uber+&+Ola+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Uber & Ola PM Interview Guide 2026 — PM Streak",
+    description: "PM interview guide for mobility companies — marketplace, pricing, supply-demand questions.",
+    images: [`${SITE_URL}/api/og?title=Uber+&+Ola+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

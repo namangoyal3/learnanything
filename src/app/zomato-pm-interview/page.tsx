@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Zomato PM Interview Guide 2026 — PM Streak",
     description: "All Zomato PM interview rounds, real questions, and a prep plan for food delivery and dining PMs.",
     url: `${SITE_URL}/zomato-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Zomato+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zomato PM Interview Guide 2026 — PM Streak",
+    description: "All Zomato PM interview rounds, real questions, and a prep plan for food delivery and dining PMs.",
+    images: [`${SITE_URL}/api/og?title=Zomato+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

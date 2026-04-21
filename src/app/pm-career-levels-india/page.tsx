@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Career Levels in India 2026 — PM Streak",
     description: "PM level ladder, scope at each level, and promotion criteria at top Indian companies.",
     url: `${SITE_URL}/pm-career-levels-india`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Career+Levels+in+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Career Levels in India 2026 — PM Streak",
+    description: "PM level ladder, scope at each level, and promotion criteria at top Indian companies.",
+    images: [`${SITE_URL}/api/og?title=PM+Career+Levels+in+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

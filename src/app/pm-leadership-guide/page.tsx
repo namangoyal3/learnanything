@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Leadership Guide 2026 — PM Streak",
     description: "How PMs lead without authority — trust, decision-making, managing up, and developing PMs.",
     url: `${SITE_URL}/pm-leadership-guide`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Leadership+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Leadership Guide 2026 — PM Streak",
+    description: "How PMs lead without authority — trust, decision-making, managing up, and developing PMs.",
+    images: [`${SITE_URL}/api/og?title=PM+Leadership+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

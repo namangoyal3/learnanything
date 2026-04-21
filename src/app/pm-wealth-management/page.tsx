@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Wealth Management 2026 — PM Streak",
     description: "How PMs build wealth management products in India.",
     url: `${SITE_URL}/pm-wealth-management`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Wealth+Management+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Wealth Management 2026 — PM Streak",
+    description: "How PMs build wealth management products in India.",
+    images: [`${SITE_URL}/api/og?title=PM+Wealth+Management+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

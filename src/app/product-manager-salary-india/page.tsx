@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Product Manager Salary in India 2026 — PM Streak",
     description: "PM salary breakdown by level, company, and city in India for 2026. With negotiation tips.",
     url: `${SITE_URL}/product-manager-salary-india`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Manager+Salary+in+India+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Manager Salary in India 2026 — PM Streak",
+    description: "PM salary breakdown by level, company, and city in India for 2026. With negotiation tips.",
+    images: [`${SITE_URL}/api/og?title=Product+Manager+Salary+in+India+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

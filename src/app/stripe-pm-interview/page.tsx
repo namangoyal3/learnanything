@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Stripe PM Interview Guide 2026 — PM Streak",
     description: "How Stripe interviews PMs — API design, writing quality, and developer empathy.",
     url: `${SITE_URL}/stripe-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Stripe+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stripe PM Interview Guide 2026 — PM Streak",
+    description: "How Stripe interviews PMs — API design, writing quality, and developer empathy.",
+    images: [`${SITE_URL}/api/og?title=Stripe+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

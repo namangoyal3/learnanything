@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Behavioral Interview — STAR Stories That Get Offers | PM Streak",
     description: "25+ PM behavioral questions with the STAR framework and story templates.",
     url: `${SITE_URL}/pm-behavioral-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Behavioral+Interview++STAR+Stories+That+Get+Offers++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Behavioral Interview — STAR Stories That Get Offers | PM Streak",
+    description: "25+ PM behavioral questions with the STAR framework and story templates.",
+    images: [`${SITE_URL}/api/og?title=PM+Behavioral+Interview++STAR+Stories+That+Get+Offers++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

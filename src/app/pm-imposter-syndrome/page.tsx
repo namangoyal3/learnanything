@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Imposter Syndrome 2026 — PM Streak",
     description: "Why PMs feel imposter syndrome and how to handle it.",
     url: `${SITE_URL}/pm-imposter-syndrome`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Imposter+Syndrome+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Imposter Syndrome 2026 — PM Streak",
+    description: "Why PMs feel imposter syndrome and how to handle it.",
+    images: [`${SITE_URL}/api/og?title=PM+Imposter+Syndrome+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

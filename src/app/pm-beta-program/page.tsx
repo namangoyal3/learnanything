@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Beta Program Guide 2026 — PM Streak",
     description: "How PMs run beta programs that generate real signal — recruit, learn, iterate.",
     url: `${SITE_URL}/pm-beta-program`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Beta+Program+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Beta Program Guide 2026 — PM Streak",
+    description: "How PMs run beta programs that generate real signal — recruit, learn, iterate.",
+    images: [`${SITE_URL}/api/og?title=PM+Beta+Program+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

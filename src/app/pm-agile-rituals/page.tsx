@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Agile Rituals 2026 — PM Streak",
     description: "How PMs run agile rituals without waste.",
     url: `${SITE_URL}/pm-agile-rituals`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Agile+Rituals+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Agile Rituals 2026 — PM Streak",
+    description: "How PMs run agile rituals without waste.",
+    images: [`${SITE_URL}/api/og?title=PM+Agile+Rituals+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "First PM Job Guide 2026 — PM Streak",
     description: "Complete guide to landing your first PM role — paths, portfolio, interview prep.",
     url: `${SITE_URL}/pm-first-job-guide`,
+    images: [{ url: `${SITE_URL}/api/og?title=First+PM+Job+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "First PM Job Guide 2026 — PM Streak",
+    description: "Complete guide to landing your first PM role — paths, portfolio, interview prep.",
+    images: [`${SITE_URL}/api/og?title=First+PM+Job+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

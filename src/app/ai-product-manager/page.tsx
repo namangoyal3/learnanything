@@ -17,7 +17,15 @@ export const metadata: Metadata = {
     title: "AI Product Manager Guide 2026 — PM Streak",
     description: "How to become an AI PM — skills, interview questions, salary, and breaking in.",
     url: `${SITE_URL}/ai-product-manager`,
+    images: [{ url: `${SITE_URL}/api/og?title=AI+Product+Manager+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Product Manager Guide 2026 — PM Streak",
+    description: "How to become an AI PM — skills, interview questions, salary, and breaking in.",
+    images: [`${SITE_URL}/api/og?title=AI+Product+Manager+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM India Startups 2026 — PM Streak",
     description: "Indian startup landscape for PMs in 2026.",
     url: `${SITE_URL}/pm-india-startups-2026`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+India+Startups+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM India Startups 2026 — PM Streak",
+    description: "Indian startup landscape for PMs in 2026.",
+    images: [`${SITE_URL}/api/og?title=PM+India+Startups+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

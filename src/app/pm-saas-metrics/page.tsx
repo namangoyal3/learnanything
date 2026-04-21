@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "SaaS Metrics for PMs 2026 — PM Streak",
     description: "SaaS metrics every PM should know — definitions, benchmarks, and decisions they drive.",
     url: `${SITE_URL}/pm-saas-metrics`,
+    images: [{ url: `${SITE_URL}/api/og?title=SaaS+Metrics+for+PMs+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaaS Metrics for PMs 2026 — PM Streak",
+    description: "SaaS metrics every PM should know — definitions, benchmarks, and decisions they drive.",
+    images: [`${SITE_URL}/api/og?title=SaaS+Metrics+for+PMs+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

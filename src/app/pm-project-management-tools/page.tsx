@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Project Management Tools 2026 — PM Streak",
     description: "How PMs build project management tools.",
     url: `${SITE_URL}/pm-project-management-tools`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Project+Management+Tools+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Project Management Tools 2026 — PM Streak",
+    description: "How PMs build project management tools.",
+    images: [`${SITE_URL}/api/og?title=PM+Project+Management+Tools+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

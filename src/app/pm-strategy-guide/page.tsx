@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Product Strategy Guide for PMs 2026 — PM Streak",
     description: "How PMs think strategically — frameworks, examples, and how to answer strategy questions.",
     url: `${SITE_URL}/pm-strategy-guide`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Strategy+Guide+for+PMs+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Strategy Guide for PMs 2026 — PM Streak",
+    description: "How PMs think strategically — frameworks, examples, and how to answer strategy questions.",
+    images: [`${SITE_URL}/api/og?title=Product+Strategy+Guide+for+PMs+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

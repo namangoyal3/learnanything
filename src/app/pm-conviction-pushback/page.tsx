@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Conviction &amp; Pushback 2026 — PM Streak",
     description: "How PMs push back effectively — holding ground without losing relationships.",
     url: `${SITE_URL}/pm-conviction-pushback`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Conviction+&amp;+Pushback+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Conviction &amp; Pushback 2026 — PM Streak",
+    description: "How PMs push back effectively — holding ground without losing relationships.",
+    images: [`${SITE_URL}/api/og?title=PM+Conviction+&amp;+Pushback+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

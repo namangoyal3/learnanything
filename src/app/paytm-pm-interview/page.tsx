@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Paytm PM Interview Guide 2026 — PM Streak",
     description: "All Paytm PM interview rounds, real questions, and prep for fintech product roles.",
     url: `${SITE_URL}/paytm-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Paytm+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Paytm PM Interview Guide 2026 — PM Streak",
+    description: "All Paytm PM interview rounds, real questions, and prep for fintech product roles.",
+    images: [`${SITE_URL}/api/og?title=Paytm+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

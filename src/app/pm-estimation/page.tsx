@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Estimation 2026 — PM Streak",
     description: "How PMs estimate work honestly.",
     url: `${SITE_URL}/pm-estimation`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Estimation+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Estimation 2026 — PM Streak",
+    description: "How PMs estimate work honestly.",
+    images: [`${SITE_URL}/api/og?title=PM+Estimation+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

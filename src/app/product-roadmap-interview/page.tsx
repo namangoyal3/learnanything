@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Product Roadmap Interview Questions 2026 — PM Streak",
     description: "Build, defend, and communicate roadmaps — PM interview questions with frameworks and model answers.",
     url: `${SITE_URL}/product-roadmap-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Roadmap+Interview+Questions+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Roadmap Interview Questions 2026 — PM Streak",
+    description: "Build, defend, and communicate roadmaps — PM interview questions with frameworks and model answers.",
+    images: [`${SITE_URL}/api/og?title=Product+Roadmap+Interview+Questions+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Bar Raiser Interview 2026 — PM Streak",
     description: "How to pass Amazon and equivalent bar raiser rounds — what they test, how to prep.",
     url: `${SITE_URL}/pm-interview-bar-raiser`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Bar+Raiser+Interview+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Bar Raiser Interview 2026 — PM Streak",
+    description: "How to pass Amazon and equivalent bar raiser rounds — what they test, how to prep.",
+    images: [`${SITE_URL}/api/og?title=PM+Bar+Raiser+Interview+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

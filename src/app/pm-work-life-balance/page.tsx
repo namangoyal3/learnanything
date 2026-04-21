@@ -14,7 +14,15 @@ export const metadata: Metadata = {
     title: "PM Work-Life Balance 2026 — PM Streak",
     description: "Protecting your time as a PM.",
     url: `${SITE_URL}/pm-work-life-balance`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Work-Life+Balance+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Work-Life Balance 2026 — PM Streak",
+    description: "Protecting your time as a PM.",
+    images: [`${SITE_URL}/api/og?title=PM+Work-Life+Balance+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

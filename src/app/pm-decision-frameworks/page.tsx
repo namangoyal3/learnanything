@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Decision Frameworks 2026 — PM Streak",
     description: "How good PMs decide under uncertainty.",
     url: `${SITE_URL}/pm-decision-frameworks`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Decision+Frameworks+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Decision Frameworks 2026 — PM Streak",
+    description: "How good PMs decide under uncertainty.",
+    images: [`${SITE_URL}/api/og?title=PM+Decision+Frameworks+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Platform Strategy 2026 — PM Streak",
     description: "When to platform, when to ship a feature, and how to tell the difference.",
     url: `${SITE_URL}/pm-platform-strategy`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Platform+Strategy+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Platform Strategy 2026 — PM Streak",
+    description: "When to platform, when to ship a feature, and how to tell the difference.",
+    images: [`${SITE_URL}/api/og?title=PM+Platform+Strategy+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

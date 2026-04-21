@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Product Analytics for Product Managers 2026 — PM Streak",
     description: "Retention, funnels, A/B testing, and dashboards — product analytics explained for PMs.",
     url: `${SITE_URL}/product-analytics-for-pms`,
+    images: [{ url: `${SITE_URL}/api/og?title=Product+Analytics+for+Product+Managers+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Analytics for Product Managers 2026 — PM Streak",
+    description: "Retention, funnels, A/B testing, and dashboards — product analytics explained for PMs.",
+    images: [`${SITE_URL}/api/og?title=Product+Analytics+for+Product+Managers+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

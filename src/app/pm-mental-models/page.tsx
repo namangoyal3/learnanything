@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Mental Models 2026 — PM Streak",
     description: "12 mental models that sharpen PM thinking, with product examples for each.",
     url: `${SITE_URL}/pm-mental-models`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Mental+Models+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Mental Models 2026 — PM Streak",
+    description: "12 mental models that sharpen PM thinking, with product examples for each.",
+    images: [`${SITE_URL}/api/og?title=PM+Mental+Models+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

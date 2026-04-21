@@ -35,20 +35,23 @@ function calculateMRP(discountedPrice: string, isIndia: boolean): string {
 export const metadata: Metadata = {
   title: "PM Streak Pro Pricing — Plans & Features | PM Streak",
   description:
-    "Compare PM Streak Free vs Pro plans. Pro unlocks all 292+ Lenny's Podcast lessons, unlimited AI Explore, interview prep, PM Jobs board, and WhatsApp community. Starting at $6/month or ₹249/month in India.",
-  alternates: { canonical: "/pricing" },
+    "Compare PM Streak Free vs Pro plans. Pro unlocks all 292+ PM lessons, unlimited AI, interview prep, PM Jobs board, and WhatsApp community. Starting at $6/month or ₹249/month in India.",
+  alternates: { canonical: "https://learnanything.pro/pricing" },
   openGraph: {
-    title: "PM Streak Pro Pricing | Plans & Features",
+    title: "PM Streak Pro Pricing — Unlock All 292+ PM Lessons",
     description:
-      "Unlock 292+ PM lessons, unlimited AI, interview prep & jobs board. From $6/month.",
-    url: "/pricing",
-    images: [{ url: "/api/og?title=PM+Streak+Pricing", width: 1200, height: 630 }],
+      "Unlock 292+ PM lessons, unlimited AI lessons, PM interview prep, jobs board & WhatsApp community. From $6/month or ₹249/month.",
+    url: "https://learnanything.pro/pricing",
+    type: "website",
+    siteName: "PM Streak",
+    images: [{ url: "https://learnanything.pro/api/og?title=PM+Streak+Pricing", width: 1200, height: 630, alt: "PM Streak Pro Pricing" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "PM Streak Pro Pricing | PM Streak",
-    description: "Free vs Pro plans. Full Lenny's Podcast library, AI lessons, interview prep. From $6/month.",
-    images: ["/api/og?title=PM+Streak+Pricing"],
+    title: "PM Streak Pro Pricing | Plans & Features",
+    description: "Free vs Pro plans. All 292+ PM lessons, unlimited AI, interview prep. From $6/month.",
+    images: ["https://learnanything.pro/api/og?title=PM+Streak+Pricing"],
+    site: "@pmstreak",
   },
 };
 

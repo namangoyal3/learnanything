@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM User Retention 2026 — PM Streak",
     description: "How PMs build retention — the truest product-market fit signal.",
     url: `${SITE_URL}/pm-user-retention`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+User+Retention+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM User Retention 2026 — PM Streak",
+    description: "How PMs build retention — the truest product-market fit signal.",
+    images: [`${SITE_URL}/api/og?title=PM+User+Retention+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

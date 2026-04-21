@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Customer Segmentation Guide 2026 — PM Streak",
     description: "How PMs segment users in ways that actually drive product decisions.",
     url: `${SITE_URL}/pm-customer-segmentation`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Customer+Segmentation+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Customer Segmentation Guide 2026 — PM Streak",
+    description: "How PMs segment users in ways that actually drive product decisions.",
+    images: [`${SITE_URL}/api/og?title=PM+Customer+Segmentation+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

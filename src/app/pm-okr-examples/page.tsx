@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM OKR Examples 2026 — PM Streak",
     description: "15+ real-style PM OKR examples across consumer, B2B, growth, and platform.",
     url: `${SITE_URL}/pm-okr-examples`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+OKR+Examples+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM OKR Examples 2026 — PM Streak",
+    description: "15+ real-style PM OKR examples across consumer, B2B, growth, and platform.",
+    images: [`${SITE_URL}/api/og?title=PM+OKR+Examples+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

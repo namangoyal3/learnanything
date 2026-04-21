@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "First 90 Days as a PM 2026 — PM Streak",
     description: "A week-by-week playbook for your first 90 days in a new PM role.",
     url: `${SITE_URL}/pm-first-90-days`,
+    images: [{ url: `${SITE_URL}/api/og?title=First+90+Days+as+a+PM+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "First 90 Days as a PM 2026 — PM Streak",
+    description: "A week-by-week playbook for your first 90 days in a new PM role.",
+    images: [`${SITE_URL}/api/og?title=First+90+Days+as+a+PM+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

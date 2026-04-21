@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Microsoft PM Interview Guide 2026 — PM Streak",
     description: "All Microsoft PM interview rounds, real questions, and a structured prep plan.",
     url: `${SITE_URL}/microsoft-pm-interview`,
+    images: [{ url: `${SITE_URL}/api/og?title=Microsoft+PM+Interview+Guide+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Microsoft PM Interview Guide 2026 — PM Streak",
+    description: "All Microsoft PM interview rounds, real questions, and a structured prep plan.",
+    images: [`${SITE_URL}/api/og?title=Microsoft+PM+Interview+Guide+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

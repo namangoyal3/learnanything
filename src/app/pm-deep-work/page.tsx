@@ -20,7 +20,15 @@ export const metadata: Metadata = {
     title: "Deep Work for Product Managers 2026 — PM Streak",
     description: "The Cal Newport framework adapted for PMs. How to protect your best hours and do your most important product work.",
     url: `${SITE_URL}/pm-deep-work`,
+    images: [{ url: `${SITE_URL}/api/og?title=Deep+Work+for+Product+Managers+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deep Work for Product Managers 2026 — PM Streak",
+    description: "The Cal Newport framework adapted for PMs. How to protect your best hours and do your most important product work.",
+    images: [`${SITE_URL}/api/og?title=Deep+Work+for+Product+Managers+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

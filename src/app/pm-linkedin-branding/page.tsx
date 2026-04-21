@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM LinkedIn Branding 2026 — PM Streak",
     description: "Building a PM brand that drives inbound.",
     url: `${SITE_URL}/pm-linkedin-branding`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+LinkedIn+Branding+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM LinkedIn Branding 2026 — PM Streak",
+    description: "Building a PM brand that drives inbound.",
+    images: [`${SITE_URL}/api/og?title=PM+LinkedIn+Branding+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

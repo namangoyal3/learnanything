@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Product-Led Growth 2026 — PM Streak",
     description: "PLG playbook for product managers — self-serve, expansion, loops.",
     url: `${SITE_URL}/pm-product-led-growth`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Product-Led+Growth+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Product-Led Growth 2026 — PM Streak",
+    description: "PLG playbook for product managers — self-serve, expansion, loops.",
+    images: [`${SITE_URL}/api/og?title=PM+Product-Led+Growth+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

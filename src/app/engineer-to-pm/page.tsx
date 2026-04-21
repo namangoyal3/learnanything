@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "Engineer to Product Manager 2026 — PM Streak",
     description: "How software engineers transition to PM — paths, positioning, and pitfalls to avoid.",
     url: `${SITE_URL}/engineer-to-pm`,
+    images: [{ url: `${SITE_URL}/api/og?title=Engineer+to+Product+Manager+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineer to Product Manager 2026 — PM Streak",
+    description: "How software engineers transition to PM — paths, positioning, and pitfalls to avoid.",
+    images: [`${SITE_URL}/api/og?title=Engineer+to+Product+Manager+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

@@ -15,7 +15,15 @@ export const metadata: Metadata = {
     title: "PM Roadmapping 2026 — PM Streak",
     description: "How PMs build roadmaps that survive reality.",
     url: `${SITE_URL}/pm-roadmapping`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Roadmapping+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Roadmapping 2026 — PM Streak",
+    description: "How PMs build roadmaps that survive reality.",
+    images: [`${SITE_URL}/api/og?title=PM+Roadmapping+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 

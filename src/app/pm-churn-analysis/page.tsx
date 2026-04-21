@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     title: "PM Churn Analysis 2026 — PM Streak",
     description: "How PMs diagnose churn and reduce it meaningfully — types, root causes, 5 levers.",
     url: `${SITE_URL}/pm-churn-analysis`,
+    images: [{ url: `${SITE_URL}/api/og?title=PM+Churn+Analysis+2026++PM+Streak`, width: 1200, height: 630 }],
     type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PM Churn Analysis 2026 — PM Streak",
+    description: "How PMs diagnose churn and reduce it meaningfully — types, root causes, 5 levers.",
+    images: [`${SITE_URL}/api/og?title=PM+Churn+Analysis+2026++PM+Streak`],
+    site: "@pmstreak",
   },
 };
 
