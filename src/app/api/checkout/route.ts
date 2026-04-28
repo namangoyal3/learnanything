@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUserId } from "@/lib/auth";
+import { getValidCheckoutCoupon } from "@/lib/billing/checkout-coupons";
 
 const DODO_ENV =
   (process.env.DODO_PAYMENTS_ENVIRONMENT as "test_mode" | "live_mode" | undefined) ??
@@ -29,6 +30,17 @@ const FALLBACK_PRODUCTS: Record<string, string> = {
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
+  const gateway = searchParams.get("gateway") ?? "dodo";
+
+  if (gateway === "razorpay") {
+    const redirectUrl = new URL("/checkout/razorpay", req.url);
+    for (const [key, value] of searchParams.entries()) {
+      if (key === "gateway") continue;
+      redirectUrl.searchParams.set(key, value);
+    }
+    return NextResponse.redirect(redirectUrl.toString());
+  }
+
   const plan = searchParams.get("metadata_plan") ?? searchParams.get("plan");
   let productId = searchParams.get("productId");
 
@@ -70,18 +82,13 @@ export async function GET(req: NextRequest) {
       checkoutUrl.searchParams.set(key, value);
     }
     if (key === "discount_code") {
-      const coupon = await prisma.coupon.findUnique({ where: { code: value } });
+      const coupon = await getValidCheckoutCoupon({
+        code: value,
+        email,
+        sessionEmail,
+      });
       if (coupon) {
-        const isGlobal = coupon.email === "*";
-        // Signed-in: validate against session email to prevent coupon theft
-        const emailMatch = sessionEmail && coupon.email.toLowerCase() === sessionEmail.toLowerCase();
-        // Signed-out: allow if the URL carries the matching email (e.g. email link flow).
-        // Dodo will still gate the purchase to that email at payment time.
-        const urlEmailMatch = !sessionEmail && email && coupon.email.toLowerCase() === email.toLowerCase();
-
-        if (isGlobal || emailMatch || urlEmailMatch) {
-          checkoutUrl.searchParams.set(key, value);
-        }
+        checkoutUrl.searchParams.set(key, coupon.code);
       }
     }
   }

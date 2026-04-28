@@ -14,6 +14,7 @@ import PricingBannerModal from "@/components/PricingBannerModal";
 import JsonLd, { faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 import PricingPageTrialCTA from "@/components/PricingPageTrialCTA";
 import { getVariant } from "@/lib/ab";
+import { isRazorpayConfigured } from "@/lib/billing/razorpay-server";
 
 const PRICE_INCREASE_PERCENT = 70;
 
@@ -107,9 +108,11 @@ function buildCheckoutUrl(opts: {
   email?: string;
   userId?: string;
   plan: string;
+  gateway?: "dodo" | "razorpay";
 }) {
   const base = "/api/checkout";
   const params = new URLSearchParams({ plan: opts.plan });
+  if (opts.gateway) params.set("gateway", opts.gateway);
   if (opts.productId) params.set("productId", opts.productId);
   if (opts.email) params.set("email", opts.email);
   if (opts.userId) params.set("metadata_userId", opts.userId);
@@ -137,6 +140,8 @@ async function PricingContent() {
   const country = headersList.get("x-vercel-ip-country") ?? null;
   const region = getRegion(country);
   const isIndia = region === "INR";
+  const razorpayEnabled = isRazorpayConfigured();
+  const checkoutGateway: "dodo" | "razorpay" = isIndia && razorpayEnabled ? "razorpay" : "dodo";
 
   let userEmail: string | undefined;
   let userPlan: string = "free";
@@ -213,10 +218,10 @@ async function PricingContent() {
         },
       ];
   const pricingFaq = faqSchema([
-    { question: "When will my Pro access activate?", answer: "Instantly after payment — Dodo Payments processes your subscription and your Pro access is activated automatically." },
+    { question: "When will my Pro access activate?", answer: isIndia && razorpayEnabled ? "Instantly after payment — Razorpay processes your order and your Pro access is activated automatically." : "Instantly after payment — Dodo Payments processes your subscription and your Pro access is activated automatically." },
     { question: "Are credits cumulative?", answer: "No — credits reset on the 1st of each month. Unused credits don't roll over." },
     { question: "Can I cancel anytime?", answer: "Yes. Cancel through the customer portal and you keep Pro access until your current period ends." },
-    { question: "What payment methods are accepted?", answer: "UPI, credit/debit cards, net banking (India), PayPal (international) — via Dodo Payments secure checkout." },
+    { question: "What payment methods are accepted?", answer: isIndia && razorpayEnabled ? "UPI, credit/debit cards, and net banking — via Razorpay secure checkout." : "UPI, credit/debit cards, net banking (India), PayPal (international) — via Dodo Payments secure checkout." },
     { question: "What's the difference between Free and Pro?", answer: "Free includes 22 core lessons, 10 archive lessons, and 10 credits/month. Pro unlocks all 292+ lessons, unlimited AI Explore, interview prep, PM jobs board, and WhatsApp community." },
   ]);
 
@@ -288,6 +293,7 @@ async function PricingContent() {
                       email: userEmail,
                       userId: userId ?? undefined,
                       plan: "quarterly",
+                      gateway: checkoutGateway,
                     })
                   : "#comparison"
             }
@@ -426,7 +432,7 @@ async function PricingContent() {
                   <a
                     key={plan.key}
                     href={plan.productId
-                      ? buildCheckoutUrl({ productId: plan.productId, email: userEmail, userId: userId ?? undefined, plan: plan.key })
+                      ? buildCheckoutUrl({ productId: plan.productId, email: userEmail, userId: userId ?? undefined, plan: plan.key, gateway: checkoutGateway })
                       : "#"
                     }
                     aria-disabled={!plan.productId}
@@ -535,7 +541,7 @@ async function PricingContent() {
             isIndia
               ? { q: "What's the yearly plan?", a: `${calculateMRP("₹1,249", true)}/year — results in ₹1,249 with the applied discount.` }
               : { q: "What's the yearly plan?", a: `${calculateMRP("$32", false)}/year — results in $32 with the applied discount.` },
-            { q: "What payment methods are accepted?", a: isIndia ? "UPI, credit/debit cards, net banking, and more — via Dodo Payments secure checkout." : "Credit/debit cards, PayPal, and more — via Dodo Payments secure checkout." },
+            { q: "What payment methods are accepted?", a: isIndia && razorpayEnabled ? "UPI, credit/debit cards, and net banking — via Razorpay secure checkout." : (isIndia ? "UPI, credit/debit cards, net banking, and more — via Dodo Payments secure checkout." : "Credit/debit cards, PayPal, and more — via Dodo Payments secure checkout.") },
           ].map((item) => (
             <div key={item.q} className="rounded-xl border border-white/10 p-4 bg-white/5">
               <h3 className="text-xs font-black mb-1.5">{item.q}</h3>
