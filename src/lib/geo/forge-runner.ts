@@ -34,7 +34,9 @@ export type ForgeOutput = {
 };
 
 function extractMdx(text: string): string | null {
-  const fence = text.match(/```(?:mdx|md|markdown)\s*\n([\s\S]*?)\n```/i);
+  // Match ```mdx (with optional whitespace/newline before content).
+  // Forge sometimes emits ```mdx![...  with no newline — \s* handles both.
+  const fence = text.match(/```(?:mdx|md|markdown)\s*\n?([\s\S]*?)\n```/i);
   if (fence) return fence[1];
   if (text.trimStart().startsWith("---")) return text;
   return null;
@@ -145,7 +147,9 @@ Include at least one concrete PM example and one parenthetical citation for any 
 
 Return ONLY the markdown for this single section, starting with "## ${themeToAdd}". No frontmatter. No json. No prose around it. No \`\`\` fences — just raw markdown.`;
 
-    response = await callAgent(Agents.forge(), sectionPrompt, `${sessionId}-section-${passes}`, { timeoutMs: 180_000 });
+    // Fresh session per expansion — avoids inheriting the full prior conversation
+    // context which confuses Forge into repeating or shortening existing sections.
+    response = await callAgent(Agents.forge(), sectionPrompt, `forge-expand-${Date.now()}`, { timeoutMs: 180_000 });
     const sectionRaw = response.response.trim();
     // strip any accidental fences
     const sectionClean = sectionRaw.replace(/^```(?:md|markdown|mdx)?\s*\n?/i, "").replace(/\n?```\s*$/i, "").trim();
@@ -168,7 +172,7 @@ Return ONLY the markdown for this single section, starting with "## ${themeToAdd
 MDX page:
 ${mdx.slice(0, 12_000)}`;
     try {
-      const r = await callAgent(Agents.forge(), schemaPrompt, `${sessionId}-schema`, { timeoutMs: 120_000 });
+      const r = await callAgent(Agents.forge(), schemaPrompt, `forge-schema-${Date.now()}`, { timeoutMs: 120_000 });
       const m = extractJson(r.response);
       if (m) meta = m;
     } catch {
@@ -190,4 +194,127 @@ function spliceSection(mdx: string, newSection: string): string {
   if (ctaIdx !== -1) return mdx.slice(0, ctaIdx) + block + "\n" + mdx.slice(ctaIdx);
   // Otherwise append at end
   return mdx.trimEnd() + block;
+}
+
+// ---- Retrofit modes ----
+
+export type RewriteAssignment = {
+  slug: string;
+  pageType: PageType;
+  existingMdx: string;          // current page body
+  scoutQueries: string[];       // queries this slug should rank for
+  rivalGaps: string[];          // angles competitors cover that this page doesn't
+  currentCitability: number;
+  targetCitability: number;     // typically 80
+};
+
+/**
+ * Rewrite mode: take an existing page and produce an upgraded MDX that preserves
+ * URL/frontmatter, expands thin sections, and adds missing structural elements.
+ * After the rewrite, falls back to the standard runForge expansion loop if the
+ * result is still under the page-type word-count floor.
+ */
+export async function rewriteForge(
+  a: RewriteAssignment,
+  sessionId: string
+): Promise<ForgeOutput> {
+  const floor = FLOORS[a.pageType];
+  const prompt = `You are rewriting an EXISTING pm-streak page in place. Preserve the slug and any frontmatter, but you may upgrade the body.
+
+Slug: ${a.slug}
+Page type: ${a.pageType}
+Current citability: ${a.currentCitability}
+Target citability: ${a.targetCitability}
+Floor (body word count): ${floor}
+
+Queries this page should answer (Scout):
+${a.scoutQueries.map((q) => `- ${q}`).join("\n")}
+
+Gaps competitors cover that this page does not (Rival):
+${a.rivalGaps.map((g) => `- ${g}`).join("\n")}
+
+Existing page (verbatim):
+----- BEGIN -----
+${a.existingMdx.slice(0, 12_000)}
+----- END -----
+
+Required upgrades:
+1. Preserve any high-performing existing sections; rewrite only what's weak.
+2. Add Article + FAQPage JSON-LD if missing.
+3. Add a 5-Q&A FAQ section if missing.
+4. Add ≥3 inline citations for any stat.
+5. Reach the ${a.pageType} floor of ${floor} words.
+
+Output STRICTLY:
+\`\`\`mdx
+<full upgraded MDX>
+\`\`\`
+\`\`\`json
+{"schema":{...},"meta":{"slug":"${a.slug}","target_queries":${JSON.stringify(a.scoutQueries)},"geo_score_self_estimate":0,"word_count":0}}
+\`\`\``;
+
+  const r = await callAgent(Agents.forge(), prompt, sessionId, { timeoutMs: 300_000 });
+  let mdx = extractMdx(r.response) ?? a.existingMdx;
+  let meta = extractJson(r.response);
+  let wc = mdx ? bodyWordCount(mdx) : 0;
+  let passes = 1;
+
+  // If still short, hand off to the standard append-only expansion loop.
+  if (wc < floor) {
+    const expanded = await runForge(
+      {
+        cluster: a.slug,
+        page_type: a.pageType,
+        title: a.slug.replace(/-/g, " "),
+        target_queries: a.scoutQueries,
+        geo_target: a.targetCitability,
+      },
+      `${sessionId}-expand`
+    );
+    if (expanded.body_word_count > wc) {
+      mdx = expanded.mdx;
+      meta = expanded.schema_meta;
+      wc = expanded.body_word_count;
+      passes += expanded.passes;
+    }
+  }
+
+  return { mdx, schema_meta: meta, body_word_count: wc, passes, floor };
+}
+
+export type AppendFaqAssignment = {
+  slug: string;
+  existingMdx: string;
+  topic: string; // e.g. the page title or primary buyer-question
+};
+
+/**
+ * Cheap uplift: ask Forge for a 5-Q&A FAQ section only, and splice it in
+ * before any CTA. Used by the Retrofit pipeline when a long page has no FAQ.
+ */
+export async function appendFaqOnly(
+  a: AppendFaqAssignment,
+  sessionId: string
+): Promise<{ mdx: string; appended: boolean; words_added: number }> {
+  // Don't double-add if FAQ already present.
+  if (/^##\s*(FAQ|Frequently Asked Questions)/im.test(a.existingMdx)) {
+    return { mdx: a.existingMdx, appended: false, words_added: 0 };
+  }
+  const prompt = `Write ONE FAQ section for the pm-streak page about "${a.topic}".
+Return raw markdown only. No fences. Start with "## FAQ".
+Include 5 questions actual PMs would search for, each answered in 35-60 words with concrete examples.
+After the 5 Q&A, output nothing. No preamble, no CTA.`;
+  const r = await callAgent(Agents.forge(), prompt, sessionId, { timeoutMs: 120_000 });
+  const sectionRaw = r.response.trim();
+  const sectionClean = sectionRaw
+    .replace(/^```(?:md|markdown|mdx)?\s*\n?/i, "")
+    .replace(/\n?```\s*$/i, "")
+    .trim();
+  if (!/^##\s*(FAQ|Frequently Asked Questions)/i.test(sectionClean)) {
+    return { mdx: a.existingMdx, appended: false, words_added: 0 };
+  }
+  const before = a.existingMdx.split(/\s+/).filter(Boolean).length;
+  const newMdx = spliceSection(a.existingMdx, sectionClean);
+  const after = newMdx.split(/\s+/).filter(Boolean).length;
+  return { mdx: newMdx, appended: true, words_added: after - before };
 }
