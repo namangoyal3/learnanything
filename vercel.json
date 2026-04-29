@@ -48,6 +48,9 @@
     "src/app/api/geo/signal/publish/route.ts": {
       "maxDuration": 30
     },
+    "src/app/api/geo/retrofit/inventory/route.ts": {
+      "maxDuration": 300
+    },
     "src/app/api/geo/retrofit/tick/route.ts": {
       "maxDuration": 300
     },
@@ -115,6 +118,10 @@
     {
       "path": "/api/geo/retrofit/tick",
       "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/geo/retrofit/inventory",
+      "schedule": "0 3 * * 0"
     }
   ]
 }
