@@ -97,8 +97,30 @@ jobs:
           response = body.get("response", "")
           with open(".critic/raw.txt", "w") as f: f.write(response)
 
-          # Strip any ```json fence and parse strict JSON.
+          # Strip any ```json fence and parse strict JSON, with repair pass.
           import re
+          def escape_string_controls(s: str) -> str:
+              # Walk char-by-char; inside a JSON string, escape raw \n/\r/\t.
+              out = []
+              in_string = False
+              escaped = False
+              for c in s:
+                  if not in_string:
+                      out.append(c)
+                      if c == '"': in_string = True
+                      continue
+                  if escaped:
+                      out.append(c); escaped = False; continue
+                  if c == '\\':
+                      out.append(c); escaped = True; continue
+                  if c == '"':
+                      out.append(c); in_string = False; continue
+                  if c == "\n": out.append("\\n"); continue
+                  if c == "\r": out.append("\\r"); continue
+                  if c == "\t": out.append("\\t"); continue
+                  out.append(c)
+              return "".join(out)
+
           m = re.search(r"```(?:json)?\s*\n([\s\S]*?)\n```", response)
           candidate = m.group(1) if m else response
           start = candidate.find("{"); end = candidate.rfind("}")
@@ -107,11 +129,17 @@ jobs:
               with open(".critic/comment.md", "w") as f:
                   f.write("### Lyzr Critic\n\n_Critic did not return parseable JSON. Raw response:_\n\n```\n" + response[:4000] + "\n```\n")
               sys.exit(0)
+          slice_ = candidate[start:end+1]
+          parsed = None
           try:
-              parsed = json.loads(candidate[start:end+1])
-          except Exception as e:
-              print(f"::warning::JSON parse failed: {e}")
-              parsed = {"summary": "Could not parse Critic JSON.", "verdict": "comment", "findings": [], "good": []}
+              parsed = json.loads(slice_)
+          except Exception:
+              try:
+                  parsed = json.loads(escape_string_controls(slice_))
+                  print("::notice::JSON repaired (raw control chars in strings)")
+              except Exception as e:
+                  print(f"::warning::JSON parse failed even after repair: {e}")
+                  parsed = {"summary": "Could not parse Critic JSON.", "verdict": "comment", "findings": [], "good": []}
 
           with open(".critic/parsed.json", "w") as f: json.dump(parsed, f, indent=2)
 
