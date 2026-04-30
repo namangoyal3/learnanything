@@ -66,7 +66,7 @@ export function buildForgePrompt(
 
 OPPORTUNITY CONTEXT (use this to make the content specifically better than competitors):
 - Target query: "${opportunity.query}"
-- Page type: ${blueprint.page_type}
+- Page type: pillar
 - Title: ${blueprint.title}
 - Outline: ${blueprint.outline.join(" → ")}
 
@@ -75,22 +75,20 @@ Your comparison table MUST include these competitors as rows, compared against P
 ${competitors}
 
 FAQ ENRICHMENT:
-Your FAQ section MUST address these specific queries (phrase them as questions):
+Your ## FAQ section MUST address these specific queries (phrase them as questions):
 ${faqQuestions}
 
 INTERNAL LINK ENRICHMENT:
 Link naturally to these existing PM Streak pages where topically relevant:
 ${linkHints || "  (none available yet)"}
 
-CITABILITY REQUIREMENTS (all mandatory — AI search engines require these signals):
-1. Target 1,600+ words. More depth = more citations from AI assistants.
-2. Include a "## What is [Topic]" or "## Definition" section near the top.
-3. Include at least 3 inline citations in [1], [2], [3] format with a ## References section at the bottom.
-4. Include at least 1 expert quote using a blockquote: > "Quote here." — Expert Name, Role at Company
-5. Include Article JSON-LD schema in a <script type="application/ld+json"> block.
-6. Include a "## How to" or "## Step-by-Step" guide section.
+EXTRA CITABILITY SIGNALS (include ALL of these):
+- Add a "## What is [Topic]" definition section near the top
+- Add inline citations using [1], [2], [3] notation; include a ## References section at the bottom
+- Add at least one blockquote expert quote: > "Quote." — Name, Role at Company
+- Include Article JSON-LD schema markup
 
-Follow your agent_instructions exactly. Hit the ${blueprint.page_type} word count floor. AIM HIGH — it is much better to overshoot than undershoot.`;
+Follow your agent_instructions exactly. Target 1,600+ words. AIM HIGH — it is much better to overshoot than undershoot.`;
 }
 
 // ── Tick runner ────────────────────────────────────────────────────────────────
@@ -186,7 +184,7 @@ Return JSON with: title, page_type (pillar|comparison|use-case|glossary), target
       const forgeOut = await runForge(
         {
           cluster: slug,
-          page_type: blueprint.page_type as "pillar" | "comparison" | "use-case" | "glossary",
+          page_type: "pillar", // always pillar so expansion floor (1200) matches quality gate
           title: blueprint.title || opp.query,
           target_queries: blueprint.target_queries || [opp.query],
           geo_target: 75,
