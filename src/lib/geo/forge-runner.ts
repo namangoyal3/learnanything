@@ -111,10 +111,11 @@ const SECTION_THEMES: Record<PageType, string[]> = {
 
 export async function runForge(
   assignment: ForgeAssignment,
-  sessionId: string
+  sessionId: string,
+  overridePrompt?: string
 ): Promise<ForgeOutput> {
   const floor = FLOORS[assignment.page_type];
-  const initialPrompt = `Write a complete production-ready MDX page for pm-streak.
+  const initialPrompt = overridePrompt ?? `Write a complete production-ready MDX page for pm-streak.
 
 Plan item:
 - cluster: ${assignment.cluster}
