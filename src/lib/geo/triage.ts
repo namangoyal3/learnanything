@@ -61,18 +61,20 @@ export function decide(p: TriageInput): TriageDecision {
     };
   }
 
-  // 3. Schema gap (cheap, no rewrite).
-  if (!p.hasArticleSchema || !p.hasFaqSchema) {
+  // 3. Article schema missing (only for file/route pages — DB articles get it via page.tsx).
+  if (!p.hasArticleSchema) {
     return {
       slug: p.slug,
       tier: "uplift",
       next_action: "inject_schema",
-      rationale: "Missing Article and/or FAQPage JSON-LD; cheap uplift.",
+      rationale: "Missing Article JSON-LD; cheap uplift.",
       expected_lift: "medium",
     };
   }
 
   // 4. FAQ section missing on a sufficiently long page.
+  // FAQPage schema is auto-generated from ## FAQ sections, so the right fix is
+  // to append the section — not inject a schema-only patch.
   if (!p.hasFaqSection && wc >= 600) {
     return {
       slug: p.slug,
