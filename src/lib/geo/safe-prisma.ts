@@ -17,7 +17,7 @@ export async function createOpportunity(data: {
 
 export async function listUnaddressedOpportunities(limit = 50) {
   return prisma.geoOpportunity.findMany({
-    where: { addressed: false },
+    where: { addressed: false, intentScore: { gte: 0.65 } },
     orderBy: { intentScore: "desc" },
     take: limit,
   });
@@ -27,6 +27,20 @@ export async function markOpportunityAddressed(id: string, pageSlug: string) {
   return prisma.geoOpportunity.update({
     where: { id },
     data: { addressed: true, pageSlug },
+  });
+}
+
+/**
+ * Returns the top-N published pages by citability score for use as
+ * internal link suggestions in enriched Forge prompts.
+ * Fetched once per create tick and reused for all opportunities.
+ */
+export async function selectInternalLinks(limit = 3) {
+  return prisma.geoPageTriage.findMany({
+    where: { currentCitability: { gte: 75 } },
+    orderBy: { currentCitability: "desc" },
+    take: limit,
+    select: { slug: true, currentCitability: true },
   });
 }
 
