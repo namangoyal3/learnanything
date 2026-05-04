@@ -30,7 +30,7 @@ function parseScoutJsonl(response: string): {
     .map((l) => {
       try { return JSON.parse(l.trim()); } catch { return null; }
     })
-    .filter(Boolean);
+    .filter(Boolean) as unknown[];
 }
 
 export async function POST(req: Request) {
