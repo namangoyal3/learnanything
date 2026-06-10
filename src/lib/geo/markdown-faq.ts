@@ -13,15 +13,22 @@
  * patterns as a fallback.
  */
 export function extractFaqPairs(body: string): { question: string; answer: string }[] {
-  const faqMatch = body.match(/^## FAQ[^\n]*\n([\s\S]*?)(?=\n## |\s*$)/im);
+  // Match "## FAQ" or "## Frequently Asked Questions" up to the next level-2
+  // heading or true end-of-string. The terminator was previously `\s*$` which,
+  // with the `m` flag, matched at the first blank line after the heading and
+  // captured an EMPTY section — so FAQ JSON-LD silently came out empty for the
+  // common "## FAQ\n\n### Question" formatting real articles use.
+  const faqMatch = body.match(
+    /^## (?:FAQ|Frequently Asked Questions)[^\n]*\n([\s\S]*?)(?=\n## |(?![\s\S]))/im,
+  );
   if (!faqMatch) return [];
 
   const section = faqMatch[1].trim();
   const pairs: { question: string; answer: string }[] = [];
+  let match: RegExpExecArray | null;
 
   // Strategy 1: ### Question\nAnswer paragraphs
-  const h3Pattern = /^### (.+)\n([\s\S]*?)(?=\n### |\s*$)/gim;
-  let match: RegExpExecArray | null;
+  const h3Pattern = /^### (.+)\n([\s\S]*?)(?=\n### |\n## |(?![\s\S]))/gim;
   while ((match = h3Pattern.exec(section)) !== null) {
     const question = match[1].trim().replace(/\*\*/g, "");
     const answer = match[2].trim().replace(/\n+/g, " ").replace(/\*\*/g, "").slice(0, 600);
@@ -29,8 +36,17 @@ export function extractFaqPairs(body: string): { question: string; answer: strin
   }
   if (pairs.length > 0) return pairs;
 
-  // Strategy 2: **Q:** question / **A:** answer
-  const qaPattern = /\*\*Q[:\.]?\*\*\s*(.+?)\n\*\*A[:\.]?\*\*\s*([\s\S]*?)(?=\n\*\*Q|\s*$)/gi;
+  // Strategy 2: **Bold question?**\nAnswer paragraph (question on its own line)
+  const boldQPattern = /^\*\*(.+?)\*\*\n([\s\S]*?)(?=\n\*\*|\n### |\n## |(?![\s\S]))/gim;
+  while ((match = boldQPattern.exec(section)) !== null) {
+    const question = match[1].trim();
+    const answer = match[2].trim().replace(/\n+/g, " ").slice(0, 600);
+    if (question && answer) pairs.push({ question, answer });
+  }
+  if (pairs.length > 0) return pairs;
+
+  // Strategy 3: **Q:** question / **A:** answer (legacy fallback)
+  const qaPattern = /\*\*Q[:\.]?\*\*\s*(.+?)\n\*\*A[:\.]?\*\*\s*([\s\S]*?)(?=\n\*\*Q|(?![\s\S]))/gi;
   while ((match = qaPattern.exec(section)) !== null) {
     const question = match[1].trim();
     const answer = match[2].trim().replace(/\n+/g, " ").slice(0, 600);
