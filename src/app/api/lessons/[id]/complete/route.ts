@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Prisma } from "@prisma/client";
 import { getCurrentUserId } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { recordLessonCompletion } from "@/lib/streak";
@@ -107,17 +108,7 @@ export async function POST(
   const boostApplied = userForBoost?.xpBoostActive ?? false;
   if (boostApplied) {
     totalXP = totalXP * 2;
-    await prisma.user.update({ where: { id: userId }, data: { xpBoostActive: false } });
   }
-
-  await prisma.completedLesson.create({
-    data: {
-      userId,
-      lessonId: id,
-      score: score ?? correctCount,
-      xpEarned: totalXP,
-    },
-  });
 
   // +5 gems for completing a lesson
   let gemsEarned = 5;
@@ -128,10 +119,56 @@ export async function POST(
     gemsEarned += 10;
   }
 
-  await prisma.user.update({
-    where: { id: userId },
-    data: { gems: { increment: gemsEarned } },
-  });
+  // Wrap the core completion writes in a transaction so a mid-failure doesn't
+  // leave partial state (e.g. completedLesson created but gems not awarded).
+  // NOTE: recordLessonCompletion, maybeGrantProTrial, and syncArchiveUnlocksForUser
+  // manage their own db operations; they cannot accept a tx client without
+  // broader refactoring, so they run outside this transaction.
+  try {
+    await prisma.$transaction(async (tx) => {
+      await tx.completedLesson.create({
+        data: {
+          userId,
+          lessonId: id,
+          score: score ?? correctCount,
+          xpEarned: totalXP,
+        },
+      });
+
+      if (boostApplied) {
+        await tx.user.update({ where: { id: userId }, data: { xpBoostActive: false } });
+      }
+
+      await tx.user.update({
+        where: { id: userId },
+        data: { gems: { increment: gemsEarned } },
+      });
+    });
+  } catch (err) {
+    // P2002 = unique constraint violation on userId_lessonId: already completed in a race
+    if (
+      err instanceof Prisma.PrismaClientKnownRequestError &&
+      err.code === "P2002"
+    ) {
+      return NextResponse.json({
+        xpEarned: 0,
+        correctCount,
+        totalQuestions: lesson.questions.length,
+        gemsEarned: 0,
+        xpBoostApplied: false,
+        newBatchUnlocked: false,
+        newBatchCount: 0,
+        unlockedLessons: [],
+        newStreak: null,
+        newXP: null,
+        newLevel: null,
+        perfectStreak: null,
+        milestone: null,
+        milestoneGems: 0,
+      });
+    }
+    throw err;
+  }
 
   const streakResult = await recordLessonCompletion(userId, totalXP);
   const totalGemsEarned = gemsEarned + (streakResult.milestoneGems ?? 0);
