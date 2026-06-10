@@ -40,7 +40,6 @@ export async function POST(
     return NextResponse.json({ error: "Lesson not found" }, { status: 404 });
   }
 
-  let totalXP = 0;
   let correctCount = 0;
 
   if (answers && Array.isArray(answers)) {
@@ -51,7 +50,6 @@ export async function POST(
       const correct = question.correctIndex === answer.selectedIndex;
       if (correct) {
         correctCount++;
-        totalXP += question.xpReward;
       }
 
       await prisma.quizAttempt.create({
@@ -66,7 +64,40 @@ export async function POST(
     }
   }
 
-  totalXP += lesson.xpReward;
+  const existing = await prisma.completedLesson.findUnique({
+    where: { userId_lessonId: { userId, lessonId: id } },
+  });
+
+  // On re-submit return early with zeros — no XP, no gems, no level change
+  if (existing) {
+    return NextResponse.json({
+      xpEarned: 0,
+      correctCount,
+      totalQuestions: lesson.questions.length,
+      gemsEarned: 0,
+      xpBoostApplied: false,
+      newBatchUnlocked: false,
+      newBatchCount: 0,
+      unlockedLessons: [],
+      newStreak: null,
+      newXP: null,
+      newLevel: null,
+      perfectStreak: null,
+      milestone: null,
+      milestoneGems: 0,
+    });
+  }
+
+  // First completion — calculate XP (with optional boost), award gems, update streak
+  let totalXP = lesson.xpReward;
+  if (answers && Array.isArray(answers)) {
+    for (const answer of answers) {
+      const question = lesson.questions.find((q) => q.id === answer.questionId);
+      if (question && question.correctIndex === answer.selectedIndex) {
+        totalXP += question.xpReward;
+      }
+    }
+  }
 
   // Apply XP boost if active (2× XP, then clear it)
   const userForBoost = await prisma.user.findUnique({
@@ -79,38 +110,28 @@ export async function POST(
     await prisma.user.update({ where: { id: userId }, data: { xpBoostActive: false } });
   }
 
-  const existing = await prisma.completedLesson.findUnique({
-    where: { userId_lessonId: { userId, lessonId: id } },
+  await prisma.completedLesson.create({
+    data: {
+      userId,
+      lessonId: id,
+      score: score ?? correctCount,
+      xpEarned: totalXP,
+    },
   });
 
-  // Award gems only on first completion
-  let gemsEarned = 0;
-  if (!existing) {
-    await prisma.completedLesson.create({
-      data: {
-        userId,
-        lessonId: id,
-        score: score ?? correctCount,
-        xpEarned: totalXP,
-      },
-    });
+  // +5 gems for completing a lesson
+  let gemsEarned = 5;
 
-    // +5 gems for completing a lesson
-    gemsEarned += 5;
-
-    // +10 bonus gems for a perfect score
-    const totalQuestions = lesson.questions.length;
-    if (totalQuestions > 0 && correctCount === totalQuestions) {
-      gemsEarned += 10;
-    }
-
-    if (gemsEarned > 0) {
-      await prisma.user.update({
-        where: { id: userId },
-        data: { gems: { increment: gemsEarned } },
-      });
-    }
+  // +10 bonus gems for a perfect score
+  const totalQuestions = lesson.questions.length;
+  if (totalQuestions > 0 && correctCount === totalQuestions) {
+    gemsEarned += 10;
   }
+
+  await prisma.user.update({
+    where: { id: userId },
+    data: { gems: { increment: gemsEarned } },
+  });
 
   const streakResult = await recordLessonCompletion(userId, totalXP);
   const totalGemsEarned = gemsEarned + (streakResult.milestoneGems ?? 0);
@@ -119,11 +140,9 @@ export async function POST(
     await maybeGrantProTrial(userId);
   }
 
-  let archiveUnlock = null;
-
-  if (!existing && !lesson.aiGenerated) {
-    archiveUnlock = await syncArchiveUnlocksForUser(userId);
-  }
+  const archiveUnlock = !lesson.aiGenerated
+    ? await syncArchiveUnlocksForUser(userId)
+    : null;
 
   return NextResponse.json({
     xpEarned: totalXP,
