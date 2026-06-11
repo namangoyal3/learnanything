@@ -13,31 +13,40 @@
  * patterns as a fallback.
  */
 export function extractFaqPairs(body: string): { question: string; answer: string }[] {
-  // Match "## FAQ" or "## Frequently Asked Questions" up to the next level-2
-  // heading or true end-of-string. The terminator was previously `\s*$` which,
-  // with the `m` flag, matched at the first blank line after the heading and
-  // captured an EMPTY section — so FAQ JSON-LD silently came out empty for the
-  // common "## FAQ\n\n### Question" formatting real articles use.
-  const faqMatch = body.match(
-    /^## (?:FAQ|Frequently Asked Questions)[^\n]*\n([\s\S]*?)(?=\n## |(?![\s\S]))/im,
-  );
-  if (!faqMatch) return [];
-
-  const section = faqMatch[1].trim();
-  const pairs: { question: string; answer: string }[] = [];
-  let match: RegExpExecArray | null;
-
-  // Strategy 1: ### Question\nAnswer paragraphs
-  const h3Pattern = /^### (.+)\n([\s\S]*?)(?=\n### |\n## |(?![\s\S]))/gim;
-  while ((match = h3Pattern.exec(section)) !== null) {
-    const question = match[1].trim().replace(/\*\*/g, "");
-    const answer = match[2].trim().replace(/\n+/g, " ").replace(/\*\*/g, "").slice(0, 600);
-    if (question && answer) pairs.push({ question, answer });
+  // Extract the ## FAQ section by finding it and collecting lines until the next ## heading.
+  const lines = body.split("\n");
+  let inSection = false;
+  const sectionLines: string[] = [];
+  for (const line of lines) {
+    if (/^## (FAQ|Frequently Asked Questions)\b/i.test(line)) {
+      inSection = true;
+      continue;
+    }
+    if (inSection && /^## /.test(line)) break;
+    if (inSection) sectionLines.push(line);
   }
-  if (pairs.length > 0) return pairs;
+  if (!inSection) return [];
 
-  // Strategy 2: **Bold question?**\nAnswer paragraph (question on its own line)
-  const boldQPattern = /^\*\*(.+?)\*\*\n([\s\S]*?)(?=\n\*\*|\n### |\n## |(?![\s\S]))/gim;
+  const section = sectionLines.join("\n").trim();
+  const pairs: { question: string; answer: string }[] = [];
+
+  // Strategy 1: ### Question headings followed by answer paragraphs.
+  // Parse by splitting the section on ### headings to avoid broken lookahead regexes.
+  if (/^### /m.test(section)) {
+    const chunks = section.split(/(?=^### )/m);
+    for (const chunk of chunks) {
+      const lineBreak = chunk.indexOf("\n");
+      if (lineBreak === -1 || !chunk.startsWith("### ")) continue;
+      const question = chunk.slice(4, lineBreak).trim().replace(/\*\*/g, "");
+      const answer = chunk.slice(lineBreak + 1).trim().replace(/\n+/g, " ").replace(/\*\*/g, "").slice(0, 600);
+      if (question && answer) pairs.push({ question, answer });
+    }
+    if (pairs.length > 0) return pairs;
+  }
+
+  // Strategy 2: **Bold question?**\nAnswer paragraph (each bold line is a question).
+  const boldQPattern = /^\*\*([^*]+\??)\*\*\s*\n([\s\S]*?)(?=\n\*\*|$)/gm;
+  let match: RegExpExecArray | null;
   while ((match = boldQPattern.exec(section)) !== null) {
     const question = match[1].trim();
     const answer = match[2].trim().replace(/\n+/g, " ").slice(0, 600);
@@ -45,8 +54,8 @@ export function extractFaqPairs(body: string): { question: string; answer: strin
   }
   if (pairs.length > 0) return pairs;
 
-  // Strategy 3: **Q:** question / **A:** answer (legacy fallback)
-  const qaPattern = /\*\*Q[:\.]?\*\*\s*(.+?)\n\*\*A[:\.]?\*\*\s*([\s\S]*?)(?=\n\*\*Q|(?![\s\S]))/gi;
+  // Strategy 3: **Q:** question / **A:** answer
+  const qaPattern = /\*\*Q[:\.]?\*\*\s*(.+?)\n\*\*A[:\.]?\*\*\s*([\s\S]*?)(?=\n\*\*Q|$)/gi;
   while ((match = qaPattern.exec(section)) !== null) {
     const question = match[1].trim();
     const answer = match[2].trim().replace(/\n+/g, " ").slice(0, 600);
@@ -59,17 +68,54 @@ export function extractFaqPairs(body: string): { question: string; answer: strin
 /**
  * Extract HowTo steps from a markdown body.
  *
- * Looks for numbered list items with bold titles:
- * "1. **Step name**: description"
+ * Only extracts steps that appear under a `## How to...` (case-insensitive) section.
+ * Within that section, supports two formats:
+ *   1. `### Step name` headings followed by a description paragraph.
+ *   2. `1. **Step name**: description` numbered list items.
  *
- * Returns [] if fewer than 2 steps are found.
+ * Step names are normalised with a trailing `?` when using the `### Step` format
+ * so they read as instructional questions in the schema.
+ *
+ * Returns [] if no `## How to` section is found, or fewer than 2 steps are extracted.
  */
 export function extractHowToSteps(body: string): { name: string; text: string }[] {
+  // Extract the ## How to... section using line-based parsing (avoids broken lookahead regexes).
+  const lines = body.split("\n");
+  let inSection = false;
+  const sectionLines: string[] = [];
+  for (const line of lines) {
+    if (/^## How to\b/i.test(line)) {
+      inSection = true;
+      continue;
+    }
+    if (inSection && /^## /.test(line)) break;
+    if (inSection) sectionLines.push(line);
+  }
+  if (!inSection) return [];
+
+  const section = sectionLines.join("\n").trim();
   const steps: { name: string; text: string }[] = [];
+
+  // Strategy 1: ### Step heading / description paragraph
+  if (/^### /m.test(section)) {
+    const chunks = section.split(/(?=^### )/m);
+    for (const chunk of chunks) {
+      const lineBreak = chunk.indexOf("\n");
+      if (lineBreak === -1 || !chunk.startsWith("### ")) continue;
+      const rawName = chunk.slice(4, lineBreak).trim().replace(/\*\*/g, "");
+      // Append ? to normalise step names as instructional questions.
+      const name = rawName.endsWith("?") ? rawName : `${rawName}?`;
+      const text = chunk.slice(lineBreak + 1).trim().replace(/\n+/g, " ").replace(/\*\*/g, "").slice(0, 500);
+      if (name) steps.push({ name, text: text || name });
+    }
+    if (steps.length >= 2) return steps;
+    steps.length = 0;
+  }
+
+  // Strategy 2: numbered bold list items within the section.
   const stepPattern = /^\d+\.\s+\*\*([^*]+)\*\*[:\s]*(.*)/gm;
   let match: RegExpExecArray | null;
-
-  while ((match = stepPattern.exec(body)) !== null) {
+  while ((match = stepPattern.exec(section)) !== null) {
     const name = match[1].trim();
     const text = match[2].trim().slice(0, 500);
     if (name) steps.push({ name, text: text || name });
