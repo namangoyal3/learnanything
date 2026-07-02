@@ -151,7 +151,7 @@ function ExplorePageContent() {
       <main className="max-w-2xl lg:max-w-3xl mx-auto px-4 lg:px-8 py-5 pb-28 space-y-5">
         <div className="text-center">
           <Sparkles size={34} className="mx-auto text-[var(--green-primary)] mb-2" />
-          <h1 className={cn(ds.sectionTitle, "text-xl")}>Explore & Generate</h1>
+          <h1 className={cn(ds.sectionTitle, "text-2xl")}>Explore & Generate</h1>
           <p className="text-xs sm:text-sm text-[var(--text-secondary)] mt-1">
             Custom lessons are generated live using AI from Lenny&apos;s Podcast transcripts. {user?.plan === "pro" ? "Unlimited for Pro." : "Costs 2 Credits."}
           </p>
@@ -159,7 +159,7 @@ function ExplorePageContent() {
 
         {user && user.plan !== "pro" && (
           <div className={cn(ds.panelFlat, "border-[var(--gold-primary)]/30 bg-[var(--gold-primary)]/10")}>
-            <div className="text-sm font-black text-[var(--text-primary)]">
+            <div className="text-sm font-black tabular-nums text-[var(--text-primary)]">
               {user.credits} Free Credits left
             </div>
             <p className="text-xs text-[var(--text-secondary)] mt-1">
@@ -255,7 +255,7 @@ function ExplorePageContent() {
           <button
             type="button"
             onClick={() => setShowTopicLibrary((prev) => !prev)}
-            className="lg:hidden w-full rounded-xl border border-[var(--border-color)] bg-[var(--surface-1)] px-3 py-2.5 flex items-center justify-between"
+            className="lg:hidden w-full rounded-xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--bg-card)] px-3 py-2.5 flex items-center justify-between active:border-b-2 active:translate-y-[2px] transition-all"
           >
             <span className="text-xs font-black">Topic library</span>
             <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-[var(--text-secondary)]">
@@ -264,7 +264,7 @@ function ExplorePageContent() {
             </span>
           </button>
           <div className={cn("mt-2 lg:mt-0", showTopicLibrary ? "block" : "hidden", "lg:block")}>
-            <h3 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wide mb-2">
+            <h3 className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-2">
               Updated Content Library
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -290,7 +290,7 @@ function ExplorePageContent() {
 
         {generatedLessons.length > 0 && (
           <div>
-            <h3 className="text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wide mb-2">
+            <h3 className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-2">
               Your Custom Lessons
             </h3>
             <div className="space-y-3">
@@ -303,7 +303,7 @@ function ExplorePageContent() {
                     )}
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[var(--green-primary)]/20 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-xl bg-[var(--green-primary)]/20 flex items-center justify-center">
                         <Sparkles size={18} className="text-[var(--green-primary)]" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -316,7 +316,7 @@ function ExplorePageContent() {
                           {lesson.category?.icon} {lesson.category?.name}
                         </div>
                       </div>
-                      <div className="flex items-center gap-1 text-xs font-bold text-[var(--gold-primary)]">
+                      <div className="flex items-center gap-1 text-xs font-black tabular-nums text-[var(--gold-primary)]">
                         <Zap size={12} /> {lesson.xpReward}
                       </div>
                       <ArrowRight size={16} className="text-[var(--text-secondary)]" />
@@ -336,7 +336,7 @@ function ExplorePageContent() {
         <button
           type="button"
           onClick={() => setShowGuide((prev) => !prev)}
-          className="lg:hidden w-full rounded-xl border border-[var(--border-color)] bg-[var(--surface-1)] px-3 py-2.5 flex items-center justify-between"
+          className="lg:hidden w-full rounded-xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--bg-card)] px-3 py-2.5 flex items-center justify-between active:border-b-2 active:translate-y-[2px] transition-all"
         >
           <span className="text-xs font-black">Explore guide</span>
           <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-[var(--text-secondary)]">

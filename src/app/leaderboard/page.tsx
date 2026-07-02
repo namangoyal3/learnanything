@@ -75,17 +75,20 @@ export default function LeaderboardPage() {
       <main className="max-w-2xl lg:max-w-3xl mx-auto px-4 lg:px-8 py-6 pb-28 space-y-6">
         <div className="text-center">
           <Trophy size={40} className="mx-auto text-[var(--gold-primary)] mb-2" />
-          <h1 className="text-xl font-bold">Leaderboard</h1>
+          <h1 className="text-2xl font-black tracking-tight">Leaderboard</h1>
+          <p className="text-xs text-[var(--text-secondary)] mt-1">
+            Earn XP from lessons to climb the ranks
+          </p>
         </div>
 
         {/* Toggle */}
-        <div className="flex gap-2 bg-[var(--bg-card)] rounded-2xl p-1">
+        <div className="flex gap-1 bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-1">
           {(["alltime", "weekly"] as const).map((t) => (
             <button
               key={t}
               onClick={() => setType(t)}
               className={cn(
-                "flex-1 py-2 rounded-xl text-sm font-bold transition-colors",
+                "flex-1 py-2 rounded-xl text-xs font-black uppercase tracking-wide transition-colors",
                 type === t
                   ? "bg-[var(--green-primary)] text-white"
                   : "text-[var(--text-secondary)] hover:text-white"
@@ -108,28 +111,37 @@ export default function LeaderboardPage() {
               <div
                 key={entry.id}
                 className={cn(
-                  "flex items-center gap-3 p-3 rounded-2xl transition-colors",
+                  "flex items-center gap-3 p-3 rounded-2xl border-2 transition-colors",
                   entry.isCurrentUser
-                    ? "bg-[var(--green-primary)]/10 border border-[var(--green-primary)]/30"
-                    : "bg-[var(--bg-card)]"
+                    ? "bg-[var(--green-primary)]/10 border-[var(--green-primary)]/40"
+                    : entry.rank <= 3
+                      ? "bg-[var(--bg-card)] border-[var(--gold-primary)]/25"
+                      : "bg-[var(--bg-card)] border-[var(--border-color)]"
                 )}
               >
                 <div className="w-8 flex justify-center">{getRankIcon(entry.rank)}</div>
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[var(--blue-primary)] to-[var(--purple-primary)] flex items-center justify-center text-sm font-bold">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[var(--blue-primary)] to-[var(--purple-primary)] flex items-center justify-center text-sm font-black text-white">
                   {entry.name.charAt(0).toUpperCase()}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="text-sm font-bold truncate">
-                    {entry.name} {entry.isCurrentUser && "(you)"}
+                    {entry.name}{" "}
+                    {entry.isCurrentUser && (
+                      <span className="text-[var(--green-primary)] font-black">(you)</span>
+                    )}
                   </div>
-                  <div className="text-xs text-[var(--text-secondary)]">Level {entry.level}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-wide text-[var(--text-secondary)]">
+                    Level {entry.level}
+                  </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-1 text-sm">
+                  <div className="flex items-center gap-1 text-sm font-bold tabular-nums">
                     <Flame size={14} className="text-[var(--orange-primary)]" />
                     <span>{entry.streakCount}</span>
                   </div>
-                  <div className="text-sm font-bold text-[var(--gold-primary)]">{entry.xp} XP</div>
+                  <div className="text-sm font-black tabular-nums text-[var(--gold-primary)]">
+                    {entry.xp} XP
+                  </div>
                 </div>
               </div>
             ))}
@@ -137,7 +149,7 @@ export default function LeaderboardPage() {
               <button
                 type="button"
                 onClick={() => setShowAllRowsMobile((prev) => !prev)}
-                className="md:hidden w-full mt-2 rounded-xl border border-[var(--border-color)] bg-[var(--bg-card)] px-3 py-2.5 flex items-center justify-between"
+                className="md:hidden w-full mt-2 rounded-xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--bg-card)] px-3 py-2.5 flex items-center justify-between active:border-b-2 active:translate-y-[2px] transition-all"
               >
                 <span className="text-xs font-black">
                   {showAllRowsMobile ? "Show fewer rows" : `Show all ${leaderboard.length} rows`}
