@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM A/B Testing (2026) — Statistical Rigor for Product Managers | PM Streak",
+  title: "PM A/B Testing (2026) — Statistical Rigor for Product Managers",
   description:
     "How PMs run A/B tests that give honest answers. Sample size, MDE, guardrails, novelty effects, and why most A/B tests lie.",
   keywords: [

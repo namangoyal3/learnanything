@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Regulated Industries (2026) — Shipping in Fintech, Health, Legal | PM Streak",
+  title: "PM Regulated Industries (2026) — Shipping in Fintech, Health, Legal",
   description:
     "How PMs ship in regulated industries. Compliance-as-product, audit trails, and why velocity looks different when rules are enforceable.",
   keywords: [

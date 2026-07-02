@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Product-Led Growth (2026) — PLG Playbook for Product Managers | PM Streak",
+  title: "PM Product-Led Growth (2026) — PLG Playbook for Product Managers",
   description:
     "How PMs build product-led growth motions. Self-serve onboarding, expansion loops, and why PLG isn&apos;t free acquisition.",
   keywords: [

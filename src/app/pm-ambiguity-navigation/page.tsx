@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Navigating Ambiguity as a PM (2026) — The Skill That Defines Senior PMs | PM Streak",
+  title: "Navigating Ambiguity as a PM (2026) — The Skill That Defines Senior PMs",
   description:
     "How PMs handle ambiguity. When the spec doesn&apos;t exist, leadership has no answer, and you&apos;re the one expected to create structure. The moves senior PMs actually use.",
   keywords: [

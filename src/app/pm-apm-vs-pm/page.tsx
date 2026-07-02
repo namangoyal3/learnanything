@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "APM vs PM (2026) — How They Differ &amp; Which to Target | PM Streak",
+  title: "APM vs PM (2026) — How They Differ &amp; Which to Target",
   description:
     "APM vs PM — the real differences in scope, expectations, compensation, and promotion timeline. Which should you target based on your background?",
   keywords: [

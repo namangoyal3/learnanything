@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Writing Skills Guide (2026) — How Great PMs Write PRDs, Updates & Strategy | PM Streak",
+  title: "PM Writing Skills Guide (2026) — How Great PMs Write PRDs, Updates & Strategy",
   description:
     "How to write like a great PM. PRD structure, exec updates, strategy memos, and the writing habits that compound. With before/after examples.",
   keywords: [

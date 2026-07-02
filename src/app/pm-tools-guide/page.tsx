@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Manager Tools Guide (2026) — Jira, Figma, Amplitude & More | PM Streak",
+  title: "Product Manager Tools Guide (2026) — Jira, Figma, Amplitude & More",
   description:
     "The essential PM tools stack in 2026. Jira, Figma, Amplitude, Notion, Miro, SQL — what each tool does, when to use it, and the PM skill level you need for each.",
   keywords: [

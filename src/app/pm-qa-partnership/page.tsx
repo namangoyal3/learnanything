@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM + QA Partnership (2026) — How PMs and QA Ship Higher Quality Together | PM Streak",
+  title: "PM + QA Partnership (2026) — How PMs and QA Ship Higher Quality Together",
   description:
     "How PMs work with QA to ship higher quality faster. Test plans, shifting QA left, bug triage, and the PM + QA habits that matter.",
   keywords: [

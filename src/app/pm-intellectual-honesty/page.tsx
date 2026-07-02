@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Intellectual Honesty for PMs (2026) — The Discipline That Compounds into Trust | PM Streak",
+  title: "Intellectual Honesty for PMs (2026) — The Discipline That Compounds into Trust",
   description:
     "How great PMs practise intellectual honesty. Admitting uncertainty, killing your own bad ideas, and the practices that build long-term credibility.",
   keywords: [

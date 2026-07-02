@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Fashion Tech (2026) — Myntra, Ajio, Nykaa Fashion PM Guide | PM Streak",
+  title: "PM Fashion Tech (2026) — Myntra, Ajio, Nykaa Fashion PM Guide",
   description:
     "How PMs build fashion tech products. Size and fit, returns, visual search, and why fashion is the hardest category in e-commerce.",
   keywords: [

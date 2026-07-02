@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Thinking in Systems (2026) — Why Senior PMs Think in Loops, Not Lists | PM Streak",
+  title: "PM Thinking in Systems (2026) — Why Senior PMs Think in Loops, Not Lists",
   description:
     "How senior PMs apply systems thinking. Stocks, flows, feedback loops, and unintended consequences — the mindset shift that separates senior from staff PM.",
   keywords: [

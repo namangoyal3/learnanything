@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Tech Debt (2026) — How PMs Should Think About Technical Debt | PM Streak",
+  title: "PM Tech Debt (2026) — How PMs Should Think About Technical Debt",
   description:
     "How PMs reason about tech debt. When to pay it down, when to accept it, and how to make debt visible in roadmap discussions.",
   keywords: [

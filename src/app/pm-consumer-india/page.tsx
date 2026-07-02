@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Consumer PM India (2026) — Building Products for 700M+ Indian Users | PM Streak",
+  title: "Consumer PM India (2026) — Building Products for 700M+ Indian Users",
   description:
     "How consumer PMs in India build products for 700M+ users. User segments, behaviour patterns, monetisation realities, and what separates Indian consumer PM from global.",
   keywords: [

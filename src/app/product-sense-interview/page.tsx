@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Sense Interview Questions — Frameworks & Examples | PM Streak",
+  title: "Product Sense Interview Questions — Frameworks & Examples",
   description:
     "Master product sense interviews with proven frameworks. Learn how to design products, identify user needs, and prioritise features — the way top PMs do at Google, Meta, and Stripe.",
   keywords: [

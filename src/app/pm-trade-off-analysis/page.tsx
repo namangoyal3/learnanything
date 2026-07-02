@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Trade-Off Analysis (2026) — How to Make the Hard Calls Every Day | PM Streak",
+  title: "PM Trade-Off Analysis (2026) — How to Make the Hard Calls Every Day",
   description:
     "How PMs analyse trade-offs systematically. Speed vs quality, simplicity vs flexibility, short-term vs long-term. The frameworks for hard calls every PM faces.",
   keywords: [

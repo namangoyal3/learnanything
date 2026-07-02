@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Google PM Interview Guide (2026) — Questions, Process & How to Prepare | PM Streak",
+  title: "Google PM Interview Guide (2026) — Questions, Process & How to Prepare",
   description:
     "Crack the Google PM interview. All 5 interview types, real questions, what Googlers say the bar actually is, and a 6-week prep plan — for India and global roles.",
   keywords: [

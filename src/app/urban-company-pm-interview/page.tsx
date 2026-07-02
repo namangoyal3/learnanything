@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Urban Company PM Interview Guide (2026) — Services Marketplace PM Questions | PM Streak",
+  title: "Urban Company PM Interview Guide (2026) — Services Marketplace PM Questions",
   description:
     "Crack the Urban Company PM interview. Home services marketplace dynamics, partner (professional) product challenges, trust and quality, and real interview questions.",
   keywords: [

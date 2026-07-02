@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Hackathon Guide (2026) — How to Win Internal & External Hackathons | PM Streak",
+  title: "PM Hackathon Guide (2026) — How to Win Internal & External Hackathons",
   description:
     "How PMs win hackathons. Scoping the right problem, fast user validation, shipping something demo-able in 36 hours, and making the pitch land.",
   keywords: [

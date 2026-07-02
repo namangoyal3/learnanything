@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM PRD Writing (2026) — How PMs Write PRDs That Engineers Actually Read | PM Streak",
+  title: "PM PRD Writing (2026) — How PMs Write PRDs That Engineers Actually Read",
   description:
     "How PMs write PRDs that drive alignment and ship. Structure, length, what to include, and why most PRDs rot in Notion.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Recruiting (2026) — Hiring Tech Powered by AI | PM Streak",
+  title: "PM AI Recruiting (2026) — Hiring Tech Powered by AI",
   description:
     "How PMs build AI recruiting products. Candidate matching, screening, interviewing, and the bias and legal challenges of automated hiring.",
   keywords: [

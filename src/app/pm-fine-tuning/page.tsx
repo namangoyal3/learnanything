@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Fine-Tuning vs Prompting (2026) — When PMs Should Push for Fine-Tuning | PM Streak",
+  title: "PM Fine-Tuning vs Prompting (2026) — When PMs Should Push for Fine-Tuning",
   description:
     "When fine-tuning makes sense vs prompting or RAG. Cost, latency, control, and the real-world thresholds at which fine-tuning pays off.",
   keywords: [

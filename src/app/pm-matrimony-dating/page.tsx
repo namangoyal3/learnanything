@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Matrimony &amp; Dating (2026) — Shaadi, Bumble, Aisle PM Lessons | PM Streak",
+  title: "PM Matrimony &amp; Dating (2026) — Shaadi, Bumble, Aisle PM Lessons",
   description:
     "How PMs build matrimony and dating products. Intent signals, trust and safety, cultural context, and why India is its own category.",
   keywords: [

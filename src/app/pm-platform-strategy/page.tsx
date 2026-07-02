@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Platform Strategy (2026) — When to Platform vs Ship a Feature | PM Streak",
+  title: "PM Platform Strategy (2026) — When to Platform vs Ship a Feature",
   description:
     "How PMs decide when to build a platform vs a point solution. APIs, ecosystems, partner strategy, and the cost of platforming too early.",
   keywords: [

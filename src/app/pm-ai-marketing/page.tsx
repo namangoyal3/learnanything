@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Marketing Products (2026) — Jasper, Copy.ai, Typeface PM Lessons | PM Streak",
+  title: "PM AI Marketing Products (2026) — Jasper, Copy.ai, Typeface PM Lessons",
   description:
     "How PMs build AI marketing products. Brand voice, campaign orchestration, attribution, and why AI is squeezing marketing tool margins.",
   keywords: [

@@ -8,7 +8,7 @@ const ABSTRACT =
   "This study tracks career trajectories, compensation, and skill acquisition for 5,312 product managers across experience levels, geographies, and company types. Key findings: median total compensation for PMs in the United States reached $167,000 in 2026 (IQR: $138k–$201k); median time to first promotion from APM/PM to Senior PM was 2.4 years (95% CI: 2.2–2.6 years); and we identify 12 core PM competencies where self-assessed skill gaps predict promotion outcomes with 71% accuracy.";
 
 export const metadata: Metadata = {
-  title: "PM Career Development 2026: $167k Salary, 2.4 Years to Promotion — 5,000+ Careers | PM Streak Research",
+  title: "PM Career Development 2026: $167k Salary, 2.4 Years to Promotion — 5,000+ Careers",
   description:
     "5,000+ PM careers tracked: $167k median US salary, 2.4 years to Senior PM promotion, 12 core competencies. Full salary bands, career path data, and skill gap analysis.",
   keywords: [

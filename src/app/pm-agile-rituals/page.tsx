@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Agile Rituals (2026) — Standups, Retros, Demos Done Right | PM Streak",
+  title: "PM Agile Rituals (2026) — Standups, Retros, Demos Done Right",
   description:
     "How PMs run agile rituals without waste. Standups, retros, demos, refinement — what to keep, what to cut, what works in 2026.",
   keywords: [

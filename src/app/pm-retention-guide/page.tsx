@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Retention Guide for PMs (2026) — How to Measure & Improve Retention | PM Streak",
+  title: "Product Retention Guide for PMs (2026) — How to Measure & Improve Retention",
   description:
     "The complete retention playbook for product managers. Retention curves, activation definition, habit loops, and the PM frameworks that actually move D7 and D30 retention.",
   keywords: [

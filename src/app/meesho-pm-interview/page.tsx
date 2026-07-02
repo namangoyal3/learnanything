@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Meesho PM Interview Guide (2026) — Bharat Commerce Questions & Rounds | PM Streak",
+  title: "Meesho PM Interview Guide (2026) — Bharat Commerce Questions & Rounds",
   description:
     "Crack the Meesho PM interview. All rounds, Bharat (Tier-2/3) user questions, social commerce product thinking, and real interview examples from Meesho PMs in 2026.",
   keywords: [

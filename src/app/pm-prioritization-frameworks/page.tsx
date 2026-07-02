@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Prioritization Frameworks (2026) — RICE, MoSCoW, Kano & More | PM Streak",
+  title: "PM Prioritization Frameworks (2026) — RICE, MoSCoW, Kano & More",
   description:
     "The 8 prioritization frameworks every PM should know. RICE, MoSCoW, Kano, Impact-Effort, Cost of Delay, and when to use each.",
   keywords: [

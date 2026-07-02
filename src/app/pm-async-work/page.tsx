@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Async Work (2026) — How Great PMs Write Instead of Meet | PM Streak",
+  title: "PM Async Work (2026) — How Great PMs Write Instead of Meet",
   description:
     "How PMs default to async communication — doc-first decisions, when to meet, and the writing skills that replace meetings.",
   keywords: [

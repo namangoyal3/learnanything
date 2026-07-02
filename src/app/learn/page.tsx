@@ -7,7 +7,7 @@ import JsonLd, { breadcrumbSchema, courseSchema } from "@/components/JsonLd";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Learn Product Management — Free PM Articles & Guides | PM Streak",
+  title: "Learn Product Management — Free PM Articles & Guides",
   description:
     "Free in-depth articles on product management, PM interviews, roadmaps, metrics, career growth, and leadership. Expert-reviewed PM guides from 300+ PM interviews, updated weekly.",
   alternates: { canonical: "https://learnanything.pro/learn" },

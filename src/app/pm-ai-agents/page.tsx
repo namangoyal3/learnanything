@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Agents (2026) — Building Agentic Products | PM Streak",
+  title: "PM AI Agents (2026) — Building Agentic Products",
   description:
     "How PMs build AI agents that actually work. Tool use, planning, guardrails, evals, and why most agent products ship broken.",
   keywords: [

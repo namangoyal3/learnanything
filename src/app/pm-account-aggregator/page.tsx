@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Account Aggregator (2026) — Building on India&apos;s Consent Layer | PM Streak",
+  title: "PM Account Aggregator (2026) — Building on India&apos;s Consent Layer",
   description:
     "How PMs build on Account Aggregator. FIPs, FIUs, consent UX, and why AA is reshaping lending, wealth, and insurance product design.",
   keywords: [

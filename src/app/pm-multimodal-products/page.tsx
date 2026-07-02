@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Multimodal AI Products (2026) — Text, Image, Voice, Video Together | PM Streak",
+  title: "PM Multimodal AI Products (2026) — Text, Image, Voice, Video Together",
   description:
     "How PMs build multimodal AI products. Use cases, latency tradeoffs, and where multimodal genuinely beats single-mode workflows.",
   keywords: [

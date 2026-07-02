@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Behavioral Interview Questions — STAR Stories That Get Offers | PM Streak",
+  title: "PM Behavioral Interview Questions — STAR Stories That Get Offers",
   description:
     "Master PM behavioral interviews with the STAR framework, 25+ real questions, and story templates. Leadership, conflict, ambiguity, failure — answered the way top PMs do.",
   keywords: [

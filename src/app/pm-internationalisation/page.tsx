@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Internationalisation (2026) — Building Products for Multiple Markets | PM Streak",
+  title: "PM Internationalisation (2026) — Building Products for Multiple Markets",
   description:
     "How PMs internationalise products. Localisation vs translation, payment methods, legal, and why i18n is a first-class product concern.",
   keywords: [

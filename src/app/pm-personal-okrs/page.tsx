@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Personal OKRs (2026) — Setting Career Goals That Compound | PM Streak",
+  title: "PM Personal OKRs (2026) — Setting Career Goals That Compound",
   description:
     "How PMs set personal OKRs for career growth. Skill, network, brand, and impact — and why writing them down dramatically increases follow-through.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Estimation Questions (2026) — Guesstimates, Market Sizing & Tips | PM Streak",
+  title: "PM Estimation Questions (2026) — Guesstimates, Market Sizing & Tips",
   description:
     "Crack PM estimation questions. Step-by-step framework, 20+ practice questions with model answers, and the common traps that ruin otherwise good estimates.",
   keywords: [

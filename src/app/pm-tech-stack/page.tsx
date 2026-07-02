@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "The PM Tech Stack You Should Understand (2026) — APIs, Databases, Infra for PMs | PM Streak",
+  title: "The PM Tech Stack You Should Understand (2026) — APIs, Databases, Infra for PMs",
   description:
     "The technical concepts every PM needs to understand (without coding). APIs, databases, caches, queues, CDNs, observability — explained for PMs who work with engineers.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Learning Habits (2026) — How Great PMs Keep Sharpening | PM Streak",
+  title: "PM Learning Habits (2026) — How Great PMs Keep Sharpening",
   description:
     "Daily, weekly, and monthly learning habits that compound for PMs. Inputs, reflection, and deliberate skill-building.",
   keywords: [

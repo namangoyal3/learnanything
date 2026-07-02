@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Productivity Products (2026) — Copilot, Glean, Mem PM Lessons | PM Streak",
+  title: "PM AI Productivity Products (2026) — Copilot, Glean, Mem PM Lessons",
   description:
     "How PMs build AI productivity products. Personal agents, org-wide search, knowledge retrieval, and why productivity AI now crosses workflow boundaries.",
   keywords: [

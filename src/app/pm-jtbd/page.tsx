@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Jobs-to-be-Done (2026) — JTBD Framework for Product Managers | PM Streak",
+  title: "PM Jobs-to-be-Done (2026) — JTBD Framework for Product Managers",
   description:
     "How PMs apply Jobs-to-be-Done. Functional, emotional, and social jobs, and why JTBD beats personas for decision-making.",
   keywords: [

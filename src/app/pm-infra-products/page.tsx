@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Infrastructure Products (2026) — Building for Infra Engineers | PM Streak",
+  title: "PM Infrastructure Products (2026) — Building for Infra Engineers",
   description:
     "How PMs build infrastructure products. SLAs, latency budgets, incident response, and what makes infra PM different from everything else.",
   keywords: [

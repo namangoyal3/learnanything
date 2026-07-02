@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Jobs Platforms (2026) — LinkedIn, Naukri, Apna, Wellfound PM Guide | PM Streak",
+  title: "PM Jobs Platforms (2026) — LinkedIn, Naukri, Apna, Wellfound PM Guide",
   description:
     "How PMs build jobs and hiring products. Candidate quality, match rate, Tier-2/3 market, and why Apna rewrote the blue-collar playbook.",
   keywords: [

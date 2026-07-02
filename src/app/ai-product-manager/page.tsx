@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "AI Product Manager Guide (2026) — How to Become an AI PM | PM Streak",
+  title: "AI Product Manager Guide (2026) — How to Become an AI PM",
   description:
     "The complete guide to becoming an AI product manager. What AI PMs do, the skills you need, interview questions, salary ranges, and how to break into AI product management in 2026.",
   keywords: [

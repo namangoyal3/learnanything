@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Flipkart PM Interview Guide (2026) — Questions, Process & Prep Plan | PM Streak",
+  title: "Flipkart PM Interview Guide (2026) — Questions, Process & Prep Plan",
   description:
     "Crack the Flipkart PM interview. All interview rounds, real questions asked at Flipkart, what Flipkart PMs say the bar is, and a prep plan for PM and APM roles.",
   keywords: [

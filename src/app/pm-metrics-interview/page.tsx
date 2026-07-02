@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Metrics Interview Questions — How to Diagnose Drops & Define Success | PM Streak",
+  title: "PM Metrics Interview Questions — How to Diagnose Drops & Define Success",
   description:
     "Master the metrics round in PM interviews. Learn how to define success metrics, debug DAU drops, set up A/B tests, and think like a data-driven PM. With 30+ real questions.",
   keywords: [

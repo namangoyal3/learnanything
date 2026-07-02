@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM RAG Products (2026) — Building Retrieval-Augmented Apps | PM Streak",
+  title: "PM RAG Products (2026) — Building Retrieval-Augmented Apps",
   description:
     "How PMs build RAG products. Embeddings, chunking, reranking, and why retrieval quality matters more than model choice.",
   keywords: [

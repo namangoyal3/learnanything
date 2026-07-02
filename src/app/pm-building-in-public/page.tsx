@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Building in Public (2026) — Why More PMs Should Share Their Work | PM Streak",
+  title: "PM Building in Public (2026) — Why More PMs Should Share Their Work",
   description:
     "Why PMs benefit from building in public. Accountability, compounding distribution, and the specific things to share (and not).",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Customer Research Guide (2026) — Beyond Interviews | PM Streak",
+  title: "PM Customer Research Guide (2026) — Beyond Interviews",
   description:
     "The PM guide to customer research. How to combine qualitative, quantitative, and passive signals into a research program that drives real product decisions.",
   keywords: [

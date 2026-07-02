@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Vertical SaaS (2026) — Toast, ServiceTitan, Procore PM Lessons | PM Streak",
+  title: "PM Vertical SaaS (2026) — Toast, ServiceTitan, Procore PM Lessons",
   description:
     "How PMs build vertical SaaS. Deep domain workflows, payments embedding, and why going narrow and deep beats horizontal at the margin.",
   keywords: [

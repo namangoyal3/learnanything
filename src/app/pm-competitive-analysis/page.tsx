@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Competitive Analysis for PMs (2026) — How to Study Competitors Without Copying Them | PM Streak",
+  title: "Competitive Analysis for PMs (2026) — How to Study Competitors Without Copying Them",
   description:
     "The PM guide to competitive analysis. How to study competitors, what to track, when to copy vs differentiate, and the anti-patterns that make competitive research useless.",
   keywords: [

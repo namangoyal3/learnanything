@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Amazon PM Interview Guide (2026) — Leadership Principles, Bar Raiser & Questions | PM Streak",
+  title: "Amazon PM Interview Guide (2026) — Leadership Principles, Bar Raiser & Questions",
   description:
     "Crack the Amazon PM interview. Leadership Principles in every answer, the Bar Raiser round, product design questions, and a complete prep plan for Amazon India PM roles.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Zero-to-One (2026) — How PMs Launch New Products From Scratch | PM Streak",
+  title: "PM Zero-to-One (2026) — How PMs Launch New Products From Scratch",
   description:
     "How PMs launch 0→1 products. The skills that matter, the traps to avoid, and the mindset shift from growing existing products to creating new ones.",
   keywords: [

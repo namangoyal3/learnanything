@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM HR Tech (2026) — Darwinbox, Rippling, Keka PM Guide | PM Streak",
+  title: "PM HR Tech (2026) — Darwinbox, Rippling, Keka PM Guide",
   description:
     "How PMs build HR tech products. Payroll, performance, engagement, and the consolidation of point tools into full-suite HRIS.",
   keywords: [

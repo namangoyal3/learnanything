@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Bay Area vs India (2026) — Career Tradeoffs Compared | PM Streak",
+  title: "PM Bay Area vs India (2026) — Career Tradeoffs Compared",
   description:
     "How PMs should think about Bay Area vs India career paths. Comp, scope, mission, and the lifestyle differences that compound over a decade.",
   keywords: [

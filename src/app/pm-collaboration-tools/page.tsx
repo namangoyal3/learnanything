@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Collaboration Tools (2026) — Notion, Figma, Linear PM Playbook | PM Streak",
+  title: "PM Collaboration Tools (2026) — Notion, Figma, Linear PM Playbook",
   description:
     "How PMs build collaboration products. Multiplayer UX, permissions, templates, and why collaboration tools compound through networks of users.",
   keywords: [

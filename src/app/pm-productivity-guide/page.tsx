@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Productivity Guide (2026) — How Top Product Managers Get More Done | PM Streak",
+  title: "PM Productivity Guide (2026) — How Top Product Managers Get More Done",
   description:
     "How top PMs stay productive under constant demands. Time-blocking, async systems, saying no, and the productivity habits that separate high-output PMs from burned-out ones.",
   keywords: [

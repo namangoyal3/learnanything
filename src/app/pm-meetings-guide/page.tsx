@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Meetings Guide (2026) — How to Run Meetings Your Team Thanks You For | PM Streak",
+  title: "PM Meetings Guide (2026) — How to Run Meetings Your Team Thanks You For",
   description:
     "How PMs run meetings that don&apos;t waste time. Types of meetings, agenda templates, when to cancel, and how to keep meetings short, decisive, and valuable.",
   keywords: [

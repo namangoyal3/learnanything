@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Personalization (2026) — Per-User Tuning Beyond Recommendations | PM Streak",
+  title: "PM AI Personalization (2026) — Per-User Tuning Beyond Recommendations",
   description:
     "How PMs build AI personalization. Per-user prompts, memory, behavioural signals, and where personalisation stops feeling helpful and starts feeling creepy.",
   keywords: [

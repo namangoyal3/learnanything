@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM LinkedIn Branding (2026) — Building a PM Brand That Gets Inbound | PM Streak",
+  title: "PM LinkedIn Branding (2026) — Building a PM Brand That Gets Inbound",
   description:
     "How PMs build a LinkedIn brand. Content cadence, signal-to-noise, and why a well-kept LinkedIn drives better opportunities than applications.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Chat Apps (2026) — WhatsApp, Telegram, iMessage PM Lessons | PM Streak",
+  title: "PM Chat Apps (2026) — WhatsApp, Telegram, iMessage PM Lessons",
   description:
     "How PMs build chat apps. Delivery, encryption, groups, payments on top, and why chat is the stickiest consumer category.",
   keywords: [

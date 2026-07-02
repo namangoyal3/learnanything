@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Prompt Engineering (2026) — How PMs Should Think About Prompts | PM Streak",
+  title: "PM Prompt Engineering (2026) — How PMs Should Think About Prompts",
   description:
     "How PMs handle prompt engineering. Versioning, evals, system prompts, and why prompt engineering is product engineering, not a hack.",
   keywords: [

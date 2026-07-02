@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Airbnb PM Interview Guide (2026) — Marketplace, Trust & Host PM Questions | PM Streak",
+  title: "Airbnb PM Interview Guide (2026) — Marketplace, Trust & Host PM Questions",
   description:
     "Crack the Airbnb PM interview. Marketplace dynamics, trust and safety, host and guest experience, and the story-driven product culture Airbnb is famous for.",
   keywords: [

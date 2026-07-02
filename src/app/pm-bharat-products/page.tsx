@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Building for Bharat (2026) — How Great PMs Design for India&apos;s Next Half-Billion Users | PM Streak",
+  title: "PM Building for Bharat (2026) — How Great PMs Design for India&apos;s Next Half-Billion Users",
   description:
     "How PMs design for Bharat — Tier-2/3/4 India. Vernacular UX, device constraints, trust signals, and the patterns that work where English-first products fail.",
   keywords: [

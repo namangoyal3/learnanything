@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM KPI Dashboards (2026) — What to Build, What to Skip | PM Streak",
+  title: "PM KPI Dashboards (2026) — What to Build, What to Skip",
   description:
     "How PMs design KPI dashboards that drive action. What to include, what to cut, the right cadence, and how to make dashboards your team actually checks.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Podcasts (2026) — The Best Podcasts for Product Managers | PM Streak",
+  title: "PM Podcasts (2026) — The Best Podcasts for Product Managers",
   description:
     "The PM podcasts worth listening to in 2026. Lenny&apos;s, Acquired, How I Built This, and which Indian podcasts cover product specifically.",
   keywords: [

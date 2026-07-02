@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Music Creation Tools (2026) — Suno, Udio, Ableton PM Lessons | PM Streak",
+  title: "PM Music Creation Tools (2026) — Suno, Udio, Ableton PM Lessons",
   description:
     "How PMs build music creation tools. AI composition, DAW integrations, rights, and why AI music creation is reshaping creator economics.",
   keywords: [

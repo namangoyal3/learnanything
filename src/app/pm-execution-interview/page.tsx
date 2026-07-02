@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Execution Interview Questions (2026) — Delivery, Ops & Sprint Management | PM Streak",
+  title: "PM Execution Interview Questions (2026) — Delivery, Ops & Sprint Management",
   description:
     "Master PM execution interview questions. Sprint planning, launch management, trade-off decisions, handling blockers, and cross-functional coordination — with real questions and model answers.",
   keywords: [

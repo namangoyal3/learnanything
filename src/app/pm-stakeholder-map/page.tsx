@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Stakeholder Map (2026) — How to Identify and Manage Every Stakeholder | PM Streak",
+  title: "PM Stakeholder Map (2026) — How to Identify and Manage Every Stakeholder",
   description:
     "How PMs map stakeholders systematically. Who to keep informed, who to consult, who decides. The template that prevents surprises.",
   keywords: [

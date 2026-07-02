@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Decision Frameworks (2026) — How Good PMs Decide Under Uncertainty | PM Streak",
+  title: "PM Decision Frameworks (2026) — How Good PMs Decide Under Uncertainty",
   description:
     "Decision frameworks PMs actually use. RICE, WSJF, ICE, two-way vs one-way doors, and when to skip frameworks entirely.",
   keywords: [

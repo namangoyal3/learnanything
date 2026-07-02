@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Interview Day Checklist (2026) — What to Do the 24 Hours Before &amp; Day Of | PM Streak",
+  title: "PM Interview Day Checklist (2026) — What to Do the 24 Hours Before &amp; Day Of",
   description:
     "The PM interview day checklist. What to prep 24 hours before, what to eat, what to wear, timing, and how to walk in calm and confident.",
   keywords: [

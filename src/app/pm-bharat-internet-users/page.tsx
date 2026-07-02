@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM for Bharat Users (2026) — Designing for India&apos;s Next 500M | PM Streak",
+  title: "PM for Bharat Users (2026) — Designing for India&apos;s Next 500M",
   description:
     "How PMs design for Bharat — the next 500M Indian internet users. Vernacular, voice, video, and the mistakes urban-first PMs keep making.",
   keywords: [

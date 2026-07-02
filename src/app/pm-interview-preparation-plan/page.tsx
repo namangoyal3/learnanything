@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Interview Preparation Plan (2026) — 8-Week Study Schedule | PM Streak",
+  title: "PM Interview Preparation Plan (2026) — 8-Week Study Schedule",
   description:
     "The complete 8-week PM interview preparation plan. Week-by-week schedule, what to study, how to practice, and how to track readiness — for Google, Flipkart, Razorpay, and top startups.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Mobile-First Design (2026) — Why India is Still a Mobile-First PM Market | PM Streak",
+  title: "PM Mobile-First Design (2026) — Why India is Still a Mobile-First PM Market",
   description:
     "How PMs build mobile-first for India. Android bias, low-end devices, flaky connectivity, and why desktop-first thinking fails in Bharat.",
   keywords: [

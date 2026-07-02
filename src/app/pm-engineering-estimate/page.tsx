@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Engineering Estimates (2026) — How to Work With Eng Timelines Without Becoming a Nuisance | PM Streak",
+  title: "PM Engineering Estimates (2026) — How to Work With Eng Timelines Without Becoming a Nuisance",
   description:
     "How PMs work with engineering estimates — respecting their expertise while keeping projects predictable. When to probe, when to trust, and how to handle slipping timelines.",
   keywords: [

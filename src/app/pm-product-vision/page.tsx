@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Product Vision (2026) — Crafting a Vision That Rallies Teams | PM Streak",
+  title: "PM Product Vision (2026) — Crafting a Vision That Rallies Teams",
   description:
     "How PMs write product visions teams actually rally around. Examples, anti-patterns, and the difference between vision and strategy.",
   keywords: [

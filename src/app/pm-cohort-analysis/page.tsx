@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Cohort Analysis Guide (2026) — Find Real Product Signal | PM Streak",
+  title: "PM Cohort Analysis Guide (2026) — Find Real Product Signal",
   description:
     "How PMs use cohort analysis to find real product signal. When to use cohorts, what to segment by, and how to spot the patterns aggregate metrics hide.",
   keywords: [

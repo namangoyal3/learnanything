@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Experiment Examples (2026) — Real A/B Test Designs | PM Streak",
+  title: "PM Experiment Examples (2026) — Real A/B Test Designs",
   description:
     "5 real-style PM experiment examples with hypothesis, setup, primary + guardrail metrics, and decision criteria. See how great PMs design tests.",
   keywords: [

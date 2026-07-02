@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Agritech (2026) — DeHaat, Ninjacart, AgroStar PM Guide | PM Streak",
+  title: "PM Agritech (2026) — DeHaat, Ninjacart, AgroStar PM Guide",
   description:
     "How PMs build agritech products in India. Farmer workflows, supply chain, advisory, and the unique PM challenges of rural-first products.",
   keywords: [

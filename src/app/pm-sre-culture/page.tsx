@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM SRE Culture (2026) — Error Budgets, SLOs, and PM Responsibility for Reliability | PM Streak",
+  title: "PM SRE Culture (2026) — Error Budgets, SLOs, and PM Responsibility for Reliability",
   description:
     "How PMs work with SRE teams. Error budgets, SLOs, postmortems, and why PMs own the tradeoff between velocity and reliability.",
   keywords: [

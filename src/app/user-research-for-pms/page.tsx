@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "User Research for Product Managers (2026) — Interviews, Surveys, Usability Tests | PM Streak",
+  title: "User Research for Product Managers (2026) — Interviews, Surveys, Usability Tests",
   description:
     "The complete user research playbook for PMs. When to use interviews vs surveys vs usability tests, how to recruit, how to analyse, and how to turn research into product decisions.",
   keywords: [

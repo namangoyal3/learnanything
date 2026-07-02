@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Weekly Planning Guide (2026) — How Great PMs Plan Their Week | PM Streak",
+  title: "PM Weekly Planning Guide (2026) — How Great PMs Plan Their Week",
   description:
     "How great PMs plan their week. The 60-minute weekly planning ritual, the 70-20-10 time split, weekly review habits, and how to protect deep work in a meeting-heavy role.",
   keywords: [

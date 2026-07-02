@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Influence Without Authority (2026) — The Core PM Skill | PM Streak",
+  title: "PM Influence Without Authority (2026) — The Core PM Skill",
   description:
     "How PMs influence engineers, designers, execs, and partners without formal authority. Trust, narrative, and the quiet tactics that work.",
   keywords: [

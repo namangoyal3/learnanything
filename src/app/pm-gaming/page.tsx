@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Gaming (2026) — Dream11, MPL, Games24x7 PM Guide | PM Streak",
+  title: "PM Gaming (2026) — Dream11, MPL, Games24x7 PM Guide",
   description:
     "How PMs build gaming products in India. Retention loops, monetisation, real-money gaming regulation, and the unique PM challenges of games.",
   keywords: [

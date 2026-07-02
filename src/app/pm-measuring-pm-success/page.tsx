@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Measure PM Success (2026) — What Great PMs Are Actually Evaluated On | PM Streak",
+  title: "How to Measure PM Success (2026) — What Great PMs Are Actually Evaluated On",
   description:
     "How PMs are actually measured. Beyond &apos;did you ship features?&apos; — the real signals PM managers and companies use to evaluate PMs across levels.",
   keywords: [

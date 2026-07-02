@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Founder vs PM (2026) — When They Do the Same Job and When They Clash | PM Streak",
+  title: "Founder vs PM (2026) — When They Do the Same Job and When They Clash",
   description:
     "Founder vs PM — who owns what. The overlap, the conflicts, and how to work with a founder-led product culture as a PM joining the team.",
   keywords: [

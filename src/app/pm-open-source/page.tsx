@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Open Source Products (2026) — GitLab, HashiCorp, Posthog PM Lessons | PM Streak",
+  title: "PM Open Source Products (2026) — GitLab, HashiCorp, Posthog PM Lessons",
   description:
     "How PMs build open source products. Community vs commercial, licensing, monetisation, and why open source is the most contributor-sensitive PM role.",
   keywords: [

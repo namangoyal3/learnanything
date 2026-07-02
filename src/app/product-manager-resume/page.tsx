@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Manager Resume Guide (2026) — Templates, Examples & Tips | PM Streak",
+  title: "Product Manager Resume Guide (2026) — Templates, Examples & Tips",
   description:
     "Write a PM resume that gets interviews. Templates, real examples, bullet formulas, and what hiring managers actually look for at Google, Flipkart, Razorpay, and top startups.",
   keywords: [

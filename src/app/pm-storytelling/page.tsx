@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Storytelling Guide (2026) — How Great PMs Turn Data Into Narrative | PM Streak",
+  title: "PM Storytelling Guide (2026) — How Great PMs Turn Data Into Narrative",
   description:
     "How great PMs use storytelling to align teams and influence leadership. Narrative structures, data-to-story frameworks, and the story arcs that move decisions.",
   keywords: [

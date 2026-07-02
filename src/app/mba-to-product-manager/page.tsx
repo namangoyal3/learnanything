@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "MBA to Product Manager (2026) — IIM, ISB & Top B-School to PM Career | PM Streak",
+  title: "MBA to Product Manager (2026) — IIM, ISB & Top B-School to PM Career",
   description:
     "The complete guide to landing a PM role from an MBA. How to position your MBA, APM programs that recruit from campus, what hiring managers actually look for from MBAs.",
   keywords: [

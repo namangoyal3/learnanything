@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Fitness Apps (2026) — Strava, Cult.fit, Apple Fitness+ PM Lessons | PM Streak",
+  title: "PM Fitness Apps (2026) — Strava, Cult.fit, Apple Fitness+ PM Lessons",
   description:
     "How PMs build fitness apps. Wearable integrations, habit formation, content vs social, and why fitness has the highest seasonal churn in consumer.",
   keywords: [

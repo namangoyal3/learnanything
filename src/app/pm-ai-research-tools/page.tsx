@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Research Tools (2026) — Elicit, Consensus, NotebookLM PM Lessons | PM Streak",
+  title: "PM AI Research Tools (2026) — Elicit, Consensus, NotebookLM PM Lessons",
   description:
     "How PMs build AI research tools. Literature review, summarisation, grounded answers, and the evolution of AI-assisted knowledge work.",
   keywords: [

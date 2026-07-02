@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "OKRs for Product Managers (2026) — How to Write, Set & Track OKRs | PM Streak",
+  title: "OKRs for Product Managers (2026) — How to Write, Set & Track OKRs",
   description:
     "Master OKRs as a product manager. How to write great objectives and key results, common OKR mistakes, PM-specific examples, and how to cascade OKRs from company to team level.",
   keywords: [

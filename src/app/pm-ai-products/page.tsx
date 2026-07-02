@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Products (2026) — How to Ship AI Features That Users Trust | PM Streak",
+  title: "PM AI Products (2026) — How to Ship AI Features That Users Trust",
   description:
     "How PMs build AI products that earn trust. Prompt design, evaluation, hallucination management, and the ethics of shipping AI features to real users.",
   keywords: [

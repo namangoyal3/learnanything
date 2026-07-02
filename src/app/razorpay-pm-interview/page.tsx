@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Razorpay PM Interview Guide (2026) — Fintech Questions, Rounds & Prep | PM Streak",
+  title: "Razorpay PM Interview Guide (2026) — Fintech Questions, Rounds & Prep",
   description:
     "Crack the Razorpay PM interview. All rounds, fintech-specific questions, what Razorpay PMs say the bar is, and a prep plan for PM and APM roles at India's top fintech.",
   keywords: [

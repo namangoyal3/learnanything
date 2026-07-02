@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Case Question Bank (2026) — 50+ Real Questions Asked in Indian PM Interviews | PM Streak",
+  title: "PM Case Question Bank (2026) — 50+ Real Questions Asked in Indian PM Interviews",
   description:
     "50+ real PM case questions from Indian tech interviews. Organised by company, category, and difficulty. What candidates were actually asked.",
   keywords: [

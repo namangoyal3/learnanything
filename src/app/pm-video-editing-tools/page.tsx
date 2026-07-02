@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Video Editing Tools (2026) — CapCut, Descript, Premiere PM Lessons | PM Streak",
+  title: "PM Video Editing Tools (2026) — CapCut, Descript, Premiere PM Lessons",
   description:
     "How PMs build video editing tools. Mobile vs desktop, AI assists, templates, and why CapCut disrupted the category by owning creator workflows on mobile.",
   keywords: [

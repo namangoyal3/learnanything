@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Video Products (2026) — YouTube, TikTok, Reels PM Playbook | PM Streak",
+  title: "PM Video Products (2026) — YouTube, TikTok, Reels PM Playbook",
   description:
     "How PMs build video products. Watch time, creator tools, recommendation, monetisation, and the unique engagement dynamics of video.",
   keywords: [

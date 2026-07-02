@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Crisis Management (2026) — How to Handle Production Incidents &amp; Launch Disasters | PM Streak",
+  title: "PM Crisis Management (2026) — How to Handle Production Incidents &amp; Launch Disasters",
   description:
     "How PMs handle crisis moments — production incidents, launch disasters, customer escalations. Triage, communication, post-mortem, and rebuilding trust.",
   keywords: [

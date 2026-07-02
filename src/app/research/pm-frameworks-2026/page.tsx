@@ -8,7 +8,7 @@ const ABSTRACT =
   "This study analyses the adoption, perceived effectiveness, and outcomes associated with 54 product management frameworks across 3,247 real-world implementation instances. Using a practitioner-rated effectiveness rubric, we rank frameworks by weighted utility score. RICE Scoring ranks highest (8.7/10), followed by OKRs (8.2/10) and DACI (7.9/10). We additionally examine the Shreyas Doshi framework stack and identify an 'implementation gap' — the systematic divergence between frameworks PMs report knowing versus applying consistently.";
 
 export const metadata: Metadata = {
-  title: "PM Frameworks Analysis 2026: RICE 8.7/10, OKR 8.2/10 — Rankings of 50+ Frameworks | PM Streak Research",
+  title: "PM Frameworks Analysis 2026: RICE 8.7/10, OKR 8.2/10 — Rankings of 50+ Frameworks",
   description:
     "Analysis of 50+ PM frameworks across 3,000+ real implementations. RICE scores 8.7/10, OKRs 8.2/10, DACI 7.9/10. Full rankings, Shreyas Doshi stack, and implementation gap data.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Real Estate Tech (2026) — NoBroker, MagicBricks, Housing PM Guide | PM Streak",
+  title: "PM Real Estate Tech (2026) — NoBroker, MagicBricks, Housing PM Guide",
   description:
     "How PMs build real estate tech products. Listings quality, broker dynamics, renter vs buyer funnels, and the long-cycle problems of proptech.",
   keywords: [

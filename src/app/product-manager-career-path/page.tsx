@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Manager Career Path (2026) — APM to CPO Roadmap | PM Streak",
+  title: "Product Manager Career Path (2026) — APM to CPO Roadmap",
   description:
     "The complete PM career path from APM to CPO. What each level requires, how to get promoted, salaries at every stage, and how to accelerate your PM career in India.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM User Interviews (2026) — How to Run Interviews That Change Decisions | PM Streak",
+  title: "PM User Interviews (2026) — How to Run Interviews That Change Decisions",
   description:
     "How PMs run user interviews that actually change product decisions. Question design, note-taking, synthesis, and the traps interviewers fall into.",
   keywords: [

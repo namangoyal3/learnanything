@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "12 PM Anti-Patterns (2026) — Habits That Mark a Weak Product Manager | PM Streak",
+  title: "12 PM Anti-Patterns (2026) — Habits That Mark a Weak Product Manager",
   description:
     "12 PM anti-patterns that weak PMs do and strong PMs avoid. The habits that erode team trust, miss outcomes, and stall careers — and how to recognise them in yourself.",
   keywords: [

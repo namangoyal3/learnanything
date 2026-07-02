@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How PMs Make Bold Bets (2026) — The Skill Senior PMs Need Most | PM Streak",
+  title: "How PMs Make Bold Bets (2026) — The Skill Senior PMs Need Most",
   description:
     "How PMs make bold product bets when incremental work isn&apos;t enough. Distinguishing brave bets from reckless ones, structuring commitments, and recovering from bad bets.",
   keywords: [

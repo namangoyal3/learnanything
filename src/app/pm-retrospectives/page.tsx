@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Retrospectives Guide (2026) — How to Run Retros That Actually Improve Things | PM Streak",
+  title: "PM Retrospectives Guide (2026) — How to Run Retros That Actually Improve Things",
   description:
     "How PMs run retrospectives that change behaviour. Structure, facilitation, action items that get followed up, and why most retros are theatre.",
   keywords: [

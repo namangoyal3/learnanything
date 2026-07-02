@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Technical Interview Questions (2026) — APIs, Data & System Design | PM Streak",
+  title: "PM Technical Interview Questions (2026) — APIs, Data & System Design",
   description:
     "Ace the PM technical interview. APIs, databases, system design for PMs, data pipelines, and how to talk credibly with engineers — with 30+ questions and model answers.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM 1:1 Guide (2026) — How Product Managers Run Great 1:1s | PM Streak",
+  title: "PM 1:1 Guide (2026) — How Product Managers Run Great 1:1s",
   description:
     "How PMs run great 1:1s — with their manager, direct reports, and cross-functional partners. Agenda templates, question prompts, and the cadence that works.",
   keywords: [
