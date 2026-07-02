@@ -515,7 +515,7 @@
       }
       btn.disabled = true;
       try {
-        const r = await fetch('/api/leads', {
+        const r = await fetch('/api/leads/article-signup', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, articleSlug: 'job-outreach-waitlist', vertical: 'job-outreach' }),
