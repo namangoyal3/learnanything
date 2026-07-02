@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Language Learning Apps (2026) — Duolingo, Babbel, Busuu PM Lessons | PM Streak",
+  title: "PM Language Learning Apps (2026) — Duolingo, Babbel, Busuu PM Lessons",
   description:
     "How PMs build language learning apps. Streaks, gamification, AI tutors, and why Duolingo&apos;s approach is the most studied product design in consumer AI.",
   keywords: [

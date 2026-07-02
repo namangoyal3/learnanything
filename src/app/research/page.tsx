@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { breadcrumbSchema, collectionSchema, SITE_URL } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Research Hub — Product Management Research & Data | PM Streak",
+  title: "PM Research Hub — Product Management Research & Data",
   description:
     "Original research on product management: AI adoption rates, framework effectiveness, salary data, and career trajectories. Peer-reviewed studies from PM Streak Research, CC BY 4.0.",
   keywords: [

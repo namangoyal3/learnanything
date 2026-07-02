@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Global vs India PM Roles (2026) — Which Should You Target? | PM Streak",
+  title: "Global vs India PM Roles (2026) — Which Should You Target?",
   description:
     "The real differences between global (US/EU) and India-based PM roles. Compensation, scope, career trajectory, and how to decide which path fits you.",
   keywords: [

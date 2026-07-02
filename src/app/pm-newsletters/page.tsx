@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Newsletters (2026) — The Best Substacks for Product Managers | PM Streak",
+  title: "PM Newsletters (2026) — The Best Substacks for Product Managers",
   description:
     "The PM newsletters worth subscribing to in 2026. Lenny&apos;s, Reforge, Bringing the Donuts, and the Indian PM voices worth following.",
   keywords: [

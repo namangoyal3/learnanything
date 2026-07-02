@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Zomato PM Interview Guide (2026) — Questions, Rounds & Prep | PM Streak",
+  title: "Zomato PM Interview Guide (2026) — Questions, Rounds & Prep",
   description:
     "Crack the Zomato PM interview. All rounds, food delivery and dining product questions, real interview examples, and what Zomato PMs say the bar is in 2026.",
   keywords: [

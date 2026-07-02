@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Resume Guide (2026) — Writing a PM Resume That Gets Interviews | PM Streak",
+  title: "PM Resume Guide (2026) — Writing a PM Resume That Gets Interviews",
   description:
     "How PMs write resumes that get past recruiters. Structure, verbs, metrics, and why most PM resumes read the same boring way.",
   keywords: [

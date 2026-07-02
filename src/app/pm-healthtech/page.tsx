@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Healthtech (2026) — Practo, Pharmeasy, Cult.fit PM Guide | PM Streak",
+  title: "PM Healthtech (2026) — Practo, Pharmeasy, Cult.fit PM Guide",
   description:
     "How PMs build healthtech products in India. Regulatory constraints, clinician workflows, patient trust, and the peculiar dynamics of health products.",
   keywords: [

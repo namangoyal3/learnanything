@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Legal Tech (2026) — Harvey, Ironclad, SpotDraft PM Guide | PM Streak",
+  title: "PM Legal Tech (2026) — Harvey, Ironclad, SpotDraft PM Guide",
   description:
     "How PMs build legal tech products. Contract lifecycle, legal research, AI-assisted drafting, and the slow but real digitisation of legal workflows.",
   keywords: [

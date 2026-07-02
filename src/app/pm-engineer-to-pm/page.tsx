@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Engineer to PM (2026) — The Most Common PM Transition | PM Streak",
+  title: "PM Engineer to PM (2026) — The Most Common PM Transition",
   description:
     "How engineers become PMs. Strengths they bring, habits to unlearn, and why ex-engineers often make the best technical PMs.",
   keywords: [

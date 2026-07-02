@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Growth Loops (2026) — PM Guide to Viral, Content & Paid Loops | PM Streak",
+  title: "Product Growth Loops (2026) — PM Guide to Viral, Content & Paid Loops",
   description:
     "Master product growth loops as a PM. Viral loops, content loops, paid acquisition loops, and how to identify and strengthen the loops in your product — with real company examples.",
   keywords: [

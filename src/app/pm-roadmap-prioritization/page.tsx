@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Roadmap Prioritization (2026) — How PMs Choose What to Build Next | PM Streak",
+  title: "PM Roadmap Prioritization (2026) — How PMs Choose What to Build Next",
   description:
     "How PMs prioritise roadmaps when every ask looks urgent. Signals, bets, explicit killed work, and making prioritisation defensible.",
   keywords: [

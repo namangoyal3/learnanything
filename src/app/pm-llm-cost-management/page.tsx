@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM LLM Cost Management (2026) — Keeping AI Products Profitable | PM Streak",
+  title: "PM LLM Cost Management (2026) — Keeping AI Products Profitable",
   description:
     "How PMs manage LLM costs. Caching, model selection, prompt compression, and unit economics that don&apos;t collapse at scale.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Non-Tech to PM (2026) — Crossing Into Product From Outside Tech | PM Streak",
+  title: "PM Non-Tech to PM (2026) — Crossing Into Product From Outside Tech",
   description:
     "How non-tech professionals (finance, ops, teachers, lawyers) break into PM. Storytelling, stepping stones, and why domain-specific PM roles are the cleanest entry.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM User Personas Guide (2026) — How to Build Personas That Actually Change Product Decisions | PM Streak",
+  title: "PM User Personas Guide (2026) — How to Build Personas That Actually Change Product Decisions",
   description:
     "How PMs create useful user personas. Beyond demographics — behaviours, jobs, pain points, and the structure that keeps personas useful instead of wall art.",
   keywords: [

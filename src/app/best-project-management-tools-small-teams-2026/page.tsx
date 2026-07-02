@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema, articleSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Best Project Management Tools for Small Teams in 2026 | PM Streak",
+  title: "Best Project Management Tools for Small Teams in 2026",
   description: "Discover the top project management tools for small teams in 2026. Compare features, pricing, and AI capabilities to boost your team&apos;s productivity.",
   keywords: [
     "project management tools for small teams",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Security Products (2026) — Building for SOCs, IT, and Compliance | PM Streak",
+  title: "PM Security Products (2026) — Building for SOCs, IT, and Compliance",
   description:
     "How PMs build security products. Detection, response, compliance, and the unique buyer dynamics of selling to CISOs.",
   keywords: [

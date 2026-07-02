@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Analytics for Product Managers (2026) — Metrics, Funnels & A/B Testing | PM Streak",
+  title: "Product Analytics for Product Managers (2026) — Metrics, Funnels & A/B Testing",
   description:
     "Master product analytics as a PM. Retention curves, funnel analysis, A/B testing, north star metrics, and how to use Amplitude and Mixpanel — explained without the data science jargon.",
   keywords: [

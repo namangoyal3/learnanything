@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Documentation Guide (2026) — What Great PMs Actually Write Down | PM Streak",
+  title: "PM Documentation Guide (2026) — What Great PMs Actually Write Down",
   description:
     "How PMs document decisions, specs, strategy, and learnings. What&apos;s worth writing down, what isn&apos;t, and the 7 documents every PM should maintain.",
   keywords: [

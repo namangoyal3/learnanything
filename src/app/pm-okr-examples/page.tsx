@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM OKR Examples (2026) — Real Quarterly OKRs From Great Product Teams | PM Streak",
+  title: "PM OKR Examples (2026) — Real Quarterly OKRs From Great Product Teams",
   description:
     "15+ real-style PM OKR examples for consumer, B2B, growth, and platform products. See what well-written Objectives + Key Results actually look like.",
   keywords: [

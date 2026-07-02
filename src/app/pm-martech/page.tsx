@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM MarTech (2026) — Segment, Braze, MoEngage PM Guide | PM Streak",
+  title: "PM MarTech (2026) — Segment, Braze, MoEngage PM Guide",
   description:
     "How PMs build MarTech products. CDP, engagement, attribution, and why MarTech is consolidating around data + activation.",
   keywords: [

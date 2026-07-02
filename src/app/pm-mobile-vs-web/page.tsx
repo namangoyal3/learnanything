@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Mobile vs Web (2026) — Different PM Strategies for Different Platforms | PM Streak",
+  title: "PM Mobile vs Web (2026) — Different PM Strategies for Different Platforms",
   description:
     "How PMs think differently about mobile vs web products. User behaviour, distribution, monetisation, engineering — and when to build for which first.",
   keywords: [

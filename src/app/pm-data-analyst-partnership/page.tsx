@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM + Data Analyst Partnership (2026) — How to Work With Data Teams Effectively | PM Streak",
+  title: "PM + Data Analyst Partnership (2026) — How to Work With Data Teams Effectively",
   description:
     "How PMs work with data analysts effectively. What to ask for, what to not ask for, how to set up self-serve, and building deep analytical partnership over time.",
   keywords: [

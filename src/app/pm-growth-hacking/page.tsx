@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Growth Hacking (2026) — What Works and What&apos;s Just Buzzwords | PM Streak",
+  title: "PM Growth Hacking (2026) — What Works and What&apos;s Just Buzzwords",
   description:
     "Real growth hacking for PMs — experiments that compound growth without burning trust. Tactics that work, ones that don&apos;t, and the math behind each.",
   keywords: [

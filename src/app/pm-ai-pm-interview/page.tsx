@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI PM Interview (2026) — Cracking AI-First PM Roles | PM Streak",
+  title: "PM AI PM Interview (2026) — Cracking AI-First PM Roles",
   description:
     "How to interview for AI PM roles at OpenAI, Anthropic, Sarvam, Krutrim. The frameworks, technical fluency, and questions to expect.",
   keywords: [

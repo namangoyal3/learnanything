@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Notes Apps (2026) — Notion, Obsidian, Apple Notes PM Lessons | PM Streak",
+  title: "PM Notes Apps (2026) — Notion, Obsidian, Apple Notes PM Lessons",
   description:
     "How PMs build notes and knowledge apps. Blocks vs pages, sync, AI-assisted writing, and why notes apps compound through personal daily use.",
   keywords: [

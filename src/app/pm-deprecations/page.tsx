@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Deprecations Guide (2026) — How to Kill Features Without Killing Trust | PM Streak",
+  title: "PM Deprecations Guide (2026) — How to Kill Features Without Killing Trust",
   description:
     "How PMs deprecate features without burning customers. Communication, migration paths, timelines, and why deprecating is a senior-PM skill.",
   keywords: [

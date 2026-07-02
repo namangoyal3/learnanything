@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM + Customer Support (2026) — Why the Support Queue Is Your Best User Research | PM Streak",
+  title: "PM + Customer Support (2026) — Why the Support Queue Is Your Best User Research",
   description:
     "Why great PMs spend time in the customer support queue. What to look for, how to quantify signal, and how to turn support data into product decisions.",
   keywords: [

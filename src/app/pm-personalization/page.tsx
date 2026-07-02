@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Personalization (2026) — Building Products That Adapt to Users | PM Streak",
+  title: "PM Personalization (2026) — Building Products That Adapt to Users",
   description:
     "How PMs design personalization that users trust. Segments vs 1:1, explainability, privacy tradeoffs, and measuring personalisation lift.",
   keywords: [

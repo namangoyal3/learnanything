@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Take-Home Assignment Guide (2026) — How to Crack Written PM Case Studies | PM Streak",
+  title: "PM Take-Home Assignment Guide (2026) — How to Crack Written PM Case Studies",
   description:
     "How to crack PM take-home assignments. Structure, time management, how to stand out, and common mistakes that get otherwise-strong candidates rejected.",
   keywords: [

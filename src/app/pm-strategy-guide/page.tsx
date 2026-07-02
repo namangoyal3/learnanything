@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Strategy Guide for PMs (2026) — How to Think Strategically as a PM | PM Streak",
+  title: "Product Strategy Guide for PMs (2026) — How to Think Strategically as a PM",
   description:
     "How PMs build product strategy. Vision vs strategy, strategic frameworks (moats, bets, Good Strategy/Bad Strategy), and the strategic questions every senior PM is expected to answer.",
   keywords: [

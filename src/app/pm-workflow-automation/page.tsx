@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Workflow Automation (2026) — Zapier, Make, n8n, AI Agents | PM Streak",
+  title: "PM Workflow Automation (2026) — Zapier, Make, n8n, AI Agents",
   description:
     "How PMs build workflow automation products. Triggers, actions, error handling, and why automation adoption follows J-curves.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Quarterly Planning Guide (2026) — How PMs Plan a Quarter That Ships | PM Streak",
+  title: "PM Quarterly Planning Guide (2026) — How PMs Plan a Quarter That Ships",
   description:
     "How PMs run quarterly planning. The 3-week planning cadence, OKR setting, capacity modelling, and how to leave buffer for the unknowns that always happen.",
   keywords: [

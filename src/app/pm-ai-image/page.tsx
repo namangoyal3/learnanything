@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Image Products (2026) — Midjourney, Stable Diffusion, Adobe Firefly PM Lessons | PM Streak",
+  title: "PM AI Image Products (2026) — Midjourney, Stable Diffusion, Adobe Firefly PM Lessons",
   description:
     "How PMs build AI image products. Prompt UX, iteration, safety, rights, and why image is the earliest mature AI creative category.",
   keywords: [

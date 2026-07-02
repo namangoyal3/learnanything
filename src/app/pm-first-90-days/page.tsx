@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "First 90 Days as a PM (2026) — How to Start Strong in a New PM Role | PM Streak",
+  title: "First 90 Days as a PM (2026) — How to Start Strong in a New PM Role",
   description:
     "The first 90 days determine your trajectory at a new PM job. The week-by-week playbook for building context, earning trust, and shipping your first real win.",
   keywords: [

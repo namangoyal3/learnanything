@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Climatetech (2026) — Building Products for Decarbonisation | PM Streak",
+  title: "PM Climatetech (2026) — Building Products for Decarbonisation",
   description:
     "How PMs build climatetech products. Measurement, hardware-software, carbon markets, and why this decade is the opportunity.",
   keywords: [

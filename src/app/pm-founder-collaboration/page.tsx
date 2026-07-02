@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM + Founder Collaboration (2026) — Working Directly With the CEO | PM Streak",
+  title: "PM + Founder Collaboration (2026) — Working Directly With the CEO",
   description:
     "How PMs at startups collaborate with founders. What works, what doesn&apos;t, and how to keep product decisions rigorous when the founder is the loudest voice in the room.",
   keywords: [

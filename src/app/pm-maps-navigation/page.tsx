@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Maps &amp; Navigation (2026) — Google Maps, MapmyIndia, Apple Maps PM Lessons | PM Streak",
+  title: "PM Maps &amp; Navigation (2026) — Google Maps, MapmyIndia, Apple Maps PM Lessons",
   description:
     "How PMs build maps and navigation products. Routing quality, POI coverage, traffic, and why maps are the most operationally intense consumer category.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Presentations (2026) — How PMs Present to Execs Without Dying | PM Streak",
+  title: "PM Presentations (2026) — How PMs Present to Execs Without Dying",
   description:
     "How PMs present to executives. Structure, slide design, narrative arc, and the traps that sink most PM decks.",
   keywords: [

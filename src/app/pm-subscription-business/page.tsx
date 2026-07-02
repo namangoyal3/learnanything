@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Subscription Business (2026) — Running a Subscription Product | PM Streak",
+  title: "PM Subscription Business (2026) — Running a Subscription Product",
   description:
     "How PMs build subscription products. Trial design, annual vs monthly, cancellation flows, and the math that keeps subscription businesses alive.",
   keywords: [

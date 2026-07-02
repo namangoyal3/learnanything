@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM APM to Senior PM (2026) — The 3-Year Leveling Playbook | PM Streak",
+  title: "PM APM to Senior PM (2026) — The 3-Year Leveling Playbook",
   description:
     "How APMs become senior PMs in 3 years. The skill shifts, visibility moves, and scope expansions that matter at each level.",
   keywords: [

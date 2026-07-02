@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Hardware Products (2026) — Hardware + Software PM | PM Streak",
+  title: "PM Hardware Products (2026) — Hardware + Software PM",
   description:
     "How PMs build hardware-enabled products. Long cycles, firmware, supply chain, and why hardware PM is fundamentally different from pure software.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Women-Focused Products (2026) — SHEROES, Plum, Sugar PM Lessons | PM Streak",
+  title: "PM Women-Focused Products (2026) — SHEROES, Plum, Sugar PM Lessons",
   description:
     "How PMs build products for women. Safety, financial inclusion, health, community — and why women-first products demand women-first teams.",
   keywords: [

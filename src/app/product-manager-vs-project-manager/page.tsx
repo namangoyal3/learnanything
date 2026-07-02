@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Manager vs Project Manager (2026) — The Real Differences | PM Streak",
+  title: "Product Manager vs Project Manager (2026) — The Real Differences",
   description:
     "Product manager vs project manager — what's actually different, where they overlap, which earns more, and which career to choose. With a side-by-side comparison.",
   keywords: [

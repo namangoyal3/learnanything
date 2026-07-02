@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Notifications Design (2026) — Notifications That Help Users, Not Annoy Them | PM Streak",
+  title: "PM Notifications Design (2026) — Notifications That Help Users, Not Annoy Them",
   description:
     "How PMs design notification systems that drive return visits without triggering uninstalls. Content, timing, frequency, and the ethical line.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Technical Skills (2026) — How Technical Should a PM Be? | PM Streak",
+  title: "PM Technical Skills (2026) — How Technical Should a PM Be?",
   description:
     "The technical skills every PM should have in 2026. SQL, APIs, systems thinking, and how to talk to engineers without faking it.",
   keywords: [

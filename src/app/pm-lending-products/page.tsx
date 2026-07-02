@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Lending Products (2026) — BNPL, Personal Loans, Credit Card PM Guide | PM Streak",
+  title: "PM Lending Products (2026) — BNPL, Personal Loans, Credit Card PM Guide",
   description:
     "How PMs build lending products in India. Underwriting, BNPL, collections UX, and the RBI regulatory landscape shaping digital lending.",
   keywords: [

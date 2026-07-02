@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Salary Negotiation India (2026) — Getting Paid Fairly as a PM | PM Streak",
+  title: "PM Salary Negotiation India (2026) — Getting Paid Fairly as a PM",
   description:
     "How PMs in India negotiate offers. Base, ESOPs, joining bonus, and the levers most candidates leave on the table.",
   keywords: [

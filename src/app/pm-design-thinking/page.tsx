@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Design Thinking for PMs (2026) — How to Use IDEO&apos;s 5-Stage Process | PM Streak",
+  title: "Design Thinking for PMs (2026) — How to Use IDEO&apos;s 5-Stage Process",
   description:
     "How PMs apply design thinking in real work. The 5 stages (Empathize, Define, Ideate, Prototype, Test) with PM-specific examples — beyond the Stanford d.school theory.",
   keywords: [

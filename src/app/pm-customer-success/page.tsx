@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM x Customer Success (2026) — Working With CS to Ship the Right Things | PM Streak",
+  title: "PM x Customer Success (2026) — Working With CS to Ship the Right Things",
   description:
     "How PMs partner with customer success teams. Feedback loops, escalation handling, and why CS is your richest product-research channel.",
   keywords: [

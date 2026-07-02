@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Edtech (2026) — Byju's, Unacademy, PhysicsWallah PM Guide | PM Streak",
+  title: "PM Edtech (2026) — Byju's, Unacademy, PhysicsWallah PM Guide",
   description:
     "How PMs build edtech products in India. Learning outcomes, engagement, parent-student dynamics, and why retention is the real battle.",
   keywords: [

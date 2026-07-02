@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Education Products (2026) — Khanmigo, Duolingo Max, AI Tutors PM Lessons | PM Streak",
+  title: "PM AI Education Products (2026) — Khanmigo, Duolingo Max, AI Tutors PM Lessons",
   description:
     "How PMs build AI education products. Personalised tutors, safety for minors, outcomes measurement, and why education AI is still waiting for its breakout moment.",
   keywords: [

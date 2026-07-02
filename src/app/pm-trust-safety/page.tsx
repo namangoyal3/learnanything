@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Trust &amp; Safety (2026) — Fraud, Abuse, and Platform Integrity | PM Streak",
+  title: "PM Trust &amp; Safety (2026) — Fraud, Abuse, and Platform Integrity",
   description:
     "How PMs build trust and safety products. Fraud detection, abuse prevention, identity verification, and why T&amp;S is increasingly central to platform economics.",
   keywords: [

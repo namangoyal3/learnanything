@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Imposter Syndrome (2026) — Why PMs Feel It and How to Deal | PM Streak",
+  title: "PM Imposter Syndrome (2026) — Why PMs Feel It and How to Deal",
   description:
     "Why PMs experience imposter syndrome more than most roles, what to do about it, and which parts of the feeling are actually useful.",
   keywords: [

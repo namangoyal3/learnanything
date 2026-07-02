@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Grocery Tech (2026) — BigBasket, Amazon Fresh, Zepto PM Guide | PM Streak",
+  title: "PM Grocery Tech (2026) — BigBasket, Amazon Fresh, Zepto PM Guide",
   description:
     "How PMs build grocery tech products. SKU depth, substitution, fresh delivery, and why grocery has the hardest fulfillment math in e-commerce.",
   keywords: [

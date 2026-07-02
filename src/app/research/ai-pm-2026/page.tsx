@@ -8,7 +8,7 @@ const ABSTRACT =
   "This study examines the adoption of artificial intelligence tools among product managers between 2024 and 2026. Analysing survey responses from 2,047 practising PMs across 34 countries, we document a 312% growth in AI tool adoption, a median 47% reduction in discovery-to-spec planning time, and identify a five-stage AI-PM Maturity Model that predicts team performance outcomes with 78% accuracy (95% CI: 74–82%).";
 
 export const metadata: Metadata = {
-  title: "AI in Product Management 2026: 312% Adoption Growth Study | PM Streak Research",
+  title: "AI in Product Management 2026: 312% Adoption Growth Study",
   description:
     "Survey of 2,047 PMs finds 312% AI adoption growth since 2024 and 47% reduction in planning time. 5-stage AI-PM maturity model with implementation roadmap.",
   keywords: [

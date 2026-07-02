@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Onboarding Guide for PMs (2026) — Design Flows That Activate Users | PM Streak",
+  title: "Product Onboarding Guide for PMs (2026) — Design Flows That Activate Users",
   description:
     "The complete user onboarding playbook for PMs. How to design flows that activate, the psychology of first-time users, key metrics, and 10 onboarding anti-patterns to avoid.",
   keywords: [

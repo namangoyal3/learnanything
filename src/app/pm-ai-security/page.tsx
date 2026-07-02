@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Security (2026) — SOC AI, Threat Detection, AI Red Teams | PM Streak",
+  title: "PM AI Security (2026) — SOC AI, Threat Detection, AI Red Teams",
   description:
     "How PMs build AI security products. Autonomous SOC, threat detection, and how security PM is adapting to AI-powered adversaries.",
   keywords: [

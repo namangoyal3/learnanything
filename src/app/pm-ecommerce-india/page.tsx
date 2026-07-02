@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM E-commerce India (2026) — Flipkart, Amazon, Meesho PM Guide | PM Streak",
+  title: "PM E-commerce India (2026) — Flipkart, Amazon, Meesho PM Guide",
   description:
     "How PMs build e-commerce products in India. COD, RTO, Tier-2/3, social commerce, and the brutal unit economics of Indian e-commerce.",
   keywords: [

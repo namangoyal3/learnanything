@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Microservices Strategy (2026) — When PMs Should Care About Architecture | PM Streak",
+  title: "PM Microservices Strategy (2026) — When PMs Should Care About Architecture",
   description:
     "When microservices help, when they hurt, and what PMs need to know to navigate architecture decisions without overstepping into engineering territory.",
   keywords: [

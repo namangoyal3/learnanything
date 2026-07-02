@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Electronics E-commerce (2026) — Croma, Reliance Digital, Amazon Electronics PM | PM Streak",
+  title: "PM Electronics E-commerce (2026) — Croma, Reliance Digital, Amazon Electronics PM",
   description:
     "How PMs build electronics e-commerce. Compare, finance, warranty, and why electronics is a high-AOV, low-margin, trust-heavy category.",
   keywords: [

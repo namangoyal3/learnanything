@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Remote Interview Guide (2026) — How to Crack Video PM Interviews | PM Streak",
+  title: "PM Remote Interview Guide (2026) — How to Crack Video PM Interviews",
   description:
     "How to crack remote PM interviews on video. Setup, body language, handling silence, timezone handling, and the technical preparation that separates strong remote candidates.",
   keywords: [

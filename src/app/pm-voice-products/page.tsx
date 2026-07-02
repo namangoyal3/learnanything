@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Voice Products (2026) — Designing for Voice Interfaces | PM Streak",
+  title: "PM Voice Products (2026) — Designing for Voice Interfaces",
   description:
     "How PMs design voice products. Conversation design, intent detection, latency budgets, and why voice is harder than it looks.",
   keywords: [

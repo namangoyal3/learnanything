@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Sprint Planning Guide (2026) — Run Sprints That Ship | PM Streak",
+  title: "PM Sprint Planning Guide (2026) — Run Sprints That Ship",
   description:
     "How PMs run sprint planning that actually ships. Agenda, capacity estimation, story writing, dependency mapping, and how to avoid the 3 biggest sprint anti-patterns.",
   keywords: [

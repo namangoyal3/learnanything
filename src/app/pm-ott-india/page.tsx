@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM OTT India (2026) — JioCinema, Disney+ Hotstar, SonyLIV PM Guide | PM Streak",
+  title: "PM OTT India (2026) — JioCinema, Disney+ Hotstar, SonyLIV PM Guide",
   description:
     "How PMs build OTT products in India. Live sports, regional originals, mobile-first tiers, and the battle for prime time.",
   keywords: [

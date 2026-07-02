@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Spatial Computing (2026) — Apple Vision Pro, Meta Quest, AR/VR PM | PM Streak",
+  title: "PM Spatial Computing (2026) — Apple Vision Pro, Meta Quest, AR/VR PM",
   description:
     "How PMs build for spatial computing. AR/VR UX, input modalities, session length, and what works on Vision Pro vs Quest.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Product Operations (2026) — What ProdOps Does and When You Need It | PM Streak",
+  title: "PM Product Operations (2026) — What ProdOps Does and When You Need It",
   description:
     "How product operations teams support PM orgs. Rituals, tooling, research ops, and when hiring a ProdOps lead pays for itself.",
   keywords: [

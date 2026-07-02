@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM at Early-Stage Startup (2026) — What It&apos;s Actually Like | PM Streak",
+  title: "PM at Early-Stage Startup (2026) — What It&apos;s Actually Like",
   description:
     "What PM work is really like at an early-stage startup. Scope, chaos, hats worn, and whether it&apos;s right for you.",
   keywords: [

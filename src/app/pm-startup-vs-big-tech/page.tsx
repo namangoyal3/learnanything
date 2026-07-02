@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM at Startup vs Big Tech (2026) — Which Should You Choose? | PM Streak",
+  title: "PM at Startup vs Big Tech (2026) — Which Should You Choose?",
   description:
     "PM at startup vs big tech — real differences in scope, speed, compensation, career trajectory, and when each is the right choice.",
   keywords: [

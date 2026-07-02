@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Roadmapping (2026) — Now/Next/Later, OKRs, and What Actually Works | PM Streak",
+  title: "PM Roadmapping (2026) — Now/Next/Later, OKRs, and What Actually Works",
   description:
     "How PMs build roadmaps that survive reality. Now/Next/Later, outcome roadmaps, and why timeline roadmaps keep failing.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "SaaS Product Manager Guide (2026) — How to Excel as a B2B SaaS PM | PM Streak",
+  title: "SaaS Product Manager Guide (2026) — How to Excel as a B2B SaaS PM",
   description:
     "The complete SaaS PM playbook. B2B SaaS metrics, roadmap dynamics, customer-led development, freemium vs enterprise trade-offs, and how to break into SaaS PM in India.",
   keywords: [

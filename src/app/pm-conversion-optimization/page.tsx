@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Conversion Optimization (2026) — CRO Playbook for Product Managers | PM Streak",
+  title: "PM Conversion Optimization (2026) — CRO Playbook for Product Managers",
   description:
     "How PMs run conversion rate optimization. Friction audits, progressive disclosure, payment flows, and why small wins compound.",
   keywords: [

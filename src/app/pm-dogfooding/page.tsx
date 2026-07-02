@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Dogfooding Guide (2026) — Why Using Your Own Product Is Non-Negotiable | PM Streak",
+  title: "PM Dogfooding Guide (2026) — Why Using Your Own Product Is Non-Negotiable",
   description:
     "Why PMs must use their own product daily, how to dogfood seriously (not for 10 minutes), and why companies with strong dogfooding cultures ship dramatically better products.",
   keywords: [

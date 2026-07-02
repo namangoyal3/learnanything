@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Mock Interview Guide (2026) — How to Practice & Get Unbiased Feedback | PM Streak",
+  title: "PM Mock Interview Guide (2026) — How to Practice & Get Unbiased Feedback",
   description:
     "Run effective PM mock interviews. Where to find partners, how to give feedback, what to track, and how AI mock interviews compare to human practice — for every interview stage.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Daily Practice Guide (2026) — The 15-Minute Habit That Builds Product Mastery | PM Streak",
+  title: "PM Daily Practice Guide (2026) — The 15-Minute Habit That Builds Product Mastery",
   description:
     "The science of PM daily practice. What 15 minutes a day actually builds, what to practice, how to track progress, and why streaks beat cramming for interviews.",
   keywords: [

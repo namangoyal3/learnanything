@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PRD Examples (2026) — 3 Real-Style Product Requirements Documents | PM Streak",
+  title: "PRD Examples (2026) — 3 Real-Style Product Requirements Documents",
   description:
     "3 real-style PRD examples for consumer, B2B, and platform features. See structure, detail level, and how great PMs balance thoroughness with brevity.",
   keywords: [

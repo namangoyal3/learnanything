@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Healthtech Product Manager Guide (2026) — How to Become a Healthtech PM in India | PM Streak",
+  title: "Healthtech Product Manager Guide (2026) — How to Become a Healthtech PM in India",
   description:
     "The complete healthtech PM playbook for India. Top companies, unique domain challenges, regulatory context, interview questions, and how to break into healthtech PM.",
   keywords: [

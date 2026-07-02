@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Consultant to Product Manager (2026) — How Ex-Consultants Land PM Roles | PM Streak",
+  title: "Consultant to Product Manager (2026) — How Ex-Consultants Land PM Roles",
   description:
     "How management consultants transition to PM. What your MBB/strategy experience buys you, what it doesn't, and how to reposition to win PM interviews.",
   keywords: [

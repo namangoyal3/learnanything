@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import JsonLd, { breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Career Roadmaps — APM to CPO Guide | PM Streak",
+  title: "PM Career Roadmaps — APM to CPO Guide",
   description:
     "Step-by-step career paths for Associate PM, Product Manager, Senior PM, Staff PM, and CPO. Skills, timelines, and what to learn at every level. Included in PM Streak Pro.",
   alternates: { canonical: "/role-roadmaps" },

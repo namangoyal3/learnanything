@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Project Management Tools (2026) — Jira, Linear, Asana PM Guide | PM Streak",
+  title: "PM Project Management Tools (2026) — Jira, Linear, Asana PM Guide",
   description:
     "How PMs build project management tools. Views, workflows, notifications, and why adoption follows the path of least resistance.",
   keywords: [

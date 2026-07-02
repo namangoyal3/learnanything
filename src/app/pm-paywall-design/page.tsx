@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Paywall Design (2026) — Hard, Soft, and Hybrid Paywalls | PM Streak",
+  title: "PM Paywall Design (2026) — Hard, Soft, and Hybrid Paywalls",
   description:
     "How PMs design paywalls. Hard vs soft, metered, freemium, and which patterns convert best for content, SaaS, and consumer apps.",
   keywords: [

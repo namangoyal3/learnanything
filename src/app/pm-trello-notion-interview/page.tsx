@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Notion, Linear & Productivity PM Interview Guide (2026) — Dev Tools PM Prep | PM Streak",
+  title: "Notion, Linear & Productivity PM Interview Guide (2026) — Dev Tools PM Prep",
   description:
     "Crack PM interviews at Notion, Linear, Atlassian, and other productivity tools. What makes productivity PM unique — extensibility, power users, and the craft-over-growth tension.",
   keywords: [

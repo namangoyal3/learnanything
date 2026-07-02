@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Burnout Guide (2026) — How to Spot, Prevent & Recover | PM Streak",
+  title: "PM Burnout Guide (2026) — How to Spot, Prevent & Recover",
   description:
     "How PMs spot and recover from burnout. Early warning signs, structural causes, what actually works for recovery, and how to rebuild a sustainable product management practice.",
   keywords: [

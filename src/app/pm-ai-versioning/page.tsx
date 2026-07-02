@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Versioning (2026) — Managing Model and Prompt Versions | PM Streak",
+  title: "PM AI Versioning (2026) — Managing Model and Prompt Versions",
   description:
     "How PMs version models and prompts. Pinning, migration, deprecation, and why model upgrades are silent product changes.",
   keywords: [

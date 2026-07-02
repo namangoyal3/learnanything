@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Feature Flags (2026) — How PMs Use Flags to Ship Safer | PM Streak",
+  title: "PM Feature Flags (2026) — How PMs Use Flags to Ship Safer",
   description:
     "How PMs use feature flags. Rollout strategies, kill switches, segment targeting, and why flags decouple deploy from release.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM WhatsApp Business (2026) — Building Conversational Commerce in India | PM Streak",
+  title: "PM WhatsApp Business (2026) — Building Conversational Commerce in India",
   description:
     "How PMs build WhatsApp-first products. Conversational commerce, payments, CTWA ads, and why WhatsApp is the dominant consumer surface in India.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Cover Letter Guide (2026) — Template, Examples & What Hiring Managers Want | PM Streak",
+  title: "PM Cover Letter Guide (2026) — Template, Examples & What Hiring Managers Want",
   description:
     "Write a PM cover letter that actually gets read. The structure that works, real examples, what to include, what to cut, and when to skip the cover letter entirely.",
   keywords: [

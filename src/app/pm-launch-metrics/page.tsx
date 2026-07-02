@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Launch Metrics Guide (2026) — What to Measure Before, During, After | PM Streak",
+  title: "PM Launch Metrics Guide (2026) — What to Measure Before, During, After",
   description:
     "What PMs should measure before, during, and after launch. Primary metrics, guardrails, leading vs lagging indicators, and how to decide when a launch is a win.",
   keywords: [

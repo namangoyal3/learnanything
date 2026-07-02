@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Roadmap Interview Questions (2026) — Build, Defend & Communicate | PM Streak",
+  title: "Product Roadmap Interview Questions (2026) — Build, Defend & Communicate",
   description:
     "Master product roadmap interview questions. How to build, prioritise, defend, and communicate roadmaps — with real questions, frameworks, and what interviewers want to hear.",
   keywords: [

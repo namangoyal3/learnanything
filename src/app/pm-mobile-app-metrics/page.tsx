@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Mobile App Metrics (2026) — What to Track for Mobile Products | PM Streak",
+  title: "PM Mobile App Metrics (2026) — What to Track for Mobile Products",
   description:
     "The mobile app metrics every PM should track. Installs, DAU, session length, crash rate, and the signals unique to mobile products.",
   keywords: [

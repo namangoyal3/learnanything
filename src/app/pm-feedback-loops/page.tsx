@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Feedback Loops (2026) — How PMs Turn User Signal Into Decisions | PM Streak",
+  title: "PM Feedback Loops (2026) — How PMs Turn User Signal Into Decisions",
   description:
     "How PMs build feedback loops that actually inform decisions. Channels, triage, synthesis, and why most feedback systems are graveyards.",
   keywords: [

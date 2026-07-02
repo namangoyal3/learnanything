@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Mentorship Guide (2026) — How to Find Mentors and Be One | PM Streak",
+  title: "PM Mentorship Guide (2026) — How to Find Mentors and Be One",
   description:
     "How PMs find mentors, get the most from mentorship, and become mentors themselves. What works, what doesn&apos;t, and the compounding career value of mentorship.",
   keywords: [

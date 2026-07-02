@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Interview Stories Guide (2026) — How to Build 10 Stories That Cover Every Behavioural Question | PM Streak",
+  title: "PM Interview Stories Guide (2026) — How to Build 10 Stories That Cover Every Behavioural Question",
   description:
     "The 10 PM interview stories every candidate should prepare. Cover 80% of behavioural questions with 10 flexible stories — with templates and coverage map.",
   keywords: [

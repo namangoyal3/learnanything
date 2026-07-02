@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Communication Skills (2026) — How Great PMs Communicate | PM Streak",
+  title: "PM Communication Skills (2026) — How Great PMs Communicate",
   description:
     "The communication skills that separate great PMs from average ones. Presenting to executives, leading meetings, async writing, giving hard feedback, and public speaking.",
   keywords: [

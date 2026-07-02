@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Bar Raiser Interview (2026) — How to Pass Amazon&apos;s &amp; Equivalent Final Rounds | PM Streak",
+  title: "PM Bar Raiser Interview (2026) — How to Pass Amazon&apos;s &amp; Equivalent Final Rounds",
   description:
     "How PMs handle bar raiser interviews — Amazon&apos;s and equivalent final rounds at top companies. What bar raisers test for and how to signal depth honestly.",
   keywords: [

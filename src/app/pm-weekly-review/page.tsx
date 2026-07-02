@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Weekly Review Guide (2026) — The 20-Minute Ritual That Compounds Into Mastery | PM Streak",
+  title: "PM Weekly Review Guide (2026) — The 20-Minute Ritual That Compounds Into Mastery",
   description:
     "The 20-minute weekly review every PM should do. Reflect on shipped work, metrics, relationships, and learning. A habit that compounds into career mastery.",
   keywords: [

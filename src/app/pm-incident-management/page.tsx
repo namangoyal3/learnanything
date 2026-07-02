@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Incident Management (2026) — The PM Role When Production Is on Fire | PM Streak",
+  title: "PM Incident Management (2026) — The PM Role When Production Is on Fire",
   description:
     "How PMs show up during incidents. Severity triage, customer communication, post-mortem, and what PMs should and shouldn&apos;t do on-call.",
   keywords: [

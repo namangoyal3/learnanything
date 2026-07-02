@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Sales Products (2026) — Gong, Clari, 11x PM Lessons | PM Streak",
+  title: "PM AI Sales Products (2026) — Gong, Clari, 11x PM Lessons",
   description:
     "How PMs build AI sales tools. Call intelligence, autonomous SDRs, forecasting, and why sales is the fastest-monetising AI category.",
   keywords: [

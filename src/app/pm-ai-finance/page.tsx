@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Finance Products (2026) — Ramp, Brex, Pilot PM Lessons | PM Streak",
+  title: "PM AI Finance Products (2026) — Ramp, Brex, Pilot PM Lessons",
   description:
     "How PMs build AI finance products. Expense intelligence, close automation, forecasting, and why CFO-tech is where AI adoption is quietest but fastest.",
   keywords: [

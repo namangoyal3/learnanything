@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Critical Thinking for PMs (2026) — The Habit of Mind That Separates Great PMs | PM Streak",
+  title: "Critical Thinking for PMs (2026) — The Habit of Mind That Separates Great PMs",
   description:
     "How PMs think critically. Question assumptions, distinguish signal from noise, avoid cognitive biases, and develop the intellectual discipline great PMs share.",
   keywords: [

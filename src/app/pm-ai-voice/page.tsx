@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Voice Products (2026) — ElevenLabs, Sarvam, Voice Agents PM Guide | PM Streak",
+  title: "PM AI Voice Products (2026) — ElevenLabs, Sarvam, Voice Agents PM Guide",
   description:
     "How PMs build AI voice products. TTS, voice cloning, real-time agents, and why voice is the fastest-moving AI category.",
   keywords: [

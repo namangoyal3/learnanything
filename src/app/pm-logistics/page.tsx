@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Logistics (2026) — Delhivery, Shiprocket, Porter PM Guide | PM Streak",
+  title: "PM Logistics (2026) — Delhivery, Shiprocket, Porter PM Guide",
   description:
     "How PMs build logistics products in India. Last-mile, hub operations, rider economics, and the unique PM challenges of physical-world products.",
   keywords: [

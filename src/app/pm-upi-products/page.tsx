@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM UPI Products (2026) — Building on India&apos;s Rails | PM Streak",
+  title: "PM UPI Products (2026) — Building on India&apos;s Rails",
   description:
     "How PMs build UPI-first products. P2P, P2M, credit on UPI, and why UPI is the most important payments rail built this century.",
   keywords: [

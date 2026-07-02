@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Healthcare (2026) — Ambient Scribes, Diagnostics, Clinical PM Lessons | PM Streak",
+  title: "PM AI Healthcare (2026) — Ambient Scribes, Diagnostics, Clinical PM Lessons",
   description:
     "How PMs build AI healthcare products. Ambient scribes, clinical decision support, and why healthcare is AI&apos;s highest-stakes testing ground.",
   keywords: [

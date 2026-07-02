@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Developer Productivity (2026) — Measuring and Improving Eng Velocity | PM Streak",
+  title: "PM Developer Productivity (2026) — Measuring and Improving Eng Velocity",
   description:
     "How PMs work on developer productivity. DORA metrics, SPACE framework, AI coding tools, and why velocity is a team sport.",
   keywords: [

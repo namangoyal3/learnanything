@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Notifications Strategy (2026) — Push, Email, In-App Done Right | PM Streak",
+  title: "PM Notifications Strategy (2026) — Push, Email, In-App Done Right",
   description:
     "How PMs design notification systems that drive retention without burning trust. Push, email, in-app, SMS — when to use each and how to measure.",
   keywords: [

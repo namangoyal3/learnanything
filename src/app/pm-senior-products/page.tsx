@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Senior Products (2026) — Designing for Older Users in India | PM Streak",
+  title: "PM Senior Products (2026) — Designing for Older Users in India",
   description:
     "How PMs design products for seniors. Accessibility, trust, family-assisted UX, and why the Indian senior market is massively underserved.",
   keywords: [

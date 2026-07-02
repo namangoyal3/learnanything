@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Portfolio Guide (2026) — How to Build a Product Portfolio That Gets Interviews | PM Streak",
+  title: "PM Portfolio Guide (2026) — How to Build a Product Portfolio That Gets Interviews",
   description:
     "Build a PM portfolio that gets interviews — even if you don't have a PM title. Case studies, teardowns, side projects, PRDs, and real examples that hiring managers love.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Experiment Design Guide (2026) — A/B Testing for Product Managers | PM Streak",
+  title: "PM Experiment Design Guide (2026) — A/B Testing for Product Managers",
   description:
     "How PMs design A/B tests that actually produce signal. Hypothesis writing, sample size, guardrail metrics, common mistakes, and when NOT to A/B test.",
   keywords: [

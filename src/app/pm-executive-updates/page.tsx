@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Executive Updates Guide (2026) — How to Write Updates Leadership Actually Reads | PM Streak",
+  title: "PM Executive Updates Guide (2026) — How to Write Updates Leadership Actually Reads",
   description:
     "How PMs write exec updates that get read. Structure, length, what to include, what to cut, and how to build trust through consistent communication.",
   keywords: [

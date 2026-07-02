@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Checkout Design (2026) — Designing Checkouts That Convert | PM Streak",
+  title: "PM Checkout Design (2026) — Designing Checkouts That Convert",
   description:
     "How PMs design checkout flows that convert. Field count, payment options, trust signals, and the small details that move conversion 5–15%.",
   keywords: [

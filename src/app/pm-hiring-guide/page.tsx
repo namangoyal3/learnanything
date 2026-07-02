@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Hiring Guide (2026) — How PMs Hire Other PMs | PM Streak",
+  title: "PM Hiring Guide (2026) — How PMs Hire Other PMs",
   description:
     "How great PMs hire other PMs. Structured interview loops, signals to look for, the bar to hire at each level, and how to give candidates a great experience.",
   keywords: [

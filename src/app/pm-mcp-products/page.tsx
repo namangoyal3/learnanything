@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM MCP &amp; Connector Products (2026) — Building for Anthropic&apos;s MCP Ecosystem | PM Streak",
+  title: "PM MCP &amp; Connector Products (2026) — Building for Anthropic&apos;s MCP Ecosystem",
   description:
     "How PMs build on Model Context Protocol. Connector design, security, distribution, and what MCP means for the AI app stack.",
   keywords: [

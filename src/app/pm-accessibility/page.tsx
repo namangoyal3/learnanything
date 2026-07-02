@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Accessibility (2026) — How PMs Ship Accessible Products | PM Streak",
+  title: "PM Accessibility (2026) — How PMs Ship Accessible Products",
   description:
     "How PMs approach accessibility without slowing shipping. WCAG basics, screen reader testing, and the business case for accessible products.",
   keywords: [

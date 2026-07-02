@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM API Platforms (2026) — Designing APIs as Product | PM Streak",
+  title: "PM API Platforms (2026) — Designing APIs as Product",
   description:
     "How PMs build API platforms. Schema design, versioning, quotas, SDKs, and why API PM is quietly one of the highest-leverage roles in SaaS.",
   keywords: [

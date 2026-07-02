@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Cars24, CarTrade & OLX Autos PM Interview Guide (2026) — Used Car PM Questions | PM Streak",
+  title: "Cars24, CarTrade & OLX Autos PM Interview Guide (2026) — Used Car PM Questions",
   description:
     "Crack PM interviews at Cars24, CarTrade, OLX Autos, and Spinny. The used car marketplace dynamics, inspection-pricing-financing flows, and what auto PMs actually build.",
   keywords: [

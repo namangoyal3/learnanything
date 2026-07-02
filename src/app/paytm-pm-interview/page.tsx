@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Paytm PM Interview Guide (2026) — Payments, Merchant & Lending PM Questions | PM Streak",
+  title: "Paytm PM Interview Guide (2026) — Payments, Merchant & Lending PM Questions",
   description:
     "Crack the Paytm PM interview. All rounds, payment and merchant product questions, lending and financial services expansion, and the pragmatic product thinking Paytm rewards.",
   keywords: [

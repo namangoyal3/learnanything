@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Negotiation (2026) — Roadmap Trades, Scope, and Salary | PM Streak",
+  title: "PM Negotiation (2026) — Roadmap Trades, Scope, and Salary",
   description:
     "How PMs negotiate — roadmap trades, scope cuts, partner deals, and compensation. Tactics that work without burning relationships.",
   keywords: [

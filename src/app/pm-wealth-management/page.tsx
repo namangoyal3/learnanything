@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Wealth Management (2026) — Zerodha, Groww, INDmoney PM Guide | PM Streak",
+  title: "PM Wealth Management (2026) — Zerodha, Groww, INDmoney PM Guide",
   description:
     "How PMs build wealth management products in India. Onboarding, KYC, trust, and the slow transition from distributor-led to direct investing.",
   keywords: [

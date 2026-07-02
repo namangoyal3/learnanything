@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Dashboard Design Guide (2026) — What to Track & How | PM Streak",
+  title: "PM Dashboard Design Guide (2026) — What to Track & How",
   description:
     "How PMs design dashboards that drive decisions. What to track, what to cut, the hierarchy of metrics, and how to make dashboards your team actually checks.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Product Manager Skills (2026) — The 12 Skills Every PM Needs | PM Streak",
+  title: "Product Manager Skills (2026) — The 12 Skills Every PM Needs",
   description:
     "The 12 skills that define great product managers in 2026. Prioritisation, stakeholder management, data analysis, product sense, and technical fluency — with how to build each one.",
   keywords: [

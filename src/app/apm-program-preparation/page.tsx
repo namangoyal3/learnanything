@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "APM Program Preparation Guide India (2026) — Flipkart, Razorpay, Google | PM Streak",
+  title: "APM Program Preparation Guide India (2026) — Flipkart, Razorpay, Google",
   description:
     "Crack APM programs in India with this complete prep guide. Flipkart Product Accelerator, Razorpay APM, Google APMM, Meesho, Swiggy — timeline, rounds, tips, and daily practice.",
   keywords: [

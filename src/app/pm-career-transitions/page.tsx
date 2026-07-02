@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Career Transitions (2026) — Changing Domain, Scale, or Level | PM Streak",
+  title: "PM Career Transitions (2026) — Changing Domain, Scale, or Level",
   description:
     "How PMs navigate career transitions — switching domain, moving from startup to enterprise (or vice versa), going from IC to manager. What&apos;s hard about each, what works.",
   keywords: [

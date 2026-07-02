@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM India Startups 2026 — Where to Build Your Career This Year | PM Streak",
+  title: "PM India Startups 2026 — Where to Build Your Career This Year",
   description:
     "The Indian startup landscape for PMs in 2026. Categories that are hiring, comp ranges, and red flags to watch.",
   keywords: [

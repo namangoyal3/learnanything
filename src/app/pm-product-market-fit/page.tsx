@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Product-Market Fit (2026) — How to Know If You Have It (and What to Do If You Don&apos;t) | PM Streak",
+  title: "PM Product-Market Fit (2026) — How to Know If You Have It (and What to Do If You Don&apos;t)",
   description:
     "How PMs recognise product-market fit. Leading indicators, the Sean Ellis test, retention curves, and what to do if PMF isn&apos;t there yet.",
   keywords: [

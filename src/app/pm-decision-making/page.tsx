@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Decision Making Guide (2026) — How Great PMs Decide Under Uncertainty | PM Streak",
+  title: "PM Decision Making Guide (2026) — How Great PMs Decide Under Uncertainty",
   description:
     "How PMs make fast, confident decisions with incomplete data. Frameworks for reversible vs irreversible, risk-adjusted decisions, and how to document decisions so teams stay aligned.",
   keywords: [

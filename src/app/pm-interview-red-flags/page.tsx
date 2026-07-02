@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Interview Red Flags (2026) — 10 Things That Get Candidates Rejected | PM Streak",
+  title: "PM Interview Red Flags (2026) — 10 Things That Get Candidates Rejected",
   description:
     "The 10 red flags that get PM candidates rejected — even when their answers seem fine. What interviewers catch that candidates miss, and how to avoid each.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Referral Programs (2026) — When They Work and When They Don&apos;t | PM Streak",
+  title: "PM Referral Programs (2026) — When They Work and When They Don&apos;t",
   description:
     "How PMs design referral programs that drive real growth. The math, the psychology, great examples, and why most referral programs fail.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Competitor Teardown Guide (2026) — How to Study a Competitor Product Like a PM | PM Streak",
+  title: "PM Competitor Teardown Guide (2026) — How to Study a Competitor Product Like a PM",
   description:
     "The complete guide to competitor teardowns. What to look at, how to structure the write-up, and how to turn teardowns into strategic insight.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Interview Questions for Freshers (2026) — First PM Job Guide | PM Streak",
+  title: "PM Interview Questions for Freshers (2026) — First PM Job Guide",
   description:
     "PM interview questions for freshers and new graduates. What interviewers actually ask, how to answer without PM experience, APM programs, and how to build your product portfolio from scratch.",
   keywords: [

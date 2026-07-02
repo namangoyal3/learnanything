@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Cold Start Problem (2026) — How PMs Launch Products With Zero Users | PM Streak",
+  title: "PM Cold Start Problem (2026) — How PMs Launch Products With Zero Users",
   description:
     "How PMs solve the cold start problem. Network effects without network, content without creators, marketplace without supply — and the proven strategies that work.",
   keywords: [

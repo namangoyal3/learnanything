@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PRD Template Guide (2026) — How to Write a Great Product Requirements Doc | PM Streak",
+  title: "PRD Template Guide (2026) — How to Write a Great Product Requirements Doc",
   description:
     "The complete PRD template for product managers. Every section explained, a real PRD example, what to include, what to cut, and how great PMs use PRDs as communication tools.",
   keywords: [

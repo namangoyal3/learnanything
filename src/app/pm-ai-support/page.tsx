@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Customer Support (2026) — Decagon, Ada, Fin AI PM Lessons | PM Streak",
+  title: "PM AI Customer Support (2026) — Decagon, Ada, Fin AI PM Lessons",
   description:
     "How PMs build AI customer support. Deflection, knowledge base quality, human handoff, and the evolution from chatbots to true support agents.",
   keywords: [

@@ -33,7 +33,7 @@ function calculateMRP(discountedPrice: string, isIndia: boolean): string {
 }
 
 export const metadata: Metadata = {
-  title: "PM Streak Pro Pricing — Plans & Features | PM Streak",
+  title: "PM Streak Pro Pricing — Plans & Features",
   description:
     "Compare PM Streak Free vs Pro plans. Pro unlocks all 292+ PM lessons, unlimited AI, interview prep, PM Jobs board, and WhatsApp community. Starting at $6/month or ₹249/month in India.",
   alternates: { canonical: "https://learnanything.pro/pricing" },

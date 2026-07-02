@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Developer Tools (2026) — Building Products for Engineers | PM Streak",
+  title: "PM Developer Tools (2026) — Building Products for Engineers",
   description:
     "How PMs build for developers. Docs, DX, pricing, community — and why developer tools are the highest-leverage PM role in software.",
   keywords: [

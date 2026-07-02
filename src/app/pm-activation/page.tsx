@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Activation Guide (2026) — How to Define &amp; Improve Activation | PM Streak",
+  title: "PM Activation Guide (2026) — How to Define &amp; Improve Activation",
   description:
     "How PMs define activation — the moment users get real value — and improve it. The &apos;aha moment&apos;, activation metrics, and the 5 levers PMs use to raise activation.",
   keywords: [

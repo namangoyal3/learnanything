@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Viral Features (2026) — Designing Features That Users Naturally Share | PM Streak",
+  title: "PM Viral Features (2026) — Designing Features That Users Naturally Share",
   description:
     "How PMs design features that users naturally share. What makes virality work, the math, and examples from Instagram, Dropbox, Notion, and others.",
   keywords: [

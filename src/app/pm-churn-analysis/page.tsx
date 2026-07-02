@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Churn Analysis (2026) — Find Why Users Leave and Fix It | PM Streak",
+  title: "PM Churn Analysis (2026) — Find Why Users Leave and Fix It",
   description:
     "How PMs diagnose churn. Types of churn, root-cause analysis, and the 5 levers PMs use to reduce churn meaningfully.",
   keywords: [

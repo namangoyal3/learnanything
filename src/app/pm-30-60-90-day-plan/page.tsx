@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM 30-60-90 Day Plan Template (2026) — What to Ship in Your First Quarter | PM Streak",
+  title: "PM 30-60-90 Day Plan Template (2026) — What to Ship in Your First Quarter",
   description:
     "The 30-60-90 day PM plan template. Specific deliverables for each phase, how to share it with your manager, and what counts as a successful first quarter.",
   keywords: [

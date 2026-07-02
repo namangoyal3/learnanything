@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Pet Tech (2026) — Chewy, Heads Up For Tails, Supertails PM Lessons | PM Streak",
+  title: "PM Pet Tech (2026) — Chewy, Heads Up For Tails, Supertails PM Lessons",
   description:
     "How PMs build pet tech products. Recurring subscriptions, vet integrations, and why pet tech follows a different repeat rate curve than other D2C.",
   keywords: [

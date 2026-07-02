@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Writing Products (2026) — Grammarly, Jasper, Notion AI PM Lessons | PM Streak",
+  title: "PM AI Writing Products (2026) — Grammarly, Jasper, Notion AI PM Lessons",
   description:
     "How PMs build AI writing products. Inline vs chat, style adaptation, and why Grammarly had to reinvent itself in the LLM era.",
   keywords: [

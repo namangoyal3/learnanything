@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Email Products (2026) — Gmail, Superhuman, Hey PM Lessons | PM Streak",
+  title: "PM Email Products (2026) — Gmail, Superhuman, Hey PM Lessons",
   description:
     "How PMs build email products. Triage, speed, spam signals, and why email has survived every &apos;email killer&apos; since 2005.",
   keywords: [

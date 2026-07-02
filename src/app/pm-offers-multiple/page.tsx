@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Handle Multiple PM Offers (2026) — Deciding Between Companies | PM Streak",
+  title: "How to Handle Multiple PM Offers (2026) — Deciding Between Companies",
   description:
     "How to evaluate multiple PM offers. Beyond comp: manager quality, scope, growth trajectory, and the decision framework that stops you from choosing on instinct alone.",
   keywords: [

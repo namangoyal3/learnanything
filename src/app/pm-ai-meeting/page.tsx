@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Meeting Products (2026) — Fireflies, Otter, Read.ai PM Lessons | PM Streak",
+  title: "PM AI Meeting Products (2026) — Fireflies, Otter, Read.ai PM Lessons",
   description:
     "How PMs build AI meeting products. Transcription, summarisation, action items, and why meetings are a killer use case for practical AI.",
   keywords: [

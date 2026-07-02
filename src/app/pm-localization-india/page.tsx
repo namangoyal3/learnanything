@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Localization for India (2026) — Designing Products That Work Across Bharat | PM Streak",
+  title: "PM Localization for India (2026) — Designing Products That Work Across Bharat",
   description:
     "How PMs design products that work across India&apos;s diversity. Languages, device constraints, cultural context, and the vernacular-first product thinking Bharat demands.",
   keywords: [

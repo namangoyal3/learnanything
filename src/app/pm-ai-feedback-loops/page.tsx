@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Feedback Loops (2026) — How AI Products Get Smarter From Users | PM Streak",
+  title: "PM AI Feedback Loops (2026) — How AI Products Get Smarter From Users",
   description:
     "How PMs design feedback loops in AI products. Thumbs, edits, RLHF, and how to capture signal without breaking the experience.",
   keywords: [

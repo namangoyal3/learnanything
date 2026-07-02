@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How PMs Design Habit-Forming Products (2026) — The Hooked Framework Applied | PM Streak",
+  title: "How PMs Design Habit-Forming Products (2026) — The Hooked Framework Applied",
   description:
     "How PMs design products that form genuine habits — without dark patterns. Nir Eyal&apos;s Hooked framework, habit loops, and examples from Duolingo, WhatsApp, and others.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM B2B Products (2026) — How B2B PM Differs From Consumer | PM Streak",
+  title: "PM B2B Products (2026) — How B2B PM Differs From Consumer",
   description:
     "How PMs build B2B products. Buyer vs user, sales-led motion, enterprise deal cycles, and the dynamics that separate B2B from consumer product work.",
   keywords: [

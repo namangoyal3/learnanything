@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Assistants (2026) — Designing Personal AI Assistants | PM Streak",
+  title: "PM AI Assistants (2026) — Designing Personal AI Assistants",
   description:
     "How PMs build AI assistants. Memory, personality, proactivity, and what makes an assistant feel like a real one.",
   keywords: [

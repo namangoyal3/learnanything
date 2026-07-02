@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Robotics (2026) — Humanoids, Warehouse Robots, Autonomous Vehicles | PM Streak",
+  title: "PM AI Robotics (2026) — Humanoids, Warehouse Robots, Autonomous Vehicles",
   description:
     "How PMs build AI-powered robotics. Humanoids, warehouse automation, autonomy, and why the gap between demo and reliable deployment is still years.",
   keywords: [

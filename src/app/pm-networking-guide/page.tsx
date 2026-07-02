@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Networking Guide (2026) — How PMs Build Real Networks That Help Their Careers | PM Streak",
+  title: "PM Networking Guide (2026) — How PMs Build Real Networks That Help Their Careers",
   description:
     "How PMs build real networks without being transactional. Where to meet other PMs, how to ask for coffee chats, and how to turn weak connections into strong ones.",
   keywords: [

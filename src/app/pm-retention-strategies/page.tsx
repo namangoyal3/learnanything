@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Retention Strategies (2026) — 7 Proven Tactics to Keep Users Coming Back | PM Streak",
+  title: "PM Retention Strategies (2026) — 7 Proven Tactics to Keep Users Coming Back",
   description:
     "Seven proven retention strategies PMs use to keep users coming back. Habit loops, streaks, content, community, and more — with examples and when each works.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Demo Skills Guide (2026) — How to Present Products That Land | PM Streak",
+  title: "PM Demo Skills Guide (2026) — How to Present Products That Land",
   description:
     "How PMs give demos that convert. Structure, storytelling, live demo traps, and what executives actually pay attention to.",
   keywords: [

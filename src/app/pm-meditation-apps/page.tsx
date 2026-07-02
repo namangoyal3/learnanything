@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Meditation &amp; Wellness Apps (2026) — Calm, Headspace, Art of Living PM Lessons | PM Streak",
+  title: "PM Meditation &amp; Wellness Apps (2026) — Calm, Headspace, Art of Living PM Lessons",
   description:
     "How PMs build meditation and wellness apps. Habit formation, content vs community, measurable outcomes, and why wellness apps churn fast.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM x Sales Ops (2026) — Working With Sales Operations as a PM | PM Streak",
+  title: "PM x Sales Ops (2026) — Working With Sales Operations as a PM",
   description:
     "How PMs partner with sales operations. Pipeline data, forecast accuracy, deal desk, and why sales ops is a rich PM research channel.",
   keywords: [

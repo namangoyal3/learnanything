@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Monetization (2026) — How AI Products Actually Make Money | PM Streak",
+  title: "PM AI Monetization (2026) — How AI Products Actually Make Money",
   description:
     "How PMs price AI products. Per-seat vs usage vs outcome pricing, and which AI categories converge to which models.",
   keywords: [

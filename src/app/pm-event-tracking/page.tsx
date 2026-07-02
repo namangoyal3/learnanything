@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Event Tracking (2026) — How to Design Instrumentation That Answers Real Questions | PM Streak",
+  title: "PM Event Tracking (2026) — How to Design Instrumentation That Answers Real Questions",
   description:
     "How PMs design event tracking that answers the questions they&apos;ll want to ask. Naming conventions, property design, and building a tracking plan before shipping.",
   keywords: [

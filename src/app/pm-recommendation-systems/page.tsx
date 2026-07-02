@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Recommendation Systems (2026) — How PMs Work With ML Teams | PM Streak",
+  title: "PM Recommendation Systems (2026) — How PMs Work With ML Teams",
   description:
     "How PMs work with ML on recommendation systems. Candidate generation, ranking, diversity, and the PM&apos;s role when ML owns the model.",
   keywords: [

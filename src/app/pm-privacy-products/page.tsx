@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Privacy Products (2026) — DPDP, GDPR, and Privacy-by-Design | PM Streak",
+  title: "PM Privacy Products (2026) — DPDP, GDPR, and Privacy-by-Design",
   description:
     "How PMs build privacy-respecting products. Consent, data minimisation, DSR workflows, and why India&apos;s DPDP Act changes the game.",
   keywords: [

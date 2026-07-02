@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Customer Support Tech (2026) — Intercom, Zendesk, Freshdesk PM Guide | PM Streak",
+  title: "PM Customer Support Tech (2026) — Intercom, Zendesk, Freshdesk PM Guide",
   description:
     "How PMs build customer support tech. AI deflection, omnichannel, agent productivity, and why support is the best AI testing ground.",
   keywords: [

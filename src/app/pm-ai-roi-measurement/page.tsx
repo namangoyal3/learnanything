@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI ROI Measurement (2026) — Proving AI Pays Off | PM Streak",
+  title: "PM AI ROI Measurement (2026) — Proving AI Pays Off",
   description:
     "How PMs measure AI ROI. Time saved, deflection rates, revenue lift, and why most AI ROI claims don&apos;t survive scrutiny.",
   keywords: [

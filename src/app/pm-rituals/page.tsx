@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Team Rituals (2026) — The Recurring Meetings Great PM Teams Use | PM Streak",
+  title: "PM Team Rituals (2026) — The Recurring Meetings Great PM Teams Use",
   description:
     "The recurring rituals great PM teams use. Product reviews, metric reviews, roadmap reviews — when each matters, how long they should take, and which to skip.",
   keywords: [

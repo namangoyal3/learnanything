@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Search &amp; Discovery (2026) — How PMs Design Product Discovery | PM Streak",
+  title: "PM Search &amp; Discovery (2026) — How PMs Design Product Discovery",
   description:
     "How PMs design search and discovery systems. Ranking signals, relevance, personalisation, and what makes discovery experiences delightful.",
   keywords: [

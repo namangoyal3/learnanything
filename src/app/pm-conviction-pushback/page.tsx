@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Conviction &amp; Pushback (2026) — How to Hold Your Ground Without Losing Relationships | PM Streak",
+  title: "PM Conviction &amp; Pushback (2026) — How to Hold Your Ground Without Losing Relationships",
   description:
     "How PMs push back on leadership, customers, or peers without damaging trust. Disagree-and-commit, when to hold, when to fold, and how to signal conviction calmly.",
   keywords: [

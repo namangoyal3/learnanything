@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Neo Banking (2026) — Jupiter, Fi, Niyo PM Guide | PM Streak",
+  title: "PM Neo Banking (2026) — Jupiter, Fi, Niyo PM Guide",
   description:
     "How PMs build neo banks in India. BaaS partnerships, RBI constraints, and why neobanks survive on adjacent product strength, not core banking.",
   keywords: [

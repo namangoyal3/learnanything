@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Discovery Process (2026) — Continuous Discovery for Product Managers | PM Streak",
+  title: "PM Discovery Process (2026) — Continuous Discovery for Product Managers",
   description:
     "How PMs run continuous discovery. Interviews, opportunity trees, assumption testing — Teresa Torres&apos; framework applied.",
   keywords: [

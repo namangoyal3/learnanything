@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Salary Negotiation Guide (2026) — How Product Managers Negotiate Offers | PM Streak",
+  title: "PM Salary Negotiation Guide (2026) — How Product Managers Negotiate Offers",
   description:
     "Negotiate your PM offer like a senior PM. What to ask for, how to respond to recruiters, scripts that work, and the salary levers most candidates leave on the table.",
   keywords: [

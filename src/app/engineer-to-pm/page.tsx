@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Engineer to Product Manager (2026) — How SWEs Transition to PM | PM Streak",
+  title: "Engineer to Product Manager (2026) — How SWEs Transition to PM",
   description:
     "How software engineers transition to PM. The 4 paths that work, what hiring managers look for, how to reposition your engineering experience, and avoiding common transition pitfalls.",
   keywords: [

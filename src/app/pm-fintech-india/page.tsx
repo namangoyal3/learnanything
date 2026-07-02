@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Fintech PM India (2026) — UPI, Lending, Wealth &amp; the Regulatory Maze | PM Streak",
+  title: "Fintech PM India (2026) — UPI, Lending, Wealth &amp; the Regulatory Maze",
   description:
     "How fintech PMs build in India. Payment rails, lending unit economics, wealth products, and navigating RBI/SEBI regulation while shipping real products.",
   keywords: [

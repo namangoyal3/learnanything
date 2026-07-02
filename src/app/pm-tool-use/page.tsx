@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Tool Use (2026) — Designing Agents That Use APIs Reliably | PM Streak",
+  title: "PM AI Tool Use (2026) — Designing Agents That Use APIs Reliably",
   description:
     "How PMs design tool-using agents. Tool selection, error handling, and why tool-use reliability is the bottleneck for agentic products.",
   keywords: [

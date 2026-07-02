@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM at Traditional Enterprises (2026) — Digital SBUs, Legacy, Transformation | PM Streak",
+  title: "PM at Traditional Enterprises (2026) — Digital SBUs, Legacy, Transformation",
   description:
     "How PMs work inside legacy enterprises. Digital SBUs at Tata, Reliance, HDFC, and why PM-ing in enterprise is not the same as startup PM.",
   keywords: [

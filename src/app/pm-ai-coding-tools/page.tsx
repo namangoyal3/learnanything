@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Coding Tools (2026) — Cursor, Copilot, Cline PM Lessons | PM Streak",
+  title: "PM AI Coding Tools (2026) — Cursor, Copilot, Cline PM Lessons",
   description:
     "How PMs build AI coding products. Context, latency, trust, eval loops, and the category that redefined developer experience.",
   keywords: [

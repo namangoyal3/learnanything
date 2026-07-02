@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Designer to PM (2026) — Designers Who Cross Into Product | PM Streak",
+  title: "PM Designer to PM (2026) — Designers Who Cross Into Product",
   description:
     "How designers become PMs. Strengths they bring, the data and engineering gaps to close, and why designer-PMs often ship the best-experience products.",
   keywords: [

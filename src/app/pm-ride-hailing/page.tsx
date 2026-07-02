@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Ride-Hailing (2026) — Uber, Ola, Rapido PM Guide | PM Streak",
+  title: "PM Ride-Hailing (2026) — Uber, Ola, Rapido PM Guide",
   description:
     "How PMs build ride-hailing products. Dispatch, dynamic pricing, driver supply, and the peculiar economics of two-sided mobility marketplaces.",
   keywords: [

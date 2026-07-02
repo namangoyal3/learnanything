@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM B2B Marketplaces (2026) — Udaan, IndiaMART, Zetwerk PM Guide | PM Streak",
+  title: "PM B2B Marketplaces (2026) — Udaan, IndiaMART, Zetwerk PM Guide",
   description:
     "How PMs build B2B marketplaces. Supplier quality, credit, logistics, and why B2B marketplaces are fundamentally different from consumer ones.",
   keywords: [

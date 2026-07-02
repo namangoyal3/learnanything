@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Prompt Injection Defense (2026) — Securing AI Products | PM Streak",
+  title: "PM Prompt Injection Defense (2026) — Securing AI Products",
   description:
     "How PMs design defenses against prompt injection. Direct, indirect, and exfiltration attacks — and what mitigations actually work.",
   keywords: [

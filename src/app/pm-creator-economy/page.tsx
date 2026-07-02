@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Creator Economy (2026) — How PMs Build Products for Creators | PM Streak",
+  title: "PM Creator Economy (2026) — How PMs Build Products for Creators",
   description:
     "How PMs build for the creator economy. Monetisation, creator tools, audience growth, and the tension between creators and platforms.",
   keywords: [

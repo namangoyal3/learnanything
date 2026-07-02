@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Product Reviews (2026) — Running Reviews That Actually Move Work Forward | PM Streak",
+  title: "PM Product Reviews (2026) — Running Reviews That Actually Move Work Forward",
   description:
     "How PMs run product reviews with leadership. Pre-reads, decision logs, handling pushback, and why most reviews fail.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Content Moderation (2026) — How PMs Build Trust & Safety Systems | PM Streak",
+  title: "PM Content Moderation (2026) — How PMs Build Trust & Safety Systems",
   description:
     "How PMs build content moderation at scale. Policy, automation, human review, and the tough calls no framework makes for you.",
   keywords: [

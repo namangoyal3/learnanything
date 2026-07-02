@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM x Marketing (2026) — How PMs Partner With Marketing | PM Streak",
+  title: "PM x Marketing (2026) — How PMs Partner With Marketing",
   description:
     "How PMs partner with marketing. Positioning, launch, performance, content — and the tension between shipping and messaging.",
   keywords: [

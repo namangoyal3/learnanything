@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "E-commerce Product Manager Guide (2026) — How to Excel as an E-commerce PM | PM Streak",
+  title: "E-commerce Product Manager Guide (2026) — How to Excel as an E-commerce PM",
   description:
     "The complete e-commerce PM guide. Unit economics, category PM vs platform PM, the buyer-seller-ops triangle, and how to break into e-commerce PM at Flipkart, Amazon, and Meesho.",
   keywords: [

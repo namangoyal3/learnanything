@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Feature Adoption (2026) — Why Your Feature Isn&apos;t Being Used and How to Fix It | PM Streak",
+  title: "PM Feature Adoption (2026) — Why Your Feature Isn&apos;t Being Used and How to Fix It",
   description:
     "Why shipped features often get low adoption and how PMs fix it. Discovery, education, habit, and the adoption levers that actually move metrics.",
   keywords: [

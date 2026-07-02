@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Beauty Tech (2026) — Nykaa, Purplle, Tira PM Guide | PM Streak",
+  title: "PM Beauty Tech (2026) — Nykaa, Purplle, Tira PM Guide",
   description:
     "How PMs build beauty tech products. Content-led commerce, AR try-ons, influencer ecosystems, and why beauty blends media and marketplace.",
   keywords: [

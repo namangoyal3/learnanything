@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Travel Tech PM Interview Guide (2026) — MakeMyTrip, ixigo, Cleartrip | PM Streak",
+  title: "Travel Tech PM Interview Guide (2026) — MakeMyTrip, ixigo, Cleartrip",
   description:
     "Crack PM interviews at MakeMyTrip, ixigo, Cleartrip, and Goibibo. Travel marketplace dynamics, inventory/pricing, loyalty, and the peculiar PM problems of OTA products.",
   keywords: [

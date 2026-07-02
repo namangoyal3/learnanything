@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Experimentation Culture (2026) — How to Build a Team That Ships, Measures, Learns | PM Streak",
+  title: "PM Experimentation Culture (2026) — How to Build a Team That Ships, Measures, Learns",
   description:
     "How PMs build a team culture of experimentation. Habits, rituals, metrics, and how to shift a team from ship-and-hope to ship-and-learn.",
   keywords: [

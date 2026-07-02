@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Onboarding (2026) — Onboarding Users Into AI Products | PM Streak",
+  title: "PM AI Onboarding (2026) — Onboarding Users Into AI Products",
   description:
     "How PMs design AI product onboarding. Setting expectations, demoing capabilities, and avoiding the &apos;model is too smart for me&apos; cliff.",
   keywords: [

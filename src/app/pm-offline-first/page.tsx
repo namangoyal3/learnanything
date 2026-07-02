@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Offline-First Products (2026) — Designing for Flaky Connectivity | PM Streak",
+  title: "PM Offline-First Products (2026) — Designing for Flaky Connectivity",
   description:
     "How PMs build offline-first products. Sync, conflict resolution, caching strategies, and why offline-first wins in India and emerging markets.",
   keywords: [

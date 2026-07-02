@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PhonePe PM Interview Guide (2026) — UPI, Payments & Product Questions | PM Streak",
+  title: "PhonePe PM Interview Guide (2026) — UPI, Payments & Product Questions",
   description:
     "Crack the PhonePe PM interview. All rounds, UPI and payments product questions, merchant vs consumer product thinking, and what PhonePe PMs say the bar is in 2026.",
   keywords: [

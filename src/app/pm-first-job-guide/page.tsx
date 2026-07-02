@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Land Your First PM Job (2026) — Complete India Guide | PM Streak",
+  title: "How to Land Your First PM Job (2026) — Complete India Guide",
   description:
     "The complete guide to landing your first PM job in India. Paths in, portfolio to build, interview prep, and how to differentiate when you have no PM experience.",
   keywords: [

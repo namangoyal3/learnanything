@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Domain Knowledge Guide (2026) — How to Build Expertise in Your Product Area | PM Streak",
+  title: "PM Domain Knowledge Guide (2026) — How to Build Expertise in Your Product Area",
   description:
     "How PMs build deep domain expertise. The habits that compound, what to read, who to follow, and how to become the person people call when they need domain insight.",
   keywords: [

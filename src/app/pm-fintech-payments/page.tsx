@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Fintech Payments (2026) — How PMs Build Payment Products | PM Streak",
+  title: "PM Fintech Payments (2026) — How PMs Build Payment Products",
   description:
     "How PMs build payment products. UPI dynamics, success rates, reconciliation, compliance, and the unique challenges of payment PM work.",
   keywords: [

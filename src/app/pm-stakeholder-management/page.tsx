@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Stakeholder Management for PMs (2026) — Influence Without Authority | PM Streak",
+  title: "Stakeholder Management for PMs (2026) — Influence Without Authority",
   description:
     "How PMs manage stakeholders — engineering, design, sales, leadership, customers. Frameworks, scripts for saying no, and how to build influence without having authority.",
   keywords: [

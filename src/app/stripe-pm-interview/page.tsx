@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Stripe PM Interview Guide (2026) — API Products, Developer PM Questions | PM Streak",
+  title: "Stripe PM Interview Guide (2026) — API Products, Developer PM Questions",
   description:
     "Crack the Stripe PM interview. What makes Stripe PM unique — developer-first products, API design, writing quality, and the Stripe operating principles that shape every interview.",
   keywords: [

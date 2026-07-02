@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Pricing Page Design (2026) — Designing Pages That Convert | PM Streak",
+  title: "PM Pricing Page Design (2026) — Designing Pages That Convert",
   description:
     "How PMs design pricing pages. Tier order, anchoring, CTAs, FAQs, and the patterns proven across thousands of A/B tests.",
   keywords: [

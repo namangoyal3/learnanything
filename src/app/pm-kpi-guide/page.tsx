@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM KPI Guide (2026) — Choosing KPIs That Drive Decisions | PM Streak",
+  title: "PM KPI Guide (2026) — Choosing KPIs That Drive Decisions",
   description:
     "How PMs pick KPIs that actually drive decisions. Leading vs lagging indicators, outcome vs output, and how to avoid the Goodhart&apos;s Law trap.",
   keywords: [

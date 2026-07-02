@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Bring-Your-Own-Key (2026) — When BYOK is Right for AI Products | PM Streak",
+  title: "PM Bring-Your-Own-Key (2026) — When BYOK is Right for AI Products",
   description:
     "When PMs should offer bring-your-own-key for AI. Cost shifting, enterprise compliance, and the pricing implications.",
   keywords: [

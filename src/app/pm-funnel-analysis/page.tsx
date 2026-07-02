@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Funnel Analysis Guide (2026) — How to Diagnose Any Funnel | PM Streak",
+  title: "PM Funnel Analysis Guide (2026) — How to Diagnose Any Funnel",
   description:
     "How PMs do funnel analysis that leads to action. Defining funnels correctly, spotting the real drop-off, segmentation, and what to do about it.",
   keywords: [

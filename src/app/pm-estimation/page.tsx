@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Estimation (2026) — How PMs Estimate Work Honestly | PM Streak",
+  title: "PM Estimation (2026) — How PMs Estimate Work Honestly",
   description:
     "How PMs estimate timelines without lying to themselves. Reference-class forecasting, buffers, and why single-point estimates fail.",
   keywords: [

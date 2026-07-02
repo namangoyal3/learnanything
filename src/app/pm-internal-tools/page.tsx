@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Internal Tools PM (2026) — PM Work Serving Your Own Company | PM Streak",
+  title: "Internal Tools PM (2026) — PM Work Serving Your Own Company",
   description:
     "Internal tools PM — what it is, what&apos;s hard about it, career trade-offs, and why great internal tools PMs are increasingly valuable at scaled companies.",
   keywords: [

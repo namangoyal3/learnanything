@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Growth Product Manager Guide (2026) — How to Become a Growth PM | PM Streak",
+  title: "Growth Product Manager Guide (2026) — How to Become a Growth PM",
   description:
     "The complete growth PM playbook. Acquisition, activation, retention, referral, revenue — what growth PMs actually do, interview questions, and how to transition into growth PM.",
   keywords: [

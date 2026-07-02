@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "SaaS Metrics for PMs (2026) — MRR, NRR, CAC, LTV Explained | PM Streak",
+  title: "SaaS Metrics for PMs (2026) — MRR, NRR, CAC, LTV Explained",
   description:
     "The SaaS metrics every PM should know. MRR, NRR, GRR, CAC, LTV, payback — definitions, benchmarks, and how to use them in PM decisions.",
   keywords: [

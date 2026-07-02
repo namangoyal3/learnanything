@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Myntra & Nykaa PM Interview Guide (2026) — Fashion &amp; Beauty Commerce PM | PM Streak",
+  title: "Myntra & Nykaa PM Interview Guide (2026) — Fashion &amp; Beauty Commerce PM",
   description:
     "Crack PM interviews at Myntra and Nykaa. Fashion &amp; beauty e-commerce dynamics — discovery, styling, try-on, returns, and the dynamics unique to lifestyle commerce.",
   keywords: [

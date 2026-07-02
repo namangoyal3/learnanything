@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Cheat Sheet (2026) — Frameworks, Metrics & Formulas on One Page | PM Streak",
+  title: "PM Cheat Sheet (2026) — Frameworks, Metrics & Formulas on One Page",
   description:
     "The one-page PM cheat sheet. Every essential framework, metric, and formula — RICE, AARRR, PIRATE, north star, TAM/SAM/SOM, and more — in a scannable reference.",
   keywords: [

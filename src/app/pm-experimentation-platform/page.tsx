@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Experimentation Platform (2026) — LaunchDarkly, Statsig, Eppo PM Lessons | PM Streak",
+  title: "PM Experimentation Platform (2026) — LaunchDarkly, Statsig, Eppo PM Lessons",
   description:
     "How PMs build experimentation platforms. Feature flags, statistical engines, governance, and why exp platforms are the unsexy infra winners.",
   keywords: [

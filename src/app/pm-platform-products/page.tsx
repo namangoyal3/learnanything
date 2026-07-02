@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Platform Products (2026) — Building Products Other Products Are Built On | PM Streak",
+  title: "PM Platform Products (2026) — Building Products Other Products Are Built On",
   description:
     "How PMs build platform products — APIs, SDKs, developer tools. Why platform PM is harder and what makes it rewarding.",
   keywords: [

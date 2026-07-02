@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Food Delivery (2026) — Swiggy, Zomato, Eatsure PM Guide | PM Streak",
+  title: "PM Food Delivery (2026) — Swiggy, Zomato, Eatsure PM Guide",
   description:
     "How PMs build food delivery products in India. Restaurant discovery, delivery ETAs, rider economics, and the brutal unit economics.",
   keywords: [

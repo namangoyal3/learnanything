@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Fintech Product Manager Guide (2026) — How to Become One in India | PM Streak",
+  title: "Fintech Product Manager Guide (2026) — How to Become One in India",
   description:
     "The complete guide to becoming a fintech PM in India. Domain knowledge to master, top companies hiring, interview questions, salary ranges, and how to break in from adjacent roles.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Reading PM Metrics Correctly (2026) — Spotting Signal vs Noise | PM Streak",
+  title: "Reading PM Metrics Correctly (2026) — Spotting Signal vs Noise",
   description:
     "How PMs read metrics correctly. Spot noise vs signal, avoid confirmation bias, segment correctly, and the 7 questions to ask before acting on any metric move.",
   keywords: [

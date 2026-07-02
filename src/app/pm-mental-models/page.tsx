@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Mental Models (2026) — 12 Thinking Tools Every Product Manager Should Know | PM Streak",
+  title: "PM Mental Models (2026) — 12 Thinking Tools Every Product Manager Should Know",
   description:
     "The 12 mental models that sharpen PM thinking. Second-order effects, opportunity cost, Pareto, inversion, and more — with product examples for each.",
   keywords: [

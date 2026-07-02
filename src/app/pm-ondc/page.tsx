@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM ONDC (2026) — Building on Open Network for Digital Commerce | PM Streak",
+  title: "PM ONDC (2026) — Building on Open Network for Digital Commerce",
   description:
     "How PMs build on ONDC. Buyer app, seller app, network participants, and the opportunities and constraints of India&apos;s open commerce protocol.",
   keywords: [

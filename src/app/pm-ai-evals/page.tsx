@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Evals (2026) — How PMs Measure LLM Product Quality | PM Streak",
+  title: "PM AI Evals (2026) — How PMs Measure LLM Product Quality",
   description:
     "How PMs design AI evals. Offline benchmarks, online metrics, human review, and why eval infrastructure is the real moat for AI products.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM to Founder (2026) — Making the Jump from PM to Startup Founder | PM Streak",
+  title: "PM to Founder (2026) — Making the Jump from PM to Startup Founder",
   description:
     "How PMs become founders. Skill gaps, distribution, sales, and why PM training is only half the founder skillset.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Swiggy PM Interview Guide (2026) — Questions, Rounds & Prep Plan | PM Streak",
+  title: "Swiggy PM Interview Guide (2026) — Questions, Rounds & Prep Plan",
   description:
     "Crack the Swiggy PM interview. All rounds, ops-heavy product questions, what Swiggy PMs say the bar is, and a prep plan for PM and APM roles at India's leading food delivery platform.",
   keywords: [

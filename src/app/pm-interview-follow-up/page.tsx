@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Interview Follow-Up Guide (2026) — Emails, Thank-You Notes & What to Do After | PM Streak",
+  title: "PM Interview Follow-Up Guide (2026) — Emails, Thank-You Notes & What to Do After",
   description:
     "What to do after your PM interview. Thank-you email templates, how to follow up without seeming desperate, handling silence, and how to turn a rejection into a future offer.",
   keywords: [

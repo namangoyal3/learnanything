@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Failure Recovery Guide (2026) — When Your Product or Launch Fails | PM Streak",
+  title: "PM Failure Recovery Guide (2026) — When Your Product or Launch Fails",
   description:
     "How to handle PM failures — failed launches, missed metrics, shipped features nobody used. Recovery steps, post-mortems, career protection, and lessons that compound.",
   keywords: [

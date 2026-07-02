@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM OKRs Guide (2026) — Writing OKRs That Actually Move Work | PM Streak",
+  title: "PM OKRs Guide (2026) — Writing OKRs That Actually Move Work",
   description:
     "How PMs write OKRs that drive focus without becoming bureaucracy. Objectives, key results, grading, and the common mistakes.",
   keywords: [
