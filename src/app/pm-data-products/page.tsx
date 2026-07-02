@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Data Products (2026) — Building With Data as the Product | PM Streak",
+  title: "PM Data Products (2026) — Building With Data as the Product",
   description:
     "How PMs build data products. Pipelines, quality, governance, and the unique challenges when the product IS the data.",
   keywords: [

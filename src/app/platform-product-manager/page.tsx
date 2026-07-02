@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Platform Product Manager Guide (2026) — How to Excel as a Platform PM | PM Streak",
+  title: "Platform Product Manager Guide (2026) — How to Excel as a Platform PM",
   description:
     "The complete platform PM playbook. What platform PMs do, how they differ from feature PMs, API design, internal tools, developer experience, and how to break into platform PM.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Kids Products (2026) — Designing for Children and Parents | PM Streak",
+  title: "PM Kids Products (2026) — Designing for Children and Parents",
   description:
     "How PMs build products for kids. Parental consent, COPPA, screen time, and why kids products serve two users with conflicting incentives.",
   keywords: [

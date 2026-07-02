@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM User Flows Guide (2026) — How to Map &amp; Improve Any Flow | PM Streak",
+  title: "PM User Flows Guide (2026) — How to Map &amp; Improve Any Flow",
   description:
     "How PMs map user flows that drive design and prioritisation. Happy path + edge cases, where to instrument, and how to spot friction that metrics miss.",
   keywords: [

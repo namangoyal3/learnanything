@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Side Projects Guide (2026) — Build Something That Gets You Hired | PM Streak",
+  title: "PM Side Projects Guide (2026) — Build Something That Gets You Hired",
   description:
     "Side projects that actually help PM careers. What to build, how to document PM thinking behind them, no-code options, and real examples of side projects that landed PM offers.",
   keywords: [

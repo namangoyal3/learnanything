@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Social Products (2026) — Instagram, Snap, BeReal, Bluesky PM Lessons | PM Streak",
+  title: "PM Social Products (2026) — Instagram, Snap, BeReal, Bluesky PM Lessons",
   description:
     "How PMs build social products. Network effects, content loops, cold start, and why most social apps die in the first 18 months.",
   keywords: [

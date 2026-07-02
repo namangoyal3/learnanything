@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "10 PM Career Mistakes (2026) — How to Avoid the Traps That Stall PMs | PM Streak",
+  title: "10 PM Career Mistakes (2026) — How to Avoid the Traps That Stall PMs",
   description:
     "The 10 most common PM career mistakes. What kills PM careers, what compounds slowly into stagnation, and the deliberate choices that separate fast-growing PMs from stuck ones.",
   keywords: [

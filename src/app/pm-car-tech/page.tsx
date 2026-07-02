@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Car Tech (2026) — CarDekho, Cars24, Spinny PM Guide | PM Streak",
+  title: "PM Car Tech (2026) — CarDekho, Cars24, Spinny PM Guide",
   description:
     "How PMs build car tech products in India. Used car marketplaces, inspection, financing, and why the Indian used car market is a hard marketplace to crack.",
   keywords: [

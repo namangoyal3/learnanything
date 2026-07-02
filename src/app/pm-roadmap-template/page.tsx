@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Roadmap Template (2026) — How to Structure a Product Roadmap That Works | PM Streak",
+  title: "PM Roadmap Template (2026) — How to Structure a Product Roadmap That Works",
   description:
     "The PM roadmap template that actually gets used. Outcome-based structure, visualisation patterns, how to handle stakeholder asks, and the now/next/later format.",
   keywords: [

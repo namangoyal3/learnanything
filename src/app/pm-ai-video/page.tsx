@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Video Products (2026) — Sora, Runway, HeyGen PM Lessons | PM Streak",
+  title: "PM AI Video Products (2026) — Sora, Runway, HeyGen PM Lessons",
   description:
     "How PMs build AI video products. Generation vs editing, consistency, length limits, and why AI video is the next wave of creative tooling.",
   keywords: [

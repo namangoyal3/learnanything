@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM CPO Role (2026) — What Chief Product Officers Actually Do | PM Streak",
+  title: "PM CPO Role (2026) — What Chief Product Officers Actually Do",
   description:
     "What CPOs actually do. Board relationships, product strategy, org design, and the difference between VP Product and CPO.",
   keywords: [

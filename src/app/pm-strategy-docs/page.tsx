@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Strategy Docs (2026) — How PMs Write Strategy Docs That Actually Shape Decisions | PM Streak",
+  title: "PM Strategy Docs (2026) — How PMs Write Strategy Docs That Actually Shape Decisions",
   description:
     "How PMs write strategy docs. Framing, bets, non-goals, and why most strategy docs describe status instead of forcing choices.",
   keywords: [

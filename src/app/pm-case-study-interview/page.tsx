@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Case Study Interview Guide (2026) — How to Solve Any PM Case | PM Streak",
+  title: "PM Case Study Interview Guide (2026) — How to Solve Any PM Case",
   description:
     "Crack PM case study interviews with a proven framework. Product improvement, new market entry, metric drop investigation, and go-to-market cases — with worked examples and structures.",
   keywords: [

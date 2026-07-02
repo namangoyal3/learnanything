@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Freemium Strategy (2026) — When It Works and When It Kills Conversion | PM Streak",
+  title: "PM Freemium Strategy (2026) — When It Works and When It Kills Conversion",
   description:
     "How PMs design freemium products that convert. What to put in free tier, what to gate, and the mistakes that make freemium a revenue trap.",
   keywords: [

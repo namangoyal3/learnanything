@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM B2B Sales-Led (2026) — Building for Enterprise Sales Motion | PM Streak",
+  title: "PM B2B Sales-Led (2026) — Building for Enterprise Sales Motion",
   description:
     "How PMs build for sales-led B2B. Buyer vs user, RFPs, procurement, security reviews, and why the best B2B PMs spend time in sales calls.",
   keywords: [

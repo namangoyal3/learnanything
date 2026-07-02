@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM A/B Test Analysis (2026) — How to Read Results Like a Pro | PM Streak",
+  title: "PM A/B Test Analysis (2026) — How to Read Results Like a Pro",
   description:
     "How PMs analyse A/B test results correctly. Statistical significance, effect size, segmentation, and the biases that lead to bad decisions.",
   keywords: [

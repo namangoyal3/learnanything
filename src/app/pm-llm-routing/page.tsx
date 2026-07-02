@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM LLM Routing (2026) — Picking the Right Model for Each Request | PM Streak",
+  title: "PM LLM Routing (2026) — Picking the Right Model for Each Request",
   description:
     "How PMs design model routing. Cost, latency, capability tiers, and why model routing is the single biggest cost lever for AI products.",
   keywords: [

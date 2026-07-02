@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Market Research Guide (2026) — How PMs Size Markets & Spot Opportunities | PM Streak",
+  title: "PM Market Research Guide (2026) — How PMs Size Markets & Spot Opportunities",
   description:
     "How PMs do market research — TAM/SAM/SOM, competitive landscape, customer segmentation, and spotting opportunities others miss. With frameworks and Indian market examples.",
   keywords: [

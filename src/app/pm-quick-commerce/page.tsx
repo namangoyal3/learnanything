@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Quick Commerce (2026) — Zepto, Blinkit, Instamart PM Guide | PM Streak",
+  title: "PM Quick Commerce (2026) — Zepto, Blinkit, Instamart PM Guide",
   description:
     "How PMs build 10-minute delivery products. Dark stores, SKU curation, delivery ops, and the unit economics of quick commerce in India.",
   keywords: [

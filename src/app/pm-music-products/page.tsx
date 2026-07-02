@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Music Products (2026) — Spotify, Apple Music, JioSaavn PM Lessons | PM Streak",
+  title: "PM Music Products (2026) — Spotify, Apple Music, JioSaavn PM Lessons",
   description:
     "How PMs build music streaming products. Personalisation, playlists, podcasts, artist tools, and why music is the OG recommendation domain.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Growth Loops (2026) — The Engines Behind Compounding Growth | PM Streak",
+  title: "PM Growth Loops (2026) — The Engines Behind Compounding Growth",
   description:
     "How PMs build growth loops. Viral, content, paid, PLG — what each loop does, when it works, and how to diagnose a loop that&apos;s broken.",
   keywords: [

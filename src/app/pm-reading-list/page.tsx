@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Reading List (2026) — Books, Essays, and Newsletters That Shaped Great PMs | PM Streak",
+  title: "PM Reading List (2026) — Books, Essays, and Newsletters That Shaped Great PMs",
   description:
     "The essential PM reading list. Books, essays, newsletters, and podcasts — the canon that sharpens product thinking over years.",
   keywords: [

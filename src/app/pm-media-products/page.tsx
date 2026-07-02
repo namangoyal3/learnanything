@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Media Products (2026) — Spotify, Netflix, JioCinema PM Lessons | PM Streak",
+  title: "PM Media Products (2026) — Spotify, Netflix, JioCinema PM Lessons",
   description:
     "How PMs build streaming and media products. Content vs catalog, recommendations, ads vs subscription, and the economics of attention.",
   keywords: [

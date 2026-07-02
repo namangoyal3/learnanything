@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Consulting to Product (2026) — From McKinsey, BCG, Bain to PM | PM Streak",
+  title: "PM Consulting to Product (2026) — From McKinsey, BCG, Bain to PM",
   description:
     "How consultants transition to PM. Strengths they bring, gaps they must close, and why ex-consultants often excel at strategy but struggle with craft.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Project Kickoff Doc Template (2026) — Start Projects Without Drama | PM Streak",
+  title: "PM Project Kickoff Doc Template (2026) — Start Projects Without Drama",
   description:
     "The project kickoff doc that aligns the team before work starts. Template, sections, and how to avoid the 6 kickoff mistakes that make projects late.",
   keywords: [

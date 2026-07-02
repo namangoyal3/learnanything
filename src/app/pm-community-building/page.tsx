@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Community Building (2026) — How PMs Grow Engaged User Communities | PM Streak",
+  title: "PM Community Building (2026) — How PMs Grow Engaged User Communities",
   description:
     "How PMs build communities that drive retention, advocacy, and product insight. Channels, rituals, and the metrics that matter.",
   keywords: [

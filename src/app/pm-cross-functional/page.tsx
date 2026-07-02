@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Cross-Functional Leadership (2026) — Leading Without Authority | PM Streak",
+  title: "PM Cross-Functional Leadership (2026) — Leading Without Authority",
   description:
     "How PMs lead cross-functional teams without authority. Working with engineering, design, sales, marketing, support — and building trust with each.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Referral Loops (2026) — How PMs Design Viral Growth | PM Streak",
+  title: "PM Referral Loops (2026) — How PMs Design Viral Growth",
   description:
     "How PMs design referral loops that actually move the needle. K-factor, incentive design, friction reduction, and why most referral programs fail.",
   keywords: [

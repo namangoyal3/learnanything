@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Edtech Product Manager Guide (2026) — How to Become an Edtech PM in India | PM Streak",
+  title: "Edtech Product Manager Guide (2026) — How to Become an Edtech PM in India",
   description:
     "The complete edtech PM guide for India. Top companies, unique learning product challenges, interview questions, and how engagement vs outcomes shapes edtech PM decisions.",
   keywords: [

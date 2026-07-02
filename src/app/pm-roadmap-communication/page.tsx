@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Roadmap Communication (2026) — How to Share Roadmaps Without Over-Committing | PM Streak",
+  title: "PM Roadmap Communication (2026) — How to Share Roadmaps Without Over-Committing",
   description:
     "How PMs communicate roadmaps to different audiences. Internal vs external, sales vs customers, execs vs engineering — what to share and how.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Content Products (2026) — How to Build Products Where Content Is the Product | PM Streak",
+  title: "PM Content Products (2026) — How to Build Products Where Content Is the Product",
   description:
     "How PMs build content products. Creator economy, recommendation algorithms, content moderation, and the dynamics of platforms where content is the product.",
   keywords: [

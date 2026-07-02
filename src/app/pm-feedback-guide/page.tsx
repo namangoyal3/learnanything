@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Feedback Guide (2026) — How Great PMs Give and Receive Feedback | PM Streak",
+  title: "PM Feedback Guide (2026) — How Great PMs Give and Receive Feedback",
   description:
     "How PMs give and receive feedback effectively. SBI framework, specific examples, how to handle defensive reactions, and how to make feedback a habit instead of an event.",
   keywords: [

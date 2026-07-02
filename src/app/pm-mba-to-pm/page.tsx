@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM MBA to PM (2026) — Breaking In From Top Indian and Global B-Schools | PM Streak",
+  title: "PM MBA to PM (2026) — Breaking In From Top Indian and Global B-Schools",
   description:
     "How MBAs transition into PM roles. APM programs, company fit, and why the MBA-to-PM path has gotten more competitive in 2026.",
   keywords: [

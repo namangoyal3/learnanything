@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Microsoft PM Interview Guide (2026) — Questions, Rounds & Prep | PM Streak",
+  title: "Microsoft PM Interview Guide (2026) — Questions, Rounds & Prep",
   description:
     "Crack the Microsoft PM interview. All rounds including design, strategy, and behavioural, real questions, what Microsoft PMs say the bar is, and a complete prep plan.",
   keywords: [

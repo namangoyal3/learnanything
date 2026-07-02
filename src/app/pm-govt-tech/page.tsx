@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM GovTech &amp; Digital Public Goods (2026) — DPI, Aadhaar, DigiLocker | PM Streak",
+  title: "PM GovTech &amp; Digital Public Goods (2026) — DPI, Aadhaar, DigiLocker",
   description:
     "How PMs build on India Stack. Aadhaar, DigiLocker, ONDC, Account Aggregator, and what it means to work on digital public infrastructure.",
   keywords: [

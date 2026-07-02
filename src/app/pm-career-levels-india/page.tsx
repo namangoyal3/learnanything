@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Career Levels in India (2026) — Titles, Scope & Promotion Criteria | PM Streak",
+  title: "PM Career Levels in India (2026) — Titles, Scope & Promotion Criteria",
   description:
     "The complete PM level ladder in India. What each title means at Flipkart, Razorpay, Google, and more. Promotion criteria, typical years, and how companies calibrate levels.",
   keywords: [

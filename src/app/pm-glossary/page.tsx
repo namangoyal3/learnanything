@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Glossary (2026) — 50+ Product Management Terms Explained | PM Streak",
+  title: "PM Glossary (2026) — 50+ Product Management Terms Explained",
   description:
     "The complete PM glossary. 50+ product management terms every PM should know — organised by category, defined clearly, with examples.",
   keywords: [

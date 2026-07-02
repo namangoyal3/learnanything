@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM D2C Brands (2026) — Mamaearth, boAt, Sugar PM Guide | PM Streak",
+  title: "PM D2C Brands (2026) — Mamaearth, boAt, Sugar PM Guide",
   description:
     "How PMs build for D2C brands in India. Shopify economics, performance marketing, repeat rate, and what makes D2C PM unique.",
   keywords: [

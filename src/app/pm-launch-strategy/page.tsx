@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Launch Strategy (2026) — How PMs Run Real Product Launches | PM Streak",
+  title: "PM Launch Strategy (2026) — How PMs Run Real Product Launches",
   description:
     "How PMs plan launches that move metrics, not press. Launch tiers, rollout plans, press vs user-led launches, and common launch mistakes.",
   keywords: [

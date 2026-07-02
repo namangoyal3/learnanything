@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Monetization Models (2026) — Picking the Right Way to Make Money | PM Streak",
+  title: "PM Monetization Models (2026) — Picking the Right Way to Make Money",
   description:
     "Subscription, transaction, advertising, marketplace, freemium — how PMs choose monetisation that fits product and audience.",
   keywords: [

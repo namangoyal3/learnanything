@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Job Search in India (2026) — Where to Apply, How to Stand Out | PM Streak",
+  title: "PM Job Search in India (2026) — Where to Apply, How to Stand Out",
   description:
     "The complete PM job search guide for India. Where to find PM roles, how to apply, what recruiters look for, and the channels that actually convert — not just job boards.",
   keywords: [

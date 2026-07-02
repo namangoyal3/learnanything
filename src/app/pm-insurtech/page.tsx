@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Insurtech (2026) — Policybazaar, Acko, Digit PM Guide | PM Streak",
+  title: "PM Insurtech (2026) — Policybazaar, Acko, Digit PM Guide",
   description:
     "How PMs build insurance products in India. Underwriting, claims, regulatory, and the slow shift from agent-led to digital-first insurance.",
   keywords: [

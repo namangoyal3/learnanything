@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Safety (2026) — Building Safe AI Products | PM Streak",
+  title: "PM AI Safety (2026) — Building Safe AI Products",
   description:
     "How PMs build AI safety into product. Refusals, jailbreaks, content filters, and how to balance safety with usefulness.",
   keywords: [

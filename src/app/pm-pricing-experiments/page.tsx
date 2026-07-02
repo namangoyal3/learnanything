@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Pricing Experiments (2026) — How to Test Pricing Without Breaking Trust | PM Streak",
+  title: "PM Pricing Experiments (2026) — How to Test Pricing Without Breaking Trust",
   description:
     "How PMs run pricing experiments that generate real signal. What to test, how to segment, legal considerations, and why most pricing tests go wrong.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Intuit &amp; Adobe PM Interview Guide (2026) — Enterprise SaaS PM Prep | PM Streak",
+  title: "Intuit &amp; Adobe PM Interview Guide (2026) — Enterprise SaaS PM Prep",
   description:
     "Crack PM interviews at Intuit, Adobe, Salesforce, and enterprise SaaS. The unique dynamics of large enterprise products, creative tools, and the slow-but-steady PM work.",
   keywords: [

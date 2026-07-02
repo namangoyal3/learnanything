@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM MVP Guide (2026) — How to Build an MVP Without It Becoming a Mess | PM Streak",
+  title: "PM MVP Guide (2026) — How to Build an MVP Without It Becoming a Mess",
   description:
     "How PMs define and build MVPs correctly. What the M in MVP really means, how to scope, testing vs shipping, and when to skip the MVP entirely.",
   keywords: [

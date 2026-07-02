@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Design Tools (2026) — Figma, Canva, Framer PM Lessons | PM Streak",
+  title: "PM Design Tools (2026) — Figma, Canva, Framer PM Lessons",
   description:
     "How PMs build design tools. Multiplayer, plugin ecosystems, AI-assisted design, and why design tools compound faster than almost any SaaS category.",
   keywords: [

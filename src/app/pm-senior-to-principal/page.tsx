@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Senior to Principal (2026) — The Individual Contributor PM Path | PM Streak",
+  title: "PM Senior to Principal (2026) — The Individual Contributor PM Path",
   description:
     "How senior PMs become principal PMs. Scope, judgment, influence, and why the IC path rivals the manager path at top companies.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Data Products (2026) — Text-to-SQL, BI, Data Analyst Agents | PM Streak",
+  title: "PM AI Data Products (2026) — Text-to-SQL, BI, Data Analyst Agents",
   description:
     "How PMs build AI data products. Text-to-SQL, conversational BI, analyst agents, and why the &apos;ask your data&apos; category is now real.",
   keywords: [

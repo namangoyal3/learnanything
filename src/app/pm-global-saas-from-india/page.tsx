@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Global SaaS from India (2026) — Zoho, Freshworks, Postman PM Lessons | PM Streak",
+  title: "PM Global SaaS from India (2026) — Zoho, Freshworks, Postman PM Lessons",
   description:
     "How Indian SaaS PMs build for global customers. Timezones, buyer empathy, sales motion, and what Zoho, Freshworks, and Postman teach about selling to the West from Bangalore or Chennai.",
   keywords: [

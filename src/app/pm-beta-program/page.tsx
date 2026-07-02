@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Run a PM Beta Program (2026) — Recruit, Learn, Iterate | PM Streak",
+  title: "How to Run a PM Beta Program (2026) — Recruit, Learn, Iterate",
   description:
     "How PMs run beta programs that generate real signal. Recruiting beta users, feedback loops, managing expectations, and turning beta into a compounding asset.",
   keywords: [

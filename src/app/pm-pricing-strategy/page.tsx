@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Pricing Strategy (2026) — How PMs Set and Change Prices | PM Streak",
+  title: "PM Pricing Strategy (2026) — How PMs Set and Change Prices",
   description:
     "How PMs approach pricing — value-based, usage-based, tiered, freemium. Frameworks, willingness-to-pay research, and how to run pricing experiments.",
   keywords: [

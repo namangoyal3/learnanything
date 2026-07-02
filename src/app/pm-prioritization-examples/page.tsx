@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Prioritisation Examples (2026) — Real RICE &amp; Impact Decisions | PM Streak",
+  title: "PM Prioritisation Examples (2026) — Real RICE &amp; Impact Decisions",
   description:
     "5 real-style prioritisation examples using RICE, impact-effort, and Kano. See how PMs actually weigh features and make trade-offs.",
   keywords: [

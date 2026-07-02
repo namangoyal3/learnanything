@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "10 PM Habits That Compound (2026) — Small Daily Practices of Great Product Managers | PM Streak",
+  title: "10 PM Habits That Compound (2026) — Small Daily Practices of Great Product Managers",
   description:
     "10 daily, weekly, and monthly habits of great PMs. Small practices that compound into mastery over years. The habits that separate top PMs from average ones.",
   keywords: [

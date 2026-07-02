@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Growth Experiments (2026) — A Playbook of Experiments That Move Metrics | PM Streak",
+  title: "PM Growth Experiments (2026) — A Playbook of Experiments That Move Metrics",
   description:
     "A playbook of growth experiments PMs can run across acquisition, activation, and retention. High-leverage bets with templates.",
   keywords: [

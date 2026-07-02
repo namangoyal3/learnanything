@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Remote PM Jobs Guide (2026) — How to Find & Excel as a Remote Product Manager | PM Streak",
+  title: "Remote PM Jobs Guide (2026) — How to Find & Excel as a Remote Product Manager",
   description:
     "The complete remote PM guide. Where to find remote PM jobs from India, how to interview for global roles, async communication skills, and remote PM compensation benchmarks.",
   keywords: [

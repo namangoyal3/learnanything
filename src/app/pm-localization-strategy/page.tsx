@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Localization Strategy (2026) — When and How to Localize | PM Streak",
+  title: "PM Localization Strategy (2026) — When and How to Localize",
   description:
     "How PMs decide where and how to localize. Language vs full localization, ROI sequencing, and AI-assisted translation pipelines.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Marketplace Products (2026) — Two-Sided Marketplaces and the Balancing Act | PM Streak",
+  title: "PM Marketplace Products (2026) — Two-Sided Marketplaces and the Balancing Act",
   description:
     "How PMs build marketplace products. Supply vs demand, cold start, take rate design, and the tensions unique to two-sided markets.",
   keywords: [

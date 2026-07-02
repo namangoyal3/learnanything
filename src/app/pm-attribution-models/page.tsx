@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Attribution Models (2026) — Last-Click is Dead. What PMs Use Now. | PM Streak",
+  title: "PM Attribution Models (2026) — Last-Click is Dead. What PMs Use Now.",
   description:
     "How PMs handle attribution after iOS 14, third-party cookies, and post-cookie. Models, MMM, and lift studies that actually work.",
   keywords: [

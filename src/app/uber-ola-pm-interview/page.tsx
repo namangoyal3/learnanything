@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Uber & Ola PM Interview Guide (2026) — Mobility Product Manager Questions | PM Streak",
+  title: "Uber & Ola PM Interview Guide (2026) — Mobility Product Manager Questions",
   description:
     "Crack PM interviews at Uber and Ola. Marketplace dynamics, pricing, supply-demand balancing, and the operations-heavy product thinking mobility companies test for.",
   keywords: [

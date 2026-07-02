@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Senior PM Interview Questions (2026) — Strategy, Leadership & System Design | PM Streak",
+  title: "Senior PM Interview Questions (2026) — Strategy, Leadership & System Design",
   description:
     "Senior PM interview questions with model answers. Strategy, stakeholder management, org design, product vision, and the systems thinking questions that separate senior PMs from mid-level.",
   keywords: [

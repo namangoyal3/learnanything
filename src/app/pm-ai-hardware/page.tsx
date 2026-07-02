@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Hardware (2026) — Rabbit, Humane, Friend PM Lessons | PM Streak",
+  title: "PM AI Hardware (2026) — Rabbit, Humane, Friend PM Lessons",
   description:
     "How PMs build AI-first hardware. Why standalone AI devices keep failing, what&apos;s actually working, and the lessons from Rabbit R1 and Humane AI Pin.",
   keywords: [

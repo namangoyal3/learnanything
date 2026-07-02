@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Leadership Guide (2026) — How Product Managers Lead Without Authority | PM Streak",
+  title: "PM Leadership Guide (2026) — How Product Managers Lead Without Authority",
   description:
     "How PMs lead without authority. Building trust, decision-making, managing up, developing other PMs, and the leadership skills that separate senior from principal PM.",
   keywords: [

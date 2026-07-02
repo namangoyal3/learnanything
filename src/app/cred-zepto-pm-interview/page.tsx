@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "CRED & Zepto PM Interview Guide (2026) — Questions, Culture & Prep | PM Streak",
+  title: "CRED & Zepto PM Interview Guide (2026) — Questions, Culture & Prep",
   description:
     "Crack PM interviews at CRED and Zepto. What each company values, their interview formats, real questions, and what separates candidates who get offers at India's hottest unicorns.",
   keywords: [

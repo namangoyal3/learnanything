@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Legal Products (2026) — Contract Review, Legal Research, Drafting | PM Streak",
+  title: "PM AI Legal Products (2026) — Contract Review, Legal Research, Drafting",
   description:
     "How PMs build AI legal products. Contract review, case research, drafting, and why law firms are finally deploying LLMs in earnest.",
   keywords: [

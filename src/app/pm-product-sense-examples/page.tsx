@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Product Sense Examples (2026) — 10 Questions With Sample Answers | PM Streak",
+  title: "PM Product Sense Examples (2026) — 10 Questions With Sample Answers",
   description:
     "10 product sense interview questions with full sample answers. See how great PMs structure their thinking — users, problems, solutions, metrics — in real time.",
   keywords: [

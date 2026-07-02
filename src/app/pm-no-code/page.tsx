@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM No-Code & Low-Code (2026) — Building Products for Non-Developers | PM Streak",
+  title: "PM No-Code & Low-Code (2026) — Building Products for Non-Developers",
   description:
     "How PMs build no-code and low-code products. Webflow, Bubble, Retool, Glide — abstractions, escape hatches, and audience design.",
   keywords: [

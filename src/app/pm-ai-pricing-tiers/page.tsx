@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Pricing Tiers (2026) — Designing Plans for AI Products | PM Streak",
+  title: "PM AI Pricing Tiers (2026) — Designing Plans for AI Products",
   description:
     "How PMs design tiers for AI products. Free, Pro, Team, Enterprise — and what each tier should include for AI-first products.",
   keywords: [

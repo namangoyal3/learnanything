@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Reading Apps (2026) — Kindle, Pratilipi, Readwise PM Lessons | PM Streak",
+  title: "PM Reading Apps (2026) — Kindle, Pratilipi, Readwise PM Lessons",
   description:
     "How PMs build reading apps. Long-form vs short-form, vernacular, subscription, and why Pratilipi rewrote the reading-for-Bharat playbook.",
   keywords: [

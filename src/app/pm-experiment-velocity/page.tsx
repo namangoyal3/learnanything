@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Experiment Velocity Guide (2026) — How to Run More Experiments Faster | PM Streak",
+  title: "PM Experiment Velocity Guide (2026) — How to Run More Experiments Faster",
   description:
     "How top PMs run experiments 5x faster than average teams. Infrastructure, decision rules, and habits that increase learning velocity without sacrificing rigour.",
   keywords: [

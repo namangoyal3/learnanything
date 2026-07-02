@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Wireframing (2026) — Should PMs Wireframe? | PM Streak",
+  title: "PM Wireframing (2026) — Should PMs Wireframe?",
   description:
     "When PMs should wireframe, when they shouldn&apos;t, and how to wireframe in a way that supports designers rather than replacing them.",
   keywords: [

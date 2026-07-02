@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM + Sales Collaboration for B2B (2026) — How to Work With Sales Without Being Owned By Sales | PM Streak",
+  title: "PM + Sales Collaboration for B2B (2026) — How to Work With Sales Without Being Owned By Sales",
   description:
     "How B2B PMs collaborate with sales teams effectively. Intake processes, deal desk alignment, saying no, and turning sales signal into product insight.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Meta PM Interview Guide (2026) — Facebook, Instagram & WhatsApp Questions | PM Streak",
+  title: "Meta PM Interview Guide (2026) — Facebook, Instagram & WhatsApp Questions",
   description:
     "Crack the Meta PM interview. Product design, strategy, metrics, and execution rounds — with real questions for Facebook, Instagram, WhatsApp, and Threads, plus a prep plan.",
   keywords: [

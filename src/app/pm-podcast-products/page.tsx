@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Podcast Products (2026) — Spotify, Apple Podcasts, Pocket Casts PM Lessons | PM Streak",
+  title: "PM Podcast Products (2026) — Spotify, Apple Podcasts, Pocket Casts PM Lessons",
   description:
     "How PMs build podcast products. RSS vs walled garden, monetisation, discovery, and why the podcast app category is more interesting than it looks.",
   keywords: [

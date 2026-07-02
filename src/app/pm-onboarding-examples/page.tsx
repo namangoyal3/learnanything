@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Onboarding Examples (2026) — 5 Great Product Onboardings Broken Down | PM Streak",
+  title: "PM Onboarding Examples (2026) — 5 Great Product Onboardings Broken Down",
   description:
     "5 great product onboardings broken down. Duolingo, Slack, Notion, Zepto, Razorpay — what they get right, what a PM would copy, and what they&apos;d change.",
   keywords: [

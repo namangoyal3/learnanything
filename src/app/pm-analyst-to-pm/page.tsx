@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Analyst to PM (2026) — From Data Analyst to Product Manager | PM Streak",
+  title: "PM Analyst to PM (2026) — From Data Analyst to Product Manager",
   description:
     "How data analysts become PMs. The strengths they bring, the execution and empathy gaps, and why data-first PMs often win growth roles.",
   keywords: [

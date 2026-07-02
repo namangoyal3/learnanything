@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Search (2026) — Perplexity, ChatGPT, Google AI Overview PM Lessons | PM Streak",
+  title: "PM AI Search (2026) — Perplexity, ChatGPT, Google AI Overview PM Lessons",
   description:
     "How PMs build AI search products. Retrieval, grounding, citations, and why AI search is the most contested category since mobile search.",
   keywords: [

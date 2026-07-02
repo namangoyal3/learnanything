@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Customer Interviews (2026) — How to Interview Users and Learn What&apos;s Real | PM Streak",
+  title: "PM Customer Interviews (2026) — How to Interview Users and Learn What&apos;s Real",
   description:
     "How PMs run customer interviews that reveal real insight. Question design, listening techniques, avoiding bias, and turning interviews into shipped product decisions.",
   keywords: [

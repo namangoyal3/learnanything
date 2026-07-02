@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Interview Cheat Sheet (2026) — One-Page Interview Prep Reference | PM Streak",
+  title: "PM Interview Cheat Sheet (2026) — One-Page Interview Prep Reference",
   description:
     "The one-page PM interview cheat sheet. Frameworks, openings, transitions, closings — everything you need to remember before walking in.",
   keywords: [

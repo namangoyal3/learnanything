@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Work-Life Balance (2026) — Actually Protecting Your Time as a PM | PM Streak",
+  title: "PM Work-Life Balance (2026) — Actually Protecting Your Time as a PM",
   description:
     "How PMs actually protect time. Calendar hygiene, saying no, avoiding meeting sprawl, and why the myth of 10x output comes at a cost.",
   keywords: [

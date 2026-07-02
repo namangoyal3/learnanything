@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Observability Products (2026) — Datadog, Honeycomb, Grafana PM Guide | PM Streak",
+  title: "PM Observability Products (2026) — Datadog, Honeycomb, Grafana PM Guide",
   description:
     "How PMs build observability products. Metrics, logs, traces, and why pricing is the hardest product decision in the category.",
   keywords: [

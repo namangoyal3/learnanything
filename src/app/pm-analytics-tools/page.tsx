@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Analytics Tools (2026) — Mixpanel, Amplitude, PostHog Compared | PM Streak",
+  title: "PM Analytics Tools (2026) — Mixpanel, Amplitude, PostHog Compared",
   description:
     "The analytics tools PMs actually use in 2026 — Mixpanel, Amplitude, PostHog, Heap, GA4. When to use which, pricing, and PM-specific workflows.",
   keywords: [

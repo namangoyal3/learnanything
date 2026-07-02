@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Customer Segmentation Guide (2026) — How to Segment Users Usefully | PM Streak",
+  title: "PM Customer Segmentation Guide (2026) — How to Segment Users Usefully",
   description:
     "How PMs segment customers for product decisions. Beyond demographics — behavioural, needs-based, and JTBD segmentation with examples.",
   keywords: [

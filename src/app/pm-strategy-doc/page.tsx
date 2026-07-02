@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Write a Product Strategy Doc (2026) — PM Template + Examples | PM Streak",
+  title: "How to Write a Product Strategy Doc (2026) — PM Template + Examples",
   description:
     "The complete guide to writing a product strategy doc. Structure, section-by-section breakdown, common mistakes, and how to make your strategy doc actually get read and used.",
   keywords: [

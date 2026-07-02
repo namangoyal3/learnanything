@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Calendar Products (2026) — Google Calendar, Cron, Motion PM Lessons | PM Streak",
+  title: "PM Calendar Products (2026) — Google Calendar, Cron, Motion PM Lessons",
   description:
     "How PMs build calendar products. Scheduling UX, availability sharing, AI-assisted scheduling, and why calendar is the hardest switch in productivity.",
   keywords: [

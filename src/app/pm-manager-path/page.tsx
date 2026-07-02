@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Manager Path (2026) — When and How to Become a Group PM | PM Streak",
+  title: "PM Manager Path (2026) — When and How to Become a Group PM",
   description:
     "How PMs become managers. Why some love it and others hate it, the skill shifts, and when to make the jump to Group PM or Head of Product.",
   keywords: [

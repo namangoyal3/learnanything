@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM CRM Products (2026) — Salesforce, HubSpot, Attio PM Guide | PM Streak",
+  title: "PM CRM Products (2026) — Salesforce, HubSpot, Attio PM Guide",
   description:
     "How PMs build CRM products. Pipeline UX, data quality, integrations, and why CRM is the highest-switching-cost category in SaaS.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Loyalty Programs (2026) — Designing Rewards That Change Behaviour | PM Streak",
+  title: "PM Loyalty Programs (2026) — Designing Rewards That Change Behaviour",
   description:
     "How PMs design loyalty programs. Points vs tiers, breakage, behavioural economics, and why most loyalty programs just subsidise loyal users.",
   keywords: [

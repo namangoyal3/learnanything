@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Zepto PM Interview Guide (2026) — Quick Commerce PM Questions &amp; Prep | PM Streak",
+  title: "Zepto PM Interview Guide (2026) — Quick Commerce PM Questions &amp; Prep",
   description:
     "Crack the Zepto PM interview. Dark store ops, 10-minute delivery dynamics, SKU catalogue decisions, and the high-velocity PM culture at India&apos;s top quick-commerce company.",
   keywords: [

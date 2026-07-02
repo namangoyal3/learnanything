@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Web3 (2026) — Building Crypto Products After the Hype Cycle | PM Streak",
+  title: "PM Web3 (2026) — Building Crypto Products After the Hype Cycle",
   description:
     "How PMs build web3 products in 2026. Wallets, gas UX, token design, and why the surviving crypto products look a lot like regular consumer apps.",
   keywords: [

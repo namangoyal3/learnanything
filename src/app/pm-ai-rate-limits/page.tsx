@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM AI Rate Limits (2026) — Designing Quotas Without Breaking Trust | PM Streak",
+  title: "PM AI Rate Limits (2026) — Designing Quotas Without Breaking Trust",
   description:
     "How PMs design rate limits and quotas for AI products. Tier caps, fair-use, and how to communicate limits without alienating power users.",
   keywords: [

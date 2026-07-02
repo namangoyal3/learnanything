@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Product Analytics (2026) — Beyond Dashboards | PM Streak",
+  title: "PM Product Analytics (2026) — Beyond Dashboards",
   description:
     "How PMs do product analytics that changes decisions. Event taxonomy, cohort analysis, causal inference, and what PMs should personally learn.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Freelance &amp; Consulting (2026) — Going Independent as a PM | PM Streak",
+  title: "PM Freelance &amp; Consulting (2026) — Going Independent as a PM",
   description:
     "How PMs go independent. Pricing, finding clients, legal setup, and what fractional PM work actually looks like.",
   keywords: [

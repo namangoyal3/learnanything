@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Marketplace Dynamics (2026) — How PMs Grow Two-Sided Platforms | PM Streak",
+  title: "PM Marketplace Dynamics (2026) — How PMs Grow Two-Sided Platforms",
   description:
     "How PMs build marketplaces. Cold start, liquidity, take rate, disintermediation, and the economics of two-sided platforms.",
   keywords: [

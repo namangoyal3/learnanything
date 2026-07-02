@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "North Star Metric Guide for PMs (2026) — How to Choose & Use It | PM Streak",
+  title: "North Star Metric Guide for PMs (2026) — How to Choose & Use It",
   description:
     "How PMs choose and use a north star metric. Good vs bad examples, how to decompose it into input metrics, and how companies like Duolingo and Airbnb picked theirs.",
   keywords: [

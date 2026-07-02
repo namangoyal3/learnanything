@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Context Windows (2026) — Long Context vs RAG vs Memory | PM Streak",
+  title: "PM Context Windows (2026) — Long Context vs RAG vs Memory",
   description:
     "How PMs decide between long context, RAG, and memory architectures. Cost, latency, and accuracy tradeoffs for AI products.",
   keywords: [

@@ -3,7 +3,7 @@ import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "PM Scaling From PMF (2026) — How to Scale a Product After Finding Fit | PM Streak",
+  title: "PM Scaling From PMF (2026) — How to Scale a Product After Finding Fit",
   description:
     "How PMs scale products after finding PMF. Widening the user base, expanding geography, protecting core, and the scaling traps that break PMF.",
   keywords: [
