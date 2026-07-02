@@ -66,9 +66,9 @@ export default function PmFoodDeliveryPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🍛</span> Three-sided marketplace, local liquidity, punishing peaks
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -77,7 +77,7 @@ export default function PmFoodDeliveryPage() {
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
             5 dynamics, 5 metrics, and 4 interview-style questions for food delivery PMs.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build Food Delivery PM Skills — Free →
           </Link>
         </section>
@@ -87,14 +87,14 @@ export default function PmFoodDeliveryPage() {
           <div className="space-y-2">
             {DYNAMICS.map((d, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
-                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                 <p className="text-sm text-white/70">{d}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Metrics</h2>
             <div className="space-y-2">
@@ -134,7 +134,7 @@ export default function PmFoodDeliveryPage() {
 
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Food Delivery Scenarios</h2>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

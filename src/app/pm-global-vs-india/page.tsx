@@ -82,9 +82,9 @@ export default function PmGlobalVsIndiaPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🌏</span> Different paths. Different trade-offs. Honest comparison.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -94,7 +94,7 @@ export default function PmGlobalVsIndiaPage() {
             7-dimension comparison, when to choose each, 5 hybrid paths,
             and honest trade-offs on compensation, scope, and trajectory.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Prep for Both Paths Daily — Free →
           </Link>
         </section>
@@ -107,7 +107,7 @@ export default function PmGlobalVsIndiaPage() {
                 <tr className="border-b border-white/10">
                   <th className="text-left py-3 px-4 text-white/40 font-medium">Dimension</th>
                   <th className="text-left py-3 px-4 text-blue-400 font-medium">India</th>
-                  <th className="text-left py-3 px-4 text-purple-400 font-medium">Global</th>
+                  <th className="text-left py-3 px-4 text-[#89e219] font-medium">Global</th>
                 </tr>
               </thead>
               <tbody>
@@ -124,7 +124,7 @@ export default function PmGlobalVsIndiaPage() {
         </section>
 
         {/* When to choose each */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">When to Choose Each Path</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -139,12 +139,12 @@ export default function PmGlobalVsIndiaPage() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-purple-500/5 border border-purple-500/20 rounded-2xl p-6">
-                <p className="font-bold text-purple-400 mb-4">Choose Global if...</p>
+              <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-2xl p-6">
+                <p className="font-bold text-[#89e219] mb-4">Choose Global if...</p>
                 <ul className="space-y-2">
                   {WHEN_TO_CHOOSE_GLOBAL.map((w, i) => (
                     <li key={i} className="flex gap-2 text-sm">
-                      <span className="text-purple-400">→</span>
+                      <span className="text-[#89e219]">→</span>
                       <span className="text-white/70">{w}</span>
                     </li>
                   ))}
@@ -160,7 +160,7 @@ export default function PmGlobalVsIndiaPage() {
           <div className="space-y-2">
             {HYBRID_PATHS.map((h, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
-                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                 <p className="text-sm text-white/70">{h}</p>
               </div>
             ))}
@@ -182,7 +182,7 @@ export default function PmGlobalVsIndiaPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Skills That Work Anywhere</h2>
           <p className="text-white/60 mb-6">Daily PM scenarios transfer across India and global roles — same craft, different contexts.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

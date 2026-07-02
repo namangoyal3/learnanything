@@ -83,9 +83,9 @@ export default function PmCustomerResearchPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🔍</span> Great PMs mix methods — interviews alone miss half the signal
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -95,7 +95,7 @@ export default function PmCustomerResearchPage() {
             8 research methods with when to use each, a research program structure,
             4 powerful method combinations, and 6 mistakes to avoid.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build Research Intuition Daily — Free →
           </Link>
         </section>
@@ -117,13 +117,13 @@ export default function PmCustomerResearchPage() {
         </section>
 
         {/* Program structure */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">Research Program Cadence</h2>
             <div className="space-y-2">
               {PROGRAM_STRUCTURE.map((s, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
-                  <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                   <p className="text-sm text-white/70">{s}</p>
                 </div>
               ))}
@@ -137,7 +137,7 @@ export default function PmCustomerResearchPage() {
           <div className="space-y-3">
             {MIXING_METHODS.map((m, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
-                <p className="font-semibold text-purple-400 text-sm mb-1">{m.combo}</p>
+                <p className="font-semibold text-[#89e219] text-sm mb-1">{m.combo}</p>
                 <p className="text-xs text-white/60">{m.when}</p>
               </div>
             ))}
@@ -145,7 +145,7 @@ export default function PmCustomerResearchPage() {
         </section>
 
         {/* Mistakes */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6 Research Mistakes</h2>
             <div className="space-y-2">
@@ -174,7 +174,7 @@ export default function PmCustomerResearchPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Research Intuition Daily</h2>
           <p className="text-white/60 mb-6">Daily PM scenarios that force mixed-method thinking.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

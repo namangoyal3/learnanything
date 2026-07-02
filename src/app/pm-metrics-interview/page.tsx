@@ -91,9 +91,9 @@ export default function PmMetricsInterviewPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📊</span> The round that trips up even experienced PMs
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -103,7 +103,7 @@ export default function PmMetricsInterviewPage() {
             The metrics round separates PMs who think in data from those who fake it.
             Here are the frameworks and questions you need — with 30+ real interview examples.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Metrics Questions Daily — Free →
           </Link>
         </section>
@@ -117,7 +117,7 @@ export default function PmMetricsInterviewPage() {
           <div className="space-y-4">
             {DEBUG_FRAMEWORK.map(item => (
               <div key={item.step} className="flex gap-4 bg-[#111] border border-white/10 rounded-xl p-5">
-                <div className="w-8 h-8 rounded-full bg-[#7c3aed]/20 border border-[#7c3aed]/40 flex items-center justify-center text-purple-300 font-bold text-sm flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#58cc02]/20 border border-[#58cc02]/40 flex items-center justify-center text-[#89e219] font-bold text-sm flex-shrink-0">
                   {item.step}
                 </div>
                 <div>
@@ -130,7 +130,7 @@ export default function PmMetricsInterviewPage() {
         </section>
 
         {/* Questions by Category */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">30+ Metrics Interview Questions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -149,7 +149,7 @@ export default function PmMetricsInterviewPage() {
               ))}
             </div>
             <div className="text-center mt-10">
-              <Link href="/interview-prep" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+              <Link href="/interview-prep" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
                 Practice with AI Feedback →
               </Link>
             </div>
@@ -172,7 +172,7 @@ export default function PmMetricsInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Metrics Intuition Every Day</h2>
           <p className="text-white/60 mb-6">Daily 2-minute lessons from real PM interviews. Free trial, no credit card.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

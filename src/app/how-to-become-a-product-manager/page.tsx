@@ -124,9 +124,9 @@ export default function HowToBecomeAProductManagerPage() {
         })),
       }} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🗺️</span> The most practical PM roadmap for India
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -136,7 +136,7 @@ export default function HowToBecomeAProductManagerPage() {
             A concrete, week-by-week plan from zero to your first PM role — or from PM to Senior PM.
             No fluff. No expensive bootcamps required.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Daily PM Practice — Free →
           </Link>
         </section>
@@ -150,14 +150,14 @@ export default function HowToBecomeAProductManagerPage() {
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl">{phase.icon}</span>
                   <div>
-                    <p className="text-xs text-purple-400 font-medium uppercase tracking-wider">{phase.phase}</p>
+                    <p className="text-xs text-[#89e219] font-medium uppercase tracking-wider">{phase.phase}</p>
                     <h3 className="font-bold text-white">{phase.title}</h3>
                   </div>
                 </div>
                 <ul className="space-y-2">
                   {phase.steps.map((step, i) => (
                     <li key={i} className="flex gap-3 text-sm">
-                      <span className="text-[#7c3aed] mt-0.5">→</span>
+                      <span className="text-[#58cc02] mt-0.5">→</span>
                       <span className="text-white/70">{step}</span>
                     </li>
                   ))}
@@ -168,7 +168,7 @@ export default function HowToBecomeAProductManagerPage() {
         </section>
 
         {/* Skills Table */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-8">Core PM Skills to Build</h2>
             <div className="space-y-4">
@@ -205,7 +205,7 @@ export default function HowToBecomeAProductManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">The Daily Habit That Gets You There</h2>
           <p className="text-white/60 mb-6">2 minutes every day. PM Streak builds the product instinct that gets you hired.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Your PM Journey — Free →
           </Link>
         </section>

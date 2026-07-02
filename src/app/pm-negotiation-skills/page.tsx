@@ -101,9 +101,9 @@ export default function PmNegotiationSkillsPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🤝</span> PMs negotiate every day. Most never learn how.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -113,7 +113,7 @@ export default function PmNegotiationSkillsPage() {
             6 negotiation principles, 4 PM-specific scenarios with scripts,
             and the pitfalls that turn routine conversations into resentments.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Hard Conversations Daily — Free →
           </Link>
         </section>
@@ -132,13 +132,13 @@ export default function PmNegotiationSkillsPage() {
         </section>
 
         {/* Scenarios */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">4 PM Negotiation Scenarios</h2>
             <div className="space-y-5">
               {SCENARIOS.map((s, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
-                  <p className="text-xs text-purple-400 uppercase tracking-wider mb-1">{s.scenario}</p>
+                  <p className="text-xs text-[#89e219] uppercase tracking-wider mb-1">{s.scenario}</p>
                   <p className="text-sm text-white/60 mb-3 italic">Situation: {s.situation}</p>
                   <div className="space-y-2 mb-3">
                     <div className="bg-red-500/5 border border-red-500/20 rounded-lg p-3">
@@ -150,7 +150,7 @@ export default function PmNegotiationSkillsPage() {
                       <p className="text-sm text-white/70 italic">&ldquo;{s.good}&rdquo;</p>
                     </div>
                   </div>
-                  <div className="bg-[#0a0a0a] rounded-lg px-3 py-2">
+                  <div className="bg-[#0e1113] rounded-lg px-3 py-2">
                     <p className="text-xs text-white/50">💡 Why: {s.why}</p>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ export default function PmNegotiationSkillsPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Hard Conversations Daily</h2>
           <p className="text-white/60 mb-6">Scenarios on scope, priorities, and pushback — with AI feedback on your framing.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

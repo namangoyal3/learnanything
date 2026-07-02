@@ -86,9 +86,9 @@ export default function ProductManagerResumePage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📄</span> 15–30 seconds — that&apos;s how long hiring managers spend on a first pass
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -98,7 +98,7 @@ export default function ProductManagerResumePage() {
             What hiring managers at Google, Flipkart, and Razorpay actually look for — with real before/after bullets,
             section templates, and the mistakes that get PMs rejected before the phone screen.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Prep for the Interview After the Resume →
           </Link>
         </section>
@@ -124,7 +124,7 @@ export default function ProductManagerResumePage() {
                   </div>
                 </div>
                 <div className="border-t border-white/5 pt-3">
-                  <p className="text-xs text-purple-400">💡 Principle: {ex.principle}</p>
+                  <p className="text-xs text-[#89e219]">💡 Principle: {ex.principle}</p>
                 </div>
               </div>
             ))}
@@ -132,7 +132,7 @@ export default function ProductManagerResumePage() {
         </section>
 
         {/* Section Guide */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">Resume Section Checklist</h2>
             <div className="space-y-5">
@@ -175,7 +175,7 @@ export default function ProductManagerResumePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Great Resume. Now Ace the Interview.</h2>
           <p className="text-white/60 mb-6">Daily PM practice with AI feedback — so you&apos;re ready when the call comes.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

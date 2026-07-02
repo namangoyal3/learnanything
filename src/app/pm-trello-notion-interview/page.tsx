@@ -77,9 +77,9 @@ export default function PmTrelloNotionInterviewPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🛠️</span> Craft-obsessed PM work · Flexibility vs simplicity · Power-user empathy
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -89,7 +89,7 @@ export default function PmTrelloNotionInterviewPage() {
             The unique PM culture of productivity tools, 6 interview questions,
             and the 5 product nuances that separate strong candidates from weak ones.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Productivity PM Prep — Free →
           </Link>
         </section>
@@ -100,7 +100,7 @@ export default function PmTrelloNotionInterviewPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {CONTEXT.map((item, i) => (
                 <div key={i} className="flex gap-2 text-sm">
-                  <span className="text-purple-400 font-medium flex-shrink-0">{item.label}:</span>
+                  <span className="text-[#89e219] font-medium flex-shrink-0">{item.label}:</span>
                   <span className="text-white/60">{item.value}</span>
                 </div>
               ))}
@@ -114,7 +114,7 @@ export default function PmTrelloNotionInterviewPage() {
             <ul className="space-y-3">
               {INTERVIEW_QUESTIONS.map((q, i) => (
                 <li key={i} className="flex gap-3 text-sm">
-                  <span className="text-purple-400 flex-shrink-0 font-bold">{i + 1}.</span>
+                  <span className="text-[#89e219] flex-shrink-0 font-bold">{i + 1}.</span>
                   <span className="text-white/70">{q}</span>
                 </li>
               ))}
@@ -122,7 +122,7 @@ export default function PmTrelloNotionInterviewPage() {
           </div>
         </section>
 
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Product Nuances to Know</h2>
             <div className="space-y-3">
@@ -151,7 +151,7 @@ export default function PmTrelloNotionInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Train for Craft-Level PM Standards</h2>
           <p className="text-white/60 mb-6">Daily PM scenarios that sharpen product taste and trade-off thinking.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

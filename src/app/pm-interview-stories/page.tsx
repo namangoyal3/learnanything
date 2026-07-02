@@ -81,9 +81,9 @@ export default function PmInterviewStoriesPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📚</span> 10 strong stories cover 80% of behavioural questions
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -93,7 +93,7 @@ export default function PmInterviewStoriesPage() {
             The 10 story types every PM candidate should prepare, the question types they cover,
             and the tight STAR structure that keeps answers sharp.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Stories Daily — Free →
           </Link>
         </section>
@@ -106,20 +106,20 @@ export default function PmInterviewStoriesPage() {
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                 <p className="font-bold text-white mb-1">{i + 1}. {s.type}</p>
                 <p className="text-sm text-white/70 mb-2">{s.prompt}</p>
-                <p className="text-xs text-purple-400">🎯 Covers: <span className="text-white/70">{s.covers}</span></p>
+                <p className="text-xs text-[#89e219]">🎯 Covers: <span className="text-white/70">{s.covers}</span></p>
               </div>
             ))}
           </div>
         </section>
 
         {/* STAR */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">Tight STAR Structure (Time Split)</h2>
             <div className="space-y-3">
               {STAR_TIGHT.map((s, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
-                  <p className="font-semibold text-purple-400 text-sm mb-1">{s.part}</p>
+                  <p className="font-semibold text-[#89e219] text-sm mb-1">{s.part}</p>
                   <p className="text-xs text-white/60">{s.rule}</p>
                 </div>
               ))}
@@ -155,7 +155,7 @@ export default function PmInterviewStoriesPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Your Stories Out Loud Daily</h2>
           <p className="text-white/60 mb-6">Daily PM behavioural scenarios with AI feedback on structure and specificity.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

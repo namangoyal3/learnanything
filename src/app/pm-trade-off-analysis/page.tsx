@@ -74,9 +74,9 @@ export default function PmTradeOffAnalysisPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>⚖️</span> Every PM decision is a trade-off. Great PMs name them.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -86,7 +86,7 @@ export default function PmTradeOffAnalysisPage() {
             6 common PM trade-offs with resolution guidance, 6-step decision framework,
             and 5 pitfalls that make trade-off analysis fail.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Judgment Daily — Free →
           </Link>
         </section>
@@ -99,20 +99,20 @@ export default function PmTradeOffAnalysisPage() {
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                 <p className="font-bold text-white mb-1">{i + 1}. {t.tradeoff}</p>
                 <p className="text-sm text-white/60 mb-2">Context: {t.context}</p>
-                <p className="text-xs text-purple-400">💡 Resolution: <span className="text-white/70">{t.resolution}</span></p>
+                <p className="text-xs text-[#89e219]">💡 Resolution: <span className="text-white/70">{t.resolution}</span></p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Framework */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6-Step Decision Framework</h2>
             <div className="space-y-2">
               {FRAMEWORK_STEPS.map((f, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
-                  <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                   <p className="text-sm text-white/70">{f}</p>
                 </div>
               ))}
@@ -148,7 +148,7 @@ export default function PmTradeOffAnalysisPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Judgment Under Pressure Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios that force explicit trade-offs — not avoidance.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

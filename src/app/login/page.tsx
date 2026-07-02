@@ -18,21 +18,19 @@ function LoginForm() {
   }, [searchParams]);
 
   return (
-    <div className="min-h-screen flex text-white font-sans bg-[var(--bg-main)]">
+    <div className="min-h-screen flex text-white font-sans bg-[var(--bg-primary)]">
       <SafariBar />
 
       {/* Left panel — branding */}
       <div className="hidden lg:flex flex-col justify-between w-80 bg-[var(--bg-secondary)] border-r border-[var(--border-color)] p-8 flex-shrink-0 shadow-2xl z-10 transition-colors">
         <div>
-          <div className="flex items-center gap-1.5 mb-12">
-            <div className="flex flex-col leading-none">
-              <div className="font-black text-2xl tracking-tight flex items-center gap-1">
-                <span className="text-[var(--green-primary)]">PM</span>
-                <span>Streak</span>
-              </div>
-              <span className="text-[10px] font-bold text-[var(--text-secondary)] tracking-wide">by learnanything.pro</span>
-            </div>
-          </div>
+          <BrowserLink href="/" className="inline-flex items-center gap-1.5 mb-12">
+            <span className="text-xl">🔥</span>
+            <span className="font-black text-2xl tracking-tight leading-none">
+              <span className="text-[var(--green-primary)]">PM</span>{" "}
+              <span>Streak</span>
+            </span>
+          </BrowserLink>
           <div className="space-y-8">
             {[
               { n: "01", title: "Study insights", desc: "Actionable frameworks from world-class product leaders." },
@@ -49,6 +47,9 @@ function LoginForm() {
             ))}
           </div>
         </div>
+        <p className="text-xs text-[var(--text-secondary)] font-bold">
+          🔥 Join 200+ PMs building the daily habit
+        </p>
       </div>
 
       {/* Right panel — sign in */}
@@ -57,6 +58,14 @@ function LoginForm() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--green-primary)]/5 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="w-full max-w-sm relative z-10">
+          {/* Mobile logo (sidebar hidden below lg) */}
+          <BrowserLink href="/" className="lg:hidden flex items-center justify-center gap-1.5 mb-8">
+            <span className="text-lg">🔥</span>
+            <span className="font-black text-xl tracking-tight leading-none">
+              <span className="text-[var(--green-primary)]">PM</span>{" "}
+              <span>Streak</span>
+            </span>
+          </BrowserLink>
           <div className="text-center lg:text-left mb-8 sm:mb-10">
             <h1 className="text-3xl sm:text-4xl font-black mb-2 tracking-tight">Sign in</h1>
             <p className="text-sm text-[var(--text-secondary)] font-bold max-w-xs mx-auto lg:mx-0">

@@ -81,9 +81,9 @@ export default function PmMobileVsWebPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📱💻</span> Mobile and web are different products, not different interfaces
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -92,7 +92,7 @@ export default function PmMobileVsWebPage() {
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
             6-dimension comparison, 5 signs to go mobile-first, 5 signs to go web-first, 5 common mistakes.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Platform Intuition Daily — Free →
           </Link>
         </section>
@@ -106,7 +106,7 @@ export default function PmMobileVsWebPage() {
                 <tr className="border-b border-white/10">
                   <th className="text-left py-3 px-4 text-white/40 font-medium">Dimension</th>
                   <th className="text-left py-3 px-4 text-blue-400 font-medium">Mobile</th>
-                  <th className="text-left py-3 px-4 text-purple-400 font-medium">Web</th>
+                  <th className="text-left py-3 px-4 text-[#89e219] font-medium">Web</th>
                 </tr>
               </thead>
               <tbody>
@@ -123,7 +123,7 @@ export default function PmMobileVsWebPage() {
         </section>
 
         {/* When mobile first */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Signs to Go Mobile-First</h2>
             <div className="space-y-2">
@@ -142,8 +142,8 @@ export default function PmMobileVsWebPage() {
           <h2 className="text-2xl font-bold text-center mb-10">5 Signs to Go Web-First</h2>
           <div className="space-y-2">
             {WHEN_WEB_FIRST.map((w, i) => (
-              <div key={i} className="bg-[#111] border border-purple-500/20 rounded-xl p-3 flex gap-3">
-                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+              <div key={i} className="bg-[#111] border border-[#58cc02]/20 rounded-xl p-3 flex gap-3">
+                <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                 <p className="text-sm text-white/70">{w}</p>
               </div>
             ))}
@@ -151,7 +151,7 @@ export default function PmMobileVsWebPage() {
         </section>
 
         {/* Mistakes */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Common Mistakes</h2>
             <div className="space-y-2">
@@ -180,7 +180,7 @@ export default function PmMobileVsWebPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Platform Intuition Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on platform strategy, mobile vs web trade-offs, and native patterns.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

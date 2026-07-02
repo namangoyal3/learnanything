@@ -6,8 +6,8 @@ import Link from "next/link";
 import BrowserLink from "@/components/BrowserLink";
 import SafariBar from "@/components/SafariBar";
 import JsonLd, { breadcrumbSchema, howToSchema, faqSchema, speakableSchema, SITE_URL } from "@/components/JsonLd";
-import HomepageTrialButton from "@/components/HomepageTrialButton";
 import HeroCtaLink from "@/components/HeroCtaLink";
+import SiteFooter from "@/components/SiteFooter";
 import { getVariant } from "@/lib/ab";
 
 export const metadata: Metadata = {
@@ -164,24 +164,39 @@ export default async function Home() {
       <SafariBar />
 
       {/* ── NAV ── */}
-      <nav className="sticky top-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-primary)]/90 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 border-b-2 border-[var(--border-color)] bg-[var(--bg-primary)]/92 backdrop-blur-md">
         <div className="max-w-5xl mx-auto px-4 sm:px-5 h-14 flex items-center justify-between gap-2">
           <div className="flex items-center gap-1.5">
             <span className="text-2xl">🔥</span>
-            <div className="flex flex-col leading-none">
-              <div className="font-black text-lg sm:text-xl tracking-tight flex items-center gap-1">
-                <span className="text-[var(--green-primary)]">PM</span>
-                <span className="text-white">Streak</span>
-              </div>
-              <span className="hidden sm:inline text-xs font-bold text-[var(--text-secondary)] tracking-wide">by learnanything.pro</span>
+            <div className="font-black text-lg sm:text-xl tracking-tight flex items-center gap-1 leading-none">
+              <span className="text-[var(--green-primary)]">PM</span>
+              <span className="text-white">Streak</span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 sm:gap-2">
+            <Link
+              href="/learn"
+              className="hidden md:inline-flex px-3 py-2 rounded-xl text-xs font-black text-[var(--text-secondary)] hover:text-white transition-colors"
+            >
+              Guides
+            </Link>
+            <Link
+              href="/pricing"
+              className="hidden sm:inline-flex px-3 py-2 rounded-xl text-xs font-black text-[var(--text-secondary)] hover:text-white transition-colors"
+            >
+              Pricing
+            </Link>
             <BrowserLink
               href="/login"
-              className="px-3 sm:px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-xs sm:text-sm font-black transition-colors"
+              className="hidden sm:inline-flex px-3 py-2 rounded-xl text-xs font-black text-[var(--text-secondary)] hover:text-white transition-colors"
             >
-              Sign up with Google
+              Sign in
+            </BrowserLink>
+            <BrowserLink
+              href="/login"
+              className="px-3 sm:px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs sm:text-sm font-black transition-all"
+            >
+              Sign Up Free
             </BrowserLink>
           </div>
         </div>
@@ -226,16 +241,11 @@ export default async function Home() {
                 </span>
               ))}
             </div>
-            <div className="mb-6 sm:mb-8 p-4 rounded-2xl bg-[var(--green-primary)]/10 border border-[var(--green-primary)]/20 max-w-md">
-              <p className="text-sm text-[var(--green-primary)] font-bold">
-                Built on 300+ lessons from top PM leaders — the fastest way to sharpen your product skills.
-              </p>
-            </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <BrowserLink
                 href="/login"
-                className="inline-flex justify-center items-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-base font-black transition-all shadow-lg shadow-[var(--green-primary)]/20 hover:scale-[1.02] active:scale-[0.98] flex-1"
+                className="inline-flex justify-center items-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-base font-black transition-all flex-1"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="white" fillOpacity="0.9"/>
@@ -257,26 +267,54 @@ export default async function Home() {
             <p className="mt-3 text-sm text-[var(--text-secondary)]">No credit card · 30 seconds to set up</p>
           </div>
 
-          {/* Right: live stat cards */}
-          <div className="hidden lg:flex flex-col gap-3 flex-shrink-0 w-60">
-            <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-4">
-              <div className="text-3xl font-black text-[var(--orange-primary)] tabular-nums">14</div>
-              <div className="text-sm text-[var(--text-secondary)] font-bold mt-1">day streak</div>
-              <div className="mt-2 h-1.5 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
-                <div className="h-full w-[58%] bg-[var(--orange-primary)] rounded-full" />
+          {/* Right: app preview panel */}
+          <div className="hidden lg:block flex-shrink-0 w-[21rem] relative">
+            <div className="rounded-3xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden shadow-[0_6px_0_0_rgba(0,0,0,0.35)]">
+              {/* App header strip */}
+              <div className="flex items-center justify-between px-5 py-3.5 bg-[var(--bg-secondary)] border-b-2 border-[var(--border-color)]">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-base">🔥</span>
+                  <span className="font-black text-sm text-[var(--orange-primary)] tabular-nums">14</span>
+                  <span className="text-xs text-[var(--text-secondary)] font-bold">day streak</span>
+                </div>
+                <div className="flex items-center gap-1 bg-[var(--gold-primary)]/10 px-2 py-1 rounded-full">
+                  <span className="font-black text-xs text-[var(--gold-primary)] tabular-nums">840 XP</span>
+                </div>
+              </div>
+              {/* Today's lesson */}
+              <div className="px-5 pt-4 pb-2">
+                <p className="text-[10px] font-black uppercase tracking-widest text-[var(--green-primary)] mb-1.5">Today&apos;s lesson · Strategy</p>
+                <p className="text-sm font-black leading-snug mb-1">The Shreyas Doshi Prioritisation Stack</p>
+                <p className="text-xs text-[var(--text-secondary)]">+20 XP · 2 min</p>
+              </div>
+              {/* Quiz mock */}
+              <div className="px-5 pb-5 pt-3 space-y-2">
+                <p className="text-xs font-bold text-[var(--text-secondary)]">Most teams optimise for…</p>
+                <div className="rounded-xl border-2 border-[var(--green-primary)] bg-[var(--green-primary)]/10 px-3.5 py-2.5 flex items-center justify-between">
+                  <span className="text-xs font-black text-white">Output over outcome</span>
+                  <span className="text-[var(--green-primary)] font-black text-sm">✓</span>
+                </div>
+                <div className="rounded-xl border-2 border-[var(--border-color)] px-3.5 py-2.5">
+                  <span className="text-xs font-bold text-[var(--text-secondary)]">Speed over quality</span>
+                </div>
+                <div className="rounded-xl border-2 border-[var(--border-color)] px-3.5 py-2.5">
+                  <span className="text-xs font-bold text-[var(--text-secondary)]">Revenue over retention</span>
+                </div>
+                {/* Level progress */}
+                <div className="pt-3">
+                  <div className="flex justify-between mb-1.5">
+                    <span className="text-[10px] font-black uppercase tracking-wide text-[var(--text-secondary)]">Senior PM · Level 6</span>
+                    <span className="text-[10px] font-black text-[var(--gold-primary)]">840 / 1000</span>
+                  </div>
+                  <div className="h-2 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
+                    <div className="h-full w-[84%] bg-[var(--gold-primary)] rounded-full" />
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="bg-[var(--bg-card)] border border-[var(--border-color)] rounded-2xl p-4">
-              <div className="text-3xl font-black text-[var(--gold-primary)] tabular-nums">840 XP</div>
-              <div className="text-sm text-[var(--text-secondary)] font-bold mt-1">Senior PM · Level 6</div>
-              <div className="mt-2 h-1.5 bg-[var(--bg-secondary)] rounded-full overflow-hidden">
-                <div className="h-full w-[84%] bg-[var(--gold-primary)] rounded-full" />
-              </div>
-            </div>
-            <div className="bg-[var(--green-primary)]/10 border border-[var(--green-primary)]/25 rounded-2xl p-4">
-              <div className="text-sm font-black text-[var(--green-primary)] uppercase tracking-wide mb-1">Today&apos;s lesson</div>
-              <div className="text-sm font-black leading-snug">The Shreyas Doshi Prioritisation Stack</div>
-              <div className="text-sm text-[var(--text-secondary)] mt-1">+20 XP · 2 min</div>
+            {/* Floating XP chip */}
+            <div className="absolute -top-3 -right-3 rounded-full bg-[var(--green-primary)] text-white text-xs font-black px-3 py-1.5 shadow-[0_3px_0_0_var(--green-dark)] rotate-3">
+              +20 XP
             </div>
           </div>
         </div>
@@ -451,7 +489,7 @@ export default async function Home() {
               <p className="text-sm font-black text-[var(--text-secondary)] mb-3">🔒 Quiz unlocks after signup — 3 questions · +10 XP bonus</p>
               <BrowserLink
                 href="/signup"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] text-black font-black text-sm hover:bg-[var(--green-light)] transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm transition-all"
               >
                 Start for free — takes 30 seconds
               </BrowserLink>
@@ -529,10 +567,12 @@ export default async function Home() {
       {/* ── PREMIUM FEATURES ── */}
       <section className="border-y border-[var(--border-color)] bg-[var(--bg-secondary)]/30">
         <div className="max-w-5xl mx-auto px-5 py-16">
-          <div className="text-center mb-10">
-            <p className="text-xs font-black uppercase tracking-widest text-[var(--purple-primary)] mb-2">Go Pro</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-[1.05] tracking-tight">Unlock everything</h2>
-            <p className="text-sm text-[var(--text-secondary)] max-w-md mx-auto">Get unlimited access to all lessons, AI features, and exclusive content.</p>
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+            <div className="max-w-md">
+              <p className="text-xs font-black uppercase tracking-widest text-[var(--purple-primary)] mb-2">Go Pro</p>
+              <h2 className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight">Unlock everything</h2>
+            </div>
+            <p className="text-sm text-[var(--text-secondary)] max-w-xs">Unlimited access to all lessons, AI features, and the Pro community.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -568,10 +608,12 @@ export default async function Home() {
       {/* ── SEO ARTICLES SECTION (Content Marketing Visibility) ── */}
       <section className="border-t border-[var(--border-color)] bg-[var(--bg-secondary)]/20">
         <div className="max-w-5xl mx-auto px-5 py-16">
-          <div className="text-center mb-10">
-            <p className="text-xs font-black uppercase tracking-widest text-[var(--blue-primary)] mb-2">PM Insights</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-[1.05] tracking-tight">Latest from our PM blog</h2>
-            <p className="text-sm text-[var(--text-secondary)] max-w-md mx-auto">
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+            <div className="max-w-md">
+              <p className="text-xs font-black uppercase tracking-widest text-[var(--blue-primary)] mb-2">PM Insights</p>
+              <h2 className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight">Latest from the blog</h2>
+            </div>
+            <p className="text-sm text-[var(--text-secondary)] max-w-xs">
               Deep dives from our content team. Read by 10,000+ PMs monthly.
             </p>
           </div>
@@ -632,11 +674,13 @@ export default async function Home() {
       {/* ── RESEARCH SECTION ── */}
       <section className="border-t border-[var(--border-color)] bg-[var(--bg-secondary)]/20">
         <div className="max-w-5xl mx-auto px-5 py-16">
-          <div className="text-center mb-10">
-            <p className="text-xs font-black uppercase tracking-widest text-[var(--purple-primary)] mb-2">Research</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4 leading-[1.05] tracking-tight">PM data you can cite</h2>
-            <p className="text-sm text-[var(--text-secondary)] max-w-md mx-auto">
-              Original research on AI adoption, framework effectiveness, and PM careers. Open access, CC BY 4.0.
+          <div className="flex flex-wrap items-end justify-between gap-4 mb-10">
+            <div className="max-w-md">
+              <p className="text-xs font-black uppercase tracking-widest text-[var(--purple-primary)] mb-2">Research</p>
+              <h2 className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight">PM data you can cite</h2>
+            </div>
+            <p className="text-sm text-[var(--text-secondary)] max-w-xs">
+              Original research on AI adoption, frameworks, and PM careers. Open access, CC BY 4.0.
             </p>
           </div>
 
@@ -706,7 +750,7 @@ export default async function Home() {
             <div className="flex flex-col gap-3 flex-shrink-0">
               <BrowserLink
                 href="/login"
-                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-sm font-black transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[var(--green-primary)]/20 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-sm font-black transition-all w-full sm:w-auto"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="white" fillOpacity="0.9"/>
@@ -723,25 +767,7 @@ export default async function Home() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-[var(--border-color)] py-6">
-        <div className="max-w-5xl mx-auto px-4 sm:px-5 flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--text-secondary)]">
-          <div className="flex items-center gap-1.5">
-            <span>🔥</span>
-            <div className="flex flex-col leading-none">
-              <div className="font-black text-sm flex items-center gap-1">
-                <span className="text-[var(--green-primary)]">PM</span>
-                <span className="text-white">Streak</span>
-              </div>
-              <span className="text-xs font-bold text-[var(--text-secondary)] tracking-wide">by learnanything.pro</span>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
-          <p>PM content for product managers, by product managers.</p>
-        </div>
-      </footer>
+      <SiteFooter />
 
     </div>
   );

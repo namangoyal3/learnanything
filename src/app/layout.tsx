@@ -3,6 +3,7 @@ import GoogleAnalyticsInit from "@/components/GoogleAnalyticsInit";
 import { PostHogProvider } from "@/components/providers/posthog-provider";
 import GoogleAnalyticsTracker from "@/components/GoogleAnalyticsTracker";
 import CampaignTracker from "@/components/CampaignTracker";
+import { MarketingHeader, MarketingFooter } from "@/components/MarketingChrome";
 import { Suspense } from "react";
 import "./globals.css";
 
@@ -141,10 +142,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body className="antialiased min-h-screen">
+      <body className="antialiased min-h-screen flex flex-col">
         <PostHogProvider>
           <CampaignTracker />
+          <Suspense fallback={null}>
+            <MarketingHeader />
+          </Suspense>
           {children}
+          <Suspense fallback={null}>
+            <MarketingFooter />
+          </Suspense>
         </PostHogProvider>
         {gaId && (
           <>

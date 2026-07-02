@@ -106,10 +106,10 @@ export default function PmInterviewPrepPage() {
         "url": `${SITE_URL}/pm-interview-prep`,
       }} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         {/* Hero */}
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🎯</span> Used by PMs at Google, Meta, Airbnb & 200+ companies
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -123,7 +123,7 @@ export default function PmInterviewPrepPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/signup"
-              className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors"
+              className="bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all"
             >
               Start Free — No Credit Card
             </Link>
@@ -156,7 +156,7 @@ export default function PmInterviewPrepPage() {
         </section>
 
         {/* How It Works */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">How PM Streak Prepares You</h2>
             <ol className="space-y-6">
@@ -167,7 +167,7 @@ export default function PmInterviewPrepPage() {
                 { step: "4", title: "Interview readiness score", body: "PM Streak tracks your coverage across all six interview domains and shows you a readiness score so you always know where to focus next." },
               ].map((item) => (
                 <li key={item.step} className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-[#7c3aed]/20 border border-[#7c3aed]/40 flex items-center justify-center text-purple-300 font-bold text-sm flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#58cc02]/20 border border-[#58cc02]/40 flex items-center justify-center text-[#89e219] font-bold text-sm flex-shrink-0">
                     {item.step}
                   </div>
                   <div>
@@ -199,7 +199,7 @@ export default function PmInterviewPrepPage() {
           <p className="text-white/60 mb-6">Join 2,000+ PMs building their product instinct daily.</p>
           <Link
             href="/signup"
-            className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors"
+            className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors"
           >
             Start Your Free Trial →
           </Link>

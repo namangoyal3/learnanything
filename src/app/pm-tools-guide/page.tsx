@@ -169,9 +169,9 @@ export default function PmToolsGuidePage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🛠️</span> The PM tools stack — what each one does and how well you need to know it
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -181,7 +181,7 @@ export default function PmToolsGuidePage() {
             Jira, Figma, Amplitude, Notion, SQL, and 10 more — what each PM tool is for,
             how well you need to know it, and the tips that make you more effective with each.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build Your PM Toolkit — Free →
           </Link>
         </section>
@@ -200,15 +200,15 @@ export default function PmToolsGuidePage() {
                     <div key={tool.name} className="bg-[#111] border border-white/10 rounded-xl p-5">
                       <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                         <h3 className="font-bold text-white text-lg">{tool.name}</h3>
-                        <span className="text-xs bg-[#7c3aed]/20 text-purple-400 px-2 py-0.5 rounded-full">{tool.pmLevel}</span>
+                        <span className="text-xs bg-[#58cc02]/20 text-[#89e219] px-2 py-0.5 rounded-full">{tool.pmLevel}</span>
                       </div>
                       <p className="text-sm text-white/60 mb-3">{tool.use}</p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div className="bg-[#7c3aed]/5 border border-[#7c3aed]/20 rounded-lg p-3">
-                          <p className="text-xs text-purple-400 mb-1">💡 PM tip</p>
+                        <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-lg p-3">
+                          <p className="text-xs text-[#89e219] mb-1">💡 PM tip</p>
                           <p className="text-xs text-white/60">{tool.tip}</p>
                         </div>
-                        <div className="bg-[#0a0a0a] rounded-lg p-3">
+                        <div className="bg-[#0e1113] rounded-lg p-3">
                           <p className="text-xs text-white/40 mb-1">Used at</p>
                           <p className="text-xs text-white/60">{tool.companies}</p>
                         </div>
@@ -236,7 +236,7 @@ export default function PmToolsGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Learn PM Tools Through Daily Practice</h2>
           <p className="text-white/60 mb-6">Scenarios that build the analytical and execution instincts behind the tools.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

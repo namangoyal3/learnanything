@@ -78,9 +78,9 @@ export default function PmHabitProductsPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🔁</span> Great habits serve users. Dark patterns exploit them.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -90,7 +90,7 @@ export default function PmHabitProductsPage() {
             The 4-part Hook framework, 4 real product examples, the ethical line between habits and dark patterns,
             and 5 common mistakes.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build Habit-Product Intuition Daily — Free →
           </Link>
         </section>
@@ -109,7 +109,7 @@ export default function PmHabitProductsPage() {
         </section>
 
         {/* Examples */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">4 Real Product Examples</h2>
             <div className="space-y-5">
@@ -117,20 +117,20 @@ export default function PmHabitProductsPage() {
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                   <p className="font-bold text-white mb-3">{e.product}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
-                    <div className="bg-[#0a0a0a] rounded p-2">
-                      <span className="text-purple-400 font-medium">Trigger: </span>
+                    <div className="bg-[#0e1113] rounded p-2">
+                      <span className="text-[#89e219] font-medium">Trigger: </span>
                       <span className="text-white/70">{e.trigger}</span>
                     </div>
-                    <div className="bg-[#0a0a0a] rounded p-2">
-                      <span className="text-purple-400 font-medium">Action: </span>
+                    <div className="bg-[#0e1113] rounded p-2">
+                      <span className="text-[#89e219] font-medium">Action: </span>
                       <span className="text-white/70">{e.action}</span>
                     </div>
-                    <div className="bg-[#0a0a0a] rounded p-2">
-                      <span className="text-purple-400 font-medium">Reward: </span>
+                    <div className="bg-[#0e1113] rounded p-2">
+                      <span className="text-[#89e219] font-medium">Reward: </span>
                       <span className="text-white/70">{e.reward}</span>
                     </div>
-                    <div className="bg-[#0a0a0a] rounded p-2">
-                      <span className="text-purple-400 font-medium">Investment: </span>
+                    <div className="bg-[#0e1113] rounded p-2">
+                      <span className="text-[#89e219] font-medium">Investment: </span>
                       <span className="text-white/70">{e.investment}</span>
                     </div>
                   </div>
@@ -154,7 +154,7 @@ export default function PmHabitProductsPage() {
         </section>
 
         {/* Mistakes */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Common Mistakes</h2>
             <div className="space-y-2">
@@ -183,7 +183,7 @@ export default function PmHabitProductsPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Your Own PM Habit Daily</h2>
           <p className="text-white/60 mb-6">Daily 2-minute PM scenarios — the habit that compounds into career mastery.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

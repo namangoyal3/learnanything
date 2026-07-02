@@ -118,9 +118,9 @@ export default function PmWritingSkillsPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>✍️</span> Great PM writing is the multiplier on every other PM skill
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -130,7 +130,7 @@ export default function PmWritingSkillsPage() {
             5 rules for great PM writing with before/after examples,
             5 document types every PM writes, and how to improve your writing deliberately.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice PM Writing Daily — Free →
           </Link>
         </section>
@@ -152,8 +152,8 @@ export default function PmWritingSkillsPage() {
                     <p className="text-sm text-white/70 italic whitespace-pre-line">{r.after}</p>
                   </div>
                 </div>
-                <div className="bg-[#0a0a0a] rounded-lg px-3 py-2">
-                  <p className="text-xs text-purple-400">💡 {r.why}</p>
+                <div className="bg-[#0e1113] rounded-lg px-3 py-2">
+                  <p className="text-xs text-[#89e219]">💡 {r.why}</p>
                 </div>
               </div>
             ))}
@@ -161,7 +161,7 @@ export default function PmWritingSkillsPage() {
         </section>
 
         {/* Doc types */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Document Types Every PM Writes</h2>
             <div className="space-y-4">
@@ -169,10 +169,10 @@ export default function PmWritingSkillsPage() {
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
                     <p className="font-bold text-white">{d.doc}</p>
-                    <span className="text-xs bg-[#1a1a2e] border border-white/10 rounded-full px-2 py-1 text-white/60">{d.length}</span>
+                    <span className="text-xs bg-[#1f2228] border border-white/10 rounded-full px-2 py-1 text-white/60">{d.length}</span>
                   </div>
                   <p className="text-sm text-white/60 mb-2">🎯 Goal: {d.goal}</p>
-                  <p className="text-xs text-purple-400">📐 Structure: <span className="text-white/70">{d.structure}</span></p>
+                  <p className="text-xs text-[#89e219]">📐 Structure: <span className="text-white/70">{d.structure}</span></p>
                 </div>
               ))}
             </div>
@@ -194,7 +194,7 @@ export default function PmWritingSkillsPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Writing Muscle Daily</h2>
           <p className="text-white/60 mb-6">Practice writing PRDs, updates, and strategy memos — with AI feedback.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

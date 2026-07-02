@@ -87,9 +87,9 @@ export default function AiProductManagerPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🤖</span> The highest-growth PM specialisation of the decade
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -99,7 +99,7 @@ export default function AiProductManagerPage() {
             What AI PMs actually do, the skills you need, interview questions,
             salary ranges, and how to break into AI product management without an ML degree.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start AI PM Prep — Free →
           </Link>
         </section>
@@ -114,7 +114,7 @@ export default function AiProductManagerPage() {
                 <tr className="border-b border-white/10">
                   <th className="text-left py-3 px-4 text-white/40 font-medium">Dimension</th>
                   <th className="text-left py-3 px-4 text-white/40 font-medium">Normal PM</th>
-                  <th className="text-left py-3 px-4 text-purple-400 font-medium">AI PM</th>
+                  <th className="text-left py-3 px-4 text-[#89e219] font-medium">AI PM</th>
                 </tr>
               </thead>
               <tbody>
@@ -131,18 +131,18 @@ export default function AiProductManagerPage() {
         </section>
 
         {/* Skills */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6 Skills Every AI PM Needs</h2>
             <div className="space-y-4">
               {SKILLS.map((s, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="w-6 h-6 rounded-full bg-[#7c3aed]/20 text-purple-400 text-xs font-bold flex items-center justify-center">{i + 1}</span>
+                    <span className="w-6 h-6 rounded-full bg-[#58cc02]/20 text-[#89e219] text-xs font-bold flex items-center justify-center">{i + 1}</span>
                     <h3 className="font-semibold text-white">{s.skill}</h3>
                   </div>
                   <p className="text-sm text-white/70 mb-2">{s.what}</p>
-                  <p className="text-xs text-purple-400">📚 How to learn: <span className="text-white/60">{s.howToLearn}</span></p>
+                  <p className="text-xs text-[#89e219]">📚 How to learn: <span className="text-white/60">{s.howToLearn}</span></p>
                 </div>
               ))}
             </div>
@@ -156,7 +156,7 @@ export default function AiProductManagerPage() {
             <ul className="space-y-3">
               {INTERVIEW_QUESTIONS.map((q, i) => (
                 <li key={i} className="flex gap-3 text-sm">
-                  <span className="text-purple-400 flex-shrink-0 font-bold">{i + 1}.</span>
+                  <span className="text-[#89e219] flex-shrink-0 font-bold">{i + 1}.</span>
                   <span className="text-white/70">{q}</span>
                 </li>
               ))}
@@ -165,7 +165,7 @@ export default function AiProductManagerPage() {
         </section>
 
         {/* Salary */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">AI PM Salary Ranges (2026)</h2>
             <div className="overflow-x-auto">
@@ -206,7 +206,7 @@ export default function AiProductManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build AI PM Fluency in 2 Minutes a Day</h2>
           <p className="text-white/60 mb-6">Daily scenarios on LLM products, ML evaluation, and AI product decisions.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

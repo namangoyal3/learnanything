@@ -138,9 +138,9 @@ export default function PmStrategyGuidePage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>♟️</span> Great strategy makes trade-offs explicit. Bad strategy hides them.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -150,7 +150,7 @@ export default function PmStrategyGuidePage() {
             The 4 layers of product strategy, how to tell good strategy from bad,
             5 frameworks every PM should know, and the questions senior PMs must answer.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Strategy Questions Daily — Free →
           </Link>
         </section>
@@ -164,11 +164,11 @@ export default function PmStrategyGuidePage() {
                 <h3 className="font-bold text-white mb-2">{l.layer}</h3>
                 <p className="text-sm text-white/60 mb-3">{l.what}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div className="bg-[#7c3aed]/5 border border-[#7c3aed]/20 rounded-lg p-3">
-                    <p className="text-xs text-purple-400 mb-1">💡 Example</p>
+                  <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-lg p-3">
+                    <p className="text-xs text-[#89e219] mb-1">💡 Example</p>
                     <p className="text-xs text-white/70 italic">{l.example}</p>
                   </div>
-                  <div className="bg-[#0a0a0a] rounded-lg p-3">
+                  <div className="bg-[#0e1113] rounded-lg p-3">
                     <p className="text-xs text-white/40 mb-1">Who sets this</p>
                     <p className="text-xs text-white/60">{l.whoSets}</p>
                   </div>
@@ -179,13 +179,13 @@ export default function PmStrategyGuidePage() {
         </section>
 
         {/* Good vs bad */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">Good Strategy vs Bad Strategy</h2>
             <div className="space-y-3">
               {GOOD_VS_BAD.map((row, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
-                  <p className="text-xs text-purple-400 uppercase tracking-wider mb-2">{row.aspect}</p>
+                  <p className="text-xs text-[#89e219] uppercase tracking-wider mb-2">{row.aspect}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="bg-green-500/5 border border-green-500/20 rounded-lg p-3">
                       <p className="text-xs text-green-400 mb-1">✅ Good strategy</p>
@@ -210,21 +210,21 @@ export default function PmStrategyGuidePage() {
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                 <p className="font-bold text-white mb-2">{i + 1}. {f.name}</p>
                 <p className="text-sm text-white/70 mb-2">{f.use}</p>
-                <p className="text-xs text-purple-400">💡 Example: <span className="text-white/60">{f.ex}</span></p>
+                <p className="text-xs text-[#89e219]">💡 Example: <span className="text-white/60">{f.ex}</span></p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Strategy questions */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-3">5 Questions Every Senior PM Should Be Able to Answer</h2>
             <p className="text-white/60 text-center mb-8">If you can&apos;t answer these about your product area, you&apos;re operating on execution — not strategy.</p>
             <div className="space-y-3">
               {STRATEGY_QUESTIONS.map((q, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4 flex gap-3">
-                  <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                   <p className="text-sm text-white/70">{q}</p>
                 </div>
               ))}
@@ -247,7 +247,7 @@ export default function PmStrategyGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Strategic Thinking in 2 Minutes a Day</h2>
           <p className="text-white/60 mb-6">Daily scenarios on trade-offs, moats, and the senior-PM questions that matter.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>
