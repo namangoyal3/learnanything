@@ -216,7 +216,12 @@ export default function QuizView({
     if (phase === "lesson") {
       return (
         <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
-          <h1 className="text-xl font-bold">{lessonTitle}</h1>
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight leading-tight">{lessonTitle}</h1>
+            <p className="text-xs font-bold text-[var(--text-secondary)] mt-1.5">
+              +{xpReward} XP · {questions.length} quiz questions · ~2 min
+            </p>
+          </div>
 
           {youtubeId && (
             <YouTubeEmbed
@@ -228,7 +233,7 @@ export default function QuizView({
             />
           )}
 
-          <div className="bg-[var(--bg-card)] rounded-2xl p-6 text-sm leading-relaxed whitespace-pre-line text-[var(--text-secondary)]">
+          <div className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-6 text-[15px] leading-relaxed whitespace-pre-line text-white/85">
             {content}
           </div>
 
@@ -332,7 +337,7 @@ export default function QuizView({
 
           <button
             onClick={() => setPhase("quiz")}
-            className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
           >
             Test My Knowledge <ArrowRight size={16} />
           </button>
@@ -369,17 +374,17 @@ export default function QuizView({
                   isGoldStreak ? "text-[var(--gold-primary)]" : "text-[var(--orange-primary)]"
                 )}
               />
-              <span className={cn("text-6xl font-bold", isGoldStreak ? "text-[var(--gold-primary)]" : "text-[var(--orange-primary)]")}>
+              <span className={cn("text-6xl font-black tabular-nums", isGoldStreak ? "text-[var(--gold-primary)]" : "text-[var(--orange-primary)]")}>
                 {newStreak}
               </span>
             </motion.div>
-            <h1 className="text-2xl font-bold mb-1">
+            <h1 className="text-2xl font-black tracking-tight mb-1">
               {newStreak === 1 ? "Streak started!" : `Day ${newStreak} streak!`}
             </h1>
           </div>
 
           {streakGoal > 0 && (
-            <div className="bg-[var(--bg-card)] rounded-2xl p-4 mb-4 text-left">
+            <div className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-4 mb-4 text-left">
               <div className="flex items-center justify-between text-xs mb-2">
                 <span className="flex items-center gap-1 text-[var(--text-secondary)]">
                   <Target size={12} /> Streak goal
@@ -400,21 +405,21 @@ export default function QuizView({
           )}
 
           <div className="grid grid-cols-2 gap-3 mb-6">
-            <div className="bg-[var(--bg-card)] rounded-2xl p-4">
-              <div className="text-3xl font-bold text-[var(--gold-primary)] flex items-center justify-center gap-1">
+            <div className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-4">
+              <div className="text-3xl font-black tabular-nums text-[var(--gold-primary)] flex items-center justify-center gap-1">
                 <Zap size={22} /> {totalXP}
               </div>
               <div className="text-xs text-[var(--text-secondary)] mt-1">XP Earned</div>
             </div>
-            <div className="bg-[var(--bg-card)] rounded-2xl p-4">
-              <div className="text-3xl font-bold text-[var(--green-primary)]">{score}%</div>
+            <div className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-4">
+              <div className="text-3xl font-black tabular-nums text-[var(--green-primary)]">{score}%</div>
               <div className="text-xs text-[var(--text-secondary)] mt-1">{correctCount}/{questions.length} Correct</div>
             </div>
           </div>
 
           <a
             href="/dashboard"
-            className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors mb-3 flex items-center justify-center gap-2"
+            className="block w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all mb-3 flex items-center justify-center gap-2"
           >
             {archiveUnlock ? "See New Lessons" : "Keep My Streak Going"} <ArrowRight size={16} />
           </a>
@@ -432,7 +437,7 @@ export default function QuizView({
           />
         </div>
 
-        <div className="text-xs text-[var(--text-secondary)] mb-4">
+        <div className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-4">
           Question {currentQ + 1} of {questions.length}
         </div>
 
@@ -444,7 +449,7 @@ export default function QuizView({
             exit={{ opacity: 0, x: -30 }}
             transition={{ duration: 0.2 }}
           >
-            <h2 className="text-lg font-bold mb-6">{question.questionText}</h2>
+            <h2 className="text-xl sm:text-2xl font-black leading-snug mb-6">{question.questionText}</h2>
 
             <div className="space-y-3">
               {question.options.map((option, optionIndex) => (
@@ -453,11 +458,12 @@ export default function QuizView({
                   onClick={() => !confirmed && setSelected(optionIndex)}
                   disabled={confirmed}
                   className={cn(
-                    "w-full text-left p-4 rounded-2xl border-2 transition-all text-sm font-medium",
+                    "w-full text-left p-4 rounded-2xl border-2 border-b-4 transition-all text-sm font-bold",
+                    !confirmed && "active:border-b-2 active:translate-y-[2px]",
                     !confirmed && selected === optionIndex
                       ? "border-[var(--blue-primary)] bg-[var(--blue-primary)]/10"
                       : !confirmed
-                        ? "border-[var(--border-color)] bg-[var(--bg-card)] hover:border-[var(--text-secondary)]"
+                        ? "border-[var(--border-color)] bg-[var(--bg-card)] hover:bg-[var(--bg-secondary)] hover:border-[var(--text-secondary)]/50"
                         : confirmed && optionIndex === question.correctIndex
                           ? "border-[var(--green-primary)] bg-[var(--green-primary)]/10"
                           : confirmed && selected === optionIndex && !isCorrect
@@ -468,7 +474,7 @@ export default function QuizView({
                   <div className="flex items-center gap-3">
                     <div
                       className={cn(
-                        "w-7 h-7 rounded-full border-2 flex items-center justify-center text-xs font-bold flex-shrink-0",
+                        "w-7 h-7 rounded-xl border-2 flex items-center justify-center text-xs font-black flex-shrink-0",
                         !confirmed && selected === optionIndex
                           ? "border-[var(--blue-primary)] text-[var(--blue-primary)]"
                           : confirmed && optionIndex === question.correctIndex
@@ -522,10 +528,10 @@ export default function QuizView({
               onClick={handleConfirm}
               disabled={selected === null}
               className={cn(
-                "w-full py-3 rounded-2xl font-bold text-sm uppercase tracking-wide transition-colors",
+                "w-full py-3.5 rounded-2xl font-black text-sm uppercase tracking-wide transition-all",
                 selected !== null
-                  ? "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white"
-                  : "bg-[var(--bg-secondary)] text-[var(--text-secondary)] cursor-not-allowed"
+                  ? "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white"
+                  : "bg-[var(--bg-secondary)] border-b-4 border-[var(--bg-secondary)] text-[var(--text-secondary)] cursor-not-allowed"
               )}
             >
               Check
@@ -533,7 +539,7 @@ export default function QuizView({
           ) : (
             <button
               onClick={handleNext}
-              className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
             >
               {currentQ < questions.length - 1 ? (
                 <>Continue <ArrowRight size={16} /></>
