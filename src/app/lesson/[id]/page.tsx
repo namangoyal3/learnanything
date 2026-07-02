@@ -115,16 +115,19 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
 
   return (
     <div className="min-h-screen">
-      <header className="sticky top-0 z-50 border-b border-[var(--border-color)] bg-[var(--bg-secondary)]">
+      <header className="sticky top-0 z-50 border-b-2 border-[var(--border-color)] bg-[var(--bg-secondary)]">
         <div className="max-w-2xl mx-auto px-4 h-14 flex items-center gap-3">
           <Link href="/dashboard" className="text-[var(--text-secondary)] hover:text-white p-2 -ml-2 rounded-xl">
             <ArrowLeft size={20} />
           </Link>
           <div className="flex-1 min-w-0">
-            <div className="text-xs text-[var(--text-secondary)]">
+            <div className="text-[10px] font-black uppercase tracking-wider text-[var(--text-secondary)]">
               {lesson.category.icon} {lesson.category.name}
             </div>
-            <h1 className="text-sm font-bold truncate">{lesson.title}</h1>
+            <h1 className="text-sm font-black truncate">{lesson.title}</h1>
+          </div>
+          <div className="flex items-center gap-1 bg-[var(--gold-primary)]/10 px-2.5 py-1 rounded-full flex-shrink-0">
+            <span className="font-black text-xs tabular-nums text-[var(--gold-primary)]">+{lesson.xpReward} XP</span>
           </div>
         </div>
       </header>
