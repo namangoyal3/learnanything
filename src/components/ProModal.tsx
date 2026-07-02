@@ -42,8 +42,8 @@ export default function ProModal({ isOpen, onClose, reason }: ProModalProps) {
           <button 
             onClick={onClose}
             className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 flex items-center justify-center transition-colors"
-          >
-            <X size={16} className="text-white" />
+           aria-label="Close">
+            <X size={16} className="text-white" aria-hidden />
           </button>
         </div>
 

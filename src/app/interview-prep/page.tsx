@@ -145,7 +145,7 @@ export default function InterviewPrepPage() {
                     className={cn(
                       "px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wide transition-colors",
                       topic === t
-                        ? "bg-[var(--blue-primary)] text-white"
+                        ? "bg-[var(--blue-primary)] text-black"
                         : "text-[var(--text-secondary)] hover:text-white"
                     )}
                   >
@@ -164,7 +164,7 @@ export default function InterviewPrepPage() {
                     className={cn(
                       "px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wide transition-colors",
                       level === l
-                        ? "bg-[var(--green-primary)] text-white"
+                        ? "bg-[var(--green-primary)] text-black"
                         : "text-[var(--text-secondary)] hover:text-white"
                     )}
                   >
@@ -178,7 +178,7 @@ export default function InterviewPrepPage() {
           <button
             onClick={generate}
             disabled={loading}
-            className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all disabled:opacity-60 flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all disabled:opacity-60 flex items-center justify-center gap-2"
           >
             {loading ? (
               <><Loader2 size={16} className="animate-spin" /> Generating…</>
@@ -290,7 +290,7 @@ export default function InterviewPrepPage() {
               <p className="text-sm font-black">Pro: unlimited sessions</p>
               <p className="text-xs text-[var(--text-secondary)] mt-0.5">No credit cost, generate as many sets as you want.</p>
             </div>
-            <Link href="/pricing" className="flex-shrink-0 bg-[var(--purple-primary)] text-white text-xs font-black uppercase tracking-wide px-4 py-2 rounded-xl border-b-4 border-black/30 active:border-b-2 active:translate-y-[2px] hover:opacity-90 transition-all">
+            <Link href="/pricing" className="flex-shrink-0 bg-[var(--purple-primary)] text-black text-xs font-black uppercase tracking-wide px-4 py-2 rounded-xl border-b-4 border-black/30 active:border-b-2 active:translate-y-[2px] hover:opacity-90 transition-all">
               Upgrade
             </Link>
           </div>

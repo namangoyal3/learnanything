@@ -127,7 +127,7 @@ export default function Pm1On1GuidePage() {
             Agenda templates for 4 types of 1:1s (manager, engineering, design, reports),
             6 prompts that open real conversations, and how to never waste 1:1 time again.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Relationship Muscle — Free →
           </Link>
         </section>
@@ -191,7 +191,7 @@ export default function Pm1On1GuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Relationship Skills Daily</h2>
           <p className="text-white/60 mb-6">Scenarios on feedback, alignment, and managing up — with AI feedback.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

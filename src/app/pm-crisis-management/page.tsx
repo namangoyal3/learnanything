@@ -92,7 +92,7 @@ export default function PmCrisisManagementPage() {
             5 first-60-min moves, 5 hours 1-4 moves, 5 post-incident steps,
             and 5 communication rules for handling production incidents.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Incident Instincts Daily — Free →
           </Link>
         </section>
@@ -168,7 +168,7 @@ export default function PmCrisisManagementPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Train PM Judgment Under Pressure Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on hard calls, fast decisions, and communicating under stress.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

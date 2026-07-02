@@ -115,7 +115,7 @@ export default function PhonePePmInterviewPage() {
             All PhonePe PM interview rounds, UPI and payments context,
             real questions, and what India&apos;s biggest payments PM role actually requires.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Start PhonePe PM Prep — Free →
           </Link>
         </section>
@@ -181,7 +181,7 @@ export default function PhonePePmInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Train for the PhonePe Bar Daily</h2>
           <p className="text-white/60 mb-6">UPI, lending, insurance PM scenarios — calibrated to PhonePe-scale product decisions.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

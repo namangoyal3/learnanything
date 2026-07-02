@@ -47,7 +47,7 @@ export default async function RazorpayCheckoutPage({
           </p>
           <Link
             href="/pricing"
-            className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition-all"
+            className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] px-5 py-3 text-sm font-black uppercase tracking-wide text-black transition-all"
           >
             <ArrowLeft size={16} /> Back to pricing
           </Link>
@@ -105,7 +105,7 @@ export default async function RazorpayCheckoutPage({
           <p className="mt-3 max-w-lg text-sm text-[var(--text-secondary)]">{message}</p>
           <Link
             href="/pricing"
-            className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] px-5 py-3 text-sm font-black uppercase tracking-wide text-white transition-all"
+            className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] px-5 py-3 text-sm font-black uppercase tracking-wide text-black transition-all"
           >
             <ArrowLeft size={16} /> Back to pricing
           </Link>

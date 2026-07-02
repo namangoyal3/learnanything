@@ -120,7 +120,7 @@ export default function SocialPage() {
   if (loading || !user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-[var(--green-primary)] text-lg font-bold">Loading...</div>
+        <div role="status" className="animate-pulse text-[var(--green-primary)] text-lg font-bold">Loading...</div>
       </div>
     );
   }
@@ -131,7 +131,7 @@ export default function SocialPage() {
 
       <main className="max-w-2xl mx-auto px-4 py-6 pb-28 space-y-6">
         <div className="text-center">
-          <Users size={40} className="mx-auto text-[var(--purple-primary)] mb-2" />
+          <Users size={40} aria-hidden className="mx-auto text-[var(--green-primary)] mb-2" />
           <h1 className="text-2xl font-black tracking-tight">Social</h1>
           <div className="flex justify-center gap-4 mt-2 text-sm text-[var(--text-secondary)]">
             <span><strong className="text-white font-black tabular-nums">{followerCount}</strong> followers</span>
@@ -142,7 +142,7 @@ export default function SocialPage() {
         {/* Invite Friends CTA */}
         <button
           onClick={() => setShowShare(true)}
-          className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition-all"
+          className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition-all"
         >
           <Share2 size={16} /> Invite Friends via Link, Email, or Social
         </button>
@@ -156,7 +156,7 @@ export default function SocialPage() {
               className={cn(
                 "flex-1 py-2 rounded-xl text-xs font-black uppercase tracking-wide transition-colors relative",
                 tab === t
-                  ? "bg-[var(--green-primary)] text-white"
+                  ? "bg-[var(--green-primary)] text-black"
                   : "text-[var(--text-secondary)] hover:text-white"
               )}
             >
@@ -175,7 +175,7 @@ export default function SocialPage() {
                 </p>
                 <button
                   onClick={() => setTab("find")}
-                  className="mt-3 px-4 py-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide transition-all"
+                  className="mt-3 px-4 py-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-xs font-black uppercase tracking-wide transition-all"
                 >
                   Find Friends
                 </button>
@@ -196,7 +196,7 @@ export default function SocialPage() {
                 <div className={cn("space-y-2", showFriendsList ? "block" : "hidden", "sm:block")}>
                   {friends.map((f) => (
                     <div key={f.id} className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-3 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-[var(--green-primary)] flex items-center justify-center font-black text-white text-sm">
+                      <div className="w-10 h-10 rounded-xl bg-[var(--green-primary)] flex items-center justify-center font-black text-black text-sm">
                         {f.name.charAt(0)}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -270,7 +270,7 @@ export default function SocialPage() {
             <div className="space-y-2">
               {searchResults.map((u) => (
                 <div key={u.id} className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-3 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[var(--green-primary)] flex items-center justify-center font-black text-white text-sm">
+                  <div className="w-10 h-10 rounded-xl bg-[var(--green-primary)] flex items-center justify-center font-black text-black text-sm">
                     {u.name.charAt(0)}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -286,7 +286,7 @@ export default function SocialPage() {
                         "flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wide transition-all",
                         u.isFollowing
                           ? "bg-[var(--bg-secondary)] border-2 border-[var(--border-color)] text-[var(--text-secondary)]"
-                          : "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white"
+                          : "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black"
                       )}
                     >
                       {u.isFollowing ? (

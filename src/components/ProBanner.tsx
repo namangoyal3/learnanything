@@ -23,7 +23,7 @@ export default function ProBanner({ plan }: ProBannerProps) {
         <Link
           href="/pricing"
           onClick={() => conversionFunnel.dashboardUpgradeCtaClicked("pro_banner")}
-          className="bg-[var(--purple-primary)] text-white text-[10px] font-black px-3 py-1 rounded-full whitespace-nowrap hover:opacity-90 transition-opacity flex items-center gap-0.5 active:scale-95"
+          className="bg-[var(--purple-primary)] text-black text-[11px] font-black px-4 py-2 rounded-full whitespace-nowrap hover:opacity-90 transition-opacity flex items-center gap-0.5 active:scale-95"
         >
           Upgrade <ChevronRight size={10} strokeWidth={3} />
         </Link>

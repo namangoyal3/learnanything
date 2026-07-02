@@ -84,8 +84,8 @@ export default function StreakCelebration({ milestone, streakCount, perfectStrea
           <button
             onClick={onClose}
             className="absolute -top-2 -right-2 z-10 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white"
-          >
-            <X size={14} />
+           aria-label="Close">
+            <X size={16} aria-hidden />
           </button>
 
           <div className={`bg-gradient-to-br ${data.color} rounded-3xl p-6 text-center shadow-2xl`}>

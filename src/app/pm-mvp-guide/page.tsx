@@ -92,7 +92,7 @@ export default function PmMvpGuidePage() {
             5 things MVPs actually are, 5 things they aren&apos;t, 5 scoping questions,
             and 5 situations where skipping the MVP is the right call.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Scoping Skills Daily — Free →
           </Link>
         </section>
@@ -168,7 +168,7 @@ export default function PmMvpGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Scoping Muscle Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on MVP scoping, hypothesis-testing, and minimum-viable-learning.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

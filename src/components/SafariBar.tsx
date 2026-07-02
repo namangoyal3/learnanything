@@ -28,7 +28,7 @@ export default function SafariBar() {
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 pb-8">
       <button
         onClick={() => window.open(url, "_blank")}
-        className="w-full flex items-center justify-between gap-3 px-5 py-4 rounded-2xl bg-[var(--green-primary)] text-white font-black text-sm shadow-2xl"
+        className="w-full flex items-center justify-between gap-3 px-5 py-4 rounded-2xl bg-[var(--green-primary)] text-black font-black text-sm shadow-2xl"
       >
         <span>Google sign-in requires Browser</span>
         <span>Open in Browser →</span>

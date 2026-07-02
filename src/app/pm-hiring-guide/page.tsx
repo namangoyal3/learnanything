@@ -101,7 +101,7 @@ export default function PmHiringGuidePage() {
             6 signals great PMs look for, a 7-round loop structure, 6 common mistakes,
             and how to give candidates an experience they&apos;ll remember positively.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Interview Intuition Daily — Free →
           </Link>
         </section>
@@ -177,7 +177,7 @@ export default function PmHiringGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Sharpen PM Judgment Daily</h2>
           <p className="text-white/60 mb-6">The same intuitions that make you a great PM make you a great PM interviewer.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

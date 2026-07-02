@@ -120,7 +120,7 @@ export default function TransitionToProductManagerPage() {
             How to switch to PM from engineering, design, consulting, or business —
             what your background gives you, what gaps you need to close, and the exact moves that work.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Start Your PM Transition — Free →
           </Link>
         </section>
@@ -181,7 +181,7 @@ export default function TransitionToProductManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Intuition While You Transition</h2>
           <p className="text-white/60 mb-6">Daily 2-minute PM lessons designed for career switchers — no PM experience required to start.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

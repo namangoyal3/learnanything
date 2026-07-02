@@ -177,7 +177,7 @@ export default function ArticleConversionWrapper({
             <button
               type="submit"
               disabled={emailLoading}
-              className="bg-[var(--green-primary)] text-white font-black px-5 py-2.5 rounded-xl text-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed shrink-0"
+              className="bg-[var(--green-primary)] text-black font-black px-5 py-2.5 rounded-xl text-sm hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed shrink-0"
             >
               {emailLoading ? "Subscribing…" : "Subscribe"}
             </button>
@@ -251,7 +251,7 @@ export default function ArticleConversionWrapper({
           <Link
             href={`/pricing?utm_source=article&utm_medium=seo&utm_campaign=article_cta&utm_content=${slug}`}
             onClick={() => handleCtaClick("trial")}
-            className="inline-block bg-[var(--green-primary)] text-white font-black px-6 py-3 rounded-2xl text-sm hover:opacity-90 transition-opacity"
+            className="inline-block bg-[var(--green-primary)] text-black font-black px-6 py-3 rounded-2xl text-sm hover:opacity-90 transition-opacity"
           >
             Start 3-day free trial &rarr;
           </Link>

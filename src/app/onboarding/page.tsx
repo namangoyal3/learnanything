@@ -104,7 +104,7 @@ export default function OnboardingPage() {
                 </p>
                 <button
                   onClick={() => setStep("why")}
-                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
                 >
                   Let&apos;s Go <ArrowRight size={16} />
                 </button>
@@ -118,7 +118,7 @@ export default function OnboardingPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
               >
-                <h2 className="text-xl font-black tracking-tight mb-1">Why are you here?</h2>
+                <h1 className="text-xl font-black tracking-tight mb-1">Why are you here?</h1>
                 <p className="text-sm text-[var(--text-secondary)] mb-5">Pick one main goal</p>
                 <div className="space-y-2.5 mb-7">
                   {WHY_OPTIONS.map((opt) => (
@@ -141,7 +141,7 @@ export default function OnboardingPage() {
                 <button
                   onClick={() => setStep("streak")}
                   disabled={!selectedWhy}
-                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all disabled:bg-[var(--bg-secondary)] disabled:border-[var(--bg-secondary)] disabled:text-[var(--text-secondary)] disabled:cursor-not-allowed"
                 >
                   Continue
                 </button>
@@ -157,7 +157,7 @@ export default function OnboardingPage() {
               >
                 <div className="flex items-center gap-2 mb-1">
                   <Target size={20} className="text-[var(--orange-primary)]" />
-                  <h2 className="text-xl font-black tracking-tight">Set your streak goal</h2>
+                  <h1 className="text-xl font-black tracking-tight">Set your streak goal</h1>
                 </div>
                 <p className="text-sm text-[var(--text-secondary)] mb-5">
                   How many consecutive days do you want to learn?
@@ -190,7 +190,7 @@ export default function OnboardingPage() {
                 <button
                   onClick={() => setStep("goal")}
                   disabled={!streakGoal}
-                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all disabled:bg-[var(--bg-secondary)] disabled:border-[var(--bg-secondary)] disabled:text-[var(--text-secondary)] disabled:cursor-not-allowed"
                 >
                   Continue
                 </button>
@@ -206,7 +206,7 @@ export default function OnboardingPage() {
               >
                 <div className="flex items-center gap-2 mb-1">
                   <Zap size={20} className="text-[var(--gold-primary)]" />
-                  <h2 className="text-xl font-black tracking-tight">Daily pace</h2>
+                  <h1 className="text-xl font-black tracking-tight">Daily pace</h1>
                 </div>
                 <p className="text-sm text-[var(--text-secondary)] mb-5">
                   How much do you want to learn each day?
@@ -243,7 +243,7 @@ export default function OnboardingPage() {
                 <button
                   onClick={() => setStep("ready")}
                   disabled={!dailyGoal}
-                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all disabled:bg-[var(--bg-secondary)] disabled:border-[var(--bg-secondary)] disabled:text-[var(--text-secondary)] disabled:cursor-not-allowed"
                 >
                   Continue
                 </button>
@@ -265,7 +265,7 @@ export default function OnboardingPage() {
                 >
                   <Trophy size={64} className="mx-auto text-[var(--gold-primary)] mb-4" />
                 </motion.div>
-                <h2 className="text-2xl font-black tracking-tight mb-2">You&apos;re all set!</h2>
+                <h1 className="text-2xl font-black tracking-tight mb-2">You&apos;re all set!</h1>
                 <p className="text-sm text-[var(--text-secondary)] mb-5">
                   Your goal: <strong className="text-white">{streakGoal}-day streak</strong>,{" "}
                   <strong className="text-white">{dailyGoal} lesson{(dailyGoal ?? 1) > 1 ? "s" : ""}/day</strong>
@@ -311,7 +311,7 @@ export default function OnboardingPage() {
                 <button
                   onClick={handleFinish}
                   disabled={saving}
-                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all disabled:opacity-50"
+                  className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all disabled:opacity-50"
                 >
                   {saving ? "Starting..." : "Commit to My Goal"}
                 </button>

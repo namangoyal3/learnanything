@@ -181,7 +181,7 @@ export default function PmToolsGuidePage() {
             Jira, Figma, Amplitude, Notion, SQL, and 10 more — what each PM tool is for,
             how well you need to know it, and the tips that make you more effective with each.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build Your PM Toolkit — Free →
           </Link>
         </section>
@@ -236,7 +236,7 @@ export default function PmToolsGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Learn PM Tools Through Daily Practice</h2>
           <p className="text-white/60 mb-6">Scenarios that build the analytical and execution instincts behind the tools.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

@@ -72,8 +72,8 @@ export default function GoalSelectionModal({ onClose, onSaved }: Props) {
             <button
               onClick={handleDismiss}
               className="p-1.5 rounded-xl hover:bg-[var(--bg-secondary)] text-[var(--text-secondary)] transition-colors"
-            >
-              <X size={16} />
+             aria-label="Close">
+              <X size={16} aria-hidden />
             </button>
           </div>
 
@@ -113,7 +113,7 @@ export default function GoalSelectionModal({ onClose, onSaved }: Props) {
             <button
               onClick={handleSave}
               disabled={!selected || saving}
-              className="flex-1 py-2.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white text-sm font-bold transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="flex-1 py-2.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-black text-sm font-bold transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {saving ? "Saving…" : "Set my goal"}
             </button>

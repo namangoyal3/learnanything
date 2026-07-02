@@ -100,7 +100,7 @@ export default function PmNorthStarMetricPage() {
             5 criteria for a great north star, 6 real company examples of good ones,
             5 common bad choices, and how to decompose your north star into input metrics.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Practice Metric Scenarios — Free →
           </Link>
         </section>
@@ -187,7 +187,7 @@ export default function PmNorthStarMetricPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Metric Definition Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on north star selection, input metrics, and metric trade-offs.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

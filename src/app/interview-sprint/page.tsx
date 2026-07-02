@@ -125,7 +125,7 @@ export default function InterviewSprintPage() {
           {error ?? "No daily drill yet. Set a target role and timeline first."}
         </p>
         <div className="mt-5 flex gap-3">
-          <Link href="/jobs" className="px-4 py-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide transition-all">
+          <Link href="/jobs" className="px-4 py-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-xs font-black uppercase tracking-wide transition-all">
             Set target
           </Link>
           <Link href="/dashboard" className="px-4 py-2 rounded-2xl bg-[var(--bg-card)] border-2 border-b-4 border-[var(--border-color)] hover:bg-[var(--bg-secondary)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide transition-all">
@@ -177,7 +177,7 @@ export default function InterviewSprintPage() {
           <button
             onClick={submitAnswer}
             disabled={submitting}
-            className="mt-3 w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-sm font-black uppercase tracking-wide transition-all disabled:opacity-60"
+            className="mt-3 w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-sm font-black uppercase tracking-wide transition-all disabled:opacity-60"
           >
             {submitting ? "Evaluating..." : "Submit for AI judge"}
           </button>
@@ -212,7 +212,7 @@ export default function InterviewSprintPage() {
                 <p className="text-xs text-[var(--purple-primary)] font-bold mb-2">{paywallNotice}</p>
                 <Link
                   href="/pricing"
-                  className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wide text-white bg-[var(--purple-primary)] hover:opacity-90 px-3 py-1.5 rounded-xl transition-all"
+                  className="inline-flex items-center gap-1 text-xs font-black uppercase tracking-wide text-black bg-[var(--purple-primary)] hover:opacity-90 px-3 py-1.5 rounded-xl transition-all"
                 >
                   Get credits <ArrowRight size={12} />
                 </Link>

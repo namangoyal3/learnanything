@@ -114,7 +114,7 @@ export default function EcommercePmGuidePage() {
             The 6 e-commerce metrics every PM must know, 5 types of e-commerce PM roles,
             the hardest challenges, and the career paths at India&apos;s top e-commerce companies.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Start E-commerce PM Prep — Free →
           </Link>
         </section>
@@ -177,7 +177,7 @@ export default function EcommercePmGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build E-commerce PM Intuition Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on GMV, take rate, marketplace balance, and ops trade-offs.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

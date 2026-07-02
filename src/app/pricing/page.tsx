@@ -299,7 +299,7 @@ async function PricingContent() {
                     })
                   : "#comparison"
               }
-              className="sm:hidden inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-black bg-[var(--purple-primary)] text-white"
+              className="sm:hidden inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-black bg-[var(--purple-primary)] text-black"
             >
               Start Pro
             </a>
@@ -361,7 +361,7 @@ async function PricingContent() {
 
           {/* Pro */}
           <div className="rounded-2xl border-2 border-[var(--purple-primary)]/50 p-6 bg-[var(--bg-card)] relative shadow-[0_4px_0_0_rgba(0,0,0,0.35)]">
-            <div className="absolute -top-3.5 left-6 inline-flex items-center gap-1 rounded-full bg-[var(--purple-primary)] text-white text-[10px] font-black uppercase tracking-wider px-3 py-1">
+            <div className="absolute -top-3.5 left-6 inline-flex items-center gap-1 rounded-full bg-[var(--purple-primary)] text-black text-[10px] font-black uppercase tracking-wider px-3 py-1">
               <Star size={10} /> Most popular
             </div>
             <div className="mb-4">
@@ -430,7 +430,7 @@ async function PricingContent() {
                         aria-disabled={!dodoHref}
                         className={`flex items-center justify-between w-full py-3 px-4 rounded-xl font-black text-sm transition-all ${
                           plan.key === "quarterly"
-                            ? "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white"
+                            ? "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black"
                             : "bg-transparent hover:bg-white/5 text-white border-2 border-[var(--border-color)] hover:border-white/30"
                         } ${!dodoHref ? "opacity-50 pointer-events-none" : ""}`}
                       >

@@ -304,7 +304,7 @@ export default function BestProjectManagementToolsSmallTeams2026Page() {
               The best project management tool for your small team depends on your specific needs, budget, and growth plans. 
               While traditional tools excel at task management, PM Streak offers the unique advantage of combining project execution with skill development.
             </p>
-            <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
               Try PM Streak Free →
             </Link>
           </div>
