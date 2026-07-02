@@ -8,10 +8,13 @@
  *   3. Rank-check target keywords on DuckDuckGo + Bing, find our position.
  *   4. Append to scripts/seo-rank-history.json and print trend vs last run.
  *
- * Usage: node scripts/seo-pipeline.mjs [--no-indexnow]
- * ponytail: Bing/Mojeek rank as proxy — Google + DDG block plain-fetch scraping
- * (DDG returns 202 challenges); plug in a SERP API (Serper/DataForSEO) key
- * here if Google-exact rank ever matters.
+ * Usage: node scripts/seo-pipeline.mjs [--no-indexnow] [--no-google]
+ *
+ * Google is checked with a real headless Chrome via the repo's playwright dep
+ * (plain fetch gets an instant CAPTCHA; chrome channel + AutomationControlled
+ * off passes). Auto-skips when playwright/Chrome is missing or Google serves
+ * /sorry/ — e.g. in the cloud cron, where a datacenter IP would be walled
+ * anyway; there Bing/Mojeek carry the trend and Google fills in on local runs.
  */
 
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -88,7 +91,9 @@ async function submitIndexNow(urls, prevHash) {
 
 // ── 3. Rank checks ───────────────────────────────────────────────────────────
 function rankFromLinks(links) {
-  const organic = links.filter((u) => !/mojeek\.com|bing\.com|microsoft|go\.microsoft/.test(u));
+  const organic = links.filter(
+    (u) => !/mojeek\.com|bing\.com|microsoft|go\.microsoft|google\.[a-z.]+\/|translate\.goog/.test(u)
+  );
   const idx = organic.findIndex((u) => u.includes(HOST));
   return idx === -1 || idx >= MAX_RANK ? null : idx + 1;
 }
@@ -118,11 +123,79 @@ async function mojeekRank(keyword) {
   return rankFromLinks(links);
 }
 
+// ── Google via real browser ──────────────────────────────────────────────────
+// Returns { ranks: {kw: rank|null}, indexed: number|null, ok: boolean }.
+// ponytail: top-10 only (1 page per keyword) — paginating to 30 triples the
+// request volume and is what gets an IP flagged.
+async function googleCheck(keywords) {
+  let browser;
+  try {
+    const { chromium } = await import("playwright");
+    browser = await chromium.launch({
+      headless: true,
+      channel: "chrome",
+      args: ["--disable-blink-features=AutomationControlled"],
+    });
+  } catch (e) {
+    console.error(`Google check skipped (no playwright/Chrome): ${e.message.split("\n")[0]}`);
+    return { ranks: {}, indexed: null, ok: false };
+  }
+  const out = { ranks: {}, indexed: null, ok: true };
+  try {
+    const ctx = await browser.newContext({
+      locale: "en-IN",
+      viewport: { width: 1440, height: 900 },
+      userAgent: UA.replace(/Chrome\/[\d.]+/, "Chrome/131.0.0.0"),
+    });
+    await ctx.addInitScript(() =>
+      Object.defineProperty(navigator, "webdriver", { get: () => undefined })
+    );
+    const page = await ctx.newPage();
+
+    const serp = async (q) => {
+      await page.goto(
+        `https://www.google.com/search?q=${encodeURIComponent(q)}&hl=en&gl=in`,
+        { waitUntil: "domcontentloaded", timeout: 30000 }
+      );
+      if (page.url().includes("/sorry/")) throw new Error("CAPTCHA");
+      return page.$$eval("#search a:has(h3)", (as) => as.map((a) => a.href)).catch(() => []);
+    };
+
+    for (const kw of keywords) {
+      try {
+        out.ranks[kw] = rankFromLinks(await serp(kw));
+      } catch (e) {
+        if (e.message === "CAPTCHA") {
+          console.error(`Google: CAPTCHA wall at "${kw}" — aborting remaining Google checks`);
+          out.ok = false;
+          break; // don't keep hammering a flagged IP
+        }
+        console.error(`google "${kw}": ${e.message}`);
+        out.ranks[kw] = null;
+      }
+      await sleep(4000 + Math.random() * 3000);
+    }
+
+    if (out.ok) {
+      try {
+        const links = await serp(`site:${HOST}`);
+        out.indexed = links.filter((u) => u.includes(HOST)).length; // first-page count, floor not total
+      } catch {
+        /* keep null */
+      }
+    }
+  } finally {
+    await browser.close();
+  }
+  return out;
+}
+
 async function bingIndexedCount() {
   try {
     const html = await fetchText(`https://www.bing.com/search?q=${encodeURIComponent(`site:${HOST}`)}`);
     const m = html.match(/([\d,]+)\s+results/i);
-    return m ? parseInt(m[1].replace(/,/g, ""), 10) : null;
+    if (m) return parseInt(m[1].replace(/,/g, ""), 10);
+    return /b_no|no results found for/i.test(html) ? 0 : null;
   } catch {
     return null;
   }
@@ -169,8 +242,13 @@ for (const kw of KEYWORDS) {
     await mojeekRank(kw).catch((e) => (console.error(`mojeek "${kw}": ${e.message}`), null)),
   ];
   ranks[kw] = { bing, mojeek };
-  await sleep(1500); // ponytail: fixed delay; add jitter/backoff if engines start 429ing
+  await sleep(4000); // mojeek 403s ~8 rapid queries; 4s keeps it under the limit
 }
+
+const google = process.argv.includes("--no-google")
+  ? { ranks: {}, indexed: null, ok: false }
+  : await googleCheck(KEYWORDS);
+for (const kw of KEYWORDS) ranks[kw].google = google.ranks[kw] ?? null;
 
 const indexed = await bingIndexedCount();
 
@@ -180,6 +258,8 @@ const run = {
   sitemapHash: indexnow.hash,
   indexnowSubmitted: indexnow.submitted,
   bingIndexed: indexed,
+  googleChecked: google.ok,
+  googleIndexedFirstPage: google.indexed,
   ranks,
 };
 history.runs.push(run);
@@ -189,13 +269,19 @@ writeFileSync(HISTORY_FILE, JSON.stringify(history, null, 2));
 // ── report ───────────────────────────────────────────────────────────────────
 console.log(`\n=== SEO pipeline run ${run.ts} ===`);
 console.log(`Bing indexed (site:): ${indexed ?? "unknown"}${prev?.bingIndexed != null && indexed != null ? ` (was ${prev.bingIndexed})` : ""}`);
-console.log(`\n${"keyword".padEnd(42)} ${"Bing".padEnd(14)} Mojeek`);
+console.log(
+  `Google indexed, page 1 of site: ${google.ok ? google.indexed ?? "unknown" : "not checked"}${prev?.googleIndexedFirstPage != null && google.indexed != null ? ` (was ${prev.googleIndexedFirstPage})` : ""}`
+);
+console.log(`\n${"keyword".padEnd(42)} ${"Google".padEnd(14)} ${"Bing".padEnd(14)} Mojeek`);
 for (const kw of KEYWORDS) {
   const p = prev?.ranks?.[kw];
   const c = ranks[kw];
+  const g = google.ok ? fmt(c.google) + delta(p?.google, c.google) : "n/a";
   console.log(
-    `${kw.padEnd(42)} ${(fmt(c.bing) + delta(p?.bing, c.bing)).padEnd(14)} ${fmt(c.mojeek)}${delta(p?.mojeek, c.mojeek)}`
+    `${kw.padEnd(42)} ${g.padEnd(14)} ${(fmt(c.bing) + delta(p?.bing, c.bing)).padEnd(14)} ${fmt(c.mojeek)}${delta(p?.mojeek, c.mojeek)}`
   );
 }
-const ranked = KEYWORDS.filter((k) => ranks[k].bing != null || ranks[k].mojeek != null).length;
+const ranked = KEYWORDS.filter(
+  (k) => ranks[k].bing != null || ranks[k].mojeek != null || ranks[k].google != null
+).length;
 console.log(`\nRanked in top ${MAX_RANK}: ${ranked}/${KEYWORDS.length} keywords · history: ${history.runs.length} runs → ${HISTORY_FILE}`);
