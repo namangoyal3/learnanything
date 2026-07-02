@@ -86,7 +86,7 @@ export default function PmLocalizationIndiaPage() {
             6 dimensions of India&apos;s diversity to design for, 6 design principles,
             and 5 companies leading (and deliberately avoiding) Bharat.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build Bharat PM Intuition Daily — Free →
           </Link>
         </section>
@@ -148,7 +148,7 @@ export default function PmLocalizationIndiaPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Bharat PM Intuition Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on designing for users unlike yourself — the core Bharat PM skill.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

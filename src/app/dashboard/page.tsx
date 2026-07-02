@@ -277,7 +277,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
         <Flame size={48} className="text-[var(--orange-primary)] streak-flame" />
-        <div className="text-[var(--green-primary)] text-lg font-black animate-pulse tracking-wide">
+        <div role="status" className="text-[var(--green-primary)] text-lg font-black animate-pulse tracking-wide">
           Loading your streak…
         </div>
         <div className="flex gap-1.5">
@@ -589,7 +589,7 @@ export default function DashboardPage() {
                   className={cn(
                     "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold whitespace-nowrap transition-colors flex-shrink-0",
                     activeCategoryId === cat.id
-                      ? "bg-[var(--green-primary)] text-white"
+                      ? "bg-[var(--green-primary)] text-black"
                       : cat.lessons.length === 0 && cat.proGatedCount > 0
                         ? "bg-purple-500/15 text-purple-400 border border-purple-500/30"
                         : "bg-[var(--surface-2)] text-[var(--text-secondary)] border border-[var(--border-color)]"
@@ -605,6 +605,7 @@ export default function DashboardPage() {
       )}
 
       <main className="w-full max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4 pb-28">
+        <h1 className="sr-only">Dashboard — daily PM lessons</h1>
         {/* ── Pending challenge alert ── */}
         {pendingChallenges.length > 0 && (
           <Link href="/social" className="block mb-4">
@@ -649,7 +650,7 @@ export default function DashboardPage() {
                         document.getElementById("lessons")?.scrollIntoView({ behavior: "smooth", block: "start" })
                       )
                     }
-                    className="inline-flex items-center gap-1.5 rounded-[var(--ds-radius-md)] bg-[var(--orange-primary)] px-3.5 py-2 text-xs font-black text-white transition-colors hover:bg-[var(--orange-primary)]/80"
+                    className="inline-flex items-center gap-1.5 rounded-[var(--ds-radius-md)] bg-[var(--orange-primary)] px-3.5 py-2 text-xs font-black text-black transition-colors hover:bg-[var(--orange-primary)]/80"
                   >
                     <Flame size={13} /> Start Now
                   </button>
@@ -843,24 +844,24 @@ export default function DashboardPage() {
                     <span className="text-xs font-black text-[var(--blue-primary)] tracking-tighter">{user.gems}</span>
                   </div>
                 </div>
-                {shopMsg && <div className="mx-4 mt-3 rounded-lg bg-[var(--green-primary)]/15 p-2 text-center text-[10px] font-bold text-[var(--green-primary)]">{shopMsg}</div>}
+                {shopMsg && <div role="status" className="mx-4 mt-3 rounded-lg bg-[var(--green-primary)]/15 p-2 text-center text-[10px] font-bold text-[var(--green-primary)]">{shopMsg}</div>}
                 <div className="p-4 space-y-3">
-                  <div className="flex items-center gap-3 rounded-xl border-2 border-[var(--border-color)] p-3 cursor-pointer" onClick={() => handleShopBuy("streak_freeze")}>
+                  <button type="button" className="w-full flex items-center gap-3 rounded-xl border-2 border-[var(--border-color)] p-3 text-left hover:border-[var(--blue-primary)]/40 transition-colors" onClick={() => handleShopBuy("streak_freeze")}>
                     <Snowflake size={18} className="text-[var(--blue-primary)]" />
                     <div className="flex-1">
                       <div className="text-xs font-black">Streak Freeze</div>
                       <div className="text-[9px] text-[var(--text-secondary)]">Skip a day</div>
                     </div>
                     <div className="text-xs font-black">50 <Gem size={10} className="inline" /></div>
-                  </div>
-                  <div className="flex items-center gap-3 rounded-xl border-2 border-[var(--border-color)] p-3 cursor-pointer" onClick={() => handleShopBuy("xp_boost")}>
+                  </button>
+                  <button type="button" className="w-full flex items-center gap-3 rounded-xl border-2 border-[var(--border-color)] p-3 text-left hover:border-[var(--gold-primary)]/40 transition-colors" onClick={() => handleShopBuy("xp_boost")}>
                     <Zap size={18} className="text-[var(--gold-primary)]" />
                     <div className="flex-1">
                       <div className="text-xs font-black">2x XP Boost</div>
                       <div className="text-[9px] text-[var(--text-secondary)]">Double XP</div>
                     </div>
                     <div className="text-xs font-black">75 <Gem size={10} className="inline" /></div>
-                  </div>
+                  </button>
                 </div>
               </div>
 
@@ -903,7 +904,7 @@ export default function DashboardPage() {
                   <Link
                     href="/pricing"
                     onClick={() => conversionFunnel.dashboardUpgradeCtaClicked("dashboard_card")}
-                    className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-lg bg-[var(--purple-primary)] text-white text-xs font-black uppercase tracking-wider hover:opacity-90 transition-colors"
+                    className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-lg bg-[var(--purple-primary)] text-black text-xs font-black uppercase tracking-wider hover:opacity-90 transition-colors"
                   >
                     <Star size={12} /> Upgrade Now - Limited Time
                   </Link>
@@ -1055,7 +1056,7 @@ export default function DashboardPage() {
 
             <button
               onClick={() => setShowShare(true)}
-              className="w-full py-4 rounded-2xl bg-[var(--green-primary)] text-white font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all shadow-xl shadow-[var(--green-primary)]/20 flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-2xl bg-[var(--green-primary)] text-black font-black text-sm uppercase tracking-widest hover:scale-[1.02] transition-all shadow-xl shadow-[var(--green-primary)]/20 flex items-center justify-center gap-2"
             >
               <Share2 size={18} /> Share My Streak
             </button>
@@ -1081,7 +1082,7 @@ export default function DashboardPage() {
             <div className="text-6xl mb-4">🎉</div>
             <h2 className="text-2xl font-black text-white mb-2">Batch Unlocked!</h2>
             <p className="text-white/70 text-sm mb-6">{archiveUnlock.count} new archive lessons are now waiting for you.</p>
-            <button onClick={() => setArchiveUnlock(null)} className="w-full py-3 bg-[var(--green-primary)] text-white font-black rounded-xl uppercase tracking-widest">Let&apos;s go</button>
+            <button onClick={() => setArchiveUnlock(null)} className="w-full py-3 bg-[var(--green-primary)] text-black font-black rounded-xl uppercase tracking-widest">Let&apos;s go</button>
           </div>
         </div>
       )}

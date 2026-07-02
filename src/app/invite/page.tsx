@@ -86,7 +86,7 @@ function InviteContent() {
 
         <Link
           href={ref ? `/?ref=${encodeURIComponent(ref)}` : "/"}
-          className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all mb-3 text-center"
+          className="block w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all mb-3 text-center"
         >
           Be a 10x PM Now
         </Link>

@@ -110,7 +110,7 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
                     className="h-6.5 w-6.5 sm:h-7 sm:w-7 rounded-full object-cover transition-all border border-[var(--border-color)]"
                   />
                 ) : (
-                  <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs font-black text-white bg-[var(--green-primary)]">
+                  <div className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs font-black text-black bg-[var(--green-primary)]">
                     {name?.charAt(0).toUpperCase() || "P"}
                   </div>
                 )}
@@ -123,24 +123,24 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
             </Link>
 
             {/* Streak */}
-            <div className="flex items-center gap-0.5 flex-shrink-0">
+            <div className="flex items-center gap-0.5 flex-shrink-0" aria-label={`${streakCount} day streak`}>
               <Flame
                 size={16}
                 className={cn(
                   "streak-flame",
-                  streakCount > 0 ? "text-[var(--orange-primary)]" : "text-gray-500"
+                  streakCount > 0 ? "text-[var(--orange-primary)]" : "text-[var(--text-secondary)]"
                 )}
               />
               <span className={cn(
                 "font-black text-xs sm:text-sm tabular-nums",
-                streakCount > 0 ? "text-[var(--orange-primary)]" : "text-gray-500"
+                streakCount > 0 ? "text-[var(--orange-primary)]" : "text-[var(--text-secondary)]"
               )}>
                 {streakCount}
               </span>
             </div>
 
             {/* Gems */}
-            <div className="hidden sm:flex items-center gap-0.5 flex-shrink-0">
+            <div className="hidden sm:flex items-center gap-0.5 flex-shrink-0" aria-label={`${gems} gems`}>
               <Gem size={16} className="text-[var(--blue-primary)]" />
               <span className="font-black text-sm tabular-nums text-[var(--blue-primary)]">{gems}</span>
             </div>
@@ -155,7 +155,7 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
             )}
 
             {/* XP */}
-            <div className="flex items-center gap-1 bg-[var(--gold-primary)]/10 px-2 py-1 rounded-full flex-shrink-0">
+            <div className="flex items-center gap-1 bg-[var(--gold-primary)]/10 px-2 py-1 rounded-full flex-shrink-0" aria-label={`${xp} XP`}>
               <Zap size={13} className="text-[var(--gold-primary)]" />
               <span className="font-black text-xs tabular-nums text-[var(--gold-primary)]">{xp}</span>
             </div>
@@ -164,7 +164,7 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
       </header>
 
       {/* Bottom navigation - fixed */}
-      <nav className={ds.bottomNav}>
+      <nav className={ds.bottomNav} aria-label="Primary">
         <div className="max-w-5xl mx-auto px-2 flex h-16">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -190,6 +190,7 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={active ? "page" : undefined}
                 className={cn(
                   "flex-1 flex flex-col items-center justify-center gap-0.5 transition-all duration-150 min-w-0",
                   item.aiCapsule && "relative",
@@ -201,7 +202,7 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
                 {item.aiCapsule && (
                   <span
                     className={cn(
-                      "nav-ai-capsule pointer-events-none absolute top-0.5 right-0.5 z-10 inline-flex items-center justify-center text-[8px] font-black uppercase tracking-wide px-1.5 py-0.5 rounded-full leading-none border shadow-sm",
+                      "nav-ai-capsule pointer-events-none absolute top-0.5 right-0.5 z-10 inline-flex items-center justify-center text-[9px] font-black uppercase tracking-wide px-1.5 py-0.5 rounded-full leading-none border shadow-sm",
                       item.aiCapsuleStagger && "nav-ai-capsule--sweep-delay",
                       active
                         ? "bg-[var(--green-primary)]/20 text-[var(--green-primary)] border-[var(--green-primary)]/45"
@@ -226,7 +227,7 @@ export default function Navbar({ streakCount, xp, gems, credits, avatarUrl, name
                   className={cn(
                     "font-bold text-center max-w-full px-0.5",
                     item.compactNavLabel || (item.aiCapsule && item.label.length > 8)
-                      ? "text-[8px] sm:text-[9px] leading-tight"
+                      ? "text-[10px] leading-tight"
                       : "text-[10px] leading-none",
                     active ? "text-[var(--green-primary)]" : ""
                   )}

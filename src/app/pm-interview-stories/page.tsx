@@ -93,7 +93,7 @@ export default function PmInterviewStoriesPage() {
             The 10 story types every PM candidate should prepare, the question types they cover,
             and the tight STAR structure that keeps answers sharp.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Practice Stories Daily — Free →
           </Link>
         </section>
@@ -155,7 +155,7 @@ export default function PmInterviewStoriesPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Your Stories Out Loud Daily</h2>
           <p className="text-white/60 mb-6">Daily PM behavioural scenarios with AI feedback on structure and specificity.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

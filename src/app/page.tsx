@@ -194,7 +194,7 @@ export default async function Home() {
             </BrowserLink>
             <BrowserLink
               href="/login"
-              className="px-3 sm:px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs sm:text-sm font-black transition-all"
+              className="px-3 sm:px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-xs sm:text-sm font-black transition-all"
             >
               Sign Up Free
             </BrowserLink>
@@ -245,13 +245,13 @@ export default async function Home() {
             <div className="flex flex-col sm:flex-row gap-3">
               <BrowserLink
                 href="/login"
-                className="inline-flex justify-center items-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-base font-black transition-all flex-1"
+                className="inline-flex justify-center items-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-base font-black transition-all flex-1"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="white" fillOpacity="0.9"/>
-                  <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="white" fillOpacity="0.9"/>
-                  <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="white" fillOpacity="0.9"/>
-                  <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="white" fillOpacity="0.9"/>
+                  <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#11250a" fillOpacity="0.95"/>
+                  <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#11250a" fillOpacity="0.95"/>
+                  <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="#11250a" fillOpacity="0.95"/>
+                  <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="#11250a" fillOpacity="0.95"/>
                 </svg>
                 Sign up with Google
               </BrowserLink>
@@ -313,7 +313,7 @@ export default async function Home() {
               </div>
             </div>
             {/* Floating XP chip */}
-            <div className="absolute -top-3 -right-3 rounded-full bg-[var(--green-primary)] text-white text-xs font-black px-3 py-1.5 shadow-[0_3px_0_0_var(--green-dark)] rotate-3">
+            <div className="absolute -top-3 -right-3 rounded-full bg-[var(--green-primary)] text-black text-xs font-black px-3 py-1.5 shadow-[0_3px_0_0_var(--green-dark)] rotate-3">
               +20 XP
             </div>
           </div>
@@ -373,7 +373,7 @@ export default async function Home() {
             </div>
             <div className="text-sm text-[var(--text-secondary)] space-y-1.5 leading-relaxed">
               <p>292+ Archive Lessons, Unlimited AI Lessons, AI Interview Prep, PM Jobs Board, WhatsApp Community.</p>
-              <BrowserLink href="/pricing" className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-[var(--purple-primary)] text-white text-xs font-black">
+              <BrowserLink href="/pricing" className="inline-block mt-2 px-3 py-1.5 rounded-lg bg-[var(--purple-primary)] text-black text-xs font-black">
                 View Pricing →
               </BrowserLink>
             </div>
@@ -489,7 +489,7 @@ export default async function Home() {
               <p className="text-sm font-black text-[var(--text-secondary)] mb-3">🔒 Quiz unlocks after signup — 3 questions · +10 XP bonus</p>
               <BrowserLink
                 href="/signup"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm transition-all"
               >
                 Start for free — takes 30 seconds
               </BrowserLink>
@@ -597,7 +597,7 @@ export default async function Home() {
           <div className="mt-8 text-center">
             <BrowserLink
               href="/pricing"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--purple-primary)] hover:bg-[var(--purple-dark)] text-white text-sm font-black transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--purple-primary)] hover:bg-[var(--purple-dark)] text-black text-sm font-black transition-all"
             >
               View Pro Pricing
             </BrowserLink>
@@ -663,7 +663,7 @@ export default async function Home() {
           <div className="mt-8 text-center">
             <Link
               href="/learn"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--blue-primary)] hover:bg-[var(--blue-dark)] text-white text-sm font-black transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--blue-primary)] hover:bg-[var(--blue-dark)] text-black text-sm font-black transition-all"
             >
               View all lessons
             </Link>
@@ -726,7 +726,7 @@ export default async function Home() {
           <div className="text-center">
             <Link
               href="/research"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--purple-primary)] hover:bg-[var(--purple-dark)] text-white text-sm font-black transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--purple-primary)] hover:bg-[var(--purple-dark)] text-black text-sm font-black transition-all"
             >
               View all research
             </Link>
@@ -750,13 +750,13 @@ export default async function Home() {
             <div className="flex flex-col gap-3 flex-shrink-0">
               <BrowserLink
                 href="/login"
-                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-sm font-black transition-all w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-sm font-black transition-all w-full sm:w-auto"
               >
                 <svg width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="white" fillOpacity="0.9"/>
-                  <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="white" fillOpacity="0.9"/>
-                  <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="white" fillOpacity="0.9"/>
-                  <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="white" fillOpacity="0.9"/>
+                  <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#11250a" fillOpacity="0.95"/>
+                  <path d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#11250a" fillOpacity="0.95"/>
+                  <path d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z" fill="#11250a" fillOpacity="0.95"/>
+                  <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z" fill="#11250a" fillOpacity="0.95"/>
                 </svg>
                 Sign up with Google
               </BrowserLink>

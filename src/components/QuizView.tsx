@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -114,6 +114,12 @@ export default function QuizView({
   const [generatingDeepDive, setGeneratingDeepDive] = useState(false);
   const [deepDiveError, setDeepDiveError] = useState("");
   const [user, setUser] = useState<any>(null);
+  const continueRef = useRef<HTMLButtonElement>(null);
+
+  // A11y: after answering, move keyboard focus to Continue (options become disabled)
+  useEffect(() => {
+    if (confirmed) continueRef.current?.focus();
+  }, [confirmed]);
 
   useEffect(() => {
     fetch("/api/auth/me")
@@ -268,7 +274,8 @@ export default function QuizView({
                   {relatedLessons.map((lesson) => (
                     <Link
                       key={lesson.id}
-                      href={lesson.isLocked ? "#" : `/lesson/${lesson.id}`}
+                      href={lesson.isLocked ? "/pricing" : `/lesson/${lesson.id}`}
+                      aria-disabled={lesson.isLocked || undefined}
                       className={cn(
                         "block rounded-2xl border p-3 transition-colors",
                         lesson.isLocked
@@ -303,7 +310,7 @@ export default function QuizView({
                   <button
                     onClick={handleDeepDive}
                     disabled={generatingDeepDive}
-                    className="flex-1 py-3 rounded-2xl bg-[var(--blue-primary)] hover:opacity-90 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+                    className="flex-1 py-3 rounded-2xl bg-[var(--blue-primary)] hover:opacity-90 text-black font-bold text-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
                   >
                     {generatingDeepDive ? (
                       <>
@@ -337,7 +344,7 @@ export default function QuizView({
 
           <button
             onClick={() => setPhase("quiz")}
-            className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
           >
             Test My Knowledge <ArrowRight size={16} />
           </button>
@@ -419,7 +426,7 @@ export default function QuizView({
 
           <a
             href="/dashboard"
-            className="block w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all mb-3 flex items-center justify-center gap-2"
+            className="block w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all mb-3 flex items-center justify-center gap-2"
           >
             {archiveUnlock ? "See New Lessons" : "Keep My Streak Going"} <ArrowRight size={16} />
           </a>
@@ -429,7 +436,7 @@ export default function QuizView({
 
     return (
       <div className="max-w-2xl mx-auto px-4 py-6">
-        <div className="h-3 bg-[var(--bg-secondary)] rounded-full overflow-hidden mb-6">
+        <div className="h-3 bg-[var(--bg-secondary)] rounded-full overflow-hidden mb-6" role="progressbar" aria-valuenow={Math.round(progress)} aria-valuemin={0} aria-valuemax={100} aria-label="Quiz progress">
           <motion.div
             className="h-full bg-[var(--green-primary)] rounded-full"
             animate={{ width: `${progress}%` }}
@@ -478,7 +485,7 @@ export default function QuizView({
                         !confirmed && selected === optionIndex
                           ? "border-[var(--blue-primary)] text-[var(--blue-primary)]"
                           : confirmed && optionIndex === question.correctIndex
-                            ? "border-[var(--green-primary)] bg-[var(--green-primary)] text-white"
+                            ? "border-[var(--green-primary)] bg-[var(--green-primary)] text-black"
                             : confirmed && selected === optionIndex && !isCorrect
                               ? "border-[var(--red-primary)] bg-[var(--red-primary)] text-white"
                               : "border-[var(--border-color)] text-[var(--text-secondary)]"
@@ -502,6 +509,8 @@ export default function QuizView({
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                role="status"
+                aria-live="polite"
                 className={cn(
                   "mt-4 p-4 rounded-2xl text-sm",
                   isCorrect
@@ -530,7 +539,7 @@ export default function QuizView({
               className={cn(
                 "w-full py-3.5 rounded-2xl font-black text-sm uppercase tracking-wide transition-all",
                 selected !== null
-                  ? "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white"
+                  ? "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black"
                   : "bg-[var(--bg-secondary)] border-b-4 border-[var(--bg-secondary)] text-[var(--text-secondary)] cursor-not-allowed"
               )}
             >
@@ -538,8 +547,9 @@ export default function QuizView({
             </button>
           ) : (
             <button
+              ref={continueRef}
               onClick={handleNext}
-              className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2"
             >
               {currentQ < questions.length - 1 ? (
                 <>Continue <ArrowRight size={16} /></>

@@ -117,7 +117,7 @@ export default function RazorpayPmInterviewPage() {
             and what Razorpay PMs say separates candidates who get offers from those who don&apos;t.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/signup" className="bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+            <Link href="/signup" className="bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
               Start Razorpay PM Prep — Free
             </Link>
             <Link href="/apm-program-preparation" className="bg-white/10 hover:bg-white/15 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
@@ -187,7 +187,7 @@ export default function RazorpayPmInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build the Fintech PM Intuition Razorpay Tests For</h2>
           <p className="text-white/60 mb-6">Daily PM practice calibrated to Razorpay&apos;s first-principles and fintech bar.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

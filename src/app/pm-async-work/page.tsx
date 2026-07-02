@@ -93,7 +93,7 @@ export default function PmAsyncWorkPage() {
             5 reasons async compounds, 5 scenarios async works best, 5 scenarios sync wins,
             and 6 async PM skills to develop.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Writing Skills Daily — Free →
           </Link>
         </section>
@@ -169,7 +169,7 @@ export default function PmAsyncWorkPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Writing Muscle Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on concise, structured writing — the foundation of async work.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

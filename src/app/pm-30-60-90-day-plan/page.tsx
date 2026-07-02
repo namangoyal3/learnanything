@@ -113,7 +113,7 @@ export default function Pm30_60_90DayPlanPage() {
             Specific deliverables for each 30-day phase, how to share the plan with your manager,
             and the 6 mistakes that derail new PMs in their first quarter.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Stay Sharp Daily — Free →
           </Link>
         </section>
@@ -187,7 +187,7 @@ export default function Pm30_60_90DayPlanPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Stay Sharp Before and During Your New Role</h2>
           <p className="text-white/60 mb-6">Daily PM scenarios keep you fluent in product, metrics, and stakeholder thinking.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

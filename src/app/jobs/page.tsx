@@ -196,7 +196,7 @@ export default function JobsPage() {
               className={cn(
                 "px-4 py-2 text-xs font-black uppercase tracking-wide rounded-xl transition-colors",
                 tab === "browse"
-                  ? "bg-[var(--green-primary)] text-white"
+                  ? "bg-[var(--green-primary)] text-black"
                   : "text-[var(--text-secondary)] hover:text-white"
               )}
             >
@@ -207,7 +207,7 @@ export default function JobsPage() {
               className={cn(
                 "px-4 py-2 text-xs font-black uppercase tracking-wide rounded-xl transition-colors",
                 tab === "paste"
-                  ? "bg-[var(--green-primary)] text-white"
+                  ? "bg-[var(--green-primary)] text-black"
                   : "text-[var(--text-secondary)] hover:text-white"
               )}
             >
@@ -237,7 +237,7 @@ export default function JobsPage() {
                   className={cn(
                     "px-3 py-1.5 text-xs font-black uppercase tracking-wide rounded-xl transition-colors",
                     targetMode === mode
-                      ? "bg-[var(--green-primary)] text-white"
+                      ? "bg-[var(--green-primary)] text-black"
                       : "text-[var(--text-secondary)] hover:text-white"
                   )}
                 >
@@ -260,7 +260,7 @@ export default function JobsPage() {
           <button
             onClick={handleGeneratePlan}
             disabled={creatingPlan}
-            className="mt-4 w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-sm font-black uppercase tracking-wide disabled:opacity-60 transition-all"
+            className="mt-4 w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-sm font-black uppercase tracking-wide disabled:opacity-60 transition-all"
           >
             {creatingPlan ? "Generating plan..." : "Generate my plan"}
           </button>
@@ -295,7 +295,7 @@ export default function JobsPage() {
             className={cn(
               "flex items-center gap-1.5 px-4 py-2.5 rounded-xl border-2 border-b-4 active:border-b-2 active:translate-y-[2px] text-xs font-black uppercase tracking-wide transition-all",
               remoteOnly
-                ? "bg-[var(--green-primary)] border-[var(--green-dark)] text-white"
+                ? "bg-[var(--green-primary)] border-[var(--green-dark)] text-black"
                 : "bg-[var(--bg-card)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-white"
             )}
           >
@@ -363,7 +363,7 @@ export default function JobsPage() {
                     href={job.applyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-shrink-0 flex items-center gap-1.5 bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide px-4 py-2.5 rounded-xl transition-all"
+                    className="flex-shrink-0 flex items-center gap-1.5 bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-xs font-black uppercase tracking-wide px-4 py-2.5 rounded-xl transition-all"
                   >
                     Apply <ExternalLink size={11} />
                   </a>
@@ -387,7 +387,7 @@ export default function JobsPage() {
                     <p className="text-xs text-[var(--purple-primary)] font-bold mb-6">
                       Unlock the full PM Jobs board with Pro
                     </p>
-                    <div className="inline-flex items-center gap-2 bg-[var(--purple-primary)] text-white text-xs font-black px-6 py-3 rounded-xl border-b-4 border-black/30 group-hover:opacity-90 transition-all uppercase tracking-widest">
+                    <div className="inline-flex items-center gap-2 bg-[var(--purple-primary)] text-black text-xs font-black px-6 py-3 rounded-xl border-b-4 border-black/30 group-hover:opacity-90 transition-all uppercase tracking-widest">
                       <Sparkles size={14} /> Upgrade to Unlock
                     </div>
                   </div>
@@ -438,7 +438,7 @@ export default function JobsPage() {
             {createdTargetId && (
               <Link
                 href={`/interview-sprint?targetId=${encodeURIComponent(createdTargetId)}`}
-                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide px-3 py-2 transition-all"
+                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-xs font-black uppercase tracking-wide px-3 py-2 transition-all"
               >
                 Start daily drill
               </Link>
@@ -465,7 +465,7 @@ export default function JobsPage() {
             <p className="text-sm font-black">Want direct apply links and PM leader job alerts?</p>
             <p className="text-xs text-[var(--text-secondary)] mt-0.5">Upgrade to Pro to unlock the full job board experience.</p>
           </div>
-          <Link href="/pricing" className="flex-shrink-0 bg-[var(--purple-primary)] text-white text-xs font-black uppercase tracking-wide px-4 py-2 rounded-xl border-b-4 border-black/30 active:border-b-2 active:translate-y-[2px] hover:opacity-90 transition-all">
+          <Link href="/pricing" className="flex-shrink-0 bg-[var(--purple-primary)] text-black text-xs font-black uppercase tracking-wide px-4 py-2 rounded-xl border-b-4 border-black/30 active:border-b-2 active:translate-y-[2px] hover:opacity-90 transition-all">
             Upgrade
           </Link>
         </div>

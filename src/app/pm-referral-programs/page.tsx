@@ -98,7 +98,7 @@ export default function PmReferralProgramsPage() {
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
             5 signals referrals work, 5 failure modes, 5 design principles, 5 metrics to track, and 4 famous examples.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Growth Skills Daily — Free →
           </Link>
         </section>
@@ -187,7 +187,7 @@ export default function PmReferralProgramsPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Growth PM Skills Daily</h2>
           <p className="text-white/60 mb-6">Daily scenarios on referral design, virality, and sharing mechanics.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

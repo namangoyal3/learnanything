@@ -39,7 +39,7 @@ export default function RoleRoadmapsPage() {
       </p>
       <Link
         href="/pricing"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] text-white font-black text-sm"
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] text-black font-black text-sm"
       >
         View Pro pricing <ArrowRight size={16} />
       </Link>

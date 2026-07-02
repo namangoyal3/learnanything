@@ -67,8 +67,8 @@ export default function ShareCard({ isOpen, onClose }: ShareCardProps) {
         <button
           onClick={onClose}
           className="absolute top-3 right-3 p-1 rounded-full bg-white/10 hover:bg-white/20 text-white z-10"
-        >
-          <X size={16} />
+         aria-label="Close">
+          <X size={16} aria-hidden />
         </button>
 
         {/* Streak Card Preview */}
@@ -113,7 +113,7 @@ export default function ShareCard({ isOpen, onClose }: ShareCardProps) {
           {typeof navigator !== "undefined" && "share" in navigator && (
             <button
               onClick={handleNativeShare}
-              className="w-full py-3 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-white font-bold text-sm flex items-center justify-center gap-2 transition-colors"
+              className="w-full py-3 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] text-black font-bold text-sm flex items-center justify-center gap-2 transition-colors"
             >
               <Share2 size={16} /> Share
             </button>

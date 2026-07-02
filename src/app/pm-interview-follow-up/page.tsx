@@ -99,7 +99,7 @@ export default function PmInterviewFollowUpPage() {
             The 4-step post-interview playbook, thank-you email templates,
             how to handle silence, and how to turn rejection into a future offer.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Keep Practicing While You Wait — Free →
           </Link>
         </section>
@@ -155,7 +155,7 @@ export default function PmInterviewFollowUpPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Stay Sharp Through the Wait</h2>
           <p className="text-white/60 mb-6">Daily PM practice keeps you interview-ready for the next opportunity.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

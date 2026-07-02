@@ -95,7 +95,7 @@ export default function SaasProductManagerPage() {
             B2B SaaS metrics, the unique challenges SaaS PMs face, top companies hiring in India,
             and how to break into SaaS PM from a consumer or adjacent background.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Start SaaS PM Prep — Free →
           </Link>
         </section>
@@ -157,7 +157,7 @@ export default function SaasProductManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build SaaS PM Intuition Daily</h2>
           <p className="text-white/60 mb-6">B2B scenarios on metrics, customer requests, and enterprise trade-offs.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

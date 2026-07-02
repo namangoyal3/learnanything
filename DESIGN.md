@@ -85,3 +85,39 @@ Only **two** saturated colors live in the palette. Everything else is neutral ch
 | 2026-04-14 | Bumped H2 scale `text-3xl sm:text-4xl` → `text-4xl sm:text-5xl` | Previous hierarchy was flat; new scale creates clear display/body tiers |
 | 2026-04-14 | Section padding `py-20` → `py-28` | Card-heavy homepage felt like a wall; more breathing room creates narrative rhythm |
 | 2026-04-14 | Initial DESIGN.md created | Locking system for 800+ SEO pages and future agent-generated content |
+
+## Accessibility (added 2026-07-03, from /plan-design-review audit)
+
+**Contrast.** Solid brand-color fills (green/purple/orange/blue) take BLACK text
+— white-on-#58cc02 is 2.09:1 and fails WCAG at every size; black is 10.05:1.
+Tinted fills (`bg-*/10`, `/15`) on charcoal keep white text. Secondary text is
+`--text-secondary` (#a8a8a8) — never `text-gray-500` (#6b7280 fails at small
+sizes) and never `text-white/40` below 14px.
+
+**Type floor.** Minimum rendered size 10px, and 10px only for captions/badges.
+Nothing at 8–9px — bottom-nav labels are 10px minimum.
+
+**Focus.** Global `:focus-visible` ring (blue, 3px) lives in globals.css and
+must never be removed. Never `outline: none` without a replacement.
+
+**Keyboard.** Anything clickable is a `<button>` or `<a>` — never a div with
+onClick. After an action disables the focused control (e.g. quiz confirm),
+move focus to the next actionable element.
+
+**Screen readers.** Icon-only controls get `aria-label`. Decorative emoji/icons
+get `aria-hidden`. Stat clusters (streak/XP/gems) get labeled wrappers. Dynamic
+feedback (quiz results, purchase confirmations) renders in `role="status"`.
+One `h1` per screen. Loading states get `role="status"`.
+
+**Motion.** All framer-motion runs under `<MotionConfig reducedMotion="user">`
+(MotionProvider in layout). Every CSS animation added to globals.css must also
+be added to the `prefers-reduced-motion: reduce` block. No infinite animation
+without reduced-motion coverage.
+
+**Touch targets.** 44px standard, 36px absolute minimum. Modal close buttons
+use the shared 44px treatment.
+
+## Loading skeletons
+Skeleton blocks: `bg-[var(--bg-card)] animate-pulse` shapes matching the final
+layout geometry (same radii/borders), wrapped in `role="status"` with an
+sr-only label. No spinner-only or text-only loading screens on app surfaces.

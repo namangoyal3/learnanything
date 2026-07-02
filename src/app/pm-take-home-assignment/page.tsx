@@ -101,7 +101,7 @@ export default function PmTakeHomeAssignmentPage() {
             The 8-section structure, 5-phase time budget, 6 stand-out moves,
             and 6 mistakes that get otherwise-strong candidates rejected.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Practice Written PM Cases Daily — Free →
           </Link>
         </section>
@@ -177,7 +177,7 @@ export default function PmTakeHomeAssignmentPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Written Cases Daily</h2>
           <p className="text-white/60 mb-6">Daily PM scenarios that build the thinking and writing take-homes require.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

@@ -92,7 +92,7 @@ export default function DailyChallengePage() {
         </p>
         <Link
           href="/dashboard"
-          className="px-6 py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all"
+          className="px-6 py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all"
         >
           Back to Dashboard
         </Link>

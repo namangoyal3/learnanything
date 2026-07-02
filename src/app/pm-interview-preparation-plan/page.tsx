@@ -182,7 +182,7 @@ export default function PmInterviewPreparationPlanPage() {
             Week-by-week PM interview prep — what to study, how to practice, and how to know
             you&apos;re ready for Google, Flipkart, Razorpay, and top startups.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Start Your Prep Plan Today — Free →
           </Link>
         </section>
@@ -249,7 +249,7 @@ export default function PmInterviewPreparationPlanPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Follow the Plan. Track Your Progress.</h2>
           <p className="text-white/60 mb-6">PM Streak keeps you on your prep plan with daily questions, streaks, and readiness tracking.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

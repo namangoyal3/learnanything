@@ -43,7 +43,7 @@ export default function MarketingNav() {
           </Link>
           <Link
             href="/signup"
-            className="px-3 sm:px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs sm:text-sm font-black transition-all"
+            className="px-3 sm:px-4 py-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black text-xs sm:text-sm font-black transition-all"
           >
             Start Free
           </Link>

@@ -4,6 +4,7 @@ import { PostHogProvider } from "@/components/providers/posthog-provider";
 import GoogleAnalyticsTracker from "@/components/GoogleAnalyticsTracker";
 import CampaignTracker from "@/components/CampaignTracker";
 import { MarketingHeader, MarketingFooter } from "@/components/MarketingChrome";
+import MotionProvider from "@/components/MotionProvider";
 import { Suspense } from "react";
 import "./globals.css";
 
@@ -144,14 +145,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased min-h-screen flex flex-col">
         <PostHogProvider>
-          <CampaignTracker />
-          <Suspense fallback={null}>
-            <MarketingHeader />
-          </Suspense>
-          {children}
-          <Suspense fallback={null}>
-            <MarketingFooter />
-          </Suspense>
+          <MotionProvider>
+            <CampaignTracker />
+            <Suspense fallback={null}>
+              <MarketingHeader />
+            </Suspense>
+            {children}
+            <Suspense fallback={null}>
+              <MarketingFooter />
+            </Suspense>
+          </MotionProvider>
         </PostHogProvider>
         {gaId && (
           <>

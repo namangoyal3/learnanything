@@ -105,8 +105,16 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-[var(--green-primary)] text-lg font-bold">Loading lesson...</div>
+      <div role="status" aria-label="Loading lesson" className="min-h-screen">
+        <div className="sticky top-0 z-50 border-b-2 border-[var(--border-color)] bg-[var(--bg-secondary)] h-14" />
+        <div className="max-w-2xl mx-auto px-4 py-6 space-y-4">
+          <div className="h-8 w-3/4 rounded-xl bg-[var(--bg-card)] animate-pulse" />
+          <div className="h-4 w-1/3 rounded-lg bg-[var(--bg-card)] animate-pulse" />
+          <div className="h-52 rounded-2xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] animate-pulse" />
+          <div className="h-72 rounded-2xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] animate-pulse" />
+          <div className="h-12 rounded-2xl bg-[var(--bg-card)] animate-pulse" />
+          <span className="sr-only">Loading lesson…</span>
+        </div>
       </div>
     );
   }
@@ -117,14 +125,14 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
     <div className="min-h-screen">
       <header className="sticky top-0 z-50 border-b-2 border-[var(--border-color)] bg-[var(--bg-secondary)]">
         <div className="max-w-2xl mx-auto px-4 h-14 flex items-center gap-3">
-          <Link href="/dashboard" className="text-[var(--text-secondary)] hover:text-white p-2 -ml-2 rounded-xl">
+          <Link href="/dashboard" aria-label="Back to dashboard" className="text-[var(--text-secondary)] hover:text-white p-3 -ml-3 rounded-xl">
             <ArrowLeft size={20} />
           </Link>
           <div className="flex-1 min-w-0">
             <div className="text-[10px] font-black uppercase tracking-wider text-[var(--text-secondary)]">
               {lesson.category.icon} {lesson.category.name}
             </div>
-            <h1 className="text-sm font-black truncate">{lesson.title}</h1>
+            <p className="text-sm font-black truncate">{lesson.title}</p>
           </div>
           <div className="flex items-center gap-1 bg-[var(--gold-primary)]/10 px-2.5 py-1 rounded-full flex-shrink-0">
             <span className="font-black text-xs tabular-nums text-[var(--gold-primary)]">+{lesson.xpReward} XP</span>
@@ -132,6 +140,7 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
         </div>
       </header>
 
+      <main>
       <QuizView
         lessonTitle={lesson.title}
         content={lesson.content}
@@ -151,6 +160,7 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
         streakGoal={streakGoal}
         onComplete={handleComplete}
       />
+      </main>
     </div>
   );
 }

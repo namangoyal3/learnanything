@@ -49,7 +49,7 @@ export default async function NotesPage() {
             {isPro && hasNotes && (
               <Link
                 href="/notes/new"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-[var(--purple-primary)] hover:opacity-90 text-white font-black text-sm uppercase tracking-wide transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-[var(--purple-primary)] hover:opacity-90 text-black font-black text-sm uppercase tracking-wide transition-all"
               >
                 <Plus className="w-4 h-4" />
                 New Note
@@ -72,7 +72,7 @@ export default async function NotesPage() {
             </p>
             <Link
               href="/pricing"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--purple-primary)] hover:opacity-90 text-white font-black text-sm uppercase tracking-wide transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[var(--purple-primary)] hover:opacity-90 text-black font-black text-sm uppercase tracking-wide transition-all"
             >
               Upgrade to Pro
             </Link>
@@ -125,7 +125,7 @@ export default async function NotesPage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href="/notes/new"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-black font-black text-sm uppercase tracking-wide transition-all"
                   >
                     <Plus className="w-5 h-5" />
                     Create First Note

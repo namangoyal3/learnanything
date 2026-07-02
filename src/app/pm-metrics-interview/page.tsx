@@ -103,7 +103,7 @@ export default function PmMetricsInterviewPage() {
             The metrics round separates PMs who think in data from those who fake it.
             Here are the frameworks and questions you need — with 30+ real interview examples.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Practice Metrics Questions Daily — Free →
           </Link>
         </section>
@@ -149,7 +149,7 @@ export default function PmMetricsInterviewPage() {
               ))}
             </div>
             <div className="text-center mt-10">
-              <Link href="/interview-prep" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+              <Link href="/interview-prep" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
                 Practice with AI Feedback →
               </Link>
             </div>
@@ -172,7 +172,7 @@ export default function PmMetricsInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Metrics Intuition Every Day</h2>
           <p className="text-white/60 mb-6">Daily 2-minute lessons from real PM interviews. Free trial, no credit card.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

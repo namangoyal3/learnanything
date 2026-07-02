@@ -53,15 +53,15 @@ export default function LeaderboardPage() {
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-pulse text-[var(--green-primary)] text-lg font-bold">Loading...</div>
+        <div role="status" className="animate-pulse text-[var(--green-primary)] text-lg font-bold">Loading...</div>
       </div>
     );
   }
 
   const getRankIcon = (rank: number) => {
-    if (rank === 1) return <Crown size={20} className="text-[var(--gold-primary)]" />;
-    if (rank === 2) return <Medal size={20} className="text-gray-300" />;
-    if (rank === 3) return <Medal size={20} className="text-amber-600" />;
+    if (rank === 1) return <><Crown size={20} aria-hidden className="text-[var(--gold-primary)]" /><span className="sr-only">Rank 1</span></>;
+    if (rank === 2) return <><Medal size={20} aria-hidden className="text-gray-300" /><span className="sr-only">Rank 2</span></>;
+    if (rank === 3) return <><Medal size={20} aria-hidden className="text-amber-600" /><span className="sr-only">Rank 3</span></>;
     return <span className="text-sm font-bold text-[var(--text-secondary)] w-5 text-center">{rank}</span>;
   };
 
@@ -90,7 +90,7 @@ export default function LeaderboardPage() {
               className={cn(
                 "flex-1 py-2 rounded-xl text-xs font-black uppercase tracking-wide transition-colors",
                 type === t
-                  ? "bg-[var(--green-primary)] text-white"
+                  ? "bg-[var(--green-primary)] text-black"
                   : "text-[var(--text-secondary)] hover:text-white"
               )}
             >
@@ -120,7 +120,7 @@ export default function LeaderboardPage() {
                 )}
               >
                 <div className="w-8 flex justify-center">{getRankIcon(entry.rank)}</div>
-                <div className="w-9 h-9 rounded-xl bg-[var(--green-primary)] flex items-center justify-center text-sm font-black text-white">
+                <div className="w-9 h-9 rounded-xl bg-[var(--green-primary)] flex items-center justify-center text-sm font-black text-black">
                   {entry.name.charAt(0).toUpperCase()}
                 </div>
                 <div className="flex-1 min-w-0">

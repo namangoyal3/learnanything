@@ -89,7 +89,7 @@ export default function PlatformProductManagerPage() {
             How platform PMs differ from feature PMs, the 5 kinds of platforms you can own,
             the success signals that matter, and how to break in.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Start Platform PM Prep — Free →
           </Link>
         </section>
@@ -163,7 +163,7 @@ export default function PlatformProductManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Platform PM Intuition Daily</h2>
           <p className="text-white/60 mb-6">Scenarios on APIs, developer experience, and platform trade-offs.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

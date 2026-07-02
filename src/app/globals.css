@@ -233,6 +233,18 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Visible keyboard focus everywhere (WCAG 2.4.7) — matches .ds-focus-ring */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--blue-primary) 55%, transparent);
+  border-radius: 0.5rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .nav-ai-capsule::after {
     animation: none;
@@ -240,7 +252,15 @@ body {
   }
   .animate-pulse,
   .animate-count-up,
-  .hover-lift {
+  .hover-lift,
+  .streak-flame,
+  .animate-shimmer,
+  .xp-pop,
+  .correct-flash,
+  .wrong-flash,
+  .tab-active,
+  .card-in,
+  .progress-fill {
     animation: none;
     transition: none;
   }

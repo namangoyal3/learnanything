@@ -107,7 +107,7 @@ export default function PmMockInterviewPage() {
             The 4 types of mock interviews, how to get unbiased feedback, a 15-point evaluation rubric,
             and how to turn every mock into measurable improvement.
           </p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-black font-black px-8 py-3 rounded-2xl transition-all">
             Try AI Mock Interview — Free →
           </Link>
         </section>
@@ -190,7 +190,7 @@ export default function PmMockInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Get Unlimited AI Mock Interviews</h2>
           <p className="text-white/60 mb-6">Daily PM questions with structured feedback — practice without scheduling.</p>
-          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-black font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>
