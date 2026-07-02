@@ -130,9 +130,9 @@ export default function BestProjectManagementToolsSmallTeams2026Page() {
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
       <JsonLd data={articleSchema(articleData)} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📊</span> SEO Analysis: High Traffic Keyword • Medium Competition
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -143,10 +143,10 @@ export default function BestProjectManagementToolsSmallTeams2026Page() {
             In 2026, AI-powered features and seamless collaboration have become essential.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
-            <span className="bg-[#1a1a2e] text-purple-300 px-3 py-1 rounded-full text-sm">Project Management</span>
-            <span className="bg-[#1a1a2e] text-purple-300 px-3 py-1 rounded-full text-sm">Small Teams</span>
-            <span className="bg-[#1a1a2e] text-purple-300 px-3 py-1 rounded-full text-sm">AI Tools</span>
-            <span className="bg-[#1a1a2e] text-purple-300 px-3 py-1 rounded-full text-sm">Productivity</span>
+            <span className="bg-[#1f2228] text-[#89e219] px-3 py-1 rounded-full text-sm">Project Management</span>
+            <span className="bg-[#1f2228] text-[#89e219] px-3 py-1 rounded-full text-sm">Small Teams</span>
+            <span className="bg-[#1f2228] text-[#89e219] px-3 py-1 rounded-full text-sm">AI Tools</span>
+            <span className="bg-[#1f2228] text-[#89e219] px-3 py-1 rounded-full text-sm">Productivity</span>
           </div>
           <div className="text-sm text-white/50">
             Published: April 14, 2026 • Updated: April 14, 2026 • By PM Streak Team
@@ -187,7 +187,7 @@ export default function BestProjectManagementToolsSmallTeams2026Page() {
           </div>
         </section>
 
-        <section className="bg-[#0f0f0f] py-12">
+        <section className="bg-[#16181c] py-12">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">Top 5 Project Management Tools for Small Teams</h2>
             
@@ -228,7 +228,7 @@ export default function BestProjectManagementToolsSmallTeams2026Page() {
                   <ul className="space-y-1 mb-4">
                     {tool.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-white/70">
-                        <span className="text-purple-400 mt-1">•</span>
+                        <span className="text-[#89e219] mt-1">•</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -278,7 +278,7 @@ export default function BestProjectManagementToolsSmallTeams2026Page() {
           <div className="space-y-4">
             {IMPLEMENTATION_TIPS.map((tip, index) => (
               <div key={index} className="bg-[#111] border border-white/10 rounded-xl p-4 flex gap-4">
-                <span className="text-purple-400 font-bold flex-shrink-0">{index + 1}.</span>
+                <span className="text-[#89e219] font-bold flex-shrink-0">{index + 1}.</span>
                 <p className="text-white/70">{tip}</p>
               </div>
             ))}
@@ -298,13 +298,13 @@ export default function BestProjectManagementToolsSmallTeams2026Page() {
         </section>
 
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
-          <div className="bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-white/10 rounded-2xl p-8 mb-8">
+          <div className="bg-gradient-to-r from-[#143000]/30 to-blue-900/30 border border-white/10 rounded-2xl p-8 mb-8">
             <h2 className="text-2xl font-bold mb-4">Ready to Boost Your Team&apos;s PM Skills?</h2>
             <p className="text-white/70 mb-6">
               The best project management tool for your small team depends on your specific needs, budget, and growth plans. 
               While traditional tools excel at task management, PM Streak offers the unique advantage of combining project execution with skill development.
             </p>
-            <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+            <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
               Try PM Streak Free →
             </Link>
           </div>

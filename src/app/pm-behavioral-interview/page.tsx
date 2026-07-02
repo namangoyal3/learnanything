@@ -106,9 +106,9 @@ export default function PmBehavioralInterviewPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>💬</span> The tiebreaker round — win it with prepared stories
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -118,7 +118,7 @@ export default function PmBehavioralInterviewPage() {
             Behavioral rounds separate PMs with the same technical skills. Here are 25+ questions,
             the STAR framework, and exactly what interviewers are looking for in each answer.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Behavioral Questions Daily — Free →
           </Link>
         </section>
@@ -130,7 +130,7 @@ export default function PmBehavioralInterviewPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {STAR_STEPS.map(s => (
               <div key={s.letter} className="bg-[#111] border border-white/10 rounded-xl p-4 text-center">
-                <div className="w-10 h-10 rounded-full bg-[#7c3aed]/20 border border-[#7c3aed]/40 flex items-center justify-center text-purple-300 font-bold text-lg mx-auto mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#58cc02]/20 border border-[#58cc02]/40 flex items-center justify-center text-[#89e219] font-bold text-lg mx-auto mb-3">
                   {s.letter}
                 </div>
                 <p className="font-semibold text-white text-sm mb-1">{s.word}</p>
@@ -138,7 +138,7 @@ export default function PmBehavioralInterviewPage() {
               </div>
             ))}
           </div>
-          <div className="mt-5 bg-[#0f0f0f] border border-white/5 rounded-xl p-4 text-center">
+          <div className="mt-5 bg-[#16181c] border border-white/5 rounded-xl p-4 text-center">
             <p className="text-sm text-white/60">Time split: <span className="text-white">10% Situation · 10% Task · 60% Action · 20% Result</span></p>
           </div>
         </section>
@@ -161,8 +161,8 @@ export default function PmBehavioralInterviewPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="bg-[#0a0a0a] border border-[#7c3aed]/20 rounded-lg px-3 py-2">
-                  <p className="text-xs text-purple-400">🎯 {bank.signal}</p>
+                <div className="bg-[#0e1113] border border-[#58cc02]/20 rounded-lg px-3 py-2">
+                  <p className="text-xs text-[#89e219]">🎯 {bank.signal}</p>
                 </div>
               </div>
             ))}
@@ -185,7 +185,7 @@ export default function PmBehavioralInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Behavioral Stories Daily</h2>
           <p className="text-white/60 mb-6">AI feedback on your structure, specificity, and leadership signals.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

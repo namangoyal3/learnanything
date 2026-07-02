@@ -109,9 +109,9 @@ export default function PmHabitsPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🔁</span> Small daily practices. Massive 5-year delta.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -121,7 +121,7 @@ export default function PmHabitsPage() {
             The 10 habits that separate great PMs from average ones. Small, consistent,
             and calibrated to compound over a multi-year career.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Make Daily Practice a Habit — Free →
           </Link>
         </section>
@@ -133,7 +133,7 @@ export default function PmHabitsPage() {
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                 <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                   <p className="font-bold text-white">{i + 1}. {h.habit}</p>
-                  <span className="text-xs bg-[#7c3aed]/20 text-purple-400 px-2 py-0.5 rounded-full">{h.cadence}</span>
+                  <span className="text-xs bg-[#58cc02]/20 text-[#89e219] px-2 py-0.5 rounded-full">{h.cadence}</span>
                 </div>
                 <p className="text-xs text-white/60">{h.why}</p>
               </div>
@@ -142,13 +142,13 @@ export default function PmHabitsPage() {
         </section>
 
         {/* Compound math */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">The Math of Compounding</h2>
             <div className="space-y-3">
               {COMPOUND_MATH.map((c, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4 flex gap-3">
-                  <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                  <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                   <p className="text-sm text-white/70">{c}</p>
                 </div>
               ))}
@@ -171,7 +171,7 @@ export default function PmHabitsPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Make &quot;Practice PM Daily&quot; Your First Habit</h2>
           <p className="text-white/60 mb-6">2 minutes a day on PM scenarios is the easiest compounding habit to start.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

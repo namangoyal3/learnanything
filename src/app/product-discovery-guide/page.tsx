@@ -105,9 +105,9 @@ export default function ProductDiscoveryGuidePage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🔍</span> Build less. Learn faster. Ship what actually matters.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -117,7 +117,7 @@ export default function ProductDiscoveryGuidePage() {
             The 6-phase discovery process for finding the right problems before investing in solutions —
             with user interview templates, assumption testing, and the OST framework.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Discovery Scenarios — Free →
           </Link>
         </section>
@@ -133,7 +133,7 @@ export default function ProductDiscoveryGuidePage() {
                 </div>
                 <p className="text-sm text-white/70 mb-3">{phase.what}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div className="bg-[#0a0a0a] rounded-lg p-3">
+                  <div className="bg-[#0e1113] rounded-lg p-3">
                     <p className="text-xs text-white/40 uppercase tracking-wider mb-1">How to do it</p>
                     <p className="text-xs text-white/60">{phase.how}</p>
                   </div>
@@ -147,7 +147,7 @@ export default function ProductDiscoveryGuidePage() {
         </section>
 
         {/* Interview questions */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-3">5 User Interview Questions That Actually Work</h2>
             <p className="text-white/60 text-center mb-8">Ask these in order. Don&apos;t deviate. Let the silence breathe.</p>
@@ -155,7 +155,7 @@ export default function ProductDiscoveryGuidePage() {
               {INTERVIEW_QUESTIONS.map((item, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
                   <div className="flex gap-3 items-start">
-                    <span className="w-6 h-6 rounded-full bg-[#7c3aed]/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
+                    <span className="w-6 h-6 rounded-full bg-[#58cc02]/20 text-[#89e219] text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
                     <div>
                       <p className="text-sm text-white font-medium mb-1 italic">&ldquo;{item.q}&rdquo;</p>
                       <p className="text-xs text-white/50">{item.why}</p>
@@ -182,7 +182,7 @@ export default function ProductDiscoveryGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Discovery Habits in 2 Minutes a Day</h2>
           <p className="text-white/60 mb-6">Daily scenarios that sharpen user empathy, assumption testing, and opportunity framing.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

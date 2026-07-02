@@ -81,9 +81,9 @@ export default function EdtechProductManagerPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📚</span> Outcome-first PM work · Long feedback loops · Content-heavy
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -93,7 +93,7 @@ export default function EdtechProductManagerPage() {
             8 top edtech companies, 6 unique learning product challenges,
             6 interview questions, and what makes edtech PM different from consumer tech.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Edtech PM Prep — Free →
           </Link>
         </section>
@@ -112,7 +112,7 @@ export default function EdtechProductManagerPage() {
         </section>
 
         {/* Challenges */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6 Unique Edtech PM Challenges</h2>
             <div className="space-y-3">
@@ -133,7 +133,7 @@ export default function EdtechProductManagerPage() {
             <ul className="space-y-3">
               {INTERVIEW_QUESTIONS.map((q, i) => (
                 <li key={i} className="flex gap-3 text-sm">
-                  <span className="text-purple-400 flex-shrink-0 font-bold">{i + 1}.</span>
+                  <span className="text-[#89e219] flex-shrink-0 font-bold">{i + 1}.</span>
                   <span className="text-white/70">{q}</span>
                 </li>
               ))}
@@ -156,7 +156,7 @@ export default function EdtechProductManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Edtech PM Intuition Daily</h2>
           <p className="text-white/60 mb-6">Scenarios on retention, learning outcomes, and content-product trade-offs.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

@@ -126,9 +126,9 @@ export default function ProductManagerVsProjectManagerPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>⚖️</span> Same acronym. Completely different jobs.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -138,7 +138,7 @@ export default function ProductManagerVsProjectManagerPage() {
             What actually differs between these two PM roles — responsibilities, salary, career path,
             and a clear framework for choosing between them.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Product Manager Prep — Free →
           </Link>
         </section>
@@ -168,13 +168,13 @@ export default function ProductManagerVsProjectManagerPage() {
         </section>
 
         {/* Overlap */}
-        <section className="bg-[#0f0f0f] py-12">
+        <section className="bg-[#16181c] py-12">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-xl font-bold mb-5 text-center">Where They Overlap — and Where They Diverge</h2>
             <div className="space-y-2">
               {OVERLAP_AREAS.map((a, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
-                  <span className="text-purple-400 flex-shrink-0">•</span>
+                  <span className="text-[#89e219] flex-shrink-0">•</span>
                   <span className="text-sm text-white/70">{a}</span>
                 </div>
               ))}
@@ -217,7 +217,7 @@ export default function ProductManagerVsProjectManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">If You&apos;re Choosing Product — Start Here</h2>
           <p className="text-white/60 mb-6">Daily PM lessons that build product thinking, metrics fluency, and user empathy.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

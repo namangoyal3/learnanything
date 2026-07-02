@@ -117,9 +117,9 @@ export default function PrdTemplateGuidePage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📄</span> A PRD is a thinking tool, not a contract
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -129,7 +129,7 @@ export default function PrdTemplateGuidePage() {
             The 9 sections every great PRD has, a real example for each, common anti-patterns,
             and how the best PMs use PRDs to align teams without creating bureaucracy.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Writing PRDs Daily — Free →
           </Link>
         </section>
@@ -148,8 +148,8 @@ export default function PrdTemplateGuidePage() {
                       {s.include.map((item, j) => <li key={j} className="text-xs text-white/60">• {item}</li>)}
                     </ul>
                   </div>
-                  <div className="bg-[#7c3aed]/5 border border-[#7c3aed]/20 rounded-lg p-3">
-                    <p className="text-xs text-purple-400 mb-1">💡 Example</p>
+                  <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-lg p-3">
+                    <p className="text-xs text-[#89e219] mb-1">💡 Example</p>
                     <p className="text-xs text-white/70 italic">{s.example}</p>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ export default function PrdTemplateGuidePage() {
         </section>
 
         {/* Anti-patterns */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 PRD Anti-Patterns (and the Fix)</h2>
             <div className="space-y-3">
@@ -193,7 +193,7 @@ export default function PrdTemplateGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice PRD Thinking Daily</h2>
           <p className="text-white/60 mb-6">Real scenarios that build the structured product writing every PM needs.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

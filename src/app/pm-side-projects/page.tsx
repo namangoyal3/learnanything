@@ -107,9 +107,9 @@ export default function PmSideProjectsPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🛠️</span> Shipped beats perfect. Documented beats shipped.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -119,7 +119,7 @@ export default function PmSideProjectsPage() {
             6 side project ideas that demonstrate PM judgment, why they work,
             and how to document your PM thinking so interviewers actually see it.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Intuition in Parallel — Free →
           </Link>
         </section>
@@ -138,7 +138,7 @@ export default function PmSideProjectsPage() {
         </section>
 
         {/* Ideas */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6 Side Project Ideas</h2>
             <div className="space-y-4">
@@ -149,7 +149,7 @@ export default function PmSideProjectsPage() {
                     <span className="text-xs bg-green-500/10 border border-green-500/20 rounded-full px-2 py-1 text-green-400">{idea.effort}</span>
                   </div>
                   <p className="text-sm text-white/60 mb-2">{idea.whyPm}</p>
-                  <p className="text-xs text-purple-400">💡 Examples: <span className="text-white/70">{idea.examples}</span></p>
+                  <p className="text-xs text-[#89e219]">💡 Examples: <span className="text-white/70">{idea.examples}</span></p>
                 </div>
               ))}
             </div>
@@ -163,7 +163,7 @@ export default function PmSideProjectsPage() {
           <div className="space-y-2">
             {DOCUMENT_PM_THINKING.map((d, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-3 flex gap-3">
-                <span className="text-purple-400 font-bold flex-shrink-0">{i + 1}.</span>
+                <span className="text-[#89e219] font-bold flex-shrink-0">{i + 1}.</span>
                 <p className="text-sm text-white/70">{d}</p>
               </div>
             ))}
@@ -185,7 +185,7 @@ export default function PmSideProjectsPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Skills While You Build Your Project</h2>
           <p className="text-white/60 mb-6">Daily 2-minute PM scenarios — keep your product thinking sharp while you ship.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>
