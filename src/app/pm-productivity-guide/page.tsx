@@ -104,9 +104,9 @@ export default function PmProductivityGuidePage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>⚡</span> Great PMs aren&apos;t the busiest — they&apos;re the most deliberate
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -116,7 +116,7 @@ export default function PmProductivityGuidePage() {
             8 productivity habits that separate sustainable high-output PMs from burned-out ones,
             5 essential tools, and 6 anti-patterns to avoid.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build PM Habits Daily — Free →
           </Link>
         </section>
@@ -135,13 +135,13 @@ export default function PmProductivityGuidePage() {
         </section>
 
         {/* Tools */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Essential Tools</h2>
             <div className="space-y-3">
               {TOOLS.map((t, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
-                  <p className="font-semibold text-purple-400 text-sm mb-1">{t.tool}</p>
+                  <p className="font-semibold text-[#89e219] text-sm mb-1">{t.tool}</p>
                   <p className="text-xs text-white/60">{t.why}</p>
                 </div>
               ))}
@@ -177,7 +177,7 @@ export default function PmProductivityGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice PM Thinking in 2 Minutes a Day</h2>
           <p className="text-white/60 mb-6">Structured PM scenarios that fit into any productive week.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

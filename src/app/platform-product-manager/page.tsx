@@ -77,9 +77,9 @@ export default function PlatformProductManagerPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🏗️</span> Platform PMs build the rails every other PM ships on
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -89,7 +89,7 @@ export default function PlatformProductManagerPage() {
             How platform PMs differ from feature PMs, the 5 kinds of platforms you can own,
             the success signals that matter, and how to break in.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Platform PM Prep — Free →
           </Link>
         </section>
@@ -103,7 +103,7 @@ export default function PlatformProductManagerPage() {
                 <tr className="border-b border-white/10">
                   <th className="text-left py-3 px-4 text-white/40 font-medium">Dimension</th>
                   <th className="text-left py-3 px-4 text-blue-400 font-medium">Feature PM</th>
-                  <th className="text-left py-3 px-4 text-purple-400 font-medium">Platform PM</th>
+                  <th className="text-left py-3 px-4 text-[#89e219] font-medium">Platform PM</th>
                 </tr>
               </thead>
               <tbody>
@@ -120,7 +120,7 @@ export default function PlatformProductManagerPage() {
         </section>
 
         {/* Platform areas */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Platform PM Areas</h2>
             <div className="space-y-4">
@@ -128,7 +128,7 @@ export default function PlatformProductManagerPage() {
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                   <p className="font-bold text-white mb-1">{i + 1}. {a.area}</p>
                   <p className="text-sm text-white/60 mb-2">{a.what}</p>
-                  <p className="text-xs text-purple-400">💡 Examples: <span className="text-white/70">{a.examples}</span></p>
+                  <p className="text-xs text-[#89e219]">💡 Examples: <span className="text-white/70">{a.examples}</span></p>
                 </div>
               ))}
             </div>
@@ -163,7 +163,7 @@ export default function PlatformProductManagerPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Platform PM Intuition Daily</h2>
           <p className="text-white/60 mb-6">Scenarios on APIs, developer experience, and platform trade-offs.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

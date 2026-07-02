@@ -92,9 +92,9 @@ export default function PmRetentionGuidePage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📈</span> Growth without retention is a hamster wheel
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -104,7 +104,7 @@ export default function PmRetentionGuidePage() {
             The 4 stages of retention, how to measure and improve each,
             and the 6 levers every PM should use to move D7 and D30 retention.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Retention Scenarios — Free →
           </Link>
         </section>
@@ -116,15 +116,15 @@ export default function PmRetentionGuidePage() {
             {RETENTION_STAGES.map((s, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className="w-7 h-7 rounded-full bg-[#7c3aed]/20 text-purple-400 font-bold text-sm flex items-center justify-center">{i + 1}</span>
+                  <span className="w-7 h-7 rounded-full bg-[#58cc02]/20 text-[#89e219] font-bold text-sm flex items-center justify-center">{i + 1}</span>
                   <h3 className="text-lg font-bold text-white">{s.stage}</h3>
                 </div>
                 <p className="text-sm text-white/70 mb-3">{s.what}</p>
-                <div className="bg-[#7c3aed]/5 border border-[#7c3aed]/20 rounded-lg p-3 mb-3">
-                  <p className="text-xs text-purple-400 mb-1">🎯 Question to answer</p>
+                <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-lg p-3 mb-3">
+                  <p className="text-xs text-[#89e219] mb-1">🎯 Question to answer</p>
                   <p className="text-sm text-white/70 italic">{s.questionToAnswer}</p>
                 </div>
-                <div className="bg-[#0a0a0a] rounded-lg p-3 mb-3">
+                <div className="bg-[#0e1113] rounded-lg p-3 mb-3">
                   <p className="text-xs text-white/40 mb-1">Example</p>
                   <p className="text-xs text-white/60">{s.example}</p>
                 </div>
@@ -133,7 +133,7 @@ export default function PmRetentionGuidePage() {
                   <ul className="space-y-1">
                     {s.pmMoves.map((move, j) => (
                       <li key={j} className="flex gap-2 text-xs">
-                        <span className="text-purple-400">→</span>
+                        <span className="text-[#89e219]">→</span>
                         <span className="text-white/60">{move}</span>
                       </li>
                     ))}
@@ -145,7 +145,7 @@ export default function PmRetentionGuidePage() {
         </section>
 
         {/* Improvement levers */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6 Levers to Move Retention</h2>
             <div className="space-y-3">
@@ -174,7 +174,7 @@ export default function PmRetentionGuidePage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Retention Intuition in 2 Minutes a Day</h2>
           <p className="text-white/60 mb-6">Daily PM scenarios on activation, habit formation, and retention diagnosis.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

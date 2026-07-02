@@ -83,9 +83,9 @@ export default function ProductManagerSalaryIndiaPage() {
         "dateModified": "2026-04-14",
       }} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>💰</span> Updated April 2026 · Based on 500+ offer data points
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -101,7 +101,7 @@ export default function ProductManagerSalaryIndiaPage() {
         <section className="max-w-4xl mx-auto px-4 pb-16">
           <h2 className="text-2xl font-bold mb-6">Salary by Level & City</h2>
           <div className="bg-[#111] border border-white/10 rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-5 bg-[#0f0f0f] border-b border-white/10 text-xs font-semibold text-white/50 uppercase tracking-wider">
+            <div className="grid grid-cols-5 bg-[#16181c] border-b border-white/10 text-xs font-semibold text-white/50 uppercase tracking-wider">
               <div className="p-4">Level</div>
               <div className="p-4 text-center">Bangalore</div>
               <div className="p-4 text-center">Mumbai</div>
@@ -109,7 +109,7 @@ export default function ProductManagerSalaryIndiaPage() {
               <div className="p-4 text-center">Remote</div>
             </div>
             {SALARY_DATA.map((row, i) => (
-              <div key={i} className={`grid grid-cols-5 text-sm border-b border-white/5 last:border-0 ${i % 2 === 0 ? "" : "bg-[#0d0d0d]"}`}>
+              <div key={i} className={`grid grid-cols-5 text-sm border-b border-white/5 last:border-0 ${i % 2 === 0 ? "" : "bg-[#16181c]"}`}>
                 <div className="p-4 font-medium text-white">{row.level}</div>
                 <div className="p-4 text-center text-green-400">{row.bangalore}</div>
                 <div className="p-4 text-center text-white/70">{row.mumbai}</div>
@@ -125,14 +125,14 @@ export default function ProductManagerSalaryIndiaPage() {
         <section className="max-w-4xl mx-auto px-4 pb-16">
           <h2 className="text-2xl font-bold mb-6">Salary by Company (Bangalore)</h2>
           <div className="bg-[#111] border border-white/10 rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-4 bg-[#0f0f0f] border-b border-white/10 text-xs font-semibold text-white/50 uppercase tracking-wider">
+            <div className="grid grid-cols-4 bg-[#16181c] border-b border-white/10 text-xs font-semibold text-white/50 uppercase tracking-wider">
               <div className="p-4">Company</div>
               <div className="p-4 text-center">APM</div>
               <div className="p-4 text-center">PM</div>
               <div className="p-4 text-center">Senior PM</div>
             </div>
             {COMPANY_DATA.map((row, i) => (
-              <div key={i} className={`grid grid-cols-4 text-sm border-b border-white/5 last:border-0 ${i % 2 === 0 ? "" : "bg-[#0d0d0d]"}`}>
+              <div key={i} className={`grid grid-cols-4 text-sm border-b border-white/5 last:border-0 ${i % 2 === 0 ? "" : "bg-[#16181c]"}`}>
                 <div className="p-4 font-medium text-white">{row.company}</div>
                 <div className="p-4 text-center text-white/70">{row.apm}</div>
                 <div className="p-4 text-center text-white/70">{row.pm}</div>
@@ -158,7 +158,7 @@ export default function ProductManagerSalaryIndiaPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Land the PM Role. Negotiate the Salary.</h2>
           <p className="text-white/60 mb-6">PM Streak prepares you for interviews at every level — APM to Director.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

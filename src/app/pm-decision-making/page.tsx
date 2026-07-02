@@ -99,9 +99,9 @@ export default function PmDecisionMakingPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>⚖️</span> Slow decisions cost more than occasional wrong ones
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -111,7 +111,7 @@ export default function PmDecisionMakingPage() {
             5 decision frameworks PMs should know, an 8-part decision doc template,
             and 5 moves that balance speed and quality of decisions.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice PM Judgment Daily — Free →
           </Link>
         </section>
@@ -124,14 +124,14 @@ export default function PmDecisionMakingPage() {
               <div key={i} className="bg-[#111] border border-white/10 rounded-2xl p-5">
                 <p className="font-bold text-white mb-2">{i + 1}. {f.framework}</p>
                 <p className="text-sm text-white/70 mb-2">{f.what}</p>
-                <p className="text-xs text-purple-400">💡 Example: <span className="text-white/70">{f.example}</span></p>
+                <p className="text-xs text-[#89e219]">💡 Example: <span className="text-white/70">{f.example}</span></p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Decision doc */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-3">The 1-Page Decision Doc Template</h2>
             <p className="text-white/60 text-center mb-8">8 sections, ~30 minutes to write, saves weeks of re-litigation later.</p>
@@ -174,7 +174,7 @@ export default function PmDecisionMakingPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build PM Judgment in 2 Minutes a Day</h2>
           <p className="text-white/60 mb-6">Decision scenarios with AI feedback — calibrate your instincts over time.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

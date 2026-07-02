@@ -96,9 +96,9 @@ export default function PmRemoteWorkPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🌍</span> Remote PM from India is possible. Doing it well is a skill.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -108,7 +108,7 @@ export default function PmRemoteWorkPage() {
             Where to find remote PM roles from India, the 5 skills that separate great remote PMs from average ones,
             compensation benchmarks, and how to interview for global roles.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build Remote PM Muscle — Free →
           </Link>
         </section>
@@ -127,7 +127,7 @@ export default function PmRemoteWorkPage() {
         </section>
 
         {/* Remote skills */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">5 Skills Every Remote PM Needs</h2>
             <div className="space-y-4">
@@ -135,7 +135,7 @@ export default function PmRemoteWorkPage() {
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                   <p className="font-bold text-white mb-2">{i + 1}. {s.skill}</p>
                   <p className="text-sm text-white/60 mb-2">{s.why}</p>
-                  <p className="text-xs text-purple-400">💪 Practice: <span className="text-white/70">{s.practice}</span></p>
+                  <p className="text-xs text-[#89e219]">💪 Practice: <span className="text-white/70">{s.practice}</span></p>
                 </div>
               ))}
             </div>
@@ -173,7 +173,7 @@ export default function PmRemoteWorkPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Interview for Remote PM Roles Daily</h2>
           <p className="text-white/60 mb-6">Daily PM practice — no scheduling, no meetings, no timezone issues.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

@@ -81,9 +81,9 @@ export default function PmCompetitorTeardownPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🔍</span> Great teardowns reveal WHY — not just WHAT
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -93,7 +93,7 @@ export default function PmCompetitorTeardownPage() {
             The 8-section teardown framework, 6 places to gather competitive signal,
             and 6 mistakes that turn teardowns into shallow feature lists.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Product Teardowns Daily — Free →
           </Link>
         </section>
@@ -112,13 +112,13 @@ export default function PmCompetitorTeardownPage() {
         </section>
 
         {/* Where to look */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6 Places to Gather Signal</h2>
             <div className="space-y-3">
               {WHERE_TO_LOOK.map((w, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
-                  <p className="font-semibold text-purple-400 text-sm mb-1">{w.area}</p>
+                  <p className="font-semibold text-[#89e219] text-sm mb-1">{w.area}</p>
                   <p className="text-xs text-white/60">{w.how}</p>
                 </div>
               ))}
@@ -154,7 +154,7 @@ export default function PmCompetitorTeardownPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Product Teardowns Daily</h2>
           <p className="text-white/60 mb-6">Teardown an app a week — your product sense compounds faster than you think.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

@@ -103,9 +103,9 @@ export default function PmExperimentDesignPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🔬</span> Most A/B tests don&apos;t produce signal. Designed ones do.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -115,7 +115,7 @@ export default function PmExperimentDesignPage() {
             6 steps to design A/B tests that produce real signal, when NOT to A/B test at all,
             and the 6 mistakes that make most PM experiments worthless.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Experiment Scenarios — Free →
           </Link>
         </section>
@@ -127,7 +127,7 @@ export default function PmExperimentDesignPage() {
             {EXPERIMENT_STEPS.map((s, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-2xl p-5">
                 <div className="flex items-start gap-3 mb-2">
-                  <span className="w-7 h-7 rounded-full bg-[#7c3aed]/20 text-purple-400 font-bold text-sm flex items-center justify-center flex-shrink-0">{i + 1}</span>
+                  <span className="w-7 h-7 rounded-full bg-[#58cc02]/20 text-[#89e219] font-bold text-sm flex items-center justify-center flex-shrink-0">{i + 1}</span>
                   <h3 className="font-semibold text-white">{s.step}</h3>
                 </div>
                 <p className="text-sm text-white/70 mb-2 ml-10">{s.detail}</p>
@@ -140,7 +140,7 @@ export default function PmExperimentDesignPage() {
         </section>
 
         {/* When NOT to test */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">When NOT to Run an A/B Test</h2>
             <div className="space-y-3">
@@ -187,7 +187,7 @@ export default function PmExperimentDesignPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Experimentation Intuition Daily</h2>
           <p className="text-white/60 mb-6">Real A/B test scenarios with AI feedback on hypothesis quality and metric selection.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

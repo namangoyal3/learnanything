@@ -64,9 +64,9 @@ export default function DuolingoForProductManagersPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🦉</span> The habit app product managers were waiting for
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -77,7 +77,7 @@ export default function DuolingoForProductManagersPage() {
             PM Streak does the same for product management — with real content from 300+ PM interviews.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/signup" className="bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+            <Link href="/signup" className="bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
               Start Your Streak — Free
             </Link>
             <Link href="/learn" className="bg-white/10 hover:bg-white/15 text-white font-semibold px-8 py-3 rounded-xl transition-colors">
@@ -88,7 +88,7 @@ export default function DuolingoForProductManagersPage() {
         </section>
 
         {/* The Duolingo Insight */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-2xl font-bold mb-4">Why the Duolingo Model Works for PMs</h2>
             <p className="text-white/60 max-w-2xl mx-auto mb-10">
@@ -116,13 +116,13 @@ export default function DuolingoForProductManagersPage() {
         <section className="max-w-2xl mx-auto px-4 py-16">
           <h2 className="text-2xl font-bold text-center mb-8">PM Streak vs Duolingo</h2>
           <div className="bg-[#111] border border-white/10 rounded-2xl overflow-hidden">
-            <div className="grid grid-cols-3 bg-[#0f0f0f] border-b border-white/10 text-sm font-semibold">
+            <div className="grid grid-cols-3 bg-[#16181c] border-b border-white/10 text-sm font-semibold">
               <div className="p-4 text-white/50">Feature</div>
               <div className="p-4 text-center text-white/50">Duolingo</div>
-              <div className="p-4 text-center text-purple-400">PM Streak</div>
+              <div className="p-4 text-center text-[#89e219]">PM Streak</div>
             </div>
             {COMPARISONS.map((row, i) => (
-              <div key={i} className={`grid grid-cols-3 text-sm border-b border-white/5 last:border-0 ${i % 2 === 0 ? "" : "bg-[#0d0d0d]"}`}>
+              <div key={i} className={`grid grid-cols-3 text-sm border-b border-white/5 last:border-0 ${i % 2 === 0 ? "" : "bg-[#16181c]"}`}>
                 <div className="p-4 text-white/70">{row.feature}</div>
                 <div className="p-4 text-center">{row.duolingo ? "✅" : "❌"}</div>
                 <div className="p-4 text-center">{row.pmStreak ? "✅" : "❌"}</div>
@@ -147,7 +147,7 @@ export default function DuolingoForProductManagersPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Start Your PM Streak Today</h2>
           <p className="text-white/60 mb-6">2 minutes a day. Every day. That&apos;s all it takes.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free →
           </Link>
         </section>

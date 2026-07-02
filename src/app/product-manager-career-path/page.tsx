@@ -118,9 +118,9 @@ export default function ProductManagerCareerPathPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📈</span> APM to CPO — every level, every milestone
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -130,7 +130,7 @@ export default function ProductManagerCareerPathPage() {
             What each PM level requires, how to get promoted, salaries at every stage,
             and the moves that accelerate your career faster than tenure alone.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Building Your PM Career — Free →
           </Link>
         </section>
@@ -144,13 +144,13 @@ export default function ProductManagerCareerPathPage() {
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="w-6 h-6 rounded-full bg-[#7c3aed]/20 text-purple-400 text-xs flex items-center justify-center font-bold">{i + 1}</span>
+                      <span className="w-6 h-6 rounded-full bg-[#58cc02]/20 text-[#89e219] text-xs flex items-center justify-center font-bold">{i + 1}</span>
                       <h3 className="text-lg font-bold text-white">{level.title}</h3>
                     </div>
                     <p className="text-sm text-white/40">{level.typical}</p>
                   </div>
                   <div className="flex gap-3 text-xs flex-shrink-0">
-                    <span className="bg-[#1a1a2e] border border-white/10 rounded-full px-3 py-1 text-white/60">{level.years}</span>
+                    <span className="bg-[#1f2228] border border-white/10 rounded-full px-3 py-1 text-white/60">{level.years}</span>
                     <span className="bg-green-500/10 border border-green-500/20 rounded-full px-3 py-1 text-green-400">{level.salary}</span>
                   </div>
                 </div>
@@ -165,8 +165,8 @@ export default function ProductManagerCareerPathPage() {
                       {level.owns.map((o, j) => <li key={j} className="text-white/60 text-xs">• {o}</li>)}
                     </ul>
                   </div>
-                  <div className="bg-[#7c3aed]/5 border border-[#7c3aed]/20 rounded-lg p-3">
-                    <p className="text-xs text-purple-400 mb-1">🚀 Promoted when</p>
+                  <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-lg p-3">
+                    <p className="text-xs text-[#89e219] mb-1">🚀 Promoted when</p>
                     <p className="text-white/60 text-xs">{level.promoted}</p>
                   </div>
                 </div>
@@ -176,14 +176,14 @@ export default function ProductManagerCareerPathPage() {
         </section>
 
         {/* Career accelerators */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-3">6 Moves That Accelerate PM Promotions</h2>
             <p className="text-white/60 text-center mb-8">Tenure matters less than visibility, impact, and operating above your level.</p>
             <div className="space-y-4">
               {ACCELERATORS.map((a, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4 flex gap-4">
-                  <span className="w-7 h-7 rounded-full bg-[#7c3aed]/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">{i + 1}</span>
+                  <span className="w-7 h-7 rounded-full bg-[#58cc02]/20 text-[#89e219] text-sm font-bold flex items-center justify-center flex-shrink-0">{i + 1}</span>
                   <div>
                     <p className="font-medium text-white text-sm mb-1">{a.action}</p>
                     <p className="text-xs text-white/50">{a.why}</p>
@@ -210,7 +210,7 @@ export default function ProductManagerCareerPathPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Level Up Your PM Career Daily</h2>
           <p className="text-white/60 mb-6">2-minute lessons calibrated to your current level and the skills you need for the next one.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

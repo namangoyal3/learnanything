@@ -95,9 +95,9 @@ export default function PmMockInterviewPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🎤</span> Mocks don&apos;t teach you PM. Mocks reveal what you don&apos;t know yet.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -107,7 +107,7 @@ export default function PmMockInterviewPage() {
             The 4 types of mock interviews, how to get unbiased feedback, a 15-point evaluation rubric,
             and how to turn every mock into measurable improvement.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Try AI Mock Interview — Free →
           </Link>
         </section>
@@ -131,8 +131,8 @@ export default function PmMockInterviewPage() {
                     {format.cons.map((c, i) => <li key={i} className="text-xs text-white/60">• {c}</li>)}
                   </ul>
                 </div>
-                <div className="bg-[#7c3aed]/5 border border-[#7c3aed]/20 rounded-lg p-3">
-                  <p className="text-xs text-purple-400">🎯 When to use: <span className="text-white/70">{format.whenToUse}</span></p>
+                <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-lg p-3">
+                  <p className="text-xs text-[#89e219]">🎯 When to use: <span className="text-white/70">{format.whenToUse}</span></p>
                 </div>
               </div>
             ))}
@@ -140,14 +140,14 @@ export default function PmMockInterviewPage() {
         </section>
 
         {/* Feedback framework */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-3">The 15-Point Feedback Rubric</h2>
             <p className="text-white/60 text-center mb-8">Use this in every mock. Score each category 1–5. Track scores over time.</p>
             <div className="space-y-4">
               {FEEDBACK_FRAMEWORK.map((cat) => (
                 <div key={cat.category} className="bg-[#111] border border-white/10 rounded-xl p-5">
-                  <p className="font-semibold text-purple-400 mb-2">{cat.category}</p>
+                  <p className="font-semibold text-[#89e219] mb-2">{cat.category}</p>
                   <ul className="space-y-1.5">
                     {cat.questions.map((q, i) => (
                       <li key={i} className="flex gap-2 text-sm">
@@ -168,7 +168,7 @@ export default function PmMockInterviewPage() {
           <div className="space-y-2">
             {RUBRIC.map((r, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4 flex gap-4">
-                <span className="font-bold text-purple-400 w-12 flex-shrink-0">{r.score}</span>
+                <span className="font-bold text-[#89e219] w-12 flex-shrink-0">{r.score}</span>
                 <span className="text-sm text-white/70">{r.meaning}</span>
               </div>
             ))}
@@ -190,7 +190,7 @@ export default function PmMockInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Get Unlimited AI Mock Interviews</h2>
           <p className="text-white/60 mb-6">Daily PM questions with structured feedback — practice without scheduling.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

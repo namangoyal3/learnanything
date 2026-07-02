@@ -2,7 +2,7 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
 import {
-  Flame, Check, X, Zap, Star, BookOpen, Brain, Target,
+  Flame, Check, Zap, Star, BookOpen, Brain, Target,
   Users, Sparkles, MessageSquare, ChevronRight,
 } from "lucide-react";
 import { getCurrentUserId } from "@/lib/auth";
@@ -70,17 +70,7 @@ const FREE_FEATURES = [
   { text: "5 archive lessons (batch-unlocked)", yes: true },
   { text: "10 credits / month", yes: true },
   { text: "1 AI Explore lesson / week", yes: true },
-  { text: "Basic streak tracking", yes: true },
-
-  { text: "All 292+ archive lessons", yes: false },
-  { text: "50 credits / month", yes: false },
-  { text: "Unlimited AI Explore lessons", yes: false },
-  { text: "PM Leader lessons (Shreyas, Aakash, Marty Cagan)", yes: false },
-  { text: "Unlimited AI Interview prep sessions", yes: false, new: true },
-  { text: "Priority PM Jobs board access", yes: false, new: true },
-  { text: "Exclusive WhatsApp PM community", yes: false },
-  { text: "Personalized learning roadmap", yes: false },
-  { text: "Certificate of completion", yes: false },
+  { text: "Streak tracking, XP & leaderboard", yes: true },
 ];
 
 const PRO_FEATURES = [
@@ -243,54 +233,46 @@ async function PricingContent() {
       <JsonLd data={pricingFaq} />
       <JsonLd data={pricingBreadcrumbs} />
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-[var(--bg-primary)]/90 backdrop-blur-sm">
+      <header className="sticky top-0 z-40 border-b-2 border-[var(--border-color)] bg-[var(--bg-primary)]/92 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/dashboard" className="flex items-center gap-1.5">
-            <Flame size={22} className="text-orange-400" />
-            <div className="flex flex-col leading-none">
-              <div className="font-black text-xl tracking-tight flex items-center gap-1">
-                <span className="text-green-400">PM</span>
-                <span className="text-white">Streak</span>
-              </div>
-              <span className="text-[9px] font-bold text-white/40 tracking-wide">by learnanything.pro</span>
+          <Link href={userId ? "/dashboard" : "/"} className="flex items-center gap-1.5">
+            <Flame size={20} className="text-[var(--orange-primary)]" />
+            <div className="font-black text-xl tracking-tight flex items-center gap-1 leading-none">
+              <span className="text-[var(--green-primary)]">PM</span>
+              <span className="text-white">Streak</span>
             </div>
           </Link>
-          <Link href="/dashboard" className="text-xs font-bold text-white/60 hover:text-white transition-colors flex items-center gap-1">
-            Back to dashboard <ChevronRight size={12} />
-          </Link>
+          {userId ? (
+            <Link href="/dashboard" className="text-xs font-black text-[var(--text-secondary)] hover:text-white transition-colors flex items-center gap-1">
+              Back to dashboard <ChevronRight size={12} />
+            </Link>
+          ) : (
+            <Link href="/login" className="text-xs font-black text-[var(--text-secondary)] hover:text-white transition-colors flex items-center gap-1">
+              Sign in <ChevronRight size={12} />
+            </Link>
+          )}
         </div>
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-8 sm:py-12 pb-24">
         {/* Hero */}
         <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-4 py-1.5 text-xs font-black text-purple-300 uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 bg-[var(--purple-primary)]/15 border border-[var(--purple-primary)]/30 rounded-full px-4 py-1.5 text-xs font-black text-[var(--purple-primary)] uppercase tracking-wider mb-4">
             <Star size={12} /> Pro Plan
           </div>
-          <h1 className="text-3xl sm:text-4xl font-black mb-3">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-[1.05] mb-3">
             Learn PM like a{" "}
-            <span className="text-green-400">pro</span>
+            <span className="text-[var(--green-primary)]">pro</span>
           </h1>
-          <p className="text-white/60 text-sm max-w-md mx-auto mb-4">
+          <p className="text-[var(--text-secondary)] text-sm max-w-md mx-auto mb-4">
             Unlock all 292+ Lenny&apos;s Podcast lessons, unlimited AI lessons, PM leader content, interview prep, and the job board.
           </p>
-          
+
           {userPlan !== "pro" && <PricingPageTrialCTA variant={abVariant} />}
 
-          {/* Social Proof & Urgency */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-            <div className="flex items-center gap-2 text-xs text-white/70">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-6 h-6 rounded-full bg-gradient-to-br from-green-400 to-blue-500 border-2 border-[var(--bg-primary)]"></div>
-                ))}
-              </div>
-              <span>Join 500+ PMs already learning</span>
-            </div>
-            <div className="px-3 py-1.5 bg-red-500/20 border border-red-500/30 rounded-full text-xs font-bold text-red-300">
-              ⚡ Limited time: 70% OFF launch pricing
-            </div>
-          </div>
+          <p className="text-xs text-[var(--text-secondary)] mb-6">
+            Join 200+ PMs learning daily · 30-day money-back guarantee
+          </p>
           {userPlan === "pro" ? (
             <Link
               href="/dashboard"
@@ -301,7 +283,7 @@ async function PricingContent() {
           ) : canUseRazorpay ? (
             <RazorpayCheckoutButton
               plan={"quarterly" as BillingInterval}
-              className="sm:hidden inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-black bg-green-400 text-black"
+              className="sm:hidden inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-black bg-[var(--green-primary)] text-black"
             >
               Start Pro
             </RazorpayCheckoutButton>
@@ -317,7 +299,7 @@ async function PricingContent() {
                     })
                   : "#comparison"
               }
-              className="sm:hidden inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-black bg-purple-500 text-white"
+              className="sm:hidden inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-black bg-[var(--purple-primary)] text-white"
             >
               Start Pro
             </a>
@@ -325,35 +307,27 @@ async function PricingContent() {
         </div>
 
         {/* Value Proposition */}
-        <div className="mb-8 p-6 rounded-2xl bg-gradient-to-r from-green-900/20 to-blue-900/20 border border-green-500/30">
+        <div className="mb-8 p-6 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] shadow-[0_2px_0_0_rgba(0,0,0,0.35)]">
           <div className="flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-green-500/20">
-              <Zap size={24} className="text-green-400" />
+            <div className="p-3 rounded-xl bg-[var(--green-primary)]/15">
+              <Zap size={24} className="text-[var(--green-primary)]" />
             </div>
-            <div>
-              <h3 className="text-lg font-black mb-2">Why PMs Choose Pro</h3>
+            <div className="flex-1">
+              <h3 className="text-lg font-black mb-3">Why PMs choose Pro</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-                <div className="flex items-start gap-2">
-                  <div className="w-2 h-2 mt-1.5 rounded-full bg-green-400"></div>
-                  <div>
-                    <div className="font-bold">10x More Content</div>
-                    <div className="text-white/60 text-xs">292+ lessons vs 12 free</div>
+                {[
+                  { title: "10× more content", desc: "292+ lessons vs 12 free" },
+                  { title: "Interview ready", desc: "Unlimited AI mock interviews" },
+                  { title: "Career boost", desc: "Priority job board + community" },
+                ].map((v) => (
+                  <div key={v.title} className="flex items-start gap-2">
+                    <Check size={14} className="text-[var(--green-primary)] mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-black">{v.title}</div>
+                      <div className="text-[var(--text-secondary)] text-xs">{v.desc}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-2 h-2 mt-1.5 rounded-full bg-green-400"></div>
-                  <div>
-                    <div className="font-bold">Interview Ready</div>
-                    <div className="text-white/60 text-xs">Unlimited AI mock interviews</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <div className="w-2 h-2 mt-1.5 rounded-full bg-green-400"></div>
-                  <div>
-                    <div className="font-bold">Career Boost</div>
-                    <div className="text-white/60 text-xs">Priority job board + community</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -362,36 +336,34 @@ async function PricingContent() {
         {/* Free vs Pro Comparison */}
         <div id="comparison" className="grid md:grid-cols-2 gap-6 mb-10 sm:mb-12">
           {/* Free */}
-          <div className="rounded-2xl border-2 border-white/10 p-6 bg-white/5">
+          <div className="rounded-2xl border-2 border-[var(--border-color)] p-6 bg-[var(--bg-card)] flex flex-col">
             <div className="mb-4">
               <h2 className="text-lg font-black mb-1">Free</h2>
-              <div className="text-3xl font-black">₹0</div>
-              <p className="text-xs text-white/50 mt-1">Forever free, no credit card</p>
+              <div className="text-3xl font-black">{isIndia ? "₹0" : "$0"}</div>
+              <p className="text-xs text-[var(--text-secondary)] mt-1">Forever free, no credit card</p>
             </div>
-            <ul className="space-y-2.5 mb-6">
-              {FREE_FEATURES.map((f: any) => (
-                <li
-                  key={f.text}
-                  className={`flex items-start gap-2 text-xs ${f.yes ? "text-white/80" : "text-white/30 line-through"}`}
-                >
-                  {f.yes
-                    ? <Check size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
-                    : <X size={14} className="text-white/30 mt-0.5 flex-shrink-0" />
-                  }
+            <ul className="space-y-3 mb-6">
+              {FREE_FEATURES.map((f) => (
+                <li key={f.text} className="flex items-start gap-2 text-sm text-white/85">
+                  <Check size={15} className="text-[var(--green-primary)] mt-0.5 flex-shrink-0" />
                   <span className="flex-1">{f.text}</span>
-                  {f.new && (
-                    <span className="bg-green-500 text-[8px] font-black text-white px-1 py-0.5 rounded-sm flex-shrink-0 animate-pulse">NEW</span>
-                  )}
                 </li>
               ))}
             </ul>
-            <Link href="/dashboard" className="block w-full py-3 text-center text-sm font-black rounded-xl border-2 border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-colors">
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed mb-6">
+              Everything you need to build the daily habit. Upgrade whenever you
+              want the full library, unlimited AI, and the community.
+            </p>
+            <Link href="/dashboard" className="mt-auto block w-full py-3 text-center text-sm font-black rounded-xl border-2 border-[var(--border-color)] text-[var(--text-secondary)] hover:text-white hover:border-white/40 transition-colors">
               Continue Free
             </Link>
           </div>
 
           {/* Pro */}
-          <div className="rounded-2xl border-2 border-purple-500/50 p-6 bg-gradient-to-br from-purple-900/40 to-purple-800/20">
+          <div className="rounded-2xl border-2 border-[var(--purple-primary)]/50 p-6 bg-[var(--bg-card)] relative shadow-[0_4px_0_0_rgba(0,0,0,0.35)]">
+            <div className="absolute -top-3.5 left-6 inline-flex items-center gap-1 rounded-full bg-[var(--purple-primary)] text-white text-[10px] font-black uppercase tracking-wider px-3 py-1">
+              <Star size={10} /> Most popular
+            </div>
             <div className="mb-4">
               <div className="flex items-center justify-between mb-1">
                 <h2 className="text-lg font-black">Pro</h2>
@@ -400,39 +372,36 @@ async function PricingContent() {
                 </span>
               </div>
               <div className="flex items-baseline gap-2">
-                <span className="text-white/40 line-through text-2xl whitespace-nowrap">{calculateMRP(isIndia ? "₹249" : "$6", isIndia)}</span>
-                <span className="text-3xl font-black text-green-400 whitespace-nowrap">{isIndia ? "₹249" : "$6"} <span className="text-[10px] align-top opacity-80">(SPECIAL PRICE)</span></span>
-                <span className="text-white/50 text-sm whitespace-nowrap">/ month</span>
+                <span className="text-4xl font-black text-white whitespace-nowrap">{isIndia ? "₹249" : "$6"}</span>
+                <span className="text-[var(--text-secondary)] line-through text-base whitespace-nowrap">{calculateMRP(isIndia ? "₹249" : "$6", isIndia)}</span>
+                <span className="text-[var(--text-secondary)] text-sm whitespace-nowrap">/ month</span>
               </div>
-              <p className="text-xs text-purple-300/70 mt-1">
-                {isIndia
-                  ? <><span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("₹669", true)}</span> <span className="text-green-400 font-black whitespace-nowrap">₹669 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / 3 months · <span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("₹1,249", true)}</span> <span className="text-green-400 font-black whitespace-nowrap">₹1,249 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / year</>
-                  : <><span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("$11", false)}</span> <span className="text-green-400 font-black whitespace-nowrap">$11 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / 3 months · <span className="line-through text-white/30 whitespace-nowrap">{calculateMRP("$32", false)}</span> <span className="text-green-400 font-black whitespace-nowrap">$32 <span className="text-[8px] opacity-70">(70% OFF)</span></span> / year</>
-                }
+              <p className="text-xs font-black text-[var(--green-primary)] mt-1.5">
+                70% off launch pricing — billed monthly, quarterly, or yearly
               </p>
             </div>
             <ul className="space-y-2.5 mb-6">
               {PRO_FEATURES.map((f: any) => (
                 <li key={f.text} className="flex items-start gap-2 text-xs text-white/85">
                   {f.comingSoon ? (
-                    <span className="text-yellow-400 mt-0.5 flex-shrink-0 text-xs">⏳</span>
+                    <span className="text-[var(--gold-primary)] mt-0.5 flex-shrink-0 text-xs">⏳</span>
                   ) : (
-                    <Check size={14} className="text-purple-400 mt-0.5 flex-shrink-0" />
+                    <Check size={14} className="text-[var(--purple-primary)] mt-0.5 flex-shrink-0" />
                   )}
                   <span className="flex-1">{f.text}</span>
                   {f.new && (
-                    <span className="bg-purple-500 text-[8px] font-black text-white px-1 py-0.5 rounded-sm flex-shrink-0 animate-pulse">NEW</span>
+                    <span className="bg-[var(--purple-primary)]/20 text-[var(--purple-primary)] text-[8px] font-black px-1.5 py-0.5 rounded-sm flex-shrink-0">NEW</span>
                   )}
                   {f.comingSoon && (
-                    <span className="bg-yellow-500/20 text-yellow-400 text-[8px] font-black px-1 py-0.5 rounded-sm flex-shrink-0">COMING SOON</span>
+                    <span className="bg-[var(--gold-primary)]/15 text-[var(--gold-primary)] text-[8px] font-black px-1.5 py-0.5 rounded-sm flex-shrink-0">COMING SOON</span>
                   )}
                 </li>
               ))}
             </ul>
 
             {userPlan === "pro" ? (
-              <div className="rounded-xl bg-green-900/20 border border-green-500/30 p-4 text-center">
-                <p className="text-sm font-black text-green-400">✓ You&apos;re already Pro!</p>
+              <div className="rounded-xl bg-[var(--green-primary)]/10 border border-[var(--green-primary)]/30 p-4 text-center">
+                <p className="text-sm font-black text-[var(--green-primary)]">✓ You&apos;re already Pro!</p>
                 {dodoCustomerId && (
                   <Link
                     href={`/api/customer-portal?customer_id=${dodoCustomerId}`}
@@ -461,8 +430,8 @@ async function PricingContent() {
                         aria-disabled={!dodoHref}
                         className={`flex items-center justify-between w-full py-3 px-4 rounded-xl font-black text-sm transition-all ${
                           plan.key === "quarterly"
-                            ? "bg-purple-500 hover:bg-purple-400 text-white"
-                            : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+                            ? "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white"
+                            : "bg-transparent hover:bg-white/5 text-white border-2 border-[var(--border-color)] hover:border-white/30"
                         } ${!dodoHref ? "opacity-50 pointer-events-none" : ""}`}
                       >
                         <span className="flex flex-col items-start gap-0.5">
@@ -474,24 +443,21 @@ async function PricingContent() {
                             )}
                             Subscribe {plan.title}
                           </span>
-                          {(plan as any).desc && <span className="text-[10px] text-white/50 font-bold block leading-tight">{(plan as any).desc}</span>}
+                          {(plan as any).desc && <span className={`text-[10px] font-bold block leading-tight ${plan.key === "quarterly" ? "text-white/70" : "text-white/50"}`}>{(plan as any).desc}</span>}
                         </span>
                         <span className="text-right flex flex-col items-end shrink-0 ml-2">
-                          <span className="flex items-center gap-1 flex-nowrap">
-                            <span className="text-white/40 line-through text-xs whitespace-nowrap">{plan.original}</span>
-                            <span className="font-black text-green-400 whitespace-nowrap">{plan.discounted} <span className="text-[9px] opacity-80">(70% OFF)</span></span>
-                          </span>
-                          <span className="text-white/60 text-[10px] whitespace-nowrap">{plan.period}</span>
+                          <span className="font-black whitespace-nowrap">{plan.discounted}</span>
+                          <span className={`text-[10px] whitespace-nowrap ${plan.key === "quarterly" ? "text-white/70" : "text-[var(--text-secondary)]"}`}>{plan.period}</span>
                         </span>
                       </a>
                       {canUseRazorpay && (
                         <RazorpayCheckoutButton
                           plan={plan.key as BillingInterval}
-                          className="flex items-center justify-between w-full py-3 px-4 rounded-xl font-black text-sm transition-all bg-green-400/15 hover:bg-green-400/25 text-white border border-green-400/30"
+                          className="flex items-center justify-between w-full py-3 px-4 rounded-xl font-black text-sm transition-all bg-[var(--green-primary)]/10 hover:bg-[var(--green-primary)]/20 text-white border-2 border-[var(--green-primary)]/30"
                         >
                           <span className="flex flex-col items-start gap-0.5">
                             <span className="flex items-center gap-2">
-                              <span className="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-green-400/20 text-green-300">
+                              <span className="text-[10px] font-black px-1.5 py-0.5 rounded-full bg-[var(--green-primary)]/20 text-[var(--green-primary)]">
                                 Razorpay
                               </span>
                               Pay with Razorpay
@@ -501,8 +467,8 @@ async function PricingContent() {
                             </span>
                           </span>
                           <span className="text-right flex flex-col items-end shrink-0 ml-2">
-                            <span className="font-black text-green-300 whitespace-nowrap">Live checkout</span>
-                            <span className="text-white/60 text-[10px] whitespace-nowrap">Secure Indian gateway</span>
+                            <span className="font-black text-[var(--green-primary)] whitespace-nowrap">Live checkout</span>
+                            <span className="text-[var(--text-secondary)] text-[10px] whitespace-nowrap">Secure Indian gateway</span>
                           </span>
                         </RazorpayCheckoutButton>
                       )}
@@ -515,18 +481,18 @@ async function PricingContent() {
         </div>
 
         {/* WhatsApp Community */}
-        <div className="rounded-2xl border-2 border-green-500/30 p-4 sm:p-5 mb-10 sm:mb-12 bg-green-900/10">
+        <div className="rounded-2xl border-2 border-[var(--green-primary)]/30 p-4 sm:p-5 mb-10 sm:mb-12 bg-[var(--green-primary)]/5">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
-              <MessageSquare size={20} className="text-green-400" />
+            <div className="w-10 h-10 rounded-xl bg-[var(--green-primary)]/15 flex items-center justify-center flex-shrink-0">
+              <MessageSquare size={20} className="text-[var(--green-primary)]" />
             </div>
             <div className="flex-1">
-              <h3 className="text-sm font-black text-green-400">WhatsApp PM Community</h3>
-              <p className="text-[11px] text-white/55 mt-0.5">
+              <h3 className="text-sm font-black text-[var(--green-primary)]">WhatsApp PM Community</h3>
+              <p className="text-[11px] text-[var(--text-secondary)] mt-0.5">
                 Private group with active PMs — job referrals, case study discussions, peer accountability. Pro members only.
               </p>
             </div>
-            <span className="text-[10px] font-black px-2 py-1 rounded-full bg-purple-500/20 text-purple-300 flex-shrink-0">
+            <span className="text-[10px] font-black px-2 py-1 rounded-full bg-[var(--purple-primary)]/15 text-[var(--purple-primary)] flex-shrink-0">
               PRO
             </span>
           </div>
@@ -536,12 +502,12 @@ async function PricingContent() {
         </div>
 
         {/* Credits Explainer */}
-        <div className="rounded-2xl border-2 border-white/10 p-4 sm:p-6 mb-10 sm:mb-12 bg-white/5">
+        <div className="rounded-2xl border-2 border-[var(--border-color)] p-4 sm:p-6 mb-10 sm:mb-12 bg-[var(--bg-card)]">
           <div className="flex items-center gap-2 mb-4">
-            <Zap size={18} className="text-purple-400" />
+            <Zap size={18} className="text-[var(--purple-primary)]" />
             <h2 className="text-base font-black">How Credits Work</h2>
           </div>
-          <p className="text-xs text-white/60 mb-4">
+          <p className="text-xs text-[var(--text-secondary)] mb-4">
             Credits reset monthly and gate premium features.
             Free users get <strong className="text-white">10 credits/month</strong>. Pro users get <strong className="text-white">50 credits/month</strong> (plus all lessons already unlocked).
           </p>
@@ -549,7 +515,7 @@ async function PricingContent() {
             {CREDIT_COSTS.map((c) => (
               <div key={c.action} className="flex items-center gap-3 text-xs">
                 <span className="flex-1 text-white/70">{c.action}</span>
-                <span className="font-black text-purple-300 flex items-center gap-1">
+                <span className="font-black text-[var(--purple-primary)] flex items-center gap-1">
                   <Zap size={10} /> {c.cost}
                 </span>
               </div>
@@ -560,17 +526,17 @@ async function PricingContent() {
         {/* Feature Highlights */}
         <div className="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-10 sm:mb-12">
           {[
-            { icon: <BookOpen size={20} className="text-green-400" />, title: "292+ Archive Lessons", desc: "Full Lenny's Podcast library — Shreyas, Reforge, Figma, Stripe PMs and more." },
-            { icon: <Brain size={20} className="text-blue-400" />, title: "AI Interview Prep", desc: "5 PM interview questions with frameworks per session — strategy, metrics, execution." },
-            { icon: <Target size={20} className="text-orange-400" />, title: "PM Jobs Board", desc: "Curated PM roles from Wellfound, LinkedIn and Himalayas, updated weekly." },
-            { icon: <Sparkles size={20} className="text-purple-400" />, title: "Unlimited AI Lessons", desc: "Generate lessons on any PM topic — grounded in real podcast transcripts." },
-            { icon: <Users size={20} className="text-pink-400" />, title: "PM Leader Lessons", desc: "Bite-sized lessons from Shreyas Doshi, Aakash Gupta, Marty Cagan and more." },
-            { icon: <MessageSquare size={20} className="text-cyan-400" />, title: "WhatsApp Community", desc: "Private group with active PMs, job referrals, and peer accountability." },
+            { icon: <BookOpen size={20} className="text-[var(--green-primary)]" />, title: "292+ Archive Lessons", desc: "Full Lenny's Podcast library — Shreyas, Reforge, Figma, Stripe PMs and more." },
+            { icon: <Brain size={20} className="text-[var(--blue-primary)]" />, title: "AI Interview Prep", desc: "5 PM interview questions with frameworks per session — strategy, metrics, execution." },
+            { icon: <Target size={20} className="text-[var(--orange-primary)]" />, title: "PM Jobs Board", desc: "Curated PM roles from Wellfound, LinkedIn and Himalayas, updated weekly." },
+            { icon: <Sparkles size={20} className="text-[var(--purple-primary)]" />, title: "Unlimited AI Lessons", desc: "Generate lessons on any PM topic — grounded in real podcast transcripts." },
+            { icon: <Users size={20} className="text-[var(--purple-primary)]" />, title: "PM Leader Lessons", desc: "Bite-sized lessons from Shreyas Doshi, Aakash Gupta, Marty Cagan and more." },
+            { icon: <MessageSquare size={20} className="text-[var(--blue-primary)]" />, title: "WhatsApp Community", desc: "Private group with active PMs, job referrals, and peer accountability." },
           ].map((f) => (
-            <div key={f.title} className="rounded-xl border border-white/10 p-4 bg-white/5">
+            <div key={f.title} className="rounded-xl border-2 border-[var(--border-color)] p-4 bg-[var(--bg-card)]">
               <div className="mb-2">{f.icon}</div>
               <h3 className="text-sm font-black mb-1">{f.title}</h3>
-              <p className="text-[11px] text-white/55">{f.desc}</p>
+              <p className="text-[11px] text-[var(--text-secondary)]">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -590,9 +556,9 @@ async function PricingContent() {
               : { q: "What's the yearly plan?", a: `${calculateMRP("$32", false)}/year — results in $32 with the applied discount.` },
             { q: "What payment methods are accepted?", a: isIndia ? "UPI, credit/debit cards, and net banking — via Razorpay live checkout. Dodo Payments remains available as a fallback." : "Credit/debit cards, PayPal, and more — via Dodo Payments secure checkout." },
           ].map((item) => (
-            <div key={item.q} className="rounded-xl border border-white/10 p-4 bg-white/5">
+            <div key={item.q} className="rounded-xl border-2 border-[var(--border-color)] p-4 bg-[var(--bg-card)]">
               <h3 className="text-xs font-black mb-1.5">{item.q}</h3>
-              <p className="text-[11px] text-white/55">{item.a}</p>
+              <p className="text-[11px] text-[var(--text-secondary)]">{item.a}</p>
             </div>
           ))}
         </div>

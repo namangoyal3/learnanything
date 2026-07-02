@@ -123,9 +123,9 @@ export default function PmCaseStudyInterviewPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🧩</span> 4 case types, proven frameworks, worked examples
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -135,7 +135,7 @@ export default function PmCaseStudyInterviewPage() {
             How to crack any PM case study — product improvement, new market entry, metric drops,
             and GTM. With step-by-step frameworks and worked examples for each.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice PM Cases Daily — Free →
           </Link>
         </section>
@@ -162,14 +162,14 @@ export default function PmCaseStudyInterviewPage() {
                     <ol className="space-y-1.5">
                       {c.framework.map((step, j) => (
                         <li key={j} className="flex gap-3 text-sm">
-                          <span className="w-5 h-5 rounded-full bg-[#7c3aed]/20 text-purple-400 text-xs flex items-center justify-center flex-shrink-0 mt-0.5">{j + 1}</span>
+                          <span className="w-5 h-5 rounded-full bg-[#58cc02]/20 text-[#89e219] text-xs flex items-center justify-center flex-shrink-0 mt-0.5">{j + 1}</span>
                           <span className="text-white/70">{step}</span>
                         </li>
                       ))}
                     </ol>
                   </div>
-                  <div className="bg-[#7c3aed]/5 border border-[#7c3aed]/20 rounded-xl p-4">
-                    <p className="text-xs text-purple-400 mb-1.5">💡 Worked example</p>
+                  <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-xl p-4">
+                    <p className="text-xs text-[#89e219] mb-1.5">💡 Worked example</p>
                     <p className="text-sm text-white/60">{c.example}</p>
                   </div>
                   <div className="bg-yellow-500/5 border border-yellow-500/20 rounded-xl px-4 py-3">
@@ -197,7 +197,7 @@ export default function PmCaseStudyInterviewPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Practice Cases Until They Feel Easy</h2>
           <p className="text-white/60 mb-6">Daily AI-graded PM cases — real prompts, real feedback, real improvement.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

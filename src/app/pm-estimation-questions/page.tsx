@@ -127,9 +127,9 @@ export default function PmEstimationQuestionsPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>🔢</span> The answer doesn&apos;t matter. The structure does.
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -139,7 +139,7 @@ export default function PmEstimationQuestionsPage() {
             The 5-step estimation framework, 20+ practice questions across 4 categories,
             a fully worked example, and the 6 traps that ruin otherwise good answers.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice Estimation Daily — Free →
           </Link>
         </section>
@@ -151,7 +151,7 @@ export default function PmEstimationQuestionsPage() {
             {FRAMEWORK.map((f, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                 <div className="flex gap-4 items-start">
-                  <span className="w-8 h-8 rounded-full bg-[#7c3aed]/20 text-purple-400 font-bold flex items-center justify-center flex-shrink-0">{i + 1}</span>
+                  <span className="w-8 h-8 rounded-full bg-[#58cc02]/20 text-[#89e219] font-bold flex items-center justify-center flex-shrink-0">{i + 1}</span>
                   <div>
                     <p className="font-semibold text-white mb-1">{f.step}</p>
                     <p className="text-sm text-white/60">{f.detail}</p>
@@ -163,14 +163,14 @@ export default function PmEstimationQuestionsPage() {
         </section>
 
         {/* Worked example */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-3">Worked Example</h2>
-            <p className="text-sm text-purple-400 text-center mb-8 italic">&ldquo;{WORKED.q}&rdquo;</p>
+            <p className="text-sm text-[#89e219] text-center mb-8 italic">&ldquo;{WORKED.q}&rdquo;</p>
             <div className="space-y-3">
               {WORKED.steps.map((s, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
-                  <p className="text-xs text-purple-400 font-bold uppercase tracking-wider mb-2">Step {i + 1}: {s.label}</p>
+                  <p className="text-xs text-[#89e219] font-bold uppercase tracking-wider mb-2">Step {i + 1}: {s.label}</p>
                   <p className="text-sm text-white/70">{s.content}</p>
                 </div>
               ))}
@@ -202,7 +202,7 @@ export default function PmEstimationQuestionsPage() {
         </section>
 
         {/* Common traps */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-10">6 Traps That Ruin Good Estimates</h2>
             <div className="space-y-3">
@@ -236,7 +236,7 @@ export default function PmEstimationQuestionsPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Build Estimation Fluency in 2 Minutes a Day</h2>
           <p className="text-white/60 mb-6">Daily guesstimates with AI-guided feedback on your structure and logic.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>

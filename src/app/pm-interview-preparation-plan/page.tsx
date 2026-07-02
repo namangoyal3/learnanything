@@ -170,9 +170,9 @@ export default function PmInterviewPreparationPlanPage() {
       ])} />
       <JsonLd data={faqSchema(FAQS.map(f => ({ question: f.q, answer: f.a })))} />
 
-      <main className="min-h-screen bg-[#0a0a0a] text-white">
+      <main className="min-h-screen bg-[#0e1113] text-white">
         <section className="max-w-4xl mx-auto px-4 pt-20 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-[#1a1a2e] border border-[#7c3aed]/30 rounded-full px-4 py-1.5 text-sm text-purple-300 mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#1f2228] border border-[#58cc02]/30 rounded-full px-4 py-1.5 text-sm text-[#89e219] mb-6">
             <span>📅</span> 8 weeks · ~70 hours · One structured plan
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
@@ -182,7 +182,7 @@ export default function PmInterviewPreparationPlanPage() {
             Week-by-week PM interview prep — what to study, how to practice, and how to know
             you&apos;re ready for Google, Flipkart, Razorpay, and top startups.
           </p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-8 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Your Prep Plan Today — Free →
           </Link>
         </section>
@@ -195,7 +195,7 @@ export default function PmInterviewPreparationPlanPage() {
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                   <div>
                     <div className="flex items-center gap-2 mb-0.5">
-                      <span className="text-xs bg-[#7c3aed]/20 text-purple-400 px-2 py-0.5 rounded-full">{w.week}</span>
+                      <span className="text-xs bg-[#58cc02]/20 text-[#89e219] px-2 py-0.5 rounded-full">{w.week}</span>
                       <h3 className="font-bold text-white">{w.theme}</h3>
                     </div>
                     <p className="text-xs text-white/40">{w.focus}</p>
@@ -210,7 +210,7 @@ export default function PmInterviewPreparationPlanPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="bg-[#0a0a0a] rounded-lg px-3 py-2">
+                <div className="bg-[#0e1113] rounded-lg px-3 py-2">
                   <p className="text-xs text-white/40">📚 Resource: <span className="text-white/60">{w.resource}</span></p>
                 </div>
               </div>
@@ -219,7 +219,7 @@ export default function PmInterviewPreparationPlanPage() {
         </section>
 
         {/* Readiness checklist */}
-        <section className="bg-[#0f0f0f] py-16">
+        <section className="bg-[#16181c] py-16">
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-2xl font-bold text-center mb-3">Interview Readiness Checklist</h2>
             <p className="text-white/60 text-center mb-8">If you can honestly check all 8, you&apos;re ready to interview.</p>
@@ -249,7 +249,7 @@ export default function PmInterviewPreparationPlanPage() {
         <section className="max-w-2xl mx-auto px-4 pb-20 text-center">
           <h2 className="text-2xl font-bold mb-3">Follow the Plan. Track Your Progress.</h2>
           <p className="text-white/60 mb-6">PM Streak keeps you on your prep plan with daily questions, streaks, and readiness tracking.</p>
-          <Link href="/signup" className="inline-block bg-[#7c3aed] hover:bg-[#6d28d9] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
+          <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] text-white font-semibold px-10 py-3 rounded-xl transition-colors">
             Start Free Trial →
           </Link>
         </section>
