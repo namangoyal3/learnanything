@@ -132,31 +132,31 @@ export default function SocialPage() {
       <main className="max-w-2xl mx-auto px-4 py-6 pb-28 space-y-6">
         <div className="text-center">
           <Users size={40} className="mx-auto text-[var(--purple-primary)] mb-2" />
-          <h1 className="text-xl font-bold">Social</h1>
+          <h1 className="text-2xl font-black tracking-tight">Social</h1>
           <div className="flex justify-center gap-4 mt-2 text-sm text-[var(--text-secondary)]">
-            <span><strong className="text-white">{followerCount}</strong> followers</span>
-            <span><strong className="text-white">{followingCount}</strong> following</span>
+            <span><strong className="text-white font-black tabular-nums">{followerCount}</strong> followers</span>
+            <span><strong className="text-white font-black tabular-nums">{followingCount}</strong> following</span>
           </div>
         </div>
 
         {/* Invite Friends CTA */}
         <button
           onClick={() => setShowShare(true)}
-          className="w-full py-3 rounded-2xl bg-gradient-to-r from-[var(--purple-primary)] to-[var(--blue-primary)] text-white font-bold text-sm flex items-center justify-center gap-2 transition-transform hover:scale-[1.02]"
+          className="w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide flex items-center justify-center gap-2 transition-all"
         >
           <Share2 size={16} /> Invite Friends via Link, Email, or Social
         </button>
 
         {/* Tabs */}
-        <div className="flex gap-1 bg-[var(--bg-card)] rounded-2xl p-1">
+        <div className="flex gap-1 bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-1">
           {(["friends", "find"] as const).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
               className={cn(
-                "flex-1 py-2 rounded-xl text-xs font-bold transition-colors capitalize relative",
+                "flex-1 py-2 rounded-xl text-xs font-black uppercase tracking-wide transition-colors relative",
                 tab === t
-                  ? "bg-[var(--purple-primary)] text-white"
+                  ? "bg-[var(--green-primary)] text-white"
                   : "text-[var(--text-secondary)] hover:text-white"
               )}
             >
@@ -175,7 +175,7 @@ export default function SocialPage() {
                 </p>
                 <button
                   onClick={() => setTab("find")}
-                  className="mt-3 px-4 py-2 rounded-full bg-[var(--purple-primary)] text-white text-xs font-bold"
+                  className="mt-3 px-4 py-2 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide transition-all"
                 >
                   Find Friends
                 </button>
@@ -185,7 +185,7 @@ export default function SocialPage() {
                 <button
                   type="button"
                   onClick={() => setShowFriendsList((prev) => !prev)}
-                  className="sm:hidden w-full rounded-xl border border-[var(--border-color)] bg-[var(--surface-1)] px-3 py-2.5 flex items-center justify-between"
+                  className="sm:hidden w-full rounded-xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--bg-card)] px-3 py-2.5 flex items-center justify-between active:border-b-2 active:translate-y-[2px] transition-all"
                 >
                   <span className="text-xs font-black">Friends list</span>
                   <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-[var(--text-secondary)]">
@@ -195,19 +195,19 @@ export default function SocialPage() {
                 </button>
                 <div className={cn("space-y-2", showFriendsList ? "block" : "hidden", "sm:block")}>
                   {friends.map((f) => (
-                    <div key={f.id} className="bg-[var(--bg-card)] rounded-2xl p-3 flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--purple-primary)] to-[var(--blue-primary)] flex items-center justify-center font-bold text-sm">
+                    <div key={f.id} className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-3 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--purple-primary)] to-[var(--blue-primary)] flex items-center justify-center font-black text-white text-sm">
                         {f.name.charAt(0)}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-sm font-bold truncate">{f.name}</div>
-                        <div className="text-xs text-[var(--text-secondary)]">Level {f.level}</div>
+                        <div className="text-[10px] font-bold uppercase tracking-wide text-[var(--text-secondary)]">Level {f.level}</div>
                       </div>
                       <div className="flex items-center gap-3 text-xs">
-                        <span className="flex items-center gap-1">
+                        <span className="flex items-center gap-1 font-bold tabular-nums">
                           <Flame size={12} className="text-[var(--orange-primary)]" /> {f.streakCount}
                         </span>
-                        <span className="text-[var(--gold-primary)] font-bold">{f.xp} XP</span>
+                        <span className="text-[var(--gold-primary)] font-black tabular-nums">{f.xp} XP</span>
                       </div>
                     </div>
                   ))}
@@ -215,13 +215,13 @@ export default function SocialPage() {
 
                 {activity.length > 0 && (
                   <div>
-                    <h3 className="text-sm font-bold text-[var(--text-secondary)] uppercase tracking-wide mb-2">
+                    <h3 className="text-xs font-black uppercase tracking-widest text-[var(--green-primary)] mb-2">
                       Recent Activity
                     </h3>
                     <button
                       type="button"
                       onClick={() => setShowActivity((prev) => !prev)}
-                      className="sm:hidden mb-2 w-full rounded-xl border border-[var(--border-color)] bg-[var(--surface-1)] px-3 py-2.5 flex items-center justify-between"
+                      className="sm:hidden mb-2 w-full rounded-xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--bg-card)] px-3 py-2.5 flex items-center justify-between active:border-b-2 active:translate-y-[2px] transition-all"
                     >
                       <span className="text-xs font-black">Activity feed</span>
                       <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-[var(--text-secondary)]">
@@ -231,7 +231,7 @@ export default function SocialPage() {
                     </button>
                     <div className={cn("space-y-2", showActivity ? "block" : "hidden", "sm:block")}>
                       {activity.map((a) => (
-                        <div key={a.id} className="bg-[var(--bg-card)] rounded-xl p-3 text-xs">
+                        <div key={a.id} className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-3 text-xs">
                           <div className="flex items-center justify-between">
                             <span>
                               <strong>{a.userName}</strong> completed{" "}
@@ -241,7 +241,7 @@ export default function SocialPage() {
                               <Clock size={10} /> {timeAgo(a.completedAt)}
                             </span>
                           </div>
-                          <div className="mt-1 flex items-center gap-1 text-[var(--gold-primary)]">
+                          <div className="mt-1 flex items-center gap-1 font-black tabular-nums text-[var(--gold-primary)]">
                             <Zap size={10} /> +{a.xpEarned} XP
                           </div>
                         </div>
@@ -263,19 +263,19 @@ export default function SocialPage() {
                 placeholder="Search by name..."
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] text-white placeholder:text-[var(--text-secondary)] focus:border-[var(--purple-primary)] focus:outline-none text-sm"
+                className="w-full pl-10 pr-4 py-3 rounded-2xl bg-[var(--bg-card)] border-2 border-[var(--border-color)] text-white placeholder:text-[var(--text-secondary)] focus:border-[var(--green-primary)] focus:outline-none text-sm"
               />
             </div>
 
             <div className="space-y-2">
               {searchResults.map((u) => (
-                <div key={u.id} className="bg-[var(--bg-card)] rounded-2xl p-3 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--blue-primary)] to-[var(--green-primary)] flex items-center justify-center font-bold text-sm">
+                <div key={u.id} className="bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-3 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--blue-primary)] to-[var(--green-primary)] flex items-center justify-center font-black text-white text-sm">
                     {u.name.charAt(0)}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-bold truncate">{u.name}</div>
-                    <div className="text-xs text-[var(--text-secondary)]">
+                    <div className="text-xs tabular-nums text-[var(--text-secondary)]">
                       Level {u.level} - {u.xp} XP
                     </div>
                   </div>
@@ -283,10 +283,10 @@ export default function SocialPage() {
                     <button
                       onClick={() => handleFollow(u.id)}
                       className={cn(
-                        "flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold transition-colors",
+                        "flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wide transition-all",
                         u.isFollowing
-                          ? "bg-[var(--bg-secondary)] text-[var(--text-secondary)]"
-                          : "bg-[var(--purple-primary)] text-white"
+                          ? "bg-[var(--bg-secondary)] border-2 border-[var(--border-color)] text-[var(--text-secondary)]"
+                          : "bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white"
                       )}
                     >
                       {u.isFollowing ? (

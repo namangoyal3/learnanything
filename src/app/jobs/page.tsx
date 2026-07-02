@@ -179,25 +179,25 @@ export default function JobsPage() {
         {/* Hero */}
         <div className="mb-6">
           <div className="flex items-center gap-2 mb-2">
-            <Briefcase size={20} className="text-orange-400" />
-            <h1 className="text-2xl font-black">PM Jobs</h1>
+            <Briefcase size={20} className="text-[var(--orange-primary)]" />
+            <h1 className="text-2xl font-black tracking-tight">PM Jobs</h1>
           </div>
-          <p className="text-white/55 text-sm">Curated Product Manager roles, updated weekly.</p>
+          <p className="text-[var(--text-secondary)] text-sm">Curated Product Manager roles, updated weekly.</p>
         </div>
 
-        <div className="mb-6 rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div className="flex items-center gap-2 text-xs font-black text-white/60 uppercase tracking-wider mb-3">
+        <div className="mb-6 rounded-2xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] p-4">
+          <div className="flex items-center gap-2 text-xs font-black text-[var(--green-primary)] uppercase tracking-widest mb-3">
             <CalendarDays size={14} />
             Build interview plan
           </div>
-          <div className="flex gap-2 mb-4">
+          <div className="flex gap-1 w-fit bg-[var(--surface-1)] rounded-2xl border-2 border-[var(--border-color)] p-1 mb-4">
             <button
               onClick={() => setTab("browse")}
               className={cn(
-                "px-3 py-2 text-xs font-black rounded-lg border transition-colors",
+                "px-4 py-2 text-xs font-black uppercase tracking-wide rounded-xl transition-colors",
                 tab === "browse"
-                  ? "bg-blue-500/20 border-blue-500/50 text-blue-300"
-                  : "bg-white/5 border-white/10 text-white/50 hover:text-white"
+                  ? "bg-[var(--green-primary)] text-white"
+                  : "text-[var(--text-secondary)] hover:text-white"
               )}
             >
               Browse roles
@@ -205,10 +205,10 @@ export default function JobsPage() {
             <button
               onClick={() => setTab("paste")}
               className={cn(
-                "px-3 py-2 text-xs font-black rounded-lg border transition-colors",
+                "px-4 py-2 text-xs font-black uppercase tracking-wide rounded-xl transition-colors",
                 tab === "paste"
-                  ? "bg-purple-500/20 border-purple-500/50 text-purple-300"
-                  : "bg-white/5 border-white/10 text-white/50 hover:text-white"
+                  ? "bg-[var(--green-primary)] text-white"
+                  : "text-[var(--text-secondary)] hover:text-white"
               )}
             >
               <span className="inline-flex items-center gap-1">
@@ -223,22 +223,22 @@ export default function JobsPage() {
               value={jdText}
               onChange={(e) => setJdText(e.target.value)}
               placeholder="Paste full job description here..."
-              className="w-full min-h-40 rounded-xl bg-black/20 border border-white/10 px-3 py-3 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-purple-500/40"
+              className="w-full min-h-40 rounded-xl bg-[var(--surface-1)] border-2 border-[var(--border-color)] px-3 py-3 text-sm text-white placeholder:text-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--blue-primary)]"
             />
           )}
 
           <div className="mt-4">
-            <p className="text-[11px] text-white/55 font-bold mb-2 uppercase tracking-wider">Target timeframe</p>
-            <div className="flex flex-wrap gap-2 mb-2">
+            <p className="text-[11px] text-[var(--text-secondary)] font-black mb-2 uppercase tracking-widest">Target timeframe</p>
+            <div className="flex flex-wrap gap-1 w-fit bg-[var(--surface-1)] rounded-2xl border-2 border-[var(--border-color)] p-1 mb-2">
               {(["15", "30", "60", "custom"] as const).map((mode) => (
                 <button
                   key={mode}
                   onClick={() => setTargetMode(mode)}
                   className={cn(
-                    "px-3 py-1.5 text-xs font-black rounded-lg border transition-colors",
+                    "px-3 py-1.5 text-xs font-black uppercase tracking-wide rounded-xl transition-colors",
                     targetMode === mode
-                      ? "bg-green-500/20 border-green-500/50 text-green-300"
-                      : "bg-white/5 border-white/10 text-white/50 hover:text-white"
+                      ? "bg-[var(--green-primary)] text-white"
+                      : "text-[var(--text-secondary)] hover:text-white"
                   )}
                 >
                   {mode === "custom" ? "Custom date" : `${mode} days`}
@@ -250,17 +250,17 @@ export default function JobsPage() {
                 type="date"
                 value={customDate}
                 onChange={(e) => setCustomDate(e.target.value)}
-                className="rounded-lg bg-black/20 border border-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:border-green-500/40"
+                className="rounded-xl bg-[var(--surface-1)] border-2 border-[var(--border-color)] px-3 py-2 text-sm text-white focus:outline-none focus:border-[var(--green-primary)]"
               />
             )}
           </div>
 
-          {planError && <p className="mt-3 text-xs font-bold text-red-300">{planError}</p>}
+          {planError && <p className="mt-3 text-xs font-bold text-[var(--red-primary)]">{planError}</p>}
 
           <button
             onClick={handleGeneratePlan}
             disabled={creatingPlan}
-            className="mt-4 w-full py-3 rounded-xl bg-[var(--green-primary)] text-white text-sm font-black uppercase tracking-wider hover:opacity-90 disabled:opacity-60 transition-opacity"
+            className="mt-4 w-full py-3 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-sm font-black uppercase tracking-wide disabled:opacity-60 transition-all"
           >
             {creatingPlan ? "Generating plan..." : "Generate my plan"}
           </button>
@@ -270,10 +270,10 @@ export default function JobsPage() {
         <button
           type="button"
           onClick={() => setShowMobileFilters((prev) => !prev)}
-          className="sm:hidden w-full mb-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 flex items-center justify-between"
+          className="sm:hidden w-full mb-3 rounded-xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--bg-card)] px-3 py-2.5 flex items-center justify-between active:border-b-2 active:translate-y-[2px] transition-all"
         >
           <span className="text-xs font-black">Search & filters</span>
-          <span className="text-[10px] font-bold text-white/60 uppercase tracking-wider">
+          <span className="text-[10px] font-black text-[var(--text-secondary)] uppercase tracking-wider">
             {showMobileFilters ? "Hide" : "Show"}
           </span>
         </button>
@@ -281,22 +281,22 @@ export default function JobsPage() {
         {/* Filters */}
         <div className={cn("mb-6 flex gap-3", showMobileFilters ? "flex" : "hidden sm:flex")}>
           <div className="flex-1 relative">
-            <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40" />
+            <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]" />
             <input
               type="text"
               placeholder="Search jobs or companies..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-xl pl-9 pr-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-green-500/40"
+              className="w-full bg-[var(--bg-card)] border-2 border-[var(--border-color)] rounded-xl pl-9 pr-4 py-2.5 text-sm text-white placeholder:text-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--green-primary)]"
             />
           </div>
           <button
             onClick={() => setRemoteOnly((v) => !v)}
             className={cn(
-              "flex items-center gap-1.5 px-4 py-2.5 rounded-xl border text-xs font-black transition-colors",
+              "flex items-center gap-1.5 px-4 py-2.5 rounded-xl border-2 border-b-4 active:border-b-2 active:translate-y-[2px] text-xs font-black uppercase tracking-wide transition-all",
               remoteOnly
-                ? "bg-green-500/20 border-green-500/40 text-green-400"
-                : "bg-white/5 border-white/10 text-white/60 hover:text-white"
+                ? "bg-[var(--green-primary)] border-[var(--green-dark)] text-white"
+                : "bg-[var(--bg-card)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-white"
             )}
           >
             <Globe size={12} /> Remote
@@ -305,12 +305,12 @@ export default function JobsPage() {
 
         {/* Job List */}
         {loading ? (
-          <div className="text-center py-20 text-white/40 text-sm">Loading jobs…</div>
+          <div className="text-center py-20 text-[var(--text-secondary)] text-sm">Loading jobs…</div>
         ) : jobs.length === 0 ? (
           <div className="text-center py-20">
-            <Briefcase size={40} className="text-white/20 mx-auto mb-4" />
-            <p className="text-white/50 text-sm mb-2">No jobs yet</p>
-            <p className="text-white/30 text-xs">Check back soon.</p>
+            <Briefcase size={40} className="text-[var(--text-secondary)]/30 mx-auto mb-4" />
+            <p className="text-[var(--text-secondary)] text-sm mb-2">No jobs yet</p>
+            <p className="text-[var(--text-secondary)]/60 text-xs">Check back soon.</p>
           </div>
         ) : (
           <div className="space-y-3">
@@ -318,10 +318,10 @@ export default function JobsPage() {
               <div
                 key={job.id}
                 className={cn(
-                  "rounded-2xl border-2 bg-[var(--surface-2)] p-4 transition-all",
+                  "rounded-2xl border-2 bg-[var(--bg-card)] p-4 transition-all",
                   selectedJobId === job.id
-                    ? "border-green-500/60 shadow-lg shadow-green-500/10"
-                    : "border-[var(--border-color)] hover:border-white/10"
+                    ? "border-[var(--green-primary)]/60 shadow-lg shadow-[var(--green-primary)]/10"
+                    : "border-[var(--border-color)] hover:border-[var(--text-secondary)]/40"
                 )}
               >
                 <div className="flex items-start justify-between gap-4">
@@ -329,7 +329,7 @@ export default function JobsPage() {
                     <div className="flex items-center gap-2 flex-wrap mb-1">
                       <h3 className="text-sm font-black">{job.title}</h3>
                       {job.remote && (
-                        <span className="text-[10px] font-black text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full uppercase tracking-tighter">Remote</span>
+                        <span className="text-[10px] font-black text-[var(--green-primary)] bg-[var(--green-primary)]/10 px-2 py-0.5 rounded-full uppercase tracking-tighter">Remote</span>
                       )}
                     </div>
                     <p className="text-xs text-[var(--text-secondary)] font-bold mb-1">{job.company}</p>
@@ -349,10 +349,10 @@ export default function JobsPage() {
                         setSelectedJobId(job.id);
                       }}
                       className={cn(
-                        "mt-3 inline-flex items-center gap-1.5 text-[11px] font-black px-2.5 py-1.5 rounded-lg border transition-colors",
+                        "mt-3 inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wide px-2.5 py-1.5 rounded-xl border-2 border-b-4 active:border-b-2 active:translate-y-[2px] transition-all",
                         selectedJobId === job.id
-                          ? "bg-green-500/20 border-green-500/40 text-green-300"
-                          : "bg-white/5 border-white/10 text-white/60 hover:text-white"
+                          ? "bg-[var(--green-primary)]/15 border-[var(--green-primary)]/50 text-[var(--green-primary)]"
+                          : "bg-[var(--surface-1)] border-[var(--border-color)] text-[var(--text-secondary)] hover:text-white"
                       )}
                     >
                       {selectedJobId === job.id ? <CheckCircle2 size={12} /> : null}
@@ -363,7 +363,7 @@ export default function JobsPage() {
                     href={job.applyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-shrink-0 flex items-center gap-1.5 bg-[var(--green-primary)] text-white text-xs font-black px-4 py-2.5 rounded-xl hover:opacity-90 transition-all active:scale-95"
+                    className="flex-shrink-0 flex items-center gap-1.5 bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide px-4 py-2.5 rounded-xl transition-all"
                   >
                     Apply <ExternalLink size={11} />
                   </a>
@@ -373,21 +373,21 @@ export default function JobsPage() {
 
             {user?.plan !== "pro" && jobs.length > 3 && (
               <div className="pt-2">
-                <Link href="/pricing" className="block relative overflow-hidden rounded-2xl border-2 border-purple-500/40 bg-gradient-to-br from-purple-950/40 to-indigo-950/20 p-6 text-center group">
+                <Link href="/pricing" className="block relative overflow-hidden rounded-2xl border-2 border-[var(--purple-primary)]/40 bg-[var(--bg-card)] p-6 text-center group">
                   <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                     <Lock size={120} />
                   </div>
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-2xl bg-purple-500/20 flex items-center justify-center mx-auto mb-3 border border-purple-500/30">
-                      <Lock size={20} className="text-purple-400" />
+                    <div className="w-12 h-12 rounded-2xl bg-[var(--purple-primary)]/15 flex items-center justify-center mx-auto mb-3 border-2 border-[var(--purple-primary)]/40">
+                      <Lock size={20} className="text-[var(--purple-primary)]" />
                     </div>
                     <h3 className="text-base font-black text-white mb-1">
                       {jobs.length - 3} more jobs locked
                     </h3>
-                    <p className="text-xs text-purple-400 font-bold mb-6">
+                    <p className="text-xs text-[var(--purple-primary)] font-bold mb-6">
                       Unlock the full PM Jobs board with Pro
                     </p>
-                    <div className="inline-flex items-center gap-2 bg-purple-500 text-white text-xs font-black px-6 py-3 rounded-xl hover:bg-purple-400 transition-all uppercase tracking-widest shadow-lg shadow-purple-500/20">
+                    <div className="inline-flex items-center gap-2 bg-[var(--purple-primary)] text-white text-xs font-black px-6 py-3 rounded-xl border-b-4 border-black/30 group-hover:opacity-90 transition-all uppercase tracking-widest">
                       <Sparkles size={14} /> Upgrade to Unlock
                     </div>
                   </div>
@@ -398,9 +398,9 @@ export default function JobsPage() {
         )}
 
         {planPreview && (
-          <div className="mt-8 rounded-2xl border border-green-500/30 bg-green-500/10 p-5">
-            <h3 className="text-sm font-black text-green-300 mb-2">Plan generated</h3>
-            <p className="text-xs text-white/75 mb-4">
+          <div className="mt-8 rounded-2xl border-2 border-[var(--green-primary)]/40 bg-[var(--green-primary)]/10 p-5">
+            <h3 className="text-sm font-black text-[var(--green-primary)] mb-2">Plan generated</h3>
+            <p className="text-xs text-[var(--text-secondary)] tabular-nums mb-4">
               {planPreview.planConfig?.days ?? planPreview.planLessons.length} days ·{" "}
               {planPreview.planConfig?.sessionsPerWeek ?? "?"} sessions/week
             </p>
@@ -416,14 +416,14 @@ export default function JobsPage() {
                   return acc;
                 }, {});
                 return (
-                  <div key={weekIndex} className="rounded-xl border border-white/10 bg-black/20 p-3">
-                    <p className="text-xs font-black text-white/80 mb-1">Week {weekIndex}</p>
-                    <p className="text-[11px] text-white/65">
+                  <div key={weekIndex} className="rounded-xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] p-3">
+                    <p className="text-xs font-black text-white mb-1">Week {weekIndex}</p>
+                    <p className="text-[11px] text-[var(--text-secondary)]">
                       {Object.entries(mix)
                         .map(([k, v]) => `${lessonTypeLabel(k)} x${v}`)
                         .join(", ")}
                     </p>
-                    <p className="text-[10px] text-white/45 mt-1">
+                    <p className="text-[10px] text-[var(--text-secondary)]/70 mt-1">
                       Skills:{" "}
                       {Array.from(
                         new Set(
@@ -438,7 +438,7 @@ export default function JobsPage() {
             {createdTargetId && (
               <Link
                 href={`/interview-sprint?targetId=${encodeURIComponent(createdTargetId)}`}
-                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white text-black text-xs font-black px-3 py-2"
+                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white text-xs font-black uppercase tracking-wide px-3 py-2 transition-all"
               >
                 Start daily drill
               </Link>
@@ -450,22 +450,22 @@ export default function JobsPage() {
         <button
           type="button"
           onClick={() => setShowMobileUpgrade((prev) => !prev)}
-          className="sm:hidden w-full mt-7 rounded-xl border border-purple-500/30 bg-purple-500/10 px-3 py-2.5 flex items-center justify-between"
+          className="sm:hidden w-full mt-7 rounded-xl border-2 border-b-4 border-[var(--purple-primary)]/40 bg-[var(--purple-primary)]/10 px-3 py-2.5 flex items-center justify-between active:border-b-2 active:translate-y-[2px] transition-all"
         >
-          <span className="text-xs font-black text-purple-300">Upgrade options</span>
-          <span className="text-[10px] font-bold text-purple-300/80 uppercase tracking-wider">
+          <span className="text-xs font-black text-[var(--purple-primary)]">Upgrade options</span>
+          <span className="text-[10px] font-black text-[var(--purple-primary)]/80 uppercase tracking-wider">
             {showMobileUpgrade ? "Hide" : "Show"}
           </span>
         </button>
 
         {/* Pro CTA */}
-        <div className={cn("mt-8 rounded-2xl border border-purple-500/30 bg-purple-500/10 p-5 flex items-center gap-4", showMobileUpgrade ? "flex" : "hidden sm:flex", "sm:flex")}>
-          <Zap size={24} className="text-purple-400 flex-shrink-0" />
+        <div className={cn("mt-8 rounded-2xl border-2 border-[var(--purple-primary)]/40 bg-[var(--purple-primary)]/10 p-5 flex items-center gap-4", showMobileUpgrade ? "flex" : "hidden sm:flex", "sm:flex")}>
+          <Zap size={24} className="text-[var(--purple-primary)] flex-shrink-0" />
           <div className="flex-1">
             <p className="text-sm font-black">Want direct apply links and PM leader job alerts?</p>
-            <p className="text-xs text-white/50 mt-0.5">Upgrade to Pro to unlock the full job board experience.</p>
+            <p className="text-xs text-[var(--text-secondary)] mt-0.5">Upgrade to Pro to unlock the full job board experience.</p>
           </div>
-          <Link href="/pricing" className="flex-shrink-0 bg-purple-500 text-white text-xs font-black px-4 py-2 rounded-lg hover:bg-purple-400 transition-colors">
+          <Link href="/pricing" className="flex-shrink-0 bg-[var(--purple-primary)] text-white text-xs font-black uppercase tracking-wide px-4 py-2 rounded-xl border-b-4 border-black/30 active:border-b-2 active:translate-y-[2px] hover:opacity-90 transition-all">
             Upgrade
           </Link>
         </div>

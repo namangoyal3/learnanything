@@ -101,22 +101,22 @@ export default function InterviewPrepPage() {
         {/* Hero */}
         <div className="mb-6">
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <Brain size={20} className="text-blue-400" />
-            <h1 className="text-2xl font-black">Interview Prep</h1>
-            <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-500/25 text-blue-200 border border-blue-500/40">
+            <Brain size={20} className="text-[var(--blue-primary)]" />
+            <h1 className="text-2xl font-black tracking-tight">Interview Prep</h1>
+            <span className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--blue-primary)]/20 text-[var(--blue-primary)] border border-[var(--blue-primary)]/40">
               AI
             </span>
           </div>
-          <p className="text-white/70 text-sm leading-relaxed">
+          <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
             This helps you keep your prep relevant to a role you want to apply for — pair it with a job target from{" "}
             <Link href="/jobs" className="text-[var(--green-primary)] font-black hover:underline">
               PM Jobs
             </Link>{" "}
             (build a plan) so questions and frameworks align with your JD.
           </p>
-          <p className="text-white/55 text-sm mt-3">Five PM questions + answer frameworks per session.</p>
-          <p className="text-[11px] text-white/40 mt-1">
-            <strong className="text-purple-300">
+          <p className="text-[var(--text-secondary)] text-sm mt-3">Five PM questions + answer frameworks per session.</p>
+          <p className="text-[11px] text-[var(--text-secondary)]/70 mt-1">
+            <strong className="text-[var(--purple-primary)]">
               {INTERVIEW_PREP_PRICING.creditsPerQuestion} credit per question
             </strong>{" "}
             ({INTERVIEW_PREP_PRICING.questionsPerSession} questions = {interviewPrepSessionCreditTotal()} credits per
@@ -125,28 +125,28 @@ export default function InterviewPrepPage() {
         </div>
 
         {/* Config */}
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-5 mb-6">
+        <div className="rounded-2xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] p-5 mb-6">
           <button
             type="button"
             onClick={() => setShowFilters((prev) => !prev)}
-            className="sm:hidden mb-4 w-full flex items-center justify-between px-3 py-2 rounded-xl border border-white/10 bg-black/10 text-xs font-black"
+            className="sm:hidden mb-4 w-full flex items-center justify-between px-3 py-2.5 rounded-xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--surface-1)] text-xs font-black active:border-b-2 active:translate-y-[2px] transition-all"
           >
             <span>Topic & level</span>
-            <span className="text-white/60">{showFilters ? "Hide" : "Show"}</span>
+            <span className="text-[10px] font-black text-[var(--text-secondary)] uppercase tracking-wider">{showFilters ? "Hide" : "Show"}</span>
           </button>
           <div className={cn("grid sm:grid-cols-2 gap-4 mb-5", showFilters ? "grid" : "hidden sm:grid")}>
             <div>
-              <label className="text-xs font-black text-white/60 uppercase tracking-wider mb-2 block">Topic</label>
-              <div className="flex flex-wrap gap-2">
+              <label className="text-xs font-black text-[var(--green-primary)] uppercase tracking-widest mb-2 block">Topic</label>
+              <div className="flex flex-wrap gap-1 w-fit bg-[var(--surface-1)] rounded-2xl border-2 border-[var(--border-color)] p-1">
                 {TOPICS.map((t) => (
                   <button
                     key={t}
                     onClick={() => setTopic(t)}
                     className={cn(
-                      "px-3 py-1.5 rounded-lg text-xs font-black border transition-colors",
+                      "px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wide transition-colors",
                       topic === t
-                        ? "bg-blue-500/20 border-blue-500/50 text-blue-300"
-                        : "bg-white/5 border-white/10 text-white/50 hover:text-white"
+                        ? "bg-[var(--blue-primary)] text-white"
+                        : "text-[var(--text-secondary)] hover:text-white"
                     )}
                   >
                     {t}
@@ -155,17 +155,17 @@ export default function InterviewPrepPage() {
               </div>
             </div>
             <div>
-              <label className="text-xs font-black text-white/60 uppercase tracking-wider mb-2 block">Level</label>
-              <div className="flex flex-wrap gap-2">
+              <label className="text-xs font-black text-[var(--green-primary)] uppercase tracking-widest mb-2 block">Level</label>
+              <div className="flex flex-wrap gap-1 w-fit bg-[var(--surface-1)] rounded-2xl border-2 border-[var(--border-color)] p-1">
                 {LEVELS.map((l) => (
                   <button
                     key={l}
                     onClick={() => setLevel(l)}
                     className={cn(
-                      "px-3 py-1.5 rounded-lg text-xs font-black border transition-colors",
+                      "px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wide transition-colors",
                       level === l
-                        ? "bg-green-500/20 border-green-500/50 text-green-300"
-                        : "bg-white/5 border-white/10 text-white/50 hover:text-white"
+                        ? "bg-[var(--green-primary)] text-white"
+                        : "text-[var(--text-secondary)] hover:text-white"
                     )}
                   >
                     {l}
@@ -178,7 +178,7 @@ export default function InterviewPrepPage() {
           <button
             onClick={generate}
             disabled={loading}
-            className="w-full py-3.5 bg-blue-500 text-white font-black text-sm rounded-xl uppercase tracking-wider hover:bg-blue-400 transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+            className="w-full py-3.5 rounded-2xl bg-[var(--green-primary)] hover:bg-[var(--green-dark)] border-b-4 border-[var(--green-dark)] active:border-b-2 active:translate-y-[2px] text-white font-black text-sm uppercase tracking-wide transition-all disabled:opacity-60 flex items-center justify-center gap-2"
           >
             {loading ? (
               <><Loader2 size={16} className="animate-spin" /> Generating…</>
@@ -191,12 +191,12 @@ export default function InterviewPrepPage() {
 
         {/* Error */}
         {error && (
-          <div className="mb-4 rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex items-start gap-3">
-            <AlertTriangle size={16} className="text-red-400 mt-0.5 flex-shrink-0" />
+          <div className="mb-4 rounded-2xl border-2 border-[var(--red-primary)]/40 bg-[var(--red-primary)]/10 p-4 flex items-start gap-3">
+            <AlertTriangle size={16} className="text-[var(--red-primary)] mt-0.5 flex-shrink-0" />
             <div>
-              <p className="text-sm font-bold text-red-300">{error}</p>
+              <p className="text-sm font-bold text-[var(--red-primary)]">{error}</p>
               {error.includes("credits") && (
-                <Link href="/pricing" className="text-xs text-purple-400 font-black mt-1 block hover:underline flex items-center gap-1">
+                <Link href="/pricing" className="text-xs text-[var(--purple-primary)] font-black mt-1 block hover:underline flex items-center gap-1">
                   <Star size={10} /> Upgrade to Pro for unlimited sessions
                 </Link>
               )}
@@ -207,24 +207,24 @@ export default function InterviewPrepPage() {
         {/* Questions */}
         {questions.length > 0 && (
           <div className="space-y-4">
-            <h2 className="text-sm font-black text-white/70 uppercase tracking-wider">
+            <h2 className="text-xs font-black text-[var(--green-primary)] uppercase tracking-widest">
               {topic} · {level} · 5 Questions
             </h2>
             {questions.map((q, i) => {
               const isRevealed = revealed.has(i);
               return (
-                <div key={i} className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+                <div key={i} className="rounded-2xl border-2 border-[var(--border-color)] bg-[var(--bg-card)] overflow-hidden">
                   <div className="p-5">
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl font-black text-white/20 leading-none">{i + 1}</span>
+                      <span className="text-2xl font-black text-[var(--text-secondary)]/40 leading-none tabular-nums">{i + 1}</span>
                       <p className="text-sm font-bold text-white leading-relaxed">{q.question}</p>
                     </div>
                   </div>
 
-                  <div className="border-t border-white/5 px-5 pb-2">
+                  <div className="border-t-2 border-[var(--border-color)] px-5 pb-2">
                     <button
                       onClick={() => toggleReveal(i)}
-                      className="flex items-center gap-2 py-3 text-xs font-black text-white/50 hover:text-white transition-colors w-full"
+                      className="flex items-center gap-2 py-3 text-xs font-black uppercase tracking-wide text-[var(--text-secondary)] hover:text-white transition-colors w-full"
                     >
                       <ChevronDown size={14} className={cn("transition-transform", isRevealed && "rotate-180")} />
                       {isRevealed ? "Hide framework" : "Reveal answer framework"}
@@ -232,19 +232,19 @@ export default function InterviewPrepPage() {
 
                     {isRevealed && (
                       <div className="pb-4 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
-                        <div className="rounded-xl bg-blue-500/10 border border-blue-500/20 p-3">
-                          <p className="text-[11px] font-black text-blue-300 uppercase tracking-wider mb-1">Framework</p>
-                          <p className="text-xs text-white/75 leading-relaxed">{q.framework}</p>
+                        <div className="rounded-xl bg-[var(--blue-primary)]/10 border-2 border-[var(--blue-primary)]/25 p-3">
+                          <p className="text-[11px] font-black text-[var(--blue-primary)] uppercase tracking-wider mb-1">Framework</p>
+                          <p className="text-xs text-[var(--text-secondary)] leading-relaxed">{q.framework}</p>
                         </div>
 
                         <div>
-                          <p className="text-[11px] font-black text-green-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                          <p className="text-[11px] font-black text-[var(--green-primary)] uppercase tracking-wider mb-2 flex items-center gap-1.5">
                             <CheckCircle2 size={11} /> What great answers cover
                           </p>
                           <ul className="space-y-1.5">
                             {q.keyPoints.map((p, j) => (
-                              <li key={j} className="flex items-start gap-2 text-xs text-white/65">
-                                <span className="text-green-400 mt-0.5">•</span>
+                              <li key={j} className="flex items-start gap-2 text-xs text-[var(--text-secondary)]">
+                                <span className="text-[var(--green-primary)] mt-0.5">•</span>
                                 {p}
                               </li>
                             ))}
@@ -252,13 +252,13 @@ export default function InterviewPrepPage() {
                         </div>
 
                         <div>
-                          <p className="text-[11px] font-black text-orange-300 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                          <p className="text-[11px] font-black text-[var(--orange-primary)] uppercase tracking-wider mb-2 flex items-center gap-1.5">
                             <AlertTriangle size={11} /> Common mistakes
                           </p>
                           <ul className="space-y-1.5">
                             {q.commonMistakes.map((m, j) => (
-                              <li key={j} className="flex items-start gap-2 text-xs text-white/65">
-                                <span className="text-orange-400 mt-0.5">•</span>
+                              <li key={j} className="flex items-start gap-2 text-xs text-[var(--text-secondary)]">
+                                <span className="text-[var(--orange-primary)] mt-0.5">•</span>
                                 {m}
                               </li>
                             ))}
@@ -275,7 +275,7 @@ export default function InterviewPrepPage() {
             <button
               onClick={generate}
               disabled={loading}
-              className="w-full py-4 rounded-xl border-2 border-[var(--border-color)] bg-[var(--surface-2)] text-xs font-black text-white/70 hover:text-white hover:border-white/10 transition-all active:scale-[0.98] uppercase tracking-widest"
+              className="w-full py-4 rounded-2xl border-2 border-b-4 border-[var(--border-color)] bg-[var(--bg-card)] text-xs font-black text-[var(--text-secondary)] hover:text-white active:border-b-2 active:translate-y-[2px] transition-all uppercase tracking-widest"
             >
               Generate new set ({interviewPrepSessionCreditTotal()} credits)
             </button>
@@ -284,13 +284,13 @@ export default function InterviewPrepPage() {
 
         {/* Pro CTA */}
         {questions.length === 0 && !loading && !error && (
-          <div className="rounded-2xl border border-purple-500/20 bg-purple-500/10 p-5 flex items-center gap-4">
-            <Star size={20} className="text-purple-400 flex-shrink-0" />
+          <div className="rounded-2xl border-2 border-[var(--purple-primary)]/40 bg-[var(--purple-primary)]/10 p-5 flex items-center gap-4">
+            <Star size={20} className="text-[var(--purple-primary)] flex-shrink-0" />
             <div className="flex-1">
               <p className="text-sm font-black">Pro: unlimited sessions</p>
-              <p className="text-xs text-white/50 mt-0.5">No credit cost, generate as many sets as you want.</p>
+              <p className="text-xs text-[var(--text-secondary)] mt-0.5">No credit cost, generate as many sets as you want.</p>
             </div>
-            <Link href="/pricing" className="flex-shrink-0 bg-purple-500 text-white text-xs font-black px-4 py-2 rounded-lg hover:bg-purple-400 transition-colors">
+            <Link href="/pricing" className="flex-shrink-0 bg-[var(--purple-primary)] text-white text-xs font-black uppercase tracking-wide px-4 py-2 rounded-xl border-b-4 border-black/30 active:border-b-2 active:translate-y-[2px] hover:opacity-90 transition-all">
               Upgrade
             </Link>
           </div>
