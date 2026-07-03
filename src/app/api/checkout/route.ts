@@ -4,9 +4,12 @@ import { getCurrentUserId } from "@/lib/auth";
 import { serverEvents } from "@/lib/ga4-server";
 import { recordAcquisitionEvent } from "@/lib/acquisition";
 
+// Env values are trimmed: several Dodo IDs were stored with a trailing newline,
+// which leaked into checkout URLs as %0A and into the post-payment redirect_url.
+const env = (key: string): string => (process.env[key] ?? "").trim();
+
 const DODO_ENV =
-  (process.env.DODO_PAYMENTS_ENVIRONMENT as "test_mode" | "live_mode" | undefined) ??
-  "live_mode";
+  (env("DODO_PAYMENTS_ENVIRONMENT") as "test_mode" | "live_mode" | "") || "live_mode";
 
 const DODO_BASE =
   DODO_ENV === "test_mode"
@@ -14,19 +17,13 @@ const DODO_BASE =
     : "https://live.dodopayments.com";
 
 const RETURN_URL =
-  process.env.DODO_PAYMENTS_RETURN_URL ??
-  `${process.env.NEXTAUTH_URL ?? ""}/dashboard?checkout=success`;
-
-const DISCOUNTED_PRODUCTS: Record<string, string> = {
-  monthly: process.env.NEXT_PUBLIC_DODO_MONTHLY_DISCOUNTED_PRODUCT_ID ?? "",
-  quarterly: process.env.NEXT_PUBLIC_DODO_QUARTERLY_DISCOUNTED_PRODUCT_ID ?? "",
-  yearly: process.env.NEXT_PUBLIC_DODO_YEARLY_DISCOUNTED_PRODUCT_ID ?? "",
-};
+  env("DODO_PAYMENTS_RETURN_URL") ||
+  `${env("NEXTAUTH_URL")}/dashboard?checkout=success`;
 
 const FALLBACK_PRODUCTS: Record<string, string> = {
-  monthly: process.env.NEXT_PUBLIC_DODO_MONTHLY_PRODUCT_ID ?? "",
-  quarterly: process.env.NEXT_PUBLIC_DODO_QUARTERLY_PRODUCT_ID ?? "",
-  yearly: process.env.NEXT_PUBLIC_DODO_YEARLY_PRODUCT_ID ?? "",
+  monthly: env("NEXT_PUBLIC_DODO_MONTHLY_PRODUCT_ID"),
+  quarterly: env("NEXT_PUBLIC_DODO_QUARTERLY_PRODUCT_ID"),
+  yearly: env("NEXT_PUBLIC_DODO_YEARLY_PRODUCT_ID"),
 };
 
 export async function GET(req: NextRequest) {
@@ -56,6 +53,10 @@ export async function GET(req: NextRequest) {
       },
     });
   }
+
+  // Trim caller-supplied productId too — pricing page links were built from
+  // newline-contaminated env vars, so ?productId=pdt_xxx%0A reaches us here.
+  if (productId) productId = productId.trim();
 
   // If no productId provided but plan is, use the base product for that plan
   if (!productId && plan) {
