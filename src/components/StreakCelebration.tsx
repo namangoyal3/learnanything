@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import ModalShell from "@/components/ui/ModalShell";
 import { Flame, X } from "lucide-react";
 
 interface StreakCelebrationProps {
@@ -66,20 +67,12 @@ export default function StreakCelebration({ milestone, streakCount, perfectStrea
   };
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[200] flex items-center justify-center"
-      >
-        <div className="absolute inset-0 bg-black/70" onClick={onClose} />
+    <ModalShell open onClose={onClose} label={data.title} overlayClassName="bg-black/70" zIndex="z-[200]">
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0.5, opacity: 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="relative w-full max-w-xs mx-4"
+          className="pointer-events-auto self-center relative w-full max-w-xs mx-4"
         >
           <button
             onClick={onClose}
@@ -138,7 +131,6 @@ export default function StreakCelebration({ milestone, streakCount, perfectStrea
             ))}
           </div>
         </motion.div>
-      </motion.div>
-    </AnimatePresence>
+    </ModalShell>
   );
 }

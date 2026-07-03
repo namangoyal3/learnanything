@@ -4,6 +4,7 @@ import { Sparkles, Zap, Trophy, BookOpen, X, CheckCircle2, Crown } from "lucide-
 import { cn } from "@/lib/utils";
 import { ds } from "@/lib/ds";
 import { useState } from "react";
+import ModalShell from "@/components/ui/ModalShell";
 
 interface ProModalProps {
   isOpen: boolean;
@@ -14,23 +15,14 @@ interface ProModalProps {
 export default function ProModal({ isOpen, onClose, reason }: ProModalProps) {
   const [loading, setLoading] = useState(false);
 
-  if (!isOpen) return null;
-
   const handleUpgrade = () => {
     setLoading(true);
     window.location.href = "/pricing";
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-        onClick={onClose}
-      />
-
-      {/* Modal Container */}
-      <div className="relative w-full max-w-md bg-[var(--bg-card)] rounded-[2rem] border-2 border-[var(--border-color)] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+    <ModalShell open={isOpen} onClose={onClose} label="PM Streak Pro" overlayClassName="bg-black/80 backdrop-blur-sm">
+      <div className="pointer-events-auto self-center relative w-full max-w-md bg-[var(--bg-card)] rounded-[2rem] border-2 border-[var(--border-color)] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
         
         {/* Header Visual */}
         <div className="relative h-32 bg-gradient-to-br from-[var(--green-primary)] to-[var(--blue-primary)] flex items-center justify-center overflow-hidden">
@@ -91,6 +83,6 @@ export default function ProModal({ isOpen, onClose, reason }: ProModalProps) {
         </p>
       </div>
       </div>
-    </div>
+    </ModalShell>
   );
 }

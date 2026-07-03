@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import ModalShell from "@/components/ui/ModalShell";
 import {
   Share2,
   Copy,
@@ -57,12 +58,9 @@ export default function ShareCard({ isOpen, onClose }: ShareCardProps) {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
-      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
-      <div className="relative w-full max-w-sm mx-4 mb-4 sm:mb-0 bg-[var(--bg-secondary)] rounded-2xl overflow-hidden animate-in slide-in-from-bottom">
+    <ModalShell open={isOpen} onClose={onClose} label="Share your streak" overlayClassName="bg-black/60" align="items-end sm:items-center" zIndex="z-[100]">
+      <div className="pointer-events-auto relative w-full max-w-sm mx-4 mb-4 sm:mb-0 self-end sm:self-center bg-[var(--bg-secondary)] rounded-2xl overflow-hidden animate-in slide-in-from-bottom">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -178,6 +176,6 @@ export default function ShareCard({ isOpen, onClose }: ShareCardProps) {
           </button>
         </div>
       </div>
-    </div>
+    </ModalShell>
   );
 }

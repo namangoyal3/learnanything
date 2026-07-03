@@ -19,6 +19,7 @@ import { conversionFunnel } from "@/lib/ga4-events";
 import ShareCard from "@/components/ShareCard";
 import StreakCelebration from "@/components/StreakCelebration";
 import GoalSelectionModal from "@/components/GoalSelectionModal";
+import ModalShell from "@/components/ui/ModalShell";
 import {
   INTERVIEW_PREP_PRICING,
   interviewPrepSessionCreditTotal,
@@ -564,6 +565,8 @@ export default function DashboardPage() {
         <div className="lg:hidden sticky top-14 z-40 bg-[var(--bg-primary)] border-b-2 border-[var(--border-color)] px-4 py-2">
           <button
             onClick={() => setShowMobileCategoryRail((prev) => !prev)}
+            aria-expanded={showMobileCategoryRail}
+            aria-controls="mobile-category-rail"
             className="w-full flex items-center gap-2 rounded-xl border border-[var(--border-color)] bg-[var(--surface-1)] px-3 py-2.5 text-left"
           >
             <div className="flex-1 min-w-0 flex items-center gap-2">
@@ -581,7 +584,7 @@ export default function DashboardPage() {
             />
           </button>
           {showMobileCategoryRail && (
-            <div className="mt-2 flex gap-2 overflow-x-auto scrollbar-none pb-0.5">
+            <div id="mobile-category-rail" className="mt-2 flex gap-2 overflow-x-auto scrollbar-none pb-0.5">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
@@ -676,6 +679,8 @@ export default function DashboardPage() {
             <button
               type="button"
               onClick={() => setShowMobileProgressDetails((prev) => !prev)}
+              aria-expanded={showMobileProgressDetails}
+              aria-controls="mobile-progress-details"
               className="lg:hidden w-full rounded-xl border border-[var(--border-color)] bg-[var(--surface-1)] px-3 py-2.5 flex items-center justify-between"
             >
               <span className="text-xs font-black">Learning details</span>
@@ -685,7 +690,7 @@ export default function DashboardPage() {
               </span>
             </button>
 
-            <div className={cn("space-y-4", showMobileProgressDetails ? "block" : "hidden", "lg:block")}>
+            <div id="mobile-progress-details" className={cn("space-y-4", showMobileProgressDetails ? "block" : "hidden", "lg:block")}>
               <XPProgress xp={user.xp} />
               {streakCalendar.length > 0 && (
                 <StreakCalendar calendar={streakCalendar} />
@@ -823,6 +828,8 @@ export default function DashboardPage() {
             <button
               type="button"
               onClick={() => setShowMobileUtilities((prev) => !prev)}
+              aria-expanded={showMobileUtilities}
+              aria-controls="mobile-utilities"
               className="lg:hidden w-full rounded-xl border border-[var(--border-color)] bg-[var(--surface-1)] px-3 py-2.5 flex items-center justify-between"
             >
               <span className="text-xs font-black">Tools & account</span>
@@ -832,7 +839,7 @@ export default function DashboardPage() {
               </span>
             </button>
 
-            <div className={cn("space-y-4", showMobileUtilities ? "block" : "hidden", "lg:block")}>
+            <div id="mobile-utilities" className={cn("space-y-4", showMobileUtilities ? "block" : "hidden", "lg:block")}>
               <div className={cn(ds.panel, "overflow-hidden !p-0")}>
                 <div className="flex items-center justify-between border-b-2 border-[var(--border-color)] px-4 py-3">
                   <div className="flex items-center gap-2">
@@ -1076,16 +1083,16 @@ export default function DashboardPage() {
 
       <ShareCard isOpen={showShare} onClose={() => setShowShare(false)} />
       <StreakCelebration milestone={milestone} streakCount={user.streakCount} perfectStreak={stats?.streak?.perfectStreak ?? 0} onClose={() => setMilestone(null)} />
-      {archiveUnlock && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80" onClick={() => setArchiveUnlock(null)}>
-          <div className="w-full max-w-sm bg-[var(--bg-card)] border-2 border-[var(--green-primary)]/40 rounded-[2rem] p-8 text-center" onClick={(e) => e.stopPropagation()}>
-            <div className="text-6xl mb-4">🎉</div>
+      <ModalShell open={Boolean(archiveUnlock)} onClose={() => setArchiveUnlock(null)} label="Batch unlocked" overlayClassName="bg-black/80" zIndex="z-[200]">
+        {archiveUnlock && (
+          <div className="pointer-events-auto self-center w-full max-w-sm bg-[var(--bg-card)] border-2 border-[var(--green-primary)]/40 rounded-[2rem] p-8 text-center">
+            <div className="text-6xl mb-4" aria-hidden>🎉</div>
             <h2 className="text-2xl font-black text-white mb-2">Batch Unlocked!</h2>
             <p className="text-white/70 text-sm mb-6">{archiveUnlock.count} new archive lessons are now waiting for you.</p>
             <button onClick={() => setArchiveUnlock(null)} className="w-full py-3 bg-[var(--green-primary)] text-black font-black rounded-xl uppercase tracking-widest">Let&apos;s go</button>
           </div>
-        </div>
-      )}
+        )}
+      </ModalShell>
     </div>
   );
 }

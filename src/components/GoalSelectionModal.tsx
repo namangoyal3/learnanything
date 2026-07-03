@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { X, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ModalShell from "@/components/ui/ModalShell";
 
 const GOAL_OPTIONS = [
   { id: "breaking_in", label: "Break into PM", desc: "No PM experience yet", icon: "🚀" },
@@ -46,20 +47,12 @@ export default function GoalSelectionModal({ onClose, onSaved }: Props) {
   };
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
-        onClick={(e) => { if (e.target === e.currentTarget) handleDismiss(); }}
-      >
+    <ModalShell open onClose={handleDismiss} label="Personalise your path">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="w-full max-w-sm rounded-3xl bg-[var(--bg-card)] border border-[var(--border-color)] p-6 shadow-2xl"
+          className="pointer-events-auto self-center w-full max-w-sm rounded-3xl bg-[var(--bg-card)] border border-[var(--border-color)] p-6 shadow-2xl"
         >
           {/* Header */}
           <div className="flex items-start justify-between mb-4">
@@ -119,8 +112,7 @@ export default function GoalSelectionModal({ onClose, onSaved }: Props) {
             </button>
           </div>
         </motion.div>
-      </motion.div>
-    </AnimatePresence>
+    </ModalShell>
   );
 }
 

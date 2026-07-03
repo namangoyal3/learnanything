@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import ShareCard from "@/components/ShareCard";
 import { cn } from "@/lib/utils";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import {
   Users,
   Search,
@@ -148,11 +149,17 @@ export default function SocialPage() {
         </button>
 
         {/* Tabs */}
-        <div className="flex gap-1 bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-1">
+        <ToggleGroup.Root
+          type="single"
+          value={tab}
+          onValueChange={(v) => { if (v) setTab(v as "friends" | "find"); }}
+          aria-label="Social view"
+          className="flex gap-1 bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-1"
+        >
           {(["friends", "find"] as const).map((t) => (
-            <button
+            <ToggleGroup.Item
               key={t}
-              onClick={() => setTab(t)}
+              value={t}
               className={cn(
                 "flex-1 py-2 rounded-xl text-xs font-black uppercase tracking-wide transition-colors relative",
                 tab === t
@@ -161,9 +168,9 @@ export default function SocialPage() {
               )}
             >
               {t === "find" ? "Find Friends" : t}
-            </button>
+            </ToggleGroup.Item>
           ))}
-        </div>
+        </ToggleGroup.Root>
 
         {tab === "friends" && (
           <div className="space-y-4">

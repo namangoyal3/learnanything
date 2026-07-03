@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
+import * as ToggleGroup from "@radix-ui/react-toggle-group";
 import { Trophy, Medal, Flame, Crown, ChevronDown, ChevronUp } from "lucide-react";
 
 interface LeaderboardEntry {
@@ -82,11 +83,17 @@ export default function LeaderboardPage() {
         </div>
 
         {/* Toggle */}
-        <div className="flex gap-1 bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-1">
+        <ToggleGroup.Root
+          type="single"
+          value={type}
+          onValueChange={(v) => { if (v) setType(v as "alltime" | "weekly"); }}
+          aria-label="Leaderboard period"
+          className="flex gap-1 bg-[var(--bg-card)] rounded-2xl border-2 border-[var(--border-color)] p-1"
+        >
           {(["alltime", "weekly"] as const).map((t) => (
-            <button
+            <ToggleGroup.Item
               key={t}
-              onClick={() => setType(t)}
+              value={t}
               className={cn(
                 "flex-1 py-2 rounded-xl text-xs font-black uppercase tracking-wide transition-colors",
                 type === t
@@ -95,9 +102,9 @@ export default function LeaderboardPage() {
               )}
             >
               {t === "alltime" ? "All Time" : "This Week"}
-            </button>
+            </ToggleGroup.Item>
           ))}
-        </div>
+        </ToggleGroup.Root>
 
         {loading ? (
           <div className="text-center py-8 text-[var(--text-secondary)]">Loading...</div>
