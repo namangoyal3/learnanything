@@ -448,6 +448,57 @@
           "google": null
         }
       }
+    },
+    {
+      "ts": "2026-07-03T02:38:04.485Z",
+      "sitemapUrls": 1393,
+      "sitemapHash": "17bfd3460f61de78121d0e6318f9d8b118cb57199b950b8f9ce8a0c8100cdd0e",
+      "indexnowSubmitted": 1393,
+      "bingIndexed": 0,
+      "googleChecked": false,
+      "googleIndexedFirstPage": null,
+      "ranks": {
+        "product manager interview questions": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "pm interview prep": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "product sense interview": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "how to become a product manager": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "product manager salary india": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "flipkart pm interview": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "razorpay pm interview": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "duolingo for product managers": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        }
+      }
     }
   ]
 }
