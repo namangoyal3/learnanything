@@ -1,94 +1,119 @@
-# PM Streak — Engineering Guidelines
+# PM Streak (learnanything.pro) — Engineering Standards
 
-## Project Context
-PM Streak is a daily PM education platform (Duolingo for Product Managers). Next.js 15 app with Prisma, Dodo Payments, RevenueCat, freemium model. AI generates daily lessons from 300+ PM leader transcripts. 0% conversion rate is the critical problem.
+Daily PM education platform ("Duolingo for PMs"). Every rule below is checkable: a command
+that must exit 0, an exact threshold, or an observable condition. When instinct and a rule
+disagree, the rule wins.
 
-## Core Data Model
-- `User`: plan, credits, entitlement, streak, xp
-- `Article` / `SeoArticle`: AI-generated lesson content
-- `ExperimentEvent`: A/B test tracking
-- `CheckoutSession`, `Subscription`: payments via Dodo
+## Stack & deploy facts
+- Next.js 15 (App Router) + React 19 + Prisma 6 + Tailwind 4 + Vitest. Node >= 20.9.0 (package.json engines).
+- Prod: Vercel project `duolingo-for-pms`, domain https://learnanything.pro. DB: Postgres on Neon.
+- Payments: Dodo Payments + RevenueCat Web Billing + Razorpay + static India UPI QR — all server logic in `src/lib/billing/`.
+- Package manager: **npm**. `package-lock.json` is the only committed lockfile. Never add pnpm-lock.yaml or yarn.lock. (`pnpm tsx …` happens to work for scripts but npm is canonical.)
+- 18 Vercel crons + per-route maxDurations live in `vercel.json`.
 
-## Architecture Decisions
-- Server actions for writes, API routes for external integrations
-- GA4 for analytics, IndexNow for SEO ping
-- AI lesson generation via DeepSeek + pipeline cron jobs
-- Feature flags control: prioritySupport, ai Tajwal-30 lessons, experiments
+## Commands that define "passing"
+- Install: `npm install`
+- Types: `npx tsc --noEmit` → exit 0
+- Lint: `npm run lint` → exit 0, no new warnings from your diff
+- Tests: `npm test` (vitest run) → exit 0. Tests live in `src/lib/__tests__/` and beside routes (`route.test.ts`).
+- Local DB: `npm run db:push` / `db:seed` / `db:studio` / `db:reset` — default to `postgresql://pmstreak:pmstreak@localhost:5432/pmstreak_dev`
+- Reports: `npm run report:acquisition`, `npm run catalog:count`
+- ⚠️ `npm run build` with `DATABASE_URL` set executes `prisma db push --accept-data-loss` against that DB. Vercel runs the same on deploy — schema edits go live (and can drop columns) when a deploy builds. Never point a local build at prod.
 
-## Design Principles
+## Hard blocks — never do these
+1. **PR #28** (`advisor/audit-remediation`) is OPEN and must NOT be merged until the owner: rotates Neon DB password, Dodo API key, `CRON_SECRET`; sets `JWT_SECRET`, `ADMIN_EMAIL`, `REVENUECAT_WEBHOOK_AUTH_TOKEN`, `UNSUBSCRIBE_SECRET`, `NEXT_PUBLIC_DODO_*_PRODUCT_ID` in Vercel; scrubs `.env.prod.test` / `.env.backup` from git history. Verify status: `gh pr view 28`.
+2. `.env.local`, `.env.backup`, `.env.prod.test` on disk contain real secrets. Never print their values, never commit anything matching `.env*`.
+3. Never commit `scripts/virtual-company/service_account.json` or `scripts/seo-rank-history.json` (gitignored; the service account leaked once already).
+4. Never write directly into `seo-articles/`. Forge writes drafts to `seo-drafts/<slug>.mdx`; Signal opens PRs from there.
+5. Anchor agent never auto-sends. Drafts only.
+6. Agent tool routes never use raw SQL or the Prisma client directly — only allowlisted helpers in `src/lib/geo/safe-prisma.ts`.
+7. Never log payment tokens, credentials, or full API keys. Never create a `NEXT_PUBLIC_`-prefixed secret; check `git diff | grep -E '^\+.*NEXT_PUBLIC_.*(KEY|SECRET|TOKEN)'` — only documented public SDK keys (RevenueCat public key, Razorpay key id, GA/PostHog ids) may match.
 
-### Think Before Coding
-- Ask: what user outcome does this change? Who is affected?
-- Before touching payments, auth, or experiment tracking — understand the full data flow
-- 0% conversion is a product problem, not a code problem. Check `/pricing`, `/dashboard` before adding features.
+## Definition of done
 
-### Simplicity First
-- Small PRs. One logical change per commit.
-- If you find yourself changing >5 files for a single feature, stop — you're over-engineering.
-- Copy patterns already in the codebase before importing new abstractions.
+### Any code change
+- [ ] `npx tsc --noEmit` exit 0
+- [ ] `npm run lint` exit 0
+- [ ] `npm test` exit 0
+- [ ] `git diff --stat` names ≤5 non-test files for one logical change — otherwise split the PR
+- [ ] No new dependency unless the feature is impossible with existing deps (zod, cheerio, framer-motion, groq-sdk, resend, nodemailer, playwright are already in package.json)
+- [ ] Nothing staged matches: `git diff --cached | grep -inE 'api[_-]?key|secret|password|token *[:=]'` (allow test fixtures only)
 
-### Surgical Changes
-- Don't touch code that doesn't relate to the task
-- Don't refactor adjacent code "while you're there"
-- Don't add dependencies unless the feature explicitly requires them
+### Feature
+- Everything above, plus:
+- [ ] PR title says what changed; body says what user problem it solves
+- [ ] Happy path + one edge case exercised (state which, and how, in the PR body)
+- [ ] If it renders UI: load the affected page locally, zero new browser-console errors
+- [ ] If it touches `prisma/schema.prisma`: PR body lists affected columns/data and confirms the change is additive (build runs `db push --accept-data-loss` — see above)
 
-### Goal-Driven Execution
-- Always state the user-facing outcome before writing code
-- PR title: what changed. PR description: what problem it solves.
-- Test the happy path and one edge case before marking done.
+### Fix
+- [ ] Reproduce first: a command, curl, or test that fails before the fix
+- [ ] A test now covers it: the new/updated test fails on the old code, passes on the new
+- [ ] Fix the implementation, not the test (unless the test asserted wrong behavior — say so in the PR)
 
-## Payment & Auth — Extra Care
-- Never log payment tokens, user credentials, or full API keys
-- When touching `src/lib/billing/`, `src/app/api/checkout/`, `src/middleware.ts` — explain what you changed and why
-- Checkout flow: freemium → trial → paid. If you modify trial logic, test with a fresh user account.
+### Payments / auth / entitlements
+- [ ] Only files under `src/lib/billing/`, `src/app/api/checkout/`, `src/app/api/webhooks/` grant or modify entitlements
+- [ ] `npx vitest run src/app/api/webhooks/dodo-payments/route.test.ts src/lib/__tests__/razorpay-server.test.ts src/lib/__tests__/lesson-access.test.ts` → exit 0
+- [ ] Missing secret ⇒ route throws / returns 4xx-5xx. It never silently succeeds (fail closed)
+- [ ] Trial-logic changes tested with a freshly created user account (freemium → trial → paid)
+- [ ] PR body explains what changed and why, file by file
 
-## SEO & AI Content
-- SEO articles live in `src/app/[slug]/page.tsx` (auto-generated routes)
-- GEO scoring: `src/lib/seo-score.ts` — passage length 134-167 words, self-containment, statistical density
-- Never commit full article content (bulk text belongs in `scripts/seo-output/` or `graphify-out/cache/`)
+### SEO / content change
+- [ ] Article JSON goes in `seo-articles/*.json`; publish with `npx tsx scripts/publish-seo-articles.ts` (needs `DATABASE_URL`) — it rejects anything scoring < 70 via `scoreSEO`
+- [ ] Passages target 134–167 words each (max score band in `src/lib/seo-score.ts`)
+- [ ] GEO pages must clear `CITABILITY_THRESHOLD = 70` (`src/lib/geo/citability.ts`). Raising content quality is the fix; editing the constant is not
+- [ ] Bulk article text is committed ONLY under `seo-articles/`, `seo-drafts/`, `scripts/seo-output/`, or `graphify-out/cache/`
+- [ ] Static marketing/SEO pages are literal directories `src/app/<slug>/page.tsx` — there is NO dynamic `[slug]` route
+- [ ] New page exports `metadata` with title + description and a canonical URL
 
-## File Conventions
-- Routes: `src/app/api/[feature]/route.ts`
-- Components: `src/components/[FeatureName].tsx`
-- Server actions: `src/app/[page]/actions.ts`
-- Cron jobs: `src/app/api/cron/[job]/route.ts`
-- GEO cron jobs: `src/app/api/geo/[agent]/run/route.ts`
-- Prisma schema: `prisma/schema.prisma`
-- Path alias: `@/*` maps to `./src/*`
-- Package manager: `pnpm` (or `npm` fallback)
+### GEO agent change
+- [ ] Spec lives in `src/agents/<agent>/spec.ts` (conductor + 9 workers incl. retrofit). Deploy: `/lyzr-deploy <agent>` slash command
+- [ ] Smoke passes: `npx tsx scripts/lyzr/smoke.ts <agent>`
+- [ ] KB attached before real calls: `npx tsx scripts/lyzr/attach-kb.ts` (helper: `src/lib/geo/kb-attach.ts`)
+- [ ] New tool route under `src/app/api/geo/tools/*`: Zod-validates every input, checks `CRON_SECRET`, uses `safe-prisma.ts` only
+- [ ] Any new cron/long route is registered in `vercel.json` (crons array + functions maxDuration), else it times out at the default
 
-## GEO Swarm (Lyzr-backed)
+## Quality bar — the 5 rules a hurried change most often breaks
+1. **Money paths fail closed.** No entitlement/credit write outside `src/lib/billing/` + webhook/checkout routes; absent env secret ⇒ error, never a free grant. Proof: the payments test files above pass.
+2. **Gates are constants, not suggestions.** Citability ≥ 70, SEO score ≥ 70, passages 134–167 words. If content fails, improve the content — never touch the threshold.
+3. **Agents are sandboxed.** Every `api/geo/tools/*` route has all three: Zod input validation, `CRON_SECRET` auth, `safe-prisma.ts` data access. Missing any one = do not ship.
+4. **A deploy is a schema migration.** Vercel build runs `prisma db push --accept-data-loss`. Treat every `schema.prisma` diff as a prod migration and call it out explicitly in the PR.
+5. **Surgical diffs.** Don't refactor adjacent code, don't reformat untouched files, ≤5 non-test files per logical change, copy existing repo patterns before importing new abstractions.
 
-This repo deploys 8 GEO agents on Lyzr Agent Studio, orchestrated by a Conductor managerial agent. Full design: `docs/geo-architecture.md`. Tech spec: `docs/geo-tech-spec.md`.
+## Environment
+Full annotated list: `.env.example`. Non-obvious:
+- `CRON_SECRET` — required by every GEO cron/tool endpoint
+- `LYZR_API_KEY` (server-only, never logged), `LYZR_CONDUCTOR_ID`, `LYZR_AGENT_*` — agent IDs come ONLY from env; never hardcode an ID in `src/lib/lyzr.ts` or specs
+- `GEO_REVIEW_SAMPLE_EVERY` (default 4: every Nth auto-publishable article held for human review), `GEO_CREATE_DAILY_QUOTA` (default 5), `GEO_PROBE_DAILY_LIMIT` (default 10)
+- `PERPLEXITY_API_KEY` — enables the daily AI-citation probe; without it the cron logs "unconfigured" and exits (that is expected, not a bug)
+- `INDEXNOW_KEY` — key value must also be served at `public/{key}.txt`
+- `GA4_PROPERTY_ID` / `GA4_SERVICE_ACCOUNT_KEY` / `GSC_SITE_URL` — Pulse analytics; setup in `docs/GSC_SETUP.md`
 
-### Conventions
-- Lyzr client: `src/lib/lyzr.ts`. All agent calls go through `callAgent(agentId, message, sessionId)` or `callConductor(message, sessionId)`.
-- Agent IDs come from `process.env.LYZR_AGENT_*` and `LYZR_CONDUCTOR_ID` — never hardcode.
-- API routes that Lyzr tools call live under `src/app/api/geo/tools/*`. Validate every input with Zod.
-- Forge writes drafts to `seo-drafts/<slug>.mdx`; Signal opens PRs from there. Never write directly to `seo-articles/`.
-- Citability gate ≥70 enforced in `src/lib/geo/citability.ts`. Don't bypass.
-- All Prisma access from agent tool routes goes through allowlisted helpers in `src/lib/geo/safe-prisma.ts`. No raw SQL from agents.
+## Local SEO pipeline (runs on the owner's Mac, not in cloud)
+- launchd job `pro.learnanything.seo-pipeline` fires **hourly at minute :07** → `~/Library/Scripts/seo-pipeline-cron.sh` → `node scripts/seo-pipeline.mjs`; log: `~/Library/Logs/seo-pipeline.log`
+- One cycle: fetch live sitemap → submit to IndexNow only when the URL set changed → rank-check keywords on DuckDuckGo + Bing (+ Google via local headless Chrome; auto-skips when walled) → append `scripts/seo-rank-history.json` → push history to the `seo-rank-log` branch
+- It runs locally on purpose: the cloud agent sandbox blocks network egress (GitHub access works, so cloud reporting reads the `seo-rank-log` branch instead)
+- Health check: `tail -5 ~/Library/Logs/seo-pipeline.log` shows a run within the last hour, and `git log origin/seo-rank-log -1 --format=%cr` is recent
+- Bing indexed-page count started from a 0 baseline when the pipeline launched (unverified — read the trend from `seo-rank-history.json` on the `seo-rank-log` branch)
 
-### Hard rules
-- Anchor never auto-sends. Drafts only.
-- Lyzr API key is server-only. Never `NEXT_PUBLIC_*`. Never echo in logs.
-- KB attachment is required on every agent before calling it for real. See `src/lib/geo/kb-attach.ts`.
+## Image generation
+- Lyzr tool route `POST /api/geo/tools/image-gen` wraps the `nanaban` CLI (GPT Image via Codex OAuth / Nano Banana)
+- `nanaban` is NOT currently on PATH (`which nanaban` fails). Before image work: `npm install -g nanaban`, then `codex login`, then `nanaban auth` (install flow unverified)
 
-### Useful commands
-- `pnpm tsx scripts/lyzr/attach-kb.ts` — bulk-attach the shared KB to all 9 agents.
-- `pnpm tsx scripts/lyzr/seed-kb.ts` — Cortex bootstrap from repo files.
-- `pnpm tsx scripts/lyzr/smoke.ts <agent>` — smoke test an agent.
-- `/forge-page <topic>` — Claude Code slash command to forge a draft locally.
-- `/lyzr-deploy <agent>` — push that agent's spec from `src/agents/*/spec.ts` to Lyzr.
-- `/pulse-snapshot` — manual Pulse run + analyst review.
+## Data model (prisma/schema.prisma — 39 models)
+- Money: `User` (plan, credits, streak, xp), `Subscription`, `BillingEvent`, `Entitlement`, `Coupon`/`CouponAttempt`, `CreditTransaction`, `CountryPriceOverride`
+- Learning: `Lesson`, `Question`, `Category`, `CompletedLesson`, `QuizAttempt`, `StreakDay`, `Achievement`, `LearningPlan`
+- SEO/GEO: `Article`, `SeoKeyword`, `ArticleLead`, `GeoOpportunity`, `GeoPageMetric`, `GeoCitation`, `GeoPageTriage`, `GeoCronLog`
+- Experiments: `ExperimentEvent`, keyed by the `ab_uid` cookie that `src/middleware.ts` assigns (90-day, httpOnly) — middleware does A/B identity, not auth
+- There is no `SeoArticle` and no `CheckoutSession` model (older docs claimed both)
 
-## Image Generation (nanaban)
+## File conventions (verified paths)
+- API routes: `src/app/api/<feature>/route.ts` · crons: `src/app/api/cron/<job>/route.ts` · GEO runs: `src/app/api/geo/<agent>/run/route.ts` · GEO tools: `src/app/api/geo/tools/*`
+- Server actions: `src/app/<page>/actions.ts` · components: `src/components/<FeatureName>.tsx` · path alias `@/*` → `./src/*`
+- Lyzr client: `src/lib/lyzr.ts` — all agent calls via `callAgent(agentId, message, sessionId)` or `callConductor(message, sessionId)`
+- `/job-outreach` is a static page `public/job-outreach/index.html` served through a rewrite in `next.config.ts`; its form posts to `/api/leads/article-signup`
+- Docs: `docs/geo-architecture.md` (swarm design), `docs/geo-tech-spec.md`, `docs/ANALYTICS.md`, `docs/GSC_SETUP.md`
+- Slash commands in `.claude/commands/`: `/forge-page <topic>`, `/lyzr-deploy <agent>`, `/pulse-snapshot`
 
-SEO/GEO page images use [nanaban](https://github.com/paperfoot/nanaban-cli) (paperfoot) — a CLI that generates images via GPT Image 2 at **$0** (billed against ChatGPT Plus/Pro subscription via Codex OAuth), Nano Banana (Gemini), and GPT-5 Image.
-
-- Installed globally via npm: `npm install -g nanaban`
-- Auth: `codex login` enables free GPT Image 2 via ChatGPT sub; `nanaban auth` checks reachable models
-- Agent mode: `nanaban "<prompt>" --json` returns structured output with file path, cost, model used
-- Lyzr tool route: `POST /api/geo/tools/image-gen` (wraps nanaban --json for GEO swarm agents)
-- Forge calls this tool when generating article images via the GEO pipeline
-- Claude Code skill auto-installed at `~/.claude/skills/nanaban/SKILL.md`
+## Product context
+- Conversion is the #1 metric. Before shipping anything user-facing, open `/pricing` and `/dashboard` locally and confirm the flows still work with zero console errors. Checkout flow: freemium → trial → paid.
