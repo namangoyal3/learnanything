@@ -16,3 +16,7 @@ next-env.d.ts
 .env*.local
 scripts/virtual-company/service_account.json
 scripts/seo-rank-history.json
+
+# SEO v2 derived caches (bulky; rebuilt by scripts/seo-pipeline.mjs --refresh-graph)
+scripts/seo/site-graph-cache.json
+scripts/seo/embeddings-cache.json

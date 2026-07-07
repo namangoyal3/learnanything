@@ -1,0 +1,4 @@
+{
+  "note": "Append-only publish ledger for the v2 throughput gate (hard cap 3/7d). Written by scripts/seo/publisher-gates.mjs:recordPublish(). Committed so the cap survives machine moves.",
+  "publishes": []
+}

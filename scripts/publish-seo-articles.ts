@@ -11,6 +11,9 @@ import { PrismaClient } from "@prisma/client";
 import { scoreSEO, slugify } from "../src/lib/seo-score";
 import * as fs from "fs";
 import * as path from "path";
+// SEO v2 gates (scripts/seo/*.mjs — plain ESM, no type decls; tsx resolves fine)
+// @ts-ignore
+import { runV2PublishGates, recordPublish } from "./seo/publisher-gates.mjs";
 
 const prisma = new PrismaClient();
 const SEO_THRESHOLD = 70;
@@ -25,6 +28,10 @@ interface ArticlePayload {
   sourceUrls?: string[];
   faqPairs?: { question: string; answer: string }[];
   howToSteps?: { name: string; text: string }[];
+  /** v2: cluster id from scripts/seo/clusters.json — required by the probe-batch gate */
+  cluster?: string;
+  /** v2: existing internal paths that will link to this page (≥3 required) */
+  inlinkFrom?: string[];
 }
 
 async function publishArticle(file: string): Promise<{ published: boolean; slug?: string; seoScore: number; reason?: string }> {
@@ -41,6 +48,18 @@ async function publishArticle(file: string): Promise<{ published: boolean; slug?
 
   if (seoScore < SEO_THRESHOLD) {
     return { published: false, seoScore, reason: `SEO score ${seoScore} below threshold ${SEO_THRESHOLD}` };
+  }
+
+  // SEO v2 quality gates (fail closed): circuit breaker, weekly cap, probe
+  // batch, ≥3 inlinks, first-party data block, intent dedupe (cosine <0.85).
+  const gate = await runV2PublishGates({
+    title,
+    body,
+    cluster: payload.cluster,
+    inlinkFrom: payload.inlinkFrom ?? [],
+  });
+  if (!gate.pass) {
+    return { published: false, seoScore, reason: `v2 gates failed — ${gate.failures.join(" | ")}` };
   }
 
   // Generate unique slug
@@ -70,14 +89,22 @@ async function publishArticle(file: string): Promise<{ published: boolean; slug?
     },
   });
 
+  recordPublish({
+    slug: article.slug,
+    cluster: payload.cluster ?? null,
+    url: `https://learnanything.pro/learn/${article.slug}`,
+  });
+
   return { published: true, slug: article.slug, seoScore };
 }
 
 async function main() {
   const articlesDir = path.join(__dirname, "../seo-articles");
 
+  // Files can be passed on the CLI: npx tsx scripts/publish-seo-articles.ts a.json b.json
+  const cliArticles = process.argv.slice(2).filter((a) => a.endsWith(".json"));
   // Articles from this run (April 16, 2026)
-  const newArticles = [
+  const newArticles = cliArticles.length ? cliArticles : [
     "article-plg-strategy.json",
     "article-apm-programs.json",
     "article-north-star-metric.json",

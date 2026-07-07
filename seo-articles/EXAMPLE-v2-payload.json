@@ -1,0 +1,14 @@
+{
+  "_comment": "EXAMPLE ONLY — never auto-published (publisher only reads files passed on the CLI or its explicit list). Shows the two fields SEO v2 gates require on every payload: `cluster` and `inlinkFrom`. Try it: node scripts/seo-pipeline.mjs --gate-check seo-articles/EXAMPLE-v2-payload.json",
+  "title": "PM Interview Prep: What 73 Real Quiz Questions Reveal About Weak Spots",
+  "description": "We analyzed the 103 questions in PM Streak's quiz bank to find where PM candidates actually lose points, with per-topic breakdowns.",
+  "vertical": "pm",
+  "primaryKeyword": "pm interview weak spots",
+  "cluster": "interview-skills",
+  "inlinkFrom": [
+    "/product-manager-interview-questions",
+    "/interview-prep",
+    "/pm-behavioral-interview"
+  ],
+  "body": "Most PM candidates fail interviews on predictable topics. We analyzed our own quiz bank to quantify exactly where.\n\n<!-- first-party-data: pm-quiz-bank -->\n| metric | value |\n|---|---|\n| questions in bank | 73 |\n| lessons in catalog | 22 |\n| avg options per question | 4 |\n| sample question (verbatim) | \"According to Shreyas Doshi, where do the best PMs spend most of their time?\" |\n| sample question 2 (verbatim) | \"What does Shreyas call tasks where 'good enough is fine'?\" |\n<!-- /first-party-data -->\n\n## Where candidates lose points\n\n(example body — a real article would continue for 1,500+ words...)"
+}

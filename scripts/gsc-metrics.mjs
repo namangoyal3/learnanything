@@ -17,7 +17,7 @@ import { createSign } from "node:crypto";
 const b64url = (buf) =>
   Buffer.from(buf).toString("base64").replace(/=/g, "").replace(/\+/g, "-").replace(/\//g, "_");
 
-async function accessToken(key) {
+export async function accessToken(key) {
   const now = Math.floor(Date.now() / 1000);
   const header = b64url(JSON.stringify({ alg: "RS256", typ: "JWT" }));
   const claim = b64url(

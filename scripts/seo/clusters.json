@@ -1,0 +1,90 @@
+{
+  "note": "Cluster registry for SEO pipeline v2. `pattern` is a JS regex matched against URL paths (first match wins — keep catch-all last). `status`: probe|continue|frozen|killed — checkProbeBatch refuses publishes to frozen/killed clusters. `firstPublishedAt: null` = pre-v2 inventory (age unknown ⇒ judged at the 90d stage). longTailKeywords replace the old 8 head terms for rank tracking (v2 spec §4); head terms remain available via --vanity.",
+  "clusters": [
+    {
+      "id": "learn-pm",
+      "label": "Programmatic /learn/pm articles (938 pages — the unindexed bulk)",
+      "pattern": "^/learn/pm/",
+      "status": "frozen",
+      "statusNote": "Frozen manually at v2 rollout: this cluster is the doorway-scale inventory the report says to stop feeding (site indexed% is far below the 30% breaker anyway). Unfreeze only after prune + 60d of index recovery.",
+      "firstPublishedAt": null,
+      "probeBatch": { "published": 0, "startedAt": null },
+      "longTailKeywords": [
+        "product roadmap planning guide 2026",
+        "ab testing guide for product managers"
+      ]
+    },
+    {
+      "id": "company-interviews",
+      "label": "Company-specific PM interview pages",
+      "pattern": "pm-interview",
+      "status": "probe",
+      "firstPublishedAt": null,
+      "probeBatch": { "published": 0, "startedAt": null },
+      "longTailKeywords": [
+        "flipkart pm interview questions",
+        "razorpay pm interview process",
+        "swiggy pm interview questions"
+      ]
+    },
+    {
+      "id": "interview-skills",
+      "label": "Interview skill guides (product sense, metrics, behavioral…)",
+      "pattern": "^/(pm|product)[a-z-]*-(sense|behavioral|technical|metrics|execution|case-study|roadmap)[a-z-]*interview|^/product-manager-interview-questions|^/interview-prep",
+      "status": "probe",
+      "firstPublishedAt": null,
+      "probeBatch": { "published": 0, "startedAt": null },
+      "longTailKeywords": [
+        "product sense interview framework",
+        "pm metrics interview questions",
+        "pm behavioral interview star method"
+      ]
+    },
+    {
+      "id": "salary-comp",
+      "label": "Salary & compensation pages",
+      "pattern": "salary",
+      "status": "probe",
+      "firstPublishedAt": null,
+      "probeBatch": { "published": 0, "startedAt": null },
+      "longTailKeywords": [
+        "product manager salary india 2026",
+        "senior product manager salary bangalore"
+      ]
+    },
+    {
+      "id": "career-transitions",
+      "label": "Career-transition guides",
+      "pattern": "engineer-to-pm|-to-product-manager|transition-to|how-to-become",
+      "status": "probe",
+      "firstPublishedAt": null,
+      "probeBatch": { "published": 0, "startedAt": null },
+      "longTailKeywords": [
+        "engineer to product manager transition plan",
+        "become a product manager without mba"
+      ]
+    },
+    {
+      "id": "guides-frameworks",
+      "label": "Everything else: PM guides, frameworks, tools (catch-all)",
+      "pattern": ".",
+      "status": "probe",
+      "firstPublishedAt": null,
+      "probeBatch": { "published": 0, "startedAt": null },
+      "longTailKeywords": [
+        "product management frameworks cheat sheet",
+        "product prioritization frameworks rice"
+      ]
+    }
+  ],
+  "headTerms": [
+    "product manager interview questions",
+    "pm interview prep",
+    "product sense interview",
+    "how to become a product manager",
+    "product manager salary india",
+    "flipkart pm interview",
+    "razorpay pm interview",
+    "duolingo for product managers"
+  ]
+}
