@@ -13,6 +13,8 @@ ARTICLES=(
   "seo-drafts/ai-product-manager-skills-2026.json"
   "seo-drafts/article-pm-resume-2026.json"
   "seo-drafts/article-stakeholder-management-pm.json"
+  "seo-drafts/pm-metrics-stack-north-star-okr-kpi.json"
+  "seo-drafts/how-to-break-into-apm-program-2026.json"
 )
 
 for file in "${ARTICLES[@]}"; do
