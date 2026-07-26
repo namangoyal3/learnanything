@@ -3,9 +3,13 @@
 # Run from any machine with outbound HTTPS to learnanything.pro.
 # Usage: bash scripts/seo-output/publish-pending.sh
 #
-# Pending articles (as of 2026-07-09):
+# Pending articles (as of 2026-07-26):
 #   3 from 2026-07-08: ai-product-manager-skills-stack, pm-job-market-2026, pm-to-senior-pm-promotion-playbook
 #   2 from 2026-07-09: pm-metrics-stack-north-star-okr-kpi, how-to-break-into-apm-program-2026
+#   2 from 2026-07-26: product-prioritization-frameworks-rice-ice-moscow, pm-interview-product-sense-metrics-questions
+#
+# NOTE: learnanything.pro:443 is blocked by the remote session egress policy.
+# This script MUST be run from a local machine or environment with outbound access.
 
 set -euo pipefail
 
@@ -118,5 +122,9 @@ publish_article "$DIR/ai-product-manager-skills-stack.md"
 publish_article "$DIR/pm-metrics-stack-north-star-okr-kpi.md"
 publish_article "$DIR/how-to-break-into-apm-program-2026.md"
 
+# 2026-07-26 batch
+publish_article "$DIR/product-prioritization-frameworks-rice-ice-moscow.md"
+publish_article "$DIR/pm-interview-product-sense-metrics-questions.md"
+
 echo ""
-echo "Done. All 5 articles submitted."
+echo "Done. All 7 articles submitted."
