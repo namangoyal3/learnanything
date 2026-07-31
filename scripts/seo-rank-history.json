@@ -1,57 +1,6 @@
 {
   "runs": [
     {
-      "ts": "2026-07-02T22:06:09.869Z",
-      "sitemapUrls": 1393,
-      "sitemapHash": "11d3a598709549baa5a680b7094d85607b8af90b87f1c1e62cfa704b815c3855",
-      "indexnowSubmitted": 1393,
-      "bingIndexed": null,
-      "googleChecked": true,
-      "googleIndexedFirstPage": 3,
-      "ranks": {
-        "product manager interview questions": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "pm interview prep": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "product sense interview": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "how to become a product manager": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "product manager salary india": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "flipkart pm interview": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "razorpay pm interview": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "duolingo for product managers": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        }
-      }
-    },
-    {
       "ts": "2026-07-02T22:08:21.866Z",
       "sitemapUrls": 1393,
       "sitemapHash": "11d3a598709549baa5a680b7094d85607b8af90b87f1c1e62cfa704b815c3855",
@@ -71933,6 +71882,177 @@
       "bingIndexed": 0,
       "googleChecked": true,
       "googleIndexedFirstPage": 10,
+      "gsc": {
+        "sitemapIndexed": 0,
+        "sitemapSubmitted": 1393,
+        "impressions": 6,
+        "clicks": 0,
+        "topQuery": {
+          "q": "ai tools for product prioritization",
+          "impressions": 1,
+          "pos": 71
+        }
+      },
+      "gscIndexedPct": 0,
+      "circuitBreaker": {
+        "halted": true,
+        "reason": "sitemap indexed 0.0% < 30% — publishing halted until index health recovers"
+      },
+      "clusterVerdicts": {
+        "learn-pm": {
+          "stage": "90d",
+          "verdict": "watch",
+          "reason": "low but rising (0→5) — Google testing; don't kill",
+          "metrics": {
+            "impressions30d": 5,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 3
+          }
+        },
+        "company-interviews": {
+          "stage": "90d",
+          "verdict": "continue",
+          "reason": "alive: 40 impressions/30d + top-30 query",
+          "metrics": {
+            "impressions30d": 40,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": true,
+            "pagesWithImpressions": 2
+          }
+        },
+        "interview-skills": {
+          "stage": "90d",
+          "verdict": "continue",
+          "reason": "alive: 93 impressions/30d + top-30 query",
+          "metrics": {
+            "impressions30d": 93,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": true,
+            "pagesWithImpressions": 2
+          }
+        },
+        "salary-comp": {
+          "stage": "90d",
+          "verdict": "continue",
+          "reason": "alive: 93 impressions/30d",
+          "metrics": {
+            "impressions30d": 93,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 1
+          }
+        },
+        "career-transitions": {
+          "stage": "90d",
+          "verdict": "watch",
+          "reason": "low but rising (0→8) — Google testing; don't kill",
+          "metrics": {
+            "impressions30d": 8,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 1
+          }
+        },
+        "guides-frameworks": {
+          "stage": "90d",
+          "verdict": "continue",
+          "reason": "alive: 440 impressions/30d + top-30 query",
+          "metrics": {
+            "impressions30d": 440,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": true,
+            "pagesWithImpressions": 50
+          }
+        }
+      },
+      "ranks": {
+        "product roadmap planning guide 2026": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "ab testing guide for product managers": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "flipkart pm interview questions": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "razorpay pm interview process": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "swiggy pm interview questions": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "product sense interview framework": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "pm metrics interview questions": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "pm behavioral interview star method": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "product manager salary india 2026": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "senior product manager salary bangalore": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "engineer to product manager transition plan": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "become a product manager without mba": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "product management frameworks cheat sheet": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        },
+        "product prioritization frameworks rice": {
+          "bing": null,
+          "mojeek": null,
+          "google": null
+        }
+      }
+    },
+    {
+      "ts": "2026-07-31T04:42:05.401Z",
+      "sitemapUrls": 1393,
+      "sitemapHash": "c93872e01337f4f3525beeb053d50d5e564ad6fc025c1030b5eba1ab6ef20f37",
+      "indexnowSubmitted": 0,
+      "bingIndexed": 0,
+      "googleChecked": false,
+      "googleIndexedFirstPage": null,
       "gsc": {
         "sitemapIndexed": 0,
         "sitemapSubmitted": 1393,
