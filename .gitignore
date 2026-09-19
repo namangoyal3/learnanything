@@ -21,3 +21,8 @@ scripts/seo-rank-history.json
 scripts/seo/site-graph-cache.json
 scripts/seo/embeddings-cache.json
 scripts/seo/jev-cache.json
+
+# real secrets — never commit (scrubbed from local history 2026-09-20)
+.env.backup
+.env.prod.test
+scripts/virtual-company/service_account.json

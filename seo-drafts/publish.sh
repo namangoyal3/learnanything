@@ -3,7 +3,7 @@
 # The sandbox environment's IP is not in the server's allowlist, so publishing must happen locally.
 
 API_URL="https://learnanything.pro/api/content/publish"
-AUTH="Bearer REDACTED_TOKEN"
+AUTH="Bearer ${CRON_SECRET:?set CRON_SECRET (the /api/content/publish bearer) in the environment}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 publish() {

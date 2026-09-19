@@ -4,7 +4,7 @@
 
 set -e
 API="https://learnanything.pro/api/content/publish"
-TOKEN="REDACTED_TOKEN"
+TOKEN="${CRON_SECRET:?set CRON_SECRET (the /api/content/publish bearer) in the environment}"
 
 ARTICLES=(
   "seo-drafts/pm-job-market-2026.json"
