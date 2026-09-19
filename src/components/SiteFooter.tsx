@@ -11,22 +11,29 @@ const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
       { label: "Research", href: "/research" },
     ],
   },
+  // Guides columns = topic pillars picked by scripts/seo/internal-links.mjs
+  // (plan.footer in scripts/seo/internal-links-plan.json). Every href must be
+  // on the prune-manifest keep list — /pm-interview-cheat-sheet was slated for
+  // 410 and has been replaced by the interview pillar.
   {
     title: "Interview prep",
     links: [
-      { label: "PM interview cheat sheet", href: "/pm-interview-cheat-sheet" },
+      { label: "All PM interview guides", href: "/interview-prep" },
       { label: "Product sense interview", href: "/product-sense-interview" },
       { label: "Google PM interview", href: "/google-pm-interview" },
       { label: "Behavioral interview", href: "/pm-behavioral-interview" },
     ],
   },
   {
-    title: "Popular guides",
+    title: "PM guides",
     links: [
       { label: "Become a PM", href: "/how-to-become-a-product-manager" },
-      { label: "PM resume guide", href: "/product-manager-resume" },
       { label: "PM career path", href: "/product-manager-career-path" },
+      { label: "PM resume guide", href: "/product-manager-resume" },
       { label: "PM salary in India", href: "/product-manager-salary-india" },
+      { label: "Product discovery", href: "/product-discovery-guide" },
+      { label: "Product strategy doc", href: "/pm-strategy-doc" },
+      { label: "PM tools", href: "/pm-tools-guide" },
     ],
   },
 ];
