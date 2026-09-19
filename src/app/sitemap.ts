@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
+import { isNoindexed } from "@/lib/pruned";
 
 const siteUrl = process.env.NEXT_PUBLIC_APP_URL || "https://learnanything.pro";
 
@@ -478,5 +479,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...articleRoutes];
+  // The SEO prune (src/data/pruned-urls.json) keeps pages live but out of the index and the sitemap.
+  return [...staticRoutes, ...articleRoutes].filter((r) => !isNoindexed(new URL(r.url).pathname));
 }
