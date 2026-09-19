@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "PM Domain Knowledge Guide (2026) — How to Build Expertise in Your Product Area",
@@ -38,7 +39,7 @@ const DEPTH_LEVELS = [
 const LEARNING_HABITS = [
   {
     habit: "Read the industry canon",
-    how: "Every industry has 5–10 books/essays everyone in it has read. Find them and read them. For fintech: 'Payments Systems in the US'. For SaaS: 'Behind the Cloud', Lenny's Newsletter back catalog.",
+    how: "Every industry has 5–10 [books/essays everyone](/pm-reading-list) in it has read. Find them and read them. For fintech: 'Payments Systems in the US'. For SaaS: 'Behind the Cloud', Lenny's Newsletter back catalog.",
   },
   {
     habit: "Follow 10 operators on Twitter/LinkedIn",
@@ -136,7 +137,7 @@ export default function PmDomainKnowledgePage() {
               {LEARNING_HABITS.map((h, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-5">
                   <p className="font-bold text-white mb-1">{i + 1}. {h.habit}</p>
-                  <p className="text-xs text-white/60">{h.how}</p>
+                  <p className="text-xs text-white/60">{linkify(h.how)}</p>
                 </div>
               ))}
             </div>

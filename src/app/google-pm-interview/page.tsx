@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "Google PM Interview Guide (2026) — Questions, Process & How to Prepare",
@@ -32,7 +33,7 @@ const ROUNDS = [
   {
     name: "Product Sense",
     weight: "Highest — 2–3 rounds",
-    what: "Design or improve a product. Google tests whether you can identify the right user, articulate a clear vision, and prioritise with user empathy.",
+    what: "Design or improve a product. Google tests whether you can [identify the right user](/product-sense-interview), articulate a clear vision, and prioritise with user empathy.",
     sample: [
       "How would you improve Google Maps?",
       "Design a product to help people make better financial decisions.",
@@ -153,7 +154,7 @@ export default function GooglePmInterviewPage() {
                   </div>
                   <span className="text-xs bg-[#1f2228] border border-white/10 rounded-full px-3 py-1 text-white/50">{round.weight}</span>
                 </div>
-                <p className="text-sm text-white/60 mb-4">{round.what}</p>
+                <p className="text-sm text-white/60 mb-4">{linkify(round.what)}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Sample Questions</p>

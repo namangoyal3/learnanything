@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "E-commerce Product Manager Guide (2026) — How to Excel as an E-commerce PM",
@@ -34,7 +35,7 @@ const METRICS = [
   { metric: "Contribution Margin", what: "Revenue per order minus all direct costs (logistics, returns, payment, marketing). More honest than GMV." },
   { metric: "Return Rate", what: "% of orders returned. Fashion: 25–40%. Electronics: 5–10%. High returns destroy margins faster than most PMs realise." },
   { metric: "Repeat Purchase Rate (RPR)", what: "% of customers who place a second order within N days. Early indicator of product-market fit." },
-  { metric: "Buyer NPS / Seller NPS", what: "Two-sided health signal. Marketplaces need both sides happy — not just the side you naturally favour." },
+  { metric: "Buyer NPS / Seller NPS", what: "Two-sided health signal. [Marketplaces need both sides happy](/pm-marketplace-dynamics) — not just the side you naturally favour." },
 ];
 
 const PM_TYPES = [
@@ -126,7 +127,7 @@ export default function EcommercePmGuidePage() {
             {METRICS.map((m, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
                 <p className="font-semibold text-[#89e219] text-sm mb-1">{m.metric}</p>
-                <p className="text-xs text-white/60">{m.what}</p>
+                <p className="text-xs text-white/60">{linkify(m.what)}</p>
               </div>
             ))}
           </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "PRD Template Guide (2026) — How to Write a Great Product Requirements Doc",
@@ -37,7 +38,7 @@ const SECTIONS = [
   },
   {
     section: "2. Problem Statement",
-    purpose: "Describe the user problem and why it matters — supported by data.",
+    purpose: "[Describe the user problem](/product-discovery-guide) and why it matters — supported by data.",
     include: ["User pain (qualitative)", "Evidence (quantitative data, user quotes)", "Why now (what changed)", "Cost of inaction"],
     example: "Interviews with 8 new users showed Step 3 felt 'overwhelming' (quote: 'I just wanted to try the app'). Analytics: 60% drop-off at Step 3. Cost: ~3,000 users/month lost = ₹4.5L monthly revenue impact.",
   },
@@ -140,7 +141,7 @@ export default function PrdTemplateGuidePage() {
             {SECTIONS.map((s, i) => (
               <div key={i} className="bg-[#111] border border-white/10 rounded-2xl p-6">
                 <h2 className="text-lg font-bold text-white mb-1">{s.section}</h2>
-                <p className="text-sm text-white/60 mb-4">{s.purpose}</p>
+                <p className="text-sm text-white/60 mb-4">{linkify(s.purpose)}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
                     <p className="text-xs text-white/40 uppercase tracking-wider mb-2">What to include</p>

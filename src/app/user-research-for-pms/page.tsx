@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "User Research for Product Managers (2026) — Interviews, Surveys, Usability Tests",
@@ -50,7 +51,7 @@ const METHODS = [
   {
     method: "Usability Testing",
     icon: "🖱️",
-    bestFor: "Validating that users can actually use a design. Finding UX friction.",
+    bestFor: "[Validating that users can actually](/learn/pm/how-to-conduct-a-usability-test-for-a-b2b-saas-product-2026-guide-3940) use a design. Finding UX friction.",
     sampleSize: "5 users catches ~85% of usability issues (Nielsen's rule).",
     avoid: "Leading users through tasks. Asking them what they're thinking instead of letting them think aloud naturally.",
     goodFor: "New flows before launch, redesign validation, complex feature testing",
@@ -128,7 +129,7 @@ export default function UserResearchForPmsPage() {
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
             The 6 research methods every PM should know, when to use each, how many users you actually need,
-            and how to turn research into product decisions — not reports.
+            and how to <Link href="/pm-customer-interviews">turn research into product decisions</Link> — not reports.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice User Research Scenarios — Free →
@@ -144,7 +145,7 @@ export default function UserResearchForPmsPage() {
                   <span className="text-2xl">{m.icon}</span>
                   <h2 className="text-lg font-bold text-white">{m.method}</h2>
                 </div>
-                <p className="text-sm text-white/70 mb-3">{m.bestFor}</p>
+                <p className="text-sm text-white/70 mb-3">{linkify(m.bestFor)}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
                   <div className="bg-[#0e1113] rounded-lg p-3">
                     <p className="text-xs text-white/40 uppercase tracking-wider mb-1">Sample size</p>

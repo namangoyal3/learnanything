@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "Product Discovery Guide (2026) — How PMs Find the Right Problems to Solve",
@@ -46,7 +47,7 @@ const DISCOVERY_PHASES = [
   {
     phase: "03. Run User Interviews",
     icon: "🎤",
-    what: "Talk to real users about specific past experiences — not hypothetical preferences. What they say they want and what they actually do are often completely different.",
+    what: "Talk to real [users about specific past experiences](/pm-customer-interviews) — not hypothetical preferences. What they say they want and what they actually do are often completely different.",
     how: "5 interviews per opportunity area is usually enough to find patterns. Ask: 'Tell me about the last time you [situation].' Never ask: 'Would you use a feature that...?'",
     mistake: "Leading questions that confirm your hypothesis. 'Don't you find it annoying when...?' — you've already told the user what to say.",
   },
@@ -131,7 +132,7 @@ export default function ProductDiscoveryGuidePage() {
                   <span className="text-2xl">{phase.icon}</span>
                   <h2 className="text-base font-bold text-white">{phase.phase}</h2>
                 </div>
-                <p className="text-sm text-white/70 mb-3">{phase.what}</p>
+                <p className="text-sm text-white/70 mb-3">{linkify(phase.what)}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="bg-[#0e1113] rounded-lg p-3">
                     <p className="text-xs text-white/40 uppercase tracking-wider mb-1">How to do it</p>

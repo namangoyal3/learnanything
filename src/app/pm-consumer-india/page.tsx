@@ -91,7 +91,7 @@ export default function PmConsumerIndiaPage() {
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
             4 user segments to understand, 6 behaviour patterns, 5 monetisation models,
-            and 6 design principles that work in Indian consumer markets.
+            and 6 design principles that <Link href="/pm-localization-india">work in Indian consumer markets</Link>.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build India Consumer PM Intuition Daily — Free →

@@ -1,0 +1,4100 @@
+{
+  "generatedAt": "2026-09-19T09:38:22.794Z",
+  "universe": 200,
+  "gscSource": "gsc-api",
+  "pages": {
+    "/": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 0.84,
+      "pillarProb": 0.26,
+      "impressions": 65,
+      "gsc": {
+        "impressions": 65,
+        "clicks": 0,
+        "position": 4.9
+      }
+    },
+    "/learn": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 0.44,
+      "pillarProb": 0.78,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pricing": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 1,
+      "pillarProb": 0.09,
+      "impressions": 64,
+      "gsc": {
+        "impressions": 64,
+        "clicks": 0,
+        "position": 4.2
+      }
+    },
+    "/explore": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 0.57,
+      "pillarProb": 0.11,
+      "impressions": 7,
+      "gsc": {
+        "impressions": 7,
+        "clicks": 0,
+        "position": 6.9
+      }
+    },
+    "/interview-prep": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.42,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/product-sense-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.35,
+      "impressions": 129,
+      "gsc": {
+        "impressions": 129,
+        "clicks": 0,
+        "position": 63.2
+      }
+    },
+    "/pm-metrics-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 0.95,
+      "pillarProb": 0.39,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/product-manager-salary-india": {
+      "kind": "tsx",
+      "topic": "salary-offers",
+      "topicConf": 1,
+      "pillarProb": 0.64,
+      "impressions": 127,
+      "gsc": {
+        "impressions": 127,
+        "clicks": 0,
+        "position": 40.3
+      }
+    },
+    "/how-to-become-a-product-manager": {
+      "kind": "tsx",
+      "topic": "career-entry",
+      "topicConf": 0.99,
+      "pillarProb": 0.91,
+      "impressions": 17,
+      "gsc": {
+        "impressions": 17,
+        "clicks": 0,
+        "position": 28.5
+      }
+    },
+    "/apm-program-preparation": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 0.56,
+      "pillarProb": 0.63,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 6
+      }
+    },
+    "/product-manager-resume": {
+      "kind": "tsx",
+      "topic": "career-entry",
+      "topicConf": 0.92,
+      "pillarProb": 0.37,
+      "impressions": 11,
+      "gsc": {
+        "impressions": 11,
+        "clicks": 0,
+        "position": 43.3
+      }
+    },
+    "/pm-behavioral-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.33,
+      "impressions": 56,
+      "gsc": {
+        "impressions": 56,
+        "clicks": 0,
+        "position": 4.5
+      }
+    },
+    "/senior-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 0.99,
+      "pillarProb": 0.41,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-case-study-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 0.99,
+      "pillarProb": 0.6,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/product-manager-career-path": {
+      "kind": "tsx",
+      "topic": "career-growth",
+      "topicConf": 1,
+      "pillarProb": 0.86,
+      "impressions": 17,
+      "gsc": {
+        "impressions": 17,
+        "clicks": 0,
+        "position": 39.1
+      }
+    },
+    "/google-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.34,
+      "impressions": 34,
+      "gsc": {
+        "impressions": 34,
+        "clicks": 0,
+        "position": 5.1
+      }
+    },
+    "/flipkart-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.2,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/razorpay-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.17,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/amazon-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.37,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/transition-to-product-manager": {
+      "kind": "tsx",
+      "topic": "career-entry",
+      "topicConf": 1,
+      "pillarProb": 0.75,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/swiggy-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.13,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/consumer-vs-b2b-pm": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.97,
+      "pillarProb": 0.75,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/product-discovery-guide": {
+      "kind": "tsx",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.79,
+      "impressions": 5,
+      "gsc": {
+        "impressions": 5,
+        "clicks": 0,
+        "position": 7.4
+      }
+    },
+    "/pm-tools-guide": {
+      "kind": "tsx",
+      "topic": "tools-templates",
+      "topicConf": 1,
+      "pillarProb": 0.78,
+      "impressions": 4,
+      "gsc": null
+    },
+    "/prd-template-guide": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 0.62,
+      "pillarProb": 0.68,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 89
+      }
+    },
+    "/product-manager-vs-project-manager": {
+      "kind": "tsx",
+      "topic": "career-growth",
+      "topicConf": 0.73,
+      "pillarProb": 0.57,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-salary-negotiation": {
+      "kind": "tsx",
+      "topic": "salary-offers",
+      "topicConf": 1,
+      "pillarProb": 0.39,
+      "impressions": 4,
+      "gsc": null
+    },
+    "/user-research-for-pms": {
+      "kind": "tsx",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.83,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/fintech-product-manager": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.69,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-domain-knowledge": {
+      "kind": "tsx",
+      "topic": "career-growth",
+      "topicConf": 0.56,
+      "pillarProb": 0.86,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-competitive-analysis": {
+      "kind": "tsx",
+      "topic": "discovery-research",
+      "topicConf": 0.56,
+      "pillarProb": 0.79,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-writing-skills": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.99,
+      "pillarProb": 0.66,
+      "impressions": 17,
+      "gsc": {
+        "impressions": 17,
+        "clicks": 0,
+        "position": 6.9
+      }
+    },
+    "/ecommerce-pm-guide": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.85,
+      "impressions": 5,
+      "gsc": null
+    },
+    "/pm-communication-skills": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 1,
+      "pillarProb": 0.77,
+      "impressions": 2,
+      "gsc": null
+    },
+    "/pm-career-levels-india": {
+      "kind": "tsx",
+      "topic": "career-growth",
+      "topicConf": 1,
+      "pillarProb": 0.75,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 40
+      }
+    },
+    "/pm-storytelling": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 1,
+      "pillarProb": 0.64,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-decision-making": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 1,
+      "pillarProb": 0.7,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/airbnb-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.32,
+      "impressions": 4,
+      "gsc": null
+    },
+    "/pm-mental-models": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 1,
+      "pillarProb": 0.71,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-strategy-doc": {
+      "kind": "tsx",
+      "topic": "strategy-planning",
+      "topicConf": 0.54,
+      "pillarProb": 0.4,
+      "impressions": 1,
+      "gsc": null
+    },
+    "/pm-trello-notion-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.39,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-cheat-sheet": {
+      "kind": "tsx",
+      "topic": "tools-templates",
+      "topicConf": 1,
+      "pillarProb": 0.34,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 8
+      }
+    },
+    "/urban-company-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.38,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-quarterly-planning": {
+      "kind": "tsx",
+      "topic": "strategy-planning",
+      "topicConf": 0.99,
+      "pillarProb": 0.48,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/ixigo-makemytrip-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 0.99,
+      "pillarProb": 0.51,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-sprint-planning": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 1,
+      "pillarProb": 0.26,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-weekly-review": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 0.57,
+      "pillarProb": 0.14,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/myntra-nykaa-pm-interview": {
+      "kind": "tsx",
+      "topic": "interview-prep",
+      "topicConf": 0.98,
+      "pillarProb": 0.33,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-vision-statement": {
+      "kind": "tsx",
+      "topic": "strategy-planning",
+      "topicConf": 0.98,
+      "pillarProb": 0.59,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-offers-multiple": {
+      "kind": "tsx",
+      "topic": "salary-offers",
+      "topicConf": 0.99,
+      "pillarProb": 0.29,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 5
+      }
+    },
+    "/pm-pricing-guide": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.6,
+      "pillarProb": 0.83,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-reading-list": {
+      "kind": "tsx",
+      "topic": "career-growth",
+      "topicConf": 0.99,
+      "pillarProb": 0.49,
+      "impressions": 6,
+      "gsc": null
+    },
+    "/pm-intellectual-honesty": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 1,
+      "pillarProb": 0.47,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-localization-india": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.79,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-beta-program": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 1,
+      "pillarProb": 0.69,
+      "impressions": 2,
+      "gsc": null
+    },
+    "/pm-prd-examples": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 0.95,
+      "pillarProb": 0.22,
+      "impressions": 3,
+      "gsc": {
+        "impressions": 3,
+        "clicks": 0,
+        "position": 42.3
+      }
+    },
+    "/pm-mentorship": {
+      "kind": "tsx",
+      "topic": "career-growth",
+      "topicConf": 1,
+      "pillarProb": 0.74,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 55
+      }
+    },
+    "/pm-anti-patterns": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.83,
+      "pillarProb": 0.47,
+      "impressions": 1,
+      "gsc": null
+    },
+    "/pm-consumer-india": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.73,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-data-analyst-partnership": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 0.92,
+      "pillarProb": 0.67,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-crisis-management": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 0.9,
+      "pillarProb": 0.54,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-trade-off-analysis": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.88,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-customer-interviews": {
+      "kind": "tsx",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.48,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-okr-examples": {
+      "kind": "tsx",
+      "topic": "strategy-planning",
+      "topicConf": 1,
+      "pillarProb": 0.23,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-async-work": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.96,
+      "pillarProb": 0.65,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-cohort-analysis": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 1,
+      "pillarProb": 0.63,
+      "impressions": 4,
+      "gsc": null
+    },
+    "/pm-event-tracking": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 0.98,
+      "pillarProb": 0.61,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 32
+      }
+    },
+    "/pm-churn-analysis": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 0.99,
+      "pillarProb": 0.72,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-mvp-guide": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 0.74,
+      "pillarProb": 0.71,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-fintech-india": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.81,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-prioritization-examples": {
+      "kind": "tsx",
+      "topic": "strategy-planning",
+      "topicConf": 0.99,
+      "pillarProb": 0.16,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-cross-functional": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.71,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-qa-partnership": {
+      "kind": "tsx",
+      "topic": "execution-delivery",
+      "topicConf": 1,
+      "pillarProb": 0.61,
+      "impressions": 2,
+      "gsc": {
+        "impressions": 2,
+        "clicks": 0,
+        "position": 9
+      }
+    },
+    "/pm-bharat-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-experimentation-culture": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 0.98,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-product-market-fit": {
+      "kind": "tsx",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.65,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-zero-to-one": {
+      "kind": "tsx",
+      "topic": "discovery-research",
+      "topicConf": 0.72,
+      "pillarProb": 0.77,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-content-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.78,
+      "impressions": 3,
+      "gsc": null
+    },
+    "/pm-b2b-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.82,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-mobile-app-metrics": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 0.94,
+      "pillarProb": 0.53,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-early-stage-startup": {
+      "kind": "tsx",
+      "topic": "career-entry",
+      "topicConf": 0.49,
+      "pillarProb": 0.61,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-api-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.95,
+      "pillarProb": 0.75,
+      "impressions": 4,
+      "gsc": null
+    },
+    "/pm-community-building": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.68,
+      "pillarProb": 0.72,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-churn-reduction": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 0.92,
+      "pillarProb": 0.68,
+      "impressions": 1,
+      "gsc": null
+    },
+    "/pm-referral-loops": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.54,
+      "pillarProb": 0.65,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-creator-economy": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.76,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-developer-tools": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.96,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-content-moderation": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.94,
+      "pillarProb": 0.71,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-feedback-loops": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.5,
+      "pillarProb": 0.59,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-technical-skills": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.9,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-product-led-growth": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.59,
+      "pillarProb": 0.72,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-social-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.73,
+      "impressions": 2,
+      "gsc": null
+    },
+    "/pm-video-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.71,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-recommendation-systems": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.92,
+      "pillarProb": 0.56,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-personalization": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.69,
+      "pillarProb": 0.7,
+      "impressions": 4,
+      "gsc": null
+    },
+    "/pm-marketplace-dynamics": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.98,
+      "pillarProb": 0.76,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-security-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.7,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-discovery-process": {
+      "kind": "tsx",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.69,
+      "impressions": 1,
+      "gsc": null
+    },
+    "/pm-jtbd": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.6,
+      "pillarProb": 0.69,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-growth-experiments": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 1,
+      "pillarProb": 0.57,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-conversion-optimization": {
+      "kind": "tsx",
+      "topic": "metrics-experiments",
+      "topicConf": 0.96,
+      "pillarProb": 0.41,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ride-hailing": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.65,
+      "impressions": 4,
+      "gsc": {
+        "impressions": 4,
+        "clicks": 0,
+        "position": 10
+      }
+    },
+    "/pm-matrimony-dating": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.7,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ott-india": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.77,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-wealth-management": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.72,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-upi-products": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.71,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-b2b-marketplaces": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 1,
+      "pillarProb": 0.75,
+      "impressions": 10,
+      "gsc": {
+        "impressions": 10,
+        "clicks": 0,
+        "position": 9.6
+      }
+    },
+    "/pm-observability": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.71,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-loyalty-programs": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.81,
+      "pillarProb": 0.63,
+      "impressions": 3,
+      "gsc": {
+        "impressions": 3,
+        "clicks": 0,
+        "position": 19
+      }
+    },
+    "/pm-ai-video": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.63,
+      "impressions": 1,
+      "gsc": {
+        "impressions": 1,
+        "clicks": 0,
+        "position": 10
+      }
+    },
+    "/pm-ai-voice": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.69,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ai-writing": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.55,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ai-meeting": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.53,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ai-sales": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.98,
+      "pillarProb": 0.59,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ai-support": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.8,
+      "pillarProb": 0.57,
+      "impressions": 2,
+      "gsc": null
+    },
+    "/pm-ai-recruiting": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.83,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ai-finance": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.6,
+      "pillarProb": 0.61,
+      "impressions": 6,
+      "gsc": {
+        "impressions": 6,
+        "clicks": 0,
+        "position": 8.8
+      }
+    },
+    "/pm-ai-healthcare": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.67,
+      "pillarProb": 0.66,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ai-education": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.7,
+      "pillarProb": 0.67,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-ai-productivity": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 0.92,
+      "pillarProb": 0.69,
+      "impressions": 1,
+      "gsc": null
+    },
+    "/pm-vertical-saas": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.51,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-global-saas-from-india": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.56,
+      "impressions": 1,
+      "gsc": null
+    },
+    "/pm-offline-first": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.74,
+      "pillarProb": 0.6,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-open-source": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.95,
+      "pillarProb": 0.61,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-chat-apps": {
+      "kind": "tsx",
+      "topic": "domain-guides",
+      "topicConf": 0.99,
+      "pillarProb": 0.64,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-salary-negotiation-india": {
+      "kind": "tsx",
+      "topic": "salary-offers",
+      "topicConf": 1,
+      "pillarProb": 0.25,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-imposter-syndrome": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.75,
+      "pillarProb": 0.44,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-work-life-balance": {
+      "kind": "tsx",
+      "topic": "pm-craft",
+      "topicConf": 0.75,
+      "pillarProb": 0.45,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-building-in-public": {
+      "kind": "tsx",
+      "topic": "career-growth",
+      "topicConf": 0.69,
+      "pillarProb": 0.57,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-rag-products": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.61,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-fine-tuning": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.16,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-prompt-engineering": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.54,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/pm-llm-cost-management": {
+      "kind": "tsx",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.57,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/login": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 1,
+      "pillarProb": 0.05,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/signup": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 1,
+      "pillarProb": 0.07,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/privacy": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 0.97,
+      "pillarProb": 0.41,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/terms": {
+      "kind": "tsx",
+      "topic": "none",
+      "topicConf": 1,
+      "pillarProb": 0.1,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/crafting-a-winning-ai-product-strategy-for-2026-xcxo": {
+      "kind": "db",
+      "topic": "ai-product",
+      "topicConf": 0.96,
+      "pillarProb": 0.82,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/achieving-product-market-fit-in-2026-a-comprehensive-guide-h0cb": {
+      "kind": "db",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.87,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-feature-prioritization-in-2026-a-comprehensive-guide-0284": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 1,
+      "pillarProb": 0.79,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-customer-interviews-in-2026-the-ultimate-guide-to-unlocking-product-su-1357": {
+      "kind": "db",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.66,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-product-manager-interview-questions-in-2026-the-ultimate-guide-3101": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.68,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-write-a-product-requirements-document-prd-in-2026-a-comprehensive-guide-7436": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 1,
+      "pillarProb": 0.3,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/llm-product-strategy-for-startups-a-comprehensive-guide-2963": {
+      "kind": "db",
+      "topic": "ai-product",
+      "topicConf": 1,
+      "pillarProb": 0.83,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-product-discovery-vs-delivery-balance-in-2026-5126": {
+      "kind": "db",
+      "topic": "discovery-research",
+      "topicConf": 0.71,
+      "pillarProb": 0.78,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-run-effective-product-reviews-in-2026-a-comprehensive-guide-7452": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 1,
+      "pillarProb": 0.63,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-product-teardown-methodology-in-2026-6169": {
+      "kind": "db",
+      "topic": "pm-craft",
+      "topicConf": 0.53,
+      "pillarProb": 0.76,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/building-a-pm-portfolio-with-no-experience-the-ultimate-2026-guide-4636": {
+      "kind": "db",
+      "topic": "career-entry",
+      "topicConf": 1,
+      "pillarProb": 0.73,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-continuous-discovery-habits-for-product-teams-in-2026-0661": {
+      "kind": "db",
+      "topic": "discovery-research",
+      "topicConf": 1,
+      "pillarProb": 0.78,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-questions-to-ask-during-a-product-manager-interview-at-google-for-a-gr-2157": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.11,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/example-of-a-technical-program-management-plan-for-complex-software-development--8562": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 0.7,
+      "pillarProb": 0.71,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-product-metrics-questions-at-amazon-pm-interviews-in-2026-4996": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.27,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-the-shopify-product-manager-interview-process-in-2026-9200": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.3,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/example-of-a-product-launch-plan-for-a-new-feature-a-comprehensive-guide-6721": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 1,
+      "pillarProb": 0.55,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-system-design-questions-at-google-product-manager-interviews-in-2026-8995": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.27,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/product-manager-vs-product-owner-difference-the-ultimate-guide-for-2026": {
+      "kind": "db",
+      "topic": "pm-craft",
+      "topicConf": 0.93,
+      "pillarProb": 0.56,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-the-pm-interview-framework-for-system-design-in-2026": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.73,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/building-a-product-roadmap-in-2026-a-comprehensive-guide": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 1,
+      "pillarProb": 0.84,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-product-led-growth-metrics-for-pms-in-2026": {
+      "kind": "db",
+      "topic": "metrics-experiments",
+      "topicConf": 1,
+      "pillarProb": 0.8,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/crafting-a-compelling-product-vision-statement-a-2026-guide": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 0.82,
+      "pillarProb": 0.5,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/example-of-a-product-requirements-document-for-an-ai-powered-chatbot-a-comprehen-0440": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 0.81,
+      "pillarProb": 0.17,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/template-for-a-product-metrics-dashboard-for-a-mobile-gaming-app-0073": {
+      "kind": "db",
+      "topic": "tools-templates",
+      "topicConf": 0.93,
+      "pillarProb": 0.15,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/template-for-a-product-launch-plan-for-a-new-fintech-product-in-the-payments-ind-4716": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 0.5,
+      "pillarProb": 0.45,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/template-for-a-product-feedback-analysis-report-for-a-mobile-app-a-comprehensive-7577": {
+      "kind": "db",
+      "topic": "tools-templates",
+      "topicConf": 0.99,
+      "pillarProb": 0.32,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-salesforce-product-manager-interview-questions-in-2026-1368": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.3,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/measuring-product-upselling-strategy-effectiveness-in-2026-6933": {
+      "kind": "db",
+      "topic": "metrics-experiments",
+      "topicConf": 0.97,
+      "pillarProb": 0.61,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/technical-program-management-plan-for-cybersecurity-9901": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 0.52,
+      "pillarProb": 0.61,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/cloud-based-software-technical-specification-template-0292": {
+      "kind": "db",
+      "topic": "tools-templates",
+      "topicConf": 0.81,
+      "pillarProb": 0.48,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/edtech-product-launch-plan-6129": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 0.9,
+      "pillarProb": 0.84,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/prioritizing-product-roadmaps-with-limited-resources-9529": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 1,
+      "pillarProb": 0.81,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-system-design-interviews-for-amazon-pm-roles-1629": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.23,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/b2b-saas-cybersecurity-launch-strategy-1779": {
+      "kind": "db",
+      "topic": "domain-guides",
+      "topicConf": 0.45,
+      "pillarProb": 0.76,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/google-product-manager-interview-tips-for-success-4420": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.48,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/creating-a-product-analytics-dashboard-for-b2b-saas-0914": {
+      "kind": "db",
+      "topic": "metrics-experiments",
+      "topicConf": 0.98,
+      "pillarProb": 0.49,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/b2b-saas-product-analytics-dashboard-the-complete-guide-for-2026-9260": {
+      "kind": "db",
+      "topic": "metrics-experiments",
+      "topicConf": 1,
+      "pillarProb": 0.81,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/technical-debt-prioritization-framework-the-pms-complete-guide-for-2026-0728": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 0.68,
+      "pillarProb": 0.56,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/building-pm-brand-and-visibility-in-2026-the-ultimate-guide": {
+      "kind": "db",
+      "topic": "career-growth",
+      "topicConf": 0.97,
+      "pillarProb": 0.84,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/the-2026-product-operations-manager-role-guide-unlocking-efficiency-and-growth": {
+      "kind": "db",
+      "topic": "career-growth",
+      "topicConf": 0.65,
+      "pillarProb": 0.84,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-product-intuition-in-2026-a-comprehensive-guide": {
+      "kind": "db",
+      "topic": "pm-craft",
+      "topicConf": 1,
+      "pillarProb": 0.84,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/okr-examples-for-product-teams-2026-a-comprehensive-guide": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 1,
+      "pillarProb": 0.57,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-create-a-customer-journey-map-for-an-ecommerce-platform-2026-template-6900": {
+      "kind": "db",
+      "topic": "domain-guides",
+      "topicConf": 0.48,
+      "pillarProb": 0.27,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-product-sense-interview-frameworks-in-2026-1b79": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.8,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/pm-estimation-questions-and-answers-a-comprehensive-guide-for-2026-dv5a": {
+      "kind": "db",
+      "topic": "interview-prep",
+      "topicConf": 1,
+      "pillarProb": 0.67,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-the-product-manager-tools-stack-2026-the-ultimate-guide": {
+      "kind": "db",
+      "topic": "tools-templates",
+      "topicConf": 1,
+      "pillarProb": 0.86,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-ai-is-transforming-project-management-in-2026-a-pm-streak-case-study": {
+      "kind": "db",
+      "topic": "ai-product",
+      "topicConf": 0.29,
+      "pillarProb": 0.46,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-create-a-product-vision-statement-that-actually-works-2026-guide-4526": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 0.99,
+      "pillarProb": 0.27,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/data-driven-decision-making-for-product-managers-harnessing-data-for-success": {
+      "kind": "db",
+      "topic": "pm-craft",
+      "topicConf": 1,
+      "pillarProb": 0.82,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/comparing-the-best-pm-tools-for-workflow-optimization": {
+      "kind": "db",
+      "topic": "tools-templates",
+      "topicConf": 1,
+      "pillarProb": 0.66,
+      "impressions": 6,
+      "gsc": {
+        "impressions": 6,
+        "clicks": 0,
+        "position": 15
+      }
+    },
+    "/learn/pm/mastering-cross-functional-stakeholder-management-in-product-management": {
+      "kind": "db",
+      "topic": "pm-craft",
+      "topicConf": 0.86,
+      "pillarProb": 0.8,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/building-an-impressive-pm-portfolio-strategies-for-product-managers": {
+      "kind": "db",
+      "topic": "career-entry",
+      "topicConf": 0.94,
+      "pillarProb": 0.72,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/mastering-metrics-to-track-for-a-b2b-saas-customer-churn-prediction-model-in-202-5624": {
+      "kind": "db",
+      "topic": "metrics-experiments",
+      "topicConf": 0.93,
+      "pillarProb": 0.32,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/example-of-a-north-star-metric-for-a-marketplace-product-2026-guide-6855": {
+      "kind": "db",
+      "topic": "metrics-experiments",
+      "topicConf": 0.9,
+      "pillarProb": 0.23,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-write-a-product-positioning-statement-for-a-developer-tool-2026-guide-8612": {
+      "kind": "db",
+      "topic": "pm-craft",
+      "topicConf": 0.53,
+      "pillarProb": 0.26,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-create-a-go-to-market-strategy-for-a-new-saas-feature-in-2026-4533": {
+      "kind": "db",
+      "topic": "execution-delivery",
+      "topicConf": 0.85,
+      "pillarProb": 0.64,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-prioritize-product-features-for-a-b2b-saas-company-in-2026-5240": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 1,
+      "pillarProb": 0.55,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-prioritize-product-features-for-an-mvp-launch-in-2026-5857": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 0.99,
+      "pillarProb": 0.2,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/saas-pricing-strategy-guide-frameworks-and-best-practices-for-2026-7379": {
+      "kind": "db",
+      "topic": "strategy-planning",
+      "topicConf": 0.78,
+      "pillarProb": 0.86,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/user-persona-template-for-b2b-a-complete-2026-pm-guide-3502": {
+      "kind": "db",
+      "topic": "tools-templates",
+      "topicConf": 0.71,
+      "pillarProb": 0.4,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-conduct-a-usability-test-for-a-b2b-saas-product-2026-guide-3940": {
+      "kind": "db",
+      "topic": "discovery-research",
+      "topicConf": 0.99,
+      "pillarProb": 0.58,
+      "impressions": 0,
+      "gsc": null
+    },
+    "/learn/pm/how-to-align-product-and-sales-teams-at-a-growth-stage-startup-2026-playbook-7405": {
+      "kind": "db",
+      "topic": "pm-craft",
+      "topicConf": 0.29,
+      "pillarProb": 0.52,
+      "impressions": 0,
+      "gsc": null
+    }
+  },
+  "topics": {
+    "interview-prep": {
+      "pages": [
+        "/interview-prep",
+        "/product-sense-interview",
+        "/pm-metrics-interview",
+        "/apm-program-preparation",
+        "/pm-behavioral-interview",
+        "/senior-pm-interview",
+        "/pm-case-study-interview",
+        "/google-pm-interview",
+        "/flipkart-pm-interview",
+        "/razorpay-pm-interview",
+        "/amazon-pm-interview",
+        "/swiggy-pm-interview",
+        "/airbnb-pm-interview",
+        "/pm-trello-notion-interview",
+        "/urban-company-pm-interview",
+        "/ixigo-makemytrip-pm-interview",
+        "/myntra-nykaa-pm-interview",
+        "/learn/pm/mastering-product-manager-interview-questions-in-2026-the-ultimate-guide-3101",
+        "/learn/pm/mastering-questions-to-ask-during-a-product-manager-interview-at-google-for-a-gr-2157",
+        "/learn/pm/mastering-product-metrics-questions-at-amazon-pm-interviews-in-2026-4996",
+        "/learn/pm/mastering-the-shopify-product-manager-interview-process-in-2026-9200",
+        "/learn/pm/mastering-system-design-questions-at-google-product-manager-interviews-in-2026-8995",
+        "/learn/pm/mastering-the-pm-interview-framework-for-system-design-in-2026",
+        "/learn/pm/mastering-salesforce-product-manager-interview-questions-in-2026-1368",
+        "/learn/pm/mastering-system-design-interviews-for-amazon-pm-roles-1629",
+        "/learn/pm/google-product-manager-interview-tips-for-success-4420",
+        "/learn/pm/mastering-product-sense-interview-frameworks-in-2026-1b79",
+        "/learn/pm/pm-estimation-questions-and-answers-a-comprehensive-guide-for-2026-dv5a"
+      ],
+      "pillar": "/interview-prep",
+      "pillarConf": 0.71,
+      "pillarProbabilities": {
+        "/product-sense-interview": 0,
+        "/pm-behavioral-interview": 0,
+        "/google-pm-interview": 0.28,
+        "/apm-program-preparation": 0,
+        "/airbnb-pm-interview": 0,
+        "/pm-case-study-interview": 0.01,
+        "/ixigo-makemytrip-pm-interview": 0,
+        "/interview-prep": 0.71
+      },
+      "pillarTitle": "PM Interview Prep — AI-Powered Practice Questions"
+    },
+    "salary-offers": {
+      "pages": [
+        "/product-manager-salary-india",
+        "/pm-salary-negotiation",
+        "/pm-offers-multiple",
+        "/pm-salary-negotiation-india"
+      ],
+      "pillar": "/product-manager-salary-india",
+      "pillarConf": 0.96,
+      "pillarProbabilities": {
+        "/product-manager-salary-india": 0.96,
+        "/pm-salary-negotiation": 0.02,
+        "/pm-offers-multiple": 0,
+        "/pm-salary-negotiation-india": 0.02
+      },
+      "pillarTitle": "Product Manager Salary in India (2026) — By Level, Company & City"
+    },
+    "career-entry": {
+      "pages": [
+        "/how-to-become-a-product-manager",
+        "/product-manager-resume",
+        "/transition-to-product-manager",
+        "/pm-early-stage-startup",
+        "/learn/pm/building-a-pm-portfolio-with-no-experience-the-ultimate-2026-guide-4636",
+        "/learn/pm/building-an-impressive-pm-portfolio-strategies-for-product-managers"
+      ],
+      "pillar": "/how-to-become-a-product-manager",
+      "pillarConf": 0.98,
+      "pillarProbabilities": {
+        "/how-to-become-a-product-manager": 0.98,
+        "/product-manager-resume": 0,
+        "/transition-to-product-manager": 0.02,
+        "/pm-early-stage-startup": 0
+      },
+      "pillarTitle": "How to Become a Product Manager in India (2026 Roadmap)"
+    },
+    "career-growth": {
+      "pages": [
+        "/product-manager-career-path",
+        "/product-manager-vs-project-manager",
+        "/pm-domain-knowledge",
+        "/pm-career-levels-india",
+        "/pm-reading-list",
+        "/pm-mentorship",
+        "/pm-building-in-public",
+        "/learn/pm/building-pm-brand-and-visibility-in-2026-the-ultimate-guide",
+        "/learn/pm/the-2026-product-operations-manager-role-guide-unlocking-efficiency-and-growth"
+      ],
+      "pillar": "/product-manager-career-path",
+      "pillarConf": 1,
+      "pillarProbabilities": {
+        "/product-manager-career-path": 1,
+        "/pm-reading-list": 0,
+        "/pm-career-levels-india": 0,
+        "/pm-mentorship": 0,
+        "/pm-domain-knowledge": 0,
+        "/product-manager-vs-project-manager": 0,
+        "/pm-building-in-public": 0
+      },
+      "pillarTitle": "Product Manager Career Path (2026) — APM to CPO Roadmap"
+    },
+    "domain-guides": {
+      "pages": [
+        "/consumer-vs-b2b-pm",
+        "/fintech-product-manager",
+        "/ecommerce-pm-guide",
+        "/pm-localization-india",
+        "/pm-consumer-india",
+        "/pm-fintech-india",
+        "/pm-bharat-products",
+        "/pm-content-products",
+        "/pm-b2b-products",
+        "/pm-api-products",
+        "/pm-community-building",
+        "/pm-referral-loops",
+        "/pm-creator-economy",
+        "/pm-developer-tools",
+        "/pm-content-moderation",
+        "/pm-product-led-growth",
+        "/pm-social-products",
+        "/pm-video-products",
+        "/pm-marketplace-dynamics",
+        "/pm-security-products",
+        "/pm-ride-hailing",
+        "/pm-matrimony-dating",
+        "/pm-ott-india",
+        "/pm-wealth-management",
+        "/pm-upi-products",
+        "/pm-b2b-marketplaces",
+        "/pm-observability",
+        "/pm-loyalty-programs",
+        "/pm-vertical-saas",
+        "/pm-global-saas-from-india",
+        "/pm-offline-first",
+        "/pm-open-source",
+        "/pm-chat-apps",
+        "/learn/pm/b2b-saas-cybersecurity-launch-strategy-1779",
+        "/learn/pm/how-to-create-a-customer-journey-map-for-an-ecommerce-platform-2026-template-6900"
+      ],
+      "pillar": "/ecommerce-pm-guide",
+      "pillarConf": 0.73,
+      "pillarProbabilities": {
+        "/pm-b2b-marketplaces": 0.05,
+        "/ecommerce-pm-guide": 0.73,
+        "/pm-api-products": 0,
+        "/pm-content-products": 0,
+        "/pm-ride-hailing": 0,
+        "/pm-social-products": 0,
+        "/pm-loyalty-programs": 0,
+        "/pm-global-saas-from-india": 0.22
+      },
+      "pillarTitle": "E-commerce Product Manager Guide (2026) — How to Excel as an E-commerce PM"
+    },
+    "discovery-research": {
+      "pages": [
+        "/product-discovery-guide",
+        "/user-research-for-pms",
+        "/pm-competitive-analysis",
+        "/pm-customer-interviews",
+        "/pm-product-market-fit",
+        "/pm-zero-to-one",
+        "/pm-discovery-process",
+        "/learn/pm/achieving-product-market-fit-in-2026-a-comprehensive-guide-h0cb",
+        "/learn/pm/mastering-customer-interviews-in-2026-the-ultimate-guide-to-unlocking-product-su-1357",
+        "/learn/pm/mastering-product-discovery-vs-delivery-balance-in-2026-5126",
+        "/learn/pm/mastering-continuous-discovery-habits-for-product-teams-in-2026-0661",
+        "/learn/pm/how-to-conduct-a-usability-test-for-a-b2b-saas-product-2026-guide-3940"
+      ],
+      "pillar": "/product-discovery-guide",
+      "pillarConf": 0.98,
+      "pillarProbabilities": {
+        "/product-discovery-guide": 0.98,
+        "/pm-discovery-process": 0.02,
+        "/user-research-for-pms": 0,
+        "/pm-competitive-analysis": 0,
+        "/pm-zero-to-one": 0,
+        "/pm-product-market-fit": 0,
+        "/pm-customer-interviews": 0
+      },
+      "pillarTitle": "Product Discovery Guide (2026) — How PMs Find the Right Problems to Solve"
+    },
+    "tools-templates": {
+      "pages": [
+        "/pm-tools-guide",
+        "/pm-cheat-sheet",
+        "/learn/pm/template-for-a-product-metrics-dashboard-for-a-mobile-gaming-app-0073",
+        "/learn/pm/template-for-a-product-feedback-analysis-report-for-a-mobile-app-a-comprehensive-7577",
+        "/learn/pm/cloud-based-software-technical-specification-template-0292",
+        "/learn/pm/mastering-the-product-manager-tools-stack-2026-the-ultimate-guide",
+        "/learn/pm/comparing-the-best-pm-tools-for-workflow-optimization",
+        "/learn/pm/user-persona-template-for-b2b-a-complete-2026-pm-guide-3502"
+      ],
+      "pillar": "/pm-tools-guide",
+      "pillarConf": 0.93,
+      "pillarProbabilities": {
+        "/pm-tools-guide": 0.93,
+        "/pm-cheat-sheet": 0.07
+      },
+      "pillarTitle": "Product Manager Tools Guide (2026) — Jira, Figma, Amplitude & More"
+    },
+    "execution-delivery": {
+      "pages": [
+        "/prd-template-guide",
+        "/pm-sprint-planning",
+        "/pm-weekly-review",
+        "/pm-beta-program",
+        "/pm-prd-examples",
+        "/pm-data-analyst-partnership",
+        "/pm-crisis-management",
+        "/pm-mvp-guide",
+        "/pm-qa-partnership",
+        "/learn/pm/how-to-write-a-product-requirements-document-prd-in-2026-a-comprehensive-guide-7436",
+        "/learn/pm/how-to-run-effective-product-reviews-in-2026-a-comprehensive-guide-7452",
+        "/learn/pm/example-of-a-technical-program-management-plan-for-complex-software-development--8562",
+        "/learn/pm/example-of-a-product-launch-plan-for-a-new-feature-a-comprehensive-guide-6721",
+        "/learn/pm/example-of-a-product-requirements-document-for-an-ai-powered-chatbot-a-comprehen-0440",
+        "/learn/pm/template-for-a-product-launch-plan-for-a-new-fintech-product-in-the-payments-ind-4716",
+        "/learn/pm/technical-program-management-plan-for-cybersecurity-9901",
+        "/learn/pm/edtech-product-launch-plan-6129",
+        "/learn/pm/how-to-create-a-go-to-market-strategy-for-a-new-saas-feature-in-2026-4533"
+      ],
+      "pillar": null,
+      "pillarConf": 0.4,
+      "pillarProbabilities": {
+        "/pm-beta-program": 0.01,
+        "/pm-qa-partnership": 0,
+        "/prd-template-guide": 0.4,
+        "/pm-mvp-guide": 0.37,
+        "/pm-data-analyst-partnership": 0,
+        "/pm-crisis-management": 0.01,
+        "/pm-prd-examples": 0,
+        "/pm-sprint-planning": 0.21
+      },
+      "pillarTitle": null
+    },
+    "pm-craft": {
+      "pages": [
+        "/pm-writing-skills",
+        "/pm-communication-skills",
+        "/pm-storytelling",
+        "/pm-decision-making",
+        "/pm-mental-models",
+        "/pm-pricing-guide",
+        "/pm-intellectual-honesty",
+        "/pm-anti-patterns",
+        "/pm-trade-off-analysis",
+        "/pm-async-work",
+        "/pm-cross-functional",
+        "/pm-feedback-loops",
+        "/pm-technical-skills",
+        "/pm-jtbd",
+        "/pm-imposter-syndrome",
+        "/pm-work-life-balance",
+        "/learn/pm/mastering-product-teardown-methodology-in-2026-6169",
+        "/learn/pm/product-manager-vs-product-owner-difference-the-ultimate-guide-for-2026",
+        "/learn/pm/mastering-product-intuition-in-2026-a-comprehensive-guide",
+        "/learn/pm/data-driven-decision-making-for-product-managers-harnessing-data-for-success",
+        "/learn/pm/mastering-cross-functional-stakeholder-management-in-product-management",
+        "/learn/pm/how-to-write-a-product-positioning-statement-for-a-developer-tool-2026-guide-8612",
+        "/learn/pm/how-to-align-product-and-sales-teams-at-a-growth-stage-startup-2026-playbook-7405"
+      ],
+      "pillar": null,
+      "pillarConf": 0.47,
+      "pillarProbabilities": {
+        "/pm-writing-skills": 0.02,
+        "/pm-communication-skills": 0.47,
+        "/pm-pricing-guide": 0,
+        "/pm-anti-patterns": 0.24,
+        "/pm-mental-models": 0.2,
+        "/pm-decision-making": 0.07,
+        "/pm-jtbd": 0,
+        "/pm-trade-off-analysis": 0
+      },
+      "pillarTitle": null
+    },
+    "strategy-planning": {
+      "pages": [
+        "/pm-strategy-doc",
+        "/pm-quarterly-planning",
+        "/pm-vision-statement",
+        "/pm-okr-examples",
+        "/pm-prioritization-examples",
+        "/learn/pm/mastering-feature-prioritization-in-2026-a-comprehensive-guide-0284",
+        "/learn/pm/building-a-product-roadmap-in-2026-a-comprehensive-guide",
+        "/learn/pm/crafting-a-compelling-product-vision-statement-a-2026-guide",
+        "/learn/pm/prioritizing-product-roadmaps-with-limited-resources-9529",
+        "/learn/pm/technical-debt-prioritization-framework-the-pms-complete-guide-for-2026-0728",
+        "/learn/pm/okr-examples-for-product-teams-2026-a-comprehensive-guide",
+        "/learn/pm/how-to-create-a-product-vision-statement-that-actually-works-2026-guide-4526",
+        "/learn/pm/how-to-prioritize-product-features-for-a-b2b-saas-company-in-2026-5240",
+        "/learn/pm/how-to-prioritize-product-features-for-an-mvp-launch-in-2026-5857",
+        "/learn/pm/saas-pricing-strategy-guide-frameworks-and-best-practices-for-2026-7379"
+      ],
+      "pillar": "/pm-strategy-doc",
+      "pillarConf": 1,
+      "pillarProbabilities": {
+        "/pm-strategy-doc": 1,
+        "/pm-vision-statement": 0,
+        "/pm-quarterly-planning": 0,
+        "/pm-okr-examples": 0,
+        "/pm-prioritization-examples": 0
+      },
+      "pillarTitle": "How to Write a Product Strategy Doc (2026) — PM Template + Examples"
+    },
+    "metrics-experiments": {
+      "pages": [
+        "/pm-cohort-analysis",
+        "/pm-event-tracking",
+        "/pm-churn-analysis",
+        "/pm-experimentation-culture",
+        "/pm-mobile-app-metrics",
+        "/pm-churn-reduction",
+        "/pm-growth-experiments",
+        "/pm-conversion-optimization",
+        "/learn/pm/mastering-product-led-growth-metrics-for-pms-in-2026",
+        "/learn/pm/measuring-product-upselling-strategy-effectiveness-in-2026-6933",
+        "/learn/pm/creating-a-product-analytics-dashboard-for-b2b-saas-0914",
+        "/learn/pm/b2b-saas-product-analytics-dashboard-the-complete-guide-for-2026-9260",
+        "/learn/pm/mastering-metrics-to-track-for-a-b2b-saas-customer-churn-prediction-model-in-202-5624",
+        "/learn/pm/example-of-a-north-star-metric-for-a-marketplace-product-2026-guide-6855"
+      ],
+      "pillar": "/pm-experimentation-culture",
+      "pillarConf": 0.93,
+      "pillarProbabilities": {
+        "/pm-cohort-analysis": 0.01,
+        "/pm-churn-reduction": 0,
+        "/pm-event-tracking": 0.01,
+        "/pm-churn-analysis": 0,
+        "/pm-experimentation-culture": 0.93,
+        "/pm-growth-experiments": 0.04,
+        "/pm-mobile-app-metrics": 0,
+        "/pm-conversion-optimization": 0
+      },
+      "pillarTitle": "PM Experimentation Culture (2026) — How to Build a Team That Ships, Measures, Learns"
+    },
+    "ai-product": {
+      "pages": [
+        "/pm-recommendation-systems",
+        "/pm-personalization",
+        "/pm-ai-video",
+        "/pm-ai-voice",
+        "/pm-ai-writing",
+        "/pm-ai-meeting",
+        "/pm-ai-sales",
+        "/pm-ai-support",
+        "/pm-ai-recruiting",
+        "/pm-ai-finance",
+        "/pm-ai-healthcare",
+        "/pm-ai-education",
+        "/pm-ai-productivity",
+        "/pm-rag-products",
+        "/pm-fine-tuning",
+        "/pm-prompt-engineering",
+        "/pm-llm-cost-management",
+        "/learn/pm/crafting-a-winning-ai-product-strategy-for-2026-xcxo",
+        "/learn/pm/llm-product-strategy-for-startups-a-comprehensive-guide-2963",
+        "/learn/pm/how-ai-is-transforming-project-management-in-2026-a-pm-streak-case-study"
+      ],
+      "pillar": "/pm-ai-productivity",
+      "pillarConf": 0.6,
+      "pillarProbabilities": {
+        "/pm-personalization": 0.4,
+        "/pm-ai-finance": 0,
+        "/pm-ai-support": 0,
+        "/pm-ai-productivity": 0.6,
+        "/pm-ai-video": 0,
+        "/pm-ai-voice": 0,
+        "/pm-ai-recruiting": 0,
+        "/pm-ai-education": 0
+      },
+      "pillarTitle": "PM AI Productivity Products (2026) — Copilot, Glean, Mem PM Lessons"
+    }
+  },
+  "page2": {},
+  "footer": {
+    "guides": [
+      {
+        "topic": "interview-prep",
+        "path": "/interview-prep",
+        "title": "PM Interview Prep — AI-Powered Practice Questions"
+      },
+      {
+        "topic": "salary-offers",
+        "path": "/product-manager-salary-india",
+        "title": "Product Manager Salary in India (2026) — By Level, Company & City"
+      },
+      {
+        "topic": "career-entry",
+        "path": "/how-to-become-a-product-manager",
+        "title": "How to Become a Product Manager in India (2026 Roadmap)"
+      },
+      {
+        "topic": "career-growth",
+        "path": "/product-manager-career-path",
+        "title": "Product Manager Career Path (2026) — APM to CPO Roadmap"
+      },
+      {
+        "topic": "domain-guides",
+        "path": "/ecommerce-pm-guide",
+        "title": "E-commerce Product Manager Guide (2026) — How to Excel as an E-commerce PM"
+      },
+      {
+        "topic": "discovery-research",
+        "path": "/product-discovery-guide",
+        "title": "Product Discovery Guide (2026) — How PMs Find the Right Problems to Solve"
+      },
+      {
+        "topic": "tools-templates",
+        "path": "/pm-tools-guide",
+        "title": "Product Manager Tools Guide (2026) — Jira, Figma, Amplitude & More"
+      },
+      {
+        "topic": "strategy-planning",
+        "path": "/pm-strategy-doc",
+        "title": "How to Write a Product Strategy Doc (2026) — PM Template + Examples"
+      },
+      {
+        "topic": "metrics-experiments",
+        "path": "/pm-experimentation-culture",
+        "title": "PM Experimentation Culture (2026) — How to Build a Team That Ships, Measures, Learns"
+      },
+      {
+        "topic": "ai-product",
+        "path": "/pm-ai-productivity",
+        "title": "PM AI Productivity Products (2026) — Copilot, Glean, Mem PM Lessons"
+      }
+    ],
+    "money": [
+      "/signup",
+      "/pricing"
+    ]
+  },
+  "links": [
+    {
+      "source": "/how-to-become-a-product-manager",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.82,
+      "sentence": "Run user interviews, synthesise insights, and validate assumptions cheaply.",
+      "sentenceProb": 0.62,
+      "anchor": "user interviews",
+      "anchorProb": 0.44,
+      "delivers": 0.83,
+      "apply": "tsx"
+    },
+    {
+      "source": "/apm-program-preparation",
+      "destination": "/swiggy-pm-interview",
+      "kind": "support",
+      "relevance": 0.8,
+      "sentence": "Swiggy tests execution under ambiguity — fast-paced ops decisions.",
+      "sentenceProb": 0.64,
+      "anchor": "Swiggy tests execution under ambiguity",
+      "anchorProb": 0.27,
+      "delivers": 0.63,
+      "apply": "tsx"
+    },
+    {
+      "source": "/product-manager-career-path",
+      "destination": "/product-manager-salary-india",
+      "kind": "pillar",
+      "relevance": 0.8,
+      "sentence": "What each PM level requires, how to get promoted, salaries at every stage, and the moves that accelerate your career faster than tenure alone.",
+      "sentenceProb": 1,
+      "anchor": "salaries at every stage",
+      "anchorProb": 0.8,
+      "delivers": 0.95,
+      "apply": "tsx"
+    },
+    {
+      "source": "/google-pm-interview",
+      "destination": "/pm-metrics-interview",
+      "kind": "support",
+      "relevance": 0.84,
+      "sentence": "Walk me through how you'd investigate a 20% drop in Google Docs DAU.",
+      "sentenceProb": 0.58,
+      "anchor": "drop in Google Docs DAU",
+      "anchorProb": 0.48,
+      "delivers": 0.92,
+      "apply": "tsx"
+    },
+    {
+      "source": "/google-pm-interview",
+      "destination": "/product-sense-interview",
+      "kind": "support",
+      "relevance": 0.78,
+      "sentence": "Google tests whether you can identify the right user, articulate a clear vision, and prioritise with user empathy.",
+      "sentenceProb": 0.73,
+      "anchor": "identify the right user",
+      "anchorProb": 0.23,
+      "delivers": 0.89,
+      "apply": "tsx"
+    },
+    {
+      "source": "/flipkart-pm-interview",
+      "destination": "/learn/pm/pm-estimation-questions-and-answers-a-comprehensive-guide-for-2026-dv5a",
+      "kind": "support",
+      "relevance": 0.77,
+      "sentence": "For estimation questions, show structure — break the problem down, state assumptions clearly, and sanity-check your answer with a real-world reference.",
+      "sentenceProb": 0.71,
+      "anchor": "estimation questions",
+      "anchorProb": 0.76,
+      "delivers": 0.87,
+      "apply": "tsx"
+    },
+    {
+      "source": "/razorpay-pm-interview",
+      "destination": "/pm-metrics-interview",
+      "kind": "support",
+      "relevance": 0.83,
+      "sentence": "Define success, diagnose metric drops, and think about experimentation.",
+      "sentenceProb": 0.84,
+      "anchor": "Define success",
+      "anchorProb": 0.5,
+      "delivers": 0.94,
+      "apply": "tsx"
+    },
+    {
+      "source": "/swiggy-pm-interview",
+      "destination": "/pm-metrics-interview",
+      "kind": "support",
+      "relevance": 0.72,
+      "sentence": "Diagnose a metric drop or define a success framework for a Swiggy product area.",
+      "sentenceProb": 0.93,
+      "anchor": "define a success framework",
+      "anchorProb": 0.35000000000000003,
+      "delivers": 0.93,
+      "apply": "tsx"
+    },
+    {
+      "source": "/product-discovery-guide",
+      "destination": "/pm-customer-interviews",
+      "kind": "support",
+      "relevance": 0.76,
+      "sentence": "Talk to real users about specific past experiences — not hypothetical preferences.",
+      "sentenceProb": 0.71,
+      "anchor": "users about specific past experiences",
+      "anchorProb": 0.41,
+      "delivers": 0.88,
+      "apply": "tsx"
+    },
+    {
+      "source": "/prd-template-guide",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.64,
+      "sentence": "Describe the user problem and why it matters — supported by data.",
+      "sentenceProb": 0.63,
+      "anchor": "Describe the user problem",
+      "anchorProb": 0.56,
+      "delivers": 0.63,
+      "apply": "tsx"
+    },
+    {
+      "source": "/user-research-for-pms",
+      "destination": "/pm-customer-interviews",
+      "kind": "support",
+      "relevance": 0.74,
+      "sentence": "The 6 research methods every PM should know, when to use each, how many users you actually need, and how to turn research into product decisions — not reports.",
+      "sentenceProb": 0.44,
+      "anchor": "turn research into product decisions",
+      "anchorProb": 0.56,
+      "delivers": 0.73,
+      "apply": "tsx"
+    },
+    {
+      "source": "/user-research-for-pms",
+      "destination": "/learn/pm/how-to-conduct-a-usability-test-for-a-b2b-saas-product-2026-guide-3940",
+      "kind": "support",
+      "relevance": 0.73,
+      "sentence": "Validating that users can actually use a design.",
+      "sentenceProb": 0.92,
+      "anchor": "Validating that users can actually",
+      "anchorProb": 0.33,
+      "delivers": 0.88,
+      "apply": "tsx"
+    },
+    {
+      "source": "/fintech-product-manager",
+      "destination": "/product-manager-salary-india",
+      "kind": "pillar",
+      "relevance": 0.72,
+      "sentence": "The complete fintech PM playbook for India — sub-sectors, companies hiring, domain terms you must know, interview questions, and salary ranges.",
+      "sentenceProb": 0.9,
+      "anchor": "salary ranges",
+      "anchorProb": 0.52,
+      "delivers": 0.91,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-domain-knowledge",
+      "destination": "/pm-reading-list",
+      "kind": "support",
+      "relevance": 0.79,
+      "sentence": "Every industry has 5–10 books/essays everyone in it has read.",
+      "sentenceProb": 0.86,
+      "anchor": "books/essays everyone",
+      "anchorProb": 0.79,
+      "delivers": 0.66,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-domain-knowledge",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.65,
+      "sentence": "Deliberately interview users at the edges of your persona — new users, power users, lapsed users, users who rejected your product.",
+      "sentenceProb": 0.64,
+      "anchor": "interview users",
+      "anchorProb": 0.29,
+      "delivers": 0.72,
+      "apply": "tsx"
+    },
+    {
+      "source": "/ecommerce-pm-guide",
+      "destination": "/pm-marketplace-dynamics",
+      "kind": "support",
+      "relevance": 0.77,
+      "sentence": "Marketplaces need both sides happy — not just the side you naturally favour.",
+      "sentenceProb": 0.79,
+      "anchor": "Marketplaces need both sides happy",
+      "anchorProb": 0.47,
+      "delivers": 0.8,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-decision-making",
+      "destination": "/pm-trade-off-analysis",
+      "kind": "support",
+      "relevance": 0.62,
+      "sentence": "5 decision frameworks PMs should know, an 8-part decision doc template, and 5 moves that balance speed and quality of decisions.",
+      "sentenceProb": 0.72,
+      "anchor": "decision frameworks PMs should know",
+      "anchorProb": 0.71,
+      "delivers": 0.76,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-mental-models",
+      "destination": "/pm-feedback-loops",
+      "kind": "support",
+      "relevance": 0.63,
+      "sentence": "Find the 20% of users whose feedback drives 80% of insight.",
+      "sentenceProb": 0.93,
+      "anchor": "users whose feedback drives",
+      "anchorProb": 0.34,
+      "delivers": 0.6,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-quarterly-planning",
+      "destination": "/pm-okr-examples",
+      "kind": "support",
+      "relevance": 0.79,
+      "sentence": "Real shipped work toward OKRs — the main thing.",
+      "sentenceProb": 0.57,
+      "anchor": "Real shipped work toward OKRs",
+      "anchorProb": 0.72,
+      "delivers": 0.84,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-reading-list",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.72,
+      "sentence": "Practical framework for ongoing user research and decision-making.",
+      "sentenceProb": 0.88,
+      "anchor": "ongoing user research and decision-making",
+      "anchorProb": 0.44,
+      "delivers": 0.86,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-prd-examples",
+      "destination": "/prd-template-guide",
+      "kind": "support",
+      "relevance": 0.74,
+      "sentence": "See structure, detail level, and the language of great PM writing.",
+      "sentenceProb": 0.86,
+      "anchor": "language of great PM writing",
+      "anchorProb": 0.65,
+      "delivers": 0.82,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-consumer-india",
+      "destination": "/pm-localization-india",
+      "kind": "support",
+      "relevance": 0.79,
+      "sentence": "4 user segments to understand, 6 behaviour patterns, 5 monetisation models, and 6 design principles that work in Indian consumer markets.",
+      "sentenceProb": 0.97,
+      "anchor": "work in Indian consumer markets",
+      "anchorProb": 0.31,
+      "delivers": 0.81,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-customer-interviews",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.67,
+      "sentence": "5 prep moves, 6 questions that work, 5 to avoid, 6 listening techniques, and 6 biases to catch in yourself.",
+      "sentenceProb": 0.89,
+      "anchor": "prep moves",
+      "anchorProb": 0.52,
+      "delivers": 0.6,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-b2b-products",
+      "destination": "/pm-product-led-growth",
+      "kind": "support",
+      "relevance": 0.68,
+      "sentence": "5 B2B dynamics, 6 key metrics, 5 design principles, and 5 common traps.",
+      "sentenceProb": 0.62,
+      "anchor": "key metrics",
+      "anchorProb": 0.37,
+      "delivers": 0.69,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-developer-tools",
+      "destination": "/pm-api-products",
+      "kind": "support",
+      "relevance": 0.66,
+      "sentence": "6 DX principles and 5 metrics for PMs building products engineers use.",
+      "sentenceProb": 1,
+      "anchor": "PMs building products engineers use",
+      "anchorProb": 0.37,
+      "delivers": 0.66,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-social-products",
+      "destination": "/pm-community-building",
+      "kind": "support",
+      "relevance": 0.64,
+      "sentence": "5 dynamics and 5 metrics for social product PMs.",
+      "sentenceProb": 0.92,
+      "anchor": "metrics for social product PMs",
+      "anchorProb": 0.87,
+      "delivers": 0.84,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-marketplace-dynamics",
+      "destination": "/pm-b2b-marketplaces",
+      "kind": "support",
+      "relevance": 0.69,
+      "sentence": "5 dynamics and 5 metrics for marketplace PMs.",
+      "sentenceProb": 0.85,
+      "anchor": "metrics for marketplace PMs",
+      "anchorProb": 0.76,
+      "delivers": 0.82,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-ride-hailing",
+      "destination": "/pm-marketplace-dynamics",
+      "kind": "support",
+      "relevance": 0.73,
+      "sentence": "5 dynamics and 5 metrics for ride-hailing PMs.",
+      "sentenceProb": 0.92,
+      "anchor": "metrics for ride-hailing PMs",
+      "anchorProb": 0.62,
+      "delivers": 0.77,
+      "apply": "tsx"
+    },
+    {
+      "source": "/pm-b2b-marketplaces",
+      "destination": "/pm-marketplace-dynamics",
+      "kind": "support",
+      "relevance": 0.7,
+      "sentence": "5 dynamics and 5 metrics for B2B marketplace PMs.",
+      "sentenceProb": 0.92,
+      "anchor": "metrics for B2B marketplace PMs",
+      "anchorProb": 0.52,
+      "delivers": 0.87,
+      "apply": "tsx"
+    }
+  ],
+  "skipped": [
+    {
+      "source": "/interview-prep",
+      "destination": "/product-sense-interview",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.97,
+        "top": "No credit cost, generate as many sets as you want.",
+        "topProb": 0.03
+      }
+    },
+    {
+      "source": "/interview-prep",
+      "destination": "/senior-pm-interview",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.97,
+        "top": "No credit cost, generate as many sets as you want.",
+        "topProb": 0.03
+      }
+    },
+    {
+      "source": "/interview-prep",
+      "destination": "/amazon-pm-interview",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.99,
+        "top": "No credit cost, generate as many sets as you want.",
+        "topProb": 0.01
+      }
+    },
+    {
+      "source": "/interview-prep",
+      "destination": "/learn/pm/mastering-product-sense-interview-frameworks-in-2026-1b79",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.98,
+        "top": "No credit cost, generate as many sets as you want.",
+        "topProb": 0.02
+      }
+    },
+    {
+      "source": "/product-manager-salary-india",
+      "destination": "/product-manager-career-path",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.47,
+        "anchor": "Complete breakdown of PM salaries",
+        "sentence": "Complete breakdown of PM salaries by level, company, and city — plus how to negotiate and what skills actually move the needle on your compensation."
+      }
+    },
+    {
+      "source": "/product-manager-salary-india",
+      "destination": "/interview-prep",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.97,
+        "top": "Complete breakdown of PM salaries by level, company, and city — plus how to negotiate and what skills actually move the needle on your compensation.",
+        "topProb": 0.03
+      }
+    },
+    {
+      "source": "/how-to-become-a-product-manager",
+      "destination": "/learn/pm/building-an-impressive-pm-portfolio-strategies-for-product-managers",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.64,
+        "top": "A concrete, week-by-week plan from zero to your first PM role — or from PM to Senior PM.",
+        "topProb": 0.3
+      }
+    },
+    {
+      "source": "/how-to-become-a-product-manager",
+      "destination": "/learn/pm/building-a-pm-portfolio-with-no-experience-the-ultimate-2026-guide-4636",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.18,
+        "anchor": "week-by-week plan from zero",
+        "sentence": "A concrete, week-by-week plan from zero to your first PM role — or from PM to Senior PM."
+      }
+    },
+    {
+      "source": "/how-to-become-a-product-manager",
+      "destination": "/pm-strategy-doc",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.43,
+        "top": "Write clear PRDs, give sharp presentations, and influence without authority.",
+        "topProb": 0.49
+      }
+    },
+    {
+      "source": "/how-to-become-a-product-manager",
+      "destination": "/pm-tools-guide",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.36,
+        "top": "Read dashboards, debug metric drops, design experiments, and make data-driven decisions.",
+        "topProb": 0.44
+      }
+    },
+    {
+      "source": "/how-to-become-a-product-manager",
+      "destination": "/pm-early-stage-startup",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.06,
+        "anchor": "week-by-week plan",
+        "sentence": "A concrete, week-by-week plan from zero to your first PM role — or from PM to Senior PM."
+      }
+    },
+    {
+      "source": "/apm-program-preparation",
+      "destination": "/google-pm-interview",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.93,
+        "top": "Swiggy tests execution under ambiguity — fast-paced ops decisions.",
+        "topProb": 0.06
+      }
+    },
+    {
+      "source": "/apm-program-preparation",
+      "destination": "/razorpay-pm-interview",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.32,
+        "top": "Know fintech concepts: payment rails, reconciliation, merchant needs.",
+        "topProb": 0.68
+      }
+    },
+    {
+      "source": "/apm-program-preparation",
+      "destination": "/flipkart-pm-interview",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.96,
+        "top": "Know delivery logistics, supply-demand balancing, and restaurant growth.",
+        "topProb": 0.02
+      }
+    },
+    {
+      "source": "/pm-behavioral-interview",
+      "destination": "/interview-prep",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.46,
+        "anchor": "25+ questions",
+        "sentence": "Here are 25+ questions, the STAR framework, and exactly what interviewers are looking for in each answer."
+      }
+    },
+    {
+      "source": "/pm-case-study-interview",
+      "destination": "/pm-metrics-interview",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.25,
+        "anchor": "crack any PM case study",
+        "sentence": "How to crack any PM case study — product improvement, new market entry, metric drops, and GTM."
+      }
+    },
+    {
+      "source": "/pm-case-study-interview",
+      "destination": "/swiggy-pm-interview",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.29,
+        "anchor": "crack any PM case study",
+        "sentence": "How to crack any PM case study — product improvement, new market entry, metric drops, and GTM."
+      }
+    },
+    {
+      "source": "/pm-case-study-interview",
+      "destination": "/product-discovery-guide",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.59,
+        "top": "crack any PM case study",
+        "topProb": 0.23,
+        "sentence": "How to crack any PM case study — product improvement, new market entry, metric drops, and GTM."
+      }
+    },
+    {
+      "source": "/product-manager-career-path",
+      "destination": "/learn/pm/building-pm-brand-and-visibility-in-2026-the-ultimate-guide",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.51,
+        "top": "Tenure matters less than visibility",
+        "topProb": 0.32,
+        "sentence": "Tenure matters less than visibility, impact, and operating above your level."
+      }
+    },
+    {
+      "source": "/product-manager-career-path",
+      "destination": "/pm-career-levels-india",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.84,
+        "top": "Tenure matters less than visibility, impact, and operating above your level.",
+        "topProb": 0.16
+      }
+    },
+    {
+      "source": "/product-manager-career-path",
+      "destination": "/pm-domain-knowledge",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.91,
+        "top": "Tenure matters less than visibility, impact, and operating above your level.",
+        "topProb": 0.09
+      }
+    },
+    {
+      "source": "/google-pm-interview",
+      "destination": "/senior-pm-interview",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.09,
+        "anchor": "6-week prep plan",
+        "sentence": "Every round type, real questions, what Googlers say the bar actually is, and a 6-week prep plan for PM and APMM roles in India and globally."
+      }
+    },
+    {
+      "source": "/google-pm-interview",
+      "destination": "/learn/pm/mastering-the-pm-interview-framework-for-system-design-in-2026",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.18,
+        "top": "Use the MECE principle to structure your answer.",
+        "topProb": 0.34
+      }
+    },
+    {
+      "source": "/flipkart-pm-interview",
+      "destination": "/pm-metrics-interview",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.41,
+        "top": "seller's satisfaction score drops",
+        "topProb": 0.22,
+        "sentence": "A seller's satisfaction score drops after a new policy."
+      }
+    },
+    {
+      "source": "/flipkart-pm-interview",
+      "destination": "/interview-prep",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.3,
+        "anchor": "Design a product",
+        "sentence": "Design a product, improve an existing Flipkart feature, or build a new product for a specific user segment."
+      }
+    },
+    {
+      "source": "/razorpay-pm-interview",
+      "destination": "/pm-behavioral-interview",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.58,
+        "anchor": "real questions",
+        "sentence": "All interview rounds, fintech domain knowledge you must have, real questions, and what Razorpay PMs say separates candidates who get offers from those who don't."
+      }
+    },
+    {
+      "source": "/amazon-pm-interview",
+      "destination": "/learn/pm/mastering-product-metrics-questions-at-amazon-pm-interviews-in-2026-4996",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.58,
+        "top": "input metrics",
+        "topProb": 0.13,
+        "sentence": "Amazon thinks in terms of input metrics (things you control) and output metrics (results)."
+      }
+    },
+    {
+      "source": "/amazon-pm-interview",
+      "destination": "/interview-prep",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.7,
+        "top": "Design a new Amazon product",
+        "topProb": 0.16,
+        "sentence": "Design a new Amazon product or improve an existing one."
+      }
+    },
+    {
+      "source": "/transition-to-product-manager",
+      "destination": "/learn/pm/building-a-pm-portfolio-with-no-experience-the-ultimate-2026-guide-4636",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.45,
+        "top": "real product work",
+        "topProb": 0.3,
+        "sentence": "The candidates who succeed from MBA backgrounds have supplemented with real product work — an APM program, a startup, a side project, or product internships."
+      }
+    },
+    {
+      "source": "/transition-to-product-manager",
+      "destination": "/product-discovery-guide",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.6,
+        "top": "exact moves that work",
+        "topProb": 0.19,
+        "sentence": "How to switch to PM from engineering, design, consulting, or business — what your background gives you, what gaps you need to close, and the exact moves that work."
+      }
+    },
+    {
+      "source": "/transition-to-product-manager",
+      "destination": "/how-to-become-a-product-manager",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.47,
+        "anchor": "real product work",
+        "sentence": "The candidates who succeed from MBA backgrounds have supplemented with real product work — an APM program, a startup, a side project, or product internships."
+      }
+    },
+    {
+      "source": "/transition-to-product-manager",
+      "destination": "/pm-early-stage-startup",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.15,
+        "anchor": "exact moves that work",
+        "sentence": "How to switch to PM from engineering, design, consulting, or business — what your background gives you, what gaps you need to close, and the exact moves that work."
+      }
+    },
+    {
+      "source": "/swiggy-pm-interview",
+      "destination": "/pm-case-study-interview",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.31,
+        "anchor": "real questions",
+        "sentence": "All interview rounds, the marketplace thinking Swiggy tests for, real questions, and what separates candidates who get offers."
+      }
+    },
+    {
+      "source": "/product-manager-vs-project-manager",
+      "destination": "/product-manager-salary-india",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.1,
+        "anchor": "clear framework for choosing",
+        "sentence": "What actually differs between these two PM roles — responsibilities, salary, career path, and a clear framework for choosing between them."
+      }
+    },
+    {
+      "source": "/product-manager-vs-project-manager",
+      "destination": "/product-manager-career-path",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.39,
+        "anchor": "clear framework for choosing",
+        "sentence": "What actually differs between these two PM roles — responsibilities, salary, career path, and a clear framework for choosing between them."
+      }
+    },
+    {
+      "source": "/product-manager-vs-project-manager",
+      "destination": "/product-discovery-guide",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.98,
+        "top": "What actually differs between these two PM roles — responsibilities, salary, career path, and a clear framework for choosing between them.",
+        "topProb": 0.02
+      }
+    },
+    {
+      "source": "/pm-salary-negotiation",
+      "destination": "/product-manager-career-path",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.35,
+        "top": "Anchor with market data and the role's level — not your personal history.",
+        "topProb": 0.28
+      }
+    },
+    {
+      "source": "/fintech-product-manager",
+      "destination": "/pm-upi-products",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.12,
+        "anchor": "complete fintech PM playbook",
+        "sentence": "The complete fintech PM playbook for India — sub-sectors, companies hiring, domain terms you must know, interview questions, and salary ranges."
+      }
+    },
+    {
+      "source": "/pm-domain-knowledge",
+      "destination": "/pm-building-in-public",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.54,
+        "top": "You can explain why things work the way they do.",
+        "topProb": 0.17
+      }
+    },
+    {
+      "source": "/pm-writing-skills",
+      "destination": "/pm-strategy-doc",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.21,
+        "anchor": "rules for great PM writing",
+        "sentence": "5 rules for great PM writing with before/after examples, 5 document types every PM writes, and how to improve your writing deliberately."
+      }
+    },
+    {
+      "source": "/pm-writing-skills",
+      "destination": "/pm-async-work",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.55,
+        "anchor": "rules for great PM writing",
+        "sentence": "5 rules for great PM writing with before/after examples, 5 document types every PM writes, and how to improve your writing deliberately."
+      }
+    },
+    {
+      "source": "/pm-communication-skills",
+      "destination": "/pm-async-work",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.3,
+        "anchor": "communication channels PMs must master",
+        "sentence": "The 6 communication channels PMs must master, rules for each, and the 6 mistakes that make average PMs feel junior."
+      }
+    },
+    {
+      "source": "/pm-communication-skills",
+      "destination": "/pm-writing-skills",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.23,
+        "anchor": "communication channels PMs must master",
+        "sentence": "The 6 communication channels PMs must master, rules for each, and the 6 mistakes that make average PMs feel junior."
+      }
+    },
+    {
+      "source": "/pm-career-levels-india",
+      "destination": "/learn/pm/building-pm-brand-and-visibility-in-2026-the-ultimate-guide",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.32,
+        "top": "promoted faster than equally-strong PMs",
+        "topProb": 0.18,
+        "sentence": "PMs whose work leadership knows about get promoted faster than equally-strong PMs whose work is invisible."
+      }
+    },
+    {
+      "source": "/pm-career-levels-india",
+      "destination": "/pm-building-in-public",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.44,
+        "top": "PMs whose work",
+        "topProb": 0.08,
+        "sentence": "PMs whose work leadership knows about get promoted faster than equally-strong PMs whose work is invisible."
+      }
+    },
+    {
+      "source": "/airbnb-pm-interview",
+      "destination": "/senior-pm-interview",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.41,
+        "anchor": "rounds and real questions",
+        "sentence": "Marketplace dynamics, trust and safety, design craft, and the story-driven product culture Airbnb is famous for — all 5 rounds and real questions."
+      }
+    },
+    {
+      "source": "/pm-strategy-doc",
+      "destination": "/interview-prep",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.25,
+        "anchor": "India-specific PM interview prep",
+        "sentence": "We bet on India-specific PM interview prep for Bharat candidates."
+      }
+    },
+    {
+      "source": "/pm-quarterly-planning",
+      "destination": "/learn/pm/okr-examples-for-product-teams-2026-a-comprehensive-guide",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.13,
+        "anchor": "4-week planning cadence",
+        "sentence": "The 4-week planning cadence, capacity allocation that accounts for reality, and 6 anti-patterns that turn well-planned quarters into stressful ones."
+      }
+    },
+    {
+      "source": "/pm-quarterly-planning",
+      "destination": "/pm-prioritization-examples",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.56,
+        "top": "4-week planning cadence",
+        "topProb": 0.15,
+        "sentence": "The 4-week planning cadence, capacity allocation that accounts for reality, and 6 anti-patterns that turn well-planned quarters into stressful ones."
+      }
+    },
+    {
+      "source": "/pm-reading-list",
+      "destination": "/interview-prep",
+      "reason": "no anchor phrase fits",
+      "detail": {
+        "none": 0.41,
+        "top": "interview prep",
+        "topProb": 0.21,
+        "sentence": "Still the canonical interview prep book — dated but comprehensive."
+      }
+    },
+    {
+      "source": "/pm-reading-list",
+      "destination": "/pm-strategy-doc",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.54,
+        "top": "What strategy is and isn't — essential reading beyond PM.",
+        "topProb": 0.41
+      }
+    },
+    {
+      "source": "/pm-intellectual-honesty",
+      "destination": "/pm-decision-making",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.07,
+        "top": "Launches going poorly, metrics missing, risks emerging — surface them yourself before your manager finds out.",
+        "topProb": 0.27
+      }
+    },
+    {
+      "source": "/pm-localization-india",
+      "destination": "/pm-offline-first",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.83,
+        "top": "UPI dominates digital; cash on delivery still meaningful in Tier-3.",
+        "topProb": 0.11
+      }
+    },
+    {
+      "source": "/pm-localization-india",
+      "destination": "/pm-upi-products",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.04,
+        "anchor": "dimensions of India's diversity",
+        "sentence": "6 dimensions of India's diversity to design for, 6 design principles, and 5 companies leading (and deliberately avoiding) Bharat."
+      }
+    },
+    {
+      "source": "/pm-anti-patterns",
+      "destination": "/pm-experimentation-culture",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.41,
+        "top": "12 anti-patterns weak PMs fall into with specific fixes, where to spot them in yourself, and how to change them deliberately.",
+        "topProb": 0.59
+      }
+    },
+    {
+      "source": "/pm-consumer-india",
+      "destination": "/pm-upi-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.5,
+        "top": "Material at scale (PhonePe, Paytm do this well).",
+        "topProb": 0.33
+      }
+    },
+    {
+      "source": "/pm-consumer-india",
+      "destination": "/pm-offline-first",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.83,
+        "top": "Material at scale (PhonePe, Paytm do this well).",
+        "topProb": 0.14
+      }
+    },
+    {
+      "source": "/pm-consumer-india",
+      "destination": "/pm-content-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.81,
+        "top": "Often added as secondary revenue on consumer products.",
+        "topProb": 0.1
+      }
+    },
+    {
+      "source": "/pm-trade-off-analysis",
+      "destination": "/pm-decision-making",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.41,
+        "anchor": "PM trade-offs with resolution guidance",
+        "sentence": "6 common PM trade-offs with resolution guidance, 6-step decision framework, and 5 pitfalls that make trade-off analysis fail."
+      }
+    },
+    {
+      "source": "/pm-customer-interviews",
+      "destination": "/user-research-for-pms",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-okr-examples",
+      "destination": "/learn/pm/prioritizing-product-roadmaps-with-limited-resources-9529",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.9,
+        "top": "5 real-style OKRs across consumer, B2B, fintech, platform, and marketplace — plus 6 patterns that separate great OKRs from generic ones.",
+        "topProb": 0.1
+      }
+    },
+    {
+      "source": "/pm-async-work",
+      "destination": "/pm-writing-skills",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.97,
+        "top": "5 reasons async compounds, 5 scenarios async works best, 5 scenarios sync wins, and 6 async PM skills to develop.",
+        "topProb": 0.03
+      }
+    },
+    {
+      "source": "/pm-cohort-analysis",
+      "destination": "/pm-churn-reduction",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.34,
+        "anchor": "reasons cohorts beat aggregates",
+        "sentence": "5 reasons cohorts beat aggregates, 6 segmentation dimensions, 6 patterns to spot, and 6 common mistakes."
+      }
+    },
+    {
+      "source": "/pm-event-tracking",
+      "destination": "/pm-cohort-analysis",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.58,
+        "top": "6 design principles, 5 parts of a well-designed event, 6 common mistakes, and 5 moments to instrument or audit.",
+        "topProb": 0.42
+      }
+    },
+    {
+      "source": "/pm-churn-analysis",
+      "destination": "/pm-cohort-analysis",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.79,
+        "top": "5 types of churn, 6 diagnosis steps, 6 root causes, and 5 levers to reduce churn meaningfully.",
+        "topProb": 0.21
+      }
+    },
+    {
+      "source": "/pm-churn-analysis",
+      "destination": "/pm-event-tracking",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.98,
+        "top": "5 types of churn, 6 diagnosis steps, 6 root causes, and 5 levers to reduce churn meaningfully.",
+        "topProb": 0.02
+      }
+    },
+    {
+      "source": "/pm-mvp-guide",
+      "destination": "/pm-beta-program",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.95,
+        "top": "5 things MVPs actually are, 5 things they aren't, 5 scoping questions, and 5 situations where skipping the MVP is the right call.",
+        "topProb": 0.05
+      }
+    },
+    {
+      "source": "/pm-mvp-guide",
+      "destination": "/product-discovery-guide",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.66,
+        "top": "5 things MVPs actually are, 5 things they aren't, 5 scoping questions, and 5 situations where skipping the MVP is the right call.",
+        "topProb": 0.34
+      }
+    },
+    {
+      "source": "/pm-mvp-guide",
+      "destination": "/pm-experimentation-culture",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.68,
+        "top": "5 things MVPs actually are, 5 things they aren't, 5 scoping questions, and 5 situations where skipping the MVP is the right call.",
+        "topProb": 0.32
+      }
+    },
+    {
+      "source": "/pm-fintech-india",
+      "destination": "/pm-upi-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.34,
+        "top": "6 fintech categories to understand, 6 unique challenges, and 5 skills that separate fintech PMs from other domains.",
+        "topProb": 0.66
+      }
+    },
+    {
+      "source": "/pm-fintech-india",
+      "destination": "/pm-wealth-management",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.6,
+        "top": "6 fintech categories to understand, 6 unique challenges, and 5 skills that separate fintech PMs from other domains.",
+        "topProb": 0.4
+      }
+    },
+    {
+      "source": "/pm-cross-functional",
+      "destination": "/pm-intellectual-honesty",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.54,
+        "anchor": "earn trust",
+        "sentence": "7 cross-functional partners with how to earn trust with each, 5 leadership principles, and 6 trust-building behaviours."
+      }
+    },
+    {
+      "source": "/pm-cross-functional",
+      "destination": "/pm-communication-skills",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.41,
+        "top": "7 cross-functional partners with how to earn trust with each, 5 leadership principles, and 6 trust-building behaviours.",
+        "topProb": 0.59
+      }
+    },
+    {
+      "source": "/pm-cross-functional",
+      "destination": "/pm-async-work",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.81,
+        "top": "7 cross-functional partners with how to earn trust with each, 5 leadership principles, and 6 trust-building behaviours.",
+        "topProb": 0.19
+      }
+    },
+    {
+      "source": "/pm-qa-partnership",
+      "destination": "/pm-crisis-management",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.59,
+        "top": "What PMs owe QA, what QA owes PMs, bug triage priority system, and 5 ways to shift testing left.",
+        "topProb": 0.41
+      }
+    },
+    {
+      "source": "/pm-experimentation-culture",
+      "destination": "/pm-growth-experiments",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.81,
+        "top": "6 team habits, 5 rituals, 5 metrics to track, and 5 cultural shifts that build ship-and-learn teams.",
+        "topProb": 0.19
+      }
+    },
+    {
+      "source": "/pm-experimentation-culture",
+      "destination": "/pm-event-tracking",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.91,
+        "top": "6 team habits, 5 rituals, 5 metrics to track, and 5 cultural shifts that build ship-and-learn teams.",
+        "topProb": 0.09
+      }
+    },
+    {
+      "source": "/pm-experimentation-culture",
+      "destination": "/pm-cohort-analysis",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.93,
+        "top": "6 team habits, 5 rituals, 5 metrics to track, and 5 cultural shifts that build ship-and-learn teams.",
+        "topProb": 0.07
+      }
+    },
+    {
+      "source": "/pm-product-market-fit",
+      "destination": "/product-discovery-guide",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.9,
+        "top": "6 PMF signals, 4 stages of PMF, 6 things to do if PMF isn't there, and 5 common PMF myths.",
+        "topProb": 0.1
+      }
+    },
+    {
+      "source": "/pm-zero-to-one",
+      "destination": "/pm-customer-interviews",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.43,
+        "top": "5 mindset shifts, 5 skills that matter, 6 traps to avoid, and 5 phases from validation to PMF.",
+        "topProb": 0.42
+      }
+    },
+    {
+      "source": "/pm-zero-to-one",
+      "destination": "/pm-product-market-fit",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.52,
+        "anchor": "phases from validation to PMF",
+        "sentence": "5 mindset shifts, 5 skills that matter, 6 traps to avoid, and 5 phases from validation to PMF."
+      }
+    },
+    {
+      "source": "/pm-zero-to-one",
+      "destination": "/user-research-for-pms",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.43,
+        "top": "5 mindset shifts, 5 skills that matter, 6 traps to avoid, and 5 phases from validation to PMF.",
+        "topProb": 0.37
+      }
+    },
+    {
+      "source": "/pm-zero-to-one",
+      "destination": "/pm-experimentation-culture",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.13,
+        "anchor": "phases from validation to PMF",
+        "sentence": "5 mindset shifts, 5 skills that matter, 6 traps to avoid, and 5 phases from validation to PMF."
+      }
+    },
+    {
+      "source": "/pm-content-products",
+      "destination": "/pm-content-moderation",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.43,
+        "top": "5 content platform dynamics, 5 metric categories, 6 examples, and 6 unique challenges.",
+        "topProb": 0.57
+      }
+    },
+    {
+      "source": "/pm-content-products",
+      "destination": "/pm-creator-economy",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.46,
+        "top": "5 content platform dynamics, 5 metric categories, 6 examples, and 6 unique challenges.",
+        "topProb": 0.54
+      }
+    },
+    {
+      "source": "/pm-content-products",
+      "destination": "/pm-video-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.36,
+        "top": "5 content platform dynamics, 5 metric categories, 6 examples, and 6 unique challenges.",
+        "topProb": 0.64
+      }
+    },
+    {
+      "source": "/pm-mobile-app-metrics",
+      "destination": "/pm-event-tracking",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.42,
+        "top": "% of installs that uninstall within 30 days.",
+        "topProb": 0.29
+      }
+    },
+    {
+      "source": "/pm-mobile-app-metrics",
+      "destination": "/pm-cohort-analysis",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.08,
+        "anchor": "core mobile metrics",
+        "sentence": "8 core mobile metrics, 5 mobile-specific considerations, and 5 diagnostic patterns."
+      }
+    },
+    {
+      "source": "/pm-early-stage-startup",
+      "destination": "/product-discovery-guide",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.46,
+        "top": "7 things you'll actually do, 5 realities, 5 who should, 5 who shouldn't.",
+        "topProb": 0.54
+      }
+    },
+    {
+      "source": "/pm-early-stage-startup",
+      "destination": "/pm-tools-guide",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.9,
+        "top": "7 things you'll actually do, 5 realities, 5 who should, 5 who shouldn't.",
+        "topProb": 0.1
+      }
+    },
+    {
+      "source": "/pm-early-stage-startup",
+      "destination": "/product-manager-career-path",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.68,
+        "top": "7 things you'll actually do, 5 realities, 5 who should, 5 who shouldn't.",
+        "topProb": 0.32
+      }
+    },
+    {
+      "source": "/pm-churn-reduction",
+      "destination": "/pm-cohort-analysis",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.4,
+        "top": "5 diagnosis methods, 5 retention levers, and 4 traps to avoid.",
+        "topProb": 0.6
+      }
+    },
+    {
+      "source": "/pm-creator-economy",
+      "destination": "/pm-marketplace-dynamics",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.23,
+        "anchor": "models for creator platform PMs",
+        "sentence": "5 dynamics and 5 monetisation models for creator platform PMs."
+      }
+    },
+    {
+      "source": "/pm-creator-economy",
+      "destination": "/pm-video-products",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.48,
+        "anchor": "models for creator platform PMs",
+        "sentence": "5 dynamics and 5 monetisation models for creator platform PMs."
+      }
+    },
+    {
+      "source": "/pm-developer-tools",
+      "destination": "/pm-community-building",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.98,
+        "top": "Developers hate marketing fluff — show, don't tell.",
+        "topProb": 0.02
+      }
+    },
+    {
+      "source": "/pm-technical-skills",
+      "destination": "/pm-tools-guide",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.5,
+        "top": "5 baseline skills every PM should have and 4 deep dives by domain.",
+        "topProb": 0.35
+      }
+    },
+    {
+      "source": "/pm-product-led-growth",
+      "destination": "/pm-b2b-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.93,
+        "top": "5 PLG pillars and 5 metrics that separate real PLG from wishful self-serve.",
+        "topProb": 0.07
+      }
+    },
+    {
+      "source": "/pm-video-products",
+      "destination": "/pm-creator-economy",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.18,
+        "anchor": "metrics for video product PMs",
+        "sentence": "5 dynamics and 5 metrics for video product PMs."
+      }
+    },
+    {
+      "source": "/pm-marketplace-dynamics",
+      "destination": "/pm-ride-hailing",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-discovery-process",
+      "destination": "/pm-customer-interviews",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.51,
+        "anchor": "discovery rituals",
+        "sentence": "5 discovery rituals and 4 outcomes of doing it well."
+      }
+    },
+    {
+      "source": "/pm-growth-experiments",
+      "destination": "/pm-churn-reduction",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-growth-experiments",
+      "destination": "/pm-churn-analysis",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-growth-experiments",
+      "destination": "/pm-experimentation-culture",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-growth-experiments",
+      "destination": "/pm-cohort-analysis",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-conversion-optimization",
+      "destination": "/pm-experimentation-culture",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.3,
+        "anchor": "principles for PMs running CRO",
+        "sentence": "6 tactics and 4 principles for PMs running CRO."
+      }
+    },
+    {
+      "source": "/pm-matrimony-dating",
+      "destination": "/pm-localization-india",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.92,
+        "top": "5 dynamics and 5 metrics for matrimony and dating PMs.",
+        "topProb": 0.08
+      }
+    },
+    {
+      "source": "/pm-matrimony-dating",
+      "destination": "/pm-bharat-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.92,
+        "top": "5 dynamics and 5 metrics for matrimony and dating PMs.",
+        "topProb": 0.08
+      }
+    },
+    {
+      "source": "/pm-ott-india",
+      "destination": "/pm-consumer-india",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.42,
+        "anchor": "Indian OTT PMs",
+        "sentence": "5 dynamics and 5 metrics for Indian OTT PMs."
+      }
+    },
+    {
+      "source": "/pm-ott-india",
+      "destination": "/pm-offline-first",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.97,
+        "top": "5 dynamics and 5 metrics for Indian OTT PMs.",
+        "topProb": 0.03
+      }
+    },
+    {
+      "source": "/pm-wealth-management",
+      "destination": "/pm-fintech-india",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.33,
+        "anchor": "metrics for wealthtech PMs",
+        "sentence": "5 dynamics and 5 metrics for wealthtech PMs."
+      }
+    },
+    {
+      "source": "/pm-upi-products",
+      "destination": "/pm-fintech-india",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.32,
+        "anchor": "metrics for UPI-first product PMs",
+        "sentence": "5 dynamics and 5 metrics for UPI-first product PMs."
+      }
+    },
+    {
+      "source": "/pm-b2b-marketplaces",
+      "destination": "/pm-b2b-products",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-b2b-marketplaces",
+      "destination": "/consumer-vs-b2b-pm",
+      "reason": "no candidate sentences"
+    },
+    {
+      "source": "/pm-ai-video",
+      "destination": "/pm-prompt-engineering",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.91,
+        "top": "5 dynamics and 5 metrics for AI video product PMs.",
+        "topProb": 0.09
+      }
+    },
+    {
+      "source": "/pm-ai-support",
+      "destination": "/pm-rag-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.54,
+        "top": "5 dynamics and 5 metrics for AI customer support PMs.",
+        "topProb": 0.46
+      }
+    },
+    {
+      "source": "/pm-offline-first",
+      "destination": "/pm-bharat-products",
+      "reason": "anchor promise not delivered",
+      "detail": {
+        "delivers": 0.36,
+        "anchor": "design principles",
+        "sentence": "5 design principles and 4 tradeoffs for offline-first PMs."
+      }
+    },
+    {
+      "source": "/pm-salary-negotiation-india",
+      "destination": "/product-manager-career-path",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.93,
+        "top": "5 negotiation levers and 5 tactics for Indian PMs.",
+        "topProb": 0.07
+      }
+    },
+    {
+      "source": "/pm-work-life-balance",
+      "destination": "/pm-async-work",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.43,
+        "top": "5 tactics and 4 myths about PM balance.",
+        "topProb": 0.57
+      }
+    },
+    {
+      "source": "/pm-fine-tuning",
+      "destination": "/pm-rag-products",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.86,
+        "top": "4 cases for fine-tuning and 4 cases against.",
+        "topProb": 0.14
+      }
+    },
+    {
+      "source": "/pm-prompt-engineering",
+      "destination": "/pm-fine-tuning",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.65,
+        "top": "5 practices and 4 traps for PM prompt engineering.",
+        "topProb": 0.35
+      }
+    },
+    {
+      "source": "/pm-llm-cost-management",
+      "destination": "/pm-prompt-engineering",
+      "reason": "no fitting sentence",
+      "detail": {
+        "none": 0.98,
+        "top": "5 cost levers and 4 pricing traps for AI product PMs.",
+        "topProb": 0.02
+      }
+    }
+  ],
+  "usage": {
+    "requests": 120,
+    "cached": 277,
+    "input_tokens": 133927,
+    "output_tokens": 38331
+  },
+  "applied": [
+    {
+      "source": "/how-to-become-a-product-manager",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.82,
+      "sentence": "Run user interviews, synthesise insights, and validate assumptions cheaply.",
+      "sentenceProb": 0.62,
+      "anchor": "user interviews",
+      "anchorProb": 0.44,
+      "delivers": 0.83,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/apm-program-preparation",
+      "destination": "/swiggy-pm-interview",
+      "kind": "support",
+      "relevance": 0.8,
+      "sentence": "Swiggy tests execution under ambiguity — fast-paced ops decisions.",
+      "sentenceProb": 0.64,
+      "anchor": "Swiggy tests execution under ambiguity",
+      "anchorProb": 0.27,
+      "delivers": 0.63,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/product-manager-career-path",
+      "destination": "/product-manager-salary-india",
+      "kind": "pillar",
+      "relevance": 0.8,
+      "sentence": "What each PM level requires, how to get promoted, salaries at every stage, and the moves that accelerate your career faster than tenure alone.",
+      "sentenceProb": 1,
+      "anchor": "salaries at every stage",
+      "anchorProb": 0.8,
+      "delivers": 0.95,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/google-pm-interview",
+      "destination": "/pm-metrics-interview",
+      "kind": "support",
+      "relevance": 0.84,
+      "sentence": "Walk me through how you'd investigate a 20% drop in Google Docs DAU.",
+      "sentenceProb": 0.58,
+      "anchor": "drop in Google Docs DAU",
+      "anchorProb": 0.48,
+      "delivers": 0.92,
+      "apply": "tsx",
+      "applied": false,
+      "reason": "literal field unknown"
+    },
+    {
+      "source": "/google-pm-interview",
+      "destination": "/product-sense-interview",
+      "kind": "support",
+      "relevance": 0.78,
+      "sentence": "Google tests whether you can identify the right user, articulate a clear vision, and prioritise with user empathy.",
+      "sentenceProb": 0.73,
+      "anchor": "identify the right user",
+      "anchorProb": 0.23,
+      "delivers": 0.89,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/flipkart-pm-interview",
+      "destination": "/learn/pm/pm-estimation-questions-and-answers-a-comprehensive-guide-for-2026-dv5a",
+      "kind": "support",
+      "relevance": 0.77,
+      "sentence": "For estimation questions, show structure — break the problem down, state assumptions clearly, and sanity-check your answer with a real-world reference.",
+      "sentenceProb": 0.71,
+      "anchor": "estimation questions",
+      "anchorProb": 0.76,
+      "delivers": 0.87,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/razorpay-pm-interview",
+      "destination": "/pm-metrics-interview",
+      "kind": "support",
+      "relevance": 0.83,
+      "sentence": "Define success, diagnose metric drops, and think about experimentation.",
+      "sentenceProb": 0.84,
+      "anchor": "Define success",
+      "anchorProb": 0.5,
+      "delivers": 0.94,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/swiggy-pm-interview",
+      "destination": "/pm-metrics-interview",
+      "kind": "support",
+      "relevance": 0.72,
+      "sentence": "Diagnose a metric drop or define a success framework for a Swiggy product area.",
+      "sentenceProb": 0.93,
+      "anchor": "define a success framework",
+      "anchorProb": 0.35000000000000003,
+      "delivers": 0.93,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/product-discovery-guide",
+      "destination": "/pm-customer-interviews",
+      "kind": "support",
+      "relevance": 0.76,
+      "sentence": "Talk to real users about specific past experiences — not hypothetical preferences.",
+      "sentenceProb": 0.71,
+      "anchor": "users about specific past experiences",
+      "anchorProb": 0.41,
+      "delivers": 0.88,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/prd-template-guide",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.64,
+      "sentence": "Describe the user problem and why it matters — supported by data.",
+      "sentenceProb": 0.63,
+      "anchor": "Describe the user problem",
+      "anchorProb": 0.56,
+      "delivers": 0.63,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/user-research-for-pms",
+      "destination": "/pm-customer-interviews",
+      "kind": "support",
+      "relevance": 0.74,
+      "sentence": "The 6 research methods every PM should know, when to use each, how many users you actually need, and how to turn research into product decisions — not reports.",
+      "sentenceProb": 0.44,
+      "anchor": "turn research into product decisions",
+      "anchorProb": 0.56,
+      "delivers": 0.73,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/user-research-for-pms",
+      "destination": "/learn/pm/how-to-conduct-a-usability-test-for-a-b2b-saas-product-2026-guide-3940",
+      "kind": "support",
+      "relevance": 0.73,
+      "sentence": "Validating that users can actually use a design.",
+      "sentenceProb": 0.92,
+      "anchor": "Validating that users can actually",
+      "anchorProb": 0.33,
+      "delivers": 0.88,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/fintech-product-manager",
+      "destination": "/product-manager-salary-india",
+      "kind": "pillar",
+      "relevance": 0.72,
+      "sentence": "The complete fintech PM playbook for India — sub-sectors, companies hiring, domain terms you must know, interview questions, and salary ranges.",
+      "sentenceProb": 0.9,
+      "anchor": "salary ranges",
+      "anchorProb": 0.52,
+      "delivers": 0.91,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-domain-knowledge",
+      "destination": "/pm-reading-list",
+      "kind": "support",
+      "relevance": 0.79,
+      "sentence": "Every industry has 5–10 books/essays everyone in it has read.",
+      "sentenceProb": 0.86,
+      "anchor": "books/essays everyone",
+      "anchorProb": 0.79,
+      "delivers": 0.66,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/pm-domain-knowledge",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.65,
+      "sentence": "Deliberately interview users at the edges of your persona — new users, power users, lapsed users, users who rejected your product.",
+      "sentenceProb": 0.64,
+      "anchor": "interview users",
+      "anchorProb": 0.29,
+      "delivers": 0.72,
+      "apply": "tsx",
+      "applied": false,
+      "reason": "no {x.how} render site"
+    },
+    {
+      "source": "/ecommerce-pm-guide",
+      "destination": "/pm-marketplace-dynamics",
+      "kind": "support",
+      "relevance": 0.77,
+      "sentence": "Marketplaces need both sides happy — not just the side you naturally favour.",
+      "sentenceProb": 0.79,
+      "anchor": "Marketplaces need both sides happy",
+      "anchorProb": 0.47,
+      "delivers": 0.8,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/pm-decision-making",
+      "destination": "/pm-trade-off-analysis",
+      "kind": "support",
+      "relevance": 0.62,
+      "sentence": "5 decision frameworks PMs should know, an 8-part decision doc template, and 5 moves that balance speed and quality of decisions.",
+      "sentenceProb": 0.72,
+      "anchor": "decision frameworks PMs should know",
+      "anchorProb": 0.71,
+      "delivers": 0.76,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-mental-models",
+      "destination": "/pm-feedback-loops",
+      "kind": "support",
+      "relevance": 0.63,
+      "sentence": "Find the 20% of users whose feedback drives 80% of insight.",
+      "sentenceProb": 0.93,
+      "anchor": "users whose feedback drives",
+      "anchorProb": 0.34,
+      "delivers": 0.6,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/pm-quarterly-planning",
+      "destination": "/pm-okr-examples",
+      "kind": "support",
+      "relevance": 0.79,
+      "sentence": "Real shipped work toward OKRs — the main thing.",
+      "sentenceProb": 0.57,
+      "anchor": "Real shipped work toward OKRs",
+      "anchorProb": 0.72,
+      "delivers": 0.84,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/pm-reading-list",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.72,
+      "sentence": "Practical framework for ongoing user research and decision-making.",
+      "sentenceProb": 0.88,
+      "anchor": "ongoing user research and decision-making",
+      "anchorProb": 0.44,
+      "delivers": 0.86,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "literal"
+    },
+    {
+      "source": "/pm-prd-examples",
+      "destination": "/prd-template-guide",
+      "kind": "support",
+      "relevance": 0.74,
+      "sentence": "See structure, detail level, and the language of great PM writing.",
+      "sentenceProb": 0.86,
+      "anchor": "language of great PM writing",
+      "anchorProb": 0.65,
+      "delivers": 0.82,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-consumer-india",
+      "destination": "/pm-localization-india",
+      "kind": "support",
+      "relevance": 0.79,
+      "sentence": "4 user segments to understand, 6 behaviour patterns, 5 monetisation models, and 6 design principles that work in Indian consumer markets.",
+      "sentenceProb": 0.97,
+      "anchor": "work in Indian consumer markets",
+      "anchorProb": 0.31,
+      "delivers": 0.81,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-customer-interviews",
+      "destination": "/product-discovery-guide",
+      "kind": "pillar",
+      "relevance": 0.67,
+      "sentence": "5 prep moves, 6 questions that work, 5 to avoid, 6 listening techniques, and 6 biases to catch in yourself.",
+      "sentenceProb": 0.89,
+      "anchor": "prep moves",
+      "anchorProb": 0.52,
+      "delivers": 0.6,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-b2b-products",
+      "destination": "/pm-product-led-growth",
+      "kind": "support",
+      "relevance": 0.68,
+      "sentence": "5 B2B dynamics, 6 key metrics, 5 design principles, and 5 common traps.",
+      "sentenceProb": 0.62,
+      "anchor": "key metrics",
+      "anchorProb": 0.37,
+      "delivers": 0.69,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-developer-tools",
+      "destination": "/pm-api-products",
+      "kind": "support",
+      "relevance": 0.66,
+      "sentence": "6 DX principles and 5 metrics for PMs building products engineers use.",
+      "sentenceProb": 1,
+      "anchor": "PMs building products engineers use",
+      "anchorProb": 0.37,
+      "delivers": 0.66,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-social-products",
+      "destination": "/pm-community-building",
+      "kind": "support",
+      "relevance": 0.64,
+      "sentence": "5 dynamics and 5 metrics for social product PMs.",
+      "sentenceProb": 0.92,
+      "anchor": "metrics for social product PMs",
+      "anchorProb": 0.87,
+      "delivers": 0.84,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-marketplace-dynamics",
+      "destination": "/pm-b2b-marketplaces",
+      "kind": "support",
+      "relevance": 0.69,
+      "sentence": "5 dynamics and 5 metrics for marketplace PMs.",
+      "sentenceProb": 0.85,
+      "anchor": "metrics for marketplace PMs",
+      "anchorProb": 0.76,
+      "delivers": 0.82,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-ride-hailing",
+      "destination": "/pm-marketplace-dynamics",
+      "kind": "support",
+      "relevance": 0.73,
+      "sentence": "5 dynamics and 5 metrics for ride-hailing PMs.",
+      "sentenceProb": 0.92,
+      "anchor": "metrics for ride-hailing PMs",
+      "anchorProb": 0.62,
+      "delivers": 0.77,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    },
+    {
+      "source": "/pm-b2b-marketplaces",
+      "destination": "/pm-marketplace-dynamics",
+      "kind": "support",
+      "relevance": 0.7,
+      "sentence": "5 dynamics and 5 metrics for B2B marketplace PMs.",
+      "sentenceProb": 0.92,
+      "anchor": "metrics for B2B marketplace PMs",
+      "anchorProb": 0.52,
+      "delivers": 0.87,
+      "apply": "tsx",
+      "applied": true,
+      "mode": "jsx"
+    }
+  ]
+}

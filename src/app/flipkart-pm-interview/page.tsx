@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "Flipkart PM Interview Guide (2026) — Questions, Process & Prep Plan",
@@ -38,7 +39,7 @@ const ROUNDS = [
       "A seller's satisfaction score drops after a new policy. Diagnose and propose a fix.",
       "Estimate the number of orders Flipkart delivers in a day in Tier-2 cities.",
     ],
-    tip: "For estimation questions, show structure — break the problem down, state assumptions clearly, and sanity-check your answer with a real-world reference.",
+    tip: "For [estimation questions](/learn/pm/pm-estimation-questions-and-answers-a-comprehensive-guide-for-2026-dv5a), show structure — break the problem down, state assumptions clearly, and sanity-check your answer with a real-world reference.",
   },
   {
     name: "Product Thinking Round",
@@ -185,7 +186,7 @@ export default function FlipkartPmInterviewPage() {
                   </div>
                   <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-xl p-3">
                     <p className="text-xs text-[#89e219] mb-1">💡 Prep tip</p>
-                    <p className="text-sm text-white/60">{round.tip}</p>
+                    <p className="text-sm text-white/60">{linkify(round.tip)}</p>
                   </div>
                 </div>
               </div>

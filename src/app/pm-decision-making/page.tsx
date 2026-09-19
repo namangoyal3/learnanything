@@ -108,7 +108,7 @@ export default function PmDecisionMakingPage() {
             PM Decision Making Guide<br />(2026 Edition)
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            5 decision frameworks PMs should know, an 8-part decision doc template,
+            5 <Link href="/pm-trade-off-analysis">decision frameworks PMs should know</Link>, an 8-part decision doc template,
             and 5 moves that balance speed and quality of decisions.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">

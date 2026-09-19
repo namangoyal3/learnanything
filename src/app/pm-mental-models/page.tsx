@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "PM Mental Models (2026) — 12 Thinking Tools Every Product Manager Should Know",
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 const MODELS = [
   { model: "Second-order effects", what: "Every decision has downstream consequences the first look misses.", pm: "A free tier that boosts signups (first-order) but trains users never to pay (second-order)." },
   { model: "Opportunity cost", what: "What are you NOT doing because you&apos;re doing this?", pm: "Every feature you build blocks another feature. &apos;Adding one thing&apos; is never really free." },
-  { model: "Pareto principle (80/20)", what: "80% of outcomes come from 20% of causes.", pm: "Find the 20% of users whose feedback drives 80% of insight. Spend your time there, not on edge cases." },
+  { model: "Pareto principle (80/20)", what: "80% of outcomes come from 20% of causes.", pm: "Find the 20% of [users whose feedback drives](/pm-feedback-loops) 80% of insight. Spend your time there, not on edge cases." },
   { model: "Inversion", what: "Solve problems backwards — what would cause failure?", pm: "Instead of &apos;how do we launch well?&apos; ask &apos;what would make this launch fail?&apos; Then prevent that." },
   { model: "Expected value", what: "Outcome × probability, summed across possibilities.", pm: "A 20% chance of ₹10Cr impact beats a 70% chance of ₹1Cr impact. Expected value: 2Cr vs 0.7Cr." },
   { model: "Regression to the mean", what: "Extreme outcomes tend to be followed by less extreme ones.", pm: "A spike in signups after a viral tweet will revert. Don&apos;t confuse variance for trend." },
@@ -89,7 +90,7 @@ export default function PmMentalModelsPage() {
                 <p className="text-sm text-white/60 mb-2">{m.what}</p>
                 <div className="bg-[#58cc02]/5 border border-[#58cc02]/20 rounded-lg p-3">
                   <p className="text-xs text-[#89e219] mb-1">💡 PM example</p>
-                  <p className="text-xs text-white/70">{m.pm}</p>
+                  <p className="text-xs text-white/70">{linkify(m.pm)}</p>
                 </div>
               </div>
             ))}

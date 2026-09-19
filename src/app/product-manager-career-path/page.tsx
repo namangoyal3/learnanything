@@ -127,7 +127,7 @@ export default function ProductManagerCareerPathPage() {
             Product Manager Career Path<br />(2026 Edition)
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            What each PM level requires, how to get promoted, salaries at every stage,
+            What each PM level requires, how to get promoted, <Link href="/product-manager-salary-india">salaries at every stage</Link>,
             and the moves that accelerate your career faster than tenure alone.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
