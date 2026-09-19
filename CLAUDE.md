@@ -23,6 +23,7 @@ disagree, the rule wins.
 ## Hard blocks — never do these
 1. **PR #28** (`advisor/audit-remediation`) is OPEN and must NOT be merged until the owner: rotates Neon DB password, Dodo API key, `CRON_SECRET`; sets `JWT_SECRET`, `ADMIN_EMAIL`, `REVENUECAT_WEBHOOK_AUTH_TOKEN`, `UNSUBSCRIBE_SECRET`, `NEXT_PUBLIC_DODO_*_PRODUCT_ID` in Vercel; scrubs `.env.prod.test` / `.env.backup` from git history. Verify status: `gh pr view 28`.
 2. `.env.local`, `.env.backup`, `.env.prod.test` on disk contain real secrets. Never print their values, never commit anything matching `.env*`.
+   - 2026-09-20: local history was rewritten (git filter-repo) to drop `.env.backup`, `.env.prod.test`, `scripts/virtual-company/service_account.json` and five pasted Groq keys before `seo-v2` / `seo/internal-links-jev` were pushed; none of it ever reached GitHub. Pre-scrub bundle: `~/.cache/pmstreak-backups/`. Rotate the Groq keys and `CRON_SECRET` regardless.
 3. Never commit `scripts/virtual-company/service_account.json` or `scripts/seo-rank-history.json` (gitignored; the service account leaked once already).
 4. Never write directly into `seo-articles/`. Forge writes drafts to `seo-drafts/<slug>.mdx`; Signal opens PRs from there.
 5. Anchor agent never auto-sends. Drafts only.
