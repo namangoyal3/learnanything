@@ -69,7 +69,7 @@ export default function PmDeveloperToolsPage() {
             PM Developer Tools<br />(2026 Edition)
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            6 DX principles and 5 metrics for PMs building products engineers use.
+            6 DX principles and 5 metrics for <Link href="/pm-api-products">PMs building products engineers use</Link>.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build DevTools PM Skills — Free →

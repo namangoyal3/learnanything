@@ -90,7 +90,7 @@ export default function PmB2bProductsPage() {
             PM B2B Products<br />(2026 Edition)
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            5 B2B dynamics, 6 key metrics, 5 design principles, and 5 common traps.
+            5 B2B dynamics, 6 <Link href="/pm-product-led-growth">key metrics</Link>, 5 design principles, and 5 common traps.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build B2B PM Skills Daily — Free →

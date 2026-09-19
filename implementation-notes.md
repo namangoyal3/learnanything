@@ -128,3 +128,66 @@ Entry point unchanged: `node scripts/seo-pipeline.mjs [--no-indexnow] [--no-goog
 3. Confirm the breaker posture: with 0% indexed, re-enabling the cron yields
    measurement-only runs (no publishing) — that is by design.
 4. Prune execution is manual-only; nothing in this branch deletes or 410s pages.
+
+## Session — internal-linking playbook via TypeSafe Jev (2026-09-19)
+
+Source: x.com/borjafat/status/2100908380793475496 → X Article "8 internal linking hacks to improve SEO"
+(check GSC → group topics → pick pillars → pick money pages → link support posts →
+boost page-2 → footer pillars/money → vary anchor text). Implemented as a new pipeline
+stage `scripts/seo/internal-links.mjs` + `scripts/seo/jev.mjs`.
+
+Decisions taken while reading the repo (not obvious from the diff):
+- Jev is called over raw `fetch` (POST api.typesafe.ai/v1/systemone), not `@typesafe-ai/sdk`:
+  CLAUDE.md forbids new deps when existing ones suffice and every other module in
+  scripts/seo is stdlib-only by design (gsc-metrics.mjs signs its own JWT). Responses are
+  cached on disk (`scripts/seo/jev-cache.json`, gitignored) like the embeddings cache.
+- Page universe = live sitemap − prune-manifest kill list (= the 200 keep + anything
+  published since the July prune). Linking into a page slated for 410 is wasted work.
+- 137/200 keep pages are static `src/app/<slug>/page.tsx`, only 63 are DB `Article` rows.
+  Static-page prose lives in const-array string literals rendered as `{x.field}` text
+  nodes, so an inline link needs a render helper (`src/components/Linkify.tsx`) —
+  apply rewrites the literal to `[anchor](/path)` and wraps `{x.field}` → `{linkify(x.field)}`.
+- "Reader's question beside the page" (hack 2) = the page's existing meta description;
+  Jev selects/judges, it does not generate text.
+- Anchor text is selected, never generated: code proposes 2–5-word windows inside the
+  Jev-chosen sentence, Jev picks the one that describes the destination (pre-parsed
+  value-extraction pattern). Variation rule (hack 8) is code: same anchor for the same
+  destination is avoided when a runner-up is within 0.8× probability.
+
+### Addendum — "Do all": Jev across the app (2026-09-19, same branch)
+
+- `src/lib/typesafe.ts` is a second client (TS, no cache) beside `scripts/seo/jev.mjs`
+  (stdlib .mjs, disk cache). Deliberate: plain-node scripts cannot import TS, and the
+  app should not import from scripts/. ~100 lines each; not worth a shared package.
+- Judge: independent per-dimension Scores + Nouls, feedback SELECTED from a bank.
+  Fill-in lines are phrased by score band ("Weakest dimension" ≤3, "To push further" ≥4)
+  after the first live run told a 5/5 answer its trade-offs were the weakness.
+- Publish gate: first wording ("answers the title's implied question") failed every
+  real article at p≈0.1 — definition-first openings are not literal how-to answers.
+  Reworded to "quotable, self-contained opening"; three strong articles then score
+  60/65/62 and the weak ones stay below 60. JUDGE_PASS_THRESHOLD untouched.
+- JD parser: requirement lists are verbatim JD clauses selected by Jev, not extracted
+  text. The Groq extractor was tried first as the cascade's first rung and FAILED —
+  which exposed the real production bug: Groq 404 model_not_found on
+  llama-3.3-70b-versatile, and groqCreate only fell back on 429. Fixed at the shared
+  function (one guard, all 30 callers).
+- Dedupe: SAME_INTENT_REJECT started at 0.7; a rewritten same-intent page scored 0.67
+  and slipped through. Set to 0.5 — for a fail-closed one-intent gate, "more likely a
+  duplicate than not" is the boundary. Novel topics score ~0.27, verbatim copies 0.98.
+- Prune: only the dup-of-kept decision (the one that keeps a page on the 410 list) is
+  Jev-verified; exemplar grouping stays cosine because it only affects rescue order.
+  Merge-cluster detection in triage.ts turned out to have no code path (the tier exists,
+  nothing sets it) — nothing to hook; left as is.
+- Lead topic inheritance (ArticleLead.topic) skipped: it needs a schema column with no
+  consumer yet. YAGNI until an onboarding flow branches on it.
+
+## 2026-09-20 — SEO autonomy policy (docs/seo-autonomy.md)
+
+- The launchd job `pro.learnanything.seo-pipeline` did not exist; last run 2026-07-31. Rewrote `~/Library/Scripts/seo-pipeline-cron.sh` for a daily 07:07 cycle (Sunday rank scrape, Monday prune plan + links plan) and wrote the plist. Not loaded — owner runs `launchctl load`.
+- Breaker metric was the GSC Sitemaps API `indexed` field (dead: 0/1393 every run). Now `gscVisiblePct(sitemapPaths)` = paths with ≥1 impression / 90d. Constant renamed `CIRCUIT_BREAKER_MIN_VISIBLE_PCT` (30 unchanged).
+- Found `site:learnanything.pro` was 74% of Jul–Aug impressions and 53% of the last 30d — the pipeline's own Google probe plus manual checks. Deleted the probe (`googleCheck` no longer runs `site:`; Google is `--google` opt-in) and filter `^site:` queries in `gscPageQueryRows`; `gscPageRows` now aggregates from it so every caller (prune, links, cluster metrics, breaker) is probe-free. Visible%: 15.9% → 1.7%.
+- Cluster status now derives from the latest verdict (kill → killed, freeze → frozen, else probe). Three clusters pinned `killed` since 2026-07-07 recover on the next real run.
+- `scripts/seo/page-value.mjs`: Score (5 levels) + templated Noul per page, batched 8/request. Calibrated on 14 pages, then all 1,393 in 13 s / 1.02M input tokens. Answers cached in `jev-cache.json`.
+- Prune pass 3 replaced: value ≥ 2.5 & thin < 0.5 keeps a zero-evidence page unless cosine-nominated and Jev-confirmed same-intent as a kept (or higher-value keepable) page. Action `noindex`; `counts.visiblePctAfter`; `executePrune` refuses manifests without the value pass; `PRUNE_KEEP_TARGET` deleted; merit floor `PRUNE_MERIT_MIN_IMPRESSIONS_90D` = 10.
+- Manifest regenerated on probe-free data: keep 422, noindex 971, visible% after 4.0. `--prune-plan --dry-run --no-ranks` runs in 44 s.
+- Kept: `buildPruneManifest` writes the manifest as a side effect; added `write:false` for the test only.

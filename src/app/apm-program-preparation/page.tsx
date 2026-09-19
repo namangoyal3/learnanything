@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "APM Program Preparation Guide India (2026) — Flipkart, Razorpay, Google",
@@ -72,7 +73,7 @@ const PROGRAMS = [
     duration: "—",
     salary: "₹20–28L",
     rounds: ["Product Thinking Assessment", "Case Study", "PM Stakeholder Round"],
-    tip: "Swiggy tests execution under ambiguity — fast-paced ops decisions. Know delivery logistics, supply-demand balancing, and restaurant growth.",
+    tip: "[Swiggy tests execution under ambiguity](/swiggy-pm-interview) — fast-paced ops decisions. Know delivery logistics, supply-demand balancing, and restaurant growth.",
   },
 ];
 
@@ -154,7 +155,7 @@ export default function ApmProgramPreparationPage() {
                 </div>
                 <div className="bg-[#0e1113] border border-[#58cc02]/20 rounded-xl px-4 py-3">
                   <p className="text-xs text-[#89e219] font-medium mb-1">💡 Prep Tip</p>
-                  <p className="text-sm text-white/60">{p.tip}</p>
+                  <p className="text-sm text-white/60">{linkify(p.tip)}</p>
                 </div>
               </div>
             ))}

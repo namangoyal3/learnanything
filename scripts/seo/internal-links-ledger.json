@@ -1,0 +1,308 @@
+[
+  {
+    "appliedAt": "2026-09-19T09:38:22.802Z",
+    "source": "/how-to-become-a-product-manager",
+    "destination": "/product-discovery-guide",
+    "anchor": "user interviews",
+    "sentence": "Run user interviews, synthesise insights, and validate assumptions cheaply.",
+    "kind": "pillar",
+    "query": null,
+    "baseline": {
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7.4
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.802Z",
+    "source": "/apm-program-preparation",
+    "destination": "/swiggy-pm-interview",
+    "anchor": "Swiggy tests execution under ambiguity",
+    "sentence": "Swiggy tests execution under ambiguity — fast-paced ops decisions.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.803Z",
+    "source": "/product-manager-career-path",
+    "destination": "/product-manager-salary-india",
+    "anchor": "salaries at every stage",
+    "sentence": "What each PM level requires, how to get promoted, salaries at every stage, and the moves that accelerate your career faster than tenure alone.",
+    "kind": "pillar",
+    "query": null,
+    "baseline": {
+      "impressions": 127,
+      "clicks": 0,
+      "position": 40.3
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.805Z",
+    "source": "/google-pm-interview",
+    "destination": "/product-sense-interview",
+    "anchor": "identify the right user",
+    "sentence": "Google tests whether you can identify the right user, articulate a clear vision, and prioritise with user empathy.",
+    "kind": "support",
+    "query": null,
+    "baseline": {
+      "impressions": 129,
+      "clicks": 0,
+      "position": 63.2
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.806Z",
+    "source": "/flipkart-pm-interview",
+    "destination": "/learn/pm/pm-estimation-questions-and-answers-a-comprehensive-guide-for-2026-dv5a",
+    "anchor": "estimation questions",
+    "sentence": "For estimation questions, show structure — break the problem down, state assumptions clearly, and sanity-check your answer with a real-world reference.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.807Z",
+    "source": "/razorpay-pm-interview",
+    "destination": "/pm-metrics-interview",
+    "anchor": "Define success",
+    "sentence": "Define success, diagnose metric drops, and think about experimentation.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.808Z",
+    "source": "/swiggy-pm-interview",
+    "destination": "/pm-metrics-interview",
+    "anchor": "define a success framework",
+    "sentence": "Diagnose a metric drop or define a success framework for a Swiggy product area.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.809Z",
+    "source": "/product-discovery-guide",
+    "destination": "/pm-customer-interviews",
+    "anchor": "users about specific past experiences",
+    "sentence": "Talk to real users about specific past experiences — not hypothetical preferences.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.810Z",
+    "source": "/prd-template-guide",
+    "destination": "/product-discovery-guide",
+    "anchor": "Describe the user problem",
+    "sentence": "Describe the user problem and why it matters — supported by data.",
+    "kind": "pillar",
+    "query": null,
+    "baseline": {
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7.4
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.811Z",
+    "source": "/user-research-for-pms",
+    "destination": "/pm-customer-interviews",
+    "anchor": "turn research into product decisions",
+    "sentence": "The 6 research methods every PM should know, when to use each, how many users you actually need, and how to turn research into product decisions — not reports.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.812Z",
+    "source": "/user-research-for-pms",
+    "destination": "/learn/pm/how-to-conduct-a-usability-test-for-a-b2b-saas-product-2026-guide-3940",
+    "anchor": "Validating that users can actually",
+    "sentence": "Validating that users can actually use a design.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.813Z",
+    "source": "/fintech-product-manager",
+    "destination": "/product-manager-salary-india",
+    "anchor": "salary ranges",
+    "sentence": "The complete fintech PM playbook for India — sub-sectors, companies hiring, domain terms you must know, interview questions, and salary ranges.",
+    "kind": "pillar",
+    "query": null,
+    "baseline": {
+      "impressions": 127,
+      "clicks": 0,
+      "position": 40.3
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.814Z",
+    "source": "/pm-domain-knowledge",
+    "destination": "/pm-reading-list",
+    "anchor": "books/essays everyone",
+    "sentence": "Every industry has 5–10 books/essays everyone in it has read.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.815Z",
+    "source": "/ecommerce-pm-guide",
+    "destination": "/pm-marketplace-dynamics",
+    "anchor": "Marketplaces need both sides happy",
+    "sentence": "Marketplaces need both sides happy — not just the side you naturally favour.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.816Z",
+    "source": "/pm-decision-making",
+    "destination": "/pm-trade-off-analysis",
+    "anchor": "decision frameworks PMs should know",
+    "sentence": "5 decision frameworks PMs should know, an 8-part decision doc template, and 5 moves that balance speed and quality of decisions.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.817Z",
+    "source": "/pm-mental-models",
+    "destination": "/pm-feedback-loops",
+    "anchor": "users whose feedback drives",
+    "sentence": "Find the 20% of users whose feedback drives 80% of insight.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.818Z",
+    "source": "/pm-quarterly-planning",
+    "destination": "/pm-okr-examples",
+    "anchor": "Real shipped work toward OKRs",
+    "sentence": "Real shipped work toward OKRs — the main thing.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.818Z",
+    "source": "/pm-reading-list",
+    "destination": "/product-discovery-guide",
+    "anchor": "ongoing user research and decision-making",
+    "sentence": "Practical framework for ongoing user research and decision-making.",
+    "kind": "pillar",
+    "query": null,
+    "baseline": {
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7.4
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.819Z",
+    "source": "/pm-prd-examples",
+    "destination": "/prd-template-guide",
+    "anchor": "language of great PM writing",
+    "sentence": "See structure, detail level, and the language of great PM writing.",
+    "kind": "support",
+    "query": null,
+    "baseline": {
+      "impressions": 1,
+      "clicks": 0,
+      "position": 89
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.820Z",
+    "source": "/pm-consumer-india",
+    "destination": "/pm-localization-india",
+    "anchor": "work in Indian consumer markets",
+    "sentence": "4 user segments to understand, 6 behaviour patterns, 5 monetisation models, and 6 design principles that work in Indian consumer markets.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.822Z",
+    "source": "/pm-customer-interviews",
+    "destination": "/product-discovery-guide",
+    "anchor": "prep moves",
+    "sentence": "5 prep moves, 6 questions that work, 5 to avoid, 6 listening techniques, and 6 biases to catch in yourself.",
+    "kind": "pillar",
+    "query": null,
+    "baseline": {
+      "impressions": 5,
+      "clicks": 0,
+      "position": 7.4
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.823Z",
+    "source": "/pm-b2b-products",
+    "destination": "/pm-product-led-growth",
+    "anchor": "key metrics",
+    "sentence": "5 B2B dynamics, 6 key metrics, 5 design principles, and 5 common traps.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.825Z",
+    "source": "/pm-developer-tools",
+    "destination": "/pm-api-products",
+    "anchor": "PMs building products engineers use",
+    "sentence": "6 DX principles and 5 metrics for PMs building products engineers use.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.826Z",
+    "source": "/pm-social-products",
+    "destination": "/pm-community-building",
+    "anchor": "metrics for social product PMs",
+    "sentence": "5 dynamics and 5 metrics for social product PMs.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.827Z",
+    "source": "/pm-marketplace-dynamics",
+    "destination": "/pm-b2b-marketplaces",
+    "anchor": "metrics for marketplace PMs",
+    "sentence": "5 dynamics and 5 metrics for marketplace PMs.",
+    "kind": "support",
+    "query": null,
+    "baseline": {
+      "impressions": 10,
+      "clicks": 0,
+      "position": 9.6
+    }
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.830Z",
+    "source": "/pm-ride-hailing",
+    "destination": "/pm-marketplace-dynamics",
+    "anchor": "metrics for ride-hailing PMs",
+    "sentence": "5 dynamics and 5 metrics for ride-hailing PMs.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  },
+  {
+    "appliedAt": "2026-09-19T09:38:22.832Z",
+    "source": "/pm-b2b-marketplaces",
+    "destination": "/pm-marketplace-dynamics",
+    "anchor": "metrics for B2B marketplace PMs",
+    "sentence": "5 dynamics and 5 metrics for B2B marketplace PMs.",
+    "kind": "support",
+    "query": null,
+    "baseline": null
+  }
+]

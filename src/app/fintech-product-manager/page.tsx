@@ -93,7 +93,7 @@ export default function FintechProductManagerPage() {
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
             The complete fintech PM playbook for India — sub-sectors, companies hiring,
-            domain terms you must know, interview questions, and salary ranges.
+            domain terms you must know, interview questions, and <Link href="/product-manager-salary-india">salary ranges</Link>.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Start Fintech PM Prep — Free →

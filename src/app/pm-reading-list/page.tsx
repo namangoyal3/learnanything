@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "PM Reading List (2026) — Books, Essays, and Newsletters That Shaped Great PMs",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 
 const BOOKS = [
   { title: "Inspired", author: "Marty Cagan", why: "The foundational modern PM book — what great product teams actually do." },
-  { title: "Continuous Discovery Habits", author: "Teresa Torres", why: "Practical framework for ongoing user research and decision-making." },
+  { title: "Continuous Discovery Habits", author: "Teresa Torres", why: "Practical framework for [ongoing user research and decision-making](/product-discovery-guide)." },
   { title: "The Lean Product Playbook", author: "Dan Olsen", why: "Step-by-step guide from market sizing to MVP." },
   { title: "Good Strategy / Bad Strategy", author: "Richard Rumelt", why: "What strategy is and isn&apos;t — essential reading beyond PM." },
   { title: "Cracking the PM Interview", author: "Gayle McDowell &amp; Jackie Bavaro", why: "Still the canonical interview prep book — dated but comprehensive." },
@@ -110,7 +111,7 @@ export default function PmReadingListPage() {
               <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
                 <p className="font-semibold text-white text-sm mb-1">{i + 1}. {b.title}</p>
                 <p className="text-xs text-[#89e219] mb-1">{b.author}</p>
-                <p className="text-xs text-white/60">{b.why}</p>
+                <p className="text-xs text-white/60">{linkify(b.why)}</p>
               </div>
             ))}
           </div>
@@ -124,7 +125,7 @@ export default function PmReadingListPage() {
               {ESSAYS.map((e, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
                   <p className="font-semibold text-white text-sm mb-1">{e.source}</p>
-                  <p className="text-xs text-white/60">{e.why}</p>
+                  <p className="text-xs text-white/60">{linkify(e.why)}</p>
                 </div>
               ))}
             </div>
@@ -141,7 +142,7 @@ export default function PmReadingListPage() {
                   <p className="font-semibold text-white text-sm">{n.source}</p>
                   <span className="text-xs bg-[#58cc02]/20 text-[#89e219] px-2 py-0.5 rounded-full">{n.cadence}</span>
                 </div>
-                <p className="text-xs text-white/60">{n.why}</p>
+                <p className="text-xs text-white/60">{linkify(n.why)}</p>
               </div>
             ))}
           </div>

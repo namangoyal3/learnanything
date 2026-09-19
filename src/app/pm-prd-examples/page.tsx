@@ -99,7 +99,7 @@ export default function PmPrdExamplesPage() {
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
             3 real-style PRDs — consumer feature, B2B feature, internal platform feature.
-            See structure, detail level, and the language of great PM writing.
+            See structure, detail level, and the <Link href="/prd-template-guide">language of great PM writing</Link>.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Practice PRD Writing Daily — Free →

@@ -23,6 +23,7 @@ disagree, the rule wins.
 ## Hard blocks — never do these
 1. **PR #28** (`advisor/audit-remediation`) is OPEN and must NOT be merged until the owner: rotates Neon DB password, Dodo API key, `CRON_SECRET`; sets `JWT_SECRET`, `ADMIN_EMAIL`, `REVENUECAT_WEBHOOK_AUTH_TOKEN`, `UNSUBSCRIBE_SECRET`, `NEXT_PUBLIC_DODO_*_PRODUCT_ID` in Vercel; scrubs `.env.prod.test` / `.env.backup` from git history. Verify status: `gh pr view 28`.
 2. `.env.local`, `.env.backup`, `.env.prod.test` on disk contain real secrets. Never print their values, never commit anything matching `.env*`.
+   - 2026-09-20: local history was rewritten (git filter-repo) to drop `.env.backup`, `.env.prod.test`, `scripts/virtual-company/service_account.json` and five pasted Groq keys before `seo-v2` / `seo/internal-links-jev` were pushed; none of it ever reached GitHub. Pre-scrub bundle: `~/.cache/pmstreak-backups/`. Rotate the Groq keys and `CRON_SECRET` regardless.
 3. Never commit `scripts/virtual-company/service_account.json` or `scripts/seo-rank-history.json` (gitignored; the service account leaked once already).
 4. Never write directly into `seo-articles/`. Forge writes drafts to `seo-drafts/<slug>.mdx`; Signal opens PRs from there.
 5. Anchor agent never auto-sends. Drafts only.
@@ -65,6 +66,7 @@ disagree, the rule wins.
 - [ ] Bulk article text is committed ONLY under `seo-articles/`, `seo-drafts/`, `scripts/seo-output/`, or `graphify-out/cache/`
 - [ ] Static marketing/SEO pages are literal directories `src/app/<slug>/page.tsx` — there is NO dynamic `[slug]` route
 - [ ] New page exports `metadata` with title + description and a canonical URL
+- [ ] Internal links (hacks 1–8 of the linking playbook): `node scripts/seo/internal-links.mjs` writes the working list to `seo-drafts/internal-links-plan.md`; review it, then `--apply` edits `src/app/<slug>/page.tsx` / `Article.body` and records `scripts/seo/internal-links-ledger.json`. Needs `TYPESAFE_API_KEY`; GSC creds optional. Footer pillars (`SiteFooter.tsx`) are applied by hand from `plan.footer`
 
 ### GEO agent change
 - [ ] Spec lives in `src/agents/<agent>/spec.ts` (conductor + 9 workers incl. retrofit). Deploy: `/lyzr-deploy <agent>` slash command
@@ -88,13 +90,17 @@ Full annotated list: `.env.example`. Non-obvious:
 - `PERPLEXITY_API_KEY` — enables the daily AI-citation probe; without it the cron logs "unconfigured" and exits (that is expected, not a bug)
 - `INDEXNOW_KEY` — key value must also be served at `public/{key}.txt`
 - `GA4_PROPERTY_ID` / `GA4_SERVICE_ACCOUNT_KEY` / `GSC_SITE_URL` — Pulse analytics; setup in `docs/GSC_SETUP.md`
+- `TYPESAFE_API_KEY` — enables the Jev (TypeSafe System One) rung in `src/lib/ai-judge-jev.ts`, `src/lib/geo/publish-gate.ts`, `archive-category-map.ts`, `jd-parser.ts` and `scripts/seo/{internal-links,gates,prune}.mjs`; without it every path falls back to Groq/heuristics. `JUDGE_PROVIDER=groq` pins the old judge. Before trusting the judge switch in prod: `npx tsx scripts/judge-shadow.ts` (needs `DATABASE_URL`)
+- ⚠️ Groq retired `llama-3.3-70b-versatile` (404 `model_not_found`, 2026-09-19). `groqCreate` now routes that to the OpenRouter chain, which needs `OPENROUTER_API_KEY` in Vercel — verify it is set, or every remaining Groq caller (lesson generation, GEO crons) fails
 
 ## Local SEO pipeline (runs on the owner's Mac, not in cloud)
-- launchd job `pro.learnanything.seo-pipeline` fires **hourly at minute :07** → `~/Library/Scripts/seo-pipeline-cron.sh` → `node scripts/seo-pipeline.mjs`; log: `~/Library/Logs/seo-pipeline.log`
-- One cycle: fetch live sitemap → submit to IndexNow only when the URL set changed → rank-check keywords on DuckDuckGo + Bing (+ Google via local headless Chrome; auto-skips when walled) → append `scripts/seo-rank-history.json` → push history to the `seo-rank-log` branch
-- It runs locally on purpose: the cloud agent sandbox blocks network egress (GitHub access works, so cloud reporting reads the `seo-rank-log` branch instead)
-- Health check: `tail -5 ~/Library/Logs/seo-pipeline.log` shows a run within the last hour, and `git log origin/seo-rank-log -1 --format=%cr` is recent
-- Bing indexed-page count started from a 0 baseline when the pipeline launched (unverified — read the trend from `seo-rank-history.json` on the `seo-rank-log` branch)
+- Policy: `docs/seo-autonomy.md` (decided 2026-09-20). Numbers: `scripts/seo/config.mjs`. The loop shrinks and measures; publishing is gated by the breaker (visible% ≥ 30, today 1.7%).
+- launchd job `pro.learnanything.seo-pipeline` fires **daily at 07:07** → `~/Library/Scripts/seo-pipeline-cron.sh` → `node scripts/seo-pipeline.mjs --no-ranks` (Sunday `--vanity` rank scrape; Monday `--prune-plan` + `scripts/seo/internal-links.mjs` plan); log: `~/Library/Logs/seo-pipeline.log`. The job was missing from 2026-07-31 to 2026-09-20; the plist is in `~/Library/LaunchAgents/`.
+- One cycle: fetch live sitemap → IndexNow only when the URL set changed → GSC page × query rows with `site:` probe queries dropped (they were 74% of Jul–Aug impressions) → breaker on visible% → cluster verdicts (status follows the latest verdict, both ways) → append `scripts/seo-rank-history.json` → push history to the `seo-rank-log` branch
+- Never pass `--google` from cron: its `site:` probe is what polluted GSC. The Sitemaps API `indexed` count is dead (0 forever) — do not gate on it.
+- Prune: `--prune-plan` writes `scripts/seo/prune-manifest.json` (Jev page-value + same-intent judgments; action `noindex`, reversible). `--prune` is human-only and refuses a manifest built without the value pass. 410 is a later human step (60 days after noindex).
+- Health check: `tail -5 ~/Library/Logs/seo-pipeline.log` shows a run from today, and `git log origin/seo-rank-log -1 --format=%cr` is recent
+- ⚠️ Cloud crons `/api/cron/generate-seo` and `/api/geo/create/tick` add pages with no portfolio gate; remove them from `vercel.json` before PR #42 merges (it repairs the Groq fallback they died on)
 
 ## Image generation
 - Lyzr tool route `POST /api/geo/tools/image-gen` wraps the `nanaban` CLI (GPT Image via Codex OAuth / Nano Banana)

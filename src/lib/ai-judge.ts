@@ -6,6 +6,8 @@ import {
   PM_SKILL_KEYS,
   type PmDimension,
 } from "@/lib/pm-foundations";
+import { isTypeSafeConfigured } from "@/lib/typesafe";
+import { judgePmAnswerJev } from "@/lib/ai-judge-jev";
 
 export type JudgeScores = Record<PmDimension, number>;
 
@@ -113,11 +115,33 @@ function validateJudgeResult(parsed: unknown): JudgeResult {
   };
 }
 
-export async function judgePmAnswer(params: {
+export type JudgeParams = {
   lessonPrompt: string;
   userAnswer: string;
   referenceAnswers?: string[];
-}): Promise<JudgeResult> {
+};
+
+// JUDGE_PROVIDER=jev|groq. Default: Jev when TYPESAFE_API_KEY is set (typed,
+// calibrated, ~1s) with the Groq judge as the fallback rung, so a Jev outage
+// never blocks a paying attempt. Set JUDGE_PROVIDER=groq to pin the old path.
+export function judgeProvider(): "jev" | "groq" {
+  const forced = process.env.JUDGE_PROVIDER;
+  if (forced === "jev" || forced === "groq") return forced;
+  return isTypeSafeConfigured() ? "jev" : "groq";
+}
+
+export async function judgePmAnswer(params: JudgeParams): Promise<JudgeResult> {
+  if (judgeProvider() === "jev") {
+    try {
+      return await judgePmAnswerJev(params);
+    } catch (e) {
+      console.error(`[ai-judge] jev failed, falling back to groq: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+  return judgePmAnswerGroq(params);
+}
+
+export async function judgePmAnswerGroq(params: JudgeParams): Promise<JudgeResult> {
   const references =
     params.referenceAnswers && params.referenceAnswers.length > 0
       ? `\nReference strong answers:\n${params.referenceAnswers.map((r, i) => `${i + 1}. ${r}`).join("\n")}`

@@ -74,6 +74,18 @@ export function extractText(bodyHtml) {
     .slice(0, 12000);
 }
 
+/** <title> and meta description from the full document (head, not body). */
+export function extractHead(html) {
+  const decode = (s) =>
+    s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;|&#39;|&apos;/g, "'").replace(/\s+/g, " ").trim();
+  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? "";
+  const description =
+    html.match(/<meta\s+[^>]*name="description"[^>]*content="([^"]*)"/i)?.[1] ??
+    html.match(/<meta\s+[^>]*content="([^"]*)"[^>]*name="description"/i)?.[1] ??
+    "";
+  return { title: decode(title), description: decode(description) };
+}
+
 function loadGraphCache() {
   if (!existsSync(FILES.GRAPH_CACHE)) return { pages: {} };
   try {
@@ -123,6 +135,7 @@ export async function buildSiteGraph(urls, { concurrency = 10, maxAgeHours = 168
           status: res.status,
           links: res.ok ? extractLinks(body, p) : [],
           text: res.ok ? extractText(body) : "",
+          ...(res.ok ? extractHead(html) : {}),
           fetchedAt: new Date().toISOString(),
         };
       } catch (e) {

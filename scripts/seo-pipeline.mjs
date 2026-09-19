@@ -15,12 +15,15 @@
  *   • Long-tail per-cluster rank tracking replaces the 8 head terms (§4);
  *     head terms still available via --vanity.
  *   • Prune planning (§5): --prune-plan writes scripts/seo/prune-manifest.json
- *     (plan only). --prune hands the manifest to the gated executor — NEVER
- *     run by cron; requires a human review first.
+ *     (plan only; Jev page-value + same-intent judgments when TYPESAFE_API_KEY
+ *     is set). --prune hands the manifest to the gated executor — NEVER run
+ *     by cron; a human approves each noindex batch (docs/seo-autonomy.md).
  *
  * Usage:
- *   node scripts/seo-pipeline.mjs                         # cron cycle (cron.sh-compatible)
- *     [--no-indexnow] [--no-google]                       # v1 flags, unchanged
+ *   node scripts/seo-pipeline.mjs                         # daily cycle (cron.sh-compatible)
+ *     [--no-indexnow] [--no-ranks]                        # skip IndexNow / the Bing+Mojeek rank scrape
+ *     [--google]                                          # also rank-check on Google via headless Chrome
+ *                                                         #   (opt-in: its old `site:` probe was 31% of GSC impressions)
  *     [--dry-run]                                         # no IndexNow submit, no state writes
  *     [--vanity]                                          # also rank-check the old 8 head terms
  *     [--prune-plan] [--crawl-sample N]                   # build prune manifest (plan only)
@@ -35,10 +38,12 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { THRESHOLDS } from "./seo/config.mjs";
 import { loadClusters, saveClusters, computeClusterVerdict } from "./seo/clusters.mjs";
-import { gscIndexedPct, gscClusterMetrics, gscPageRows } from "./seo/gsc-pages.mjs";
+import { gscVisiblePct, gscClusterMetrics, gscPageRows } from "./seo/gsc-pages.mjs";
 import { circuitBreakerState } from "./seo/gates.mjs";
-import { buildSiteGraph, graphStats } from "./seo/crawl.mjs";
+import { buildSiteGraph, graphStats, toPath } from "./seo/crawl.mjs";
 import { buildPruneManifest, executePrune } from "./seo/prune.mjs";
+import { sameIntent, isJevConfigured } from "./seo/same-intent.mjs";
+import { pageValues } from "./seo/page-value.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://learnanything.pro";
@@ -218,14 +223,6 @@ async function googleCheck(keywords) {
       await sleep(4000 + Math.random() * 3000);
     }
 
-    if (out.ok) {
-      try {
-        const links = await serp(`site:${HOST}`);
-        out.indexed = links.filter((u) => u.includes(HOST)).length; // first-page count, floor not total
-      } catch {
-        /* keep null */
-      }
-    }
   } finally {
     await browser.close();
   }
@@ -315,10 +312,11 @@ if (!process.argv.includes("--no-indexnow") && !DRY) {
 }
 
 // v2 §3: circuit breaker — the publisher enforces it; the pipeline reports it.
-const indexedHealth = await gscIndexedPct();
-const breaker = circuitBreakerState(indexedHealth.pct);
+const sitemapPaths = urls.map(toPath).filter(Boolean);
+const visibility = await gscVisiblePct(sitemapPaths);
+const breaker = circuitBreakerState(visibility.pct);
 console.log(
-  `\nCircuit breaker: ${breaker.halted ? "⛔ PUBLISHING HALTED" : "✅ open"} — ${breaker.reason} [source: ${indexedHealth.source}]`
+  `\nCircuit breaker: ${breaker.halted ? "⛔ PUBLISHING HALTED" : "✅ open"} — ${breaker.reason} [source: ${visibility.source}]`
 );
 
 // v2 §3: per-cluster impressions-led verdicts.
@@ -333,16 +331,17 @@ if (clusterMetrics) {
       ageDays,
       impressions30d: m.impressions30d,
       impressionsPrev30d: m.impressionsPrev30d,
-      indexedPct: indexedHealth.pct,
       hasTop30Query: m.hasTop30Query,
     });
     verdicts[c.id] = { ...v, metrics: m };
-    const eff = c.status === "frozen" || c.status === "killed" ? `${v.verdict} (pinned: ${c.status})` : v.verdict;
-    console.log(`${c.id.padEnd(22)} ${String(m.impressions30d).padStart(8)} ${String(m.impressionsPrev30d).padStart(8)} ${String(m.clicks30d).padStart(7)}  ${v.stage} → ${eff} — ${v.reason}`);
-    if (!DRY && c.status !== "frozen" && c.status !== "killed") {
+    // Status follows the latest verdict both ways. A pinned kill (2026-07-07,
+    // fired on ~0 impressions) kept three clusters dead while they were at
+    // 40/95/93 impressions/30d three weeks later; GSC lags and Google tests.
+    const status = { kill: "killed", freeze: "frozen" }[v.verdict] ?? "probe";
+    console.log(`${c.id.padEnd(22)} ${String(m.impressions30d).padStart(8)} ${String(m.impressionsPrev30d).padStart(8)} ${String(m.clicks30d).padStart(7)}  ${v.stage} → ${v.verdict}${status !== c.status ? ` (${c.status} → ${status})` : ""} — ${v.reason}`);
+    if (!DRY) {
       c.lastVerdict = { at: new Date().toISOString(), ...v };
-      if (v.verdict === "kill") c.status = "killed";
-      if (v.verdict === "freeze") c.status = "frozen";
+      c.status = status;
     }
   }
   if (!DRY) saveClusters(clustersCfg);
@@ -350,9 +349,10 @@ if (clusterMetrics) {
   console.log("Cluster verdicts: skipped (no GSC page data and no manual fallback)");
 }
 
-// v1: rank checks — now per-cluster long-tail terms.
+// v1: rank checks — per-cluster long-tail terms; weekly is plenty (0/14 for 500 hourly runs).
 const ranks = {};
-for (const kw of KEYWORDS) {
+const RANKS = !has("--no-ranks");
+for (const kw of RANKS ? KEYWORDS : []) {
   const [bing, mojeek] = [
     await bingRank(kw).catch((e) => (console.error(`bing "${kw}": ${e.message}`), null)),
     await mojeekRank(kw).catch((e) => (console.error(`mojeek "${kw}": ${e.message}`), null)),
@@ -361,16 +361,14 @@ for (const kw of KEYWORDS) {
   await sleep(4000); // mojeek 403s ~8 rapid queries; 4s keeps it under the limit
 }
 
-const google = process.argv.includes("--no-google")
-  ? { ranks: {}, indexed: null, ok: false }
-  : await googleCheck(KEYWORDS);
-for (const kw of KEYWORDS) ranks[kw].google = google.ranks[kw] ?? null;
+const google = RANKS && has("--google") ? await googleCheck(KEYWORDS) : { ranks: {}, indexed: null, ok: false };
+for (const kw of KEYWORDS) if (ranks[kw]) ranks[kw].google = google.ranks[kw] ?? null;
 
-const indexed = await bingIndexedCount();
+const indexed = RANKS ? await bingIndexedCount() : null;
 
-// Real Google Search Console truth (indexed count + impressions); null if creds absent.
+// Real Google Search Console truth (sitemap counts + top-query impressions); null if creds absent.
 const { gscMetrics } = await import("./gsc-metrics.mjs");
-const gsc = indexedHealth.source === "gsc-api" ? indexedHealth.raw : await gscMetrics();
+const gsc = await gscMetrics();
 
 const run = {
   ts: new Date().toISOString(),
@@ -381,7 +379,7 @@ const run = {
   googleChecked: google.ok,
   googleIndexedFirstPage: google.indexed,
   gsc,
-  gscIndexedPct: indexedHealth.pct,
+  gscVisiblePct: visibility.pct,
   circuitBreaker: breaker,
   clusterVerdicts: verdicts,
   ranks,
@@ -407,7 +405,7 @@ if (gsc) {
   console.log(`GSC (real): not checked (no creds in this env)`);
 }
 console.log(`\n${"keyword [cluster]".padEnd(58)} ${"Google".padEnd(14)} ${"Bing".padEnd(14)} Mojeek`);
-for (const kw of KEYWORDS) {
+for (const kw of RANKS ? KEYWORDS : []) {
   const p = prev?.ranks?.[kw];
   const c = ranks[kw];
   const g = google.ok ? fmt(c.google) + delta(p?.google, c.google) : "n/a";
@@ -415,10 +413,8 @@ for (const kw of KEYWORDS) {
     `${`${kw} [${clusterOf[kw]}]`.padEnd(58)} ${g.padEnd(14)} ${(fmt(c.bing) + delta(p?.bing, c.bing)).padEnd(14)} ${fmt(c.mojeek)}${delta(p?.mojeek, c.mojeek)}`
   );
 }
-const ranked = KEYWORDS.filter(
-  (k) => ranks[k].bing != null || ranks[k].mojeek != null || ranks[k].google != null
-).length;
-console.log(`\nRanked in top ${MAX_RANK}: ${ranked}/${KEYWORDS.length} keywords · history: ${history.runs.length} runs → ${HISTORY_FILE}`);
+const ranked = Object.values(ranks).filter((r) => r.bing != null || r.mojeek != null || r.google != null).length;
+console.log(`\nRanked in top ${MAX_RANK}: ${RANKS ? `${ranked}/${KEYWORDS.length} keywords` : "not checked (--no-ranks)"} · history: ${history.runs.length} runs → ${HISTORY_FILE}`);
 
 // v2 §5: prune plan (manifest only — execution is behind --prune, human-only).
 if (has("--prune-plan")) {
@@ -429,10 +425,14 @@ if (has("--prune-plan")) {
     await gscPageRows({ startDaysAgo: 92 }),
     await gscPageRows({ startDaysAgo: 480 }),
   ];
-  const manifest = await buildPruneManifest({ sitemapUrls: urls, pages90d, pages16mo, graph, clusters: clustersCfg });
+  const jev = isJevConfigured();
+  const manifest = await buildPruneManifest({
+    sitemapUrls: urls, pages90d, pages16mo, graph, clusters: clustersCfg,
+    judge: jev ? sameIntent : null, valueJudge: jev ? pageValues : null,
+  });
   console.log(
-    `prune manifest → scripts/seo/prune-manifest.json · total ${manifest.counts.total} · keep ${manifest.counts.keep} · kill(410) ${manifest.counts.kill} · target ${manifest.counts.target}${manifest.counts.onTarget ? "" : " ⚠ off-target — review criteria"}`
+    `prune manifest → scripts/seo/prune-manifest.json · total ${manifest.counts.total} · keep ${manifest.counts.keep} · noindex ${manifest.counts.noindex} · visible% after ${manifest.counts.visiblePctAfter ?? "?"}`
   );
-  console.log(`per-cluster: ${Object.entries(manifest.perCluster).map(([k, v]) => `${k} ${v.keep}/${v.keep + v.kill}`).join(" · ")}`);
-  console.log("NOT executing — review manifest, then a human may run: node scripts/seo-pipeline.mjs --prune");
+  console.log(`per-cluster: ${Object.entries(manifest.perCluster).map(([k, v]) => `${k} ${v.keep}/${v.keep + v.noindex}`).join(" · ")}`);
+  console.log("NOT executing — a human reviews the manifest, then runs: node scripts/seo-pipeline.mjs --prune");
 }

@@ -20,3 +20,9 @@ scripts/seo-rank-history.json
 # SEO v2 derived caches (bulky; rebuilt by scripts/seo-pipeline.mjs --refresh-graph)
 scripts/seo/site-graph-cache.json
 scripts/seo/embeddings-cache.json
+scripts/seo/jev-cache.json
+
+# real secrets — never commit (scrubbed from local history 2026-09-20)
+.env.backup
+.env.prod.test
+scripts/virtual-company/service_account.json

@@ -100,7 +100,7 @@ export default function PmCustomerInterviewsPage() {
             PM Customer Interviews<br />(2026 Edition)
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            5 prep moves, 6 questions that work, 5 to avoid, 6 listening techniques, and 6 biases to catch in yourself.
+            5 <Link href="/product-discovery-guide">prep moves</Link>, 6 questions that work, 5 to avoid, 6 listening techniques, and 6 biases to catch in yourself.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build User Research Skills Daily — Free →

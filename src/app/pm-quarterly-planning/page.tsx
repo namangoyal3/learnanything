@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "PM Quarterly Planning Guide (2026) — How PMs Plan a Quarter That Ships",
@@ -77,7 +78,7 @@ const ANTI_PATTERNS = [
 ];
 
 const BUFFER_GUIDE = [
-  { allocate: "60–70% to committed quarterly bets", why: "Real shipped work toward OKRs — the main thing." },
+  { allocate: "60–70% to committed quarterly bets", why: "[Real shipped work toward OKRs](/pm-okr-examples) — the main thing." },
   { allocate: "15–20% to tech debt and platform work", why: "Compounds long-term velocity. Explicit allocation, not leftover." },
   { allocate: "10–15% for unplanned urgent work", why: "Bugs, stakeholder requests, learning. You WILL need this — don&apos;t pretend you won&apos;t." },
   { allocate: "5% to discovery and research", why: "Next quarter&apos;s bets come from this quarter&apos;s discovery. Skip it and you plan in the dark." },
@@ -152,7 +153,7 @@ export default function PmQuarterlyPlanningPage() {
               {BUFFER_GUIDE.map((b, i) => (
                 <div key={i} className="bg-[#111] border border-white/10 rounded-xl p-4">
                   <p className="font-semibold text-[#89e219] text-sm mb-1">{b.allocate}</p>
-                  <p className="text-xs text-white/60">{b.why}</p>
+                  <p className="text-xs text-white/60">{linkify(b.why)}</p>
                 </div>
               ))}
             </div>

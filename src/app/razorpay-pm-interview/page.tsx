@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "Razorpay PM Interview Guide (2026) — Fintech Questions, Rounds & Prep",
@@ -41,7 +42,7 @@ const ROUNDS = [
   },
   {
     name: "Metrics & Analytics Round",
-    what: "Define success, diagnose metric drops, and think about experimentation. Razorpay is deeply data-driven — expect quantitative pressure.",
+    what: "[Define success](/pm-metrics-interview), diagnose metric drops, and think about experimentation. Razorpay is deeply data-driven — expect quantitative pressure.",
     sample: [
       "Razorpay's payment success rate drops from 94% to 89%. What do you investigate?",
       "Define north star metrics for Razorpay's SMB product vs enterprise product.",
@@ -149,7 +150,7 @@ export default function RazorpayPmInterviewPage() {
                   <span className="w-7 h-7 rounded-full bg-[#58cc02]/20 text-[#89e219] font-bold text-sm flex items-center justify-center">{i + 1}</span>
                   <h3 className="text-lg font-bold text-white">{round.name}</h3>
                 </div>
-                <p className="text-sm text-white/60 mb-4">{round.what}</p>
+                <p className="text-sm text-white/60 mb-4">{linkify(round.what)}</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-xs text-white/40 uppercase tracking-wider mb-2">Sample Questions</p>

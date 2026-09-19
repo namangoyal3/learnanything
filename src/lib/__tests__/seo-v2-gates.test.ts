@@ -134,3 +134,46 @@ outro`;
     expect(validateFirstPartyBlock(b, datasets).pass).toBe(false);
   });
 });
+
+// §5 value pass: Jev supplies value/thin per page and same-intent per pair; code owns the cut.
+import { buildPruneManifest } from "../../../scripts/seo/prune.mjs";
+
+describe("buildPruneManifest value pass", () => {
+  const site = "https://learnanything.pro";
+  const text = (s: string) => `${s} `.repeat(60); // ≥200 chars so the page is judged
+  const paths = ["/salary", "/learn/pm/deep", "/learn/pm/deep-copy", "/learn/pm/shallow", "/hand-built-shallow", "/jobs"];
+  const graph = {
+    pages: Object.fromEntries(paths.map((p) => [p, { title: p, text: text(p.includes("deep") ? "worked answers" : p), links: [] }])),
+  };
+  const values: Record<string, { value: number; thin: number }> = {
+    "/learn/pm/deep": { value: 3.1, thin: 0.1 },
+    "/learn/pm/deep-copy": { value: 2.9, thin: 0.1 },
+    "/learn/pm/shallow": { value: 1.2, thin: 0.8 },
+    "/hand-built-shallow": { value: 1.4, thin: 0.6 },
+  };
+  const valueJudge = async (pages: { path: string }[]) => pages.map((p) => values[p.path]);
+  const judge = async (pairs: unknown[]) => pairs.map(() => 0.95); // every cosine suspect is the same question
+
+  it("cuts generated pages below usable, keeps hand-built pages for rewrite, noindexes duplicates", async () => {
+    const m = await buildPruneManifest({
+      sitemapUrls: paths.map((p) => site + p),
+      pages90d: [{ path: "/salary", impressions: 40, clicks: 0, position: 30 }],
+      pages16mo: [],
+      graph,
+      clusters: { clusters: [] },
+      judge,
+      valueJudge,
+      write: false,
+    });
+    const keep = m.keep.map((k: { path: string }) => k.path);
+    const reason = (p: string) => m.noindex.find((k: { path: string }) => k.path === p)?.reasons?.[0] ?? "";
+    expect(keep).toEqual(expect.arrayContaining(["/salary", "/jobs", "/learn/pm/deep", "/hand-built-shallow"]));
+    expect(keep).not.toContain("/learn/pm/deep-copy"); // duplicates the higher-value keepable page
+    expect(reason("/learn/pm/deep-copy")).toMatch(/^dup-of-kept:\/learn\/pm\/deep/);
+    expect(keep).not.toContain("/learn/pm/shallow");
+    expect(reason("/learn/pm/shallow")).toBe(""); // cut by value alone, no judgment reason
+    expect(m.rewrite).toEqual([{ path: "/hand-built-shallow", value: 1.4, thin: 0.6 }]);
+    expect(m.valuePass).toMatchObject({ applied: true, scored: 4, keepable: 3, rewrite: 1, rescued: 2, dupAmongKeepable: 1 });
+    expect(m.counts).toMatchObject({ keep: 4, noindex: 2, visiblePctAfter: 25 });
+  });
+});

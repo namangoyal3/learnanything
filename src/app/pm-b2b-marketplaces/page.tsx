@@ -68,7 +68,7 @@ export default function PmB2bMarketplacesPage() {
             PM B2B Marketplaces<br />(India Edition)
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-8">
-            5 dynamics and 5 metrics for B2B marketplace PMs.
+            5 dynamics and 5 <Link href="/pm-marketplace-dynamics">metrics for B2B marketplace PMs</Link>.
           </p>
           <Link href="/signup" className="inline-block bg-[#58cc02] hover:bg-[#46a302] border-b-4 border-[#46a302] active:border-b-2 active:translate-y-[2px] text-white font-black px-8 py-3 rounded-2xl transition-all">
             Build B2B Marketplace PM Skills — Free →

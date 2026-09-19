@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd, { SITE_URL, faqSchema, breadcrumbSchema } from "@/components/JsonLd";
+import { linkify } from "@/components/Linkify";
 
 export const metadata: Metadata = {
   title: "How to Become a Product Manager in India (2026 Roadmap) — PM Streak",
@@ -80,7 +81,7 @@ const SKILLS = [
   { skill: "Data Analysis", description: "Read dashboards, debug metric drops, design experiments, and make data-driven decisions.", importance: "Critical" },
   { skill: "Communication", description: "Write clear PRDs, give sharp presentations, and influence without authority.", importance: "Critical" },
   { skill: "Technical Literacy", description: "Understand APIs, databases, system design basics — enough to work with engineering.", importance: "High" },
-  { skill: "User Research", description: "Run user interviews, synthesise insights, and validate assumptions cheaply.", importance: "High" },
+  { skill: "User Research", description: "Run [user interviews](/product-discovery-guide), synthesise insights, and validate assumptions cheaply.", importance: "High" },
   { skill: "Prioritisation", description: "RICE, ICE, MoSCoW — know when to use each and how to defend your stack-rank.", importance: "High" },
 ];
 
@@ -181,7 +182,7 @@ export default function HowToBecomeAProductManagerPage() {
                         {s.importance}
                       </span>
                     </div>
-                    <p className="text-sm text-white/60">{s.description}</p>
+                    <p className="text-sm text-white/60">{linkify(s.description)}</p>
                   </div>
                 </div>
               ))}

@@ -33,7 +33,7 @@ for (const p of [".env.local", ".env", ".env.production"].map((f) => resolve(pro
   }
 }
 
-const GROQ_API_KEY = process.env.GROQ_API_KEY ?? "REDACTED_GROQ_KEY";
+const GROQ_API_KEY = process.env.GROQ_API_KEY ?? "";
 const prisma = new PrismaClient();
 const groq = new Groq({ apiKey: GROQ_API_KEY });
 

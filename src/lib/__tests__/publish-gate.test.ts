@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { decidePublish, parseJudgeResponse, type JudgeVerdict } from "../geo/publish-gate";
+import { composeCitabilityVerdict, decidePublish, JUDGE_PASS_THRESHOLD, parseJudgeResponse, type JudgeVerdict } from "../geo/publish-gate";
 import { findOwnCitation, pickProbeQuery } from "../geo/citation-probe";
 import { rewriteStockImages } from "../geo/safe-prisma";
 
@@ -109,5 +109,23 @@ describe("pickProbeQuery", () => {
     expect(pickProbeQuery({ slug: "s", opportunityQuery: "opp q", articleTitle: "t" })).toBe("opp q");
     expect(pickProbeQuery({ slug: "s", articleTitle: "The Title" })).toBe("The Title");
     expect(pickProbeQuery({ slug: "north-star-metric" })).toBe("north star metric");
+  });
+});
+
+describe("composeCitabilityVerdict (Jev GEO-01 checks)", () => {
+  const n = (p: number) => ({ type: "noul" as const, noul: p });
+  it("weights direct-answer and self-contained sections equally, fluff as a penalty", () => {
+    const v = composeCitabilityVerdict({ direct_answer_first: n(1), sections_self_contained: n(1), no_fluff: n(1) });
+    expect(v.score).toBe(100);
+    expect(composeCitabilityVerdict({ direct_answer_first: n(0), sections_self_contained: n(1), no_fluff: n(1) }).score).toBe(60);
+    expect(composeCitabilityVerdict({ direct_answer_first: n(1), sections_self_contained: n(1), no_fluff: n(0) }).score).toBe(80);
+  });
+  it("names the weakest check as the reason", () => {
+    const v = composeCitabilityVerdict({ direct_answer_first: n(0.9), sections_self_contained: n(0.2), no_fluff: n(0.7) });
+    expect(v.reason).toMatch(/^H2 sections do not stand alone/);
+  });
+  it("an article that fails both structural checks cannot pass the gate", () => {
+    const v = composeCitabilityVerdict({ direct_answer_first: n(0.3), sections_self_contained: n(0.3), no_fluff: n(1) });
+    expect(v.score).toBeLessThan(JUDGE_PASS_THRESHOLD);
   });
 });

@@ -4,7 +4,7 @@
 # Run this script to publish all articles to learnanything.pro
 # Usage: cd seo-articles && bash publish-all.sh
 
-AUTH="Bearer REDACTED_TOKEN"
+AUTH="Bearer ${CRON_SECRET:?set CRON_SECRET (the /api/content/publish bearer) in the environment}"
 ENDPOINT="https://learnanything.pro/api/content/publish"
 
 echo "=== Publishing Article 1: AI PM Evals Playbook ==="
