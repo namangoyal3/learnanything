@@ -65,6 +65,7 @@ disagree, the rule wins.
 - [ ] Bulk article text is committed ONLY under `seo-articles/`, `seo-drafts/`, `scripts/seo-output/`, or `graphify-out/cache/`
 - [ ] Static marketing/SEO pages are literal directories `src/app/<slug>/page.tsx` — there is NO dynamic `[slug]` route
 - [ ] New page exports `metadata` with title + description and a canonical URL
+- [ ] Internal links (hacks 1–8 of the linking playbook): `node scripts/seo/internal-links.mjs` writes the working list to `seo-drafts/internal-links-plan.md`; review it, then `--apply` edits `src/app/<slug>/page.tsx` / `Article.body` and records `scripts/seo/internal-links-ledger.json`. Needs `TYPESAFE_API_KEY`; GSC creds optional. Footer pillars (`SiteFooter.tsx`) are applied by hand from `plan.footer`
 
 ### GEO agent change
 - [ ] Spec lives in `src/agents/<agent>/spec.ts` (conductor + 9 workers incl. retrofit). Deploy: `/lyzr-deploy <agent>` slash command

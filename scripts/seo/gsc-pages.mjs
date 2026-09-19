@@ -56,6 +56,26 @@ export async function gscPageRows({ startDaysAgo = 92, endDaysAgo = 2, rowLimit 
   })) ?? null;
 }
 
+/**
+ * Page × query rows over a window — the "open a page and inspect its Queries
+ * tab" export the internal-linking playbook (§6) starts from.
+ */
+export async function gscPageQueryRows({ startDaysAgo = 92, endDaysAgo = 2, rowLimit = 25000 } = {}) {
+  const rows = await saQuery({
+    startDate: daysAgo(startDaysAgo),
+    endDate: daysAgo(endDaysAgo),
+    dimensions: ["page", "query"],
+    rowLimit,
+  });
+  return rows?.map((r) => ({
+    path: toPath(r.keys[0]),
+    query: r.keys[1],
+    impressions: r.impressions,
+    clicks: r.clicks,
+    position: Math.round(r.position * 10) / 10,
+  })) ?? null;
+}
+
 /** Top queries whose landing page starts with the cluster's URL space. */
 export async function gscTopQueriesForPattern(pattern, { days = 30, limit = 25 } = {}) {
   const rows = await saQuery({

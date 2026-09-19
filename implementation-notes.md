@@ -128,3 +128,28 @@ Entry point unchanged: `node scripts/seo-pipeline.mjs [--no-indexnow] [--no-goog
 3. Confirm the breaker posture: with 0% indexed, re-enabling the cron yields
    measurement-only runs (no publishing) — that is by design.
 4. Prune execution is manual-only; nothing in this branch deletes or 410s pages.
+
+## Session — internal-linking playbook via TypeSafe Jev (2026-09-19)
+
+Source: x.com/borjafat/status/2100908380793475496 → X Article "8 internal linking hacks to improve SEO"
+(check GSC → group topics → pick pillars → pick money pages → link support posts →
+boost page-2 → footer pillars/money → vary anchor text). Implemented as a new pipeline
+stage `scripts/seo/internal-links.mjs` + `scripts/seo/jev.mjs`.
+
+Decisions taken while reading the repo (not obvious from the diff):
+- Jev is called over raw `fetch` (POST api.typesafe.ai/v1/systemone), not `@typesafe-ai/sdk`:
+  CLAUDE.md forbids new deps when existing ones suffice and every other module in
+  scripts/seo is stdlib-only by design (gsc-metrics.mjs signs its own JWT). Responses are
+  cached on disk (`scripts/seo/jev-cache.json`, gitignored) like the embeddings cache.
+- Page universe = live sitemap − prune-manifest kill list (= the 200 keep + anything
+  published since the July prune). Linking into a page slated for 410 is wasted work.
+- 137/200 keep pages are static `src/app/<slug>/page.tsx`, only 63 are DB `Article` rows.
+  Static-page prose lives in const-array string literals rendered as `{x.field}` text
+  nodes, so an inline link needs a render helper (`src/components/Linkify.tsx`) —
+  apply rewrites the literal to `[anchor](/path)` and wraps `{x.field}` → `{linkify(x.field)}`.
+- "Reader's question beside the page" (hack 2) = the page's existing meta description;
+  Jev selects/judges, it does not generate text.
+- Anchor text is selected, never generated: code proposes 2–5-word windows inside the
+  Jev-chosen sentence, Jev picks the one that describes the destination (pre-parsed
+  value-extraction pattern). Variation rule (hack 8) is code: same anchor for the same
+  destination is avoided when a runner-up is within 0.8× probability.

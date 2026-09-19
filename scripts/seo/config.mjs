@@ -43,6 +43,26 @@ export const THRESHOLDS = {
   // §4 — rank tracking
   MAX_RANK: 30,
   RANK_KEYWORDS_PER_RUN: 14, // long-tail terms checked per run
+
+  // §6 — internal-linking playbook (scripts/seo/internal-links.mjs). Jev
+  // probabilities are calibrated judgments, not permission to act — these
+  // floors were picked on the first run's plan and should be re-read against
+  // scripts/seo/internal-links-plan.json before being trusted site-wide.
+  LINK_MIN_RELEVANCE: 0.6, // noul: reader of source benefits from a link to destination
+  LINK_MAX_NONE_PROB: 0.3, // choice: mass on "none" above this = nothing fits, skip
+  LINK_MIN_SENTENCE_PROB: 0.35, // choice: the winning sentence must stand out from the shortlist
+  LINK_MIN_ANCHOR_PROB: 0.15, // choice: anchor windows overlap, so only reject a flat spread
+  LINK_MIN_PILLAR_PROB: 0.5, // choice: the winning pillar must carry this much of the topic's probability
+  LINK_MIN_DELIVERS: 0.6, // noul: clicking the anchor rewards the reader (final check on the assembled link)
+  LINK_ANCHOR_VARIATION_RATIO: 0.8, // reuse-avoidance: take runner-up anchor if ≥ this × top prob
+  LINK_MAX_NEW_PER_SOURCE: 3, // new contextual links added to one page per run
+  LINK_MAX_NEW_PER_DEST: 6, // new inlinks one destination may gain per run (no link dumps)
+  LINK_CANDIDATES_PER_SOURCE: 8, // fast-search shortlist handed to Jev for re-ranking
+  LINK_SENTENCE_CANDIDATES: 10, // sentences offered to Jev per (source, destination)
+  LINK_ANCHOR_CANDIDATES: 24, // 2–5-word windows offered to Jev per chosen sentence
+  PAGE2_POSITION: [11, 20], // hack 6: "stuck on page 2" band (avg position, 90d)
+  PAGE2_MIN_IMPRESSIONS: 10, // hack 6: query must recur, not be a one-off impression
+  PAGE2_MIN_ANSWERS_QUERY: 0.6, // noul: destination actually answers the query
 };
 
 // State + config files. clusters.json / publish-ledger.json / prune-manifest.json
@@ -54,4 +74,8 @@ export const FILES = {
   EMB_CACHE: join(SEO_DIR, "embeddings-cache.json"),
   GSC_MANUAL: join(SEO_DIR, "gsc-manual.json"),
   PRUNE_MANIFEST: join(SEO_DIR, "prune-manifest.json"),
+  // §6 internal links: plan + ledger are committed (reviewable), cache is gitignored.
+  JEV_CACHE: join(SEO_DIR, "jev-cache.json"),
+  LINKS_PLAN: join(SEO_DIR, "internal-links-plan.json"),
+  LINKS_LEDGER: join(SEO_DIR, "internal-links-ledger.json"),
 };
