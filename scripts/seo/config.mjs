@@ -25,7 +25,10 @@ export const THRESHOLDS = {
   MAX_CLICK_DEPTH: 3, // new page must sit ≤3 clicks from home via its link sources
 
   // §1b — one-intent-per-page dedupe
-  COSINE_REJECT: 0.85, // reject candidate when max cosine vs any existing page ≥ this
+  COSINE_REJECT: 0.85, // reject candidate when max cosine vs any existing page ≥ this (no-Jev fallback)
+  COSINE_SHORTLIST: 0.35, // cosine floor for the pages Jev compares the candidate against
+  DEDUPE_SHORTLIST: 8, // how many nearest pages Jev judges per candidate
+  SAME_INTENT_REJECT: 0.5, // Jev noul "same reader question" at/above this = duplicate (fail-closed: more likely than not)
 
   // §2 — throughput ceiling
   MAX_PUBLISHES_PER_7D: 3, // hard cap (report: 2-3/week steady state)

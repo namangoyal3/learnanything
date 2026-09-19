@@ -39,6 +39,7 @@ import { gscIndexedPct, gscClusterMetrics, gscPageRows } from "./seo/gsc-pages.m
 import { circuitBreakerState } from "./seo/gates.mjs";
 import { buildSiteGraph, graphStats } from "./seo/crawl.mjs";
 import { buildPruneManifest, executePrune } from "./seo/prune.mjs";
+import { sameIntent, isJevConfigured } from "./seo/same-intent.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://learnanything.pro";
@@ -429,7 +430,7 @@ if (has("--prune-plan")) {
     await gscPageRows({ startDaysAgo: 92 }),
     await gscPageRows({ startDaysAgo: 480 }),
   ];
-  const manifest = await buildPruneManifest({ sitemapUrls: urls, pages90d, pages16mo, graph, clusters: clustersCfg });
+  const manifest = await buildPruneManifest({ sitemapUrls: urls, pages90d, pages16mo, graph, clusters: clustersCfg, judge: isJevConfigured() ? sameIntent : null });
   console.log(
     `prune manifest → scripts/seo/prune-manifest.json · total ${manifest.counts.total} · keep ${manifest.counts.keep} · kill(410) ${manifest.counts.kill} · target ${manifest.counts.target}${manifest.counts.onTarget ? "" : " ⚠ off-target — review criteria"}`
   );

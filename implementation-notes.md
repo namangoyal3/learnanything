@@ -153,3 +153,30 @@ Decisions taken while reading the repo (not obvious from the diff):
   Jev-chosen sentence, Jev picks the one that describes the destination (pre-parsed
   value-extraction pattern). Variation rule (hack 8) is code: same anchor for the same
   destination is avoided when a runner-up is within 0.8× probability.
+
+### Addendum — "Do all": Jev across the app (2026-09-19, same branch)
+
+- `src/lib/typesafe.ts` is a second client (TS, no cache) beside `scripts/seo/jev.mjs`
+  (stdlib .mjs, disk cache). Deliberate: plain-node scripts cannot import TS, and the
+  app should not import from scripts/. ~100 lines each; not worth a shared package.
+- Judge: independent per-dimension Scores + Nouls, feedback SELECTED from a bank.
+  Fill-in lines are phrased by score band ("Weakest dimension" ≤3, "To push further" ≥4)
+  after the first live run told a 5/5 answer its trade-offs were the weakness.
+- Publish gate: first wording ("answers the title's implied question") failed every
+  real article at p≈0.1 — definition-first openings are not literal how-to answers.
+  Reworded to "quotable, self-contained opening"; three strong articles then score
+  60/65/62 and the weak ones stay below 60. JUDGE_PASS_THRESHOLD untouched.
+- JD parser: requirement lists are verbatim JD clauses selected by Jev, not extracted
+  text. The Groq extractor was tried first as the cascade's first rung and FAILED —
+  which exposed the real production bug: Groq 404 model_not_found on
+  llama-3.3-70b-versatile, and groqCreate only fell back on 429. Fixed at the shared
+  function (one guard, all 30 callers).
+- Dedupe: SAME_INTENT_REJECT started at 0.7; a rewritten same-intent page scored 0.67
+  and slipped through. Set to 0.5 — for a fail-closed one-intent gate, "more likely a
+  duplicate than not" is the boundary. Novel topics score ~0.27, verbatim copies 0.98.
+- Prune: only the dup-of-kept decision (the one that keeps a page on the 410 list) is
+  Jev-verified; exemplar grouping stays cosine because it only affects rescue order.
+  Merge-cluster detection in triage.ts turned out to have no code path (the tier exists,
+  nothing sets it) — nothing to hook; left as is.
+- Lead topic inheritance (ArticleLead.topic) skipped: it needs a schema column with no
+  consumer yet. YAGNI until an onboarding flow branches on it.

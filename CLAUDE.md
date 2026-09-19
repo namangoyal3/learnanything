@@ -89,6 +89,8 @@ Full annotated list: `.env.example`. Non-obvious:
 - `PERPLEXITY_API_KEY` — enables the daily AI-citation probe; without it the cron logs "unconfigured" and exits (that is expected, not a bug)
 - `INDEXNOW_KEY` — key value must also be served at `public/{key}.txt`
 - `GA4_PROPERTY_ID` / `GA4_SERVICE_ACCOUNT_KEY` / `GSC_SITE_URL` — Pulse analytics; setup in `docs/GSC_SETUP.md`
+- `TYPESAFE_API_KEY` — enables the Jev (TypeSafe System One) rung in `src/lib/ai-judge-jev.ts`, `src/lib/geo/publish-gate.ts`, `archive-category-map.ts`, `jd-parser.ts` and `scripts/seo/{internal-links,gates,prune}.mjs`; without it every path falls back to Groq/heuristics. `JUDGE_PROVIDER=groq` pins the old judge. Before trusting the judge switch in prod: `npx tsx scripts/judge-shadow.ts` (needs `DATABASE_URL`)
+- ⚠️ Groq retired `llama-3.3-70b-versatile` (404 `model_not_found`, 2026-09-19). `groqCreate` now routes that to the OpenRouter chain, which needs `OPENROUTER_API_KEY` in Vercel — verify it is set, or every remaining Groq caller (lesson generation, GEO crons) fails
 
 ## Local SEO pipeline (runs on the owner's Mac, not in cloud)
 - launchd job `pro.learnanything.seo-pipeline` fires **hourly at minute :07** → `~/Library/Scripts/seo-pipeline-cron.sh` → `node scripts/seo-pipeline.mjs`; log: `~/Library/Logs/seo-pipeline.log`

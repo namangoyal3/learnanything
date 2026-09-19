@@ -62,7 +62,7 @@ export async function runV2PublishGates({ title, body, cluster, inlinkFrom }) {
     existingPages = [...inCluster, ...topLevel]
       .filter(([p]) => (seen.has(p) ? false : seen.add(p)))
       .slice(0, 400)
-      .map(([p, v]) => ({ path: p, text: v.text }));
+      .map(([p, v]) => ({ path: p, title: v.title, text: v.text }));
   }
 
   const { pct } = await gscIndexedPct();

@@ -37,7 +37,7 @@ import { embedTexts, cosine } from "./embeddings.mjs";
 export const CORE_ROUTES =
   /^\/$|^\/(pricing|explore|learn|login|signup|dashboard|interview-prep|privacy|terms|refund|about|contact)$/;
 
-export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, graph, clusters, embed = true }) {
+export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, graph, clusters, embed = true, judge = null }) {
   const paths = sitemapUrls.map(toPath).filter(Boolean);
   const imp90 = new Map((pages90d || []).map((r) => [r.path, r]));
   const clk16 = new Map((pages16mo || []).map((r) => [r.path, r]));
@@ -78,7 +78,7 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
   // intents collapse to one exemplar worth improving; rescue the largest
   // intent groups first, up to the target ceiling.
   const [lo, hi] = THRESHOLDS.PRUNE_KEEP_TARGET;
-  let exemplar = { applied: false, provider: null, groups: 0, dupOfKept: 0, rescued: 0 };
+  let exemplar = { applied: false, provider: null, groups: 0, dupOfKept: 0, dupOverruled: 0, rescued: 0, judge: judge ? "jev-same-intent" : null };
   const textOf = (path) => (graph?.pages?.[path]?.text || "").slice(0, 2000);
   const budget0 = hi - entries.filter((e) => e.keep).length;
   if (embed && budget0 > 0) {
@@ -90,12 +90,37 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
       );
       const keptVecs = vectors.slice(0, keptWithText.length);
       const candVecs = vectors.slice(keptWithText.length);
+      // Dup-of-kept is the decision that keeps a page on the kill list. Cosine
+      // (hash-tfidf when Ollama is down) only nominates the nearest kept page;
+      // when a judge is supplied, Jev's "same reader question" makes the call.
       const fresh = [];
+      const suspects = [];
       cands.forEach((e, i) => {
-        if (keptVecs.some((kv) => cosine(candVecs[i], kv) >= THRESHOLDS.COSINE_REJECT)) {
+        let best = { k: -1, s: -1 };
+        keptVecs.forEach((kv, k) => {
+          const s = cosine(candVecs[i], kv);
+          if (s > best.s) best = { k, s };
+        });
+        if (best.s >= THRESHOLDS.COSINE_REJECT) suspects.push({ e, i, kept: keptWithText[best.k] });
+        else fresh.push({ e, v: candVecs[i], len: textOf(e.path).length });
+      });
+      let verdicts = null;
+      if (judge && suspects.length) {
+        verdicts = await judge(
+          suspects.map((s) => ({
+            a: { title: graph?.pages?.[s.e.path]?.title, path: s.e.path, text: textOf(s.e.path) },
+            b: { title: graph?.pages?.[s.kept.path]?.title, path: s.kept.path, text: textOf(s.kept.path) },
+          }))
+        );
+      }
+      suspects.forEach((s, j) => {
+        const same = verdicts ? verdicts[j] >= THRESHOLDS.SAME_INTENT_REJECT : true;
+        if (same) {
           exemplar.dupOfKept++; // duplicates a kept page — stays killed
+          if (verdicts) s.e.reasons.push(`dup-of-kept:${s.kept.path} (jev ${verdicts[j].toFixed(2)})`);
         } else {
-          fresh.push({ e, v: candVecs[i], len: textOf(e.path).length });
+          exemplar.dupOverruled++; // cosine said dup, Jev says different question
+          fresh.push({ e: s.e, v: candVecs[s.i], len: textOf(s.e.path).length });
         }
       });
       fresh.sort((a, b) => b.len - a.len); // longest text leads its group
@@ -142,7 +167,8 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
     perCluster,
     exemplar,
     keep: keep.map(({ path, cluster, reasons }) => ({ path, cluster, reasons })),
-    kill: kill.map(({ path, cluster, action }) => ({ path, cluster, action })),
+    // Kill rows carry a reason only when a judgment put them there (Jev dup-of-kept verdict).
+    kill: kill.map(({ path, cluster, action, reasons }) => ({ path, cluster, action, ...(reasons?.length ? { reasons } : {}) })),
   };
   writeFileSync(FILES.PRUNE_MANIFEST, JSON.stringify(manifest, null, 2) + "\n");
   return manifest;
