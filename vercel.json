@@ -101,10 +101,6 @@
       "schedule": "30 12 * * *"
     },
     {
-      "path": "/api/cron/generate-seo",
-      "schedule": "0 3 * * *"
-    },
-    {
       "path": "/api/cron/seo-indexnow",
       "schedule": "30 3 * * *"
     },
@@ -143,10 +139,6 @@
     {
       "path": "/api/geo/retrofit/inventory",
       "schedule": "0 3 * * 0"
-    },
-    {
-      "path": "/api/geo/create/tick",
-      "schedule": "35 3 * * *"
     },
     {
       "path": "/api/geo/citation-probe/run",
