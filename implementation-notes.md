@@ -180,3 +180,14 @@ Decisions taken while reading the repo (not obvious from the diff):
   nothing sets it) — nothing to hook; left as is.
 - Lead topic inheritance (ArticleLead.topic) skipped: it needs a schema column with no
   consumer yet. YAGNI until an onboarding flow branches on it.
+
+## 2026-09-20 — SEO autonomy policy (docs/seo-autonomy.md)
+
+- The launchd job `pro.learnanything.seo-pipeline` did not exist; last run 2026-07-31. Rewrote `~/Library/Scripts/seo-pipeline-cron.sh` for a daily 07:07 cycle (Sunday rank scrape, Monday prune plan + links plan) and wrote the plist. Not loaded — owner runs `launchctl load`.
+- Breaker metric was the GSC Sitemaps API `indexed` field (dead: 0/1393 every run). Now `gscVisiblePct(sitemapPaths)` = paths with ≥1 impression / 90d. Constant renamed `CIRCUIT_BREAKER_MIN_VISIBLE_PCT` (30 unchanged).
+- Found `site:learnanything.pro` was 74% of Jul–Aug impressions and 53% of the last 30d — the pipeline's own Google probe plus manual checks. Deleted the probe (`googleCheck` no longer runs `site:`; Google is `--google` opt-in) and filter `^site:` queries in `gscPageQueryRows`; `gscPageRows` now aggregates from it so every caller (prune, links, cluster metrics, breaker) is probe-free. Visible%: 15.9% → 1.7%.
+- Cluster status now derives from the latest verdict (kill → killed, freeze → frozen, else probe). Three clusters pinned `killed` since 2026-07-07 recover on the next real run.
+- `scripts/seo/page-value.mjs`: Score (5 levels) + templated Noul per page, batched 8/request. Calibrated on 14 pages, then all 1,393 in 13 s / 1.02M input tokens. Answers cached in `jev-cache.json`.
+- Prune pass 3 replaced: value ≥ 2.5 & thin < 0.5 keeps a zero-evidence page unless cosine-nominated and Jev-confirmed same-intent as a kept (or higher-value keepable) page. Action `noindex`; `counts.visiblePctAfter`; `executePrune` refuses manifests without the value pass; `PRUNE_KEEP_TARGET` deleted; merit floor `PRUNE_MERIT_MIN_IMPRESSIONS_90D` = 10.
+- Manifest regenerated on probe-free data: keep 422, noindex 971, visible% after 4.0. `--prune-plan --dry-run --no-ranks` runs in 44 s.
+- Kept: `buildPruneManifest` writes the manifest as a side effect; added `write:false` for the test only.

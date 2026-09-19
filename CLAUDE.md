@@ -93,11 +93,13 @@ Full annotated list: `.env.example`. Non-obvious:
 - ⚠️ Groq retired `llama-3.3-70b-versatile` (404 `model_not_found`, 2026-09-19). `groqCreate` now routes that to the OpenRouter chain, which needs `OPENROUTER_API_KEY` in Vercel — verify it is set, or every remaining Groq caller (lesson generation, GEO crons) fails
 
 ## Local SEO pipeline (runs on the owner's Mac, not in cloud)
-- launchd job `pro.learnanything.seo-pipeline` fires **hourly at minute :07** → `~/Library/Scripts/seo-pipeline-cron.sh` → `node scripts/seo-pipeline.mjs`; log: `~/Library/Logs/seo-pipeline.log`
-- One cycle: fetch live sitemap → submit to IndexNow only when the URL set changed → rank-check keywords on DuckDuckGo + Bing (+ Google via local headless Chrome; auto-skips when walled) → append `scripts/seo-rank-history.json` → push history to the `seo-rank-log` branch
-- It runs locally on purpose: the cloud agent sandbox blocks network egress (GitHub access works, so cloud reporting reads the `seo-rank-log` branch instead)
-- Health check: `tail -5 ~/Library/Logs/seo-pipeline.log` shows a run within the last hour, and `git log origin/seo-rank-log -1 --format=%cr` is recent
-- Bing indexed-page count started from a 0 baseline when the pipeline launched (unverified — read the trend from `seo-rank-history.json` on the `seo-rank-log` branch)
+- Policy: `docs/seo-autonomy.md` (decided 2026-09-20). Numbers: `scripts/seo/config.mjs`. The loop shrinks and measures; publishing is gated by the breaker (visible% ≥ 30, today 1.7%).
+- launchd job `pro.learnanything.seo-pipeline` fires **daily at 07:07** → `~/Library/Scripts/seo-pipeline-cron.sh` → `node scripts/seo-pipeline.mjs --no-ranks` (Sunday `--vanity` rank scrape; Monday `--prune-plan` + `scripts/seo/internal-links.mjs` plan); log: `~/Library/Logs/seo-pipeline.log`. The job was missing from 2026-07-31 to 2026-09-20; the plist is in `~/Library/LaunchAgents/`.
+- One cycle: fetch live sitemap → IndexNow only when the URL set changed → GSC page × query rows with `site:` probe queries dropped (they were 74% of Jul–Aug impressions) → breaker on visible% → cluster verdicts (status follows the latest verdict, both ways) → append `scripts/seo-rank-history.json` → push history to the `seo-rank-log` branch
+- Never pass `--google` from cron: its `site:` probe is what polluted GSC. The Sitemaps API `indexed` count is dead (0 forever) — do not gate on it.
+- Prune: `--prune-plan` writes `scripts/seo/prune-manifest.json` (Jev page-value + same-intent judgments; action `noindex`, reversible). `--prune` is human-only and refuses a manifest built without the value pass. 410 is a later human step (60 days after noindex).
+- Health check: `tail -5 ~/Library/Logs/seo-pipeline.log` shows a run from today, and `git log origin/seo-rank-log -1 --format=%cr` is recent
+- ⚠️ Cloud crons `/api/cron/generate-seo` and `/api/geo/create/tick` add pages with no portfolio gate; remove them from `vercel.json` before PR #42 merges (it repairs the Groq fallback they died on)
 
 ## Image generation
 - Lyzr tool route `POST /api/geo/tools/image-gen` wraps the `nanaban` CLI (GPT Image via Codex OAuth / Nano Banana)
