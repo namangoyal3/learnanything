@@ -134,3 +134,45 @@ outro`;
     expect(validateFirstPartyBlock(b, datasets).pass).toBe(false);
   });
 });
+
+// §5 value pass: Jev supplies value/thin per page and same-intent per pair; code owns the cut.
+import { buildPruneManifest } from "../../../scripts/seo/prune.mjs";
+
+describe("buildPruneManifest value pass", () => {
+  const site = "https://learnanything.pro";
+  const text = (s: string) => `${s} `.repeat(60); // ≥200 chars so the page is judged
+  const graph = {
+    pages: {
+      "/salary": { title: "Salary", text: text("salary bands"), links: [] },
+      "/deep": { title: "Deep", text: text("worked answers"), links: [] },
+      "/deep-copy": { title: "Deep copy", text: text("worked answers"), links: [] },
+      "/thin": { title: "Thin", text: text("generic advice"), links: [] },
+    },
+  };
+  const clusters = { clusters: [] };
+  const values = { "/deep": { value: 3.1, thin: 0.1 }, "/deep-copy": { value: 2.9, thin: 0.1 }, "/thin": { value: 1.2, thin: 0.8 } };
+  const valueJudge = async (pages: { path: string }[]) => pages.map((p) => values[p.path as keyof typeof values]);
+  const judge = async (pairs: unknown[]) => pairs.map(() => 0.95); // every cosine suspect is the same question
+
+  it("keeps merit pages, keeps valuable non-duplicates, noindexes thin and duplicate pages", async () => {
+    const m = await buildPruneManifest({
+      sitemapUrls: ["/salary", "/deep", "/deep-copy", "/thin"].map((p) => site + p),
+      pages90d: [{ path: "/salary", impressions: 40, clicks: 0, position: 30 }],
+      pages16mo: [],
+      graph,
+      clusters,
+      judge,
+      valueJudge,
+      write: false,
+    });
+    const keep = m.keep.map((k: { path: string }) => k.path);
+    const noindex = m.noindex.map((k: { path: string; reasons?: string[] }) => [k.path, k.reasons?.[0] ?? ""]);
+    expect(keep).toContain("/salary");
+    expect(keep).toContain("/deep");
+    expect(keep).not.toContain("/deep-copy"); // duplicates the higher-value keepable page
+    expect(noindex.find(([p]) => p === "/deep-copy")?.[1]).toMatch(/^dup-of-kept:\/deep/);
+    expect(noindex.find(([p]) => p === "/thin")?.[1]).toBe(""); // cut by value/thin, no judgment reason
+    expect(m.valuePass).toMatchObject({ applied: true, scored: 3, keepable: 2, rescued: 1, dupAmongKeepable: 1 });
+    expect(m.counts).toMatchObject({ keep: 2, noindex: 2, visiblePctAfter: 50 });
+  });
+});

@@ -43,8 +43,14 @@ export const THRESHOLDS = {
   IMPRESSIONS_KILL_FLOOR: 10, // 90d verdict: <this many impressions/30d ≈ dead cluster
   GATE_WINDOWS_DAYS: { crawl: 30, impressions: 60, verdict: 90 },
 
-  // §5 — prune
-  PRUNE_KEEP_TARGET: [150, 200], // of the current ~1,393 sitemap URLs
+  // §5 — prune. Cut points read against the 2026-09-20 site-wide scoring
+  // (1,393 pages, scripts/seo/page-value.mjs): value≥2.5 & thin<0.5 keeps
+  // 484 and noindexes 909 while losing 9% of 90d impressions; value≥3 keeps
+  // 121 but loses 18%; value≥2 keeps 785. The report's 150-200 target was
+  // unreachable without discarding pages with evidence or value.
+  PRUNE_MERIT_MIN_IMPRESSIONS_90D: 10, // GSC evidence that keeps a page on its own (1-9 is Google testing, not demand)
+  PRUNE_MIN_VALUE: 2.5, // Jev score position (0-4): ≥ "substantial" — a complete, specific answer
+  PRUNE_MAX_THIN: 0.5, // Jev noul: templated page — body would read the same with the title's subject swapped
   RESCUE_MAX_OUTLINKS: 25, // prune pass 2: pages with more body links are listing-shaped — their links are navigation, not endorsement
 
   // §4 — rank tracking

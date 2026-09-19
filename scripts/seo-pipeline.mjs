@@ -15,8 +15,9 @@
  *   • Long-tail per-cluster rank tracking replaces the 8 head terms (§4);
  *     head terms still available via --vanity.
  *   • Prune planning (§5): --prune-plan writes scripts/seo/prune-manifest.json
- *     (plan only). --prune hands the manifest to the gated executor — NEVER
- *     run by cron; requires a human review first.
+ *     (plan only; Jev page-value + same-intent judgments when TYPESAFE_API_KEY
+ *     is set). --prune hands the manifest to the gated executor — NEVER run
+ *     by cron; a human approves each noindex batch (docs/seo-autonomy.md).
  *
  * Usage:
  *   node scripts/seo-pipeline.mjs                         # daily cycle (cron.sh-compatible)
@@ -42,6 +43,7 @@ import { circuitBreakerState } from "./seo/gates.mjs";
 import { buildSiteGraph, graphStats, toPath } from "./seo/crawl.mjs";
 import { buildPruneManifest, executePrune } from "./seo/prune.mjs";
 import { sameIntent, isJevConfigured } from "./seo/same-intent.mjs";
+import { pageValues } from "./seo/page-value.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://learnanything.pro";
@@ -423,10 +425,14 @@ if (has("--prune-plan")) {
     await gscPageRows({ startDaysAgo: 92 }),
     await gscPageRows({ startDaysAgo: 480 }),
   ];
-  const manifest = await buildPruneManifest({ sitemapUrls: urls, pages90d, pages16mo, graph, clusters: clustersCfg, judge: isJevConfigured() ? sameIntent : null });
+  const jev = isJevConfigured();
+  const manifest = await buildPruneManifest({
+    sitemapUrls: urls, pages90d, pages16mo, graph, clusters: clustersCfg,
+    judge: jev ? sameIntent : null, valueJudge: jev ? pageValues : null,
+  });
   console.log(
-    `prune manifest → scripts/seo/prune-manifest.json · total ${manifest.counts.total} · keep ${manifest.counts.keep} · kill(410) ${manifest.counts.kill} · target ${manifest.counts.target}${manifest.counts.onTarget ? "" : " ⚠ off-target — review criteria"}`
+    `prune manifest → scripts/seo/prune-manifest.json · total ${manifest.counts.total} · keep ${manifest.counts.keep} · noindex ${manifest.counts.noindex} · visible% after ${manifest.counts.visiblePctAfter ?? "?"}`
   );
-  console.log(`per-cluster: ${Object.entries(manifest.perCluster).map(([k, v]) => `${k} ${v.keep}/${v.keep + v.kill}`).join(" · ")}`);
-  console.log("NOT executing — review manifest, then a human may run: node scripts/seo-pipeline.mjs --prune");
+  console.log(`per-cluster: ${Object.entries(manifest.perCluster).map(([k, v]) => `${k} ${v.keep}/${v.keep + v.noindex}`).join(" · ")}`);
+  console.log("NOT executing — a human reviews the manifest, then runs: node scripts/seo-pipeline.mjs --prune");
 }
