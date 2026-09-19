@@ -1,5 +1,6 @@
 import Groq from "groq-sdk";
 import { groqCreate } from "./groq";
+import { choice, isTypeSafeConfigured, systemOne } from "./typesafe";
 
 const VALID_SLUGS = [
   "product-strategy",
@@ -99,8 +100,21 @@ Reply with ONLY the slug of the best matching category. No explanation. One of: 
 }
 
 /**
+ * Jev Choice over the five slugs — the descriptions ARE the criteria, so the
+ * answer is a typed slug with a distribution, never a string to substring-match.
+ */
+async function classifyByJev(title: string, guest: string): Promise<CategorySlug> {
+  const answers = await systemOne(
+    { episode: { title, guest } },
+    { category: choice("Which category best fits `episode`, judged by what a PM would learn from it?", SLUG_DESCRIPTIONS) }
+  );
+  const slug = answers.category.choice as CategorySlug;
+  return VALID_SLUGS.includes(slug) ? slug : "product-strategy";
+}
+
+/**
  * Classify a Lenny's Podcast episode into one of the 5 core category slugs.
- * Uses fast keyword matching first; falls back to Groq LLM.
+ * Keyword match first (free); then Jev when configured; Groq as the last rung.
  */
 export async function classifyEpisodeTopic(
   groq: Groq,
@@ -109,5 +123,12 @@ export async function classifyEpisodeTopic(
 ): Promise<CategorySlug> {
   const fast = classifyByKeywords(title, guest);
   if (fast) return fast;
+  if (isTypeSafeConfigured()) {
+    try {
+      return await classifyByJev(title, guest);
+    } catch (e) {
+      console.error(`[archive-category] jev failed, falling back to groq: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
   return classifyByLLM(groq, title, guest);
 }
