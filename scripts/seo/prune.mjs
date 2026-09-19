@@ -13,12 +13,17 @@
  *      whose out-degree ≤ RESCUE_MAX_OUTLINKS — hub/listing pages (e.g.
  *      /learn) are navigation, not endorsement; unrestricted, this pass
  *      blanket-rescued 1,076/1,393 on the first dry run, or
- *   5. value pass (Jev, scripts/seo/page-value.mjs): a zero-evidence page
- *      stays when its standalone value ≥ PRUNE_MIN_VALUE, it is not templated
- *      (thin < PRUNE_MAX_THIN), and it does not answer the same reader
- *      question as a page already kept (embedding cosine nominates the
- *      nearest kept page; the same-intent judge decides). Two keepable
- *      near-duplicates keep the higher-value one.
+ *   5. value pass (Jev, scripts/seo/page-value.mjs): a generated page
+ *      (GENERATED_PREFIX, the AI-written /learn/pm/* mass) stays when its
+ *      standalone value ≥ PRUNE_MIN_VALUE — the "usable" level boundary, so
+ *      "shallow or worse" goes. Hand-built pages are editorial work: they
+ *      stay regardless of value and are listed under `rewrite` when they
+ *      score below the line. Either kind is noindexed when it answers the
+ *      same reader question as a page already kept (embedding cosine
+ *      nominates the nearest kept page; the same-intent judge decides).
+ *      Two keepable near-duplicates keep the hand-built one, then the
+ *      higher-value one. The "templated" probability is recorded, not cut
+ *      on: it flagged checklists and cheat sheets, not swapped-title pages.
  * Everything else → action "noindex" (reversible; 410 is a later, separate
  * human step — see the runbook). Without TYPESAFE_API_KEY the value pass is
  * skipped and the manifest is marked non-executable.
@@ -38,7 +43,9 @@ import { embedTexts, cosine } from "./embeddings.mjs";
 
 // Product surface + hubs + legal — never prune regardless of GSC data.
 export const CORE_ROUTES =
-  /^\/$|^\/(pricing|explore|learn|login|signup|dashboard|interview-prep|privacy|terms|refund|about|contact)$/;
+  /^\/$|^\/(pricing|explore|learn|login|signup|dashboard|interview-prep|privacy|terms|refund|about|contact|duolingo-for-product-managers|daily-challenge|leaderboard|social|interview-sprint|invite|jobs|role-roadmaps)$/;
+// AI-generated articles; everything else in the sitemap is a hand-built page.
+export const GENERATED_PREFIX = /^\/learn\/pm\//;
 
 export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, graph, clusters, embed = true, judge = null, valueJudge = null, write = true }) {
   const paths = sitemapUrls.map(toPath).filter(Boolean);
@@ -82,7 +89,8 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
   // cosine nominates the nearest kept page, the same-intent judge decides.
   const textOf = (path) => (graph?.pages?.[path]?.text || "").slice(0, 2000);
   const pageOf = (path) => ({ title: graph?.pages?.[path]?.title, path, text: textOf(path) });
-  let valuePass = { applied: false, judge: valueJudge ? "jev-page-value" : null, scored: 0, keepable: 0, dupOfKept: 0, dupOverruled: 0, dupAmongKeepable: 0, rescued: 0 };
+  let valuePass = { applied: false, judge: valueJudge ? "jev-page-value" : null, scored: 0, keepable: 0, rewrite: 0, dupOfKept: 0, dupOverruled: 0, dupAmongKeepable: 0, rescued: 0 };
+  const rewrite = [];
   const cands = entries.filter((e) => !e.keep && textOf(e.path).length >= 200);
   if (valueJudge && cands.length) {
     const values = await valueJudge(cands.map((e) => pageOf(e.path)));
@@ -91,10 +99,16 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
       const { value, thin } = values[i];
       e.value = Math.round(value * 100) / 100;
       e.thin = Math.round(thin * 100) / 100;
-      if (value >= THRESHOLDS.PRUNE_MIN_VALUE && thin < THRESHOLDS.PRUNE_MAX_THIN) keepable.push(e);
+      e.generated = GENERATED_PREFIX.test(e.path);
+      const usable = value >= THRESHOLDS.PRUNE_MIN_VALUE;
+      if (usable || !e.generated) keepable.push(e);
+      if (!usable && !e.generated) rewrite.push(e);
     });
-    keepable.sort((a, b) => b.value - a.value);
-    valuePass = { ...valuePass, applied: true, scored: cands.length, keepable: keepable.length };
+    // Leader order for duplicate pairs: hand-built first, then the page Google
+    // already shows (1-9 impressions), then value.
+    const imp = (e) => imp90.get(e.path)?.impressions ?? 0;
+    keepable.sort((a, b) => Number(a.generated) - Number(b.generated) || imp(b) - imp(a) || b.value - a.value);
+    valuePass = { ...valuePass, applied: true, scored: cands.length, keepable: keepable.length, rewrite: rewrite.length };
 
     const kept = entries.filter((e) => e.keep && textOf(e.path).length >= 200);
     if (embed && keepable.length) {
@@ -115,28 +129,29 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
       });
       const suspects = pairs.filter(Boolean);
       const verdicts = judge && suspects.length ? await judge(suspects.map((s) => ({ a: pageOf(s.e.path), b: pageOf(s.leader.path) }))) : null;
-      const dup = new Set();
+      const dup = new Map(); // path → leader path; leaders precede followers, so chains resolve forward
+      const finalLeader = (path) => (dup.has(path) ? finalLeader(dup.get(path)) : path);
       suspects.forEach((s, j) => {
         const same = verdicts ? verdicts[j] >= THRESHOLDS.SAME_INTENT_REJECT : true;
         if (!same) {
           valuePass.dupOverruled++;
           return;
         }
-        dup.add(s.e.path);
-        s.e.reasons.push(`dup-of-kept:${s.leader.path}${verdicts ? ` (jev ${verdicts[j].toFixed(2)})` : ""}`);
+        dup.set(s.e.path, s.leader.path);
+        s.e.reasons.push(`dup-of-kept:${finalLeader(s.leader.path)}${verdicts ? ` (jev ${verdicts[j].toFixed(2)})` : ""}`);
         if (s.leader.keep) valuePass.dupOfKept++;
         else valuePass.dupAmongKeepable++;
       });
       for (const e of keepable) {
         if (dup.has(e.path)) continue;
         e.keep = true;
-        e.reasons.push(`value=${e.value} thin=${e.thin}`);
+        e.reasons.push(e.generated ? `value=${e.value}` : `hand-built value=${e.value}`);
         valuePass.rescued++;
       }
     } else {
       for (const e of keepable) {
         e.keep = true;
-        e.reasons.push(`value=${e.value} thin=${e.thin}`);
+        e.reasons.push(e.generated ? `value=${e.value}` : `hand-built value=${e.value}`);
         valuePass.rescued++;
       }
     }
@@ -154,7 +169,7 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
 
   const manifest = {
     generatedAt: new Date().toISOString(),
-    criteria: `keep = impressions(90d)≥${THRESHOLDS.PRUNE_MERIT_MIN_IMPRESSIONS_90D} | clicks(16mo)>0 | core-route | body-linked (1 hop) from a merit-kept page with ≤${THRESHOLDS.RESCUE_MAX_OUTLINKS} body links | value pass: Jev value≥${THRESHOLDS.PRUNE_MIN_VALUE} and thin<${THRESHOLDS.PRUNE_MAX_THIN} and not same-intent (≥${THRESHOLDS.SAME_INTENT_REJECT}) as a kept page. Everything else → noindex (reversible). External-backlink data is not available via API — spot-check the noindex list against Search Console/ahrefs before executing.`,
+    criteria: `keep = impressions(90d)≥${THRESHOLDS.PRUNE_MERIT_MIN_IMPRESSIONS_90D} | clicks(16mo)>0 | core-route | body-linked (1 hop) from a merit-kept page with ≤${THRESHOLDS.RESCUE_MAX_OUTLINKS} body links | value pass: generated (/learn/pm/*) pages need Jev value≥${THRESHOLDS.PRUNE_MIN_VALUE}; hand-built pages stay (below the line → \`rewrite\`); either is noindexed when same-intent (≥${THRESHOLDS.SAME_INTENT_REJECT}) as a kept page. Everything else → noindex (reversible). External-backlink data is not available via API — spot-check the noindex list against Search Console/ahrefs before executing.`,
     dataWindows: { impressions: "90d", clicks: "~16mo (GSC max)" },
     counts: {
       total: entries.length,
@@ -165,6 +180,8 @@ export async function buildPruneManifest({ sitemapUrls, pages90d, pages16mo, gra
     },
     perCluster,
     valuePass,
+    // Hand-built pages that scored below the line: improve, do not remove.
+    rewrite: rewrite.map(({ path, value, thin }) => ({ path, value, thin })).sort((a, b) => a.value - b.value),
     keep: keep.map(({ path, cluster, reasons, value, thin }) => ({ path, cluster, reasons, ...(value != null ? { value, thin } : {}) })),
     // Noindex rows carry value/thin when scored and a reason only when a judgment put them there.
     noindex: noindex.map(({ path, cluster, action, reasons, value, thin }) => ({ path, cluster, action, ...(value != null ? { value, thin } : {}), ...(reasons?.length ? { reasons } : {}) })),
@@ -200,12 +217,14 @@ export function executePrune({ confirm = false } = {}) {
       "",
       `Manifest: scripts/seo/prune-manifest.json (${manifest.counts.noindex} → noindex, ${manifest.counts.keep} keep, visible% after ≈ ${manifest.counts.visiblePctAfter})`,
       "",
-      "1. Render <meta name=\"robots\" content=\"noindex\"> for every path in src/data/pruned-urls.json (layout or middleware). Pages stay live and reversible.",
-      "2. Filter those paths out of src/app/sitemap.ts — the sitemap lists only the keep set.",
-      "3. Serve a temporary /sitemap-removed.xml with the noindexed URLs for ~4-6 weeks so Googlebot processes the removals faster, then delete it.",
+      "1. src/middleware.ts sets X-Robots-Tag: noindex for every path in src/data/pruned-urls.json (src/lib/pruned.ts). Pages stay live and reversible.",
+      "2. src/app/sitemap.ts omits those paths — the sitemap lists only the keep set.",
+      "3. /sitemap-removed.xml lists the noindexed URLs. Submit it in Search Console; delete src/app/sitemap-removed.xml ~4-6 weeks after deploy.",
       "4. lastmod must stay truthful — do not touch lastmod on surviving pages.",
-      "5. DB rows for /learn/pm/* articles: set published=false; do NOT hard-delete.",
+      "5. DB rows for /learn/pm/* articles stay published=true — the header covers them. Do NOT hard-delete.",
       "6. After 60 days, if a path is still noindexed and nobody reversed it, it may become a 410 — a separate, human-run step.",
+      "",
+      "Rewrite, do not remove: the manifest's `rewrite` list holds hand-built pages that scored below the line.",
       "",
       "Expect visible% and impressions on the keep set to move over 2-6 months, step-changes around core updates.",
     ].join("\n") + "\n"

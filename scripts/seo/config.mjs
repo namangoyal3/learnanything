@@ -35,22 +35,25 @@ export const THRESHOLDS = {
   PROBE_BATCH_MAX: 10, // max live pages per cluster probe batch
 
   // §3 — portfolio circuit breaker + judgment windows
-  // Visible% = sitemap paths with ≥1 GSC impression / 90d (the Sitemaps API
-  // "indexed" count is dead — it read 0/1393 forever). 2026-09-20: 15.9%;
-  // the value-based prune (484 keep) lifts it to ~46%, which is what opens
-  // publishing again. Prune first, then publish, is the intended coupling.
+  // Visible% = sitemap paths with ≥1 GSC impression / 90d, `site:` probe
+  // queries excluded (the Sitemaps API "indexed" count is dead — it read
+  // 0/1393 forever). 2026-09-20: 1.7%; after the prune (751 keep): 2.9%.
+  // The breaker opens when 226 kept pages earn an impression in a 90d window
+  // — publishing is earned, not scheduled (docs/seo-autonomy.md).
   CIRCUIT_BREAKER_MIN_VISIBLE_PCT: 30, // halt ALL publishing below this
   IMPRESSIONS_KILL_FLOOR: 10, // 90d verdict: <this many impressions/30d ≈ dead cluster
   GATE_WINDOWS_DAYS: { crawl: 30, impressions: 60, verdict: 90 },
 
   // §5 — prune. Cut points read against the 2026-09-20 site-wide scoring
-  // (1,393 pages, scripts/seo/page-value.mjs): value≥2.5 & thin<0.5 keeps
-  // 484 and noindexes 909 while losing 9% of 90d impressions; value≥3 keeps
-  // 121 but loses 18%; value≥2 keeps 785. The report's 150-200 target was
-  // unreachable without discarding pages with evidence or value.
+  // (1,393 pages, scripts/seo/page-value.mjs). The line sits on a level
+  // boundary, not a midpoint: 2 = "usable" (one specific element), so
+  // "shallow or worse" goes. A midpoint (2.5) put 147 hand-built guides on
+  // the noindex list by a ±0.3 margin that the Score cannot resolve. Only
+  // generated /learn/pm/* pages are cut on value; hand-built ones are listed
+  // for rewrite. The "templated" noul is recorded, not cut on — it flagged
+  // checklists and cheat sheets, not swapped-title pages.
   PRUNE_MERIT_MIN_IMPRESSIONS_90D: 10, // GSC evidence that keeps a page on its own (1-9 is Google testing, not demand)
-  PRUNE_MIN_VALUE: 2.5, // Jev score position (0-4): ≥ "substantial" — a complete, specific answer
-  PRUNE_MAX_THIN: 0.5, // Jev noul: templated page — body would read the same with the title's subject swapped
+  PRUNE_MIN_VALUE: 2, // Jev score position (0-4): ≥ "usable" — at least one specific element a reader can act on
   RESCUE_MAX_OUTLINKS: 25, // prune pass 2: pages with more body links are listing-shaped — their links are navigation, not endorsement
 
   // §4 — rank tracking

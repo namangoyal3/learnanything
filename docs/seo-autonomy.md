@@ -43,8 +43,8 @@ and 1.0M input tokens ($0.04).
 ## Breaker
 
 The breaker halts every publish path below `CIRCUIT_BREAKER_MIN_VISIBLE_PCT`
-(30%). Visible% today: 1.7%. After the prune below: 4%. The breaker opens when
-127 of the 422 kept pages receive an impression in a 90-day window. That is
+(30%). Visible% today: 1.7%. After the prune below: 2.9%. The breaker opens when
+226 of the 751 kept pages receive an impression in a 90-day window. That is
 the definition of "Google engages with this site". Until then, new pages cost
 crawl budget and lower the quality prior. Nothing else opens it.
 
@@ -59,38 +59,48 @@ those crons died on, so the merge revives them.
 
 1. ≥ `PRUNE_MERIT_MIN_IMPRESSIONS_90D` (10) impressions in 90 days.
 2. Any click in 16 months.
-3. Core route (product surface, hubs, legal).
+3. Core route (product surface, hubs, legal, app pages).
 4. Body-linked from a merit-kept page with ≤ 25 body links.
-5. Value pass: Jev value ≥ `PRUNE_MIN_VALUE` (2.5 of 4, "substantial: a
-   complete, specific answer") and templated < `PRUNE_MAX_THIN` (0.5), and not
-   the same reader question as a kept page (cosine nominates, Jev decides).
+5. Value pass. A generated page (`/learn/pm/*`, AI-written) stays when its
+   Jev value ≥ `PRUNE_MIN_VALUE` (2 of 4, "usable: at least one specific
+   element"). A hand-built page stays regardless; below the line it goes on
+   the manifest's `rewrite` list. Either kind is noindexed when it answers the
+   same reader question as a kept page (cosine nominates, Jev decides ≥ 0.5).
 
-Everything else gets `noindex`. Result on 2026-09-20: keep 422, noindex 971
-(163 of 937 `/learn/pm/*` pages survive). Sensitivity, computed on the
-probe-inclusive data before the `site:` filter landed (hence 484, not 422):
+Everything else gets `noindex`. Result on 2026-09-20: keep 751, noindex 642
+(631 generated pages; 11 hand-built duplicates, each naming its kept twin),
+rewrite 9. Sensitivity, computed before the cut on probe-inclusive data:
 
 | Cut | Keep | Noindex | 90d impressions lost |
 | --- | --- | --- | --- |
-| value ≥ 2.0, thin < 0.5 | 785 | 608 | 4% |
-| **value ≥ 2.5, thin < 0.5** | **484** | **909** | **9%** |
-| value ≥ 3.0, thin < 0.5 | 121 | 1,272 | 18% |
+| **value ≥ 2.0** | **785** | **608** | **4%** |
+| value ≥ 2.5 | 484 | 909 | 9% |
+| value ≥ 3.0 | 121 | 1,272 | 18% |
+
+The line sits on a level boundary, not a midpoint. A first cut at 2.5 put 147
+hand-built guides on the noindex list by a ±0.3 margin the Score cannot
+resolve, and contradicted 6 of the 19 internal-link destinations placed the
+day before. The "templated" probability is recorded, not cut on: it flagged
+checklists and cheat sheets (`/pm-interview-cheat-sheet`, value 3.49), not
+swapped-title pages.
 
 The earlier 150–200 keep target is retired. It is not reachable without
 discarding pages that have evidence or value. Value tracks evidence the model
 never saw: mean value 1.99 at 0 impressions, 2.31 at 1–9, 2.36 at 10–99, 2.76
 at 100+.
 
-The prune runs in one batch, as `noindex`. A human approves the manifest and
-runs `node scripts/seo-pipeline.mjs --prune`, then deploys
-`seo-drafts/prune-runbook.md`. A page stays noindexed for 60 days before a
-human may 410 it. A manifest built without the Jev value pass is not
-executable.
+The prune ships as `noindex`: `src/middleware.ts` sets `X-Robots-Tag` for
+every path in `src/data/pruned-urls.json`, `src/app/sitemap.ts` omits them,
+and `/sitemap-removed.xml` lists them for Search Console. A page stays
+noindexed for 60 days before a human may 410 it. A manifest built without
+the Jev value pass is not executable.
 
 ## Human checklist (Monday)
 
 1. `tail -3 ~/Library/Logs/seo-pipeline.log` shows a run from today.
 2. Read the breaker line and the cluster table.
-3. First Monday: approve the prune manifest and deploy the runbook.
+3. First Monday: submit `/sitemap-removed.xml` in Search Console; read the
+   manifest's `rewrite` list.
 4. When `seo-drafts/internal-links-plan.md` changed: read it, run
    `node scripts/seo/internal-links.mjs --apply`, commit.
 5. Nothing else. Do not add pages by hand while the breaker is halted.
