@@ -35,7 +35,11 @@ export const THRESHOLDS = {
   PROBE_BATCH_MAX: 10, // max live pages per cluster probe batch
 
   // §3 — portfolio circuit breaker + judgment windows
-  CIRCUIT_BREAKER_MIN_INDEXED_PCT: 30, // halt ALL publishing below this sitemap-indexed%
+  // Visible% = sitemap paths with ≥1 GSC impression / 90d (the Sitemaps API
+  // "indexed" count is dead — it read 0/1393 forever). 2026-09-20: 15.9%;
+  // the value-based prune (484 keep) lifts it to ~46%, which is what opens
+  // publishing again. Prune first, then publish, is the intended coupling.
+  CIRCUIT_BREAKER_MIN_VISIBLE_PCT: 30, // halt ALL publishing below this
   IMPRESSIONS_KILL_FLOOR: 10, // 90d verdict: <this many impressions/30d ≈ dead cluster
   GATE_WINDOWS_DAYS: { crawl: 30, impressions: 60, verdict: 90 },
 

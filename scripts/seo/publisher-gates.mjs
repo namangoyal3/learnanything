@@ -13,7 +13,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { FILES } from "./config.mjs";
 import { getSitemapUrls, toPath, graphStats } from "./crawl.mjs";
 import { loadClusters, assignCluster } from "./clusters.mjs";
-import { gscIndexedPct } from "./gsc-pages.mjs";
+import { gscVisiblePct } from "./gsc-pages.mjs";
 import { runPublishGates } from "./gates.mjs";
 
 export function loadLedger() {
@@ -65,7 +65,7 @@ export async function runV2PublishGates({ title, body, cluster, inlinkFrom }) {
       .map(([p, v]) => ({ path: p, title: v.title, text: v.text }));
   }
 
-  const { pct } = await gscIndexedPct();
+  const { pct } = await gscVisiblePct(sitemapPaths);
 
   return runPublishGates(
     { title, body, cluster, inlinkFrom },
@@ -75,7 +75,7 @@ export async function runV2PublishGates({ title, body, cluster, inlinkFrom }) {
       existingPages,
       ledgerTimestamps: loadLedger().publishes.map((p) => p.ts),
       clusterCfg,
-      indexedPct: pct,
+      visiblePct: pct,
     }
   );
 }

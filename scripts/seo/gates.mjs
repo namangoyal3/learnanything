@@ -40,17 +40,17 @@ export function checkProbeBatch(cluster, batchMax = THRESHOLDS.PROBE_BATCH_MAX) 
 }
 
 // ── §3 portfolio circuit breaker ─────────────────────────────────────────────
-export function circuitBreakerState(indexedPct, min = THRESHOLDS.CIRCUIT_BREAKER_MIN_INDEXED_PCT) {
-  if (indexedPct == null) {
+export function circuitBreakerState(visiblePct, min = THRESHOLDS.CIRCUIT_BREAKER_MIN_VISIBLE_PCT) {
+  if (visiblePct == null) {
     return {
       halted: true,
-      reason: "indexed% unknown — no GSC API creds and no scripts/seo/gsc-manual.json fallback; failing closed",
+      reason: "visible% unknown — no GSC API creds and no scripts/seo/gsc-manual.json fallback; failing closed",
     };
   }
-  if (indexedPct < min) {
-    return { halted: true, reason: `sitemap indexed ${indexedPct.toFixed(1)}% < ${min}% — publishing halted until index health recovers` };
+  if (visiblePct < min) {
+    return { halted: true, reason: `sitemap visible ${visiblePct.toFixed(1)}% < ${min}% — publishing halted until the prune lands or visibility recovers` };
   }
-  return { halted: false, reason: `sitemap indexed ${indexedPct.toFixed(1)}% ≥ ${min}%` };
+  return { halted: false, reason: `sitemap visible ${visiblePct.toFixed(1)}% ≥ ${min}%` };
 }
 
 // ── §1a inlink plan ──────────────────────────────────────────────────────────
@@ -128,11 +128,11 @@ export async function checkDedupe(candidateText, existingPages, t = THRESHOLDS, 
 /**
  * candidate: { title, body, cluster: string, inlinkFrom: string[] }
  * ctx: { sitemapPaths:Set, depths|null, existingPages:[{path,text}],
- *        ledgerTimestamps:[], clusterCfg|null, indexedPct|null }
+ *        ledgerTimestamps:[], clusterCfg|null, visiblePct|null }
  */
 export async function runPublishGates(candidate, ctx) {
   const gates = [];
-  const breaker = circuitBreakerState(ctx.indexedPct);
+  const breaker = circuitBreakerState(ctx.visiblePct);
   gates.push({ id: "circuit-breaker", pass: !breaker.halted, detail: breaker.reason });
   gates.push({ id: "throughput-cap", ...checkThroughput(ctx.ledgerTimestamps) });
   gates.push({ id: "probe-batch", ...checkProbeBatch(ctx.clusterCfg) });
