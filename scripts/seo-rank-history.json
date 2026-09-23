@@ -1,57 +1,6 @@
 {
   "runs": [
     {
-      "ts": "2026-07-03T07:37:54.803Z",
-      "sitemapUrls": 1393,
-      "sitemapHash": "74075cf4ba55e1ca24111c10f37567eceb51974037ec4962bdca83c13a4b116e",
-      "indexnowSubmitted": 0,
-      "bingIndexed": 0,
-      "googleChecked": false,
-      "googleIndexedFirstPage": null,
-      "ranks": {
-        "product manager interview questions": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "pm interview prep": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "product sense interview": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "how to become a product manager": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "product manager salary india": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "flipkart pm interview": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "razorpay pm interview": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        },
-        "duolingo for product managers": {
-          "bing": null,
-          "mojeek": null,
-          "google": null
-        }
-      }
-    },
-    {
       "ts": "2026-07-03T08:37:55.190Z",
       "sitemapUrls": 1393,
       "sitemapHash": "74075cf4ba55e1ca24111c10f37567eceb51974037ec4962bdca83c13a4b116e",
@@ -73586,6 +73535,106 @@
           "metrics": {
             "impressions30d": 3,
             "impressionsPrev30d": 5,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 3
+          }
+        }
+      },
+      "ranks": {}
+    },
+    {
+      "ts": "2026-09-23T01:37:09.532Z",
+      "sitemapUrls": 1393,
+      "sitemapHash": "c93872e01337f4f3525beeb053d50d5e564ad6fc025c1030b5eba1ab6ef20f37",
+      "indexnowSubmitted": 0,
+      "bingIndexed": null,
+      "googleChecked": false,
+      "googleIndexedFirstPage": null,
+      "gsc": {
+        "sitemapIndexed": 0,
+        "sitemapSubmitted": 1393,
+        "impressions": 8,
+        "clicks": 0,
+        "topQuery": {
+          "q": "director of product management salary",
+          "impressions": 1,
+          "pos": 62
+        }
+      },
+      "gscVisiblePct": 1.7229002153625268,
+      "circuitBreaker": {
+        "halted": true,
+        "reason": "sitemap visible 1.7% < 30% — publishing halted until the prune lands or visibility recovers"
+      },
+      "clusterVerdicts": {
+        "learn-pm": {
+          "stage": "90d",
+          "verdict": "kill",
+          "reason": "~0 impressions after 90d — negative-value inventory; 410 via prune plan",
+          "metrics": {
+            "impressions30d": 0,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 0
+          }
+        },
+        "company-interviews": {
+          "stage": "90d",
+          "verdict": "kill",
+          "reason": "~0 impressions after 90d — negative-value inventory; 410 via prune plan",
+          "metrics": {
+            "impressions30d": 0,
+            "impressionsPrev30d": 1,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 0
+          }
+        },
+        "interview-skills": {
+          "stage": "90d",
+          "verdict": "continue",
+          "reason": "alive: 48 impressions/30d",
+          "metrics": {
+            "impressions30d": 48,
+            "impressionsPrev30d": 34,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 1
+          }
+        },
+        "salary-comp": {
+          "stage": "90d",
+          "verdict": "continue",
+          "reason": "alive: 20 impressions/30d",
+          "metrics": {
+            "impressions30d": 20,
+            "impressionsPrev30d": 14,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 1
+          }
+        },
+        "career-transitions": {
+          "stage": "90d",
+          "verdict": "kill",
+          "reason": "~0 impressions after 90d — negative-value inventory; 410 via prune plan",
+          "metrics": {
+            "impressions30d": 0,
+            "impressionsPrev30d": 0,
+            "clicks30d": 0,
+            "hasTop30Query": false,
+            "pagesWithImpressions": 0
+          }
+        },
+        "guides-frameworks": {
+          "stage": "90d",
+          "verdict": "freeze",
+          "reason": "3 impressions/30d after 90d — freeze; improve-or-prune per page",
+          "metrics": {
+            "impressions30d": 3,
+            "impressionsPrev30d": 3,
             "clicks30d": 0,
             "hasTop30Query": false,
             "pagesWithImpressions": 3
