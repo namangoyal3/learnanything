@@ -8,7 +8,33 @@ const schema = z.object({
   vertical: z.string().min(1),
 });
 
+// Same-origin pages (job-outreach) need nothing here. The ctrl+all landing
+// page is hosted elsewhere and posts its waitlist here, so those origins get
+// CORS; everything else keeps the browser's same-origin default.
+const ALLOWED_ORIGINS = new Set([
+  "https://namangoyal3.github.io",
+  "https://ctrlall.app",
+  "https://www.ctrlall.app",
+]);
+
+export function corsHeaders(req: Request): Record<string, string> {
+  const origin = req.headers.get("origin") ?? "";
+  if (!ALLOWED_ORIGINS.has(origin)) return {};
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "86400",
+    Vary: "Origin",
+  };
+}
+
+export async function OPTIONS(req: Request) {
+  return new NextResponse(null, { status: 204, headers: corsHeaders(req) });
+}
+
 export async function POST(req: Request) {
+  const headers = corsHeaders(req);
   try {
     const body = await req.json();
     const parsed = schema.safeParse(body);
@@ -16,7 +42,7 @@ export async function POST(req: Request) {
     if (!parsed.success) {
       return NextResponse.json(
         { error: "Invalid request" },
-        { status: 400 }
+        { status: 400, headers }
       );
     }
 
@@ -30,12 +56,12 @@ export async function POST(req: Request) {
       update: {},
     });
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true }, { headers });
   } catch (error) {
     console.error("article-signup error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500, headers }
     );
   }
 }
