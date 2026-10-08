@@ -153,12 +153,20 @@ export async function groqCreate(
       return await client.chat.completions.create({ ...params, stream: false }) as ChatCompletion;
     } catch (err: unknown) {
       const status = (err as { status?: number })?.status;
+      const message = err instanceof Error ? err.message : String(err);
       if (status === 429) {
         // Advance the global index so the next request also skips this exhausted key,
         // but only move forward — don't wrap back past already-tried keys.
         currentKeyIndex = (keyIndex + 1) % keys.length;
         console.warn(`[groq] rate-limited on key ${keyIndex + 1}, rotating to key ${currentKeyIndex + 1}`);
         continue;
+      }
+      // Groq retires models account-wide (llama-3.3-70b-versatile → 404
+      // model_not_found on 2026-09-19). No key will succeed; go straight to
+      // the OpenRouter chain instead of failing every caller.
+      if (status === 404 || (status === 400 && /decommission|not exist|no longer/i.test(message))) {
+        console.warn(`[groq] model unavailable (${status}): ${message.slice(0, 120)} — falling back to OpenRouter`);
+        return groqCreateViaOpenRouter(params);
       }
       throw err;
     }

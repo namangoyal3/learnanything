@@ -250,7 +250,7 @@ Return JSON with: title, page_type (pillar|comparison|use-case|glossary), target
       // sample (GEO-03). Anything not auto-publishable is created as a draft —
       // never dropped, never silently published.
       const score = scoreCitability(factors);
-      const judge = await judgeCitability(body);
+      const judge = await judgeCitability(body, blueprint.title || opp.query);
       const decision = decidePublish({
         citabilityScore: score,
         judge,
