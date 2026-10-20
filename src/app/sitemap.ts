@@ -49,6 +49,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${siteUrl}/meta-pm-interview`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/product-growth-loops`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/pm-tools-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/best-project-management-tools-small-teams-2026`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/cred-zepto-pm-interview`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/prd-template-guide`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/pm-mock-interview`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
