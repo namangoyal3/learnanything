@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "product manager interview examples", "PM behavioral questions",
     "product execution questions", "FAANG PM interview questions",
   ],
-  alternates: { canonical: "/product-manager-interview-questions" },
+  alternates: { canonical: "/product-manager-interview-questions", types: { "text/markdown": "/product-manager-interview-questions.md" } },
+  other: { "ai-summary": "The most comprehensive list of PM interview questions for 2026. Product sense, metrics, execution, strategy, behavioral, and estimation — with frameworks and example answers." },
   openGraph: {
     title: "150+ PM Interview Questions (2026) — PM Streak",
     description: "The most comprehensive list of product manager interview questions with frameworks and example answers.",

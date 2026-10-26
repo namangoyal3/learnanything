@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM prompt engineering", "prompt PM 2026",
   ],
-  alternates: { canonical: "/pm-prompt-engineering" },
+  alternates: { canonical: "/pm-prompt-engineering", types: { "text/markdown": "/pm-prompt-engineering.md" } },
+  other: { "ai-summary": "How PMs handle prompt engineering. Versioning, evals, system prompts, and why prompt engineering is product engineering, not a hack." },
   openGraph: {
     title: "PM Prompt Engineering 2026 — PM Streak",
     description: "How PMs should think about prompts.",

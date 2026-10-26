@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM india startups 2026", "indian startup PM jobs",
   ],
-  alternates: { canonical: "/pm-india-startups-2026" },
+  alternates: { canonical: "/pm-india-startups-2026", types: { "text/markdown": "/pm-india-startups-2026.md" } },
+  other: { "ai-summary": "The Indian startup landscape for PMs in 2026. Categories that are hiring, comp ranges, and red flags to watch." },
   openGraph: {
     title: "PM India Startups 2026 — PM Streak",
     description: "Indian startup landscape for PMs in 2026.",

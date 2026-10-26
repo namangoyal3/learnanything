@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product manager interview techniques",
     "listening user research", "interview design PM 2026",
   ],
-  alternates: { canonical: "/pm-customer-interviews" },
+  alternates: { canonical: "/pm-customer-interviews", types: { "text/markdown": "/pm-customer-interviews.md" } },
+  other: { "ai-summary": "How PMs run customer interviews that reveal real insight. Question design, listening techniques, avoiding bias, and turning interviews into shipped product decisions." },
   openGraph: {
     title: "PM Customer Interviews 2026 — PM Streak",
     description: "How PMs run customer interviews that reveal real insight — not just polite validation.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "associate product manager vs pm",
     "APM career path", "PM I vs PM II 2026",
   ],
-  alternates: { canonical: "/pm-apm-vs-pm" },
+  alternates: { canonical: "/pm-apm-vs-pm", types: { "text/markdown": "/pm-apm-vs-pm.md" } },
+  other: { "ai-summary": "APM vs PM — the real differences in scope, expectations, compensation, and promotion timeline. Which should you target based on your background?" },
   openGraph: {
     title: "APM vs PM 2026 — PM Streak",
     description: "Real differences between APM and PM roles — scope, compensation, career path.",

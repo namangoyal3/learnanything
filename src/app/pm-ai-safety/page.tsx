@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI safety", "AI guardrails 2026",
   ],
-  alternates: { canonical: "/pm-ai-safety" },
+  alternates: { canonical: "/pm-ai-safety", types: { "text/markdown": "/pm-ai-safety.md" } },
+  other: { "ai-summary": "How PMs build AI safety into product. Refusals, jailbreaks, content filters, and how to balance safety with usefulness." },
   openGraph: {
     title: "PM AI Safety 2026 — PM Streak",
     description: "Building safe AI products.",

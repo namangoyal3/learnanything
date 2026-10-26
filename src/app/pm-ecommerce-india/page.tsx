@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM ecommerce india", "Flipkart PM",
     "Meesho PM", "Amazon india PM 2026",
   ],
-  alternates: { canonical: "/pm-ecommerce-india" },
+  alternates: { canonical: "/pm-ecommerce-india", types: { "text/markdown": "/pm-ecommerce-india.md" } },
+  other: { "ai-summary": "How PMs build e-commerce products in India. COD, RTO, Tier-2/3, social commerce, and the brutal unit economics of Indian e-commerce." },
   openGraph: {
     title: "PM E-commerce India 2026 — PM Streak",
     description: "How PMs build e-commerce products in India.",

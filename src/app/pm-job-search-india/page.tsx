@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "where to find PM jobs india", "PM job portals india",
     "how to get PM job india", "product manager hiring 2026",
   ],
-  alternates: { canonical: "/pm-job-search-india" },
+  alternates: { canonical: "/pm-job-search-india", types: { "text/markdown": "/pm-job-search-india.md" } },
+  other: { "ai-summary": "The complete PM job search guide for India. Where to find PM roles, how to apply, what recruiters look for, and the channels that actually convert — not just job boards." },
   openGraph: {
     title: "PM Job Search in India 2026 — PM Streak",
     description: "Where to find PM jobs in India and how to actually stand out in the application pile.",

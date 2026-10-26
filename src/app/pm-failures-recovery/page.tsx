@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM post mortem", "how PMs recover from failure",
     "shipped feature no adoption 2026",
   ],
-  alternates: { canonical: "/pm-failures-recovery" },
+  alternates: { canonical: "/pm-failures-recovery", types: { "text/markdown": "/pm-failures-recovery.md" } },
+  other: { "ai-summary": "How to handle PM failures — failed launches, missed metrics, shipped features nobody used. Recovery steps, post-mortems, career protection, and lessons that compound." },
   openGraph: {
     title: "PM Failure Recovery Guide 2026 — PM Streak",
     description: "When your launch fails, your metric misses, or your feature gets no adoption — what to do next.",

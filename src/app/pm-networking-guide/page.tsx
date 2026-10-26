@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs build network", "coffee chat PM",
     "PM LinkedIn networking", "product manager community 2026",
   ],
-  alternates: { canonical: "/pm-networking-guide" },
+  alternates: { canonical: "/pm-networking-guide", types: { "text/markdown": "/pm-networking-guide.md" } },
+  other: { "ai-summary": "How PMs build real networks without being transactional. Where to meet other PMs, how to ask for coffee chats, and how to turn weak connections into strong ones." },
   openGraph: {
     title: "PM Networking Guide 2026 — PM Streak",
     description: "How PMs build real networks that help their careers — without being transactional.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM kids products", "COPPA PM",
     "children product 2026",
   ],
-  alternates: { canonical: "/pm-kids-products" },
+  alternates: { canonical: "/pm-kids-products", types: { "text/markdown": "/pm-kids-products.md" } },
+  other: { "ai-summary": "How PMs build products for kids. Parental consent, COPPA, screen time, and why kids products serve two users with conflicting incentives." },
   openGraph: {
     title: "PM Kids Products 2026 — PM Streak",
     description: "Designing for children and parents.",

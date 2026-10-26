@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Swiggy PM interview prep", "Swiggy APM interview", "how to crack Swiggy PM interview",
     "food delivery PM interview India", "Swiggy product manager interview 2026",
   ],
-  alternates: { canonical: "/swiggy-pm-interview" },
+  alternates: { canonical: "/swiggy-pm-interview", types: { "text/markdown": "/swiggy-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Swiggy PM interview. All rounds, ops-heavy product questions, what Swiggy PMs say the bar is, and a prep plan for PM and APM roles at India's leading food delivery platform." },
   openGraph: {
     title: "Swiggy PM Interview Guide 2026 — PM Streak",
     description: "All Swiggy PM interview rounds, ops-product questions, and a structured prep plan.",

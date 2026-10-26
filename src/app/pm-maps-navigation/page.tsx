@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM maps", "Google Maps PM",
     "navigation PM 2026",
   ],
-  alternates: { canonical: "/pm-maps-navigation" },
+  alternates: { canonical: "/pm-maps-navigation", types: { "text/markdown": "/pm-maps-navigation.md" } },
+  other: { "ai-summary": "How PMs build maps and navigation products. Routing quality, POI coverage, traffic, and why maps are the most operationally intense consumer category." },
   openGraph: {
     title: "PM Maps &amp; Navigation 2026 — PM Streak",
     description: "How PMs build maps and navigation products.",

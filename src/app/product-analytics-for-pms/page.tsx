@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "A/B testing product manager", "retention analysis PM",
     "funnel analysis product management", "amplitude mixpanel PM 2026",
   ],
-  alternates: { canonical: "/product-analytics-for-pms" },
+  alternates: { canonical: "/product-analytics-for-pms", types: { "text/markdown": "/product-analytics-for-pms.md" } },
+  other: { "ai-summary": "Master product analytics as a PM. Retention curves, funnel analysis, A/B testing, north star metrics, and how to use Amplitude and Mixpanel — explained without the data science jargon." },
   openGraph: {
     title: "Product Analytics for Product Managers 2026 — PM Streak",
     description: "Retention, funnels, A/B testing, and dashboards — product analytics explained for PMs.",

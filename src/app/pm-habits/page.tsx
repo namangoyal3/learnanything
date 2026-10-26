@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "daily PM practices", "what top PMs do",
     "PM career habits 2026",
   ],
-  alternates: { canonical: "/pm-habits" },
+  alternates: { canonical: "/pm-habits", types: { "text/markdown": "/pm-habits.md" } },
+  other: { "ai-summary": "10 daily, weekly, and monthly habits of great PMs. Small practices that compound into mastery over years. The habits that separate top PMs from average ones." },
   openGraph: {
     title: "10 PM Habits That Compound 2026 — PM Streak",
     description: "The daily, weekly, and monthly practices that compound into PM mastery.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "weak PM signs", "PM mistakes",
     "PM warning signs 2026",
   ],
-  alternates: { canonical: "/pm-anti-patterns" },
+  alternates: { canonical: "/pm-anti-patterns", types: { "text/markdown": "/pm-anti-patterns.md" } },
+  other: { "ai-summary": "12 PM anti-patterns that weak PMs do and strong PMs avoid. The habits that erode team trust, miss outcomes, and stall careers — and how to recognise them in yourself." },
   openGraph: {
     title: "12 PM Anti-Patterns 2026 — PM Streak",
     description: "12 habits that mark a weak PM — and how to recognise them in yourself.",

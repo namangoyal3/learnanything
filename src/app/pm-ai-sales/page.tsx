@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI sales", "Gong PM",
     "Clari PM", "AI SDR 2026",
   ],
-  alternates: { canonical: "/pm-ai-sales" },
+  alternates: { canonical: "/pm-ai-sales", types: { "text/markdown": "/pm-ai-sales.md" } },
+  other: { "ai-summary": "How PMs build AI sales tools. Call intelligence, autonomous SDRs, forecasting, and why sales is the fastest-monetising AI category." },
   openGraph: {
     title: "PM AI Sales Products 2026 — PM Streak",
     description: "How PMs build AI sales tools.",

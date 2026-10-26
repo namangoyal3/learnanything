@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM neo banking", "Jupiter PM",
     "Fi PM", "Niyo PM 2026",
   ],
-  alternates: { canonical: "/pm-neo-banking" },
+  alternates: { canonical: "/pm-neo-banking", types: { "text/markdown": "/pm-neo-banking.md" } },
+  other: { "ai-summary": "How PMs build neo banks in India. BaaS partnerships, RBI constraints, and why neobanks survive on adjacent product strength, not core banking." },
   openGraph: {
     title: "PM Neo Banking 2026 — PM Streak",
     description: "How PMs build neo banks in India.",

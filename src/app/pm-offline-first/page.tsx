@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM offline-first", "sync PM",
     "offline product 2026",
   ],
-  alternates: { canonical: "/pm-offline-first" },
+  alternates: { canonical: "/pm-offline-first", types: { "text/markdown": "/pm-offline-first.md" } },
+  other: { "ai-summary": "How PMs build offline-first products. Sync, conflict resolution, caching strategies, and why offline-first wins in India and emerging markets." },
   openGraph: {
     title: "PM Offline-First Products 2026 — PM Streak",
     description: "Designing for flaky connectivity.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM platform strategy", "platform vs feature",
     "platform PM", "ecosystem strategy 2026",
   ],
-  alternates: { canonical: "/pm-platform-strategy" },
+  alternates: { canonical: "/pm-platform-strategy", types: { "text/markdown": "/pm-platform-strategy.md" } },
+  other: { "ai-summary": "How PMs decide when to build a platform vs a point solution. APIs, ecosystems, partner strategy, and the cost of platforming too early." },
   openGraph: {
     title: "PM Platform Strategy 2026 — PM Streak",
     description: "When to platform, when to ship a feature, and how to tell the difference.",

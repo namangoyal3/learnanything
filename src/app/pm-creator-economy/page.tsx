@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM creator economy", "creator tools PM",
     "monetisation PM", "creator platform 2026",
   ],
-  alternates: { canonical: "/pm-creator-economy" },
+  alternates: { canonical: "/pm-creator-economy", types: { "text/markdown": "/pm-creator-economy.md" } },
+  other: { "ai-summary": "How PMs build for the creator economy. Monetisation, creator tools, audience growth, and the tension between creators and platforms." },
   openGraph: {
     title: "PM Creator Economy 2026 — PM Streak",
     description: "How PMs build products for creators — monetisation, tools, audience.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI marketing", "Jasper PM",
     "AI marketing 2026",
   ],
-  alternates: { canonical: "/pm-ai-marketing" },
+  alternates: { canonical: "/pm-ai-marketing", types: { "text/markdown": "/pm-ai-marketing.md" } },
+  other: { "ai-summary": "How PMs build AI marketing products. Brand voice, campaign orchestration, attribution, and why AI is squeezing marketing tool margins." },
   openGraph: {
     title: "PM AI Marketing Products 2026 — PM Streak",
     description: "How PMs build AI marketing products.",

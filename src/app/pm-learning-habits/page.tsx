@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM learning habits", "PM growth 2026",
   ],
-  alternates: { canonical: "/pm-learning-habits" },
+  alternates: { canonical: "/pm-learning-habits", types: { "text/markdown": "/pm-learning-habits.md" } },
+  other: { "ai-summary": "Daily, weekly, and monthly learning habits that compound for PMs. Inputs, reflection, and deliberate skill-building." },
   openGraph: {
     title: "PM Learning Habits 2026 — PM Streak",
     description: "How great PMs keep sharpening.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM negotiation", "roadmap negotiation",
     "PM salary negotiation", "scope negotiation 2026",
   ],
-  alternates: { canonical: "/pm-negotiation" },
+  alternates: { canonical: "/pm-negotiation", types: { "text/markdown": "/pm-negotiation.md" } },
+  other: { "ai-summary": "How PMs negotiate — roadmap trades, scope cuts, partner deals, and compensation. Tactics that work without burning relationships." },
   openGraph: {
     title: "PM Negotiation 2026 — PM Streak",
     description: "How PMs negotiate — roadmap, scope, salary.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM fitness apps", "Strava PM",
     "Cult.fit PM 2026",
   ],
-  alternates: { canonical: "/pm-fitness-apps" },
+  alternates: { canonical: "/pm-fitness-apps", types: { "text/markdown": "/pm-fitness-apps.md" } },
+  other: { "ai-summary": "How PMs build fitness apps. Wearable integrations, habit formation, content vs social, and why fitness has the highest seasonal churn in consumer." },
   openGraph: {
     title: "PM Fitness Apps 2026 — PM Streak",
     description: "How PMs build fitness apps.",

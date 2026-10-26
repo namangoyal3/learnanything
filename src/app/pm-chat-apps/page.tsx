@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM chat apps", "WhatsApp PM",
     "Telegram PM 2026",
   ],
-  alternates: { canonical: "/pm-chat-apps" },
+  alternates: { canonical: "/pm-chat-apps", types: { "text/markdown": "/pm-chat-apps.md" } },
+  other: { "ai-summary": "How PMs build chat apps. Delivery, encryption, groups, payments on top, and why chat is the stickiest consumer category." },
   openGraph: {
     title: "PM Chat Apps 2026 — PM Streak",
     description: "How PMs build chat apps.",

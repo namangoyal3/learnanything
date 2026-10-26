@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "customer requests PM", "deal desk PM",
     "PM GTM collaboration 2026",
   ],
-  alternates: { canonical: "/pm-b2b-sales-collaboration" },
+  alternates: { canonical: "/pm-b2b-sales-collaboration", types: { "text/markdown": "/pm-b2b-sales-collaboration.md" } },
+  other: { "ai-summary": "How B2B PMs collaborate with sales teams effectively. Intake processes, deal desk alignment, saying no, and turning sales signal into product insight." },
   openGraph: {
     title: "PM + Sales Collaboration 2026 — PM Streak",
     description: "How B2B PMs collaborate with sales without being owned by sales — structure, signal, and saying no.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM senior products", "elderly UX",
     "senior product PM 2026",
   ],
-  alternates: { canonical: "/pm-senior-products" },
+  alternates: { canonical: "/pm-senior-products", types: { "text/markdown": "/pm-senior-products.md" } },
+  other: { "ai-summary": "How PMs design products for seniors. Accessibility, trust, family-assisted UX, and why the Indian senior market is massively underserved." },
   openGraph: {
     title: "PM Senior Products 2026 — PM Streak",
     description: "Designing for older users in India.",

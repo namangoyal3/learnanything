@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM Bay Area India", "PM career tradeoffs 2026",
   ],
-  alternates: { canonical: "/pm-bay-area-vs-india" },
+  alternates: { canonical: "/pm-bay-area-vs-india", types: { "text/markdown": "/pm-bay-area-vs-india.md" } },
+  other: { "ai-summary": "How PMs should think about Bay Area vs India career paths. Comp, scope, mission, and the lifestyle differences that compound over a decade." },
   openGraph: {
     title: "PM Bay Area vs India 2026 — PM Streak",
     description: "Career tradeoffs compared.",

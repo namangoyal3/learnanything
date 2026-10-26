@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM LinkedIn", "PM personal brand",
     "LinkedIn PM 2026",
   ],
-  alternates: { canonical: "/pm-linkedin-branding" },
+  alternates: { canonical: "/pm-linkedin-branding", types: { "text/markdown": "/pm-linkedin-branding.md" } },
+  other: { "ai-summary": "How PMs build a LinkedIn brand. Content cadence, signal-to-noise, and why a well-kept LinkedIn drives better opportunities than applications." },
   openGraph: {
     title: "PM LinkedIn Branding 2026 — PM Streak",
     description: "Building a PM brand that drives inbound.",

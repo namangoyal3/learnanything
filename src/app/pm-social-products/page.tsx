@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM social products", "social app PM",
     "network effects", "social network 2026",
   ],
-  alternates: { canonical: "/pm-social-products" },
+  alternates: { canonical: "/pm-social-products", types: { "text/markdown": "/pm-social-products.md" } },
+  other: { "ai-summary": "How PMs build social products. Network effects, content loops, cold start, and why most social apps die in the first 18 months." },
   openGraph: {
     title: "PM Social Products 2026 — PM Streak",
     description: "How PMs build social products — network effects, content loops, cold start.",

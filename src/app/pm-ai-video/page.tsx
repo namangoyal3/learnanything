@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI video", "Sora PM",
     "Runway PM", "HeyGen PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-video" },
+  alternates: { canonical: "/pm-ai-video", types: { "text/markdown": "/pm-ai-video.md" } },
+  other: { "ai-summary": "How PMs build AI video products. Generation vs editing, consistency, length limits, and why AI video is the next wave of creative tooling." },
   openGraph: {
     title: "PM AI Video Products 2026 — PM Streak",
     description: "How PMs build AI video products.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "remote PM india", "FAANG PM india",
     "PM compensation india vs US 2026",
   ],
-  alternates: { canonical: "/pm-global-vs-india" },
+  alternates: { canonical: "/pm-global-vs-india", types: { "text/markdown": "/pm-global-vs-india.md" } },
+  other: { "ai-summary": "The real differences between global (US/EU) and India-based PM roles. Compensation, scope, career trajectory, and how to decide which path fits you." },
   openGraph: {
     title: "Global vs India PM Roles 2026 — PM Streak",
     description: "Compensation, scope, trajectory — the real differences between global and India-based PM roles.",

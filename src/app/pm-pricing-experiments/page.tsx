@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "pricing A/B test", "SaaS pricing experiment",
     "pricing research 2026",
   ],
-  alternates: { canonical: "/pm-pricing-experiments" },
+  alternates: { canonical: "/pm-pricing-experiments", types: { "text/markdown": "/pm-pricing-experiments.md" } },
+  other: { "ai-summary": "How PMs run pricing experiments that generate real signal. What to test, how to segment, legal considerations, and why most pricing tests go wrong." },
   openGraph: {
     title: "PM Pricing Experiments 2026 — PM Streak",
     description: "How PMs run pricing experiments that generate real signal — without breaking trust.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM gaming", "Dream11 PM",
     "MPL PM", "gaming india 2026",
   ],
-  alternates: { canonical: "/pm-gaming" },
+  alternates: { canonical: "/pm-gaming", types: { "text/markdown": "/pm-gaming.md" } },
+  other: { "ai-summary": "How PMs build gaming products in India. Retention loops, monetisation, real-money gaming regulation, and the unique PM challenges of games." },
   openGraph: {
     title: "PM Gaming 2026 — PM Streak",
     description: "How PMs build gaming products in India — retention, monetisation, regulation.",

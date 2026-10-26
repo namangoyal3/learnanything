@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs do competitor teardowns", "product analysis PM",
     "app teardown framework 2026",
   ],
-  alternates: { canonical: "/pm-competitor-teardown" },
+  alternates: { canonical: "/pm-competitor-teardown", types: { "text/markdown": "/pm-competitor-teardown.md" } },
+  other: { "ai-summary": "The complete guide to competitor teardowns. What to look at, how to structure the write-up, and how to turn teardowns into strategic insight." },
   openGraph: {
     title: "PM Competitor Teardown Guide 2026 — PM Streak",
     description: "How PMs tear down competitor products — what to study, how to structure, and turn into insight.",

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM MCP", "Model Context Protocol PM 2026",
   ],
-  alternates: { canonical: "/pm-mcp-products" },
+  alternates: { canonical: "/pm-mcp-products", types: { "text/markdown": "/pm-mcp-products.md" } },
+  other: { "ai-summary": "How PMs build on Model Context Protocol. Connector design, security, distribution, and what MCP means for the AI app stack." },
   openGraph: {
     title: "PM MCP Products 2026 — PM Streak",
     description: "Building for Anthropic&apos;s MCP ecosystem.",

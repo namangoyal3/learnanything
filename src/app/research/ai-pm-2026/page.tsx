@@ -38,8 +38,9 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/api/og?title=AI+in+Product+Management+2026+Research`],
     site: "@pmstreak",
   },
-  alternates: { canonical: `${SITE_URL}/research/ai-pm-2026` },
+  alternates: { canonical: `${SITE_URL}/research/ai-pm-2026`, types: { "text/markdown": "/research/ai-pm-2026.md" } },
   other: {
+    "ai-summary": "Survey of 2,047 PMs finds 312% AI adoption growth since 2024 and 47% reduction in planning time. 5-stage AI-PM maturity model with implementation roadmap.",
     citation_doi: DOI,
     citation_author: "PM Streak Research",
     citation_publication_date: PUBLISHED,

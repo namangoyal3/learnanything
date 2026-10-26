@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI coding", "Cursor PM",
     "Copilot PM", "AI IDE 2026",
   ],
-  alternates: { canonical: "/pm-ai-coding-tools" },
+  alternates: { canonical: "/pm-ai-coding-tools", types: { "text/markdown": "/pm-ai-coding-tools.md" } },
+  other: { "ai-summary": "How PMs build AI coding products. Context, latency, trust, eval loops, and the category that redefined developer experience." },
   openGraph: {
     title: "PM AI Coding Tools 2026 — PM Streak",
     description: "How PMs build AI coding products.",

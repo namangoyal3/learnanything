@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM spatial computing", "AR VR PM",
     "Vision Pro PM", "Meta Quest 2026",
   ],
-  alternates: { canonical: "/pm-spatial-computing" },
+  alternates: { canonical: "/pm-spatial-computing", types: { "text/markdown": "/pm-spatial-computing.md" } },
+  other: { "ai-summary": "How PMs build for spatial computing. AR/VR UX, input modalities, session length, and what works on Vision Pro vs Quest." },
   openGraph: {
     title: "PM Spatial Computing 2026 — PM Streak",
     description: "How PMs build for spatial computing and AR/VR.",

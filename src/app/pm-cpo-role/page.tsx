@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM CPO", "chief product officer",
     "VP product 2026",
   ],
-  alternates: { canonical: "/pm-cpo-role" },
+  alternates: { canonical: "/pm-cpo-role", types: { "text/markdown": "/pm-cpo-role.md" } },
+  other: { "ai-summary": "What CPOs actually do. Board relationships, product strategy, org design, and the difference between VP Product and CPO." },
   openGraph: {
     title: "PM CPO Role 2026 — PM Streak",
     description: "What chief product officers actually do.",

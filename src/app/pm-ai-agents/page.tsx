@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI agents", "agentic products",
     "AI agent PM", "agent product design 2026",
   ],
-  alternates: { canonical: "/pm-ai-agents" },
+  alternates: { canonical: "/pm-ai-agents", types: { "text/markdown": "/pm-ai-agents.md" } },
+  other: { "ai-summary": "How PMs build AI agents that actually work. Tool use, planning, guardrails, evals, and why most agent products ship broken." },
   openGraph: {
     title: "PM AI Agents 2026 — PM Streak",
     description: "How PMs build AI agents — tools, planning, guardrails, evals.",

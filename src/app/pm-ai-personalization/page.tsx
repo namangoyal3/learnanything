@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI personalization", "personalised AI 2026",
   ],
-  alternates: { canonical: "/pm-ai-personalization" },
+  alternates: { canonical: "/pm-ai-personalization", types: { "text/markdown": "/pm-ai-personalization.md" } },
+  other: { "ai-summary": "How PMs build AI personalization. Per-user prompts, memory, behavioural signals, and where personalisation stops feeling helpful and starts feeling creepy." },
   openGraph: {
     title: "PM AI Personalization 2026 — PM Streak",
     description: "Per-user tuning beyond recommendations.",

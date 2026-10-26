@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM agile rituals", "standup retro demo",
     "agile PM practices 2026",
   ],
-  alternates: { canonical: "/pm-agile-rituals" },
+  alternates: { canonical: "/pm-agile-rituals", types: { "text/markdown": "/pm-agile-rituals.md" } },
+  other: { "ai-summary": "How PMs run agile rituals without waste. Standups, retros, demos, refinement — what to keep, what to cut, what works in 2026." },
   openGraph: {
     title: "PM Agile Rituals 2026 — PM Streak",
     description: "How PMs run agile rituals without waste.",

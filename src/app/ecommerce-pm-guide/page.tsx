@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to become ecommerce PM", "category PM flipkart",
     "marketplace PM interview", "ecommerce PM skills 2026",
   ],
-  alternates: { canonical: "/ecommerce-pm-guide" },
+  alternates: { canonical: "/ecommerce-pm-guide", types: { "text/markdown": "/ecommerce-pm-guide.md" } },
+  other: { "ai-summary": "The complete e-commerce PM guide. Unit economics, category PM vs platform PM, the buyer-seller-ops triangle, and how to break into e-commerce PM at Flipkart, Amazon, and Meesho." },
   openGraph: {
     title: "E-commerce PM Guide 2026 — PM Streak",
     description: "Unit economics, category PM, buyer-seller dynamics — the e-commerce PM playbook.",

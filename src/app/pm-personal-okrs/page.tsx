@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM personal OKRs", "PM career goals 2026",
   ],
-  alternates: { canonical: "/pm-personal-okrs" },
+  alternates: { canonical: "/pm-personal-okrs", types: { "text/markdown": "/pm-personal-okrs.md" } },
+  other: { "ai-summary": "How PMs set personal OKRs for career growth. Skill, network, brand, and impact — and why writing them down dramatically increases follow-through." },
   openGraph: {
     title: "PM Personal OKRs 2026 — PM Streak",
     description: "Setting career goals that compound.",

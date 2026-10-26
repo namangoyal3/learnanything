@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM PRD writing", "product requirements document",
     "PRD template", "PRD 2026",
   ],
-  alternates: { canonical: "/pm-prd-writing" },
+  alternates: { canonical: "/pm-prd-writing", types: { "text/markdown": "/pm-prd-writing.md" } },
+  other: { "ai-summary": "How PMs write PRDs that drive alignment and ship. Structure, length, what to include, and why most PRDs rot in Notion." },
   openGraph: {
     title: "PM PRD Writing 2026 — PM Streak",
     description: "How PMs write PRDs that engineers actually read.",

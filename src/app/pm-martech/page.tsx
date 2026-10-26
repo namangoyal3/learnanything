@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM MarTech", "Braze PM",
     "MoEngage PM", "CDP 2026",
   ],
-  alternates: { canonical: "/pm-martech" },
+  alternates: { canonical: "/pm-martech", types: { "text/markdown": "/pm-martech.md" } },
+  other: { "ai-summary": "How PMs build MarTech products. CDP, engagement, attribution, and why MarTech is consolidating around data + activation." },
   openGraph: {
     title: "PM MarTech 2026 — PM Streak",
     description: "How PMs build MarTech products.",

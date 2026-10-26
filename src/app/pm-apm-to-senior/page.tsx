@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "APM senior PM path", "PM promotion",
     "PM career levels 2026",
   ],
-  alternates: { canonical: "/pm-apm-to-senior" },
+  alternates: { canonical: "/pm-apm-to-senior", types: { "text/markdown": "/pm-apm-to-senior.md" } },
+  other: { "ai-summary": "How APMs become senior PMs in 3 years. The skill shifts, visibility moves, and scope expansions that matter at each level." },
   openGraph: {
     title: "PM APM to Senior PM 2026 — PM Streak",
     description: "The 3-year leveling playbook.",

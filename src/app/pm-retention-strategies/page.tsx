@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "user retention design", "PM retention playbook",
     "retention product design 2026",
   ],
-  alternates: { canonical: "/pm-retention-strategies" },
+  alternates: { canonical: "/pm-retention-strategies", types: { "text/markdown": "/pm-retention-strategies.md" } },
+  other: { "ai-summary": "Seven proven retention strategies PMs use to keep users coming back. Habit loops, streaks, content, community, and more — with examples and when each works." },
   openGraph: {
     title: "PM Retention Strategies 2026 — PM Streak",
     description: "7 proven retention strategies with examples — habit loops, streaks, content, community, and more.",

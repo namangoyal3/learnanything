@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM wealth management", "Zerodha PM",
     "Groww PM", "investment PM india 2026",
   ],
-  alternates: { canonical: "/pm-wealth-management" },
+  alternates: { canonical: "/pm-wealth-management", types: { "text/markdown": "/pm-wealth-management.md" } },
+  other: { "ai-summary": "How PMs build wealth management products in India. Onboarding, KYC, trust, and the slow transition from distributor-led to direct investing." },
   openGraph: {
     title: "PM Wealth Management 2026 — PM Streak",
     description: "How PMs build wealth management products in India.",

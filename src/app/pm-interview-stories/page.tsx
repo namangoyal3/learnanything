@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "STAR stories PM", "PM interview story bank",
     "10 PM stories 2026",
   ],
-  alternates: { canonical: "/pm-interview-stories" },
+  alternates: { canonical: "/pm-interview-stories", types: { "text/markdown": "/pm-interview-stories.md" } },
+  other: { "ai-summary": "The 10 PM interview stories every candidate should prepare. Cover 80% of behavioural questions with 10 flexible stories — with templates and coverage map." },
   openGraph: {
     title: "PM Interview Stories Guide 2026 — PM Streak",
     description: "Build 10 PM stories that cover 80% of behavioural interview questions.",

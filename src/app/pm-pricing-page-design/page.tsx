@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM pricing page design", "pricing page conversion 2026",
   ],
-  alternates: { canonical: "/pm-pricing-page-design" },
+  alternates: { canonical: "/pm-pricing-page-design", types: { "text/markdown": "/pm-pricing-page-design.md" } },
+  other: { "ai-summary": "How PMs design pricing pages. Tier order, anchoring, CTAs, FAQs, and the patterns proven across thousands of A/B tests." },
   openGraph: {
     title: "PM Pricing Page Design 2026 — PM Streak",
     description: "Designing pricing pages that convert.",

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI onboarding", "AI product activation 2026",
   ],
-  alternates: { canonical: "/pm-ai-onboarding" },
+  alternates: { canonical: "/pm-ai-onboarding", types: { "text/markdown": "/pm-ai-onboarding.md" } },
+  other: { "ai-summary": "How PMs design AI product onboarding. Setting expectations, demoing capabilities, and avoiding the &apos;model is too smart for me&apos; cliff." },
   openGraph: {
     title: "PM AI Onboarding 2026 — PM Streak",
     description: "Onboarding users into AI products.",

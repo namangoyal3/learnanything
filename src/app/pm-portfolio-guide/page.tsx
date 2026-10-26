@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to build PM portfolio", "PM portfolio examples",
     "PM portfolio for freshers", "product manager portfolio website 2026",
   ],
-  alternates: { canonical: "/pm-portfolio-guide" },
+  alternates: { canonical: "/pm-portfolio-guide", types: { "text/markdown": "/pm-portfolio-guide.md" } },
+  other: { "ai-summary": "Build a PM portfolio that gets interviews — even if you don't have a PM title. Case studies, teardowns, side projects, PRDs, and real examples that hiring managers love." },
   openGraph: {
     title: "PM Portfolio Guide 2026 — PM Streak",
     description: "How to build a PM portfolio that gets interviews — with examples and templates.",

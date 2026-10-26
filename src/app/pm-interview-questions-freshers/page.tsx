@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "APM interview preparation freshers", "product manager fresher India 2026",
     "PM interview questions for new graduates",
   ],
-  alternates: { canonical: "/pm-interview-questions-freshers" },
+  alternates: { canonical: "/pm-interview-questions-freshers", types: { "text/markdown": "/pm-interview-questions-freshers.md" } },
+  other: { "ai-summary": "PM interview questions for freshers and new graduates. What interviewers actually ask, how to answer without PM experience, APM programs, and how to build your product portfolio from scratch." },
   openGraph: {
     title: "PM Interview Questions for Freshers 2026 — PM Streak",
     description: "How to crack your first PM interview with no PM experience — questions, answers, and portfolio tips.",

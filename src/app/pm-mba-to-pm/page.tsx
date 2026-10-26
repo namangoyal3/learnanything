@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "MBA to PM", "APM program",
     "PM recruiting 2026",
   ],
-  alternates: { canonical: "/pm-mba-to-pm" },
+  alternates: { canonical: "/pm-mba-to-pm", types: { "text/markdown": "/pm-mba-to-pm.md" } },
+  other: { "ai-summary": "How MBAs transition into PM roles. APM programs, company fit, and why the MBA-to-PM path has gotten more competitive in 2026." },
   openGraph: {
     title: "PM MBA to PM 2026 — PM Streak",
     description: "Breaking into PM from top MBA programs.",

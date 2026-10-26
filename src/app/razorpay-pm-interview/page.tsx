@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Razorpay PM interview prep", "Razorpay APM interview", "how to crack Razorpay PM interview",
     "fintech PM interview India", "Razorpay product manager interview 2026",
   ],
-  alternates: { canonical: "/razorpay-pm-interview" },
+  alternates: { canonical: "/razorpay-pm-interview", types: { "text/markdown": "/razorpay-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Razorpay PM interview. All rounds, fintech-specific questions, what Razorpay PMs say the bar is, and a prep plan for PM and APM roles at India's top fintech." },
   openGraph: {
     title: "Razorpay PM Interview Guide 2026 — PM Streak",
     description: "All Razorpay PM interview rounds, fintech questions, and a structured prep plan.",

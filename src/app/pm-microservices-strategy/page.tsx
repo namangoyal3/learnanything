@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM microservices", "PM architecture 2026",
   ],
-  alternates: { canonical: "/pm-microservices-strategy" },
+  alternates: { canonical: "/pm-microservices-strategy", types: { "text/markdown": "/pm-microservices-strategy.md" } },
+  other: { "ai-summary": "When microservices help, when they hurt, and what PMs need to know to navigate architecture decisions without overstepping into engineering territory." },
   openGraph: {
     title: "PM Microservices Strategy 2026 — PM Streak",
     description: "When PMs should care about architecture.",

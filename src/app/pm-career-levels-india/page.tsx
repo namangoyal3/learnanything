@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM titles india", "senior PM criteria india",
     "PM promotion criteria", "PM career levels 2026",
   ],
-  alternates: { canonical: "/pm-career-levels-india" },
+  alternates: { canonical: "/pm-career-levels-india", types: { "text/markdown": "/pm-career-levels-india.md" } },
+  other: { "ai-summary": "The complete PM level ladder in India. What each title means at Flipkart, Razorpay, Google, and more. Promotion criteria, typical years, and how companies calibrate levels." },
   openGraph: {
     title: "PM Career Levels in India 2026 — PM Streak",
     description: "PM level ladder, scope at each level, and promotion criteria at top Indian companies.",

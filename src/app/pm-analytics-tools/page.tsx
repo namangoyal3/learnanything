@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PostHog PM", "product analytics 2026",
     "PM tooling stack",
   ],
-  alternates: { canonical: "/pm-analytics-tools" },
+  alternates: { canonical: "/pm-analytics-tools", types: { "text/markdown": "/pm-analytics-tools.md" } },
+  other: { "ai-summary": "The analytics tools PMs actually use in 2026 — Mixpanel, Amplitude, PostHog, Heap, GA4. When to use which, pricing, and PM-specific workflows." },
   openGraph: {
     title: "PM Analytics Tools 2026 — PM Streak",
     description: "Mixpanel, Amplitude, PostHog, Heap, GA4 compared for PMs.",

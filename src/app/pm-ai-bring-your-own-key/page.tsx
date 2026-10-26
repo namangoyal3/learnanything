@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM BYOK", "bring your own key 2026",
   ],
-  alternates: { canonical: "/pm-ai-bring-your-own-key" },
+  alternates: { canonical: "/pm-ai-bring-your-own-key", types: { "text/markdown": "/pm-ai-bring-your-own-key.md" } },
+  other: { "ai-summary": "When PMs should offer bring-your-own-key for AI. Cost shifting, enterprise compliance, and the pricing implications." },
   openGraph: {
     title: "PM Bring-Your-Own-Key 2026 — PM Streak",
     description: "When BYOK is right for AI products.",

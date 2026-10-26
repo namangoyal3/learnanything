@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI feedback", "RLHF PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-feedback-loops" },
+  alternates: { canonical: "/pm-ai-feedback-loops", types: { "text/markdown": "/pm-ai-feedback-loops.md" } },
+  other: { "ai-summary": "How PMs design feedback loops in AI products. Thumbs, edits, RLHF, and how to capture signal without breaking the experience." },
   openGraph: {
     title: "PM AI Feedback Loops 2026 — PM Streak",
     description: "How AI products get smarter from users.",

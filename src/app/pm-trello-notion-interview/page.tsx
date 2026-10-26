@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Atlassian PM interview", "productivity PM interview",
     "dev tools PM interview 2026",
   ],
-  alternates: { canonical: "/pm-trello-notion-interview" },
+  alternates: { canonical: "/pm-trello-notion-interview", types: { "text/markdown": "/pm-trello-notion-interview.md" } },
+  other: { "ai-summary": "Crack PM interviews at Notion, Linear, Atlassian, and other productivity tools. What makes productivity PM unique — extensibility, power users, and the craft-over-growth tension." },
   openGraph: {
     title: "Notion, Linear, Atlassian PM Interview Guide 2026 — PM Streak",
     description: "PM interview prep for productivity tool companies — Notion, Linear, Atlassian, and more.",

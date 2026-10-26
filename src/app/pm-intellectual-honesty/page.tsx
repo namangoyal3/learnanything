@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "killing your own ideas", "PM credibility",
     "intellectual humility PM 2026",
   ],
-  alternates: { canonical: "/pm-intellectual-honesty" },
+  alternates: { canonical: "/pm-intellectual-honesty", types: { "text/markdown": "/pm-intellectual-honesty.md" } },
+  other: { "ai-summary": "How great PMs practise intellectual honesty. Admitting uncertainty, killing your own bad ideas, and the practices that build long-term credibility." },
   openGraph: {
     title: "Intellectual Honesty for PMs 2026 — PM Streak",
     description: "How PMs practise intellectual honesty — the discipline that compounds into long-term trust.",

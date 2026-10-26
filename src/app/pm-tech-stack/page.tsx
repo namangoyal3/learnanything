@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "technical concepts product manager", "APIs databases PM",
     "PM system design basics 2026",
   ],
-  alternates: { canonical: "/pm-tech-stack" },
+  alternates: { canonical: "/pm-tech-stack", types: { "text/markdown": "/pm-tech-stack.md" } },
+  other: { "ai-summary": "The technical concepts every PM needs to understand (without coding). APIs, databases, caches, queues, CDNs, observability — explained for PMs who work with engineers." },
   openGraph: {
     title: "PM Tech Stack Guide 2026 — PM Streak",
     description: "The technical concepts every PM should understand — APIs, databases, infra, explained for PMs.",

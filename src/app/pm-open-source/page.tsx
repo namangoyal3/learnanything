@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM open source", "OSS PM",
     "community PM 2026",
   ],
-  alternates: { canonical: "/pm-open-source" },
+  alternates: { canonical: "/pm-open-source", types: { "text/markdown": "/pm-open-source.md" } },
+  other: { "ai-summary": "How PMs build open source products. Community vs commercial, licensing, monetisation, and why open source is the most contributor-sensitive PM role." },
   openGraph: {
     title: "PM Open Source Products 2026 — PM Streak",
     description: "How PMs build open source products.",

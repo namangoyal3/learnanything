@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM strategic thinking", "creating structure PM",
     "senior PM ambiguity 2026",
   ],
-  alternates: { canonical: "/pm-ambiguity-navigation" },
+  alternates: { canonical: "/pm-ambiguity-navigation", types: { "text/markdown": "/pm-ambiguity-navigation.md" } },
+  other: { "ai-summary": "How PMs handle ambiguity. When the spec doesn&apos;t exist, leadership has no answer, and you&apos;re the one expected to create structure. The moves senior PMs actually use." },
   openGraph: {
     title: "PM Ambiguity Navigation 2026 — PM Streak",
     description: "How PMs handle ambiguity — when the spec doesn&apos;t exist and you&apos;re expected to create structure.",

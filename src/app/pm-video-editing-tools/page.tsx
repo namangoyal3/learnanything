@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM video editing", "CapCut PM",
     "Descript PM 2026",
   ],
-  alternates: { canonical: "/pm-video-editing-tools" },
+  alternates: { canonical: "/pm-video-editing-tools", types: { "text/markdown": "/pm-video-editing-tools.md" } },
+  other: { "ai-summary": "How PMs build video editing tools. Mobile vs desktop, AI assists, templates, and why CapCut disrupted the category by owning creator workflows on mobile." },
   openGraph: {
     title: "PM Video Editing Tools 2026 — PM Streak",
     description: "How PMs build video editing tools.",

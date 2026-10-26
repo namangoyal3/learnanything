@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "user persona template", "how to create personas PM",
     "JTBD personas 2026",
   ],
-  alternates: { canonical: "/pm-user-personas" },
+  alternates: { canonical: "/pm-user-personas", types: { "text/markdown": "/pm-user-personas.md" } },
+  other: { "ai-summary": "How PMs create useful user personas. Beyond demographics — behaviours, jobs, pain points, and the structure that keeps personas useful instead of wall art." },
   openGraph: {
     title: "PM User Personas Guide 2026 — PM Streak",
     description: "How PMs create personas that drive product decisions — behaviours, jobs, and structure.",

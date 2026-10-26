@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM insurtech", "Policybazaar PM",
     "Acko PM", "Digit PM", "insurtech india 2026",
   ],
-  alternates: { canonical: "/pm-insurtech" },
+  alternates: { canonical: "/pm-insurtech", types: { "text/markdown": "/pm-insurtech.md" } },
+  other: { "ai-summary": "How PMs build insurance products in India. Underwriting, claims, regulatory, and the slow shift from agent-led to digital-first insurance." },
   openGraph: {
     title: "PM Insurtech 2026 — PM Streak",
     description: "How PMs build insurance products in India.",

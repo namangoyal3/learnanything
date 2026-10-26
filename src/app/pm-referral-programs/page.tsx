@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "refer a friend PM", "K-factor",
     "growth referral 2026",
   ],
-  alternates: { canonical: "/pm-referral-programs" },
+  alternates: { canonical: "/pm-referral-programs", types: { "text/markdown": "/pm-referral-programs.md" } },
+  other: { "ai-summary": "How PMs design referral programs that drive real growth. The math, the psychology, great examples, and why most referral programs fail." },
   openGraph: {
     title: "PM Referral Programs 2026 — PM Streak",
     description: "How PMs design referral programs that actually drive growth — math, psychology, examples.",

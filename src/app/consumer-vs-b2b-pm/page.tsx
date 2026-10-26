@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "difference between B2B and B2C PM", "enterprise PM vs consumer PM",
     "which PM track should I choose 2026",
   ],
-  alternates: { canonical: "/consumer-vs-b2b-pm" },
+  alternates: { canonical: "/consumer-vs-b2b-pm", types: { "text/markdown": "/consumer-vs-b2b-pm.md" } },
+  other: { "ai-summary": "Consumer PM vs B2B PM — the real differences in metrics, users, roadmap process, success criteria, and what makes each uniquely challenging. Which is right for your career?" },
   openGraph: {
     title: "Consumer vs B2B PM 2026 — Key Differences | PM Streak",
     description: "Metrics, users, roadmaps, and career paths — the real differences between consumer and B2B product management.",

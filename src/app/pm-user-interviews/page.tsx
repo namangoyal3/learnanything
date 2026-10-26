@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM user interviews", "user research PM",
     "customer interviews", "interview technique 2026",
   ],
-  alternates: { canonical: "/pm-user-interviews" },
+  alternates: { canonical: "/pm-user-interviews", types: { "text/markdown": "/pm-user-interviews.md" } },
+  other: { "ai-summary": "How PMs run user interviews that actually change product decisions. Question design, note-taking, synthesis, and the traps interviewers fall into." },
   openGraph: {
     title: "PM User Interviews 2026 — PM Streak",
     description: "How to run interviews that actually change decisions.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "metrics dashboard PM", "Amplitude dashboard PM",
     "PM dashboard hierarchy 2026",
   ],
-  alternates: { canonical: "/pm-dashboard-design" },
+  alternates: { canonical: "/pm-dashboard-design", types: { "text/markdown": "/pm-dashboard-design.md" } },
+  other: { "ai-summary": "How PMs design dashboards that drive decisions. What to track, what to cut, the hierarchy of metrics, and how to make dashboards your team actually checks." },
   openGraph: {
     title: "PM Dashboard Design Guide 2026 — PM Streak",
     description: "How PMs design dashboards that drive decisions — hierarchy, what to track, what to cut.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM personalization", "personalisation PM",
     "1:1 personalization", "adaptive product 2026",
   ],
-  alternates: { canonical: "/pm-personalization" },
+  alternates: { canonical: "/pm-personalization", types: { "text/markdown": "/pm-personalization.md" } },
+  other: { "ai-summary": "How PMs design personalization that users trust. Segments vs 1:1, explainability, privacy tradeoffs, and measuring personalisation lift." },
   openGraph: {
     title: "PM Personalization 2026 — PM Streak",
     description: "How PMs design personalization that users trust.",

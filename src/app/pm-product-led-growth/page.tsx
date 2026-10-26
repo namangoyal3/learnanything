@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM product-led growth", "PLG PM",
     "self-serve PM", "product-led 2026",
   ],
-  alternates: { canonical: "/pm-product-led-growth" },
+  alternates: { canonical: "/pm-product-led-growth", types: { "text/markdown": "/pm-product-led-growth.md" } },
+  other: { "ai-summary": "How PMs build product-led growth motions. Self-serve onboarding, expansion loops, and why PLG isn&apos;t free acquisition." },
   openGraph: {
     title: "PM Product-Led Growth 2026 — PM Streak",
     description: "PLG playbook for product managers — self-serve, expansion, loops.",

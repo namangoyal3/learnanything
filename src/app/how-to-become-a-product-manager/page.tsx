@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to get into product management", "PM career switch", "APM program india",
     "product manager skills", "product management roadmap india 2026",
   ],
-  alternates: { canonical: "/how-to-become-a-product-manager" },
+  alternates: { canonical: "/how-to-become-a-product-manager", types: { "text/markdown": "/how-to-become-a-product-manager.md" } },
+  other: { "ai-summary": "The complete 2026 roadmap for becoming a product manager in India. From zero to APM to Senior PM — skills, certifications, APM programs, portfolio, and how to crack your first PM interview." },
   openGraph: {
     title: "How to Become a Product Manager in India (2026) — PM Streak",
     description: "The complete roadmap from zero to PM — skills, APM programs, portfolio, and interview prep.",

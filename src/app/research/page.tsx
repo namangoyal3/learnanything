@@ -30,7 +30,8 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/api/og?title=PM+Research+Hub`],
     site: "@pmstreak",
   },
-  alternates: { canonical: `${SITE_URL}/research` },
+  alternates: { canonical: `${SITE_URL}/research`, types: { "text/markdown": "/research.md" } },
+  other: { "ai-summary": "Original research on product management: AI adoption rates, framework effectiveness, salary data, and career trajectories. Peer-reviewed studies from PM Streak Research, CC BY 4.0." },
 };
 
 const papers = [

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs stay productive", "PM time management",
     "PM work from home productivity 2026",
   ],
-  alternates: { canonical: "/pm-productivity-guide" },
+  alternates: { canonical: "/pm-productivity-guide", types: { "text/markdown": "/pm-productivity-guide.md" } },
+  other: { "ai-summary": "How top PMs stay productive under constant demands. Time-blocking, async systems, saying no, and the productivity habits that separate high-output PMs from burned-out ones." },
   openGraph: {
     title: "PM Productivity Guide 2026 — PM Streak",
     description: "How top PMs stay productive under constant demands — systems, habits, and saying no.",

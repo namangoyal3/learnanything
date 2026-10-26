@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "real prioritisation PM", "prioritisation trade-offs",
     "impact effort example 2026",
   ],
-  alternates: { canonical: "/pm-prioritization-examples" },
+  alternates: { canonical: "/pm-prioritization-examples", types: { "text/markdown": "/pm-prioritization-examples.md" } },
+  other: { "ai-summary": "5 real-style prioritisation examples using RICE, impact-effort, and Kano. See how PMs actually weigh features and make trade-offs." },
   openGraph: {
     title: "PM Prioritisation Examples 2026 — PM Streak",
     description: "Real-style prioritisation examples — RICE, impact-effort, Kano — and trade-off reasoning.",

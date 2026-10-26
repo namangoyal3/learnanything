@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI meeting", "Fireflies PM",
     "Otter PM", "Read.ai PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-meeting" },
+  alternates: { canonical: "/pm-ai-meeting", types: { "text/markdown": "/pm-ai-meeting.md" } },
+  other: { "ai-summary": "How PMs build AI meeting products. Transcription, summarisation, action items, and why meetings are a killer use case for practical AI." },
   openGraph: {
     title: "PM AI Meeting Products 2026 — PM Streak",
     description: "How PMs build AI meeting products.",

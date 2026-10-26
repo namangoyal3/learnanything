@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM marketing partnership", "product marketing PM",
     "PMM PM 2026",
   ],
-  alternates: { canonical: "/pm-marketing-partnership" },
+  alternates: { canonical: "/pm-marketing-partnership", types: { "text/markdown": "/pm-marketing-partnership.md" } },
+  other: { "ai-summary": "How PMs partner with marketing. Positioning, launch, performance, content — and the tension between shipping and messaging." },
   openGraph: {
     title: "PM x Marketing 2026 — PM Streak",
     description: "How PMs partner with marketing.",

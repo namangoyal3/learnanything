@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM paywall design", "paywall conversion 2026",
   ],
-  alternates: { canonical: "/pm-paywall-design" },
+  alternates: { canonical: "/pm-paywall-design", types: { "text/markdown": "/pm-paywall-design.md" } },
+  other: { "ai-summary": "How PMs design paywalls. Hard vs soft, metered, freemium, and which patterns convert best for content, SaaS, and consumer apps." },
   openGraph: {
     title: "PM Paywall Design 2026 — PM Streak",
     description: "Hard, soft, and hybrid paywalls.",

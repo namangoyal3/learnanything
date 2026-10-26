@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "north star metric framework", "product prioritisation framework",
     "CIRCLES framework", "PM mental models", "product strategy frameworks",
   ],
-  alternates: { canonical: "/product-management-frameworks" },
+  alternates: { canonical: "/product-management-frameworks", types: { "text/markdown": "/product-management-frameworks.md" } },
+  other: { "ai-summary": "The 10 PM frameworks every product manager must know. RICE, JTBD, north star metric, CIRCLES, prioritisation matrices, and more — explained clearly with examples." },
   openGraph: {
     title: "10 Essential PM Frameworks (2026) — PM Streak",
     description: "RICE, JTBD, north star, CIRCLES, and 6 more — explained with examples.",

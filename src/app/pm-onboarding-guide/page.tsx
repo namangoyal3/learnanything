@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to design product onboarding", "onboarding flow best practices",
     "activation rate PM", "user onboarding frameworks 2026",
   ],
-  alternates: { canonical: "/pm-onboarding-guide" },
+  alternates: { canonical: "/pm-onboarding-guide", types: { "text/markdown": "/pm-onboarding-guide.md" } },
+  other: { "ai-summary": "The complete user onboarding playbook for PMs. How to design flows that activate, the psychology of first-time users, key metrics, and 10 onboarding anti-patterns to avoid." },
   openGraph: {
     title: "Product Onboarding Guide for PMs 2026 — PM Streak",
     description: "Design onboarding flows that activate users — frameworks, metrics, and anti-patterns.",

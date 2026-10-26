@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM API platforms", "API product manager",
     "API as product 2026",
   ],
-  alternates: { canonical: "/pm-api-platforms" },
+  alternates: { canonical: "/pm-api-platforms", types: { "text/markdown": "/pm-api-platforms.md" } },
+  other: { "ai-summary": "How PMs build API platforms. Schema design, versioning, quotas, SDKs, and why API PM is quietly one of the highest-leverage roles in SaaS." },
   openGraph: {
     title: "PM API Platforms 2026 — PM Streak",
     description: "Designing APIs as product.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM marketplace", "two-sided platform PM",
     "marketplace dynamics 2026",
   ],
-  alternates: { canonical: "/pm-marketplace-dynamics" },
+  alternates: { canonical: "/pm-marketplace-dynamics", types: { "text/markdown": "/pm-marketplace-dynamics.md" } },
+  other: { "ai-summary": "How PMs build marketplaces. Cold start, liquidity, take rate, disintermediation, and the economics of two-sided platforms." },
   openGraph: {
     title: "PM Marketplace Dynamics 2026 — PM Streak",
     description: "How PMs grow two-sided platforms.",

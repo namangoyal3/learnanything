@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM manager path", "group PM",
     "head of product 2026",
   ],
-  alternates: { canonical: "/pm-manager-path" },
+  alternates: { canonical: "/pm-manager-path", types: { "text/markdown": "/pm-manager-path.md" } },
+  other: { "ai-summary": "How PMs become managers. Why some love it and others hate it, the skill shifts, and when to make the jump to Group PM or Head of Product." },
   openGraph: {
     title: "PM Manager Path 2026 — PM Streak",
     description: "When and how to become a group PM.",

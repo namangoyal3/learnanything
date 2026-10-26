@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI security", "SOC AI",
     "autonomous security 2026",
   ],
-  alternates: { canonical: "/pm-ai-security" },
+  alternates: { canonical: "/pm-ai-security", types: { "text/markdown": "/pm-ai-security.md" } },
+  other: { "ai-summary": "How PMs build AI security products. Autonomous SOC, threat detection, and how security PM is adapting to AI-powered adversaries." },
   openGraph: {
     title: "PM AI Security 2026 — PM Streak",
     description: "How PMs build AI security products.",

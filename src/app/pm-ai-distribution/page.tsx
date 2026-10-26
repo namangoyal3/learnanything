@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI distribution", "AI go to market 2026",
   ],
-  alternates: { canonical: "/pm-ai-distribution" },
+  alternates: { canonical: "/pm-ai-distribution", types: { "text/markdown": "/pm-ai-distribution.md" } },
+  other: { "ai-summary": "How PMs distribute AI products. App stores, browser extensions, embedded in workflows, and the channels that work for AI specifically." },
   openGraph: {
     title: "PM AI Distribution 2026 — PM Streak",
     description: "How AI products reach users.",

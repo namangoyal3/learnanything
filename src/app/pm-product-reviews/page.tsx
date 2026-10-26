@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM product reviews", "product review meeting",
     "exec review PM", "product review 2026",
   ],
-  alternates: { canonical: "/pm-product-reviews" },
+  alternates: { canonical: "/pm-product-reviews", types: { "text/markdown": "/pm-product-reviews.md" } },
+  other: { "ai-summary": "How PMs run product reviews with leadership. Pre-reads, decision logs, handling pushback, and why most reviews fail." },
   openGraph: {
     title: "PM Product Reviews 2026 — PM Streak",
     description: "How PMs run product reviews that move work forward.",

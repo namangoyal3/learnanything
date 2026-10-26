@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM incident management", "on-call PM",
     "incident PM 2026",
   ],
-  alternates: { canonical: "/pm-incident-management" },
+  alternates: { canonical: "/pm-incident-management", types: { "text/markdown": "/pm-incident-management.md" } },
+  other: { "ai-summary": "How PMs show up during incidents. Severity triage, customer communication, post-mortem, and what PMs should and shouldn&apos;t do on-call." },
   openGraph: {
     title: "PM Incident Management 2026 — PM Streak",
     description: "The PM role when production is on fire.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Jira for product managers", "Figma for product managers",
     "Amplitude product manager", "best PM tools India 2026",
   ],
-  alternates: { canonical: "/pm-tools-guide" },
+  alternates: { canonical: "/pm-tools-guide", types: { "text/markdown": "/pm-tools-guide.md" } },
+  other: { "ai-summary": "The essential PM tools stack in 2026. Jira, Figma, Amplitude, Notion, Miro, SQL — what each tool does, when to use it, and the PM skill level you need for each." },
   openGraph: {
     title: "Product Manager Tools Guide 2026 — PM Streak",
     description: "The essential PM tools stack — Jira, Figma, Amplitude, Notion, SQL and more.",

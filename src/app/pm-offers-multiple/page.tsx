@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM offer comparison", "evaluating PM jobs",
     "PM job decision 2026",
   ],
-  alternates: { canonical: "/pm-offers-multiple" },
+  alternates: { canonical: "/pm-offers-multiple", types: { "text/markdown": "/pm-offers-multiple.md" } },
+  other: { "ai-summary": "How to evaluate multiple PM offers. Beyond comp: manager quality, scope, growth trajectory, and the decision framework that stops you from choosing on instinct alone." },
   openGraph: {
     title: "Handling Multiple PM Offers 2026 — PM Streak",
     description: "How to decide between PM offers beyond compensation — scope, manager, growth.",

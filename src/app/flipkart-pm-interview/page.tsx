@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Flipkart PM interview prep", "Flipkart APM interview", "how to crack Flipkart PM interview",
     "Flipkart product manager interview 2026", "Flipkart PM interview India",
   ],
-  alternates: { canonical: "/flipkart-pm-interview" },
+  alternates: { canonical: "/flipkart-pm-interview", types: { "text/markdown": "/flipkart-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Flipkart PM interview. All interview rounds, real questions asked at Flipkart, what Flipkart PMs say the bar is, and a prep plan for PM and APM roles." },
   openGraph: {
     title: "Flipkart PM Interview Guide 2026 — PM Streak",
     description: "All Flipkart PM interview rounds, real questions, and a prep plan.",

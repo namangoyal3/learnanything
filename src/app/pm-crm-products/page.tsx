@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM CRM products", "Salesforce PM",
     "HubSpot PM", "CRM 2026",
   ],
-  alternates: { canonical: "/pm-crm-products" },
+  alternates: { canonical: "/pm-crm-products", types: { "text/markdown": "/pm-crm-products.md" } },
+  other: { "ai-summary": "How PMs build CRM products. Pipeline UX, data quality, integrations, and why CRM is the highest-switching-cost category in SaaS." },
   openGraph: {
     title: "PM CRM Products 2026 — PM Streak",
     description: "How PMs build CRM products.",

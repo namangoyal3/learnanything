@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM fine tuning", "LLM fine tuning PM 2026",
   ],
-  alternates: { canonical: "/pm-fine-tuning" },
+  alternates: { canonical: "/pm-fine-tuning", types: { "text/markdown": "/pm-fine-tuning.md" } },
+  other: { "ai-summary": "When fine-tuning makes sense vs prompting or RAG. Cost, latency, control, and the real-world thresholds at which fine-tuning pays off." },
   openGraph: {
     title: "PM Fine-Tuning vs Prompting 2026 — PM Streak",
     description: "When PMs should push for fine-tuning.",

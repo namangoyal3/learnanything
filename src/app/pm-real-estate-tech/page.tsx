@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM real estate", "proptech PM",
     "NoBroker PM", "MagicBricks PM 2026",
   ],
-  alternates: { canonical: "/pm-real-estate-tech" },
+  alternates: { canonical: "/pm-real-estate-tech", types: { "text/markdown": "/pm-real-estate-tech.md" } },
+  other: { "ai-summary": "How PMs build real estate tech products. Listings quality, broker dynamics, renter vs buyer funnels, and the long-cycle problems of proptech." },
   openGraph: {
     title: "PM Real Estate Tech 2026 — PM Streak",
     description: "How PMs build real estate tech products.",

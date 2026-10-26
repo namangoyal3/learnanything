@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM interview morning", "how to prep PM interview day",
     "PM interview nervousness 2026",
   ],
-  alternates: { canonical: "/pm-interview-day-checklist" },
+  alternates: { canonical: "/pm-interview-day-checklist", types: { "text/markdown": "/pm-interview-day-checklist.md" } },
+  other: { "ai-summary": "The PM interview day checklist. What to prep 24 hours before, what to eat, what to wear, timing, and how to walk in calm and confident." },
   openGraph: {
     title: "PM Interview Day Checklist 2026 — PM Streak",
     description: "What to do the 24 hours before and day of your PM interview — prep, mindset, logistics.",

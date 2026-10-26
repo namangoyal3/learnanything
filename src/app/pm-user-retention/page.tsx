@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "D30 retention PM", "retention curve",
     "retention product design 2026",
   ],
-  alternates: { canonical: "/pm-user-retention" },
+  alternates: { canonical: "/pm-user-retention", types: { "text/markdown": "/pm-user-retention.md" } },
+  other: { "ai-summary": "How PMs build retention — the truest sign of product-market fit. Retention curves, benchmarks, levers, and why every PM should obsess over D30." },
   openGraph: {
     title: "PM User Retention 2026 — PM Streak",
     description: "How PMs build retention — the truest product-market fit signal.",

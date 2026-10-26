@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Duolingo onboarding", "Slack onboarding",
     "onboarding design 2026",
   ],
-  alternates: { canonical: "/pm-onboarding-examples" },
+  alternates: { canonical: "/pm-onboarding-examples", types: { "text/markdown": "/pm-onboarding-examples.md" } },
+  other: { "ai-summary": "5 great product onboardings broken down. Duolingo, Slack, Notion, Zepto, Razorpay — what they get right, what a PM would copy, and what they&apos;d change." },
   openGraph: {
     title: "PM Onboarding Examples 2026 — PM Streak",
     description: "5 great product onboardings broken down — what they get right and what a PM would change.",

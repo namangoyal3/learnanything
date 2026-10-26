@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI pricing tiers", "AI plans 2026",
   ],
-  alternates: { canonical: "/pm-ai-pricing-tiers" },
+  alternates: { canonical: "/pm-ai-pricing-tiers", types: { "text/markdown": "/pm-ai-pricing-tiers.md" } },
+  other: { "ai-summary": "How PMs design tiers for AI products. Free, Pro, Team, Enterprise — and what each tier should include for AI-first products." },
   openGraph: {
     title: "PM AI Pricing Tiers 2026 — PM Streak",
     description: "Designing plans for AI products.",

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM context windows", "long context PM 2026",
   ],
-  alternates: { canonical: "/pm-context-windows" },
+  alternates: { canonical: "/pm-context-windows", types: { "text/markdown": "/pm-context-windows.md" } },
+  other: { "ai-summary": "How PMs decide between long context, RAG, and memory architectures. Cost, latency, and accuracy tradeoffs for AI products." },
   openGraph: {
     title: "PM Context Windows 2026 — PM Streak",
     description: "Long context vs RAG vs memory.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM referral loops", "viral growth PM",
     "k-factor", "referral program design 2026",
   ],
-  alternates: { canonical: "/pm-referral-loops" },
+  alternates: { canonical: "/pm-referral-loops", types: { "text/markdown": "/pm-referral-loops.md" } },
+  other: { "ai-summary": "How PMs design referral loops that actually move the needle. K-factor, incentive design, friction reduction, and why most referral programs fail." },
   openGraph: {
     title: "PM Referral Loops 2026 — PM Streak",
     description: "How PMs design referral loops that actually move the needle.",

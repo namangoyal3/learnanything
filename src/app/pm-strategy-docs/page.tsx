@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM strategy docs", "product strategy",
     "strategy document PM 2026",
   ],
-  alternates: { canonical: "/pm-strategy-docs" },
+  alternates: { canonical: "/pm-strategy-docs", types: { "text/markdown": "/pm-strategy-docs.md" } },
+  other: { "ai-summary": "How PMs write strategy docs. Framing, bets, non-goals, and why most strategy docs describe status instead of forcing choices." },
   openGraph: {
     title: "PM Strategy Docs 2026 — PM Streak",
     description: "How PMs write strategy docs that shape decisions.",

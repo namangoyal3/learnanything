@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "expanding product", "growth after fit",
     "product scaling 2026",
   ],
-  alternates: { canonical: "/pm-scaling-from-pmf" },
+  alternates: { canonical: "/pm-scaling-from-pmf", types: { "text/markdown": "/pm-scaling-from-pmf.md" } },
+  other: { "ai-summary": "How PMs scale products after finding PMF. Widening the user base, expanding geography, protecting core, and the scaling traps that break PMF." },
   openGraph: {
     title: "PM Scaling From PMF 2026 — PM Streak",
     description: "How PMs scale products after PMF — wider users, geography, protecting core.",

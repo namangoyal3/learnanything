@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM jobs platforms", "LinkedIn PM",
     "Naukri PM", "Apna PM 2026",
   ],
-  alternates: { canonical: "/pm-jobs-platforms" },
+  alternates: { canonical: "/pm-jobs-platforms", types: { "text/markdown": "/pm-jobs-platforms.md" } },
+  other: { "ai-summary": "How PMs build jobs and hiring products. Candidate quality, match rate, Tier-2/3 market, and why Apna rewrote the blue-collar playbook." },
   openGraph: {
     title: "PM Jobs Platforms 2026 — PM Streak",
     description: "How PMs build jobs and hiring products.",

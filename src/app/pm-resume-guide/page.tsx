@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM resume guide", "product manager resume",
     "PM CV 2026",
   ],
-  alternates: { canonical: "/pm-resume-guide" },
+  alternates: { canonical: "/pm-resume-guide", types: { "text/markdown": "/pm-resume-guide.md" } },
+  other: { "ai-summary": "How PMs write resumes that get past recruiters. Structure, verbs, metrics, and why most PM resumes read the same boring way." },
   openGraph: {
     title: "PM Resume Guide 2026 — PM Streak",
     description: "How PMs write resumes that get interviews.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM skills practice routine", "how to study PM daily",
     "PM interview daily prep", "product manager habit 2026",
   ],
-  alternates: { canonical: "/pm-daily-practice" },
+  alternates: { canonical: "/pm-daily-practice", types: { "text/markdown": "/pm-daily-practice.md" } },
+  other: { "ai-summary": "The science of PM daily practice. What 15 minutes a day actually builds, what to practice, how to track progress, and why streaks beat cramming for interviews." },
   openGraph: {
     title: "PM Daily Practice Guide 2026 — PM Streak",
     description: "Why 15 minutes of daily practice beats cramming for PM interviews and mastery.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "quarterly roadmap PM", "OKR quarter planning",
     "PM sprint planning vs quarterly 2026",
   ],
-  alternates: { canonical: "/pm-quarterly-planning" },
+  alternates: { canonical: "/pm-quarterly-planning", types: { "text/markdown": "/pm-quarterly-planning.md" } },
+  other: { "ai-summary": "How PMs run quarterly planning. The 3-week planning cadence, OKR setting, capacity modelling, and how to leave buffer for the unknowns that always happen." },
   openGraph: {
     title: "PM Quarterly Planning Guide 2026 — PM Streak",
     description: "How PMs plan a quarter that actually ships — cadence, OKRs, and capacity modelling.",

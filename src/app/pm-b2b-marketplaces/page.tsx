@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM B2B marketplaces", "Udaan PM",
     "IndiaMART PM", "Zetwerk PM 2026",
   ],
-  alternates: { canonical: "/pm-b2b-marketplaces" },
+  alternates: { canonical: "/pm-b2b-marketplaces", types: { "text/markdown": "/pm-b2b-marketplaces.md" } },
+  other: { "ai-summary": "How PMs build B2B marketplaces. Supplier quality, credit, logistics, and why B2B marketplaces are fundamentally different from consumer ones." },
   openGraph: {
     title: "PM B2B Marketplaces 2026 — PM Streak",
     description: "How PMs build B2B marketplaces.",

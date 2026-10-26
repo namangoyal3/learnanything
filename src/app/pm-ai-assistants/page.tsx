@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI assistant", "personal AI 2026",
   ],
-  alternates: { canonical: "/pm-ai-assistants" },
+  alternates: { canonical: "/pm-ai-assistants", types: { "text/markdown": "/pm-ai-assistants.md" } },
+  other: { "ai-summary": "How PMs build AI assistants. Memory, personality, proactivity, and what makes an assistant feel like a real one." },
   openGraph: {
     title: "PM AI Assistants 2026 — PM Streak",
     description: "Designing personal AI assistants.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM mobile first", "mobile-first india",
     "Android PM", "Bharat mobile 2026",
   ],
-  alternates: { canonical: "/pm-mobile-first" },
+  alternates: { canonical: "/pm-mobile-first", types: { "text/markdown": "/pm-mobile-first.md" } },
+  other: { "ai-summary": "How PMs build mobile-first for India. Android bias, low-end devices, flaky connectivity, and why desktop-first thinking fails in Bharat." },
   openGraph: {
     title: "PM Mobile-First Design 2026 — PM Streak",
     description: "Why India is still a mobile-first PM market.",

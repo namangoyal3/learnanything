@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM SRE", "error budget",
     "SLO PM 2026",
   ],
-  alternates: { canonical: "/pm-sre-culture" },
+  alternates: { canonical: "/pm-sre-culture", types: { "text/markdown": "/pm-sre-culture.md" } },
+  other: { "ai-summary": "How PMs work with SRE teams. Error budgets, SLOs, postmortems, and why PMs own the tradeoff between velocity and reliability." },
   openGraph: {
     title: "PM SRE Culture 2026 — PM Streak",
     description: "How PMs work with SRE teams.",

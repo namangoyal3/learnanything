@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM voice products", "voice UX PM",
     "conversation design", "voice interface 2026",
   ],
-  alternates: { canonical: "/pm-voice-products" },
+  alternates: { canonical: "/pm-voice-products", types: { "text/markdown": "/pm-voice-products.md" } },
+  other: { "ai-summary": "How PMs design voice products. Conversation design, intent detection, latency budgets, and why voice is harder than it looks." },
   openGraph: {
     title: "PM Voice Products 2026 — PM Streak",
     description: "How PMs design voice products — conversation, intent, latency.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM evaluation criteria", "PM review",
     "measuring PM success 2026",
   ],
-  alternates: { canonical: "/pm-measuring-pm-success" },
+  alternates: { canonical: "/pm-measuring-pm-success", types: { "text/markdown": "/pm-measuring-pm-success.md" } },
+  other: { "ai-summary": "How PMs are actually measured. Beyond &apos;did you ship features?&apos; — the real signals PM managers and companies use to evaluate PMs across levels." },
   openGraph: {
     title: "How to Measure PM Success 2026 — PM Streak",
     description: "What PMs are actually evaluated on — beyond &apos;did you ship features?&apos;",

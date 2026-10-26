@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM launch strategy", "product launch",
     "GTM PM", "launch plan 2026",
   ],
-  alternates: { canonical: "/pm-launch-strategy" },
+  alternates: { canonical: "/pm-launch-strategy", types: { "text/markdown": "/pm-launch-strategy.md" } },
+  other: { "ai-summary": "How PMs plan launches that move metrics, not press. Launch tiers, rollout plans, press vs user-led launches, and common launch mistakes." },
   openGraph: {
     title: "PM Launch Strategy 2026 — PM Streak",
     description: "How PMs run real product launches.",

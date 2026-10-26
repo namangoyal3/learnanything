@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "MBA to product manager", "designer to product manager",
     "break into product management india 2026",
   ],
-  alternates: { canonical: "/transition-to-product-manager" },
+  alternates: { canonical: "/transition-to-product-manager", types: { "text/markdown": "/transition-to-product-manager.md" } },
+  other: { "ai-summary": "Switch to product management from engineering, design, consulting, or any background. What to build, what to say, and how to land your first PM role in India in 2026." },
   openGraph: {
     title: "Transition to Product Management 2026 — PM Streak",
     description: "How to switch to PM from engineering, design, consulting, or any background.",

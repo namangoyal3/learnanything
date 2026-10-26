@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM work life balance", "PM burnout 2026",
   ],
-  alternates: { canonical: "/pm-work-life-balance" },
+  alternates: { canonical: "/pm-work-life-balance", types: { "text/markdown": "/pm-work-life-balance.md" } },
+  other: { "ai-summary": "How PMs actually protect time. Calendar hygiene, saying no, avoiding meeting sprawl, and why the myth of 10x output comes at a cost." },
   openGraph: {
     title: "PM Work-Life Balance 2026 — PM Streak",
     description: "Protecting your time as a PM.",

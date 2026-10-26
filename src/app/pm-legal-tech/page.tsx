@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM legal tech", "Harvey PM",
     "Ironclad PM", "SpotDraft PM 2026",
   ],
-  alternates: { canonical: "/pm-legal-tech" },
+  alternates: { canonical: "/pm-legal-tech", types: { "text/markdown": "/pm-legal-tech.md" } },
+  other: { "ai-summary": "How PMs build legal tech products. Contract lifecycle, legal research, AI-assisted drafting, and the slow but real digitisation of legal workflows." },
   openGraph: {
     title: "PM Legal Tech 2026 — PM Streak",
     description: "How PMs build legal tech products.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "A/B testing culture", "ship and learn",
     "PM team culture 2026",
   ],
-  alternates: { canonical: "/pm-experimentation-culture" },
+  alternates: { canonical: "/pm-experimentation-culture", types: { "text/markdown": "/pm-experimentation-culture.md" } },
+  other: { "ai-summary": "How PMs build a team culture of experimentation. Habits, rituals, metrics, and how to shift a team from ship-and-hope to ship-and-learn." },
   openGraph: {
     title: "PM Experimentation Culture 2026 — PM Streak",
     description: "How PMs build team cultures of experimentation — habits, rituals, metrics.",

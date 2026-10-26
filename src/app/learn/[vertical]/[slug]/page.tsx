@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: article.description,
     alternates: {
       canonical: canonicalUrl,
+      types: { "text/markdown": `${canonicalUrl}.md` },
     },
     openGraph: {
       title: article.title,
@@ -55,6 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     other: {
       "article:modified_time": article.updatedAt.toISOString(),
+      "ai-summary": article.description,
       ...(article.publishedAt ? { "article:published_time": article.publishedAt.toISOString() } : {}),
     },
   };

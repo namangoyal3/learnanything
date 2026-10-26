@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "ops tools PM", "back-office PM",
     "employee-facing product PM 2026",
   ],
-  alternates: { canonical: "/pm-internal-tools" },
+  alternates: { canonical: "/pm-internal-tools", types: { "text/markdown": "/pm-internal-tools.md" } },
+  other: { "ai-summary": "Internal tools PM — what it is, what&apos;s hard about it, career trade-offs, and why great internal tools PMs are increasingly valuable at scaled companies." },
   openGraph: {
     title: "Internal Tools PM 2026 — PM Streak",
     description: "What internal tools PM is, what&apos;s hard about it, and why it&apos;s increasingly valuable.",

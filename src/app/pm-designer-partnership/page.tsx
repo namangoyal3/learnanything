@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM designer partnership", "PM design collaboration",
     "product designer PM 2026",
   ],
-  alternates: { canonical: "/pm-designer-partnership" },
+  alternates: { canonical: "/pm-designer-partnership", types: { "text/markdown": "/pm-designer-partnership.md" } },
+  other: { "ai-summary": "How PMs partner with designers. Handoff vs collaboration, what to bring to design reviews, and why your best product partner is your designer." },
   openGraph: {
     title: "PM Designer Partnership 2026 — PM Streak",
     description: "How PMs partner with designers well.",

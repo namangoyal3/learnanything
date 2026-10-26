@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "feature discovery PM", "feature usage",
     "driving adoption 2026",
   ],
-  alternates: { canonical: "/pm-feature-adoption" },
+  alternates: { canonical: "/pm-feature-adoption", types: { "text/markdown": "/pm-feature-adoption.md" } },
+  other: { "ai-summary": "Why shipped features often get low adoption and how PMs fix it. Discovery, education, habit, and the adoption levers that actually move metrics." },
   openGraph: {
     title: "PM Feature Adoption 2026 — PM Streak",
     description: "Why features get low adoption and how PMs fix it — discovery, education, habit.",

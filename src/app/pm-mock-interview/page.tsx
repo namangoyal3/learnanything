@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM interview practice", "where to find PM mock interview partner",
     "AI mock interview PM", "how to do mock interview product manager 2026",
   ],
-  alternates: { canonical: "/pm-mock-interview" },
+  alternates: { canonical: "/pm-mock-interview", types: { "text/markdown": "/pm-mock-interview.md" } },
+  other: { "ai-summary": "Run effective PM mock interviews. Where to find partners, how to give feedback, what to track, and how AI mock interviews compare to human practice — for every interview stage." },
   openGraph: {
     title: "PM Mock Interview Guide 2026 — PM Streak",
     description: "How to run effective PM mock interviews, get unbiased feedback, and track improvement.",

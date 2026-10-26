@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "statistical significance PM", "p-value PM",
     "A/B test segmentation 2026",
   ],
-  alternates: { canonical: "/pm-ab-test-analysis" },
+  alternates: { canonical: "/pm-ab-test-analysis", types: { "text/markdown": "/pm-ab-test-analysis.md" } },
+  other: { "ai-summary": "How PMs analyse A/B test results correctly. Statistical significance, effect size, segmentation, and the biases that lead to bad decisions." },
   openGraph: {
     title: "PM A/B Test Analysis 2026 — PM Streak",
     description: "How PMs read A/B test results correctly — significance, effect size, segmentation.",

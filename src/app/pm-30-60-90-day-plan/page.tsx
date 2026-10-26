@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "first 90 days PM template", "PM onboarding plan",
     "new PM first quarter 2026",
   ],
-  alternates: { canonical: "/pm-30-60-90-day-plan" },
+  alternates: { canonical: "/pm-30-60-90-day-plan", types: { "text/markdown": "/pm-30-60-90-day-plan.md" } },
+  other: { "ai-summary": "The 30-60-90 day PM plan template. Specific deliverables for each phase, how to share it with your manager, and what counts as a successful first quarter." },
   openGraph: {
     title: "PM 30-60-90 Day Plan 2026 — PM Streak",
     description: "The 30-60-90 day plan template for new PMs — deliverables, sharing with manager, and what success looks like.",

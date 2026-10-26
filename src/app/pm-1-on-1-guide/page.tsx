@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM 1:1 agenda", "1:1 with manager PM",
     "how PM runs 1:1 with engineers", "PM 1:1 template 2026",
   ],
-  alternates: { canonical: "/pm-1-on-1-guide" },
+  alternates: { canonical: "/pm-1-on-1-guide", types: { "text/markdown": "/pm-1-on-1-guide.md" } },
+  other: { "ai-summary": "How PMs run great 1:1s — with their manager, direct reports, and cross-functional partners. Agenda templates, question prompts, and the cadence that works." },
   openGraph: {
     title: "PM 1:1 Guide 2026 — PM Streak",
     description: "How PMs run great 1:1s — with managers, direct reports, and cross-functional peers.",

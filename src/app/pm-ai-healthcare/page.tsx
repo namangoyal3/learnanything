@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI healthcare", "ambient scribe PM",
     "clinical AI 2026",
   ],
-  alternates: { canonical: "/pm-ai-healthcare" },
+  alternates: { canonical: "/pm-ai-healthcare", types: { "text/markdown": "/pm-ai-healthcare.md" } },
+  other: { "ai-summary": "How PMs build AI healthcare products. Ambient scribes, clinical decision support, and why healthcare is AI&apos;s highest-stakes testing ground." },
   openGraph: {
     title: "PM AI Healthcare 2026 — PM Streak",
     description: "How PMs build AI healthcare products.",

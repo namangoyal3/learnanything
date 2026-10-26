@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM customer support", "Intercom PM",
     "Zendesk PM", "Freshdesk PM 2026",
   ],
-  alternates: { canonical: "/pm-customer-support-tech" },
+  alternates: { canonical: "/pm-customer-support-tech", types: { "text/markdown": "/pm-customer-support-tech.md" } },
+  other: { "ai-summary": "How PMs build customer support tech. AI deflection, omnichannel, agent productivity, and why support is the best AI testing ground." },
   openGraph: {
     title: "PM Customer Support Tech 2026 — PM Streak",
     description: "How PMs build customer support tech.",

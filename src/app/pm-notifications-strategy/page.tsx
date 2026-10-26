@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM notifications", "push notification strategy",
     "notification PM", "retention notifications 2026",
   ],
-  alternates: { canonical: "/pm-notifications-strategy" },
+  alternates: { canonical: "/pm-notifications-strategy", types: { "text/markdown": "/pm-notifications-strategy.md" } },
+  other: { "ai-summary": "How PMs design notification systems that drive retention without burning trust. Push, email, in-app, SMS — when to use each and how to measure." },
   openGraph: {
     title: "PM Notifications Strategy 2026 — PM Streak",
     description: "Push, email, in-app, SMS — how PMs design notification systems.",

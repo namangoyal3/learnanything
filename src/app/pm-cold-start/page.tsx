@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "launch with no users", "network effects early",
     "marketplace cold start 2026",
   ],
-  alternates: { canonical: "/pm-cold-start" },
+  alternates: { canonical: "/pm-cold-start", types: { "text/markdown": "/pm-cold-start.md" } },
+  other: { "ai-summary": "How PMs solve the cold start problem. Network effects without network, content without creators, marketplace without supply — and the proven strategies that work." },
   openGraph: {
     title: "PM Cold Start Problem 2026 — PM Streak",
     description: "How PMs solve cold start — network effects without network, content without creators.",

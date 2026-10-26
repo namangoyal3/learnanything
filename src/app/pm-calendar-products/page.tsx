@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM calendar products", "Cron calendar PM",
     "Motion PM", "scheduling 2026",
   ],
-  alternates: { canonical: "/pm-calendar-products" },
+  alternates: { canonical: "/pm-calendar-products", types: { "text/markdown": "/pm-calendar-products.md" } },
+  other: { "ai-summary": "How PMs build calendar products. Scheduling UX, availability sharing, AI-assisted scheduling, and why calendar is the hardest switch in productivity." },
   openGraph: {
     title: "PM Calendar Products 2026 — PM Streak",
     description: "How PMs build calendar products.",

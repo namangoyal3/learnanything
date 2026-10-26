@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "launch disaster PM", "customer escalation PM",
     "PM incident response 2026",
   ],
-  alternates: { canonical: "/pm-crisis-management" },
+  alternates: { canonical: "/pm-crisis-management", types: { "text/markdown": "/pm-crisis-management.md" } },
+  other: { "ai-summary": "How PMs handle crisis moments — production incidents, launch disasters, customer escalations. Triage, communication, post-mortem, and rebuilding trust." },
   openGraph: {
     title: "PM Crisis Management 2026 — PM Streak",
     description: "How PMs handle production incidents, launch disasters, and customer escalations.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM interview questions", "product management interview", "how to prepare for PM interview",
     "PM interview practice", "product manager interview tips",
   ],
-  alternates: { canonical: "/pm-interview-prep" },
+  alternates: { canonical: "/pm-interview-prep", types: { "text/markdown": "/pm-interview-prep.md" } },
+  other: { "ai-summary": "Ace your PM interview with daily practice. PM Streak gives you real product sense, metrics, and execution questions asked at Google, Meta, Amazon, and top startups — with AI feedback." },
   openGraph: {
     title: "PM Interview Prep — PM Streak",
     description: "Daily PM interview practice with AI feedback. Real questions from Google, Meta, Amazon.",

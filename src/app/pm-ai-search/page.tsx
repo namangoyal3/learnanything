@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI search", "Perplexity PM",
     "ChatGPT search", "AI search 2026",
   ],
-  alternates: { canonical: "/pm-ai-search" },
+  alternates: { canonical: "/pm-ai-search", types: { "text/markdown": "/pm-ai-search.md" } },
+  other: { "ai-summary": "How PMs build AI search products. Retrieval, grounding, citations, and why AI search is the most contested category since mobile search." },
   openGraph: {
     title: "PM AI Search 2026 — PM Streak",
     description: "How PMs build AI search products.",

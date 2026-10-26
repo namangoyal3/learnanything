@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM product analytics", "event taxonomy",
     "cohort analysis PM 2026",
   ],
-  alternates: { canonical: "/pm-product-analytics" },
+  alternates: { canonical: "/pm-product-analytics", types: { "text/markdown": "/pm-product-analytics.md" } },
+  other: { "ai-summary": "How PMs do product analytics that changes decisions. Event taxonomy, cohort analysis, causal inference, and what PMs should personally learn." },
   openGraph: {
     title: "PM Product Analytics 2026 — PM Streak",
     description: "Product analytics that changes decisions.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "free tier design", "PLG freemium",
     "free to paid conversion 2026",
   ],
-  alternates: { canonical: "/pm-freemium" },
+  alternates: { canonical: "/pm-freemium", types: { "text/markdown": "/pm-freemium.md" } },
+  other: { "ai-summary": "How PMs design freemium products that convert. What to put in free tier, what to gate, and the mistakes that make freemium a revenue trap." },
   openGraph: {
     title: "PM Freemium Strategy 2026 — PM Streak",
     description: "How PMs design freemium that converts — what to give away, what to gate.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "small team productivity",
     "project management comparison"
   ],
-  alternates: { canonical: "/best-project-management-tools-small-teams-2026" },
+  alternates: { canonical: "/best-project-management-tools-small-teams-2026", types: { "text/markdown": "/best-project-management-tools-small-teams-2026.md" } },
+  other: { "ai-summary": "Discover the top project management tools for small teams in 2026. Compare features, pricing, and AI capabilities to boost your team&apos;s productivity." },
   openGraph: {
     title: "Best Project Management Tools for Small Teams in 2026 | PM Streak",
     description: "Compare the top project management tools for small teams in 2026. Features, pricing, and AI capabilities analyzed.",

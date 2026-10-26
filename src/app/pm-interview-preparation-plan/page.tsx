@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to prepare for PM interview", "PM interview schedule 8 weeks",
     "PM interview checklist", "product manager interview prep India 2026",
   ],
-  alternates: { canonical: "/pm-interview-preparation-plan" },
+  alternates: { canonical: "/pm-interview-preparation-plan", types: { "text/markdown": "/pm-interview-preparation-plan.md" } },
+  other: { "ai-summary": "The complete 8-week PM interview preparation plan. Week-by-week schedule, what to study, how to practice, and how to track readiness — for Google, Flipkart, Razorpay, and top startups." },
   openGraph: {
     title: "PM Interview Preparation Plan 2026 — 8-Week Schedule | PM Streak",
     description: "8-week PM interview prep plan — week-by-week schedule, what to study, and readiness checklist.",

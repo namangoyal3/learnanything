@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM risk taking", "strategic bets PM",
     "product conviction 2026",
   ],
-  alternates: { canonical: "/pm-bold-bets" },
+  alternates: { canonical: "/pm-bold-bets", types: { "text/markdown": "/pm-bold-bets.md" } },
+  other: { "ai-summary": "How PMs make bold product bets when incremental work isn&apos;t enough. Distinguishing brave bets from reckless ones, structuring commitments, and recovering from bad bets." },
   openGraph: {
     title: "How PMs Make Bold Bets 2026 — PM Streak",
     description: "How PMs make bold bets — distinguishing brave from reckless, structuring, recovering.",

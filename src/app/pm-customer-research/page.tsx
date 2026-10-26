@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "mixed methods PM research", "continuous discovery",
     "customer research program 2026",
   ],
-  alternates: { canonical: "/pm-customer-research" },
+  alternates: { canonical: "/pm-customer-research", types: { "text/markdown": "/pm-customer-research.md" } },
+  other: { "ai-summary": "The PM guide to customer research. How to combine qualitative, quantitative, and passive signals into a research program that drives real product decisions." },
   openGraph: {
     title: "PM Customer Research Guide 2026 — PM Streak",
     description: "Combine qualitative, quantitative, and passive signals into research that drives decisions.",

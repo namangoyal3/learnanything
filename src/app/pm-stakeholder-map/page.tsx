@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "RACI PM", "influence-interest matrix",
     "stakeholder management PM 2026",
   ],
-  alternates: { canonical: "/pm-stakeholder-map" },
+  alternates: { canonical: "/pm-stakeholder-map", types: { "text/markdown": "/pm-stakeholder-map.md" } },
+  other: { "ai-summary": "How PMs map stakeholders systematically. Who to keep informed, who to consult, who decides. The template that prevents surprises." },
   openGraph: {
     title: "PM Stakeholder Map 2026 — PM Streak",
     description: "How PMs map stakeholders systematically — informed, consulted, deciders.",

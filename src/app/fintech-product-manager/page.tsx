@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "fintech PM interview questions", "payments PM india",
     "lending PM india", "fintech PM salary", "neo-banking PM 2026",
   ],
-  alternates: { canonical: "/fintech-product-manager" },
+  alternates: { canonical: "/fintech-product-manager", types: { "text/markdown": "/fintech-product-manager.md" } },
+  other: { "ai-summary": "The complete guide to becoming a fintech PM in India. Domain knowledge to master, top companies hiring, interview questions, salary ranges, and how to break in from adjacent roles." },
   openGraph: {
     title: "Fintech Product Manager Guide 2026 — PM Streak",
     description: "Domain knowledge, top companies, interview questions, and salary for fintech PMs in India.",

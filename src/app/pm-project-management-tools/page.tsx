@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM project management tools", "Jira PM",
     "Linear PM", "Asana PM 2026",
   ],
-  alternates: { canonical: "/pm-project-management-tools" },
+  alternates: { canonical: "/pm-project-management-tools", types: { "text/markdown": "/pm-project-management-tools.md" } },
+  other: { "ai-summary": "How PMs build project management tools. Views, workflows, notifications, and why adoption follows the path of least resistance." },
   openGraph: {
     title: "PM Project Management Tools 2026 — PM Streak",
     description: "How PMs build project management tools.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM content moderation", "trust and safety PM",
     "moderation PM", "T&S 2026",
   ],
-  alternates: { canonical: "/pm-content-moderation" },
+  alternates: { canonical: "/pm-content-moderation", types: { "text/markdown": "/pm-content-moderation.md" } },
+  other: { "ai-summary": "How PMs build content moderation at scale. Policy, automation, human review, and the tough calls no framework makes for you." },
   openGraph: {
     title: "PM Content Moderation 2026 — PM Streak",
     description: "How PMs build trust & safety systems — policy, automation, review.",

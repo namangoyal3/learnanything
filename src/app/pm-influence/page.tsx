@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM influence", "influence without authority",
     "PM soft skills", "PM leadership 2026",
   ],
-  alternates: { canonical: "/pm-influence" },
+  alternates: { canonical: "/pm-influence", types: { "text/markdown": "/pm-influence.md" } },
+  other: { "ai-summary": "How PMs influence engineers, designers, execs, and partners without formal authority. Trust, narrative, and the quiet tactics that work." },
   openGraph: {
     title: "PM Influence 2026 — PM Streak",
     description: "How PMs influence without formal authority.",

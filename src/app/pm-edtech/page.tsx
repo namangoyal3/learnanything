@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM edtech", "Byju's PM",
     "Unacademy PM", "PhysicsWallah PM", "edtech india 2026",
   ],
-  alternates: { canonical: "/pm-edtech" },
+  alternates: { canonical: "/pm-edtech", types: { "text/markdown": "/pm-edtech.md" } },
+  other: { "ai-summary": "How PMs build edtech products in India. Learning outcomes, engagement, parent-student dynamics, and why retention is the real battle." },
   openGraph: {
     title: "PM Edtech 2026 — PM Streak",
     description: "How PMs build edtech products in India — learning, engagement, retention.",

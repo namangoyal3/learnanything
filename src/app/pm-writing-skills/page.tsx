@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs write PRDs", "exec update writing PM",
     "PM strategy memo writing", "product manager communication 2026",
   ],
-  alternates: { canonical: "/pm-writing-skills" },
+  alternates: { canonical: "/pm-writing-skills", types: { "text/markdown": "/pm-writing-skills.md" } },
+  other: { "ai-summary": "How to write like a great PM. PRD structure, exec updates, strategy memos, and the writing habits that compound. With before/after examples." },
   openGraph: {
     title: "PM Writing Skills Guide 2026 — PM Streak",
     description: "How great PMs write — PRDs, exec updates, and strategy memos with real examples.",

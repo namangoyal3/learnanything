@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM pet tech", "pet care PM",
     "Supertails 2026",
   ],
-  alternates: { canonical: "/pm-pet-tech" },
+  alternates: { canonical: "/pm-pet-tech", types: { "text/markdown": "/pm-pet-tech.md" } },
+  other: { "ai-summary": "How PMs build pet tech products. Recurring subscriptions, vet integrations, and why pet tech follows a different repeat rate curve than other D2C." },
   openGraph: {
     title: "PM Pet Tech 2026 — PM Streak",
     description: "How PMs build pet tech products.",

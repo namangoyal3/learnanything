@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM fashion tech", "Myntra PM",
     "Ajio PM", "fashion ecommerce 2026",
   ],
-  alternates: { canonical: "/pm-fashion-tech" },
+  alternates: { canonical: "/pm-fashion-tech", types: { "text/markdown": "/pm-fashion-tech.md" } },
+  other: { "ai-summary": "How PMs build fashion tech products. Size and fit, returns, visual search, and why fashion is the hardest category in e-commerce." },
   openGraph: {
     title: "PM Fashion Tech 2026 — PM Streak",
     description: "How PMs build fashion tech products.",

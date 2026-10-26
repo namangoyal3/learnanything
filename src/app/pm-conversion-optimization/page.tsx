@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM conversion optimization", "CRO PM",
     "conversion rate PM 2026",
   ],
-  alternates: { canonical: "/pm-conversion-optimization" },
+  alternates: { canonical: "/pm-conversion-optimization", types: { "text/markdown": "/pm-conversion-optimization.md" } },
+  other: { "ai-summary": "How PMs run conversion rate optimization. Friction audits, progressive disclosure, payment flows, and why small wins compound." },
   openGraph: {
     title: "PM Conversion Optimization 2026 — PM Streak",
     description: "CRO playbook for product managers.",

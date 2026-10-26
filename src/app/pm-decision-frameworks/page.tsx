@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM decision frameworks", "RICE scoring",
     "ICE framework", "product decisions 2026",
   ],
-  alternates: { canonical: "/pm-decision-frameworks" },
+  alternates: { canonical: "/pm-decision-frameworks", types: { "text/markdown": "/pm-decision-frameworks.md" } },
+  other: { "ai-summary": "Decision frameworks PMs actually use. RICE, WSJF, ICE, two-way vs one-way doors, and when to skip frameworks entirely." },
   openGraph: {
     title: "PM Decision Frameworks 2026 — PM Streak",
     description: "How good PMs decide under uncertainty.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "launch success metrics PM", "PM launch KPIs",
     "launch measurement 2026",
   ],
-  alternates: { canonical: "/pm-launch-metrics" },
+  alternates: { canonical: "/pm-launch-metrics", types: { "text/markdown": "/pm-launch-metrics.md" } },
+  other: { "ai-summary": "What PMs should measure before, during, and after launch. Primary metrics, guardrails, leading vs lagging indicators, and how to decide when a launch is a win." },
   openGraph: {
     title: "PM Launch Metrics Guide 2026 — PM Streak",
     description: "What PMs should measure before, during, and after a launch — primary, guardrail, leading.",

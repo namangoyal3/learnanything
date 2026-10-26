@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM hardware", "IoT PM",
     "hardware product manager 2026",
   ],
-  alternates: { canonical: "/pm-hardware-products" },
+  alternates: { canonical: "/pm-hardware-products", types: { "text/markdown": "/pm-hardware-products.md" } },
+  other: { "ai-summary": "How PMs build hardware-enabled products. Long cycles, firmware, supply chain, and why hardware PM is fundamentally different from pure software." },
   openGraph: {
     title: "PM Hardware Products 2026 — PM Streak",
     description: "How PMs build hardware-enabled products.",

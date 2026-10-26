@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product manager user research", "opportunity solution tree",
     "how to do product discovery PM", "product discovery interview questions 2026",
   ],
-  alternates: { canonical: "/product-discovery-guide" },
+  alternates: { canonical: "/product-discovery-guide", types: { "text/markdown": "/product-discovery-guide.md" } },
+  other: { "ai-summary": "Master continuous product discovery. User interviews, opportunity mapping, assumption testing, and the Teresa Torres OST framework — so you build what users actually need." },
   openGraph: {
     title: "Product Discovery Guide 2026 — PM Streak",
     description: "Continuous discovery, user interviews, assumption testing — how PMs find the right problems.",

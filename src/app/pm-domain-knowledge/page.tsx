@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PM builds domain depth", "PM industry knowledge",
     "product manager domain learning 2026",
   ],
-  alternates: { canonical: "/pm-domain-knowledge" },
+  alternates: { canonical: "/pm-domain-knowledge", types: { "text/markdown": "/pm-domain-knowledge.md" } },
+  other: { "ai-summary": "How PMs build deep domain expertise. The habits that compound, what to read, who to follow, and how to become the person people call when they need domain insight." },
   openGraph: {
     title: "PM Domain Knowledge Guide 2026 — PM Streak",
     description: "How PMs build deep domain expertise and become the go-to person in their product area.",

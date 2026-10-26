@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM language learning", "Duolingo PM",
     "Babbel PM 2026",
   ],
-  alternates: { canonical: "/pm-language-learning" },
+  alternates: { canonical: "/pm-language-learning", types: { "text/markdown": "/pm-language-learning.md" } },
+  other: { "ai-summary": "How PMs build language learning apps. Streaks, gamification, AI tutors, and why Duolingo&apos;s approach is the most studied product design in consumer AI." },
   openGraph: {
     title: "PM Language Learning Apps 2026 — PM Streak",
     description: "How PMs build language learning apps.",

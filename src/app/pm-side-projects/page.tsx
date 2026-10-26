@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM portfolio projects", "side project for PM role",
     "no-code PM projects", "PM project ideas 2026",
   ],
-  alternates: { canonical: "/pm-side-projects" },
+  alternates: { canonical: "/pm-side-projects", types: { "text/markdown": "/pm-side-projects.md" } },
+  other: { "ai-summary": "Side projects that actually help PM careers. What to build, how to document PM thinking behind them, no-code options, and real examples of side projects that landed PM offers." },
   openGraph: {
     title: "PM Side Projects Guide 2026 — PM Streak",
     description: "Side projects that help PM careers — what to build, how to document, and real examples.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "OLX Autos PM", "used car marketplace PM india",
     "CarTrade product manager", "auto tech PM 2026",
   ],
-  alternates: { canonical: "/cars24-cartrade-pm-interview" },
+  alternates: { canonical: "/cars24-cartrade-pm-interview", types: { "text/markdown": "/cars24-cartrade-pm-interview.md" } },
+  other: { "ai-summary": "Crack PM interviews at Cars24, CarTrade, OLX Autos, and Spinny. The used car marketplace dynamics, inspection-pricing-financing flows, and what auto PMs actually build." },
   openGraph: {
     title: "Auto PM Interview Guide 2026 — Cars24, Spinny, OLX Autos | PM Streak",
     description: "PM interview guide for India&apos;s used car marketplaces — dynamics, rounds, and questions.",

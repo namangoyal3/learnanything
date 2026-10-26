@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM status update", "exec communication PM",
     "PM leadership update template 2026",
   ],
-  alternates: { canonical: "/pm-executive-updates" },
+  alternates: { canonical: "/pm-executive-updates", types: { "text/markdown": "/pm-executive-updates.md" } },
+  other: { "ai-summary": "How PMs write exec updates that get read. Structure, length, what to include, what to cut, and how to build trust through consistent communication." },
   openGraph: {
     title: "PM Executive Updates Guide 2026 — PM Streak",
     description: "How PMs write exec updates leadership actually reads — structure, length, and trust-building.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM data products", "data PM",
     "data product manager 2026",
   ],
-  alternates: { canonical: "/pm-data-products" },
+  alternates: { canonical: "/pm-data-products", types: { "text/markdown": "/pm-data-products.md" } },
+  other: { "ai-summary": "How PMs build data products. Pipelines, quality, governance, and the unique challenges when the product IS the data." },
   openGraph: {
     title: "PM Data Products 2026 — PM Streak",
     description: "How PMs build data products — pipelines, quality, governance.",

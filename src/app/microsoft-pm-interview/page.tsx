@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Microsoft PM interview prep", "Microsoft APM interview",
     "how to crack Microsoft PM interview", "Microsoft product manager interview 2026 India",
   ],
-  alternates: { canonical: "/microsoft-pm-interview" },
+  alternates: { canonical: "/microsoft-pm-interview", types: { "text/markdown": "/microsoft-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Microsoft PM interview. All rounds including design, strategy, and behavioural, real questions, what Microsoft PMs say the bar is, and a complete prep plan." },
   openGraph: {
     title: "Microsoft PM Interview Guide 2026 — PM Streak",
     description: "All Microsoft PM interview rounds, real questions, and a structured prep plan.",

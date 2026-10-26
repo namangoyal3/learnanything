@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "engineer to PM", "software engineer PM transition 2026",
   ],
-  alternates: { canonical: "/pm-engineer-to-pm" },
+  alternates: { canonical: "/pm-engineer-to-pm", types: { "text/markdown": "/pm-engineer-to-pm.md" } },
+  other: { "ai-summary": "How engineers become PMs. Strengths they bring, habits to unlearn, and why ex-engineers often make the best technical PMs." },
   openGraph: {
     title: "PM Engineer to PM 2026 — PM Streak",
     description: "How engineers become PMs.",

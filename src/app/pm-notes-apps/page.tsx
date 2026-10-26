@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM notes apps", "Notion PM",
     "Obsidian PM", "notes app 2026",
   ],
-  alternates: { canonical: "/pm-notes-apps" },
+  alternates: { canonical: "/pm-notes-apps", types: { "text/markdown": "/pm-notes-apps.md" } },
+  other: { "ai-summary": "How PMs build notes and knowledge apps. Blocks vs pages, sync, AI-assisted writing, and why notes apps compound through personal daily use." },
   openGraph: {
     title: "PM Notes Apps 2026 — PM Streak",
     description: "How PMs build notes and knowledge apps.",

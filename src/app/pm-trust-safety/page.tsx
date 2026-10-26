@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM trust safety", "fraud PM",
     "abuse prevention PM 2026",
   ],
-  alternates: { canonical: "/pm-trust-safety" },
+  alternates: { canonical: "/pm-trust-safety", types: { "text/markdown": "/pm-trust-safety.md" } },
+  other: { "ai-summary": "How PMs build trust and safety products. Fraud detection, abuse prevention, identity verification, and why T&amp;S is increasingly central to platform economics." },
   openGraph: {
     title: "PM Trust &amp; Safety 2026 — PM Streak",
     description: "How PMs build trust and safety products.",

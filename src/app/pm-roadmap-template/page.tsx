@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "now next later roadmap", "outcome roadmap PM",
     "product roadmap example 2026",
   ],
-  alternates: { canonical: "/pm-roadmap-template" },
+  alternates: { canonical: "/pm-roadmap-template", types: { "text/markdown": "/pm-roadmap-template.md" } },
+  other: { "ai-summary": "The PM roadmap template that actually gets used. Outcome-based structure, visualisation patterns, how to handle stakeholder asks, and the now/next/later format." },
   openGraph: {
     title: "PM Roadmap Template 2026 — PM Streak",
     description: "How to structure a product roadmap that actually gets used — outcome-based, now/next/later.",

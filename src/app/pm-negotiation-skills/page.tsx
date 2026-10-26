@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM scope negotiation", "PM stakeholder negotiation",
     "how PMs negotiate priorities 2026",
   ],
-  alternates: { canonical: "/pm-negotiation-skills" },
+  alternates: { canonical: "/pm-negotiation-skills", types: { "text/markdown": "/pm-negotiation-skills.md" } },
+  other: { "ai-summary": "How PMs negotiate — scope with engineering, priorities with leadership, resources with peers, and timelines with customers. Scripts, principles, and common pitfalls." },
   openGraph: {
     title: "PM Negotiation Skills Guide 2026 — PM Streak",
     description: "How PMs negotiate scope, priorities, resources, and timelines effectively.",

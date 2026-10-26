@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM LLM routing", "model selection PM 2026",
   ],
-  alternates: { canonical: "/pm-llm-routing" },
+  alternates: { canonical: "/pm-llm-routing", types: { "text/markdown": "/pm-llm-routing.md" } },
+  other: { "ai-summary": "How PMs design model routing. Cost, latency, capability tiers, and why model routing is the single biggest cost lever for AI products." },
   openGraph: {
     title: "PM LLM Routing 2026 — PM Streak",
     description: "Picking the right model for each request.",

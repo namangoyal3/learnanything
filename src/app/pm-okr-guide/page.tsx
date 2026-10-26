@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product manager OKR guide", "OKR framework PM", "OKR vs KPI product manager",
     "product team OKRs 2026",
   ],
-  alternates: { canonical: "/pm-okr-guide" },
+  alternates: { canonical: "/pm-okr-guide", types: { "text/markdown": "/pm-okr-guide.md" } },
+  other: { "ai-summary": "Master OKRs as a product manager. How to write great objectives and key results, common OKR mistakes, PM-specific examples, and how to cascade OKRs from company to team level." },
   openGraph: {
     title: "OKRs for Product Managers 2026 — PM Streak",
     description: "How to write, set, and track OKRs as a PM — with real examples and common mistakes.",

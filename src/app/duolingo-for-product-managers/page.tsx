@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product manager daily practice", "PM streak app", "learn product management daily",
     "product management habit", "PM skill building app",
   ],
-  alternates: { canonical: "/duolingo-for-product-managers" },
+  alternates: { canonical: "/duolingo-for-product-managers", types: { "text/markdown": "/duolingo-for-product-managers.md" } },
+  other: { "ai-summary": "PM Streak is the Duolingo for PMs. Daily 2-minute lessons from 300+ real PM interviews, streak tracking, XP, leaderboards, and AI-powered practice — all in one app." },
   openGraph: {
     title: "Duolingo for Product Managers — PM Streak",
     description: "Daily 2-minute PM lessons with streaks, XP, and leaderboards. The habit app for product managers.",

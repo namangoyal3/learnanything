@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM design tools", "Figma PM",
     "Canva PM", "Framer PM 2026",
   ],
-  alternates: { canonical: "/pm-design-tools" },
+  alternates: { canonical: "/pm-design-tools", types: { "text/markdown": "/pm-design-tools.md" } },
+  other: { "ai-summary": "How PMs build design tools. Multiplayer, plugin ecosystems, AI-assisted design, and why design tools compound faster than almost any SaaS category." },
   openGraph: {
     title: "PM Design Tools 2026 — PM Streak",
     description: "How PMs build design tools.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "services marketplace PM", "home services PM",
     "partner product PM india 2026",
   ],
-  alternates: { canonical: "/urban-company-pm-interview" },
+  alternates: { canonical: "/urban-company-pm-interview", types: { "text/markdown": "/urban-company-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Urban Company PM interview. Home services marketplace dynamics, partner (professional) product challenges, trust and quality, and real interview questions." },
   openGraph: {
     title: "Urban Company PM Interview Guide 2026 — PM Streak",
     description: "Services marketplace PM interview — Urban Company&apos;s dynamics, rounds, and questions.",

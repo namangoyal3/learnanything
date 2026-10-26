@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "developer PM interview", "API PM interview",
     "Stripe PM prep 2026", "Stripe writing interview",
   ],
-  alternates: { canonical: "/stripe-pm-interview" },
+  alternates: { canonical: "/stripe-pm-interview", types: { "text/markdown": "/stripe-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Stripe PM interview. What makes Stripe PM unique — developer-first products, API design, writing quality, and the Stripe operating principles that shape every interview." },
   openGraph: {
     title: "Stripe PM Interview Guide 2026 — PM Streak",
     description: "How Stripe interviews PMs — API design, writing quality, and developer empathy.",

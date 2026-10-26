@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "startup PM role", "working with founder PM",
     "PM reporting to CEO 2026",
   ],
-  alternates: { canonical: "/pm-founder-collaboration" },
+  alternates: { canonical: "/pm-founder-collaboration", types: { "text/markdown": "/pm-founder-collaboration.md" } },
+  other: { "ai-summary": "How PMs at startups collaborate with founders. What works, what doesn&apos;t, and how to keep product decisions rigorous when the founder is the loudest voice in the room." },
   openGraph: {
     title: "PM + Founder Collaboration 2026 — PM Streak",
     description: "How PMs work with founders — keeping decisions rigorous when the founder is the loudest voice.",

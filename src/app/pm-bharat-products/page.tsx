@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Tier-2 Tier-3 PM", "vernacular product design",
     "India next billion 2026",
   ],
-  alternates: { canonical: "/pm-bharat-products" },
+  alternates: { canonical: "/pm-bharat-products", types: { "text/markdown": "/pm-bharat-products.md" } },
+  other: { "ai-summary": "How PMs design for Bharat — Tier-2/3/4 India. Vernacular UX, device constraints, trust signals, and the patterns that work where English-first products fail." },
   openGraph: {
     title: "PM Building for Bharat 2026 — PM Streak",
     description: "How PMs design for Bharat — vernacular UX, device constraints, trust-first patterns.",

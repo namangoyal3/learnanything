@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "discovery PM", "ranking algorithm PM",
     "personalisation PM 2026",
   ],
-  alternates: { canonical: "/pm-search-discovery" },
+  alternates: { canonical: "/pm-search-discovery", types: { "text/markdown": "/pm-search-discovery.md" } },
+  other: { "ai-summary": "How PMs design search and discovery systems. Ranking signals, relevance, personalisation, and what makes discovery experiences delightful." },
   openGraph: {
     title: "PM Search &amp; Discovery 2026 — PM Streak",
     description: "How PMs design search and discovery — ranking, relevance, personalisation.",

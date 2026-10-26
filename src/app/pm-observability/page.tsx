@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM observability", "Datadog PM",
     "Honeycomb PM", "SRE PM 2026",
   ],
-  alternates: { canonical: "/pm-observability" },
+  alternates: { canonical: "/pm-observability", types: { "text/markdown": "/pm-observability.md" } },
+  other: { "ai-summary": "How PMs build observability products. Metrics, logs, traces, and why pricing is the hardest product decision in the category." },
   openGraph: {
     title: "PM Observability 2026 — PM Streak",
     description: "How PMs build observability products.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product strategy template", "PM strategy memo",
     "strategy doc example PM 2026",
   ],
-  alternates: { canonical: "/pm-strategy-doc" },
+  alternates: { canonical: "/pm-strategy-doc", types: { "text/markdown": "/pm-strategy-doc.md" } },
+  other: { "ai-summary": "The complete guide to writing a product strategy doc. Structure, section-by-section breakdown, common mistakes, and how to make your strategy doc actually get read and used." },
   openGraph: {
     title: "PM Strategy Doc Guide 2026 — PM Streak",
     description: "How to write a product strategy doc — template, examples, and common mistakes.",

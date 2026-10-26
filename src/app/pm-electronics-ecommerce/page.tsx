@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM electronics ecommerce", "Croma PM",
     "Reliance Digital PM 2026",
   ],
-  alternates: { canonical: "/pm-electronics-ecommerce" },
+  alternates: { canonical: "/pm-electronics-ecommerce", types: { "text/markdown": "/pm-electronics-ecommerce.md" } },
+  other: { "ai-summary": "How PMs build electronics e-commerce. Compare, finance, warranty, and why electronics is a high-AOV, low-margin, trust-heavy category." },
   openGraph: {
     title: "PM Electronics E-commerce 2026 — PM Streak",
     description: "How PMs build electronics e-commerce.",

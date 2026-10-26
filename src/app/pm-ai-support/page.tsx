@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI support", "Decagon PM",
     "Ada PM", "Fin AI 2026",
   ],
-  alternates: { canonical: "/pm-ai-support" },
+  alternates: { canonical: "/pm-ai-support", types: { "text/markdown": "/pm-ai-support.md" } },
+  other: { "ai-summary": "How PMs build AI customer support. Deflection, knowledge base quality, human handoff, and the evolution from chatbots to true support agents." },
   openGraph: {
     title: "PM AI Customer Support 2026 — PM Streak",
     description: "How PMs build AI customer support.",

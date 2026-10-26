@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "retention PM guide", "D7 retention PM", "D30 retention product",
     "activation vs retention PM", "retention curves analysis 2026",
   ],
-  alternates: { canonical: "/pm-retention-guide" },
+  alternates: { canonical: "/pm-retention-guide", types: { "text/markdown": "/pm-retention-guide.md" } },
+  other: { "ai-summary": "The complete retention playbook for product managers. Retention curves, activation definition, habit loops, and the PM frameworks that actually move D7 and D30 retention." },
   openGraph: {
     title: "Product Retention Guide for PMs 2026 — PM Streak",
     description: "How PMs measure and improve product retention — curves, activation, and habit loops.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM food delivery", "Swiggy PM",
     "Zomato PM", "food delivery india 2026",
   ],
-  alternates: { canonical: "/pm-food-delivery" },
+  alternates: { canonical: "/pm-food-delivery", types: { "text/markdown": "/pm-food-delivery.md" } },
+  other: { "ai-summary": "How PMs build food delivery products in India. Restaurant discovery, delivery ETAs, rider economics, and the brutal unit economics." },
   openGraph: {
     title: "PM Food Delivery 2026 — PM Streak",
     description: "How PMs build food delivery products.",

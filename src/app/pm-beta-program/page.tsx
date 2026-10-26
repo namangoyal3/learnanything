@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "closed beta PM", "beta user recruitment",
     "alpha beta launch PM 2026",
   ],
-  alternates: { canonical: "/pm-beta-program" },
+  alternates: { canonical: "/pm-beta-program", types: { "text/markdown": "/pm-beta-program.md" } },
+  other: { "ai-summary": "How PMs run beta programs that generate real signal. Recruiting beta users, feedback loops, managing expectations, and turning beta into a compounding asset." },
   openGraph: {
     title: "PM Beta Program Guide 2026 — PM Streak",
     description: "How PMs run beta programs that generate real signal — recruit, learn, iterate.",

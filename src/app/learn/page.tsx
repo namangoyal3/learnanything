@@ -10,7 +10,8 @@ export const metadata: Metadata = {
   title: "Learn Product Management — Free PM Articles & Guides",
   description:
     "Free in-depth articles on product management, PM interviews, roadmaps, metrics, career growth, and leadership. Expert-reviewed PM guides from 300+ PM interviews, updated weekly.",
-  alternates: { canonical: "https://learnanything.pro/learn" },
+  alternates: { canonical: "https://learnanything.pro/learn", types: { "text/markdown": "/learn.md" } },
+  other: { "ai-summary": "Index of every published PM Streak article on product management, PM interviews, roadmaps, metrics and career growth, grouped by topic, newest first." },
   openGraph: {
     title: "Learn Product Management — Free PM Articles & Guides",
     description: "300+ free expert-reviewed articles on PM interviews, roadmaps, metrics, career growth, and leadership. Updated weekly.",

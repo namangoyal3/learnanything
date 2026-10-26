@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI rate limits", "AI quotas 2026",
   ],
-  alternates: { canonical: "/pm-ai-rate-limits" },
+  alternates: { canonical: "/pm-ai-rate-limits", types: { "text/markdown": "/pm-ai-rate-limits.md" } },
+  other: { "ai-summary": "How PMs design rate limits and quotas for AI products. Tier caps, fair-use, and how to communicate limits without alienating power users." },
   openGraph: {
     title: "PM AI Rate Limits 2026 — PM Streak",
     description: "Designing quotas without breaking trust.",

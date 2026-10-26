@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "About PM Streak & Naman Goyal",
   description:
     "PM Streak is an interactive PM-interview practice platform built by Naman Goyal — 400+ free guides covering PM interviews at Google, Meta, Amazon, Flipkart, and Indian + global tech companies.",
-  alternates: { canonical: "/about" },
+  alternates: { canonical: "/about", types: { "text/markdown": "/about.md" } },
+  other: { "ai-summary": "PM Streak is an interactive PM-interview practice platform built by Naman Goyal — 400+ free guides covering PM interviews at Google, Meta, Amazon, Flipkart, and Indian + global tech companies." },
   openGraph: {
     title: "About PM Streak & Naman Goyal",
     description:

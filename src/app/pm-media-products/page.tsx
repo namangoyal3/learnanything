@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM media products", "streaming PM",
     "OTT PM", "Netflix PM 2026",
   ],
-  alternates: { canonical: "/pm-media-products" },
+  alternates: { canonical: "/pm-media-products", types: { "text/markdown": "/pm-media-products.md" } },
+  other: { "ai-summary": "How PMs build streaming and media products. Content vs catalog, recommendations, ads vs subscription, and the economics of attention." },
   openGraph: {
     title: "PM Media Products 2026 — PM Streak",
     description: "How PMs build streaming and media products.",

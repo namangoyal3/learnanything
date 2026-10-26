@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM analytics interview", "defining success metrics PM", "A/B testing PM interview",
     "product metrics framework", "north star metric PM interview",
   ],
-  alternates: { canonical: "/pm-metrics-interview" },
+  alternates: { canonical: "/pm-metrics-interview", types: { "text/markdown": "/pm-metrics-interview.md" } },
+  other: { "ai-summary": "Master the metrics round in PM interviews. Learn how to define success metrics, debug DAU drops, set up A/B tests, and think like a data-driven PM. With 30+ real questions." },
   openGraph: {
     title: "PM Metrics Interview — Debug Drops & Define Success | PM Streak",
     description: "30+ PM metrics interview questions with frameworks for diagnosing drops, defining success, and A/B testing.",

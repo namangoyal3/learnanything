@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI data products", "text-to-SQL PM",
     "AI analyst 2026",
   ],
-  alternates: { canonical: "/pm-ai-data-products" },
+  alternates: { canonical: "/pm-ai-data-products", types: { "text/markdown": "/pm-ai-data-products.md" } },
+  other: { "ai-summary": "How PMs build AI data products. Text-to-SQL, conversational BI, analyst agents, and why the &apos;ask your data&apos; category is now real." },
   openGraph: {
     title: "PM AI Data Products 2026 — PM Streak",
     description: "How PMs build AI data products.",

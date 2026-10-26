@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to run PM meetings", "meeting agenda PM",
     "reduce meetings PM 2026",
   ],
-  alternates: { canonical: "/pm-meetings-guide" },
+  alternates: { canonical: "/pm-meetings-guide", types: { "text/markdown": "/pm-meetings-guide.md" } },
+  other: { "ai-summary": "How PMs run meetings that don&apos;t waste time. Types of meetings, agenda templates, when to cancel, and how to keep meetings short, decisive, and valuable." },
   openGraph: {
     title: "PM Meetings Guide 2026 — PM Streak",
     description: "How PMs run meetings teams thank you for — agendas, cancelling, and running tight.",

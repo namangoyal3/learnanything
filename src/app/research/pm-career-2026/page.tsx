@@ -39,8 +39,9 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/api/og?title=PM+Career+Development+2026+Research`],
     site: "@pmstreak",
   },
-  alternates: { canonical: `${SITE_URL}/research/pm-career-2026` },
+  alternates: { canonical: `${SITE_URL}/research/pm-career-2026`, types: { "text/markdown": "/research/pm-career-2026.md" } },
   other: {
+    "ai-summary": "5,000+ PM careers tracked: $167k median US salary, 2.4 years to Senior PM promotion, 12 core competencies. Full salary bands, career path data, and skill gap analysis.",
     citation_doi: DOI,
     citation_author: "PM Streak Research",
     citation_publication_date: PUBLISHED,

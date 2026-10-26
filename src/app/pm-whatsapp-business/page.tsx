@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM WhatsApp business", "conversational commerce",
     "WhatsApp PM india 2026",
   ],
-  alternates: { canonical: "/pm-whatsapp-business" },
+  alternates: { canonical: "/pm-whatsapp-business", types: { "text/markdown": "/pm-whatsapp-business.md" } },
+  other: { "ai-summary": "How PMs build WhatsApp-first products. Conversational commerce, payments, CTWA ads, and why WhatsApp is the dominant consumer surface in India." },
   openGraph: {
     title: "PM WhatsApp Business 2026 — PM Streak",
     description: "Building conversational commerce on WhatsApp.",

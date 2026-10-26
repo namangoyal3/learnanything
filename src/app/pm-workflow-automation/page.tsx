@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM workflow automation", "Zapier PM",
     "automation PM 2026",
   ],
-  alternates: { canonical: "/pm-workflow-automation" },
+  alternates: { canonical: "/pm-workflow-automation", types: { "text/markdown": "/pm-workflow-automation.md" } },
+  other: { "ai-summary": "How PMs build workflow automation products. Triggers, actions, error handling, and why automation adoption follows J-curves." },
   openGraph: {
     title: "PM Workflow Automation 2026 — PM Streak",
     description: "How PMs build workflow automation products.",

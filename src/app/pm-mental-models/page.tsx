@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "thinking tools PM", "frameworks PM career",
     "PM decision models 2026",
   ],
-  alternates: { canonical: "/pm-mental-models" },
+  alternates: { canonical: "/pm-mental-models", types: { "text/markdown": "/pm-mental-models.md" } },
+  other: { "ai-summary": "The 12 mental models that sharpen PM thinking. Second-order effects, opportunity cost, Pareto, inversion, and more — with product examples for each." },
   openGraph: {
     title: "PM Mental Models 2026 — PM Streak",
     description: "12 mental models that sharpen PM thinking, with product examples for each.",

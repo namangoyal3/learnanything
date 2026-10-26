@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM sales-led B2B", "enterprise PM",
     "B2B product manager", "enterprise sales 2026",
   ],
-  alternates: { canonical: "/pm-b2b-sales-led" },
+  alternates: { canonical: "/pm-b2b-sales-led", types: { "text/markdown": "/pm-b2b-sales-led.md" } },
+  other: { "ai-summary": "How PMs build for sales-led B2B. Buyer vs user, RFPs, procurement, security reviews, and why the best B2B PMs spend time in sales calls." },
   openGraph: {
     title: "PM B2B Sales-Led 2026 — PM Streak",
     description: "How PMs build for enterprise sales motion.",

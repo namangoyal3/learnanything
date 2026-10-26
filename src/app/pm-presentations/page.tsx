@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM presentations", "exec presentation PM",
     "slide design PM", "PM communication 2026",
   ],
-  alternates: { canonical: "/pm-presentations" },
+  alternates: { canonical: "/pm-presentations", types: { "text/markdown": "/pm-presentations.md" } },
+  other: { "ai-summary": "How PMs present to executives. Structure, slide design, narrative arc, and the traps that sink most PM decks." },
   openGraph: {
     title: "PM Presentations 2026 — PM Streak",
     description: "How PMs present to execs without dying.",

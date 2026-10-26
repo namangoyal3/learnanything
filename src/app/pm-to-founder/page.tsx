@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM to founder", "PM founder",
     "startup PM 2026",
   ],
-  alternates: { canonical: "/pm-to-founder" },
+  alternates: { canonical: "/pm-to-founder", types: { "text/markdown": "/pm-to-founder.md" } },
+  other: { "ai-summary": "How PMs become founders. Skill gaps, distribution, sales, and why PM training is only half the founder skillset." },
   openGraph: {
     title: "PM to Founder 2026 — PM Streak",
     description: "Making the jump from PM to startup founder.",

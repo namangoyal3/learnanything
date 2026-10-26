@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM team leadership", "cross-functional PM",
     "PM stakeholder leadership 2026",
   ],
-  alternates: { canonical: "/pm-cross-functional" },
+  alternates: { canonical: "/pm-cross-functional", types: { "text/markdown": "/pm-cross-functional.md" } },
+  other: { "ai-summary": "How PMs lead cross-functional teams without authority. Working with engineering, design, sales, marketing, support — and building trust with each." },
   openGraph: {
     title: "PM Cross-Functional Leadership 2026 — PM Streak",
     description: "How PMs lead cross-functional teams without authority — building trust across every function.",

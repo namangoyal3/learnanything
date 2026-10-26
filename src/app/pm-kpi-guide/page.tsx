@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to choose KPI PM", "leading vs lagging KPI",
     "product KPI framework 2026",
   ],
-  alternates: { canonical: "/pm-kpi-guide" },
+  alternates: { canonical: "/pm-kpi-guide", types: { "text/markdown": "/pm-kpi-guide.md" } },
+  other: { "ai-summary": "How PMs pick KPIs that actually drive decisions. Leading vs lagging indicators, outcome vs output, and how to avoid the Goodhart&apos;s Law trap." },
   openGraph: {
     title: "PM KPI Guide 2026 — PM Streak",
     description: "How PMs choose KPIs that drive decisions — leading, lagging, outcome, and guardrail metrics.",

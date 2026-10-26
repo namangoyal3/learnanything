@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "supply demand marketplace", "take rate",
     "marketplace product manager 2026",
   ],
-  alternates: { canonical: "/pm-marketplace-products" },
+  alternates: { canonical: "/pm-marketplace-products", types: { "text/markdown": "/pm-marketplace-products.md" } },
+  other: { "ai-summary": "How PMs build marketplace products. Supply vs demand, cold start, take rate design, and the tensions unique to two-sided markets." },
   openGraph: {
     title: "PM Marketplace Products 2026 — PM Streak",
     description: "How PMs build marketplace products — supply vs demand, cold start, take rate.",

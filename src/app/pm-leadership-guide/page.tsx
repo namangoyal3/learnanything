@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PM leads without authority", "PM managing up",
     "PM management skills", "senior PM leadership 2026",
   ],
-  alternates: { canonical: "/pm-leadership-guide" },
+  alternates: { canonical: "/pm-leadership-guide", types: { "text/markdown": "/pm-leadership-guide.md" } },
+  other: { "ai-summary": "How PMs lead without authority. Building trust, decision-making, managing up, developing other PMs, and the leadership skills that separate senior from principal PM." },
   openGraph: {
     title: "PM Leadership Guide 2026 — PM Streak",
     description: "How PMs lead without authority — trust, decision-making, managing up, and developing PMs.",

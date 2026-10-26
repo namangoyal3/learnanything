@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "ticket deflection PM", "support-driven product",
     "customer support data PM 2026",
   ],
-  alternates: { canonical: "/pm-customer-support-insights" },
+  alternates: { canonical: "/pm-customer-support-insights", types: { "text/markdown": "/pm-customer-support-insights.md" } },
+  other: { "ai-summary": "Why great PMs spend time in the customer support queue. What to look for, how to quantify signal, and how to turn support data into product decisions." },
   openGraph: {
     title: "PM + Customer Support Guide 2026 — PM Streak",
     description: "Why the support queue is your best user research — and how to use it.",

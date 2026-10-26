@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM imposter syndrome", "PM career confidence 2026",
   ],
-  alternates: { canonical: "/pm-imposter-syndrome" },
+  alternates: { canonical: "/pm-imposter-syndrome", types: { "text/markdown": "/pm-imposter-syndrome.md" } },
+  other: { "ai-summary": "Why PMs experience imposter syndrome more than most roles, what to do about it, and which parts of the feeling are actually useful." },
   openGraph: {
     title: "PM Imposter Syndrome 2026 — PM Streak",
     description: "Why PMs feel imposter syndrome and how to handle it.",

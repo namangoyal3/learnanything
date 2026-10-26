@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM system design interview", "technical questions for product managers",
     "PM API interview", "how technical should a PM be", "PM engineering interview 2026",
   ],
-  alternates: { canonical: "/pm-technical-interview" },
+  alternates: { canonical: "/pm-technical-interview", types: { "text/markdown": "/pm-technical-interview.md" } },
+  other: { "ai-summary": "Ace the PM technical interview. APIs, databases, system design for PMs, data pipelines, and how to talk credibly with engineers — with 30+ questions and model answers." },
   openGraph: {
     title: "PM Technical Interview Questions 2026 — PM Streak",
     description: "APIs, system design, data, and engineering fluency questions for PM interviews.",

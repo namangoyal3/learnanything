@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "viral loop features", "natural sharing",
     "viral coefficient 2026",
   ],
-  alternates: { canonical: "/pm-viral-features" },
+  alternates: { canonical: "/pm-viral-features", types: { "text/markdown": "/pm-viral-features.md" } },
+  other: { "ai-summary": "How PMs design features that users naturally share. What makes virality work, the math, and examples from Instagram, Dropbox, Notion, and others." },
   openGraph: {
     title: "PM Viral Features 2026 — PM Streak",
     description: "Designing features that users naturally share — what makes virality work.",

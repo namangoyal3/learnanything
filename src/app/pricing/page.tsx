@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   title: "PM Streak Pro Pricing — Plans & Features",
   description:
     "Compare PM Streak Free vs Pro plans. Pro unlocks all 292+ PM lessons, unlimited AI, interview prep, PM Jobs board, and WhatsApp community. Starting at $6/month or ₹249/month in India.",
-  alternates: { canonical: "https://learnanything.pro/pricing" },
+  alternates: { canonical: "https://learnanything.pro/pricing", types: { "text/markdown": "/pricing.md" } },
+  other: { "ai-summary": "PM Streak's pricing page: it compares the Free plan with Pro, which unlocks all PM lessons, unlimited AI practice, interview prep, the PM jobs board and the WhatsApp community, with monthly prices in USD and INR." },
   openGraph: {
     title: "PM Streak Pro Pricing — Unlock All 292+ PM Lessons",
     description:

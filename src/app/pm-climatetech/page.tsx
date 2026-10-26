@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM climatetech", "climate PM",
     "decarbonisation product", "climatetech 2026",
   ],
-  alternates: { canonical: "/pm-climatetech" },
+  alternates: { canonical: "/pm-climatetech", types: { "text/markdown": "/pm-climatetech.md" } },
+  other: { "ai-summary": "How PMs build climatetech products. Measurement, hardware-software, carbon markets, and why this decade is the opportunity." },
   openGraph: {
     title: "PM Climatetech 2026 — PM Streak",
     description: "How PMs build climatetech products.",

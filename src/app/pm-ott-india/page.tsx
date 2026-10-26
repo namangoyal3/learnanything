@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM OTT india", "JioCinema PM",
     "Hotstar PM", "SonyLIV PM 2026",
   ],
-  alternates: { canonical: "/pm-ott-india" },
+  alternates: { canonical: "/pm-ott-india", types: { "text/markdown": "/pm-ott-india.md" } },
+  other: { "ai-summary": "How PMs build OTT products in India. Live sports, regional originals, mobile-first tiers, and the battle for prime time." },
   openGraph: {
     title: "PM OTT India 2026 — PM Streak",
     description: "How PMs build OTT products in India.",

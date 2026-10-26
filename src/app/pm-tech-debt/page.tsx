@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM tech debt", "technical debt PM",
     "refactoring PM 2026",
   ],
-  alternates: { canonical: "/pm-tech-debt" },
+  alternates: { canonical: "/pm-tech-debt", types: { "text/markdown": "/pm-tech-debt.md" } },
+  other: { "ai-summary": "How PMs reason about tech debt. When to pay it down, when to accept it, and how to make debt visible in roadmap discussions." },
   openGraph: {
     title: "PM Tech Debt 2026 — PM Streak",
     description: "How PMs think about technical debt.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PM influences without authority", "PM stakeholder frameworks",
     "how to say no as a PM", "product manager alignment 2026",
   ],
-  alternates: { canonical: "/pm-stakeholder-management" },
+  alternates: { canonical: "/pm-stakeholder-management", types: { "text/markdown": "/pm-stakeholder-management.md" } },
+  other: { "ai-summary": "How PMs manage stakeholders — engineering, design, sales, leadership, customers. Frameworks, scripts for saying no, and how to build influence without having authority." },
   openGraph: {
     title: "Stakeholder Management for PMs 2026 — PM Streak",
     description: "Influence without authority — how PMs manage engineering, sales, leadership, and customers.",

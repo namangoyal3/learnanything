@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to write a PRD", "PRD example product manager",
     "product spec template PM", "PRD best practices 2026",
   ],
-  alternates: { canonical: "/prd-template-guide" },
+  alternates: { canonical: "/prd-template-guide", types: { "text/markdown": "/prd-template-guide.md" } },
+  other: { "ai-summary": "The complete PRD template for product managers. Every section explained, a real PRD example, what to include, what to cut, and how great PMs use PRDs as communication tools." },
   openGraph: {
     title: "PRD Template Guide 2026 — PM Streak",
     description: "The complete PRD template with real examples, section-by-section breakdown.",

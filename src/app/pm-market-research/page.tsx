@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "TAM SAM SOM PM", "market sizing product manager",
     "market opportunity framework PM 2026",
   ],
-  alternates: { canonical: "/pm-market-research" },
+  alternates: { canonical: "/pm-market-research", types: { "text/markdown": "/pm-market-research.md" } },
+  other: { "ai-summary": "How PMs do market research — TAM/SAM/SOM, competitive landscape, customer segmentation, and spotting opportunities others miss. With frameworks and Indian market examples." },
   openGraph: {
     title: "PM Market Research Guide 2026 — PM Streak",
     description: "How PMs size markets, map competitive landscapes, and spot opportunities others miss.",

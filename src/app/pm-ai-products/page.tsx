@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "shipping AI features", "LLM product design",
     "AI product design 2026",
   ],
-  alternates: { canonical: "/pm-ai-products" },
+  alternates: { canonical: "/pm-ai-products", types: { "text/markdown": "/pm-ai-products.md" } },
+  other: { "ai-summary": "How PMs build AI products that earn trust. Prompt design, evaluation, hallucination management, and the ethics of shipping AI features to real users." },
   openGraph: {
     title: "PM AI Products 2026 — PM Streak",
     description: "How PMs ship AI features that users trust — prompts, eval, hallucinations, ethics.",

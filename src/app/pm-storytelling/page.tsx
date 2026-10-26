@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs tell stories", "narrative PM",
     "data storytelling PM", "PM presentation storytelling 2026",
   ],
-  alternates: { canonical: "/pm-storytelling" },
+  alternates: { canonical: "/pm-storytelling", types: { "text/markdown": "/pm-storytelling.md" } },
+  other: { "ai-summary": "How great PMs use storytelling to align teams and influence leadership. Narrative structures, data-to-story frameworks, and the story arcs that move decisions." },
   openGraph: {
     title: "PM Storytelling Guide 2026 — PM Streak",
     description: "How great PMs turn data into narrative — structures, frameworks, and examples.",

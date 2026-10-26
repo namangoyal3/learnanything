@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "north star metric examples", "PM north star",
     "input metrics north star", "north star metric framework 2026",
   ],
-  alternates: { canonical: "/pm-north-star-metric" },
+  alternates: { canonical: "/pm-north-star-metric", types: { "text/markdown": "/pm-north-star-metric.md" } },
+  other: { "ai-summary": "How PMs choose and use a north star metric. Good vs bad examples, how to decompose it into input metrics, and how companies like Duolingo and Airbnb picked theirs." },
   openGraph: {
     title: "North Star Metric Guide for PMs 2026 — PM Streak",
     description: "How PMs pick and use a north star metric — with examples from Duolingo, Airbnb, and more.",

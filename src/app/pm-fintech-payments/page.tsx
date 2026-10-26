@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "UPI PM", "payment success rate",
     "payment product manager 2026",
   ],
-  alternates: { canonical: "/pm-fintech-payments" },
+  alternates: { canonical: "/pm-fintech-payments", types: { "text/markdown": "/pm-fintech-payments.md" } },
+  other: { "ai-summary": "How PMs build payment products. UPI dynamics, success rates, reconciliation, compliance, and the unique challenges of payment PM work." },
   openGraph: {
     title: "PM Fintech Payments 2026 — PM Streak",
     description: "How PMs build payment products — UPI, success rates, compliance, reconciliation.",

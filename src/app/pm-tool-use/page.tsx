@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI tool use", "agent tool use 2026",
   ],
-  alternates: { canonical: "/pm-tool-use" },
+  alternates: { canonical: "/pm-tool-use", types: { "text/markdown": "/pm-tool-use.md" } },
+  other: { "ai-summary": "How PMs design tool-using agents. Tool selection, error handling, and why tool-use reliability is the bottleneck for agentic products." },
   openGraph: {
     title: "PM AI Tool Use 2026 — PM Streak",
     description: "Designing agents that use APIs reliably.",

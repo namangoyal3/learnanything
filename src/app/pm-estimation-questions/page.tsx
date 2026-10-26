@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "market sizing PM", "how to solve guesstimates product manager",
     "PM estimation interview framework 2026",
   ],
-  alternates: { canonical: "/pm-estimation-questions" },
+  alternates: { canonical: "/pm-estimation-questions", types: { "text/markdown": "/pm-estimation-questions.md" } },
+  other: { "ai-summary": "Crack PM estimation questions. Step-by-step framework, 20+ practice questions with model answers, and the common traps that ruin otherwise good estimates." },
   openGraph: {
     title: "PM Estimation Questions 2026 — PM Streak",
     description: "Guesstimate framework, 20+ practice questions, and tips for PM estimation interviews.",

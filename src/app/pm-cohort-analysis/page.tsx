@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "user cohort product", "cohort segmentation PM",
     "cohort metrics 2026",
   ],
-  alternates: { canonical: "/pm-cohort-analysis" },
+  alternates: { canonical: "/pm-cohort-analysis", types: { "text/markdown": "/pm-cohort-analysis.md" } },
+  other: { "ai-summary": "How PMs use cohort analysis to find real product signal. When to use cohorts, what to segment by, and how to spot the patterns aggregate metrics hide." },
   openGraph: {
     title: "PM Cohort Analysis 2026 — PM Streak",
     description: "How PMs find real product signal with cohort analysis — hidden in aggregate metrics.",

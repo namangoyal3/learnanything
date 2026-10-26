@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM interview one pager", "PM interview quick guide",
     "PM interview prep 2026",
   ],
-  alternates: { canonical: "/pm-interview-cheat-sheet" },
+  alternates: { canonical: "/pm-interview-cheat-sheet", types: { "text/markdown": "/pm-interview-cheat-sheet.md" } },
+  other: { "ai-summary": "The one-page PM interview cheat sheet. Frameworks, openings, transitions, closings — everything you need to remember before walking in." },
   openGraph: {
     title: "PM Interview Cheat Sheet 2026 — PM Streak",
     description: "One-page PM interview reference — frameworks, openings, transitions, closings.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI robotics", "humanoid PM",
     "warehouse robotics 2026",
   ],
-  alternates: { canonical: "/pm-ai-robotics" },
+  alternates: { canonical: "/pm-ai-robotics", types: { "text/markdown": "/pm-ai-robotics.md" } },
+  other: { "ai-summary": "How PMs build AI-powered robotics. Humanoids, warehouse automation, autonomy, and why the gap between demo and reliable deployment is still years." },
   openGraph: {
     title: "PM AI Robotics 2026 — PM Streak",
     description: "How PMs build AI-powered robotics.",

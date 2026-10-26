@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Sean Ellis test", "achieving PMF",
     "product market fit 2026",
   ],
-  alternates: { canonical: "/pm-product-market-fit" },
+  alternates: { canonical: "/pm-product-market-fit", types: { "text/markdown": "/pm-product-market-fit.md" } },
+  other: { "ai-summary": "How PMs recognise product-market fit. Leading indicators, the Sean Ellis test, retention curves, and what to do if PMF isn&apos;t there yet." },
   openGraph: {
     title: "PM Product-Market Fit 2026 — PM Streak",
     description: "How PMs know they have PMF, what signals to watch, what to do if they don&apos;t.",

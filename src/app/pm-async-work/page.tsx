@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "document-first PM", "fewer meetings PM",
     "async product decisions 2026",
   ],
-  alternates: { canonical: "/pm-async-work" },
+  alternates: { canonical: "/pm-async-work", types: { "text/markdown": "/pm-async-work.md" } },
+  other: { "ai-summary": "How PMs default to async communication — doc-first decisions, when to meet, and the writing skills that replace meetings." },
   openGraph: {
     title: "PM Async Work 2026 — PM Streak",
     description: "How great PMs default to async — doc-first decisions, fewer meetings, more shipping.",

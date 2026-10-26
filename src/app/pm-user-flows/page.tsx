@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "happy path vs edge cases", "PM flow design",
     "user journey mapping PM 2026",
   ],
-  alternates: { canonical: "/pm-user-flows" },
+  alternates: { canonical: "/pm-user-flows", types: { "text/markdown": "/pm-user-flows.md" } },
+  other: { "ai-summary": "How PMs map user flows that drive design and prioritisation. Happy path + edge cases, where to instrument, and how to spot friction that metrics miss." },
   openGraph: {
     title: "PM User Flows Guide 2026 — PM Streak",
     description: "How PMs map and improve user flows — happy path, edge cases, and friction detection.",

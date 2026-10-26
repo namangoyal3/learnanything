@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs present to executives", "PM meeting skills",
     "async communication PM", "PM public speaking 2026",
   ],
-  alternates: { canonical: "/pm-communication-skills" },
+  alternates: { canonical: "/pm-communication-skills", types: { "text/markdown": "/pm-communication-skills.md" } },
+  other: { "ai-summary": "The communication skills that separate great PMs from average ones. Presenting to executives, leading meetings, async writing, giving hard feedback, and public speaking." },
   openGraph: {
     title: "PM Communication Skills 2026 — PM Streak",
     description: "How great PMs communicate — executive presentations, meetings, async, and feedback.",

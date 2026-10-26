@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "final round PM interview", "senior PM interview",
     "bar raiser questions 2026",
   ],
-  alternates: { canonical: "/pm-interview-bar-raiser" },
+  alternates: { canonical: "/pm-interview-bar-raiser", types: { "text/markdown": "/pm-interview-bar-raiser.md" } },
+  other: { "ai-summary": "How PMs handle bar raiser interviews — Amazon&apos;s and equivalent final rounds at top companies. What bar raisers test for and how to signal depth honestly." },
   openGraph: {
     title: "PM Bar Raiser Interview 2026 — PM Streak",
     description: "How to pass Amazon and equivalent bar raiser rounds — what they test, how to prep.",

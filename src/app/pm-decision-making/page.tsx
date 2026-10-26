@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs decide", "reversible irreversible decisions PM",
     "Bezos decision framework PM 2026",
   ],
-  alternates: { canonical: "/pm-decision-making" },
+  alternates: { canonical: "/pm-decision-making", types: { "text/markdown": "/pm-decision-making.md" } },
+  other: { "ai-summary": "How PMs make fast, confident decisions with incomplete data. Frameworks for reversible vs irreversible, risk-adjusted decisions, and how to document decisions so teams stay aligned." },
   openGraph: {
     title: "PM Decision Making Guide 2026 — PM Streak",
     description: "How great PMs decide under uncertainty — frameworks, risk models, and decision docs.",

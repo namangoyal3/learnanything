@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI recruiting", "hiring AI PM",
     "ATS AI 2026",
   ],
-  alternates: { canonical: "/pm-ai-recruiting" },
+  alternates: { canonical: "/pm-ai-recruiting", types: { "text/markdown": "/pm-ai-recruiting.md" } },
+  other: { "ai-summary": "How PMs build AI recruiting products. Candidate matching, screening, interviewing, and the bias and legal challenges of automated hiring." },
   openGraph: {
     title: "PM AI Recruiting 2026 — PM Streak",
     description: "How PMs build AI recruiting products.",

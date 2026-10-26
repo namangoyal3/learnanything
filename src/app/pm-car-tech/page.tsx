@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM car tech", "Cars24 PM",
     "Spinny PM", "used car 2026",
   ],
-  alternates: { canonical: "/pm-car-tech" },
+  alternates: { canonical: "/pm-car-tech", types: { "text/markdown": "/pm-car-tech.md" } },
+  other: { "ai-summary": "How PMs build car tech products in India. Used car marketplaces, inspection, financing, and why the Indian used car market is a hard marketplace to crack." },
   openGraph: {
     title: "PM Car Tech 2026 — PM Streak",
     description: "How PMs build car tech products in India.",

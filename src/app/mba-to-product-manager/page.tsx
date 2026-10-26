@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "MBA product management career", "PM placement IIM",
     "how to become PM after MBA 2026",
   ],
-  alternates: { canonical: "/mba-to-product-manager" },
+  alternates: { canonical: "/mba-to-product-manager", types: { "text/markdown": "/mba-to-product-manager.md" } },
+  other: { "ai-summary": "The complete guide to landing a PM role from an MBA. How to position your MBA, APM programs that recruit from campus, what hiring managers actually look for from MBAs." },
   openGraph: {
     title: "MBA to Product Manager 2026 — PM Streak",
     description: "How to land PM roles from an MBA — APM programs, positioning, and what hiring managers want.",

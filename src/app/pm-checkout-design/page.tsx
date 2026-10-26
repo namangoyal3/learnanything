@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM checkout design", "checkout conversion 2026",
   ],
-  alternates: { canonical: "/pm-checkout-design" },
+  alternates: { canonical: "/pm-checkout-design", types: { "text/markdown": "/pm-checkout-design.md" } },
+  other: { "ai-summary": "How PMs design checkout flows that convert. Field count, payment options, trust signals, and the small details that move conversion 5–15%." },
   openGraph: {
     title: "PM Checkout Design 2026 — PM Streak",
     description: "Designing checkouts that convert.",

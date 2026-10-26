@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM podcast products", "Spotify podcast PM",
     "podcast app 2026",
   ],
-  alternates: { canonical: "/pm-podcast-products" },
+  alternates: { canonical: "/pm-podcast-products", types: { "text/markdown": "/pm-podcast-products.md" } },
+  other: { "ai-summary": "How PMs build podcast products. RSS vs walled garden, monetisation, discovery, and why the podcast app category is more interesting than it looks." },
   openGraph: {
     title: "PM Podcast Products 2026 — PM Streak",
     description: "How PMs build podcast products.",

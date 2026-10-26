@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM jobs to be done", "JTBD framework",
     "Clayton Christensen JTBD", "jobs PM 2026",
   ],
-  alternates: { canonical: "/pm-jtbd" },
+  alternates: { canonical: "/pm-jtbd", types: { "text/markdown": "/pm-jtbd.md" } },
+  other: { "ai-summary": "How PMs apply Jobs-to-be-Done. Functional, emotional, and social jobs, and why JTBD beats personas for decision-making." },
   openGraph: {
     title: "PM Jobs-to-be-Done 2026 — PM Streak",
     description: "JTBD framework for product managers.",

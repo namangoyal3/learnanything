@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM churn reduction", "retention PM",
     "churn analysis", "win-back PM 2026",
   ],
-  alternates: { canonical: "/pm-churn-reduction" },
+  alternates: { canonical: "/pm-churn-reduction", types: { "text/markdown": "/pm-churn-reduction.md" } },
+  other: { "ai-summary": "How PMs diagnose churn root causes and build retention systems. Cohort analysis, cancellation flows, win-back, and the churn metrics that matter." },
   openGraph: {
     title: "PM Churn Reduction 2026 — PM Streak",
     description: "How PMs diagnose and fix churn — cohort analysis, cancellation, win-back.",

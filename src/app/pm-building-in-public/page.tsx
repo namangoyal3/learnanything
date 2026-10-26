@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM build in public", "PM sharing work 2026",
   ],
-  alternates: { canonical: "/pm-building-in-public" },
+  alternates: { canonical: "/pm-building-in-public", types: { "text/markdown": "/pm-building-in-public.md" } },
+  other: { "ai-summary": "Why PMs benefit from building in public. Accountability, compounding distribution, and the specific things to share (and not)." },
   openGraph: {
     title: "PM Building in Public 2026 — PM Streak",
     description: "Why more PMs should share their work.",

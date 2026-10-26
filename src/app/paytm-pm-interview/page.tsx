@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Paytm PM prep", "fintech PM paytm",
     "Paytm merchant PM", "Paytm PM interview 2026",
   ],
-  alternates: { canonical: "/paytm-pm-interview" },
+  alternates: { canonical: "/paytm-pm-interview", types: { "text/markdown": "/paytm-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Paytm PM interview. All rounds, payment and merchant product questions, lending and financial services expansion, and the pragmatic product thinking Paytm rewards." },
   openGraph: {
     title: "Paytm PM Interview Guide 2026 — PM Streak",
     description: "All Paytm PM interview rounds, real questions, and prep for fintech product roles.",

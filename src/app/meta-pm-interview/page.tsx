@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Meta PM interview prep", "Instagram PM interview", "WhatsApp PM interview",
     "how to crack Meta PM interview", "Meta product manager interview 2026",
   ],
-  alternates: { canonical: "/meta-pm-interview" },
+  alternates: { canonical: "/meta-pm-interview", types: { "text/markdown": "/meta-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Meta PM interview. Product design, strategy, metrics, and execution rounds — with real questions for Facebook, Instagram, WhatsApp, and Threads, plus a prep plan." },
   openGraph: {
     title: "Meta PM Interview Guide 2026 — PM Streak",
     description: "Product design, metrics, and strategy rounds for Meta PM interviews with real questions.",

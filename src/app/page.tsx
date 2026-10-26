@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://learnanything.pro/",
+    types: { "text/markdown": "/index.md" },
   },
   robots: {
     index: true,
@@ -50,6 +51,8 @@ export const metadata: Metadata = {
   },
   other: {
     "article:modified_time": new Date().toISOString(),
+    "ai-summary":
+      "PM Streak (learnanything.pro) is a daily product-management learning app: 2-minute lessons drawn from 300+ expert PM interviews, with streaks, XP, leaderboards and interview prep. It is free to start, with a paid Pro plan.",
   },
   manifest: "/manifest.webmanifest",
 };

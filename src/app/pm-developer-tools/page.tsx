@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM developer tools", "devtools PM",
     "dev experience PM", "DX 2026",
   ],
-  alternates: { canonical: "/pm-developer-tools" },
+  alternates: { canonical: "/pm-developer-tools", types: { "text/markdown": "/pm-developer-tools.md" } },
+  other: { "ai-summary": "How PMs build for developers. Docs, DX, pricing, community — and why developer tools are the highest-leverage PM role in software." },
   openGraph: {
     title: "PM Developer Tools 2026 — PM Streak",
     description: "How PMs build for developers — DX, docs, pricing, community.",

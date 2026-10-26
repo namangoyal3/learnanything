@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI ROI", "AI return on investment 2026",
   ],
-  alternates: { canonical: "/pm-ai-roi-measurement" },
+  alternates: { canonical: "/pm-ai-roi-measurement", types: { "text/markdown": "/pm-ai-roi-measurement.md" } },
+  other: { "ai-summary": "How PMs measure AI ROI. Time saved, deflection rates, revenue lift, and why most AI ROI claims don&apos;t survive scrutiny." },
   openGraph: {
     title: "PM AI ROI Measurement 2026 — PM Streak",
     description: "Proving AI pays off.",

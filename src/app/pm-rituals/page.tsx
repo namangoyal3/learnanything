@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product review meeting", "metric review PM",
     "PM team cadence 2026",
   ],
-  alternates: { canonical: "/pm-rituals" },
+  alternates: { canonical: "/pm-rituals", types: { "text/markdown": "/pm-rituals.md" } },
+  other: { "ai-summary": "The recurring rituals great PM teams use. Product reviews, metric reviews, roadmap reviews — when each matters, how long they should take, and which to skip." },
   openGraph: {
     title: "PM Team Rituals 2026 — PM Streak",
     description: "Recurring rituals great PM teams use — product, metric, and roadmap reviews.",

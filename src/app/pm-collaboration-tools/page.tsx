@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM collaboration tools", "Notion PM",
     "Figma PM", "Linear PM 2026",
   ],
-  alternates: { canonical: "/pm-collaboration-tools" },
+  alternates: { canonical: "/pm-collaboration-tools", types: { "text/markdown": "/pm-collaboration-tools.md" } },
+  other: { "ai-summary": "How PMs build collaboration products. Multiplayer UX, permissions, templates, and why collaboration tools compound through networks of users." },
   openGraph: {
     title: "PM Collaboration Tools 2026 — PM Streak",
     description: "How PMs build collaboration products.",

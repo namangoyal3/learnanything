@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM web3", "crypto PM",
     "web3 PM 2026",
   ],
-  alternates: { canonical: "/pm-web3" },
+  alternates: { canonical: "/pm-web3", types: { "text/markdown": "/pm-web3.md" } },
+  other: { "ai-summary": "How PMs build web3 products in 2026. Wallets, gas UX, token design, and why the surviving crypto products look a lot like regular consumer apps." },
   openGraph: {
     title: "PM Web3 2026 — PM Streak",
     description: "Building crypto products after the hype cycle.",

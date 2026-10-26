@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "shift left testing PM", "PM quality",
     "PM QA collaboration 2026",
   ],
-  alternates: { canonical: "/pm-qa-partnership" },
+  alternates: { canonical: "/pm-qa-partnership", types: { "text/markdown": "/pm-qa-partnership.md" } },
+  other: { "ai-summary": "How PMs work with QA to ship higher quality faster. Test plans, shifting QA left, bug triage, and the PM + QA habits that matter." },
   openGraph: {
     title: "PM + QA Partnership 2026 — PM Streak",
     description: "How PMs and QA ship higher quality together — test plans, shift left, triage.",

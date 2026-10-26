@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM security products", "security PM",
     "cybersecurity PM", "CISO PM 2026",
   ],
-  alternates: { canonical: "/pm-security-products" },
+  alternates: { canonical: "/pm-security-products", types: { "text/markdown": "/pm-security-products.md" } },
+  other: { "ai-summary": "How PMs build security products. Detection, response, compliance, and the unique buyer dynamics of selling to CISOs." },
   openGraph: {
     title: "PM Security Products 2026 — PM Streak",
     description: "How PMs build security products — detection, response, compliance.",

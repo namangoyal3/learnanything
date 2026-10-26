@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "written PM interview", "PM assignment template",
     "PM case study template 2026",
   ],
-  alternates: { canonical: "/pm-take-home-assignment" },
+  alternates: { canonical: "/pm-take-home-assignment", types: { "text/markdown": "/pm-take-home-assignment.md" } },
+  other: { "ai-summary": "How to crack PM take-home assignments. Structure, time management, how to stand out, and common mistakes that get otherwise-strong candidates rejected." },
   openGraph: {
     title: "PM Take-Home Assignment Guide 2026 — PM Streak",
     description: "How to crack PM take-home assignments — structure, stand-out, and common mistakes.",

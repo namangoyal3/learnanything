@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "MoSCoW PM", "Kano model PM",
     "impact effort matrix PM 2026",
   ],
-  alternates: { canonical: "/pm-prioritization-frameworks" },
+  alternates: { canonical: "/pm-prioritization-frameworks", types: { "text/markdown": "/pm-prioritization-frameworks.md" } },
+  other: { "ai-summary": "The 8 prioritization frameworks every PM should know. RICE, MoSCoW, Kano, Impact-Effort, Cost of Delay, and when to use each." },
   openGraph: {
     title: "PM Prioritization Frameworks 2026 — PM Streak",
     description: "8 prioritization frameworks every PM should know — RICE, MoSCoW, Kano, and when to use each.",

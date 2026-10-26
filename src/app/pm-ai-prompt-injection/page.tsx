@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM prompt injection", "AI security PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-prompt-injection" },
+  alternates: { canonical: "/pm-ai-prompt-injection", types: { "text/markdown": "/pm-ai-prompt-injection.md" } },
+  other: { "ai-summary": "How PMs design defenses against prompt injection. Direct, indirect, and exfiltration attacks — and what mitigations actually work." },
   openGraph: {
     title: "PM Prompt Injection Defense 2026 — PM Streak",
     description: "Securing AI products against prompt injection.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "conversion funnel PM", "funnel drop-off PM",
     "funnel optimisation 2026",
   ],
-  alternates: { canonical: "/pm-funnel-analysis" },
+  alternates: { canonical: "/pm-funnel-analysis", types: { "text/markdown": "/pm-funnel-analysis.md" } },
+  other: { "ai-summary": "How PMs do funnel analysis that leads to action. Defining funnels correctly, spotting the real drop-off, segmentation, and what to do about it." },
   openGraph: {
     title: "PM Funnel Analysis Guide 2026 — PM Streak",
     description: "How PMs diagnose funnels that lead to action — define, segment, fix.",

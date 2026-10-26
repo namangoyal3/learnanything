@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM product operations", "ProdOps",
     "product ops PM", "product operations 2026",
   ],
-  alternates: { canonical: "/pm-product-operations" },
+  alternates: { canonical: "/pm-product-operations", types: { "text/markdown": "/pm-product-operations.md" } },
+  other: { "ai-summary": "How product operations teams support PM orgs. Rituals, tooling, research ops, and when hiring a ProdOps lead pays for itself." },
   openGraph: {
     title: "PM Product Operations 2026 — PM Streak",
     description: "What ProdOps does and when PM orgs need it.",
