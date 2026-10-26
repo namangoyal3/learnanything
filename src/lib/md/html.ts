@@ -1,5 +1,8 @@
 import * as cheerio from "cheerio";
-import type { AnyNode, Element } from "domhandler";
+
+// domhandler is only a transitive dependency (pnpm does not hoist it), so take its node types from cheerio.
+type AnyNode = Extract<Parameters<typeof cheerio.load>[0], { type: unknown }>;
+type Element = Extract<AnyNode, { attribs: unknown }>;
 
 /**
  * Server-rendered HTML → markdown, for static pages whose content lives inline in
