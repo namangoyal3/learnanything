@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "sample PRD PM", "real PRD template",
     "PRD examples 2026",
   ],
-  alternates: { canonical: "/pm-prd-examples" },
+  alternates: { canonical: "/pm-prd-examples", types: { "text/markdown": "/pm-prd-examples.md" } },
+  other: { "ai-summary": "3 real-style PRD examples for consumer, B2B, and platform features. See structure, detail level, and how great PMs balance thoroughness with brevity." },
   openGraph: {
     title: "PRD Examples 2026 — PM Streak",
     description: "3 real-style PRD examples showing structure and detail level.",

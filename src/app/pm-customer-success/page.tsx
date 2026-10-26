@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM customer success", "CS PM partnership",
     "customer success PM 2026",
   ],
-  alternates: { canonical: "/pm-customer-success" },
+  alternates: { canonical: "/pm-customer-success", types: { "text/markdown": "/pm-customer-success.md" } },
+  other: { "ai-summary": "How PMs partner with customer success teams. Feedback loops, escalation handling, and why CS is your richest product-research channel." },
   openGraph: {
     title: "PM x Customer Success 2026 — PM Streak",
     description: "How PMs partner with CS teams to ship the right things.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to become SaaS PM", "SaaS PM interview questions",
     "SaaS product manager salary india", "B2B PM career 2026",
   ],
-  alternates: { canonical: "/saas-product-manager" },
+  alternates: { canonical: "/saas-product-manager", types: { "text/markdown": "/saas-product-manager.md" } },
+  other: { "ai-summary": "The complete SaaS PM playbook. B2B SaaS metrics, roadmap dynamics, customer-led development, freemium vs enterprise trade-offs, and how to break into SaaS PM in India." },
   openGraph: {
     title: "SaaS Product Manager Guide 2026 — PM Streak",
     description: "B2B SaaS metrics, roadmap, interview questions, and career paths for SaaS PMs in India.",

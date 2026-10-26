@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs set prices", "pricing research PM",
     "SaaS pricing PM 2026",
   ],
-  alternates: { canonical: "/pm-pricing-guide" },
+  alternates: { canonical: "/pm-pricing-guide", types: { "text/markdown": "/pm-pricing-guide.md" } },
+  other: { "ai-summary": "How PMs partner on pricing decisions. Pricing models, packaging, Van Westendorp, willingness-to-pay research, and how to avoid the most common pricing mistakes." },
   openGraph: {
     title: "PM Pricing Guide 2026 — PM Streak",
     description: "How PMs think about pricing — models, packaging, and willingness-to-pay research.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM music products", "Spotify PM",
     "music streaming PM 2026",
   ],
-  alternates: { canonical: "/pm-music-products" },
+  alternates: { canonical: "/pm-music-products", types: { "text/markdown": "/pm-music-products.md" } },
+  other: { "ai-summary": "How PMs build music streaming products. Personalisation, playlists, podcasts, artist tools, and why music is the OG recommendation domain." },
   openGraph: {
     title: "PM Music Products 2026 — PM Streak",
     description: "How PMs build music streaming products.",

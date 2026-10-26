@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Cleartrip PM", "travel tech PM india",
     "OTA PM interview 2026",
   ],
-  alternates: { canonical: "/ixigo-makemytrip-pm-interview" },
+  alternates: { canonical: "/ixigo-makemytrip-pm-interview", types: { "text/markdown": "/ixigo-makemytrip-pm-interview.md" } },
+  other: { "ai-summary": "Crack PM interviews at MakeMyTrip, ixigo, Cleartrip, and Goibibo. Travel marketplace dynamics, inventory/pricing, loyalty, and the peculiar PM problems of OTA products." },
   openGraph: {
     title: "Travel Tech PM Interview Guide 2026 — PM Streak",
     description: "PM interview prep for MakeMyTrip, ixigo, Cleartrip — travel tech dynamics and rounds.",

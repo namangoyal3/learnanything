@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI launch", "AI feature launch 2026",
   ],
-  alternates: { canonical: "/pm-ai-feature-launch" },
+  alternates: { canonical: "/pm-ai-feature-launch", types: { "text/markdown": "/pm-ai-feature-launch.md" } },
+  other: { "ai-summary": "How PMs launch AI features. Beta gates, eval thresholds, kill switches, and what to communicate publicly." },
   openGraph: {
     title: "PM AI Feature Launch 2026 — PM Streak",
     description: "Launching AI features without disasters.",

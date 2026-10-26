@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "metrics dashboard PM", "product KPIs",
     "PM dashboard tools 2026",
   ],
-  alternates: { canonical: "/pm-kpi-dashboards" },
+  alternates: { canonical: "/pm-kpi-dashboards", types: { "text/markdown": "/pm-kpi-dashboards.md" } },
+  other: { "ai-summary": "How PMs design KPI dashboards that drive action. What to include, what to cut, the right cadence, and how to make dashboards your team actually checks." },
   openGraph: {
     title: "PM KPI Dashboards 2026 — PM Streak",
     description: "How PMs design dashboards that drive decisions — what to include, cadence, tools.",

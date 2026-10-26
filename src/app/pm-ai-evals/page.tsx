@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI evals", "LLM evaluation",
     "AI product quality", "eval PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-evals" },
+  alternates: { canonical: "/pm-ai-evals", types: { "text/markdown": "/pm-ai-evals.md" } },
+  other: { "ai-summary": "How PMs design AI evals. Offline benchmarks, online metrics, human review, and why eval infrastructure is the real moat for AI products." },
   openGraph: {
     title: "PM AI Evals 2026 — PM Streak",
     description: "How PMs design AI evals for LLM products.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "sprint retro PM", "launch retrospective PM",
     "blameless postmortem 2026",
   ],
-  alternates: { canonical: "/pm-retrospectives" },
+  alternates: { canonical: "/pm-retrospectives", types: { "text/markdown": "/pm-retrospectives.md" } },
+  other: { "ai-summary": "How PMs run retrospectives that change behaviour. Structure, facilitation, action items that get followed up, and why most retros are theatre." },
   openGraph: {
     title: "PM Retrospectives Guide 2026 — PM Streak",
     description: "How PMs run retros that actually improve things — structure, facilitation, action follow-up.",

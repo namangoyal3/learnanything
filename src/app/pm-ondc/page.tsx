@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM ONDC", "ONDC PM",
     "open commerce india 2026",
   ],
-  alternates: { canonical: "/pm-ondc" },
+  alternates: { canonical: "/pm-ondc", types: { "text/markdown": "/pm-ondc.md" } },
+  other: { "ai-summary": "How PMs build on ONDC. Buyer app, seller app, network participants, and the opportunities and constraints of India&apos;s open commerce protocol." },
   openGraph: {
     title: "PM ONDC 2026 — PM Streak",
     description: "Building on India&apos;s open commerce protocol.",

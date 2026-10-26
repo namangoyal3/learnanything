@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM data interpretation", "metric movement diagnosis",
     "PM analytics interpretation 2026",
   ],
-  alternates: { canonical: "/pm-reading-metrics" },
+  alternates: { canonical: "/pm-reading-metrics", types: { "text/markdown": "/pm-reading-metrics.md" } },
+  other: { "ai-summary": "How PMs read metrics correctly. Spot noise vs signal, avoid confirmation bias, segment correctly, and the 7 questions to ask before acting on any metric move." },
   openGraph: {
     title: "Reading PM Metrics Correctly 2026 — PM Streak",
     description: "How PMs spot signal vs noise, avoid bias, and act on metric moves correctly.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "new product launch PM", "greenfield product",
     "startup product manager 2026",
   ],
-  alternates: { canonical: "/pm-zero-to-one" },
+  alternates: { canonical: "/pm-zero-to-one", types: { "text/markdown": "/pm-zero-to-one.md" } },
+  other: { "ai-summary": "How PMs launch 0→1 products. The skills that matter, the traps to avoid, and the mindset shift from growing existing products to creating new ones." },
   openGraph: {
     title: "PM Zero-to-One 2026 — PM Streak",
     description: "How PMs launch 0→1 products — the mindset, skills, and traps that matter.",

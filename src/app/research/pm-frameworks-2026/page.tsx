@@ -39,8 +39,9 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/api/og?title=PM+Frameworks+Analysis+2026+Research`],
     site: "@pmstreak",
   },
-  alternates: { canonical: `${SITE_URL}/research/pm-frameworks-2026` },
+  alternates: { canonical: `${SITE_URL}/research/pm-frameworks-2026`, types: { "text/markdown": "/research/pm-frameworks-2026.md" } },
   other: {
+    "ai-summary": "Analysis of 50+ PM frameworks across 3,000+ real implementations. RICE scores 8.7/10, OKRs 8.2/10, DACI 7.9/10. Full rankings, Shreyas Doshi stack, and implementation gap data.",
     citation_doi: DOI,
     citation_author: "PM Streak Research",
     citation_publication_date: PUBLISHED,

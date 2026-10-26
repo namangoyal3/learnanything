@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "sprint planning PM interview", "PM delivery interview questions",
     "how to answer execution questions PM", "product launch interview PM 2026",
   ],
-  alternates: { canonical: "/pm-execution-interview" },
+  alternates: { canonical: "/pm-execution-interview", types: { "text/markdown": "/pm-execution-interview.md" } },
+  other: { "ai-summary": "Master PM execution interview questions. Sprint planning, launch management, trade-off decisions, handling blockers, and cross-functional coordination — with real questions and model answers." },
   openGraph: {
     title: "PM Execution Interview Questions 2026 — PM Streak",
     description: "Sprint planning, launch management, and delivery questions for PM interviews.",

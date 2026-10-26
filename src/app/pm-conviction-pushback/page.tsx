@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM conviction", "how PM pushes back",
     "PM managing up 2026",
   ],
-  alternates: { canonical: "/pm-conviction-pushback" },
+  alternates: { canonical: "/pm-conviction-pushback", types: { "text/markdown": "/pm-conviction-pushback.md" } },
+  other: { "ai-summary": "How PMs push back on leadership, customers, or peers without damaging trust. Disagree-and-commit, when to hold, when to fold, and how to signal conviction calmly." },
   openGraph: {
     title: "PM Conviction &amp; Pushback 2026 — PM Streak",
     description: "How PMs push back effectively — holding ground without losing relationships.",

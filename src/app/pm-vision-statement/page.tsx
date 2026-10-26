@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product vision template", "PM vision statement",
     "product vision examples 2026",
   ],
-  alternates: { canonical: "/pm-vision-statement" },
+  alternates: { canonical: "/pm-vision-statement", types: { "text/markdown": "/pm-vision-statement.md" } },
+  other: { "ai-summary": "How PMs write a product vision that people actually use. Structure, length, testing it against a team, and examples from great product companies." },
   openGraph: {
     title: "PM Product Vision Guide 2026 — PM Streak",
     description: "How PMs write product visions that rally teams — structure, examples, tests.",

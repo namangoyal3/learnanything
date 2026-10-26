@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "fashion e-commerce PM", "beauty PM india",
     "lifestyle commerce PM 2026",
   ],
-  alternates: { canonical: "/myntra-nykaa-pm-interview" },
+  alternates: { canonical: "/myntra-nykaa-pm-interview", types: { "text/markdown": "/myntra-nykaa-pm-interview.md" } },
+  other: { "ai-summary": "Crack PM interviews at Myntra and Nykaa. Fashion &amp; beauty e-commerce dynamics — discovery, styling, try-on, returns, and the dynamics unique to lifestyle commerce." },
   openGraph: {
     title: "Myntra & Nykaa PM Interview Guide 2026 — PM Streak",
     description: "Fashion &amp; beauty commerce PM interview prep — dynamics, questions, and prep.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM technical skills", "technical product manager",
     "SQL for PM", "APIs for PM 2026",
   ],
-  alternates: { canonical: "/pm-technical-skills" },
+  alternates: { canonical: "/pm-technical-skills", types: { "text/markdown": "/pm-technical-skills.md" } },
+  other: { "ai-summary": "The technical skills every PM should have in 2026. SQL, APIs, systems thinking, and how to talk to engineers without faking it." },
   openGraph: {
     title: "PM Technical Skills 2026 — PM Streak",
     description: "How technical should a PM be? SQL, APIs, systems thinking.",

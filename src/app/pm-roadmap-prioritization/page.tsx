@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM roadmap prioritization", "prioritise roadmap",
     "PM priorities", "what to build next 2026",
   ],
-  alternates: { canonical: "/pm-roadmap-prioritization" },
+  alternates: { canonical: "/pm-roadmap-prioritization", types: { "text/markdown": "/pm-roadmap-prioritization.md" } },
+  other: { "ai-summary": "How PMs prioritise roadmaps when every ask looks urgent. Signals, bets, explicit killed work, and making prioritisation defensible." },
   openGraph: {
     title: "PM Roadmap Prioritization 2026 — PM Streak",
     description: "How PMs choose what to build next.",

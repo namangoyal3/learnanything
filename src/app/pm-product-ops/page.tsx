@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM ops function", "product ops vs PM",
     "scaling PM team 2026",
   ],
-  alternates: { canonical: "/pm-product-ops" },
+  alternates: { canonical: "/pm-product-ops", types: { "text/markdown": "/pm-product-ops.md" } },
+  other: { "ai-summary": "Product operations — what it does, when companies need it, and why great product ops multiplies PM leverage across an organisation." },
   openGraph: {
     title: "PM Product Ops 2026 — PM Streak",
     description: "What product ops does, when you need it, and how it multiplies PM leverage.",

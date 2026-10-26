@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "startup to enterprise PM", "IC to manager PM",
     "PM career move 2026",
   ],
-  alternates: { canonical: "/pm-career-transitions" },
+  alternates: { canonical: "/pm-career-transitions", types: { "text/markdown": "/pm-career-transitions.md" } },
+  other: { "ai-summary": "How PMs navigate career transitions — switching domain, moving from startup to enterprise (or vice versa), going from IC to manager. What&apos;s hard about each, what works." },
   openGraph: {
     title: "PM Career Transitions 2026 — PM Streak",
     description: "How PMs navigate changing domain, scale, or level — what&apos;s hard, what works.",

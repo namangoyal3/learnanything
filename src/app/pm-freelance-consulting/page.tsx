@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM freelance", "fractional PM",
     "PM consulting 2026",
   ],
-  alternates: { canonical: "/pm-freelance-consulting" },
+  alternates: { canonical: "/pm-freelance-consulting", types: { "text/markdown": "/pm-freelance-consulting.md" } },
+  other: { "ai-summary": "How PMs go independent. Pricing, finding clients, legal setup, and what fractional PM work actually looks like." },
   openGraph: {
     title: "PM Freelance &amp; Consulting 2026 — PM Streak",
     description: "Going independent as a PM.",

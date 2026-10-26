@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM localization", "L10n PM 2026",
   ],
-  alternates: { canonical: "/pm-localization-strategy" },
+  alternates: { canonical: "/pm-localization-strategy", types: { "text/markdown": "/pm-localization-strategy.md" } },
+  other: { "ai-summary": "How PMs decide where and how to localize. Language vs full localization, ROI sequencing, and AI-assisted translation pipelines." },
   openGraph: {
     title: "PM Localization Strategy 2026 — PM Streak",
     description: "When and how to localize.",

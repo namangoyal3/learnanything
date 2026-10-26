@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "DAU mobile", "crash rate PM",
     "mobile retention metrics 2026",
   ],
-  alternates: { canonical: "/pm-mobile-app-metrics" },
+  alternates: { canonical: "/pm-mobile-app-metrics", types: { "text/markdown": "/pm-mobile-app-metrics.md" } },
+  other: { "ai-summary": "The mobile app metrics every PM should track. Installs, DAU, session length, crash rate, and the signals unique to mobile products." },
   openGraph: {
     title: "PM Mobile App Metrics 2026 — PM Streak",
     description: "Mobile metrics every PM should track — installs, DAU, sessions, crashes, and more.",

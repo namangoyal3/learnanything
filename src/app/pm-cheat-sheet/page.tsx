@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM frameworks one page", "PM formulas",
     "PM quick reference 2026",
   ],
-  alternates: { canonical: "/pm-cheat-sheet" },
+  alternates: { canonical: "/pm-cheat-sheet", types: { "text/markdown": "/pm-cheat-sheet.md" } },
+  other: { "ai-summary": "The one-page PM cheat sheet. Every essential framework, metric, and formula — RICE, AARRR, PIRATE, north star, TAM/SAM/SOM, and more — in a scannable reference." },
   openGraph: {
     title: "PM Cheat Sheet 2026 — PM Streak",
     description: "Every PM framework, metric, and formula on one page. Fast reference for interviews and work.",

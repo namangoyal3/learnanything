@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM interview questions for users", "5 user rule PM",
     "empathy interview template 2026",
   ],
-  alternates: { canonical: "/pm-empathy-interviews" },
+  alternates: { canonical: "/pm-empathy-interviews", types: { "text/markdown": "/pm-empathy-interviews.md" } },
+  other: { "ai-summary": "The PM guide to empathy interviews. Good vs bad questions, 5-user rule, how to read between the lines, and how to turn interview data into product decisions." },
   openGraph: {
     title: "PM Empathy Interviews 2026 — PM Streak",
     description: "How PMs run user interviews that produce real insight — good questions, 5-user rule, synthesis.",

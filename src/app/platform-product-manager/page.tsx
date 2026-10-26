@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "infra PM india", "API product manager",
     "developer experience PM", "internal tools PM 2026",
   ],
-  alternates: { canonical: "/platform-product-manager" },
+  alternates: { canonical: "/platform-product-manager", types: { "text/markdown": "/platform-product-manager.md" } },
+  other: { "ai-summary": "The complete platform PM playbook. What platform PMs do, how they differ from feature PMs, API design, internal tools, developer experience, and how to break into platform PM." },
   openGraph: {
     title: "Platform PM Guide 2026 — PM Streak",
     description: "What platform PMs do, how to excel, and how to break into platform PM roles.",

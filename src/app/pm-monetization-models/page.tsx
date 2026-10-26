@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM monetization models", "monetisation PM 2026",
   ],
-  alternates: { canonical: "/pm-monetization-models" },
+  alternates: { canonical: "/pm-monetization-models", types: { "text/markdown": "/pm-monetization-models.md" } },
+  other: { "ai-summary": "Subscription, transaction, advertising, marketplace, freemium — how PMs choose monetisation that fits product and audience." },
   openGraph: {
     title: "PM Monetization Models 2026 — PM Streak",
     description: "Picking the right way to make money.",

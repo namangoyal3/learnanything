@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to build a product roadmap interview", "roadmap prioritisation PM interview",
     "product roadmap questions 2026", "PM roadmap strategy interview",
   ],
-  alternates: { canonical: "/product-roadmap-interview" },
+  alternates: { canonical: "/product-roadmap-interview", types: { "text/markdown": "/product-roadmap-interview.md" } },
+  other: { "ai-summary": "Master product roadmap interview questions. How to build, prioritise, defend, and communicate roadmaps — with real questions, frameworks, and what interviewers want to hear." },
   openGraph: {
     title: "Product Roadmap Interview Questions 2026 — PM Streak",
     description: "Build, defend, and communicate roadmaps — PM interview questions with frameworks and model answers.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM agritech", "DeHaat PM",
     "Ninjacart PM", "agritech india 2026",
   ],
-  alternates: { canonical: "/pm-agritech" },
+  alternates: { canonical: "/pm-agritech", types: { "text/markdown": "/pm-agritech.md" } },
+  other: { "ai-summary": "How PMs build agritech products in India. Farmer workflows, supply chain, advisory, and the unique PM challenges of rural-first products." },
   openGraph: {
     title: "PM Agritech 2026 — PM Streak",
     description: "How PMs build agritech products in India.",

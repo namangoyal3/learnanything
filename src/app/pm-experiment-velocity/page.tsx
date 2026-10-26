@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "more experiments faster PM", "experimentation culture PM",
     "PM learning velocity 2026",
   ],
-  alternates: { canonical: "/pm-experiment-velocity" },
+  alternates: { canonical: "/pm-experiment-velocity", types: { "text/markdown": "/pm-experiment-velocity.md" } },
+  other: { "ai-summary": "How top PMs run experiments 5x faster than average teams. Infrastructure, decision rules, and habits that increase learning velocity without sacrificing rigour." },
   openGraph: {
     title: "PM Experiment Velocity Guide 2026 — PM Streak",
     description: "How top PMs run experiments 5x faster — infrastructure, rules, and habits.",

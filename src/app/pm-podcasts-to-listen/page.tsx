@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM podcasts", "product manager podcasts 2026",
   ],
-  alternates: { canonical: "/pm-podcasts-to-listen" },
+  alternates: { canonical: "/pm-podcasts-to-listen", types: { "text/markdown": "/pm-podcasts-to-listen.md" } },
+  other: { "ai-summary": "The PM podcasts worth listening to in 2026. Lenny&apos;s, Acquired, How I Built This, and which Indian podcasts cover product specifically." },
   openGraph: {
     title: "PM Podcasts 2026 — PM Streak",
     description: "Best podcasts for product managers.",

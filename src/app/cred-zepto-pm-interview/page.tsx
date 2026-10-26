@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Zepto product manager interview", "unicorn startup PM interview India",
     "CRED PM prep", "Zepto PM prep 2026",
   ],
-  alternates: { canonical: "/cred-zepto-pm-interview" },
+  alternates: { canonical: "/cred-zepto-pm-interview", types: { "text/markdown": "/cred-zepto-pm-interview.md" } },
+  other: { "ai-summary": "Crack PM interviews at CRED and Zepto. What each company values, their interview formats, real questions, and what separates candidates who get offers at India's hottest unicorns." },
   openGraph: {
     title: "CRED & Zepto PM Interview Guide 2026 — PM Streak",
     description: "What CRED and Zepto look for in PMs, real questions, and how to prep.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM cover letter template", "PM cover letter examples",
     "product manager cover letter india", "how to write PM cover letter 2026",
   ],
-  alternates: { canonical: "/pm-cover-letter" },
+  alternates: { canonical: "/pm-cover-letter", types: { "text/markdown": "/pm-cover-letter.md" } },
+  other: { "ai-summary": "Write a PM cover letter that actually gets read. The structure that works, real examples, what to include, what to cut, and when to skip the cover letter entirely." },
   openGraph: {
     title: "PM Cover Letter Guide 2026 — PM Streak",
     description: "PM cover letter template, examples, and the structure that actually gets interviews.",

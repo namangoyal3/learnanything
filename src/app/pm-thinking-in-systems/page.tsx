@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM systems thinking", "feedback loops PM 2026",
   ],
-  alternates: { canonical: "/pm-thinking-in-systems" },
+  alternates: { canonical: "/pm-thinking-in-systems", types: { "text/markdown": "/pm-thinking-in-systems.md" } },
+  other: { "ai-summary": "How senior PMs apply systems thinking. Stocks, flows, feedback loops, and unintended consequences — the mindset shift that separates senior from staff PM." },
   openGraph: {
     title: "PM Thinking in Systems 2026 — PM Streak",
     description: "Why senior PMs think in loops, not lists.",

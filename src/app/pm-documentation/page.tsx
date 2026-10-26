@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "what PMs document", "PM writing habits",
     "PM knowledge management 2026",
   ],
-  alternates: { canonical: "/pm-documentation" },
+  alternates: { canonical: "/pm-documentation", types: { "text/markdown": "/pm-documentation.md" } },
+  other: { "ai-summary": "How PMs document decisions, specs, strategy, and learnings. What&apos;s worth writing down, what isn&apos;t, and the 7 documents every PM should maintain." },
   openGraph: {
     title: "PM Documentation Guide 2026 — PM Streak",
     description: "What great PMs actually write down — 7 essential PM documents and what to skip.",

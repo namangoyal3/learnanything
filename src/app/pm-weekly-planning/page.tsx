@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PMs plan week", "PM calendar management",
     "PM deep work", "product manager productivity 2026",
   ],
-  alternates: { canonical: "/pm-weekly-planning" },
+  alternates: { canonical: "/pm-weekly-planning", types: { "text/markdown": "/pm-weekly-planning.md" } },
+  other: { "ai-summary": "How great PMs plan their week. The 60-minute weekly planning ritual, the 70-20-10 time split, weekly review habits, and how to protect deep work in a meeting-heavy role." },
   openGraph: {
     title: "PM Weekly Planning Guide 2026 — PM Streak",
     description: "How great PMs plan their week — rituals, time splits, and protecting deep work.",

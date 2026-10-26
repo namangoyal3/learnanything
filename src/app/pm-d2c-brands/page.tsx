@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM D2C", "direct-to-consumer PM",
     "Mamaearth PM", "boAt PM", "D2C india 2026",
   ],
-  alternates: { canonical: "/pm-d2c-brands" },
+  alternates: { canonical: "/pm-d2c-brands", types: { "text/markdown": "/pm-d2c-brands.md" } },
+  other: { "ai-summary": "How PMs build for D2C brands in India. Shopify economics, performance marketing, repeat rate, and what makes D2C PM unique." },
   openGraph: {
     title: "PM D2C Brands 2026 — PM Streak",
     description: "How PMs build for Indian D2C brands.",

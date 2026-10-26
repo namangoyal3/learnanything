@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "estimation PM", "scope vs timeline PM",
     "buffer time PM 2026",
   ],
-  alternates: { canonical: "/pm-engineering-estimate" },
+  alternates: { canonical: "/pm-engineering-estimate", types: { "text/markdown": "/pm-engineering-estimate.md" } },
+  other: { "ai-summary": "How PMs work with engineering estimates — respecting their expertise while keeping projects predictable. When to probe, when to trust, and how to handle slipping timelines." },
   openGraph: {
     title: "PM Engineering Estimates 2026 — PM Streak",
     description: "How PMs work with engineering estimates without becoming a nuisance — probe, trust, handle slips.",

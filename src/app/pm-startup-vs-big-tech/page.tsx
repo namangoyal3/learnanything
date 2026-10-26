@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "FAANG vs startup PM", "early stage PM",
     "PM job choice 2026",
   ],
-  alternates: { canonical: "/pm-startup-vs-big-tech" },
+  alternates: { canonical: "/pm-startup-vs-big-tech", types: { "text/markdown": "/pm-startup-vs-big-tech.md" } },
+  other: { "ai-summary": "PM at startup vs big tech — real differences in scope, speed, compensation, career trajectory, and when each is the right choice." },
   openGraph: {
     title: "PM at Startup vs Big Tech 2026 — PM Streak",
     description: "Real differences between startup PM and big tech PM — scope, speed, comp, career.",

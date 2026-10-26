@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM estimation", "software estimation",
     "reference class forecasting PM 2026",
   ],
-  alternates: { canonical: "/pm-estimation" },
+  alternates: { canonical: "/pm-estimation", types: { "text/markdown": "/pm-estimation.md" } },
+  other: { "ai-summary": "How PMs estimate timelines without lying to themselves. Reference-class forecasting, buffers, and why single-point estimates fail." },
   openGraph: {
     title: "PM Estimation 2026 — PM Streak",
     description: "How PMs estimate work honestly.",

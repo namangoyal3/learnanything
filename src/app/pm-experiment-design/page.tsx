@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to run A/B tests PM", "hypothesis testing product manager",
     "A/B test sample size PM", "product manager experimentation 2026",
   ],
-  alternates: { canonical: "/pm-experiment-design" },
+  alternates: { canonical: "/pm-experiment-design", types: { "text/markdown": "/pm-experiment-design.md" } },
+  other: { "ai-summary": "How PMs design A/B tests that actually produce signal. Hypothesis writing, sample size, guardrail metrics, common mistakes, and when NOT to A/B test." },
   openGraph: {
     title: "PM Experiment Design Guide 2026 — PM Streak",
     description: "A/B testing fundamentals for PMs — hypothesis, sample size, guardrails, and common mistakes.",

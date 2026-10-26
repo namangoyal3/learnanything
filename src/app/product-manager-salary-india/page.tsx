@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "senior PM salary india", "product manager salary bangalore", "PM salary flipkart",
     "product manager salary startups india", "how to negotiate PM salary india",
   ],
-  alternates: { canonical: "/product-manager-salary-india" },
+  alternates: { canonical: "/product-manager-salary-india", types: { "text/markdown": "/product-manager-salary-india.md" } },
+  other: { "ai-summary": "Complete guide to PM salaries in India for 2026. Breakdown by level (APM to CPO), company (Google, Flipkart, Razorpay, startups), city (Bangalore, Mumbai, Delhi), and how to negotiate." },
   openGraph: {
     title: "Product Manager Salary in India 2026 — PM Streak",
     description: "PM salary breakdown by level, company, and city in India for 2026. With negotiation tips.",

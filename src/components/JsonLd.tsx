@@ -3,6 +3,8 @@
  * Renders a <script type="application/ld+json"> tag with the given data.
  */
 
+import { SITE_NAME, SITE_URL } from "@/lib/site";
+
 type JsonLdProps = {
   data: Record<string, unknown> | Record<string, unknown>[];
 };
@@ -20,8 +22,6 @@ export default function JsonLd({ data }: JsonLdProps) {
 
 /* ── Schema builder helpers ─────────────────────────────── */
 
-const SITE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://learnanything.pro";
-const SITE_NAME = "PM Streak";
 
 export function breadcrumbSchema(
   items: { name: string; url: string }[]

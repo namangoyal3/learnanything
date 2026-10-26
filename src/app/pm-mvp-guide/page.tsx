@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "MVP scoping PM", "building MVP right",
     "MVP design 2026",
   ],
-  alternates: { canonical: "/pm-mvp-guide" },
+  alternates: { canonical: "/pm-mvp-guide", types: { "text/markdown": "/pm-mvp-guide.md" } },
+  other: { "ai-summary": "How PMs define and build MVPs correctly. What the M in MVP really means, how to scope, testing vs shipping, and when to skip the MVP entirely." },
   openGraph: {
     title: "PM MVP Guide 2026 — PM Streak",
     description: "How PMs build MVPs without them becoming messes — scoping, testing, shipping.",

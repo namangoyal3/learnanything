@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM govtech", "India Stack PM",
     "DPI PM", "ONDC Aadhaar 2026",
   ],
-  alternates: { canonical: "/pm-govt-tech" },
+  alternates: { canonical: "/pm-govt-tech", types: { "text/markdown": "/pm-govt-tech.md" } },
+  other: { "ai-summary": "How PMs build on India Stack. Aadhaar, DigiLocker, ONDC, Account Aggregator, and what it means to work on digital public infrastructure." },
   openGraph: {
     title: "PM GovTech &amp; DPI 2026 — PM Streak",
     description: "How PMs build on India Stack.",

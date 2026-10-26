@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM reading apps", "Kindle PM",
     "Pratilipi PM 2026",
   ],
-  alternates: { canonical: "/pm-reading-apps" },
+  alternates: { canonical: "/pm-reading-apps", types: { "text/markdown": "/pm-reading-apps.md" } },
+  other: { "ai-summary": "How PMs build reading apps. Long-form vs short-form, vernacular, subscription, and why Pratilipi rewrote the reading-for-Bharat playbook." },
   openGraph: {
     title: "PM Reading Apps 2026 — PM Streak",
     description: "How PMs build reading apps.",

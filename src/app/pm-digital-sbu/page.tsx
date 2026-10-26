@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM enterprise", "digital SBU",
     "legacy PM", "transformation PM 2026",
   ],
-  alternates: { canonical: "/pm-digital-sbu" },
+  alternates: { canonical: "/pm-digital-sbu", types: { "text/markdown": "/pm-digital-sbu.md" } },
+  other: { "ai-summary": "How PMs work inside legacy enterprises. Digital SBUs at Tata, Reliance, HDFC, and why PM-ing in enterprise is not the same as startup PM." },
   openGraph: {
     title: "PM at Traditional Enterprises 2026 — PM Streak",
     description: "How PMs work inside legacy enterprises.",

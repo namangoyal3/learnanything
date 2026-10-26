@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product sense answers", "PM interview sample answers",
     "product design interview examples 2026",
   ],
-  alternates: { canonical: "/pm-product-sense-examples" },
+  alternates: { canonical: "/pm-product-sense-examples", types: { "text/markdown": "/pm-product-sense-examples.md" } },
+  other: { "ai-summary": "10 product sense interview questions with full sample answers. See how great PMs structure their thinking — users, problems, solutions, metrics — in real time." },
   openGraph: {
     title: "PM Product Sense Examples 2026 — PM Streak",
     description: "10 product sense questions with sample answers showing great PM thinking.",

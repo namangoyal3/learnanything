@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI trust", "AI UX trust 2026",
   ],
-  alternates: { canonical: "/pm-ai-trust-signals" },
+  alternates: { canonical: "/pm-ai-trust-signals", types: { "text/markdown": "/pm-ai-trust-signals.md" } },
+  other: { "ai-summary": "How PMs design trust into AI products. Citations, confidence indicators, undo, and the small UX choices that make AI feel reliable." },
   openGraph: {
     title: "PM AI Trust Signals 2026 — PM Streak",
     description: "How AI products earn user trust.",

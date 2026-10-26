@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "hackathon strategy PM", "win hackathon",
     "internal hackathon PM 2026",
   ],
-  alternates: { canonical: "/pm-hackathon-guide" },
+  alternates: { canonical: "/pm-hackathon-guide", types: { "text/markdown": "/pm-hackathon-guide.md" } },
+  other: { "ai-summary": "How PMs win hackathons. Scoping the right problem, fast user validation, shipping something demo-able in 36 hours, and making the pitch land." },
   openGraph: {
     title: "PM Hackathon Guide 2026 — PM Streak",
     description: "How PMs win hackathons — problem scoping, fast validation, demo-able builds, and great pitches.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM women products", "women-first PM",
     "female audience 2026",
   ],
-  alternates: { canonical: "/pm-women-focused-products" },
+  alternates: { canonical: "/pm-women-focused-products", types: { "text/markdown": "/pm-women-focused-products.md" } },
+  other: { "ai-summary": "How PMs build products for women. Safety, financial inclusion, health, community — and why women-first products demand women-first teams." },
   openGraph: {
     title: "PM Women-Focused Products 2026 — PM Streak",
     description: "How PMs build products for women.",

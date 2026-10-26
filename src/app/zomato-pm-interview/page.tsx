@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Zomato PM interview prep", "Blinkit PM interview",
     "food delivery PM india", "Zomato product manager interview 2026",
   ],
-  alternates: { canonical: "/zomato-pm-interview" },
+  alternates: { canonical: "/zomato-pm-interview", types: { "text/markdown": "/zomato-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Zomato PM interview. All rounds, food delivery and dining product questions, real interview examples, and what Zomato PMs say the bar is in 2026." },
   openGraph: {
     title: "Zomato PM Interview Guide 2026 — PM Streak",
     description: "All Zomato PM interview rounds, real questions, and a prep plan for food delivery and dining PMs.",

@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "how to build growth loops", "growth loop examples PM 2026",
     "product growth strategy loops",
   ],
-  alternates: { canonical: "/product-growth-loops" },
+  alternates: { canonical: "/product-growth-loops", types: { "text/markdown": "/product-growth-loops.md" } },
+  other: { "ai-summary": "Master product growth loops as a PM. Viral loops, content loops, paid acquisition loops, and how to identify and strengthen the loops in your product — with real company examples." },
   openGraph: {
     title: "Product Growth Loops 2026 — PM Guide | PM Streak",
     description: "Viral, content, and paid growth loops — how PMs identify and strengthen them with real examples.",

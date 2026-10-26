@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "enterprise PM", "SaaS B2B PM",
     "B2B PM india 2026",
   ],
-  alternates: { canonical: "/pm-b2b-products" },
+  alternates: { canonical: "/pm-b2b-products", types: { "text/markdown": "/pm-b2b-products.md" } },
+  other: { "ai-summary": "How PMs build B2B products. Buyer vs user, sales-led motion, enterprise deal cycles, and the dynamics that separate B2B from consumer product work." },
   openGraph: {
     title: "PM B2B Products 2026 — PM Streak",
     description: "How B2B PM differs from consumer — buyer vs user, sales-led, enterprise cycles.",

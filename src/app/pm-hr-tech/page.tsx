@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM HR tech", "Darwinbox PM",
     "Rippling PM", "HRIS 2026",
   ],
-  alternates: { canonical: "/pm-hr-tech" },
+  alternates: { canonical: "/pm-hr-tech", types: { "text/markdown": "/pm-hr-tech.md" } },
+  other: { "ai-summary": "How PMs build HR tech products. Payroll, performance, engagement, and the consolidation of point tools into full-suite HRIS." },
   openGraph: {
     title: "PM HR Tech 2026 — PM Streak",
     description: "How PMs build HR tech products.",

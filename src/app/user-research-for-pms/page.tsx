@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "user interview guide PM", "PM user research methods",
     "how to conduct user interviews", "usability testing PM 2026",
   ],
-  alternates: { canonical: "/user-research-for-pms" },
+  alternates: { canonical: "/user-research-for-pms", types: { "text/markdown": "/user-research-for-pms.md" } },
+  other: { "ai-summary": "The complete user research playbook for PMs. When to use interviews vs surveys vs usability tests, how to recruit, how to analyse, and how to turn research into product decisions." },
   openGraph: {
     title: "User Research for Product Managers 2026 — PM Streak",
     description: "Interviews, surveys, usability tests — the research methods every PM should know.",

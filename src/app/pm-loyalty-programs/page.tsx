@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM loyalty programs", "rewards PM",
     "loyalty design 2026",
   ],
-  alternates: { canonical: "/pm-loyalty-programs" },
+  alternates: { canonical: "/pm-loyalty-programs", types: { "text/markdown": "/pm-loyalty-programs.md" } },
+  other: { "ai-summary": "How PMs design loyalty programs. Points vs tiers, breakage, behavioural economics, and why most loyalty programs just subsidise loyal users." },
   openGraph: {
     title: "PM Loyalty Programs 2026 — PM Streak",
     description: "Designing rewards that change behaviour.",

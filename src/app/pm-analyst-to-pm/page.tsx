@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "analyst to PM", "data analyst PM 2026",
   ],
-  alternates: { canonical: "/pm-analyst-to-pm" },
+  alternates: { canonical: "/pm-analyst-to-pm", types: { "text/markdown": "/pm-analyst-to-pm.md" } },
+  other: { "ai-summary": "How data analysts become PMs. The strengths they bring, the execution and empathy gaps, and why data-first PMs often win growth roles." },
   openGraph: {
     title: "PM Analyst to PM 2026 — PM Streak",
     description: "How data analysts become PMs.",

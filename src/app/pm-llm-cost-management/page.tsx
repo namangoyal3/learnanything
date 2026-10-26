@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM LLM cost", "AI cost management 2026",
   ],
-  alternates: { canonical: "/pm-llm-cost-management" },
+  alternates: { canonical: "/pm-llm-cost-management", types: { "text/markdown": "/pm-llm-cost-management.md" } },
+  other: { "ai-summary": "How PMs manage LLM costs. Caching, model selection, prompt compression, and unit economics that don&apos;t collapse at scale." },
   openGraph: {
     title: "PM LLM Cost Management 2026 — PM Streak",
     description: "Keeping AI products profitable.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Unacademy PM interview", "Vedantu PM",
     "learning product manager", "edtech PM career 2026",
   ],
-  alternates: { canonical: "/edtech-product-manager" },
+  alternates: { canonical: "/edtech-product-manager", types: { "text/markdown": "/edtech-product-manager.md" } },
+  other: { "ai-summary": "The complete edtech PM guide for India. Top companies, unique learning product challenges, interview questions, and how engagement vs outcomes shapes edtech PM decisions." },
   openGraph: {
     title: "Edtech PM Guide 2026 — PM Streak",
     description: "Edtech PM in India — companies, learning product challenges, and breaking in.",

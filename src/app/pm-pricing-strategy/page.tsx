@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM pricing strategy", "product pricing PM",
     "pricing experiments", "value-based pricing 2026",
   ],
-  alternates: { canonical: "/pm-pricing-strategy" },
+  alternates: { canonical: "/pm-pricing-strategy", types: { "text/markdown": "/pm-pricing-strategy.md" } },
+  other: { "ai-summary": "How PMs approach pricing — value-based, usage-based, tiered, freemium. Frameworks, willingness-to-pay research, and how to run pricing experiments." },
   openGraph: {
     title: "PM Pricing Strategy 2026 — PM Streak",
     description: "How PMs set and change prices — frameworks, research, experiments.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Airbnb marketplace PM", "trust and safety PM",
     "Airbnb PM prep 2026",
   ],
-  alternates: { canonical: "/airbnb-pm-interview" },
+  alternates: { canonical: "/airbnb-pm-interview", types: { "text/markdown": "/airbnb-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Airbnb PM interview. Marketplace dynamics, trust and safety, host and guest experience, and the story-driven product culture Airbnb is famous for." },
   openGraph: {
     title: "Airbnb PM Interview Guide 2026 — PM Streak",
     description: "Marketplace, trust, and host/guest experience — Airbnb PM interview prep.",

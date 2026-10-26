@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI versioning", "model migration PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-versioning" },
+  alternates: { canonical: "/pm-ai-versioning", types: { "text/markdown": "/pm-ai-versioning.md" } },
+  other: { "ai-summary": "How PMs version models and prompts. Pinning, migration, deprecation, and why model upgrades are silent product changes." },
   openGraph: {
     title: "PM AI Versioning 2026 — PM Streak",
     description: "Managing model and prompt versions.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM ride-hailing", "Uber PM",
     "Ola PM", "Rapido PM 2026",
   ],
-  alternates: { canonical: "/pm-ride-hailing" },
+  alternates: { canonical: "/pm-ride-hailing", types: { "text/markdown": "/pm-ride-hailing.md" } },
+  other: { "ai-summary": "How PMs build ride-hailing products. Dispatch, dynamic pricing, driver supply, and the peculiar economics of two-sided mobility marketplaces." },
   openGraph: {
     title: "PM Ride-Hailing 2026 — PM Streak",
     description: "How PMs build ride-hailing products.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "platform strategy PM", "mobile first india",
     "web vs app PM 2026",
   ],
-  alternates: { canonical: "/pm-mobile-vs-web" },
+  alternates: { canonical: "/pm-mobile-vs-web", types: { "text/markdown": "/pm-mobile-vs-web.md" } },
+  other: { "ai-summary": "How PMs think differently about mobile vs web products. User behaviour, distribution, monetisation, engineering — and when to build for which first." },
   openGraph: {
     title: "PM Mobile vs Web 2026 — PM Streak",
     description: "How PMs think differently about mobile vs web — user behaviour, distribution, monetisation.",

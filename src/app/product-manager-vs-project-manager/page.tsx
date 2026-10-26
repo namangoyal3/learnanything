@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "PM vs PjM", "product vs project manager salary",
     "which is better product or project manager 2026",
   ],
-  alternates: { canonical: "/product-manager-vs-project-manager" },
+  alternates: { canonical: "/product-manager-vs-project-manager", types: { "text/markdown": "/product-manager-vs-project-manager.md" } },
+  other: { "ai-summary": "Product manager vs project manager — what's actually different, where they overlap, which earns more, and which career to choose. With a side-by-side comparison." },
   openGraph: {
     title: "Product Manager vs Project Manager 2026 — PM Streak",
     description: "The real differences between product and project manager roles — responsibilities, salary, career path.",

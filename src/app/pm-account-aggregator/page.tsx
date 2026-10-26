@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM Account Aggregator", "AA PM",
     "FIU FIP PM 2026",
   ],
-  alternates: { canonical: "/pm-account-aggregator" },
+  alternates: { canonical: "/pm-account-aggregator", types: { "text/markdown": "/pm-account-aggregator.md" } },
+  other: { "ai-summary": "How PMs build on Account Aggregator. FIPs, FIUs, consent UX, and why AA is reshaping lending, wealth, and insurance product design." },
   openGraph: {
     title: "PM Account Aggregator 2026 — PM Streak",
     description: "Building on India&apos;s consent layer.",

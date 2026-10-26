@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM case question bank", "product case questions india 2026",
     "PM interview examples",
   ],
-  alternates: { canonical: "/pm-case-bank" },
+  alternates: { canonical: "/pm-case-bank", types: { "text/markdown": "/pm-case-bank.md" } },
+  other: { "ai-summary": "50+ real PM case questions from Indian tech interviews. Organised by company, category, and difficulty. What candidates were actually asked." },
   openGraph: {
     title: "PM Case Question Bank 2026 — PM Streak",
     description: "50+ real PM case questions from Indian company interviews, organised by category.",

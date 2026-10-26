@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "cognitive biases PM", "questioning assumptions PM",
     "intellectual discipline PM 2026",
   ],
-  alternates: { canonical: "/pm-critical-thinking" },
+  alternates: { canonical: "/pm-critical-thinking", types: { "text/markdown": "/pm-critical-thinking.md" } },
+  other: { "ai-summary": "How PMs think critically. Question assumptions, distinguish signal from noise, avoid cognitive biases, and develop the intellectual discipline great PMs share." },
   openGraph: {
     title: "Critical Thinking for PMs 2026 — PM Streak",
     description: "The habits of mind that separate great PMs — questioning assumptions, spotting bias, disciplined inquiry.",

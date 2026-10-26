@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "external roadmap PM", "customer roadmap share",
     "PM roadmap audiences 2026",
   ],
-  alternates: { canonical: "/pm-roadmap-communication" },
+  alternates: { canonical: "/pm-roadmap-communication", types: { "text/markdown": "/pm-roadmap-communication.md" } },
+  other: { "ai-summary": "How PMs communicate roadmaps to different audiences. Internal vs external, sales vs customers, execs vs engineering — what to share and how." },
   openGraph: {
     title: "PM Roadmap Communication 2026 — PM Streak",
     description: "How PMs share roadmaps without over-committing — different audiences, different messages.",

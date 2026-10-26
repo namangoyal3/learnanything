@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "mobility PM interview", "ride hailing PM india",
     "Uber product manager interview questions", "Ola APM 2026",
   ],
-  alternates: { canonical: "/uber-ola-pm-interview" },
+  alternates: { canonical: "/uber-ola-pm-interview", types: { "text/markdown": "/uber-ola-pm-interview.md" } },
+  other: { "ai-summary": "Crack PM interviews at Uber and Ola. Marketplace dynamics, pricing, supply-demand balancing, and the operations-heavy product thinking mobility companies test for." },
   openGraph: {
     title: "Uber & Ola PM Interview Guide 2026 — PM Streak",
     description: "PM interview guide for mobility companies — marketplace, pricing, supply-demand questions.",

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "non-tech to PM", "career change PM 2026",
   ],
-  alternates: { canonical: "/pm-non-tech-to-pm" },
+  alternates: { canonical: "/pm-non-tech-to-pm", types: { "text/markdown": "/pm-non-tech-to-pm.md" } },
+  other: { "ai-summary": "How non-tech professionals (finance, ops, teachers, lawyers) break into PM. Storytelling, stepping stones, and why domain-specific PM roles are the cleanest entry." },
   openGraph: {
     title: "PM Non-Tech to PM 2026 — PM Streak",
     description: "Crossing into product from outside tech.",

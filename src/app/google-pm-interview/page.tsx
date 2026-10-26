@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Google PM interview prep", "Google APMM interview", "how to crack Google PM interview",
     "Google product manager interview 2026", "Google PM interview India",
   ],
-  alternates: { canonical: "/google-pm-interview" },
+  alternates: { canonical: "/google-pm-interview", types: { "text/markdown": "/google-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Google PM interview. All 5 interview types, real questions, what Googlers say the bar actually is, and a 6-week prep plan — for India and global roles." },
   openGraph: {
     title: "Google PM Interview Guide 2026 — PM Streak",
     description: "All 5 Google PM interview types, real questions, and a 6-week prep plan.",

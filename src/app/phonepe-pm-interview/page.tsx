@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PhonePe PM interview prep", "UPI PM interview",
     "PhonePe product manager interview 2026", "UPI product manager india",
   ],
-  alternates: { canonical: "/phonepe-pm-interview" },
+  alternates: { canonical: "/phonepe-pm-interview", types: { "text/markdown": "/phonepe-pm-interview.md" } },
+  other: { "ai-summary": "Crack the PhonePe PM interview. All rounds, UPI and payments product questions, merchant vs consumer product thinking, and what PhonePe PMs say the bar is in 2026." },
   openGraph: {
     title: "PhonePe PM Interview Guide 2026 — PM Streak",
     description: "All PhonePe PM interview rounds, UPI-specific questions, and a prep plan.",

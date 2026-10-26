@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM RAG", "retrieval augmented PM 2026",
   ],
-  alternates: { canonical: "/pm-rag-products" },
+  alternates: { canonical: "/pm-rag-products", types: { "text/markdown": "/pm-rag-products.md" } },
+  other: { "ai-summary": "How PMs build RAG products. Embeddings, chunking, reranking, and why retrieval quality matters more than model choice." },
   openGraph: {
     title: "PM RAG Products 2026 — PM Streak",
     description: "Building retrieval-augmented apps.",

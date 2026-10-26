@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI productivity", "Copilot PM",
     "Glean PM", "AI knowledge 2026",
   ],
-  alternates: { canonical: "/pm-ai-productivity" },
+  alternates: { canonical: "/pm-ai-productivity", types: { "text/markdown": "/pm-ai-productivity.md" } },
+  other: { "ai-summary": "How PMs build AI productivity products. Personal agents, org-wide search, knowledge retrieval, and why productivity AI now crosses workflow boundaries." },
   openGraph: {
     title: "PM AI Productivity Products 2026 — PM Streak",
     description: "How PMs build AI productivity products.",

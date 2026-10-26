@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "agile sprint planning PM", "sprint capacity PM",
     "PM sprint agenda 2026",
   ],
-  alternates: { canonical: "/pm-sprint-planning" },
+  alternates: { canonical: "/pm-sprint-planning", types: { "text/markdown": "/pm-sprint-planning.md" } },
+  other: { "ai-summary": "How PMs run sprint planning that actually ships. Agenda, capacity estimation, story writing, dependency mapping, and how to avoid the 3 biggest sprint anti-patterns." },
   openGraph: {
     title: "PM Sprint Planning Guide 2026 — PM Streak",
     description: "How PMs run sprint planning that ships — agenda, capacity, dependencies, and anti-patterns.",

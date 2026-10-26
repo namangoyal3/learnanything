@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI voice", "ElevenLabs PM",
     "voice agents PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-voice" },
+  alternates: { canonical: "/pm-ai-voice", types: { "text/markdown": "/pm-ai-voice.md" } },
+  other: { "ai-summary": "How PMs build AI voice products. TTS, voice cloning, real-time agents, and why voice is the fastest-moving AI category." },
   openGraph: {
     title: "PM AI Voice Products 2026 — PM Streak",
     description: "How PMs build AI voice products.",

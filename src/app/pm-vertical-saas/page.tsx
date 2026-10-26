@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM vertical SaaS", "Toast PM",
     "vertical SaaS 2026",
   ],
-  alternates: { canonical: "/pm-vertical-saas" },
+  alternates: { canonical: "/pm-vertical-saas", types: { "text/markdown": "/pm-vertical-saas.md" } },
+  other: { "ai-summary": "How PMs build vertical SaaS. Deep domain workflows, payments embedding, and why going narrow and deep beats horizontal at the margin." },
   openGraph: {
     title: "PM Vertical SaaS 2026 — PM Streak",
     description: "How PMs build vertical SaaS.",

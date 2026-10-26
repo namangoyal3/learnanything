@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "consultant to PM", "McKinsey to PM 2026",
   ],
-  alternates: { canonical: "/pm-consulting-to-product" },
+  alternates: { canonical: "/pm-consulting-to-product", types: { "text/markdown": "/pm-consulting-to-product.md" } },
+  other: { "ai-summary": "How consultants transition to PM. Strengths they bring, gaps they must close, and why ex-consultants often excel at strategy but struggle with craft." },
   openGraph: {
     title: "PM Consulting to Product 2026 — PM Streak",
     description: "From consulting to PM.",

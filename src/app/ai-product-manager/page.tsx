@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "LLM product manager", "AI PM salary india",
     "machine learning product manager 2026",
   ],
-  alternates: { canonical: "/ai-product-manager" },
+  alternates: { canonical: "/ai-product-manager", types: { "text/markdown": "/ai-product-manager.md" } },
+  other: { "ai-summary": "The complete guide to becoming an AI product manager. What AI PMs do, the skills you need, interview questions, salary ranges, and how to break into AI product management in 2026." },
   openGraph: {
     title: "AI Product Manager Guide 2026 — PM Streak",
     description: "How to become an AI PM — skills, interview questions, salary, and breaking in.",

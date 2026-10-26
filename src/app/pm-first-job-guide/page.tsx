@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to get first PM job", "no experience PM role",
     "first PM role 2026",
   ],
-  alternates: { canonical: "/pm-first-job-guide" },
+  alternates: { canonical: "/pm-first-job-guide", types: { "text/markdown": "/pm-first-job-guide.md" } },
+  other: { "ai-summary": "The complete guide to landing your first PM job in India. Paths in, portfolio to build, interview prep, and how to differentiate when you have no PM experience." },
   openGraph: {
     title: "First PM Job Guide 2026 — PM Streak",
     description: "Complete guide to landing your first PM role — paths, portfolio, interview prep.",

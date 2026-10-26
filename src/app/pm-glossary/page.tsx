@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM terminology", "PM definitions",
     "product management vocabulary 2026",
   ],
-  alternates: { canonical: "/pm-glossary" },
+  alternates: { canonical: "/pm-glossary", types: { "text/markdown": "/pm-glossary.md" } },
+  other: { "ai-summary": "The complete PM glossary. 50+ product management terms every PM should know — organised by category, defined clearly, with examples." },
   openGraph: {
     title: "PM Glossary 2026 — PM Streak",
     description: "50+ PM terms explained clearly with examples — organised by category.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM subscription", "subscription product PM",
     "recurring revenue PM 2026",
   ],
-  alternates: { canonical: "/pm-subscription-business" },
+  alternates: { canonical: "/pm-subscription-business", types: { "text/markdown": "/pm-subscription-business.md" } },
+  other: { "ai-summary": "How PMs build subscription products. Trial design, annual vs monthly, cancellation flows, and the math that keeps subscription businesses alive." },
   openGraph: {
     title: "PM Subscription Business 2026 — PM Streak",
     description: "How PMs build subscription products.",

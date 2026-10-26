@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "remote PM interview tips", "Zoom PM interview",
     "async PM interview 2026",
   ],
-  alternates: { canonical: "/pm-remote-interview" },
+  alternates: { canonical: "/pm-remote-interview", types: { "text/markdown": "/pm-remote-interview.md" } },
+  other: { "ai-summary": "How to crack remote PM interviews on video. Setup, body language, handling silence, timezone handling, and the technical preparation that separates strong remote candidates." },
   openGraph: {
     title: "PM Remote Interview Guide 2026 — PM Streak",
     description: "How to crack video PM interviews — setup, body language, and technical prep.",

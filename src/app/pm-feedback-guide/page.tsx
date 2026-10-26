@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "receiving feedback product manager", "SBI framework PM",
     "PM 360 feedback", "feedback skills PM 2026",
   ],
-  alternates: { canonical: "/pm-feedback-guide" },
+  alternates: { canonical: "/pm-feedback-guide", types: { "text/markdown": "/pm-feedback-guide.md" } },
+  other: { "ai-summary": "How PMs give and receive feedback effectively. SBI framework, specific examples, how to handle defensive reactions, and how to make feedback a habit instead of an event." },
   openGraph: {
     title: "PM Feedback Guide 2026 — PM Streak",
     description: "How PMs give and receive feedback effectively — SBI, scripts, and habits.",

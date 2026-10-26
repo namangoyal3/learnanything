@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM product vision", "product vision",
     "vision document PM 2026",
   ],
-  alternates: { canonical: "/pm-product-vision" },
+  alternates: { canonical: "/pm-product-vision", types: { "text/markdown": "/pm-product-vision.md" } },
+  other: { "ai-summary": "How PMs write product visions teams actually rally around. Examples, anti-patterns, and the difference between vision and strategy." },
   openGraph: {
     title: "PM Product Vision 2026 — PM Streak",
     description: "How PMs craft visions teams rally around.",

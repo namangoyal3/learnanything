@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM video products", "YouTube PM",
     "TikTok PM", "Reels PM", "video product 2026",
   ],
-  alternates: { canonical: "/pm-video-products" },
+  alternates: { canonical: "/pm-video-products", types: { "text/markdown": "/pm-video-products.md" } },
+  other: { "ai-summary": "How PMs build video products. Watch time, creator tools, recommendation, monetisation, and the unique engagement dynamics of video." },
   openGraph: {
     title: "PM Video Products 2026 — PM Streak",
     description: "How PMs build video products — watch time, creator tools, recommendation.",

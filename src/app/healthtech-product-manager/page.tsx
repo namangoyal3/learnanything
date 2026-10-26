@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to become healthtech PM", "PharmEasy PM interview",
     "Practo PM", "healthcare PM india 2026",
   ],
-  alternates: { canonical: "/healthtech-product-manager" },
+  alternates: { canonical: "/healthtech-product-manager", types: { "text/markdown": "/healthtech-product-manager.md" } },
+  other: { "ai-summary": "The complete healthtech PM playbook for India. Top companies, unique domain challenges, regulatory context, interview questions, and how to break into healthtech PM." },
   openGraph: {
     title: "Healthtech PM Guide 2026 — PM Streak",
     description: "Healthtech PM in India — companies, domain challenges, and how to break in.",

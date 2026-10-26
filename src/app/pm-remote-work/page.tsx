@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "remote PM jobs from india", "how to get remote PM job",
     "async PM work", "remote product manager salary 2026",
   ],
-  alternates: { canonical: "/pm-remote-work" },
+  alternates: { canonical: "/pm-remote-work", types: { "text/markdown": "/pm-remote-work.md" } },
+  other: { "ai-summary": "The complete remote PM guide. Where to find remote PM jobs from India, how to interview for global roles, async communication skills, and remote PM compensation benchmarks." },
   openGraph: {
     title: "Remote PM Jobs Guide 2026 — PM Streak",
     description: "Where to find remote PM jobs, how to interview from India, and excel async.",

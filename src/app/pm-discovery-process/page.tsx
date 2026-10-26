@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM discovery", "continuous discovery",
     "opportunity solution tree", "discovery 2026",
   ],
-  alternates: { canonical: "/pm-discovery-process" },
+  alternates: { canonical: "/pm-discovery-process", types: { "text/markdown": "/pm-discovery-process.md" } },
+  other: { "ai-summary": "How PMs run continuous discovery. Interviews, opportunity trees, assumption testing — Teresa Torres&apos; framework applied." },
   openGraph: {
     title: "PM Discovery Process 2026 — PM Streak",
     description: "Continuous discovery for product managers.",

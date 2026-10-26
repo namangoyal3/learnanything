@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to think strategically product manager", "product strategy for PMs",
     "good strategy bad strategy PM", "product vision vs strategy 2026",
   ],
-  alternates: { canonical: "/pm-strategy-guide" },
+  alternates: { canonical: "/pm-strategy-guide", types: { "text/markdown": "/pm-strategy-guide.md" } },
+  other: { "ai-summary": "How PMs build product strategy. Vision vs strategy, strategic frameworks (moats, bets, Good Strategy/Bad Strategy), and the strategic questions every senior PM is expected to answer." },
   openGraph: {
     title: "Product Strategy Guide for PMs 2026 — PM Streak",
     description: "How PMs think strategically — frameworks, examples, and how to answer strategy questions.",

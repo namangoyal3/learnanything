@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM interview mistakes", "product manager rejection reasons",
     "what interviewers look for PM 2026",
   ],
-  alternates: { canonical: "/pm-interview-red-flags" },
+  alternates: { canonical: "/pm-interview-red-flags", types: { "text/markdown": "/pm-interview-red-flags.md" } },
+  other: { "ai-summary": "The 10 red flags that get PM candidates rejected — even when their answers seem fine. What interviewers catch that candidates miss, and how to avoid each." },
   openGraph: {
     title: "PM Interview Red Flags 2026 — PM Streak",
     description: "10 red flags that get PM candidates rejected — and how to avoid each.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product instrumentation", "event naming PM",
     "analytics events 2026",
   ],
-  alternates: { canonical: "/pm-event-tracking" },
+  alternates: { canonical: "/pm-event-tracking", types: { "text/markdown": "/pm-event-tracking.md" } },
+  other: { "ai-summary": "How PMs design event tracking that answers the questions they&apos;ll want to ask. Naming conventions, property design, and building a tracking plan before shipping." },
   openGraph: {
     title: "PM Event Tracking 2026 — PM Streak",
     description: "How PMs design tracking plans that answer real questions — naming, properties, governance.",

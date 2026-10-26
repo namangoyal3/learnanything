@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM UPI", "UPI products PM",
     "PhonePe Paytm GPay PM 2026",
   ],
-  alternates: { canonical: "/pm-upi-products" },
+  alternates: { canonical: "/pm-upi-products", types: { "text/markdown": "/pm-upi-products.md" } },
+  other: { "ai-summary": "How PMs build UPI-first products. P2P, P2M, credit on UPI, and why UPI is the most important payments rail built this century." },
   openGraph: {
     title: "PM UPI Products 2026 — PM Streak",
     description: "Building on India&apos;s payment rails.",

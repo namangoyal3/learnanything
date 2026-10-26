@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product manager dogfood", "PM habits 2026",
     "dogfooding culture",
   ],
-  alternates: { canonical: "/pm-dogfooding" },
+  alternates: { canonical: "/pm-dogfooding", types: { "text/markdown": "/pm-dogfooding.md" } },
+  other: { "ai-summary": "Why PMs must use their own product daily, how to dogfood seriously (not for 10 minutes), and why companies with strong dogfooding cultures ship dramatically better products." },
   openGraph: {
     title: "PM Dogfooding Guide 2026 — PM Streak",
     description: "Why dogfooding is non-negotiable for PMs — how to do it seriously, not for 10 minutes.",

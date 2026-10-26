@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM interview rubric", "PM hiring signals",
     "PM hiring india 2026",
   ],
-  alternates: { canonical: "/pm-hiring-guide" },
+  alternates: { canonical: "/pm-hiring-guide", types: { "text/markdown": "/pm-hiring-guide.md" } },
+  other: { "ai-summary": "How great PMs hire other PMs. Structured interview loops, signals to look for, the bar to hire at each level, and how to give candidates a great experience." },
   openGraph: {
     title: "PM Hiring Guide 2026 — PM Streak",
     description: "How great PMs hire other PMs — structured loops, signals, and rubrics.",

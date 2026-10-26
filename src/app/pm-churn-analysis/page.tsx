@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "churn diagnosis product", "user churn PM",
     "churn reduction 2026",
   ],
-  alternates: { canonical: "/pm-churn-analysis" },
+  alternates: { canonical: "/pm-churn-analysis", types: { "text/markdown": "/pm-churn-analysis.md" } },
+  other: { "ai-summary": "How PMs diagnose churn. Types of churn, root-cause analysis, and the 5 levers PMs use to reduce churn meaningfully." },
   openGraph: {
     title: "PM Churn Analysis 2026 — PM Streak",
     description: "How PMs diagnose churn and reduce it meaningfully — types, root causes, 5 levers.",

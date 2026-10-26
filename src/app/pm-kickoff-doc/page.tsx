@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product project kickoff", "PM project start",
     "project brief template 2026",
   ],
-  alternates: { canonical: "/pm-kickoff-doc" },
+  alternates: { canonical: "/pm-kickoff-doc", types: { "text/markdown": "/pm-kickoff-doc.md" } },
+  other: { "ai-summary": "The project kickoff doc that aligns the team before work starts. Template, sections, and how to avoid the 6 kickoff mistakes that make projects late." },
   openGraph: {
     title: "PM Project Kickoff Doc 2026 — PM Streak",
     description: "Start projects without drama — kickoff doc template, sections, and mistakes to avoid.",

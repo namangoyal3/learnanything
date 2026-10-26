@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "habit loops product", "designing habits PM",
     "Nir Eyal PM 2026",
   ],
-  alternates: { canonical: "/pm-habit-products" },
+  alternates: { canonical: "/pm-habit-products", types: { "text/markdown": "/pm-habit-products.md" } },
+  other: { "ai-summary": "How PMs design products that form genuine habits — without dark patterns. Nir Eyal&apos;s Hooked framework, habit loops, and examples from Duolingo, WhatsApp, and others." },
   openGraph: {
     title: "PM Habit-Forming Products 2026 — PM Streak",
     description: "How PMs design genuine habit-forming products — without dark patterns.",

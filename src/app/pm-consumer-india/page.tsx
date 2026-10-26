@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "indian users PM", "consumer product manager india",
     "india market PM 2026",
   ],
-  alternates: { canonical: "/pm-consumer-india" },
+  alternates: { canonical: "/pm-consumer-india", types: { "text/markdown": "/pm-consumer-india.md" } },
+  other: { "ai-summary": "How consumer PMs in India build products for 700M+ users. User segments, behaviour patterns, monetisation realities, and what separates Indian consumer PM from global." },
   openGraph: {
     title: "Consumer PM India 2026 — PM Streak",
     description: "How consumer PMs build products for India&apos;s 700M+ user base — patterns, behaviour, monetisation.",

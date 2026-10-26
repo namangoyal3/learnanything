@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM work-life balance", "PM mental health",
     "how PMs avoid burnout 2026",
   ],
-  alternates: { canonical: "/pm-burnout" },
+  alternates: { canonical: "/pm-burnout", types: { "text/markdown": "/pm-burnout.md" } },
+  other: { "ai-summary": "How PMs spot and recover from burnout. Early warning signs, structural causes, what actually works for recovery, and how to rebuild a sustainable product management practice." },
   openGraph: {
     title: "PM Burnout Guide 2026 — PM Streak",
     description: "How to spot, prevent, and recover from PM burnout — early signs, causes, and real recovery moves.",

@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "Amazon bar raiser PM", "how to crack Amazon PM interview",
     "Amazon product manager interview 2026",
   ],
-  alternates: { canonical: "/amazon-pm-interview" },
+  alternates: { canonical: "/amazon-pm-interview", types: { "text/markdown": "/amazon-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Amazon PM interview. Leadership Principles in every answer, the Bar Raiser round, product design questions, and a complete prep plan for Amazon India PM roles." },
   openGraph: {
     title: "Amazon PM Interview Guide 2026 — PM Streak",
     description: "Leadership Principles, Bar Raiser, product design questions, and a prep plan for Amazon PM roles.",

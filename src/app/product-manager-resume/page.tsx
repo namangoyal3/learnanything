@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to write PM resume", "product manager resume india", "APM resume",
     "senior PM resume", "product manager CV 2026",
   ],
-  alternates: { canonical: "/product-manager-resume" },
+  alternates: { canonical: "/product-manager-resume", types: { "text/markdown": "/product-manager-resume.md" } },
+  other: { "ai-summary": "Write a PM resume that gets interviews. Templates, real examples, bullet formulas, and what hiring managers actually look for at Google, Flipkart, Razorpay, and top startups." },
   openGraph: {
     title: "Product Manager Resume Guide 2026 — PM Streak",
     description: "PM resume templates, bullet formulas, and what hiring managers look for at top companies.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "recommendation algorithm PM", "content moderation PM",
     "content platform 2026",
   ],
-  alternates: { canonical: "/pm-content-products" },
+  alternates: { canonical: "/pm-content-products", types: { "text/markdown": "/pm-content-products.md" } },
+  other: { "ai-summary": "How PMs build content products. Creator economy, recommendation algorithms, content moderation, and the dynamics of platforms where content is the product." },
   openGraph: {
     title: "PM Content Products 2026 — PM Streak",
     description: "How PMs build content platforms — creators, algorithms, moderation, dynamics.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "API product PM", "SDK product",
     "platform PM role 2026",
   ],
-  alternates: { canonical: "/pm-platform-products" },
+  alternates: { canonical: "/pm-platform-products", types: { "text/markdown": "/pm-platform-products.md" } },
+  other: { "ai-summary": "How PMs build platform products — APIs, SDKs, developer tools. Why platform PM is harder and what makes it rewarding." },
   openGraph: {
     title: "PM Platform Products 2026 — PM Streak",
     description: "How PMs build platform products — APIs, SDKs, developer tools, and why it&apos;s different.",

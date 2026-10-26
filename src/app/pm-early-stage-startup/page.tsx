@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM at startup", "first PM hire",
     "startup PM role 2026",
   ],
-  alternates: { canonical: "/pm-early-stage-startup" },
+  alternates: { canonical: "/pm-early-stage-startup", types: { "text/markdown": "/pm-early-stage-startup.md" } },
+  other: { "ai-summary": "What PM work is really like at an early-stage startup. Scope, chaos, hats worn, and whether it&apos;s right for you." },
   openGraph: {
     title: "PM Early-Stage Startup 2026 — PM Streak",
     description: "What early-stage PM work is actually like — scope, chaos, hats worn, real trade-offs.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "deprecating product PM", "sunset feature PM",
     "product sunset 2026",
   ],
-  alternates: { canonical: "/pm-deprecations" },
+  alternates: { canonical: "/pm-deprecations", types: { "text/markdown": "/pm-deprecations.md" } },
+  other: { "ai-summary": "How PMs deprecate features without burning customers. Communication, migration paths, timelines, and why deprecating is a senior-PM skill." },
   openGraph: {
     title: "PM Deprecations Guide 2026 — PM Streak",
     description: "How PMs kill features without killing trust — communication, migration, timelines.",

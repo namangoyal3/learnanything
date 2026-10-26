@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM experimentation platform", "Statsig PM",
     "LaunchDarkly 2026",
   ],
-  alternates: { canonical: "/pm-experimentation-platform" },
+  alternates: { canonical: "/pm-experimentation-platform", types: { "text/markdown": "/pm-experimentation-platform.md" } },
+  other: { "ai-summary": "How PMs build experimentation platforms. Feature flags, statistical engines, governance, and why exp platforms are the unsexy infra winners." },
   openGraph: {
     title: "PM Experimentation Platform 2026 — PM Streak",
     description: "How PMs build experimentation platforms.",

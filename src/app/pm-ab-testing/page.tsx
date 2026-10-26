@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM A/B testing", "product experimentation",
     "statistical significance PM", "AB testing 2026",
   ],
-  alternates: { canonical: "/pm-ab-testing" },
+  alternates: { canonical: "/pm-ab-testing", types: { "text/markdown": "/pm-ab-testing.md" } },
+  other: { "ai-summary": "How PMs run A/B tests that give honest answers. Sample size, MDE, guardrails, novelty effects, and why most A/B tests lie." },
   openGraph: {
     title: "PM A/B Testing 2026 — PM Streak",
     description: "Statistical rigor for product managers running A/B tests.",

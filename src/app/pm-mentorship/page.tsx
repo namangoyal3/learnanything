@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to be PM mentor", "mentee mentor PM",
     "PM career mentoring 2026",
   ],
-  alternates: { canonical: "/pm-mentorship" },
+  alternates: { canonical: "/pm-mentorship", types: { "text/markdown": "/pm-mentorship.md" } },
+  other: { "ai-summary": "How PMs find mentors, get the most from mentorship, and become mentors themselves. What works, what doesn&apos;t, and the compounding career value of mentorship." },
   openGraph: {
     title: "PM Mentorship Guide 2026 — PM Streak",
     description: "How PMs find mentors and become mentors — what works, what doesn&apos;t.",

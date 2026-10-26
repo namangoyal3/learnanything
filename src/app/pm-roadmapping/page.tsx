@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM roadmapping", "product roadmap",
     "now next later", "outcome roadmap 2026",
   ],
-  alternates: { canonical: "/pm-roadmapping" },
+  alternates: { canonical: "/pm-roadmapping", types: { "text/markdown": "/pm-roadmapping.md" } },
+  other: { "ai-summary": "How PMs build roadmaps that survive reality. Now/Next/Later, outcome roadmaps, and why timeline roadmaps keep failing." },
   openGraph: {
     title: "PM Roadmapping 2026 — PM Streak",
     description: "How PMs build roadmaps that survive reality.",

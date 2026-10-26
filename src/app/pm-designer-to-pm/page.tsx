@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "designer to PM", "designer PM transition 2026",
   ],
-  alternates: { canonical: "/pm-designer-to-pm" },
+  alternates: { canonical: "/pm-designer-to-pm", types: { "text/markdown": "/pm-designer-to-pm.md" } },
+  other: { "ai-summary": "How designers become PMs. Strengths they bring, the data and engineering gaps to close, and why designer-PMs often ship the best-experience products." },
   openGraph: {
     title: "PM Designer to PM 2026 — PM Streak",
     description: "How designers become PMs.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM engineering partnership", "PM engineer collaboration",
     "PM tech lead 2026",
   ],
-  alternates: { canonical: "/pm-eng-partnership" },
+  alternates: { canonical: "/pm-eng-partnership", types: { "text/markdown": "/pm-eng-partnership.md" } },
+  other: { "ai-summary": "How PMs partner with engineering. Estimates, tech debt, tradeoffs, and why your TL is your most valuable product ally." },
   openGraph: {
     title: "PM Engineering Partnership 2026 — PM Streak",
     description: "How PMs partner with engineering.",

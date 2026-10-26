@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM email products", "Superhuman PM",
     "email client PM 2026",
   ],
-  alternates: { canonical: "/pm-email-products" },
+  alternates: { canonical: "/pm-email-products", types: { "text/markdown": "/pm-email-products.md" } },
+  other: { "ai-summary": "How PMs build email products. Triage, speed, spam signals, and why email has survived every &apos;email killer&apos; since 2005." },
   openGraph: {
     title: "PM Email Products 2026 — PM Streak",
     description: "How PMs build email products.",

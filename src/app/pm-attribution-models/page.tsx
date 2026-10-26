@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM attribution", "marketing attribution PM 2026",
   ],
-  alternates: { canonical: "/pm-attribution-models" },
+  alternates: { canonical: "/pm-attribution-models", types: { "text/markdown": "/pm-attribution-models.md" } },
+  other: { "ai-summary": "How PMs handle attribution after iOS 14, third-party cookies, and post-cookie. Models, MMM, and lift studies that actually work." },
   openGraph: {
     title: "PM Attribution Models 2026 — PM Streak",
     description: "Last-click is dead. What PMs use now.",

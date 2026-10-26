@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "behavioural segmentation PM", "JTBD segmentation",
     "user personas vs segments 2026",
   ],
-  alternates: { canonical: "/pm-customer-segmentation" },
+  alternates: { canonical: "/pm-customer-segmentation", types: { "text/markdown": "/pm-customer-segmentation.md" } },
+  other: { "ai-summary": "How PMs segment customers for product decisions. Beyond demographics — behavioural, needs-based, and JTBD segmentation with examples." },
   openGraph: {
     title: "PM Customer Segmentation Guide 2026 — PM Streak",
     description: "How PMs segment users in ways that actually drive product decisions.",

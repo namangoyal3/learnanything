@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to avoid PM career mistakes", "stuck as PM",
     "PM promotion mistakes", "PM career stagnation 2026",
   ],
-  alternates: { canonical: "/pm-career-mistakes" },
+  alternates: { canonical: "/pm-career-mistakes", types: { "text/markdown": "/pm-career-mistakes.md" } },
+  other: { "ai-summary": "The 10 most common PM career mistakes. What kills PM careers, what compounds slowly into stagnation, and the deliberate choices that separate fast-growing PMs from stuck ones." },
   openGraph: {
     title: "10 PM Career Mistakes 2026 — PM Streak",
     description: "The 10 career mistakes that stall PMs and how to avoid them.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product case interview framework", "how to solve PM case studies",
     "product improvement case interview", "PM case interview examples 2026",
   ],
-  alternates: { canonical: "/pm-case-study-interview" },
+  alternates: { canonical: "/pm-case-study-interview", types: { "text/markdown": "/pm-case-study-interview.md" } },
+  other: { "ai-summary": "Crack PM case study interviews with a proven framework. Product improvement, new market entry, metric drop investigation, and go-to-market cases — with worked examples and structures." },
   openGraph: {
     title: "PM Case Study Interview Guide 2026 — PM Streak",
     description: "How to solve any PM case study — frameworks, worked examples, and what interviewers actually want.",

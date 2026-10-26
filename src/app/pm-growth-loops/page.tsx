@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "content loop PM", "PLG loop",
     "product growth engine 2026",
   ],
-  alternates: { canonical: "/pm-growth-loops" },
+  alternates: { canonical: "/pm-growth-loops", types: { "text/markdown": "/pm-growth-loops.md" } },
+  other: { "ai-summary": "How PMs build growth loops. Viral, content, paid, PLG — what each loop does, when it works, and how to diagnose a loop that&apos;s broken." },
   openGraph: {
     title: "PM Growth Loops 2026 — PM Streak",
     description: "How PMs build growth loops — viral, content, paid, PLG — and diagnose broken ones.",

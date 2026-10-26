@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM reflection habit", "weekly review template PM",
     "PM journaling 2026",
   ],
-  alternates: { canonical: "/pm-weekly-review" },
+  alternates: { canonical: "/pm-weekly-review", types: { "text/markdown": "/pm-weekly-review.md" } },
+  other: { "ai-summary": "The 20-minute weekly review every PM should do. Reflect on shipped work, metrics, relationships, and learning. A habit that compounds into career mastery." },
   openGraph: {
     title: "PM Weekly Review Guide 2026 — PM Streak",
     description: "The 20-minute weekly review habit that compounds into PM mastery.",

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM AI monetization", "AI pricing 2026",
   ],
-  alternates: { canonical: "/pm-ai-monetization" },
+  alternates: { canonical: "/pm-ai-monetization", types: { "text/markdown": "/pm-ai-monetization.md" } },
+  other: { "ai-summary": "How PMs price AI products. Per-seat vs usage vs outcome pricing, and which AI categories converge to which models." },
   openGraph: {
     title: "PM AI Monetization 2026 — PM Streak",
     description: "How AI products actually make money.",

@@ -6,6 +6,7 @@ import CampaignTracker from "@/components/CampaignTracker";
 import { MarketingHeader, MarketingFooter } from "@/components/MarketingChrome";
 import MotionProvider from "@/components/MotionProvider";
 import { Suspense } from "react";
+import { SITE_CONTACT_EMAIL, SITE_DESCRIPTION, SITE_FOUNDED } from "@/lib/site";
 import "./globals.css";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://learnanything.pro";
@@ -109,15 +110,15 @@ const orgJsonLd = {
     width: 512,
     height: 512,
   },
-  description:
-    "PM Streak delivers daily 2-minute product management lessons from 300+ expert PM interviews with streak tracking, XP, leaderboards, and AI-powered content generation.",
-  foundingDate: "2024",
+  description: SITE_DESCRIPTION,
+  foundingDate: SITE_FOUNDED,
   sameAs: [
     "https://www.producthunt.com/products/pm-streak",
   ],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",
+    email: SITE_CONTACT_EMAIL,
     url: APP_URL,
   },
 };

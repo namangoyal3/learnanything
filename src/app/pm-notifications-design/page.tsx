@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "notification strategy PM", "engagement PM",
     "notification UX 2026",
   ],
-  alternates: { canonical: "/pm-notifications-design" },
+  alternates: { canonical: "/pm-notifications-design", types: { "text/markdown": "/pm-notifications-design.md" } },
+  other: { "ai-summary": "How PMs design notification systems that drive return visits without triggering uninstalls. Content, timing, frequency, and the ethical line." },
   openGraph: {
     title: "PM Notifications Design 2026 — PM Streak",
     description: "How PMs design notifications that help users — not annoy them into uninstalls.",

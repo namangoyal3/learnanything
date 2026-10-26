@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM reporting to founder", "startup PM founder",
     "founder-led product 2026",
   ],
-  alternates: { canonical: "/pm-founder-vs-pm" },
+  alternates: { canonical: "/pm-founder-vs-pm", types: { "text/markdown": "/pm-founder-vs-pm.md" } },
+  other: { "ai-summary": "Founder vs PM — who owns what. The overlap, the conflicts, and how to work with a founder-led product culture as a PM joining the team." },
   openGraph: {
     title: "Founder vs PM 2026 — PM Streak",
     description: "Founder vs PM — who owns what, where they overlap, and how to work together.",

@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM multimodal AI", "GPT-4o PM 2026",
   ],
-  alternates: { canonical: "/pm-multimodal-products" },
+  alternates: { canonical: "/pm-multimodal-products", types: { "text/markdown": "/pm-multimodal-products.md" } },
+  other: { "ai-summary": "How PMs build multimodal AI products. Use cases, latency tradeoffs, and where multimodal genuinely beats single-mode workflows." },
   openGraph: {
     title: "PM Multimodal Products 2026 — PM Streak",
     description: "How PMs build multimodal AI products.",

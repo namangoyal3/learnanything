@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM recommendation systems", "recsys PM",
     "ML product manager", "recommendation 2026",
   ],
-  alternates: { canonical: "/pm-recommendation-systems" },
+  alternates: { canonical: "/pm-recommendation-systems", types: { "text/markdown": "/pm-recommendation-systems.md" } },
+  other: { "ai-summary": "How PMs work with ML on recommendation systems. Candidate generation, ranking, diversity, and the PM&apos;s role when ML owns the model." },
   openGraph: {
     title: "PM Recommendation Systems 2026 — PM Streak",
     description: "How PMs work with ML teams on recommendations.",

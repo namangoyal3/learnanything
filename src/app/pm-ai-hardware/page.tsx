@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI hardware", "Rabbit PM",
     "Humane AI Pin", "AI device 2026",
   ],
-  alternates: { canonical: "/pm-ai-hardware" },
+  alternates: { canonical: "/pm-ai-hardware", types: { "text/markdown": "/pm-ai-hardware.md" } },
+  other: { "ai-summary": "How PMs build AI-first hardware. Why standalone AI devices keep failing, what&apos;s actually working, and the lessons from Rabbit R1 and Humane AI Pin." },
   openGraph: {
     title: "PM AI Hardware 2026 — PM Streak",
     description: "How PMs build AI-first hardware.",

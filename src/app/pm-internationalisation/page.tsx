@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM internationalisation", "i18n PM",
     "localisation PM 2026",
   ],
-  alternates: { canonical: "/pm-internationalisation" },
+  alternates: { canonical: "/pm-internationalisation", types: { "text/markdown": "/pm-internationalisation.md" } },
+  other: { "ai-summary": "How PMs internationalise products. Localisation vs translation, payment methods, legal, and why i18n is a first-class product concern." },
   openGraph: {
     title: "PM Internationalisation 2026 — PM Streak",
     description: "Building products for multiple markets.",

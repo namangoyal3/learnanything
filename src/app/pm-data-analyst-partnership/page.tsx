@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "working with data team PM", "self-serve analytics PM",
     "data analyst collaboration 2026",
   ],
-  alternates: { canonical: "/pm-data-analyst-partnership" },
+  alternates: { canonical: "/pm-data-analyst-partnership", types: { "text/markdown": "/pm-data-analyst-partnership.md" } },
+  other: { "ai-summary": "How PMs work with data analysts effectively. What to ask for, what to not ask for, how to set up self-serve, and building deep analytical partnership over time." },
   openGraph: {
     title: "PM + Data Analyst Partnership 2026 — PM Streak",
     description: "How PMs work with data analysts effectively — what to ask, what to skip, how to build partnership.",

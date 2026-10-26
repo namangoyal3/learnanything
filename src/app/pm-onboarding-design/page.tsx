@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM onboarding design", "first-run experience PM",
     "activation PM", "aha moment 2026",
   ],
-  alternates: { canonical: "/pm-onboarding-design" },
+  alternates: { canonical: "/pm-onboarding-design", types: { "text/markdown": "/pm-onboarding-design.md" } },
+  other: { "ai-summary": "How PMs design onboarding that activates users fast. Aha moments, progressive disclosure, and the metrics that separate great onboarding from tutorial hell." },
   openGraph: {
     title: "PM Onboarding Design 2026 — PM Streak",
     description: "How PMs build first-run experiences that activate users fast.",

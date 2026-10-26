@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "quick commerce PM india", "dark store PM",
     "10 minute delivery PM 2026",
   ],
-  alternates: { canonical: "/pm-zepto-pm-interview" },
+  alternates: { canonical: "/pm-zepto-pm-interview", types: { "text/markdown": "/pm-zepto-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Zepto PM interview. Dark store ops, 10-minute delivery dynamics, SKU catalogue decisions, and the high-velocity PM culture at India&apos;s top quick-commerce company." },
   openGraph: {
     title: "Zepto PM Interview Guide 2026 — PM Streak",
     description: "PM interview prep for Zepto — quick commerce, dark stores, and high-velocity PM work.",

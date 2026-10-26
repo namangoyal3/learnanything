@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Salesforce PM interview", "enterprise SaaS PM india",
     "creative tools PM 2026",
   ],
-  alternates: { canonical: "/intuit-adobe-pm-interview" },
+  alternates: { canonical: "/intuit-adobe-pm-interview", types: { "text/markdown": "/intuit-adobe-pm-interview.md" } },
+  other: { "ai-summary": "Crack PM interviews at Intuit, Adobe, Salesforce, and enterprise SaaS. The unique dynamics of large enterprise products, creative tools, and the slow-but-steady PM work." },
   openGraph: {
     title: "Intuit &amp; Adobe PM Interview Guide 2026 — PM Streak",
     description: "PM interview prep for Intuit, Adobe, Salesforce, and enterprise SaaS PM roles.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "senior PM interview prep", "product director interview", "group PM interview",
     "senior PM strategy questions", "PM leadership interview questions 2026",
   ],
-  alternates: { canonical: "/senior-pm-interview" },
+  alternates: { canonical: "/senior-pm-interview", types: { "text/markdown": "/senior-pm-interview.md" } },
+  other: { "ai-summary": "Senior PM interview questions with model answers. Strategy, stakeholder management, org design, product vision, and the systems thinking questions that separate senior PMs from mid-level." },
   openGraph: {
     title: "Senior PM Interview Questions 2026 — PM Streak",
     description: "Strategy, leadership, and systems thinking questions for senior PM roles.",

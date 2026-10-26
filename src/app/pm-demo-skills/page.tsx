@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to demo a product PM", "sales demo PM",
     "exec demo PM 2026",
   ],
-  alternates: { canonical: "/pm-demo-skills" },
+  alternates: { canonical: "/pm-demo-skills", types: { "text/markdown": "/pm-demo-skills.md" } },
+  other: { "ai-summary": "How PMs give demos that convert. Structure, storytelling, live demo traps, and what executives actually pay attention to." },
   openGraph: {
     title: "PM Demo Skills Guide 2026 — PM Streak",
     description: "How PMs give demos that land — structure, storytelling, and live demo traps.",

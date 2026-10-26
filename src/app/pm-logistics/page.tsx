@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM logistics", "Delhivery PM",
     "Shiprocket PM", "Porter PM", "logistics india 2026",
   ],
-  alternates: { canonical: "/pm-logistics" },
+  alternates: { canonical: "/pm-logistics", types: { "text/markdown": "/pm-logistics.md" } },
+  other: { "ai-summary": "How PMs build logistics products in India. Last-mile, hub operations, rider economics, and the unique PM challenges of physical-world products." },
   openGraph: {
     title: "PM Logistics 2026 — PM Streak",
     description: "How PMs build logistics products in India — last-mile, hubs, riders.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM quick commerce", "Zepto PM",
     "Blinkit PM", "Instamart PM", "10 minute delivery 2026",
   ],
-  alternates: { canonical: "/pm-quick-commerce" },
+  alternates: { canonical: "/pm-quick-commerce", types: { "text/markdown": "/pm-quick-commerce.md" } },
+  other: { "ai-summary": "How PMs build 10-minute delivery products. Dark stores, SKU curation, delivery ops, and the unit economics of quick commerce in India." },
   openGraph: {
     title: "PM Quick Commerce 2026 — PM Streak",
     description: "How PMs build 10-minute delivery — dark stores, SKUs, ops.",

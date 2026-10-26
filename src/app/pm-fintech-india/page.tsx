@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "lending PM india", "SEBI PM products",
     "RBI regulated PM 2026",
   ],
-  alternates: { canonical: "/pm-fintech-india" },
+  alternates: { canonical: "/pm-fintech-india", types: { "text/markdown": "/pm-fintech-india.md" } },
+  other: { "ai-summary": "How fintech PMs build in India. Payment rails, lending unit economics, wealth products, and navigating RBI/SEBI regulation while shipping real products." },
   openGraph: {
     title: "Fintech PM India 2026 — PM Streak",
     description: "How fintech PMs build in India — UPI, lending, wealth, and navigating regulation.",

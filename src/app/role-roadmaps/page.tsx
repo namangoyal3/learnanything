@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "PM Career Roadmaps — APM to CPO Guide",
   description:
     "Step-by-step career paths for Associate PM, Product Manager, Senior PM, Staff PM, and CPO. Skills, timelines, and what to learn at every level. Included in PM Streak Pro.",
-  alternates: { canonical: "/role-roadmaps" },
+  alternates: { canonical: "/role-roadmaps", types: { "text/markdown": "/role-roadmaps.md" } },
+  other: { "ai-summary": "Step-by-step career paths for Associate PM, Product Manager, Senior PM, Staff PM, and CPO. Skills, timelines, and what to learn at every level. Included in PM Streak Pro." },
   openGraph: {
     title: "PM Career Roadmaps — APM to CPO Guide | PM Streak",
     description: "Step-by-step career paths for every PM level — APM to CPO.",

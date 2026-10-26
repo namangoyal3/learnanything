@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product manager levels", "how to get promoted as PM",
     "PM career roadmap india", "product manager career growth 2026",
   ],
-  alternates: { canonical: "/product-manager-career-path" },
+  alternates: { canonical: "/product-manager-career-path", types: { "text/markdown": "/product-manager-career-path.md" } },
+  other: { "ai-summary": "The complete PM career path from APM to CPO. What each level requires, how to get promoted, salaries at every stage, and how to accelerate your PM career in India." },
   openGraph: {
     title: "Product Manager Career Path 2026 — APM to CPO | PM Streak",
     description: "What each PM level requires, promotion criteria, and salaries from APM to CPO.",

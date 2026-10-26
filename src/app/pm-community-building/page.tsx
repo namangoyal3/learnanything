@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM community building", "community-led growth",
     "community PM", "user community 2026",
   ],
-  alternates: { canonical: "/pm-community-building" },
+  alternates: { canonical: "/pm-community-building", types: { "text/markdown": "/pm-community-building.md" } },
+  other: { "ai-summary": "How PMs build communities that drive retention, advocacy, and product insight. Channels, rituals, and the metrics that matter." },
   openGraph: {
     title: "PM Community Building 2026 — PM Streak",
     description: "How PMs grow engaged user communities — channels, rituals, metrics.",

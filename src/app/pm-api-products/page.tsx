@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "developer experience API", "API design PM",
     "API PM role 2026",
   ],
-  alternates: { canonical: "/pm-api-products" },
+  alternates: { canonical: "/pm-api-products", types: { "text/markdown": "/pm-api-products.md" } },
+  other: { "ai-summary": "How PMs build API products developers love. API design principles, developer experience, pricing, and the craft of API PM." },
   openGraph: {
     title: "PM API Products 2026 — PM Streak",
     description: "How PMs build APIs developers love — design, DX, pricing, craft.",

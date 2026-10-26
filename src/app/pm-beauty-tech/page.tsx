@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM beauty tech", "Nykaa PM",
     "Purplle PM", "Tira PM 2026",
   ],
-  alternates: { canonical: "/pm-beauty-tech" },
+  alternates: { canonical: "/pm-beauty-tech", types: { "text/markdown": "/pm-beauty-tech.md" } },
+  other: { "ai-summary": "How PMs build beauty tech products. Content-led commerce, AR try-ons, influencer ecosystems, and why beauty blends media and marketplace." },
   openGraph: {
     title: "PM Beauty Tech 2026 — PM Streak",
     description: "How PMs build beauty tech products.",

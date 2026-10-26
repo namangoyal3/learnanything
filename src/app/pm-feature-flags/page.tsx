@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM feature flags", "kill switch PM 2026",
   ],
-  alternates: { canonical: "/pm-feature-flags" },
+  alternates: { canonical: "/pm-feature-flags", types: { "text/markdown": "/pm-feature-flags.md" } },
+  other: { "ai-summary": "How PMs use feature flags. Rollout strategies, kill switches, segment targeting, and why flags decouple deploy from release." },
   openGraph: {
     title: "PM Feature Flags 2026 — PM Streak",
     description: "How PMs use feature flags to ship safer.",

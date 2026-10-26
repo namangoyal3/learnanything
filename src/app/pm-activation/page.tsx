@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "activation rate PM", "first session value",
     "improving activation 2026",
   ],
-  alternates: { canonical: "/pm-activation" },
+  alternates: { canonical: "/pm-activation", types: { "text/markdown": "/pm-activation.md" } },
+  other: { "ai-summary": "How PMs define activation — the moment users get real value — and improve it. The &apos;aha moment&apos;, activation metrics, and the 5 levers PMs use to raise activation." },
   openGraph: {
     title: "PM Activation Guide 2026 — PM Streak",
     description: "How PMs define and improve activation — the aha moment, metrics, and 5 levers.",

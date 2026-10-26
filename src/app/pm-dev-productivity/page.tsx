@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM developer productivity", "DORA metrics",
     "SPACE framework", "eng velocity 2026",
   ],
-  alternates: { canonical: "/pm-dev-productivity" },
+  alternates: { canonical: "/pm-dev-productivity", types: { "text/markdown": "/pm-dev-productivity.md" } },
+  other: { "ai-summary": "How PMs work on developer productivity. DORA metrics, SPACE framework, AI coding tools, and why velocity is a team sport." },
   openGraph: {
     title: "PM Developer Productivity 2026 — PM Streak",
     description: "Measuring and improving engineering velocity.",

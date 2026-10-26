@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM grocery tech", "BigBasket PM",
     "Amazon Fresh PM", "grocery 2026",
   ],
-  alternates: { canonical: "/pm-grocery-tech" },
+  alternates: { canonical: "/pm-grocery-tech", types: { "text/markdown": "/pm-grocery-tech.md" } },
+  other: { "ai-summary": "How PMs build grocery tech products. SKU depth, substitution, fresh delivery, and why grocery has the hardest fulfillment math in e-commerce." },
   openGraph: {
     title: "PM Grocery Tech 2026 — PM Streak",
     description: "How PMs build grocery tech products.",

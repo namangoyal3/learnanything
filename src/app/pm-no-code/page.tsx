@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM no-code", "low-code PM",
     "no-code product 2026",
   ],
-  alternates: { canonical: "/pm-no-code" },
+  alternates: { canonical: "/pm-no-code", types: { "text/markdown": "/pm-no-code.md" } },
+  other: { "ai-summary": "How PMs build no-code and low-code products. Webflow, Bubble, Retool, Glide — abstractions, escape hatches, and audience design." },
   openGraph: {
     title: "PM No-Code & Low-Code 2026 — PM Streak",
     description: "How PMs build no-code and low-code products.",

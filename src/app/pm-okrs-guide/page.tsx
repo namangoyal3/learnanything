@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM OKRs", "OKRs guide",
     "objectives key results", "OKR 2026",
   ],
-  alternates: { canonical: "/pm-okrs-guide" },
+  alternates: { canonical: "/pm-okrs-guide", types: { "text/markdown": "/pm-okrs-guide.md" } },
+  other: { "ai-summary": "How PMs write OKRs that drive focus without becoming bureaucracy. Objectives, key results, grading, and the common mistakes." },
   openGraph: {
     title: "PM OKRs Guide 2026 — PM Streak",
     description: "How PMs write OKRs that drive focus.",

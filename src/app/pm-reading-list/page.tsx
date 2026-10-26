@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "best PM books", "PM newsletter",
     "PM podcast", "product management canon 2026",
   ],
-  alternates: { canonical: "/pm-reading-list" },
+  alternates: { canonical: "/pm-reading-list", types: { "text/markdown": "/pm-reading-list.md" } },
+  other: { "ai-summary": "The essential PM reading list. Books, essays, newsletters, and podcasts — the canon that sharpens product thinking over years." },
   openGraph: {
     title: "PM Reading List 2026 — PM Streak",
     description: "The canon of PM books, essays, newsletters, and podcasts.",

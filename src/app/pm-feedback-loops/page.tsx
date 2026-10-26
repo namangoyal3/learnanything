@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM feedback loops", "user feedback PM",
     "voice of customer", "feedback triage 2026",
   ],
-  alternates: { canonical: "/pm-feedback-loops" },
+  alternates: { canonical: "/pm-feedback-loops", types: { "text/markdown": "/pm-feedback-loops.md" } },
+  other: { "ai-summary": "How PMs build feedback loops that actually inform decisions. Channels, triage, synthesis, and why most feedback systems are graveyards." },
   openGraph: {
     title: "PM Feedback Loops 2026 — PM Streak",
     description: "How PMs turn user signal into decisions — channels, triage, synthesis.",

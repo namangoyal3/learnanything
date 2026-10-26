@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM sales ops", "revenue operations",
     "sales ops PM 2026",
   ],
-  alternates: { canonical: "/pm-sales-ops" },
+  alternates: { canonical: "/pm-sales-ops", types: { "text/markdown": "/pm-sales-ops.md" } },
+  other: { "ai-summary": "How PMs partner with sales operations. Pipeline data, forecast accuracy, deal desk, and why sales ops is a rich PM research channel." },
   openGraph: {
     title: "PM x Sales Ops 2026 — PM Streak",
     description: "How PMs partner with sales operations.",

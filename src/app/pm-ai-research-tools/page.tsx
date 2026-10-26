@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI research", "Elicit PM",
     "NotebookLM 2026",
   ],
-  alternates: { canonical: "/pm-ai-research-tools" },
+  alternates: { canonical: "/pm-ai-research-tools", types: { "text/markdown": "/pm-ai-research-tools.md" } },
+  other: { "ai-summary": "How PMs build AI research tools. Literature review, summarisation, grounded answers, and the evolution of AI-assisted knowledge work." },
   openGraph: {
     title: "PM AI Research Tools 2026 — PM Streak",
     description: "How PMs build AI research tools.",

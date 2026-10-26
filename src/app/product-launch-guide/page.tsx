@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "product launch checklist", "staged rollout PM",
     "product launch plan", "PM go-to-market 2026",
   ],
-  alternates: { canonical: "/product-launch-guide" },
+  alternates: { canonical: "/product-launch-guide", types: { "text/markdown": "/product-launch-guide.md" } },
+  other: { "ai-summary": "The complete PM product launch playbook. Pre-launch checklist, staged rollouts, launch day ops, post-launch monitoring, and the 10 launch failure modes to avoid." },
   openGraph: {
     title: "Product Launch Guide for PMs 2026 — PM Streak",
     description: "How PMs launch products safely — checklist, staged rollouts, monitoring, and failure modes.",

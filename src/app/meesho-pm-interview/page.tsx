@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "Meesho PM interview prep", "social commerce PM india",
     "Bharat PM interview", "Meesho product manager interview 2026",
   ],
-  alternates: { canonical: "/meesho-pm-interview" },
+  alternates: { canonical: "/meesho-pm-interview", types: { "text/markdown": "/meesho-pm-interview.md" } },
+  other: { "ai-summary": "Crack the Meesho PM interview. All rounds, Bharat (Tier-2/3) user questions, social commerce product thinking, and real interview examples from Meesho PMs in 2026." },
   openGraph: {
     title: "Meesho PM Interview Guide 2026 — PM Streak",
     description: "All Meesho PM interview rounds, Bharat-first questions, and a structured prep plan.",

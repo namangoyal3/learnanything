@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM matrimony", "dating PM",
     "Shaadi PM", "Bumble PM India 2026",
   ],
-  alternates: { canonical: "/pm-matrimony-dating" },
+  alternates: { canonical: "/pm-matrimony-dating", types: { "text/markdown": "/pm-matrimony-dating.md" } },
+  other: { "ai-summary": "How PMs build matrimony and dating products. Intent signals, trust and safety, cultural context, and why India is its own category." },
   openGraph: {
     title: "PM Matrimony &amp; Dating 2026 — PM Streak",
     description: "How PMs build matrimony and dating products.",

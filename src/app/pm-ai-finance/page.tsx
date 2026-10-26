@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI finance", "Ramp PM",
     "Brex PM", "AI CFO 2026",
   ],
-  alternates: { canonical: "/pm-ai-finance" },
+  alternates: { canonical: "/pm-ai-finance", types: { "text/markdown": "/pm-ai-finance.md" } },
+  other: { "ai-summary": "How PMs build AI finance products. Expense intelligence, close automation, forecasting, and why CFO-tech is where AI adoption is quietest but fastest." },
   openGraph: {
     title: "PM AI Finance Products 2026 — PM Streak",
     description: "How PMs build AI finance products.",

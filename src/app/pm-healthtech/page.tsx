@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM healthtech", "Practo PM",
     "Pharmeasy PM", "Cult.fit PM", "healthtech india 2026",
   ],
-  alternates: { canonical: "/pm-healthtech" },
+  alternates: { canonical: "/pm-healthtech", types: { "text/markdown": "/pm-healthtech.md" } },
+  other: { "ai-summary": "How PMs build healthtech products in India. Regulatory constraints, clinician workflows, patient trust, and the peculiar dynamics of health products." },
   openGraph: {
     title: "PM Healthtech 2026 — PM Streak",
     description: "How PMs build healthtech products in India — regulatory, trust, clinicians.",

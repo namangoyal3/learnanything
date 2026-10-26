@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "SaaS PM metrics 2026", "B2B SaaS metrics",
     "NRR benchmark SaaS",
   ],
-  alternates: { canonical: "/pm-saas-metrics" },
+  alternates: { canonical: "/pm-saas-metrics", types: { "text/markdown": "/pm-saas-metrics.md" } },
+  other: { "ai-summary": "The SaaS metrics every PM should know. MRR, NRR, GRR, CAC, LTV, payback — definitions, benchmarks, and how to use them in PM decisions." },
   openGraph: {
     title: "SaaS Metrics for PMs 2026 — PM Streak",
     description: "SaaS metrics every PM should know — definitions, benchmarks, and decisions they drive.",

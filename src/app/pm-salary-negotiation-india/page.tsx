@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM salary negotiation india", "PM compensation",
     "ESOPs PM 2026",
   ],
-  alternates: { canonical: "/pm-salary-negotiation-india" },
+  alternates: { canonical: "/pm-salary-negotiation-india", types: { "text/markdown": "/pm-salary-negotiation-india.md" } },
+  other: { "ai-summary": "How PMs in India negotiate offers. Base, ESOPs, joining bonus, and the levers most candidates leave on the table." },
   openGraph: {
     title: "PM Salary Negotiation India 2026 — PM Streak",
     description: "Getting paid fairly as a PM in India.",

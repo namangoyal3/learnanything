@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "SWE to PM transition", "engineer switch to PM india",
     "how engineer becomes PM", "engineer PM interview 2026",
   ],
-  alternates: { canonical: "/engineer-to-pm" },
+  alternates: { canonical: "/engineer-to-pm", types: { "text/markdown": "/engineer-to-pm.md" } },
+  other: { "ai-summary": "How software engineers transition to PM. The 4 paths that work, what hiring managers look for, how to reposition your engineering experience, and avoiding common transition pitfalls." },
   openGraph: {
     title: "Engineer to Product Manager 2026 — PM Streak",
     description: "How software engineers transition to PM — paths, positioning, and pitfalls to avoid.",

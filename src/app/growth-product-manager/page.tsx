@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to become growth PM", "growth PM interview questions",
     "growth product manager salary", "PLG product manager 2026",
   ],
-  alternates: { canonical: "/growth-product-manager" },
+  alternates: { canonical: "/growth-product-manager", types: { "text/markdown": "/growth-product-manager.md" } },
+  other: { "ai-summary": "The complete growth PM playbook. Acquisition, activation, retention, referral, revenue — what growth PMs actually do, interview questions, and how to transition into growth PM." },
   openGraph: {
     title: "Growth Product Manager Guide 2026 — PM Streak",
     description: "What growth PMs do, interview questions, and how to break into growth PM roles.",

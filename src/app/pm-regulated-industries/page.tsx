@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM regulated industries", "compliance PM",
     "fintech health legal PM 2026",
   ],
-  alternates: { canonical: "/pm-regulated-industries" },
+  alternates: { canonical: "/pm-regulated-industries", types: { "text/markdown": "/pm-regulated-industries.md" } },
+  other: { "ai-summary": "How PMs ship in regulated industries. Compliance-as-product, audit trails, and why velocity looks different when rules are enforceable." },
   openGraph: {
     title: "PM Regulated Industries 2026 — PM Streak",
     description: "How PMs ship in regulated industries.",

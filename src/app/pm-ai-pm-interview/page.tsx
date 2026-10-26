@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "AI PM interview", "OpenAI PM interview 2026",
   ],
-  alternates: { canonical: "/pm-ai-pm-interview" },
+  alternates: { canonical: "/pm-ai-pm-interview", types: { "text/markdown": "/pm-ai-pm-interview.md" } },
+  other: { "ai-summary": "How to interview for AI PM roles at OpenAI, Anthropic, Sarvam, Krutrim. The frameworks, technical fluency, and questions to expect." },
   openGraph: {
     title: "PM AI PM Interview 2026 — PM Streak",
     description: "Cracking AI-first PM roles.",

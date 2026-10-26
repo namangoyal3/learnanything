@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "STAR method PM interview", "PM leadership interview questions",
     "tell me about a time PM", "PM conflict interview", "product manager soft skills interview",
   ],
-  alternates: { canonical: "/pm-behavioral-interview" },
+  alternates: { canonical: "/pm-behavioral-interview", types: { "text/markdown": "/pm-behavioral-interview.md" } },
+  other: { "ai-summary": "Master PM behavioral interviews with the STAR framework, 25+ real questions, and story templates. Leadership, conflict, ambiguity, failure — answered the way top PMs do." },
   openGraph: {
     title: "PM Behavioral Interview — STAR Stories That Get Offers | PM Streak",
     description: "25+ PM behavioral questions with the STAR framework and story templates.",

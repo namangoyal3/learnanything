@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM growth experiments", "growth playbook",
     "growth PM bets 2026",
   ],
-  alternates: { canonical: "/pm-growth-experiments" },
+  alternates: { canonical: "/pm-growth-experiments", types: { "text/markdown": "/pm-growth-experiments.md" } },
+  other: { "ai-summary": "A playbook of growth experiments PMs can run across acquisition, activation, and retention. High-leverage bets with templates." },
   openGraph: {
     title: "PM Growth Experiments 2026 — PM Streak",
     description: "Growth experiment playbook for PMs.",

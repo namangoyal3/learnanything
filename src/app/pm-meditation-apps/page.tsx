@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM meditation apps", "Calm PM",
     "Headspace PM 2026",
   ],
-  alternates: { canonical: "/pm-meditation-apps" },
+  alternates: { canonical: "/pm-meditation-apps", types: { "text/markdown": "/pm-meditation-apps.md" } },
+  other: { "ai-summary": "How PMs build meditation and wellness apps. Habit formation, content vs community, measurable outcomes, and why wellness apps churn fast." },
   openGraph: {
     title: "PM Meditation &amp; Wellness 2026 — PM Streak",
     description: "How PMs build meditation and wellness apps.",

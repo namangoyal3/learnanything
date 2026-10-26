@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "technical skills for product manager", "soft skills product manager",
     "product manager skills 2026",
   ],
-  alternates: { canonical: "/product-manager-skills" },
+  alternates: { canonical: "/product-manager-skills", types: { "text/markdown": "/product-manager-skills.md" } },
+  other: { "ai-summary": "The 12 skills that define great product managers in 2026. Prioritisation, stakeholder management, data analysis, product sense, and technical fluency — with how to build each one." },
   openGraph: {
     title: "Product Manager Skills 2026 — PM Streak",
     description: "The 12 skills every PM needs in 2026, with how to build each one.",

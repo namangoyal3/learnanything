@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to negotiate PM salary india", "PM compensation negotiation",
     "product manager offer scripts", "PM salary negotiation 2026",
   ],
-  alternates: { canonical: "/pm-salary-negotiation" },
+  alternates: { canonical: "/pm-salary-negotiation", types: { "text/markdown": "/pm-salary-negotiation.md" } },
+  other: { "ai-summary": "Negotiate your PM offer like a senior PM. What to ask for, how to respond to recruiters, scripts that work, and the salary levers most candidates leave on the table." },
   openGraph: {
     title: "PM Salary Negotiation Guide 2026 — PM Streak",
     description: "How to negotiate your PM offer — scripts, levers, and tactics most candidates miss.",

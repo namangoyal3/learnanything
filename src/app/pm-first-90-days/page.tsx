@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "PM onboarding new role", "PM first week",
     "how to succeed as new PM", "first 90 days product manager 2026",
   ],
-  alternates: { canonical: "/pm-first-90-days" },
+  alternates: { canonical: "/pm-first-90-days", types: { "text/markdown": "/pm-first-90-days.md" } },
+  other: { "ai-summary": "The first 90 days determine your trajectory at a new PM job. The week-by-week playbook for building context, earning trust, and shipping your first real win." },
   openGraph: {
     title: "First 90 Days as a PM 2026 — PM Streak",
     description: "A week-by-week playbook for your first 90 days in a new PM role.",

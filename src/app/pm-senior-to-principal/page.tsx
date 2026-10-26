@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM principal", "senior to principal PM",
     "IC PM path 2026",
   ],
-  alternates: { canonical: "/pm-senior-to-principal" },
+  alternates: { canonical: "/pm-senior-to-principal", types: { "text/markdown": "/pm-senior-to-principal.md" } },
+  other: { "ai-summary": "How senior PMs become principal PMs. Scope, judgment, influence, and why the IC path rivals the manager path at top companies." },
   openGraph: {
     title: "PM Senior to Principal 2026 — PM Streak",
     description: "The individual contributor PM path.",

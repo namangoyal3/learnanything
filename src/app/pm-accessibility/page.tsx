@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM accessibility", "a11y PM",
     "WCAG product manager", "accessible product 2026",
   ],
-  alternates: { canonical: "/pm-accessibility" },
+  alternates: { canonical: "/pm-accessibility", types: { "text/markdown": "/pm-accessibility.md" } },
+  other: { "ai-summary": "How PMs approach accessibility without slowing shipping. WCAG basics, screen reader testing, and the business case for accessible products." },
   openGraph: {
     title: "PM Accessibility 2026 — PM Streak",
     description: "How PMs ship accessible products — WCAG, testing, business case.",

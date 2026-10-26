@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "real experiment designs", "hypothesis examples PM",
     "A/B testing examples 2026",
   ],
-  alternates: { canonical: "/pm-experiment-examples" },
+  alternates: { canonical: "/pm-experiment-examples", types: { "text/markdown": "/pm-experiment-examples.md" } },
+  other: { "ai-summary": "5 real-style PM experiment examples with hypothesis, setup, primary + guardrail metrics, and decision criteria. See how great PMs design tests." },
   openGraph: {
     title: "PM Experiment Examples 2026 — PM Streak",
     description: "5 real-style PM experiment designs with hypothesis, setup, metrics, and decision criteria.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM wireframing", "PM Figma",
     "low-fidelity wireframes PM 2026",
   ],
-  alternates: { canonical: "/pm-wireframing" },
+  alternates: { canonical: "/pm-wireframing", types: { "text/markdown": "/pm-wireframing.md" } },
+  other: { "ai-summary": "When PMs should wireframe, when they shouldn&apos;t, and how to wireframe in a way that supports designers rather than replacing them." },
   openGraph: {
     title: "PM Wireframing 2026 — PM Streak",
     description: "When PMs should wireframe, and how to do it right.",

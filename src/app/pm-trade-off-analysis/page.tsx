@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "hard product decisions", "PM decision framework",
     "weighing trade-offs PM 2026",
   ],
-  alternates: { canonical: "/pm-trade-off-analysis" },
+  alternates: { canonical: "/pm-trade-off-analysis", types: { "text/markdown": "/pm-trade-off-analysis.md" } },
+  other: { "ai-summary": "How PMs analyse trade-offs systematically. Speed vs quality, simplicity vs flexibility, short-term vs long-term. The frameworks for hard calls every PM faces." },
   openGraph: {
     title: "PM Trade-Off Analysis 2026 — PM Streak",
     description: "How PMs make hard trade-offs systematically — speed vs quality, short vs long, and more.",

@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "vernacular product india", "localisation PM",
     "tier-2 tier-3 PM 2026",
   ],
-  alternates: { canonical: "/pm-localization-india" },
+  alternates: { canonical: "/pm-localization-india", types: { "text/markdown": "/pm-localization-india.md" } },
+  other: { "ai-summary": "How PMs design products that work across India&apos;s diversity. Languages, device constraints, cultural context, and the vernacular-first product thinking Bharat demands." },
   openGraph: {
     title: "PM Localization for India 2026 — PM Streak",
     description: "How PMs design for Bharat — languages, device constraints, cultural context.",

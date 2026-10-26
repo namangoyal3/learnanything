@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "google APMM india", "associate product manager program", "how to crack APM interview",
     "APM interview preparation india 2026",
   ],
-  alternates: { canonical: "/apm-program-preparation" },
+  alternates: { canonical: "/apm-program-preparation", types: { "text/markdown": "/apm-program-preparation.md" } },
+  other: { "ai-summary": "Crack APM programs in India with this complete prep guide. Flipkart Product Accelerator, Razorpay APM, Google APMM, Meesho, Swiggy — timeline, rounds, tips, and daily practice." },
   openGraph: {
     title: "APM Program Preparation India 2026 — PM Streak",
     description: "Complete guide to cracking APM programs at Flipkart, Razorpay, Google, Meesho, and Swiggy.",

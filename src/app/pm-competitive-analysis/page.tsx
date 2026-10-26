@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how PM does competitive analysis", "competitor teardown PM",
     "PM competitive intelligence 2026",
   ],
-  alternates: { canonical: "/pm-competitive-analysis" },
+  alternates: { canonical: "/pm-competitive-analysis", types: { "text/markdown": "/pm-competitive-analysis.md" } },
+  other: { "ai-summary": "The PM guide to competitive analysis. How to study competitors, what to track, when to copy vs differentiate, and the anti-patterns that make competitive research useless." },
   openGraph: {
     title: "Competitive Analysis for PMs 2026 — PM Streak",
     description: "How PMs study competitors effectively — frameworks, what to track, and when to differentiate.",

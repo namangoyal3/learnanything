@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI image", "Midjourney PM",
     "Stable Diffusion PM 2026",
   ],
-  alternates: { canonical: "/pm-ai-image" },
+  alternates: { canonical: "/pm-ai-image", types: { "text/markdown": "/pm-ai-image.md" } },
+  other: { "ai-summary": "How PMs build AI image products. Prompt UX, iteration, safety, rights, and why image is the earliest mature AI creative category." },
   openGraph: {
     title: "PM AI Image Products 2026 — PM Streak",
     description: "How PMs build AI image products.",

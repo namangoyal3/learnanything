@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "how to answer product sense", "product design interview", "PM product sense",
     "product sense examples", "improve product sense",
   ],
-  alternates: { canonical: "/product-sense-interview" },
+  alternates: { canonical: "/product-sense-interview", types: { "text/markdown": "/product-sense-interview.md" } },
+  other: { "ai-summary": "Master product sense interviews with proven frameworks. Learn how to design products, identify user needs, and prioritise features — the way top PMs do at Google, Meta, and Stripe." },
   openGraph: {
     title: "Product Sense Interview — Frameworks & Examples | PM Streak",
     description: "Master product sense interviews with proven frameworks used by top PMs at Google, Meta, Stripe.",

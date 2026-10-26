@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "real OKR examples", "quarterly OKR PM",
     "OKR template 2026",
   ],
-  alternates: { canonical: "/pm-okr-examples" },
+  alternates: { canonical: "/pm-okr-examples", types: { "text/markdown": "/pm-okr-examples.md" } },
+  other: { "ai-summary": "15+ real-style PM OKR examples for consumer, B2B, growth, and platform products. See what well-written Objectives + Key Results actually look like." },
   openGraph: {
     title: "PM OKR Examples 2026 — PM Streak",
     description: "15+ real-style PM OKR examples across consumer, B2B, growth, and platform.",

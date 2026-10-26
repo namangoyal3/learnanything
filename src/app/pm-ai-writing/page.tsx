@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI writing", "Grammarly PM",
     "Jasper PM", "AI writing 2026",
   ],
-  alternates: { canonical: "/pm-ai-writing" },
+  alternates: { canonical: "/pm-ai-writing", types: { "text/markdown": "/pm-ai-writing.md" } },
+  other: { "ai-summary": "How PMs build AI writing products. Inline vs chat, style adaptation, and why Grammarly had to reinvent itself in the LLM era." },
   openGraph: {
     title: "PM AI Writing Products 2026 — PM Streak",
     description: "How PMs build AI writing products.",

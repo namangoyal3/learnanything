@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "agile retro PM", "team retrospective",
     "continuous improvement PM 2026",
   ],
-  alternates: { canonical: "/pm-sprint-retrospectives" },
+  alternates: { canonical: "/pm-sprint-retrospectives", types: { "text/markdown": "/pm-sprint-retrospectives.md" } },
+  other: { "ai-summary": "How PMs run sprint retros that actually improve the team. Structure, facilitation, and why most retros feel like theatre." },
   openGraph: {
     title: "PM Sprint Retrospectives 2026 — PM Streak",
     description: "How PMs run retros that change behaviour — structure, facilitation, and action follow-up.",

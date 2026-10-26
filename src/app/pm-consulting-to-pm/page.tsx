@@ -15,7 +15,8 @@ export const metadata: Metadata = {
     "strategy consultant to product manager",
     "consulting to PM transition india 2026",
   ],
-  alternates: { canonical: "/pm-consulting-to-pm" },
+  alternates: { canonical: "/pm-consulting-to-pm", types: { "text/markdown": "/pm-consulting-to-pm.md" } },
+  other: { "ai-summary": "How management consultants transition to PM. What your MBB/strategy experience buys you, what it doesn't, and how to reposition to win PM interviews." },
   openGraph: {
     title: "Consultant to PM 2026 — PM Streak",
     description: "How ex-consultants transition to PM — strengths, gaps, and repositioning.",

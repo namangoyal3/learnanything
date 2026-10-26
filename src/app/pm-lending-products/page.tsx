@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM lending", "BNPL PM",
     "personal loan PM", "lending india 2026",
   ],
-  alternates: { canonical: "/pm-lending-products" },
+  alternates: { canonical: "/pm-lending-products", types: { "text/markdown": "/pm-lending-products.md" } },
+  other: { "ai-summary": "How PMs build lending products in India. Underwriting, BNPL, collections UX, and the RBI regulatory landscape shaping digital lending." },
   openGraph: {
     title: "PM Lending Products 2026 — PM Streak",
     description: "How PMs build lending products in India.",

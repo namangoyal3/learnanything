@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM music creation", "Suno PM",
     "Ableton PM 2026",
   ],
-  alternates: { canonical: "/pm-music-creation-tools" },
+  alternates: { canonical: "/pm-music-creation-tools", types: { "text/markdown": "/pm-music-creation-tools.md" } },
+  other: { "ai-summary": "How PMs build music creation tools. AI composition, DAW integrations, rights, and why AI music creation is reshaping creator economics." },
   openGraph: {
     title: "PM Music Creation Tools 2026 — PM Streak",
     description: "How PMs build music creation tools.",

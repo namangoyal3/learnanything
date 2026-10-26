@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "viral PM tactics", "growth experiments",
     "product growth 2026",
   ],
-  alternates: { canonical: "/pm-growth-hacking" },
+  alternates: { canonical: "/pm-growth-hacking", types: { "text/markdown": "/pm-growth-hacking.md" } },
+  other: { "ai-summary": "Real growth hacking for PMs — experiments that compound growth without burning trust. Tactics that work, ones that don&apos;t, and the math behind each." },
   openGraph: {
     title: "PM Growth Hacking 2026 — PM Streak",
     description: "What growth hacking really means — tactics that work, ones that don&apos;t, and the math.",

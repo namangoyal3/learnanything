@@ -18,7 +18,8 @@ export const metadata: Metadata = {
     "PM productivity 2026",
     "context switching product manager",
   ],
-  alternates: { canonical: "/pm-deep-work" },
+  alternates: { canonical: "/pm-deep-work", types: { "text/markdown": "/pm-deep-work.md" } },
+  other: { "ai-summary": "How PMs can practice deep work in noisy environments. Block focus time, reduce context switching, protect your highest-leverage hours, and ship more with Cal Newport's framework adapted for product management." },
   openGraph: {
     title: "Deep Work for Product Managers 2026 — PM Streak",
     description: "The Cal Newport framework adapted for PMs. How to protect your best hours and do your most important product work.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM privacy products", "DPDP Act",
     "GDPR PM", "privacy-by-design 2026",
   ],
-  alternates: { canonical: "/pm-privacy-products" },
+  alternates: { canonical: "/pm-privacy-products", types: { "text/markdown": "/pm-privacy-products.md" } },
+  other: { "ai-summary": "How PMs build privacy-respecting products. Consent, data minimisation, DSR workflows, and why India&apos;s DPDP Act changes the game." },
   openGraph: {
     title: "PM Privacy Products 2026 — PM Streak",
     description: "Building privacy-respecting products.",

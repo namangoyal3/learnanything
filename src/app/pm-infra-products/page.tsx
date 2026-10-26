@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM infrastructure", "infra PM",
     "platform infra PM", "SRE PM 2026",
   ],
-  alternates: { canonical: "/pm-infra-products" },
+  alternates: { canonical: "/pm-infra-products", types: { "text/markdown": "/pm-infra-products.md" } },
+  other: { "ai-summary": "How PMs build infrastructure products. SLAs, latency budgets, incident response, and what makes infra PM different from everything else." },
   openGraph: {
     title: "PM Infrastructure Products 2026 — PM Streak",
     description: "How PMs build infrastructure products.",

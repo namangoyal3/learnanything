@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   keywords: [
     "PM newsletters", "Lenny's newsletter 2026",
   ],
-  alternates: { canonical: "/pm-newsletters" },
+  alternates: { canonical: "/pm-newsletters", types: { "text/markdown": "/pm-newsletters.md" } },
+  other: { "ai-summary": "The PM newsletters worth subscribing to in 2026. Lenny&apos;s, Reforge, Bringing the Donuts, and the Indian PM voices worth following." },
   openGraph: {
     title: "PM Newsletters 2026 — PM Streak",
     description: "Best newsletters for product managers.",

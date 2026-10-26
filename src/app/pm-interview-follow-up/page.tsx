@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "after PM interview", "PM interview email template",
     "PM rejection email 2026",
   ],
-  alternates: { canonical: "/pm-interview-follow-up" },
+  alternates: { canonical: "/pm-interview-follow-up", types: { "text/markdown": "/pm-interview-follow-up.md" } },
+  other: { "ai-summary": "What to do after your PM interview. Thank-you email templates, how to follow up without seeming desperate, handling silence, and how to turn a rejection into a future offer." },
   openGraph: {
     title: "PM Interview Follow-Up Guide 2026 — PM Streak",
     description: "Thank-you emails, follow-up timing, and how to handle silence or rejection after PM interviews.",

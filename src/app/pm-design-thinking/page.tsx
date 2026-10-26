@@ -14,7 +14,8 @@ export const metadata: Metadata = {
     "IDEO design thinking", "empathize ideate prototype PM",
     "design thinking process 2026",
   ],
-  alternates: { canonical: "/pm-design-thinking" },
+  alternates: { canonical: "/pm-design-thinking", types: { "text/markdown": "/pm-design-thinking.md" } },
+  other: { "ai-summary": "How PMs apply design thinking in real work. The 5 stages (Empathize, Define, Ideate, Prototype, Test) with PM-specific examples — beyond the Stanford d.school theory." },
   openGraph: {
     title: "Design Thinking for PMs 2026 — PM Streak",
     description: "IDEO&apos;s 5-stage design thinking applied to PM work — beyond theory, with examples.",

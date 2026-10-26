@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM AI education", "Khanmigo PM",
     "AI tutor 2026",
   ],
-  alternates: { canonical: "/pm-ai-education" },
+  alternates: { canonical: "/pm-ai-education", types: { "text/markdown": "/pm-ai-education.md" } },
+  other: { "ai-summary": "How PMs build AI education products. Personalised tutors, safety for minors, outcomes measurement, and why education AI is still waiting for its breakout moment." },
   openGraph: {
     title: "PM AI Education Products 2026 — PM Streak",
     description: "How PMs build AI education products.",

@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM Bharat", "next 500M India",
     "vernacular PM 2026",
   ],
-  alternates: { canonical: "/pm-bharat-internet-users" },
+  alternates: { canonical: "/pm-bharat-internet-users", types: { "text/markdown": "/pm-bharat-internet-users.md" } },
+  other: { "ai-summary": "How PMs design for Bharat — the next 500M Indian internet users. Vernacular, voice, video, and the mistakes urban-first PMs keep making." },
   openGraph: {
     title: "PM for Bharat Users 2026 — PM Streak",
     description: "Designing for India&apos;s next 500M internet users.",

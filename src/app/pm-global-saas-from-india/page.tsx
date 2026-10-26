@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     "PM global SaaS india", "Freshworks PM",
     "Zoho PM", "Postman PM 2026",
   ],
-  alternates: { canonical: "/pm-global-saas-from-india" },
+  alternates: { canonical: "/pm-global-saas-from-india", types: { "text/markdown": "/pm-global-saas-from-india.md" } },
+  other: { "ai-summary": "How Indian SaaS PMs build for global customers. Timezones, buyer empathy, sales motion, and what Zoho, Freshworks, and Postman teach about selling to the West from Bangalore or Chennai." },
   openGraph: {
     title: "PM Global SaaS from India 2026 — PM Streak",
     description: "How Indian SaaS PMs build for global customers.",
