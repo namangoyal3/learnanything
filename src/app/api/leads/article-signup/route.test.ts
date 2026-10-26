@@ -4,7 +4,7 @@ import { describe, it, expect, vi } from "vitest";
 // here. Allowed origins get CORS headers; everything else gets none, so the
 // browser keeps enforcing same-origin for unknown sites.
 
-const upsert = vi.fn(async () => ({}));
+const upsert = vi.fn(async (..._args: unknown[]) => ({}));
 vi.mock("@/lib/prisma", () => ({ prisma: { articleLead: { upsert: (...a: unknown[]) => upsert(...a) } } }));
 
 function req(origin: string | null, body?: unknown) {
