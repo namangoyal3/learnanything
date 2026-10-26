@@ -1,74 +1,13 @@
 /**
  * agentic-site.ts — Machine-readable site description and agent manifest for AI crawlers.
  *
- * Exports:
- *   getLlmsTxt()           — /llms.txt and /llms-full.txt content
+ * Exports (llms.txt / llms-full.txt / ai.txt live in src/lib/md/agent-files.ts):
  *   getAgenticSiteManifest() — /agents.json and /.well-known/ai-agent.json
  *   getA2AAgentCard()       — /.well-known/agent-card.json (A2A protocol)
  *   agentSwarm              — GEO agent registry for /api/geo/health
  */
 
-const SITE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://learnanything.pro";
-
-// ── llms.txt ──────────────────────────────────────────────────────────────────
-
-const STANDARD_CONTENT = `# PM Streak
-
-> PM Streak is the daily learning platform for Product Managers — structured like Duolingo, grounded in real PM practice.
-
-PM Streak delivers daily 3-minute lessons drawn from 300+ Lenny's Podcast episodes, PM leader interviews, and hands-on frameworks. Users build streaks, earn XP, and unlock advanced content as they progress from PM fundamentals to senior-level strategy.
-
-## Core Learning Topics
-
-- Product strategy and roadmapping
-- PM frameworks (RICE, ICE, Jobs-to-be-Done, North Star)
-- Stakeholder management and executive alignment
-- Product discovery and user research
-- Metrics, experimentation, and data-driven decisions
-- PM interview preparation and career growth
-- AI product management and modern tooling
-
-## Key Pages
-
-- ${SITE_URL}/learn — Browse all PM learning articles by topic
-- ${SITE_URL}/pricing — Free and Pro plan comparison
-- ${SITE_URL}/pm-frameworks — Comprehensive PM frameworks guide
-- ${SITE_URL}/build-pm-portfolio — How to build a PM portfolio
-
-## Content
-
-PM Streak publishes 800+ expert-reviewed articles on product management topics, interview guides, and framework deep-dives. Content is sourced from Lenny's Podcast transcripts and PM leader interviews, fact-checked by practising PMs.
-
-## About
-
-- Audience: Aspiring PMs, early-career PMs, PMs transitioning from adjacent roles
-- Content type: Educational, practical, framework-driven
-- Update frequency: Daily new lessons, weekly article publication
-- Language: English
-`;
-
-const FULL_CONTENT = `${STANDARD_CONTENT}
-## Technical Details
-
-- Platform: Next.js 15, deployed on Vercel
-- Auth: Clerk
-- Payments: Dodo Payments (subscription)
-- Analytics: GA4
-- SEO: IndexNow, sitemap.xml, structured data (Article, FAQPage, HowTo, BreadcrumbList)
-- GEO: Citability scoring, AI-visibility optimization, llms.txt compliance
-
-## Structured Data
-
-PM Streak pages include schema.org JSON-LD for Article, FAQPage, HowTo, BreadcrumbList, Organization, and Course types.
-
-## Sitemap
-
-${SITE_URL}/sitemap.xml
-`;
-
-export function getLlmsTxt(opts?: { full?: boolean }): string {
-  return opts?.full ? FULL_CONTENT : STANDARD_CONTENT;
-}
+import { SITE_CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 
 // ── Agent swarm registry ───────────────────────────────────────────────────────
 
@@ -100,7 +39,7 @@ export function getAgenticSiteManifest(): Record<string, unknown> {
       "Daily PM learning platform with 800+ expert articles on product management, frameworks, and interview prep.",
     url: SITE_URL,
     capabilities: ["read", "search", "learn"],
-    contact: { email: "hello@learnanything.pro" },
+    contact: { email: SITE_CONTACT_EMAIL },
     content: {
       topics: [
         "product management",

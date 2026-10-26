@@ -1,0 +1,1798 @@
+{
+  "/": {
+    "title": "PM Streak — Daily PM Lessons | Duolingo for Product Managers",
+    "description": "PM Streak is the fastest way to sharpen your product intuition. Daily 2-minute PM lessons from 300+ expert interviews with streak tracking, XP, leaderboards, and AI-powered practice. Used by product managers at top tech companies."
+  },
+  "/about": {
+    "title": "About PM Streak & Naman Goyal",
+    "description": "PM Streak is an interactive PM-interview practice platform built by Naman Goyal — 400+ free guides covering PM interviews at Google, Meta, Amazon, Flipkart, and Indian + global tech companies."
+  },
+  "/ai-product-manager": {
+    "title": "AI Product Manager Guide (2026) — How to Become an AI PM",
+    "description": "The complete guide to becoming an AI product manager. What AI PMs do, the skills you need, interview questions, salary ranges, and how to break into AI product management in 2026."
+  },
+  "/airbnb-pm-interview": {
+    "title": "Airbnb PM Interview Guide (2026) — Marketplace, Trust & Host PM Questions",
+    "description": "Crack the Airbnb PM interview. Marketplace dynamics, trust and safety, host and guest experience, and the story-driven product culture Airbnb is famous for."
+  },
+  "/amazon-pm-interview": {
+    "title": "Amazon PM Interview Guide (2026) — Leadership Principles, Bar Raiser & Questions",
+    "description": "Crack the Amazon PM interview. Leadership Principles in every answer, the Bar Raiser round, product design questions, and a complete prep plan for Amazon India PM roles."
+  },
+  "/apm-program-preparation": {
+    "title": "APM Program Preparation Guide India (2026) — Flipkart, Razorpay, Google",
+    "description": "Crack APM programs in India with this complete prep guide. Flipkart Product Accelerator, Razorpay APM, Google APMM, Meesho, Swiggy — timeline, rounds, tips, and daily practice."
+  },
+  "/best-project-management-tools-small-teams-2026": {
+    "title": "Best Project Management Tools for Small Teams in 2026",
+    "description": "Discover the top project management tools for small teams in 2026. Compare features, pricing, and AI capabilities to boost your team&apos;s productivity."
+  },
+  "/cars24-cartrade-pm-interview": {
+    "title": "Cars24, CarTrade & OLX Autos PM Interview Guide (2026) — Used Car PM Questions",
+    "description": "Crack PM interviews at Cars24, CarTrade, OLX Autos, and Spinny. The used car marketplace dynamics, inspection-pricing-financing flows, and what auto PMs actually build."
+  },
+  "/consumer-vs-b2b-pm": {
+    "title": "Consumer vs B2B Product Management (2026) — Key Differences for PMs",
+    "description": "Consumer PM vs B2B PM — the real differences in metrics, users, roadmap process, success criteria, and what makes each uniquely challenging. Which is right for your career?"
+  },
+  "/cred-zepto-pm-interview": {
+    "title": "CRED & Zepto PM Interview Guide (2026) — Questions, Culture & Prep",
+    "description": "Crack PM interviews at CRED and Zepto. What each company values, their interview formats, real questions, and what separates candidates who get offers at India's hottest unicorns."
+  },
+  "/duolingo-for-product-managers": {
+    "title": "Duolingo for Product Managers — PM Streak",
+    "description": "PM Streak is the Duolingo for PMs. Daily 2-minute lessons from 300+ real PM interviews, streak tracking, XP, leaderboards, and AI-powered practice — all in one app."
+  },
+  "/ecommerce-pm-guide": {
+    "title": "E-commerce Product Manager Guide (2026) — How to Excel as an E-commerce PM",
+    "description": "The complete e-commerce PM guide. Unit economics, category PM vs platform PM, the buyer-seller-ops triangle, and how to break into e-commerce PM at Flipkart, Amazon, and Meesho."
+  },
+  "/edtech-product-manager": {
+    "title": "Edtech Product Manager Guide (2026) — How to Become an Edtech PM in India",
+    "description": "The complete edtech PM guide for India. Top companies, unique learning product challenges, interview questions, and how engagement vs outcomes shapes edtech PM decisions."
+  },
+  "/engineer-to-pm": {
+    "title": "Engineer to Product Manager (2026) — How SWEs Transition to PM",
+    "description": "How software engineers transition to PM. The 4 paths that work, what hiring managers look for, how to reposition your engineering experience, and avoiding common transition pitfalls."
+  },
+  "/fintech-product-manager": {
+    "title": "Fintech Product Manager Guide (2026) — How to Become One in India",
+    "description": "The complete guide to becoming a fintech PM in India. Domain knowledge to master, top companies hiring, interview questions, salary ranges, and how to break in from adjacent roles."
+  },
+  "/flipkart-pm-interview": {
+    "title": "Flipkart PM Interview Guide (2026) — Questions, Process & Prep Plan",
+    "description": "Crack the Flipkart PM interview. All interview rounds, real questions asked at Flipkart, what Flipkart PMs say the bar is, and a prep plan for PM and APM roles."
+  },
+  "/google-pm-interview": {
+    "title": "Google PM Interview Guide (2026) — Questions, Process & How to Prepare",
+    "description": "Crack the Google PM interview. All 5 interview types, real questions, what Googlers say the bar actually is, and a 6-week prep plan — for India and global roles."
+  },
+  "/growth-product-manager": {
+    "title": "Growth Product Manager Guide (2026) — How to Become a Growth PM",
+    "description": "The complete growth PM playbook. Acquisition, activation, retention, referral, revenue — what growth PMs actually do, interview questions, and how to transition into growth PM."
+  },
+  "/healthtech-product-manager": {
+    "title": "Healthtech Product Manager Guide (2026) — How to Become a Healthtech PM in India",
+    "description": "The complete healthtech PM playbook for India. Top companies, unique domain challenges, regulatory context, interview questions, and how to break into healthtech PM."
+  },
+  "/how-to-become-a-product-manager": {
+    "title": "How to Become a Product Manager in India (2026 Roadmap) — PM Streak",
+    "description": "The complete 2026 roadmap for becoming a product manager in India. From zero to APM to Senior PM — skills, certifications, APM programs, portfolio, and how to crack your first PM interview."
+  },
+  "/intuit-adobe-pm-interview": {
+    "title": "Intuit &amp; Adobe PM Interview Guide (2026) — Enterprise SaaS PM Prep",
+    "description": "Crack PM interviews at Intuit, Adobe, Salesforce, and enterprise SaaS. The unique dynamics of large enterprise products, creative tools, and the slow-but-steady PM work."
+  },
+  "/ixigo-makemytrip-pm-interview": {
+    "title": "Travel Tech PM Interview Guide (2026) — MakeMyTrip, ixigo, Cleartrip",
+    "description": "Crack PM interviews at MakeMyTrip, ixigo, Cleartrip, and Goibibo. Travel marketplace dynamics, inventory/pricing, loyalty, and the peculiar PM problems of OTA products."
+  },
+  "/learn": {
+    "title": "Learn Product Management — Free PM Articles & Guides",
+    "description": "Free in-depth articles on product management, PM interviews, roadmaps, metrics, career growth, and leadership. Expert-reviewed PM guides from 300+ PM interviews, updated weekly."
+  },
+  "/mba-to-product-manager": {
+    "title": "MBA to Product Manager (2026) — IIM, ISB & Top B-School to PM Career",
+    "description": "The complete guide to landing a PM role from an MBA. How to position your MBA, APM programs that recruit from campus, what hiring managers actually look for from MBAs."
+  },
+  "/meesho-pm-interview": {
+    "title": "Meesho PM Interview Guide (2026) — Bharat Commerce Questions & Rounds",
+    "description": "Crack the Meesho PM interview. All rounds, Bharat (Tier-2/3) user questions, social commerce product thinking, and real interview examples from Meesho PMs in 2026."
+  },
+  "/meta-pm-interview": {
+    "title": "Meta PM Interview Guide (2026) — Facebook, Instagram & WhatsApp Questions",
+    "description": "Crack the Meta PM interview. Product design, strategy, metrics, and execution rounds — with real questions for Facebook, Instagram, WhatsApp, and Threads, plus a prep plan."
+  },
+  "/microsoft-pm-interview": {
+    "title": "Microsoft PM Interview Guide (2026) — Questions, Rounds & Prep",
+    "description": "Crack the Microsoft PM interview. All rounds including design, strategy, and behavioural, real questions, what Microsoft PMs say the bar is, and a complete prep plan."
+  },
+  "/myntra-nykaa-pm-interview": {
+    "title": "Myntra & Nykaa PM Interview Guide (2026) — Fashion &amp; Beauty Commerce PM",
+    "description": "Crack PM interviews at Myntra and Nykaa. Fashion &amp; beauty e-commerce dynamics — discovery, styling, try-on, returns, and the dynamics unique to lifestyle commerce."
+  },
+  "/paytm-pm-interview": {
+    "title": "Paytm PM Interview Guide (2026) — Payments, Merchant & Lending PM Questions",
+    "description": "Crack the Paytm PM interview. All rounds, payment and merchant product questions, lending and financial services expansion, and the pragmatic product thinking Paytm rewards."
+  },
+  "/phonepe-pm-interview": {
+    "title": "PhonePe PM Interview Guide (2026) — UPI, Payments & Product Questions",
+    "description": "Crack the PhonePe PM interview. All rounds, UPI and payments product questions, merchant vs consumer product thinking, and what PhonePe PMs say the bar is in 2026."
+  },
+  "/platform-product-manager": {
+    "title": "Platform Product Manager Guide (2026) — How to Excel as a Platform PM",
+    "description": "The complete platform PM playbook. What platform PMs do, how they differ from feature PMs, API design, internal tools, developer experience, and how to break into platform PM."
+  },
+  "/pm-1-on-1-guide": {
+    "title": "PM 1:1 Guide (2026) — How Product Managers Run Great 1:1s",
+    "description": "How PMs run great 1:1s — with their manager, direct reports, and cross-functional partners. Agenda templates, question prompts, and the cadence that works."
+  },
+  "/pm-30-60-90-day-plan": {
+    "title": "PM 30-60-90 Day Plan Template (2026) — What to Ship in Your First Quarter",
+    "description": "The 30-60-90 day PM plan template. Specific deliverables for each phase, how to share it with your manager, and what counts as a successful first quarter."
+  },
+  "/pm-ab-test-analysis": {
+    "title": "PM A/B Test Analysis (2026) — How to Read Results Like a Pro",
+    "description": "How PMs analyse A/B test results correctly. Statistical significance, effect size, segmentation, and the biases that lead to bad decisions."
+  },
+  "/pm-ab-testing": {
+    "title": "PM A/B Testing (2026) — Statistical Rigor for Product Managers",
+    "description": "How PMs run A/B tests that give honest answers. Sample size, MDE, guardrails, novelty effects, and why most A/B tests lie."
+  },
+  "/pm-accessibility": {
+    "title": "PM Accessibility (2026) — How PMs Ship Accessible Products",
+    "description": "How PMs approach accessibility without slowing shipping. WCAG basics, screen reader testing, and the business case for accessible products."
+  },
+  "/pm-account-aggregator": {
+    "title": "PM Account Aggregator (2026) — Building on India&apos;s Consent Layer",
+    "description": "How PMs build on Account Aggregator. FIPs, FIUs, consent UX, and why AA is reshaping lending, wealth, and insurance product design."
+  },
+  "/pm-activation": {
+    "title": "PM Activation Guide (2026) — How to Define &amp; Improve Activation",
+    "description": "How PMs define activation — the moment users get real value — and improve it. The &apos;aha moment&apos;, activation metrics, and the 5 levers PMs use to raise activation."
+  },
+  "/pm-agile-rituals": {
+    "title": "PM Agile Rituals (2026) — Standups, Retros, Demos Done Right",
+    "description": "How PMs run agile rituals without waste. Standups, retros, demos, refinement — what to keep, what to cut, what works in 2026."
+  },
+  "/pm-agritech": {
+    "title": "PM Agritech (2026) — DeHaat, Ninjacart, AgroStar PM Guide",
+    "description": "How PMs build agritech products in India. Farmer workflows, supply chain, advisory, and the unique PM challenges of rural-first products."
+  },
+  "/pm-ai-agents": {
+    "title": "PM AI Agents (2026) — Building Agentic Products",
+    "description": "How PMs build AI agents that actually work. Tool use, planning, guardrails, evals, and why most agent products ship broken."
+  },
+  "/pm-ai-assistants": {
+    "title": "PM AI Assistants (2026) — Designing Personal AI Assistants",
+    "description": "How PMs build AI assistants. Memory, personality, proactivity, and what makes an assistant feel like a real one."
+  },
+  "/pm-ai-bring-your-own-key": {
+    "title": "PM Bring-Your-Own-Key (2026) — When BYOK is Right for AI Products",
+    "description": "When PMs should offer bring-your-own-key for AI. Cost shifting, enterprise compliance, and the pricing implications."
+  },
+  "/pm-ai-coding-tools": {
+    "title": "PM AI Coding Tools (2026) — Cursor, Copilot, Cline PM Lessons",
+    "description": "How PMs build AI coding products. Context, latency, trust, eval loops, and the category that redefined developer experience."
+  },
+  "/pm-ai-data-products": {
+    "title": "PM AI Data Products (2026) — Text-to-SQL, BI, Data Analyst Agents",
+    "description": "How PMs build AI data products. Text-to-SQL, conversational BI, analyst agents, and why the &apos;ask your data&apos; category is now real."
+  },
+  "/pm-ai-distribution": {
+    "title": "PM AI Distribution (2026) — How AI Products Reach Users",
+    "description": "How PMs distribute AI products. App stores, browser extensions, embedded in workflows, and the channels that work for AI specifically."
+  },
+  "/pm-ai-education": {
+    "title": "PM AI Education Products (2026) — Khanmigo, Duolingo Max, AI Tutors PM Lessons",
+    "description": "How PMs build AI education products. Personalised tutors, safety for minors, outcomes measurement, and why education AI is still waiting for its breakout moment."
+  },
+  "/pm-ai-evals": {
+    "title": "PM AI Evals (2026) — How PMs Measure LLM Product Quality",
+    "description": "How PMs design AI evals. Offline benchmarks, online metrics, human review, and why eval infrastructure is the real moat for AI products."
+  },
+  "/pm-ai-feature-launch": {
+    "title": "PM AI Feature Launch (2026) — Launching AI Features Without Disasters",
+    "description": "How PMs launch AI features. Beta gates, eval thresholds, kill switches, and what to communicate publicly."
+  },
+  "/pm-ai-feedback-loops": {
+    "title": "PM AI Feedback Loops (2026) — How AI Products Get Smarter From Users",
+    "description": "How PMs design feedback loops in AI products. Thumbs, edits, RLHF, and how to capture signal without breaking the experience."
+  },
+  "/pm-ai-finance": {
+    "title": "PM AI Finance Products (2026) — Ramp, Brex, Pilot PM Lessons",
+    "description": "How PMs build AI finance products. Expense intelligence, close automation, forecasting, and why CFO-tech is where AI adoption is quietest but fastest."
+  },
+  "/pm-ai-hardware": {
+    "title": "PM AI Hardware (2026) — Rabbit, Humane, Friend PM Lessons",
+    "description": "How PMs build AI-first hardware. Why standalone AI devices keep failing, what&apos;s actually working, and the lessons from Rabbit R1 and Humane AI Pin."
+  },
+  "/pm-ai-healthcare": {
+    "title": "PM AI Healthcare (2026) — Ambient Scribes, Diagnostics, Clinical PM Lessons",
+    "description": "How PMs build AI healthcare products. Ambient scribes, clinical decision support, and why healthcare is AI&apos;s highest-stakes testing ground."
+  },
+  "/pm-ai-image": {
+    "title": "PM AI Image Products (2026) — Midjourney, Stable Diffusion, Adobe Firefly PM Lessons",
+    "description": "How PMs build AI image products. Prompt UX, iteration, safety, rights, and why image is the earliest mature AI creative category."
+  },
+  "/pm-ai-legal": {
+    "title": "PM AI Legal Products (2026) — Contract Review, Legal Research, Drafting",
+    "description": "How PMs build AI legal products. Contract review, case research, drafting, and why law firms are finally deploying LLMs in earnest."
+  },
+  "/pm-ai-marketing": {
+    "title": "PM AI Marketing Products (2026) — Jasper, Copy.ai, Typeface PM Lessons",
+    "description": "How PMs build AI marketing products. Brand voice, campaign orchestration, attribution, and why AI is squeezing marketing tool margins."
+  },
+  "/pm-ai-meeting": {
+    "title": "PM AI Meeting Products (2026) — Fireflies, Otter, Read.ai PM Lessons",
+    "description": "How PMs build AI meeting products. Transcription, summarisation, action items, and why meetings are a killer use case for practical AI."
+  },
+  "/pm-ai-monetization": {
+    "title": "PM AI Monetization (2026) — How AI Products Actually Make Money",
+    "description": "How PMs price AI products. Per-seat vs usage vs outcome pricing, and which AI categories converge to which models."
+  },
+  "/pm-ai-onboarding": {
+    "title": "PM AI Onboarding (2026) — Onboarding Users Into AI Products",
+    "description": "How PMs design AI product onboarding. Setting expectations, demoing capabilities, and avoiding the &apos;model is too smart for me&apos; cliff."
+  },
+  "/pm-ai-personalization": {
+    "title": "PM AI Personalization (2026) — Per-User Tuning Beyond Recommendations",
+    "description": "How PMs build AI personalization. Per-user prompts, memory, behavioural signals, and where personalisation stops feeling helpful and starts feeling creepy."
+  },
+  "/pm-ai-pm-interview": {
+    "title": "PM AI PM Interview (2026) — Cracking AI-First PM Roles",
+    "description": "How to interview for AI PM roles at OpenAI, Anthropic, Sarvam, Krutrim. The frameworks, technical fluency, and questions to expect."
+  },
+  "/pm-ai-pricing-tiers": {
+    "title": "PM AI Pricing Tiers (2026) — Designing Plans for AI Products",
+    "description": "How PMs design tiers for AI products. Free, Pro, Team, Enterprise — and what each tier should include for AI-first products."
+  },
+  "/pm-ai-productivity": {
+    "title": "PM AI Productivity Products (2026) — Copilot, Glean, Mem PM Lessons",
+    "description": "How PMs build AI productivity products. Personal agents, org-wide search, knowledge retrieval, and why productivity AI now crosses workflow boundaries."
+  },
+  "/pm-ai-products": {
+    "title": "PM AI Products (2026) — How to Ship AI Features That Users Trust",
+    "description": "How PMs build AI products that earn trust. Prompt design, evaluation, hallucination management, and the ethics of shipping AI features to real users."
+  },
+  "/pm-ai-prompt-injection": {
+    "title": "PM Prompt Injection Defense (2026) — Securing AI Products",
+    "description": "How PMs design defenses against prompt injection. Direct, indirect, and exfiltration attacks — and what mitigations actually work."
+  },
+  "/pm-ai-rate-limits": {
+    "title": "PM AI Rate Limits (2026) — Designing Quotas Without Breaking Trust",
+    "description": "How PMs design rate limits and quotas for AI products. Tier caps, fair-use, and how to communicate limits without alienating power users."
+  },
+  "/pm-ai-recruiting": {
+    "title": "PM AI Recruiting (2026) — Hiring Tech Powered by AI",
+    "description": "How PMs build AI recruiting products. Candidate matching, screening, interviewing, and the bias and legal challenges of automated hiring."
+  },
+  "/pm-ai-research-tools": {
+    "title": "PM AI Research Tools (2026) — Elicit, Consensus, NotebookLM PM Lessons",
+    "description": "How PMs build AI research tools. Literature review, summarisation, grounded answers, and the evolution of AI-assisted knowledge work."
+  },
+  "/pm-ai-robotics": {
+    "title": "PM AI Robotics (2026) — Humanoids, Warehouse Robots, Autonomous Vehicles",
+    "description": "How PMs build AI-powered robotics. Humanoids, warehouse automation, autonomy, and why the gap between demo and reliable deployment is still years."
+  },
+  "/pm-ai-roi-measurement": {
+    "title": "PM AI ROI Measurement (2026) — Proving AI Pays Off",
+    "description": "How PMs measure AI ROI. Time saved, deflection rates, revenue lift, and why most AI ROI claims don&apos;t survive scrutiny."
+  },
+  "/pm-ai-safety": {
+    "title": "PM AI Safety (2026) — Building Safe AI Products",
+    "description": "How PMs build AI safety into product. Refusals, jailbreaks, content filters, and how to balance safety with usefulness."
+  },
+  "/pm-ai-sales": {
+    "title": "PM AI Sales Products (2026) — Gong, Clari, 11x PM Lessons",
+    "description": "How PMs build AI sales tools. Call intelligence, autonomous SDRs, forecasting, and why sales is the fastest-monetising AI category."
+  },
+  "/pm-ai-search": {
+    "title": "PM AI Search (2026) — Perplexity, ChatGPT, Google AI Overview PM Lessons",
+    "description": "How PMs build AI search products. Retrieval, grounding, citations, and why AI search is the most contested category since mobile search."
+  },
+  "/pm-ai-security": {
+    "title": "PM AI Security (2026) — SOC AI, Threat Detection, AI Red Teams",
+    "description": "How PMs build AI security products. Autonomous SOC, threat detection, and how security PM is adapting to AI-powered adversaries."
+  },
+  "/pm-ai-support": {
+    "title": "PM AI Customer Support (2026) — Decagon, Ada, Fin AI PM Lessons",
+    "description": "How PMs build AI customer support. Deflection, knowledge base quality, human handoff, and the evolution from chatbots to true support agents."
+  },
+  "/pm-ai-trust-signals": {
+    "title": "PM AI Trust Signals (2026) — How AI Products Earn User Trust",
+    "description": "How PMs design trust into AI products. Citations, confidence indicators, undo, and the small UX choices that make AI feel reliable."
+  },
+  "/pm-ai-versioning": {
+    "title": "PM AI Versioning (2026) — Managing Model and Prompt Versions",
+    "description": "How PMs version models and prompts. Pinning, migration, deprecation, and why model upgrades are silent product changes."
+  },
+  "/pm-ai-video": {
+    "title": "PM AI Video Products (2026) — Sora, Runway, HeyGen PM Lessons",
+    "description": "How PMs build AI video products. Generation vs editing, consistency, length limits, and why AI video is the next wave of creative tooling."
+  },
+  "/pm-ai-voice": {
+    "title": "PM AI Voice Products (2026) — ElevenLabs, Sarvam, Voice Agents PM Guide",
+    "description": "How PMs build AI voice products. TTS, voice cloning, real-time agents, and why voice is the fastest-moving AI category."
+  },
+  "/pm-ai-writing": {
+    "title": "PM AI Writing Products (2026) — Grammarly, Jasper, Notion AI PM Lessons",
+    "description": "How PMs build AI writing products. Inline vs chat, style adaptation, and why Grammarly had to reinvent itself in the LLM era."
+  },
+  "/pm-ambiguity-navigation": {
+    "title": "Navigating Ambiguity as a PM (2026) — The Skill That Defines Senior PMs",
+    "description": "How PMs handle ambiguity. When the spec doesn&apos;t exist, leadership has no answer, and you&apos;re the one expected to create structure. The moves senior PMs actually use."
+  },
+  "/pm-analyst-to-pm": {
+    "title": "PM Analyst to PM (2026) — From Data Analyst to Product Manager",
+    "description": "How data analysts become PMs. The strengths they bring, the execution and empathy gaps, and why data-first PMs often win growth roles."
+  },
+  "/pm-analytics-tools": {
+    "title": "PM Analytics Tools (2026) — Mixpanel, Amplitude, PostHog Compared",
+    "description": "The analytics tools PMs actually use in 2026 — Mixpanel, Amplitude, PostHog, Heap, GA4. When to use which, pricing, and PM-specific workflows."
+  },
+  "/pm-anti-patterns": {
+    "title": "12 PM Anti-Patterns (2026) — Habits That Mark a Weak Product Manager",
+    "description": "12 PM anti-patterns that weak PMs do and strong PMs avoid. The habits that erode team trust, miss outcomes, and stall careers — and how to recognise them in yourself."
+  },
+  "/pm-api-platforms": {
+    "title": "PM API Platforms (2026) — Designing APIs as Product",
+    "description": "How PMs build API platforms. Schema design, versioning, quotas, SDKs, and why API PM is quietly one of the highest-leverage roles in SaaS."
+  },
+  "/pm-api-products": {
+    "title": "PM API Products (2026) — Building APIs Developers Love",
+    "description": "How PMs build API products developers love. API design principles, developer experience, pricing, and the craft of API PM."
+  },
+  "/pm-apm-to-senior": {
+    "title": "PM APM to Senior PM (2026) — The 3-Year Leveling Playbook",
+    "description": "How APMs become senior PMs in 3 years. The skill shifts, visibility moves, and scope expansions that matter at each level."
+  },
+  "/pm-apm-vs-pm": {
+    "title": "APM vs PM (2026) — How They Differ &amp; Which to Target",
+    "description": "APM vs PM — the real differences in scope, expectations, compensation, and promotion timeline. Which should you target based on your background?"
+  },
+  "/pm-async-work": {
+    "title": "PM Async Work (2026) — How Great PMs Write Instead of Meet",
+    "description": "How PMs default to async communication — doc-first decisions, when to meet, and the writing skills that replace meetings."
+  },
+  "/pm-attribution-models": {
+    "title": "PM Attribution Models (2026) — Last-Click is Dead. What PMs Use Now.",
+    "description": "How PMs handle attribution after iOS 14, third-party cookies, and post-cookie. Models, MMM, and lift studies that actually work."
+  },
+  "/pm-b2b-marketplaces": {
+    "title": "PM B2B Marketplaces (2026) — Udaan, IndiaMART, Zetwerk PM Guide",
+    "description": "How PMs build B2B marketplaces. Supplier quality, credit, logistics, and why B2B marketplaces are fundamentally different from consumer ones."
+  },
+  "/pm-b2b-products": {
+    "title": "PM B2B Products (2026) — How B2B PM Differs From Consumer",
+    "description": "How PMs build B2B products. Buyer vs user, sales-led motion, enterprise deal cycles, and the dynamics that separate B2B from consumer product work."
+  },
+  "/pm-b2b-sales-collaboration": {
+    "title": "PM + Sales Collaboration for B2B (2026) — How to Work With Sales Without Being Owned By Sales",
+    "description": "How B2B PMs collaborate with sales teams effectively. Intake processes, deal desk alignment, saying no, and turning sales signal into product insight."
+  },
+  "/pm-b2b-sales-led": {
+    "title": "PM B2B Sales-Led (2026) — Building for Enterprise Sales Motion",
+    "description": "How PMs build for sales-led B2B. Buyer vs user, RFPs, procurement, security reviews, and why the best B2B PMs spend time in sales calls."
+  },
+  "/pm-bay-area-vs-india": {
+    "title": "PM Bay Area vs India (2026) — Career Tradeoffs Compared",
+    "description": "How PMs should think about Bay Area vs India career paths. Comp, scope, mission, and the lifestyle differences that compound over a decade."
+  },
+  "/pm-beauty-tech": {
+    "title": "PM Beauty Tech (2026) — Nykaa, Purplle, Tira PM Guide",
+    "description": "How PMs build beauty tech products. Content-led commerce, AR try-ons, influencer ecosystems, and why beauty blends media and marketplace."
+  },
+  "/pm-behavioral-interview": {
+    "title": "PM Behavioral Interview Questions — STAR Stories That Get Offers",
+    "description": "Master PM behavioral interviews with the STAR framework, 25+ real questions, and story templates. Leadership, conflict, ambiguity, failure — answered the way top PMs do."
+  },
+  "/pm-beta-program": {
+    "title": "How to Run a PM Beta Program (2026) — Recruit, Learn, Iterate",
+    "description": "How PMs run beta programs that generate real signal. Recruiting beta users, feedback loops, managing expectations, and turning beta into a compounding asset."
+  },
+  "/pm-bharat-internet-users": {
+    "title": "PM for Bharat Users (2026) — Designing for India&apos;s Next 500M",
+    "description": "How PMs design for Bharat — the next 500M Indian internet users. Vernacular, voice, video, and the mistakes urban-first PMs keep making."
+  },
+  "/pm-bharat-products": {
+    "title": "PM Building for Bharat (2026) — How Great PMs Design for India&apos;s Next Half-Billion Users",
+    "description": "How PMs design for Bharat — Tier-2/3/4 India. Vernacular UX, device constraints, trust signals, and the patterns that work where English-first products fail."
+  },
+  "/pm-bold-bets": {
+    "title": "How PMs Make Bold Bets (2026) — The Skill Senior PMs Need Most",
+    "description": "How PMs make bold product bets when incremental work isn&apos;t enough. Distinguishing brave bets from reckless ones, structuring commitments, and recovering from bad bets."
+  },
+  "/pm-building-in-public": {
+    "title": "PM Building in Public (2026) — Why More PMs Should Share Their Work",
+    "description": "Why PMs benefit from building in public. Accountability, compounding distribution, and the specific things to share (and not)."
+  },
+  "/pm-burnout": {
+    "title": "PM Burnout Guide (2026) — How to Spot, Prevent & Recover",
+    "description": "How PMs spot and recover from burnout. Early warning signs, structural causes, what actually works for recovery, and how to rebuild a sustainable product management practice."
+  },
+  "/pm-calendar-products": {
+    "title": "PM Calendar Products (2026) — Google Calendar, Cron, Motion PM Lessons",
+    "description": "How PMs build calendar products. Scheduling UX, availability sharing, AI-assisted scheduling, and why calendar is the hardest switch in productivity."
+  },
+  "/pm-car-tech": {
+    "title": "PM Car Tech (2026) — CarDekho, Cars24, Spinny PM Guide",
+    "description": "How PMs build car tech products in India. Used car marketplaces, inspection, financing, and why the Indian used car market is a hard marketplace to crack."
+  },
+  "/pm-career-levels-india": {
+    "title": "PM Career Levels in India (2026) — Titles, Scope & Promotion Criteria",
+    "description": "The complete PM level ladder in India. What each title means at Flipkart, Razorpay, Google, and more. Promotion criteria, typical years, and how companies calibrate levels."
+  },
+  "/pm-career-mistakes": {
+    "title": "10 PM Career Mistakes (2026) — How to Avoid the Traps That Stall PMs",
+    "description": "The 10 most common PM career mistakes. What kills PM careers, what compounds slowly into stagnation, and the deliberate choices that separate fast-growing PMs from stuck ones."
+  },
+  "/pm-career-transitions": {
+    "title": "PM Career Transitions (2026) — Changing Domain, Scale, or Level",
+    "description": "How PMs navigate career transitions — switching domain, moving from startup to enterprise (or vice versa), going from IC to manager. What&apos;s hard about each, what works."
+  },
+  "/pm-case-bank": {
+    "title": "PM Case Question Bank (2026) — 50+ Real Questions Asked in Indian PM Interviews",
+    "description": "50+ real PM case questions from Indian tech interviews. Organised by company, category, and difficulty. What candidates were actually asked."
+  },
+  "/pm-case-study-interview": {
+    "title": "PM Case Study Interview Guide (2026) — How to Solve Any PM Case",
+    "description": "Crack PM case study interviews with a proven framework. Product improvement, new market entry, metric drop investigation, and go-to-market cases — with worked examples and structures."
+  },
+  "/pm-chat-apps": {
+    "title": "PM Chat Apps (2026) — WhatsApp, Telegram, iMessage PM Lessons",
+    "description": "How PMs build chat apps. Delivery, encryption, groups, payments on top, and why chat is the stickiest consumer category."
+  },
+  "/pm-cheat-sheet": {
+    "title": "PM Cheat Sheet (2026) — Frameworks, Metrics & Formulas on One Page",
+    "description": "The one-page PM cheat sheet. Every essential framework, metric, and formula — RICE, AARRR, PIRATE, north star, TAM/SAM/SOM, and more — in a scannable reference."
+  },
+  "/pm-checkout-design": {
+    "title": "PM Checkout Design (2026) — Designing Checkouts That Convert",
+    "description": "How PMs design checkout flows that convert. Field count, payment options, trust signals, and the small details that move conversion 5–15%."
+  },
+  "/pm-churn-analysis": {
+    "title": "PM Churn Analysis (2026) — Find Why Users Leave and Fix It",
+    "description": "How PMs diagnose churn. Types of churn, root-cause analysis, and the 5 levers PMs use to reduce churn meaningfully."
+  },
+  "/pm-churn-reduction": {
+    "title": "PM Churn Reduction (2026) — How PMs Diagnose and Fix Churn",
+    "description": "How PMs diagnose churn root causes and build retention systems. Cohort analysis, cancellation flows, win-back, and the churn metrics that matter."
+  },
+  "/pm-climatetech": {
+    "title": "PM Climatetech (2026) — Building Products for Decarbonisation",
+    "description": "How PMs build climatetech products. Measurement, hardware-software, carbon markets, and why this decade is the opportunity."
+  },
+  "/pm-cohort-analysis": {
+    "title": "PM Cohort Analysis Guide (2026) — Find Real Product Signal",
+    "description": "How PMs use cohort analysis to find real product signal. When to use cohorts, what to segment by, and how to spot the patterns aggregate metrics hide."
+  },
+  "/pm-cold-start": {
+    "title": "PM Cold Start Problem (2026) — How PMs Launch Products With Zero Users",
+    "description": "How PMs solve the cold start problem. Network effects without network, content without creators, marketplace without supply — and the proven strategies that work."
+  },
+  "/pm-collaboration-tools": {
+    "title": "PM Collaboration Tools (2026) — Notion, Figma, Linear PM Playbook",
+    "description": "How PMs build collaboration products. Multiplayer UX, permissions, templates, and why collaboration tools compound through networks of users."
+  },
+  "/pm-communication-skills": {
+    "title": "PM Communication Skills (2026) — How Great PMs Communicate",
+    "description": "The communication skills that separate great PMs from average ones. Presenting to executives, leading meetings, async writing, giving hard feedback, and public speaking."
+  },
+  "/pm-community-building": {
+    "title": "PM Community Building (2026) — How PMs Grow Engaged User Communities",
+    "description": "How PMs build communities that drive retention, advocacy, and product insight. Channels, rituals, and the metrics that matter."
+  },
+  "/pm-competitive-analysis": {
+    "title": "Competitive Analysis for PMs (2026) — How to Study Competitors Without Copying Them",
+    "description": "The PM guide to competitive analysis. How to study competitors, what to track, when to copy vs differentiate, and the anti-patterns that make competitive research useless."
+  },
+  "/pm-competitor-teardown": {
+    "title": "PM Competitor Teardown Guide (2026) — How to Study a Competitor Product Like a PM",
+    "description": "The complete guide to competitor teardowns. What to look at, how to structure the write-up, and how to turn teardowns into strategic insight."
+  },
+  "/pm-consulting-to-pm": {
+    "title": "Consultant to Product Manager (2026) — How Ex-Consultants Land PM Roles",
+    "description": "How management consultants transition to PM. What your MBB/strategy experience buys you, what it doesn't, and how to reposition to win PM interviews."
+  },
+  "/pm-consulting-to-product": {
+    "title": "PM Consulting to Product (2026) — From McKinsey, BCG, Bain to PM",
+    "description": "How consultants transition to PM. Strengths they bring, gaps they must close, and why ex-consultants often excel at strategy but struggle with craft."
+  },
+  "/pm-consumer-india": {
+    "title": "Consumer PM India (2026) — Building Products for 700M+ Indian Users",
+    "description": "How consumer PMs in India build products for 700M+ users. User segments, behaviour patterns, monetisation realities, and what separates Indian consumer PM from global."
+  },
+  "/pm-content-moderation": {
+    "title": "PM Content Moderation (2026) — How PMs Build Trust & Safety Systems",
+    "description": "How PMs build content moderation at scale. Policy, automation, human review, and the tough calls no framework makes for you."
+  },
+  "/pm-content-products": {
+    "title": "PM Content Products (2026) — How to Build Products Where Content Is the Product",
+    "description": "How PMs build content products. Creator economy, recommendation algorithms, content moderation, and the dynamics of platforms where content is the product."
+  },
+  "/pm-context-windows": {
+    "title": "PM Context Windows (2026) — Long Context vs RAG vs Memory",
+    "description": "How PMs decide between long context, RAG, and memory architectures. Cost, latency, and accuracy tradeoffs for AI products."
+  },
+  "/pm-conversion-optimization": {
+    "title": "PM Conversion Optimization (2026) — CRO Playbook for Product Managers",
+    "description": "How PMs run conversion rate optimization. Friction audits, progressive disclosure, payment flows, and why small wins compound."
+  },
+  "/pm-conviction-pushback": {
+    "title": "PM Conviction &amp; Pushback (2026) — How to Hold Your Ground Without Losing Relationships",
+    "description": "How PMs push back on leadership, customers, or peers without damaging trust. Disagree-and-commit, when to hold, when to fold, and how to signal conviction calmly."
+  },
+  "/pm-cover-letter": {
+    "title": "PM Cover Letter Guide (2026) — Template, Examples & What Hiring Managers Want",
+    "description": "Write a PM cover letter that actually gets read. The structure that works, real examples, what to include, what to cut, and when to skip the cover letter entirely."
+  },
+  "/pm-cpo-role": {
+    "title": "PM CPO Role (2026) — What Chief Product Officers Actually Do",
+    "description": "What CPOs actually do. Board relationships, product strategy, org design, and the difference between VP Product and CPO."
+  },
+  "/pm-creator-economy": {
+    "title": "PM Creator Economy (2026) — How PMs Build Products for Creators",
+    "description": "How PMs build for the creator economy. Monetisation, creator tools, audience growth, and the tension between creators and platforms."
+  },
+  "/pm-crisis-management": {
+    "title": "PM Crisis Management (2026) — How to Handle Production Incidents &amp; Launch Disasters",
+    "description": "How PMs handle crisis moments — production incidents, launch disasters, customer escalations. Triage, communication, post-mortem, and rebuilding trust."
+  },
+  "/pm-critical-thinking": {
+    "title": "Critical Thinking for PMs (2026) — The Habit of Mind That Separates Great PMs",
+    "description": "How PMs think critically. Question assumptions, distinguish signal from noise, avoid cognitive biases, and develop the intellectual discipline great PMs share."
+  },
+  "/pm-crm-products": {
+    "title": "PM CRM Products (2026) — Salesforce, HubSpot, Attio PM Guide",
+    "description": "How PMs build CRM products. Pipeline UX, data quality, integrations, and why CRM is the highest-switching-cost category in SaaS."
+  },
+  "/pm-cross-functional": {
+    "title": "PM Cross-Functional Leadership (2026) — Leading Without Authority",
+    "description": "How PMs lead cross-functional teams without authority. Working with engineering, design, sales, marketing, support — and building trust with each."
+  },
+  "/pm-customer-interviews": {
+    "title": "PM Customer Interviews (2026) — How to Interview Users and Learn What&apos;s Real",
+    "description": "How PMs run customer interviews that reveal real insight. Question design, listening techniques, avoiding bias, and turning interviews into shipped product decisions."
+  },
+  "/pm-customer-research": {
+    "title": "PM Customer Research Guide (2026) — Beyond Interviews",
+    "description": "The PM guide to customer research. How to combine qualitative, quantitative, and passive signals into a research program that drives real product decisions."
+  },
+  "/pm-customer-segmentation": {
+    "title": "PM Customer Segmentation Guide (2026) — How to Segment Users Usefully",
+    "description": "How PMs segment customers for product decisions. Beyond demographics — behavioural, needs-based, and JTBD segmentation with examples."
+  },
+  "/pm-customer-success": {
+    "title": "PM x Customer Success (2026) — Working With CS to Ship the Right Things",
+    "description": "How PMs partner with customer success teams. Feedback loops, escalation handling, and why CS is your richest product-research channel."
+  },
+  "/pm-customer-support-insights": {
+    "title": "PM + Customer Support (2026) — Why the Support Queue Is Your Best User Research",
+    "description": "Why great PMs spend time in the customer support queue. What to look for, how to quantify signal, and how to turn support data into product decisions."
+  },
+  "/pm-customer-support-tech": {
+    "title": "PM Customer Support Tech (2026) — Intercom, Zendesk, Freshdesk PM Guide",
+    "description": "How PMs build customer support tech. AI deflection, omnichannel, agent productivity, and why support is the best AI testing ground."
+  },
+  "/pm-d2c-brands": {
+    "title": "PM D2C Brands (2026) — Mamaearth, boAt, Sugar PM Guide",
+    "description": "How PMs build for D2C brands in India. Shopify economics, performance marketing, repeat rate, and what makes D2C PM unique."
+  },
+  "/pm-daily-practice": {
+    "title": "PM Daily Practice Guide (2026) — The 15-Minute Habit That Builds Product Mastery",
+    "description": "The science of PM daily practice. What 15 minutes a day actually builds, what to practice, how to track progress, and why streaks beat cramming for interviews."
+  },
+  "/pm-dashboard-design": {
+    "title": "PM Dashboard Design Guide (2026) — What to Track & How",
+    "description": "How PMs design dashboards that drive decisions. What to track, what to cut, the hierarchy of metrics, and how to make dashboards your team actually checks."
+  },
+  "/pm-data-analyst-partnership": {
+    "title": "PM + Data Analyst Partnership (2026) — How to Work With Data Teams Effectively",
+    "description": "How PMs work with data analysts effectively. What to ask for, what to not ask for, how to set up self-serve, and building deep analytical partnership over time."
+  },
+  "/pm-data-products": {
+    "title": "PM Data Products (2026) — Building With Data as the Product",
+    "description": "How PMs build data products. Pipelines, quality, governance, and the unique challenges when the product IS the data."
+  },
+  "/pm-decision-frameworks": {
+    "title": "PM Decision Frameworks (2026) — How Good PMs Decide Under Uncertainty",
+    "description": "Decision frameworks PMs actually use. RICE, WSJF, ICE, two-way vs one-way doors, and when to skip frameworks entirely."
+  },
+  "/pm-decision-making": {
+    "title": "PM Decision Making Guide (2026) — How Great PMs Decide Under Uncertainty",
+    "description": "How PMs make fast, confident decisions with incomplete data. Frameworks for reversible vs irreversible, risk-adjusted decisions, and how to document decisions so teams stay aligned."
+  },
+  "/pm-deep-work": {
+    "title": "Deep Work for Product Managers (2026) — Focus Strategies That Ship More",
+    "description": "How PMs can practice deep work in noisy environments. Block focus time, reduce context switching, protect your highest-leverage hours, and ship more with Cal Newport's framework adapted for product management."
+  },
+  "/pm-demo-skills": {
+    "title": "PM Demo Skills Guide (2026) — How to Present Products That Land",
+    "description": "How PMs give demos that convert. Structure, storytelling, live demo traps, and what executives actually pay attention to."
+  },
+  "/pm-deprecations": {
+    "title": "PM Deprecations Guide (2026) — How to Kill Features Without Killing Trust",
+    "description": "How PMs deprecate features without burning customers. Communication, migration paths, timelines, and why deprecating is a senior-PM skill."
+  },
+  "/pm-design-thinking": {
+    "title": "Design Thinking for PMs (2026) — How to Use IDEO&apos;s 5-Stage Process",
+    "description": "How PMs apply design thinking in real work. The 5 stages (Empathize, Define, Ideate, Prototype, Test) with PM-specific examples — beyond the Stanford d.school theory."
+  },
+  "/pm-design-tools": {
+    "title": "PM Design Tools (2026) — Figma, Canva, Framer PM Lessons",
+    "description": "How PMs build design tools. Multiplayer, plugin ecosystems, AI-assisted design, and why design tools compound faster than almost any SaaS category."
+  },
+  "/pm-designer-partnership": {
+    "title": "PM Designer Partnership (2026) — Working With Designers Well",
+    "description": "How PMs partner with designers. Handoff vs collaboration, what to bring to design reviews, and why your best product partner is your designer."
+  },
+  "/pm-designer-to-pm": {
+    "title": "PM Designer to PM (2026) — Designers Who Cross Into Product",
+    "description": "How designers become PMs. Strengths they bring, the data and engineering gaps to close, and why designer-PMs often ship the best-experience products."
+  },
+  "/pm-dev-productivity": {
+    "title": "PM Developer Productivity (2026) — Measuring and Improving Eng Velocity",
+    "description": "How PMs work on developer productivity. DORA metrics, SPACE framework, AI coding tools, and why velocity is a team sport."
+  },
+  "/pm-developer-tools": {
+    "title": "PM Developer Tools (2026) — Building Products for Engineers",
+    "description": "How PMs build for developers. Docs, DX, pricing, community — and why developer tools are the highest-leverage PM role in software."
+  },
+  "/pm-digital-sbu": {
+    "title": "PM at Traditional Enterprises (2026) — Digital SBUs, Legacy, Transformation",
+    "description": "How PMs work inside legacy enterprises. Digital SBUs at Tata, Reliance, HDFC, and why PM-ing in enterprise is not the same as startup PM."
+  },
+  "/pm-discovery-process": {
+    "title": "PM Discovery Process (2026) — Continuous Discovery for Product Managers",
+    "description": "How PMs run continuous discovery. Interviews, opportunity trees, assumption testing — Teresa Torres&apos; framework applied."
+  },
+  "/pm-documentation": {
+    "title": "PM Documentation Guide (2026) — What Great PMs Actually Write Down",
+    "description": "How PMs document decisions, specs, strategy, and learnings. What&apos;s worth writing down, what isn&apos;t, and the 7 documents every PM should maintain."
+  },
+  "/pm-dogfooding": {
+    "title": "PM Dogfooding Guide (2026) — Why Using Your Own Product Is Non-Negotiable",
+    "description": "Why PMs must use their own product daily, how to dogfood seriously (not for 10 minutes), and why companies with strong dogfooding cultures ship dramatically better products."
+  },
+  "/pm-domain-knowledge": {
+    "title": "PM Domain Knowledge Guide (2026) — How to Build Expertise in Your Product Area",
+    "description": "How PMs build deep domain expertise. The habits that compound, what to read, who to follow, and how to become the person people call when they need domain insight."
+  },
+  "/pm-early-stage-startup": {
+    "title": "PM at Early-Stage Startup (2026) — What It&apos;s Actually Like",
+    "description": "What PM work is really like at an early-stage startup. Scope, chaos, hats worn, and whether it&apos;s right for you."
+  },
+  "/pm-ecommerce-india": {
+    "title": "PM E-commerce India (2026) — Flipkart, Amazon, Meesho PM Guide",
+    "description": "How PMs build e-commerce products in India. COD, RTO, Tier-2/3, social commerce, and the brutal unit economics of Indian e-commerce."
+  },
+  "/pm-edtech": {
+    "title": "PM Edtech (2026) — Byju's, Unacademy, PhysicsWallah PM Guide",
+    "description": "How PMs build edtech products in India. Learning outcomes, engagement, parent-student dynamics, and why retention is the real battle."
+  },
+  "/pm-electronics-ecommerce": {
+    "title": "PM Electronics E-commerce (2026) — Croma, Reliance Digital, Amazon Electronics PM",
+    "description": "How PMs build electronics e-commerce. Compare, finance, warranty, and why electronics is a high-AOV, low-margin, trust-heavy category."
+  },
+  "/pm-email-products": {
+    "title": "PM Email Products (2026) — Gmail, Superhuman, Hey PM Lessons",
+    "description": "How PMs build email products. Triage, speed, spam signals, and why email has survived every &apos;email killer&apos; since 2005."
+  },
+  "/pm-empathy-interviews": {
+    "title": "PM Empathy Interviews (2026) — How to Run User Interviews That Actually Produce Insight",
+    "description": "The PM guide to empathy interviews. Good vs bad questions, 5-user rule, how to read between the lines, and how to turn interview data into product decisions."
+  },
+  "/pm-eng-partnership": {
+    "title": "PM Engineering Partnership (2026) — Working With Engineers Well",
+    "description": "How PMs partner with engineering. Estimates, tech debt, tradeoffs, and why your TL is your most valuable product ally."
+  },
+  "/pm-engineer-to-pm": {
+    "title": "PM Engineer to PM (2026) — The Most Common PM Transition",
+    "description": "How engineers become PMs. Strengths they bring, habits to unlearn, and why ex-engineers often make the best technical PMs."
+  },
+  "/pm-engineering-estimate": {
+    "title": "PM Engineering Estimates (2026) — How to Work With Eng Timelines Without Becoming a Nuisance",
+    "description": "How PMs work with engineering estimates — respecting their expertise while keeping projects predictable. When to probe, when to trust, and how to handle slipping timelines."
+  },
+  "/pm-estimation": {
+    "title": "PM Estimation (2026) — How PMs Estimate Work Honestly",
+    "description": "How PMs estimate timelines without lying to themselves. Reference-class forecasting, buffers, and why single-point estimates fail."
+  },
+  "/pm-estimation-questions": {
+    "title": "PM Estimation Questions (2026) — Guesstimates, Market Sizing & Tips",
+    "description": "Crack PM estimation questions. Step-by-step framework, 20+ practice questions with model answers, and the common traps that ruin otherwise good estimates."
+  },
+  "/pm-event-tracking": {
+    "title": "PM Event Tracking (2026) — How to Design Instrumentation That Answers Real Questions",
+    "description": "How PMs design event tracking that answers the questions they&apos;ll want to ask. Naming conventions, property design, and building a tracking plan before shipping."
+  },
+  "/pm-execution-interview": {
+    "title": "PM Execution Interview Questions (2026) — Delivery, Ops & Sprint Management",
+    "description": "Master PM execution interview questions. Sprint planning, launch management, trade-off decisions, handling blockers, and cross-functional coordination — with real questions and model answers."
+  },
+  "/pm-executive-updates": {
+    "title": "PM Executive Updates Guide (2026) — How to Write Updates Leadership Actually Reads",
+    "description": "How PMs write exec updates that get read. Structure, length, what to include, what to cut, and how to build trust through consistent communication."
+  },
+  "/pm-experiment-design": {
+    "title": "PM Experiment Design Guide (2026) — A/B Testing for Product Managers",
+    "description": "How PMs design A/B tests that actually produce signal. Hypothesis writing, sample size, guardrail metrics, common mistakes, and when NOT to A/B test."
+  },
+  "/pm-experiment-examples": {
+    "title": "PM Experiment Examples (2026) — Real A/B Test Designs",
+    "description": "5 real-style PM experiment examples with hypothesis, setup, primary + guardrail metrics, and decision criteria. See how great PMs design tests."
+  },
+  "/pm-experiment-velocity": {
+    "title": "PM Experiment Velocity Guide (2026) — How to Run More Experiments Faster",
+    "description": "How top PMs run experiments 5x faster than average teams. Infrastructure, decision rules, and habits that increase learning velocity without sacrificing rigour."
+  },
+  "/pm-experimentation-culture": {
+    "title": "PM Experimentation Culture (2026) — How to Build a Team That Ships, Measures, Learns",
+    "description": "How PMs build a team culture of experimentation. Habits, rituals, metrics, and how to shift a team from ship-and-hope to ship-and-learn."
+  },
+  "/pm-experimentation-platform": {
+    "title": "PM Experimentation Platform (2026) — LaunchDarkly, Statsig, Eppo PM Lessons",
+    "description": "How PMs build experimentation platforms. Feature flags, statistical engines, governance, and why exp platforms are the unsexy infra winners."
+  },
+  "/pm-failures-recovery": {
+    "title": "PM Failure Recovery Guide (2026) — When Your Product or Launch Fails",
+    "description": "How to handle PM failures — failed launches, missed metrics, shipped features nobody used. Recovery steps, post-mortems, career protection, and lessons that compound."
+  },
+  "/pm-fashion-tech": {
+    "title": "PM Fashion Tech (2026) — Myntra, Ajio, Nykaa Fashion PM Guide",
+    "description": "How PMs build fashion tech products. Size and fit, returns, visual search, and why fashion is the hardest category in e-commerce."
+  },
+  "/pm-feature-adoption": {
+    "title": "PM Feature Adoption (2026) — Why Your Feature Isn&apos;t Being Used and How to Fix It",
+    "description": "Why shipped features often get low adoption and how PMs fix it. Discovery, education, habit, and the adoption levers that actually move metrics."
+  },
+  "/pm-feature-flags": {
+    "title": "PM Feature Flags (2026) — How PMs Use Flags to Ship Safer",
+    "description": "How PMs use feature flags. Rollout strategies, kill switches, segment targeting, and why flags decouple deploy from release."
+  },
+  "/pm-feedback-guide": {
+    "title": "PM Feedback Guide (2026) — How Great PMs Give and Receive Feedback",
+    "description": "How PMs give and receive feedback effectively. SBI framework, specific examples, how to handle defensive reactions, and how to make feedback a habit instead of an event."
+  },
+  "/pm-feedback-loops": {
+    "title": "PM Feedback Loops (2026) — How PMs Turn User Signal Into Decisions",
+    "description": "How PMs build feedback loops that actually inform decisions. Channels, triage, synthesis, and why most feedback systems are graveyards."
+  },
+  "/pm-fine-tuning": {
+    "title": "PM Fine-Tuning vs Prompting (2026) — When PMs Should Push for Fine-Tuning",
+    "description": "When fine-tuning makes sense vs prompting or RAG. Cost, latency, control, and the real-world thresholds at which fine-tuning pays off."
+  },
+  "/pm-fintech-india": {
+    "title": "Fintech PM India (2026) — UPI, Lending, Wealth &amp; the Regulatory Maze",
+    "description": "How fintech PMs build in India. Payment rails, lending unit economics, wealth products, and navigating RBI/SEBI regulation while shipping real products."
+  },
+  "/pm-fintech-payments": {
+    "title": "PM Fintech Payments (2026) — How PMs Build Payment Products",
+    "description": "How PMs build payment products. UPI dynamics, success rates, reconciliation, compliance, and the unique challenges of payment PM work."
+  },
+  "/pm-first-90-days": {
+    "title": "First 90 Days as a PM (2026) — How to Start Strong in a New PM Role",
+    "description": "The first 90 days determine your trajectory at a new PM job. The week-by-week playbook for building context, earning trust, and shipping your first real win."
+  },
+  "/pm-first-job-guide": {
+    "title": "How to Land Your First PM Job (2026) — Complete India Guide",
+    "description": "The complete guide to landing your first PM job in India. Paths in, portfolio to build, interview prep, and how to differentiate when you have no PM experience."
+  },
+  "/pm-fitness-apps": {
+    "title": "PM Fitness Apps (2026) — Strava, Cult.fit, Apple Fitness+ PM Lessons",
+    "description": "How PMs build fitness apps. Wearable integrations, habit formation, content vs social, and why fitness has the highest seasonal churn in consumer."
+  },
+  "/pm-food-delivery": {
+    "title": "PM Food Delivery (2026) — Swiggy, Zomato, Eatsure PM Guide",
+    "description": "How PMs build food delivery products in India. Restaurant discovery, delivery ETAs, rider economics, and the brutal unit economics."
+  },
+  "/pm-founder-collaboration": {
+    "title": "PM + Founder Collaboration (2026) — Working Directly With the CEO",
+    "description": "How PMs at startups collaborate with founders. What works, what doesn&apos;t, and how to keep product decisions rigorous when the founder is the loudest voice in the room."
+  },
+  "/pm-founder-vs-pm": {
+    "title": "Founder vs PM (2026) — When They Do the Same Job and When They Clash",
+    "description": "Founder vs PM — who owns what. The overlap, the conflicts, and how to work with a founder-led product culture as a PM joining the team."
+  },
+  "/pm-freelance-consulting": {
+    "title": "PM Freelance &amp; Consulting (2026) — Going Independent as a PM",
+    "description": "How PMs go independent. Pricing, finding clients, legal setup, and what fractional PM work actually looks like."
+  },
+  "/pm-freemium": {
+    "title": "PM Freemium Strategy (2026) — When It Works and When It Kills Conversion",
+    "description": "How PMs design freemium products that convert. What to put in free tier, what to gate, and the mistakes that make freemium a revenue trap."
+  },
+  "/pm-funnel-analysis": {
+    "title": "PM Funnel Analysis Guide (2026) — How to Diagnose Any Funnel",
+    "description": "How PMs do funnel analysis that leads to action. Defining funnels correctly, spotting the real drop-off, segmentation, and what to do about it."
+  },
+  "/pm-gaming": {
+    "title": "PM Gaming (2026) — Dream11, MPL, Games24x7 PM Guide",
+    "description": "How PMs build gaming products in India. Retention loops, monetisation, real-money gaming regulation, and the unique PM challenges of games."
+  },
+  "/pm-global-saas-from-india": {
+    "title": "PM Global SaaS from India (2026) — Zoho, Freshworks, Postman PM Lessons",
+    "description": "How Indian SaaS PMs build for global customers. Timezones, buyer empathy, sales motion, and what Zoho, Freshworks, and Postman teach about selling to the West from Bangalore or Chennai."
+  },
+  "/pm-global-vs-india": {
+    "title": "Global vs India PM Roles (2026) — Which Should You Target?",
+    "description": "The real differences between global (US/EU) and India-based PM roles. Compensation, scope, career trajectory, and how to decide which path fits you."
+  },
+  "/pm-glossary": {
+    "title": "PM Glossary (2026) — 50+ Product Management Terms Explained",
+    "description": "The complete PM glossary. 50+ product management terms every PM should know — organised by category, defined clearly, with examples."
+  },
+  "/pm-govt-tech": {
+    "title": "PM GovTech &amp; Digital Public Goods (2026) — DPI, Aadhaar, DigiLocker",
+    "description": "How PMs build on India Stack. Aadhaar, DigiLocker, ONDC, Account Aggregator, and what it means to work on digital public infrastructure."
+  },
+  "/pm-grocery-tech": {
+    "title": "PM Grocery Tech (2026) — BigBasket, Amazon Fresh, Zepto PM Guide",
+    "description": "How PMs build grocery tech products. SKU depth, substitution, fresh delivery, and why grocery has the hardest fulfillment math in e-commerce."
+  },
+  "/pm-growth-experiments": {
+    "title": "PM Growth Experiments (2026) — A Playbook of Experiments That Move Metrics",
+    "description": "A playbook of growth experiments PMs can run across acquisition, activation, and retention. High-leverage bets with templates."
+  },
+  "/pm-growth-hacking": {
+    "title": "PM Growth Hacking (2026) — What Works and What&apos;s Just Buzzwords",
+    "description": "Real growth hacking for PMs — experiments that compound growth without burning trust. Tactics that work, ones that don&apos;t, and the math behind each."
+  },
+  "/pm-growth-loops": {
+    "title": "PM Growth Loops (2026) — The Engines Behind Compounding Growth",
+    "description": "How PMs build growth loops. Viral, content, paid, PLG — what each loop does, when it works, and how to diagnose a loop that&apos;s broken."
+  },
+  "/pm-habit-products": {
+    "title": "How PMs Design Habit-Forming Products (2026) — The Hooked Framework Applied",
+    "description": "How PMs design products that form genuine habits — without dark patterns. Nir Eyal&apos;s Hooked framework, habit loops, and examples from Duolingo, WhatsApp, and others."
+  },
+  "/pm-habits": {
+    "title": "10 PM Habits That Compound (2026) — Small Daily Practices of Great Product Managers",
+    "description": "10 daily, weekly, and monthly habits of great PMs. Small practices that compound into mastery over years. The habits that separate top PMs from average ones."
+  },
+  "/pm-hackathon-guide": {
+    "title": "PM Hackathon Guide (2026) — How to Win Internal & External Hackathons",
+    "description": "How PMs win hackathons. Scoping the right problem, fast user validation, shipping something demo-able in 36 hours, and making the pitch land."
+  },
+  "/pm-hardware-products": {
+    "title": "PM Hardware Products (2026) — Hardware + Software PM",
+    "description": "How PMs build hardware-enabled products. Long cycles, firmware, supply chain, and why hardware PM is fundamentally different from pure software."
+  },
+  "/pm-healthtech": {
+    "title": "PM Healthtech (2026) — Practo, Pharmeasy, Cult.fit PM Guide",
+    "description": "How PMs build healthtech products in India. Regulatory constraints, clinician workflows, patient trust, and the peculiar dynamics of health products."
+  },
+  "/pm-hiring-guide": {
+    "title": "PM Hiring Guide (2026) — How PMs Hire Other PMs",
+    "description": "How great PMs hire other PMs. Structured interview loops, signals to look for, the bar to hire at each level, and how to give candidates a great experience."
+  },
+  "/pm-hr-tech": {
+    "title": "PM HR Tech (2026) — Darwinbox, Rippling, Keka PM Guide",
+    "description": "How PMs build HR tech products. Payroll, performance, engagement, and the consolidation of point tools into full-suite HRIS."
+  },
+  "/pm-imposter-syndrome": {
+    "title": "PM Imposter Syndrome (2026) — Why PMs Feel It and How to Deal",
+    "description": "Why PMs experience imposter syndrome more than most roles, what to do about it, and which parts of the feeling are actually useful."
+  },
+  "/pm-incident-management": {
+    "title": "PM Incident Management (2026) — The PM Role When Production Is on Fire",
+    "description": "How PMs show up during incidents. Severity triage, customer communication, post-mortem, and what PMs should and shouldn&apos;t do on-call."
+  },
+  "/pm-india-startups-2026": {
+    "title": "PM India Startups 2026 — Where to Build Your Career This Year",
+    "description": "The Indian startup landscape for PMs in 2026. Categories that are hiring, comp ranges, and red flags to watch."
+  },
+  "/pm-influence": {
+    "title": "PM Influence Without Authority (2026) — The Core PM Skill",
+    "description": "How PMs influence engineers, designers, execs, and partners without formal authority. Trust, narrative, and the quiet tactics that work."
+  },
+  "/pm-infra-products": {
+    "title": "PM Infrastructure Products (2026) — Building for Infra Engineers",
+    "description": "How PMs build infrastructure products. SLAs, latency budgets, incident response, and what makes infra PM different from everything else."
+  },
+  "/pm-insurtech": {
+    "title": "PM Insurtech (2026) — Policybazaar, Acko, Digit PM Guide",
+    "description": "How PMs build insurance products in India. Underwriting, claims, regulatory, and the slow shift from agent-led to digital-first insurance."
+  },
+  "/pm-intellectual-honesty": {
+    "title": "Intellectual Honesty for PMs (2026) — The Discipline That Compounds into Trust",
+    "description": "How great PMs practise intellectual honesty. Admitting uncertainty, killing your own bad ideas, and the practices that build long-term credibility."
+  },
+  "/pm-internal-tools": {
+    "title": "Internal Tools PM (2026) — PM Work Serving Your Own Company",
+    "description": "Internal tools PM — what it is, what&apos;s hard about it, career trade-offs, and why great internal tools PMs are increasingly valuable at scaled companies."
+  },
+  "/pm-internationalisation": {
+    "title": "PM Internationalisation (2026) — Building Products for Multiple Markets",
+    "description": "How PMs internationalise products. Localisation vs translation, payment methods, legal, and why i18n is a first-class product concern."
+  },
+  "/pm-interview-bar-raiser": {
+    "title": "PM Bar Raiser Interview (2026) — How to Pass Amazon&apos;s &amp; Equivalent Final Rounds",
+    "description": "How PMs handle bar raiser interviews — Amazon&apos;s and equivalent final rounds at top companies. What bar raisers test for and how to signal depth honestly."
+  },
+  "/pm-interview-cheat-sheet": {
+    "title": "PM Interview Cheat Sheet (2026) — One-Page Interview Prep Reference",
+    "description": "The one-page PM interview cheat sheet. Frameworks, openings, transitions, closings — everything you need to remember before walking in."
+  },
+  "/pm-interview-day-checklist": {
+    "title": "PM Interview Day Checklist (2026) — What to Do the 24 Hours Before &amp; Day Of",
+    "description": "The PM interview day checklist. What to prep 24 hours before, what to eat, what to wear, timing, and how to walk in calm and confident."
+  },
+  "/pm-interview-follow-up": {
+    "title": "PM Interview Follow-Up Guide (2026) — Emails, Thank-You Notes & What to Do After",
+    "description": "What to do after your PM interview. Thank-you email templates, how to follow up without seeming desperate, handling silence, and how to turn a rejection into a future offer."
+  },
+  "/pm-interview-prep": {
+    "title": "PM Interview Prep — Practice Product Manager Interview Questions Daily",
+    "description": "Ace your PM interview with daily practice. PM Streak gives you real product sense, metrics, and execution questions asked at Google, Meta, Amazon, and top startups — with AI feedback."
+  },
+  "/pm-interview-preparation-plan": {
+    "title": "PM Interview Preparation Plan (2026) — 8-Week Study Schedule",
+    "description": "The complete 8-week PM interview preparation plan. Week-by-week schedule, what to study, how to practice, and how to track readiness — for Google, Flipkart, Razorpay, and top startups."
+  },
+  "/pm-interview-questions-freshers": {
+    "title": "PM Interview Questions for Freshers (2026) — First PM Job Guide",
+    "description": "PM interview questions for freshers and new graduates. What interviewers actually ask, how to answer without PM experience, APM programs, and how to build your product portfolio from scratch."
+  },
+  "/pm-interview-red-flags": {
+    "title": "PM Interview Red Flags (2026) — 10 Things That Get Candidates Rejected",
+    "description": "The 10 red flags that get PM candidates rejected — even when their answers seem fine. What interviewers catch that candidates miss, and how to avoid each."
+  },
+  "/pm-interview-stories": {
+    "title": "PM Interview Stories Guide (2026) — How to Build 10 Stories That Cover Every Behavioural Question",
+    "description": "The 10 PM interview stories every candidate should prepare. Cover 80% of behavioural questions with 10 flexible stories — with templates and coverage map."
+  },
+  "/pm-job-search-india": {
+    "title": "PM Job Search in India (2026) — Where to Apply, How to Stand Out",
+    "description": "The complete PM job search guide for India. Where to find PM roles, how to apply, what recruiters look for, and the channels that actually convert — not just job boards."
+  },
+  "/pm-jobs-platforms": {
+    "title": "PM Jobs Platforms (2026) — LinkedIn, Naukri, Apna, Wellfound PM Guide",
+    "description": "How PMs build jobs and hiring products. Candidate quality, match rate, Tier-2/3 market, and why Apna rewrote the blue-collar playbook."
+  },
+  "/pm-jtbd": {
+    "title": "PM Jobs-to-be-Done (2026) — JTBD Framework for Product Managers",
+    "description": "How PMs apply Jobs-to-be-Done. Functional, emotional, and social jobs, and why JTBD beats personas for decision-making."
+  },
+  "/pm-kickoff-doc": {
+    "title": "PM Project Kickoff Doc Template (2026) — Start Projects Without Drama",
+    "description": "The project kickoff doc that aligns the team before work starts. Template, sections, and how to avoid the 6 kickoff mistakes that make projects late."
+  },
+  "/pm-kids-products": {
+    "title": "PM Kids Products (2026) — Designing for Children and Parents",
+    "description": "How PMs build products for kids. Parental consent, COPPA, screen time, and why kids products serve two users with conflicting incentives."
+  },
+  "/pm-kpi-dashboards": {
+    "title": "PM KPI Dashboards (2026) — What to Build, What to Skip",
+    "description": "How PMs design KPI dashboards that drive action. What to include, what to cut, the right cadence, and how to make dashboards your team actually checks."
+  },
+  "/pm-kpi-guide": {
+    "title": "PM KPI Guide (2026) — Choosing KPIs That Drive Decisions",
+    "description": "How PMs pick KPIs that actually drive decisions. Leading vs lagging indicators, outcome vs output, and how to avoid the Goodhart&apos;s Law trap."
+  },
+  "/pm-language-learning": {
+    "title": "PM Language Learning Apps (2026) — Duolingo, Babbel, Busuu PM Lessons",
+    "description": "How PMs build language learning apps. Streaks, gamification, AI tutors, and why Duolingo&apos;s approach is the most studied product design in consumer AI."
+  },
+  "/pm-launch-metrics": {
+    "title": "PM Launch Metrics Guide (2026) — What to Measure Before, During, After",
+    "description": "What PMs should measure before, during, and after launch. Primary metrics, guardrails, leading vs lagging indicators, and how to decide when a launch is a win."
+  },
+  "/pm-launch-strategy": {
+    "title": "PM Launch Strategy (2026) — How PMs Run Real Product Launches",
+    "description": "How PMs plan launches that move metrics, not press. Launch tiers, rollout plans, press vs user-led launches, and common launch mistakes."
+  },
+  "/pm-leadership-guide": {
+    "title": "PM Leadership Guide (2026) — How Product Managers Lead Without Authority",
+    "description": "How PMs lead without authority. Building trust, decision-making, managing up, developing other PMs, and the leadership skills that separate senior from principal PM."
+  },
+  "/pm-learning-habits": {
+    "title": "PM Learning Habits (2026) — How Great PMs Keep Sharpening",
+    "description": "Daily, weekly, and monthly learning habits that compound for PMs. Inputs, reflection, and deliberate skill-building."
+  },
+  "/pm-legal-tech": {
+    "title": "PM Legal Tech (2026) — Harvey, Ironclad, SpotDraft PM Guide",
+    "description": "How PMs build legal tech products. Contract lifecycle, legal research, AI-assisted drafting, and the slow but real digitisation of legal workflows."
+  },
+  "/pm-lending-products": {
+    "title": "PM Lending Products (2026) — BNPL, Personal Loans, Credit Card PM Guide",
+    "description": "How PMs build lending products in India. Underwriting, BNPL, collections UX, and the RBI regulatory landscape shaping digital lending."
+  },
+  "/pm-linkedin-branding": {
+    "title": "PM LinkedIn Branding (2026) — Building a PM Brand That Gets Inbound",
+    "description": "How PMs build a LinkedIn brand. Content cadence, signal-to-noise, and why a well-kept LinkedIn drives better opportunities than applications."
+  },
+  "/pm-llm-cost-management": {
+    "title": "PM LLM Cost Management (2026) — Keeping AI Products Profitable",
+    "description": "How PMs manage LLM costs. Caching, model selection, prompt compression, and unit economics that don&apos;t collapse at scale."
+  },
+  "/pm-llm-routing": {
+    "title": "PM LLM Routing (2026) — Picking the Right Model for Each Request",
+    "description": "How PMs design model routing. Cost, latency, capability tiers, and why model routing is the single biggest cost lever for AI products."
+  },
+  "/pm-localization-india": {
+    "title": "PM Localization for India (2026) — Designing Products That Work Across Bharat",
+    "description": "How PMs design products that work across India&apos;s diversity. Languages, device constraints, cultural context, and the vernacular-first product thinking Bharat demands."
+  },
+  "/pm-localization-strategy": {
+    "title": "PM Localization Strategy (2026) — When and How to Localize",
+    "description": "How PMs decide where and how to localize. Language vs full localization, ROI sequencing, and AI-assisted translation pipelines."
+  },
+  "/pm-logistics": {
+    "title": "PM Logistics (2026) — Delhivery, Shiprocket, Porter PM Guide",
+    "description": "How PMs build logistics products in India. Last-mile, hub operations, rider economics, and the unique PM challenges of physical-world products."
+  },
+  "/pm-loyalty-programs": {
+    "title": "PM Loyalty Programs (2026) — Designing Rewards That Change Behaviour",
+    "description": "How PMs design loyalty programs. Points vs tiers, breakage, behavioural economics, and why most loyalty programs just subsidise loyal users."
+  },
+  "/pm-manager-path": {
+    "title": "PM Manager Path (2026) — When and How to Become a Group PM",
+    "description": "How PMs become managers. Why some love it and others hate it, the skill shifts, and when to make the jump to Group PM or Head of Product."
+  },
+  "/pm-maps-navigation": {
+    "title": "PM Maps &amp; Navigation (2026) — Google Maps, MapmyIndia, Apple Maps PM Lessons",
+    "description": "How PMs build maps and navigation products. Routing quality, POI coverage, traffic, and why maps are the most operationally intense consumer category."
+  },
+  "/pm-market-research": {
+    "title": "PM Market Research Guide (2026) — How PMs Size Markets & Spot Opportunities",
+    "description": "How PMs do market research — TAM/SAM/SOM, competitive landscape, customer segmentation, and spotting opportunities others miss. With frameworks and Indian market examples."
+  },
+  "/pm-marketing-partnership": {
+    "title": "PM x Marketing (2026) — How PMs Partner With Marketing",
+    "description": "How PMs partner with marketing. Positioning, launch, performance, content — and the tension between shipping and messaging."
+  },
+  "/pm-marketplace-dynamics": {
+    "title": "PM Marketplace Dynamics (2026) — How PMs Grow Two-Sided Platforms",
+    "description": "How PMs build marketplaces. Cold start, liquidity, take rate, disintermediation, and the economics of two-sided platforms."
+  },
+  "/pm-marketplace-products": {
+    "title": "PM Marketplace Products (2026) — Two-Sided Marketplaces and the Balancing Act",
+    "description": "How PMs build marketplace products. Supply vs demand, cold start, take rate design, and the tensions unique to two-sided markets."
+  },
+  "/pm-martech": {
+    "title": "PM MarTech (2026) — Segment, Braze, MoEngage PM Guide",
+    "description": "How PMs build MarTech products. CDP, engagement, attribution, and why MarTech is consolidating around data + activation."
+  },
+  "/pm-matrimony-dating": {
+    "title": "PM Matrimony &amp; Dating (2026) — Shaadi, Bumble, Aisle PM Lessons",
+    "description": "How PMs build matrimony and dating products. Intent signals, trust and safety, cultural context, and why India is its own category."
+  },
+  "/pm-mba-to-pm": {
+    "title": "PM MBA to PM (2026) — Breaking In From Top Indian and Global B-Schools",
+    "description": "How MBAs transition into PM roles. APM programs, company fit, and why the MBA-to-PM path has gotten more competitive in 2026."
+  },
+  "/pm-mcp-products": {
+    "title": "PM MCP &amp; Connector Products (2026) — Building for Anthropic&apos;s MCP Ecosystem",
+    "description": "How PMs build on Model Context Protocol. Connector design, security, distribution, and what MCP means for the AI app stack."
+  },
+  "/pm-measuring-pm-success": {
+    "title": "How to Measure PM Success (2026) — What Great PMs Are Actually Evaluated On",
+    "description": "How PMs are actually measured. Beyond &apos;did you ship features?&apos; — the real signals PM managers and companies use to evaluate PMs across levels."
+  },
+  "/pm-media-products": {
+    "title": "PM Media Products (2026) — Spotify, Netflix, JioCinema PM Lessons",
+    "description": "How PMs build streaming and media products. Content vs catalog, recommendations, ads vs subscription, and the economics of attention."
+  },
+  "/pm-meditation-apps": {
+    "title": "PM Meditation &amp; Wellness Apps (2026) — Calm, Headspace, Art of Living PM Lessons",
+    "description": "How PMs build meditation and wellness apps. Habit formation, content vs community, measurable outcomes, and why wellness apps churn fast."
+  },
+  "/pm-meetings-guide": {
+    "title": "PM Meetings Guide (2026) — How to Run Meetings Your Team Thanks You For",
+    "description": "How PMs run meetings that don&apos;t waste time. Types of meetings, agenda templates, when to cancel, and how to keep meetings short, decisive, and valuable."
+  },
+  "/pm-mental-models": {
+    "title": "PM Mental Models (2026) — 12 Thinking Tools Every Product Manager Should Know",
+    "description": "The 12 mental models that sharpen PM thinking. Second-order effects, opportunity cost, Pareto, inversion, and more — with product examples for each."
+  },
+  "/pm-mentorship": {
+    "title": "PM Mentorship Guide (2026) — How to Find Mentors and Be One",
+    "description": "How PMs find mentors, get the most from mentorship, and become mentors themselves. What works, what doesn&apos;t, and the compounding career value of mentorship."
+  },
+  "/pm-metrics-interview": {
+    "title": "PM Metrics Interview Questions — How to Diagnose Drops & Define Success",
+    "description": "Master the metrics round in PM interviews. Learn how to define success metrics, debug DAU drops, set up A/B tests, and think like a data-driven PM. With 30+ real questions."
+  },
+  "/pm-microservices-strategy": {
+    "title": "PM Microservices Strategy (2026) — When PMs Should Care About Architecture",
+    "description": "When microservices help, when they hurt, and what PMs need to know to navigate architecture decisions without overstepping into engineering territory."
+  },
+  "/pm-mobile-app-metrics": {
+    "title": "PM Mobile App Metrics (2026) — What to Track for Mobile Products",
+    "description": "The mobile app metrics every PM should track. Installs, DAU, session length, crash rate, and the signals unique to mobile products."
+  },
+  "/pm-mobile-first": {
+    "title": "PM Mobile-First Design (2026) — Why India is Still a Mobile-First PM Market",
+    "description": "How PMs build mobile-first for India. Android bias, low-end devices, flaky connectivity, and why desktop-first thinking fails in Bharat."
+  },
+  "/pm-mobile-vs-web": {
+    "title": "PM Mobile vs Web (2026) — Different PM Strategies for Different Platforms",
+    "description": "How PMs think differently about mobile vs web products. User behaviour, distribution, monetisation, engineering — and when to build for which first."
+  },
+  "/pm-mock-interview": {
+    "title": "PM Mock Interview Guide (2026) — How to Practice & Get Unbiased Feedback",
+    "description": "Run effective PM mock interviews. Where to find partners, how to give feedback, what to track, and how AI mock interviews compare to human practice — for every interview stage."
+  },
+  "/pm-monetization-models": {
+    "title": "PM Monetization Models (2026) — Picking the Right Way to Make Money",
+    "description": "Subscription, transaction, advertising, marketplace, freemium — how PMs choose monetisation that fits product and audience."
+  },
+  "/pm-multimodal-products": {
+    "title": "PM Multimodal AI Products (2026) — Text, Image, Voice, Video Together",
+    "description": "How PMs build multimodal AI products. Use cases, latency tradeoffs, and where multimodal genuinely beats single-mode workflows."
+  },
+  "/pm-music-creation-tools": {
+    "title": "PM Music Creation Tools (2026) — Suno, Udio, Ableton PM Lessons",
+    "description": "How PMs build music creation tools. AI composition, DAW integrations, rights, and why AI music creation is reshaping creator economics."
+  },
+  "/pm-music-products": {
+    "title": "PM Music Products (2026) — Spotify, Apple Music, JioSaavn PM Lessons",
+    "description": "How PMs build music streaming products. Personalisation, playlists, podcasts, artist tools, and why music is the OG recommendation domain."
+  },
+  "/pm-mvp-guide": {
+    "title": "PM MVP Guide (2026) — How to Build an MVP Without It Becoming a Mess",
+    "description": "How PMs define and build MVPs correctly. What the M in MVP really means, how to scope, testing vs shipping, and when to skip the MVP entirely."
+  },
+  "/pm-negotiation": {
+    "title": "PM Negotiation (2026) — Roadmap Trades, Scope, and Salary",
+    "description": "How PMs negotiate — roadmap trades, scope cuts, partner deals, and compensation. Tactics that work without burning relationships."
+  },
+  "/pm-negotiation-skills": {
+    "title": "PM Negotiation Skills Guide (2026) — How PMs Negotiate Scope, Priorities & Resources",
+    "description": "How PMs negotiate — scope with engineering, priorities with leadership, resources with peers, and timelines with customers. Scripts, principles, and common pitfalls."
+  },
+  "/pm-neo-banking": {
+    "title": "PM Neo Banking (2026) — Jupiter, Fi, Niyo PM Guide",
+    "description": "How PMs build neo banks in India. BaaS partnerships, RBI constraints, and why neobanks survive on adjacent product strength, not core banking."
+  },
+  "/pm-networking-guide": {
+    "title": "PM Networking Guide (2026) — How PMs Build Real Networks That Help Their Careers",
+    "description": "How PMs build real networks without being transactional. Where to meet other PMs, how to ask for coffee chats, and how to turn weak connections into strong ones."
+  },
+  "/pm-newsletters": {
+    "title": "PM Newsletters (2026) — The Best Substacks for Product Managers",
+    "description": "The PM newsletters worth subscribing to in 2026. Lenny&apos;s, Reforge, Bringing the Donuts, and the Indian PM voices worth following."
+  },
+  "/pm-no-code": {
+    "title": "PM No-Code & Low-Code (2026) — Building Products for Non-Developers",
+    "description": "How PMs build no-code and low-code products. Webflow, Bubble, Retool, Glide — abstractions, escape hatches, and audience design."
+  },
+  "/pm-non-tech-to-pm": {
+    "title": "PM Non-Tech to PM (2026) — Crossing Into Product From Outside Tech",
+    "description": "How non-tech professionals (finance, ops, teachers, lawyers) break into PM. Storytelling, stepping stones, and why domain-specific PM roles are the cleanest entry."
+  },
+  "/pm-north-star-metric": {
+    "title": "North Star Metric Guide for PMs (2026) — How to Choose & Use It",
+    "description": "How PMs choose and use a north star metric. Good vs bad examples, how to decompose it into input metrics, and how companies like Duolingo and Airbnb picked theirs."
+  },
+  "/pm-notes-apps": {
+    "title": "PM Notes Apps (2026) — Notion, Obsidian, Apple Notes PM Lessons",
+    "description": "How PMs build notes and knowledge apps. Blocks vs pages, sync, AI-assisted writing, and why notes apps compound through personal daily use."
+  },
+  "/pm-notifications-design": {
+    "title": "PM Notifications Design (2026) — Notifications That Help Users, Not Annoy Them",
+    "description": "How PMs design notification systems that drive return visits without triggering uninstalls. Content, timing, frequency, and the ethical line."
+  },
+  "/pm-notifications-strategy": {
+    "title": "PM Notifications Strategy (2026) — Push, Email, In-App Done Right",
+    "description": "How PMs design notification systems that drive retention without burning trust. Push, email, in-app, SMS — when to use each and how to measure."
+  },
+  "/pm-observability": {
+    "title": "PM Observability Products (2026) — Datadog, Honeycomb, Grafana PM Guide",
+    "description": "How PMs build observability products. Metrics, logs, traces, and why pricing is the hardest product decision in the category."
+  },
+  "/pm-offers-multiple": {
+    "title": "How to Handle Multiple PM Offers (2026) — Deciding Between Companies",
+    "description": "How to evaluate multiple PM offers. Beyond comp: manager quality, scope, growth trajectory, and the decision framework that stops you from choosing on instinct alone."
+  },
+  "/pm-offline-first": {
+    "title": "PM Offline-First Products (2026) — Designing for Flaky Connectivity",
+    "description": "How PMs build offline-first products. Sync, conflict resolution, caching strategies, and why offline-first wins in India and emerging markets."
+  },
+  "/pm-okr-examples": {
+    "title": "PM OKR Examples (2026) — Real Quarterly OKRs From Great Product Teams",
+    "description": "15+ real-style PM OKR examples for consumer, B2B, growth, and platform products. See what well-written Objectives + Key Results actually look like."
+  },
+  "/pm-okr-guide": {
+    "title": "OKRs for Product Managers (2026) — How to Write, Set & Track OKRs",
+    "description": "Master OKRs as a product manager. How to write great objectives and key results, common OKR mistakes, PM-specific examples, and how to cascade OKRs from company to team level."
+  },
+  "/pm-okrs-guide": {
+    "title": "PM OKRs Guide (2026) — Writing OKRs That Actually Move Work",
+    "description": "How PMs write OKRs that drive focus without becoming bureaucracy. Objectives, key results, grading, and the common mistakes."
+  },
+  "/pm-onboarding-design": {
+    "title": "PM Onboarding Design (2026) — How PMs Build First-Run Experiences That Activate",
+    "description": "How PMs design onboarding that activates users fast. Aha moments, progressive disclosure, and the metrics that separate great onboarding from tutorial hell."
+  },
+  "/pm-onboarding-examples": {
+    "title": "PM Onboarding Examples (2026) — 5 Great Product Onboardings Broken Down",
+    "description": "5 great product onboardings broken down. Duolingo, Slack, Notion, Zepto, Razorpay — what they get right, what a PM would copy, and what they&apos;d change."
+  },
+  "/pm-onboarding-guide": {
+    "title": "Product Onboarding Guide for PMs (2026) — Design Flows That Activate Users",
+    "description": "The complete user onboarding playbook for PMs. How to design flows that activate, the psychology of first-time users, key metrics, and 10 onboarding anti-patterns to avoid."
+  },
+  "/pm-ondc": {
+    "title": "PM ONDC (2026) — Building on Open Network for Digital Commerce",
+    "description": "How PMs build on ONDC. Buyer app, seller app, network participants, and the opportunities and constraints of India&apos;s open commerce protocol."
+  },
+  "/pm-open-source": {
+    "title": "PM Open Source Products (2026) — GitLab, HashiCorp, Posthog PM Lessons",
+    "description": "How PMs build open source products. Community vs commercial, licensing, monetisation, and why open source is the most contributor-sensitive PM role."
+  },
+  "/pm-ott-india": {
+    "title": "PM OTT India (2026) — JioCinema, Disney+ Hotstar, SonyLIV PM Guide",
+    "description": "How PMs build OTT products in India. Live sports, regional originals, mobile-first tiers, and the battle for prime time."
+  },
+  "/pm-paywall-design": {
+    "title": "PM Paywall Design (2026) — Hard, Soft, and Hybrid Paywalls",
+    "description": "How PMs design paywalls. Hard vs soft, metered, freemium, and which patterns convert best for content, SaaS, and consumer apps."
+  },
+  "/pm-personal-okrs": {
+    "title": "PM Personal OKRs (2026) — Setting Career Goals That Compound",
+    "description": "How PMs set personal OKRs for career growth. Skill, network, brand, and impact — and why writing them down dramatically increases follow-through."
+  },
+  "/pm-personalization": {
+    "title": "PM Personalization (2026) — Building Products That Adapt to Users",
+    "description": "How PMs design personalization that users trust. Segments vs 1:1, explainability, privacy tradeoffs, and measuring personalisation lift."
+  },
+  "/pm-pet-tech": {
+    "title": "PM Pet Tech (2026) — Chewy, Heads Up For Tails, Supertails PM Lessons",
+    "description": "How PMs build pet tech products. Recurring subscriptions, vet integrations, and why pet tech follows a different repeat rate curve than other D2C."
+  },
+  "/pm-platform-products": {
+    "title": "PM Platform Products (2026) — Building Products Other Products Are Built On",
+    "description": "How PMs build platform products — APIs, SDKs, developer tools. Why platform PM is harder and what makes it rewarding."
+  },
+  "/pm-platform-strategy": {
+    "title": "PM Platform Strategy (2026) — When to Platform vs Ship a Feature",
+    "description": "How PMs decide when to build a platform vs a point solution. APIs, ecosystems, partner strategy, and the cost of platforming too early."
+  },
+  "/pm-podcast-products": {
+    "title": "PM Podcast Products (2026) — Spotify, Apple Podcasts, Pocket Casts PM Lessons",
+    "description": "How PMs build podcast products. RSS vs walled garden, monetisation, discovery, and why the podcast app category is more interesting than it looks."
+  },
+  "/pm-podcasts-to-listen": {
+    "title": "PM Podcasts (2026) — The Best Podcasts for Product Managers",
+    "description": "The PM podcasts worth listening to in 2026. Lenny&apos;s, Acquired, How I Built This, and which Indian podcasts cover product specifically."
+  },
+  "/pm-portfolio-guide": {
+    "title": "PM Portfolio Guide (2026) — How to Build a Product Portfolio That Gets Interviews",
+    "description": "Build a PM portfolio that gets interviews — even if you don't have a PM title. Case studies, teardowns, side projects, PRDs, and real examples that hiring managers love."
+  },
+  "/pm-prd-examples": {
+    "title": "PRD Examples (2026) — 3 Real-Style Product Requirements Documents",
+    "description": "3 real-style PRD examples for consumer, B2B, and platform features. See structure, detail level, and how great PMs balance thoroughness with brevity."
+  },
+  "/pm-prd-writing": {
+    "title": "PM PRD Writing (2026) — How PMs Write PRDs That Engineers Actually Read",
+    "description": "How PMs write PRDs that drive alignment and ship. Structure, length, what to include, and why most PRDs rot in Notion."
+  },
+  "/pm-presentations": {
+    "title": "PM Presentations (2026) — How PMs Present to Execs Without Dying",
+    "description": "How PMs present to executives. Structure, slide design, narrative arc, and the traps that sink most PM decks."
+  },
+  "/pm-pricing-experiments": {
+    "title": "PM Pricing Experiments (2026) — How to Test Pricing Without Breaking Trust",
+    "description": "How PMs run pricing experiments that generate real signal. What to test, how to segment, legal considerations, and why most pricing tests go wrong."
+  },
+  "/pm-pricing-guide": {
+    "title": "PM Pricing Guide (2026) — How PMs Think About Pricing",
+    "description": "How PMs partner on pricing decisions. Pricing models, packaging, Van Westendorp, willingness-to-pay research, and how to avoid the most common pricing mistakes."
+  },
+  "/pm-pricing-page-design": {
+    "title": "PM Pricing Page Design (2026) — Designing Pages That Convert",
+    "description": "How PMs design pricing pages. Tier order, anchoring, CTAs, FAQs, and the patterns proven across thousands of A/B tests."
+  },
+  "/pm-pricing-strategy": {
+    "title": "PM Pricing Strategy (2026) — How PMs Set and Change Prices",
+    "description": "How PMs approach pricing — value-based, usage-based, tiered, freemium. Frameworks, willingness-to-pay research, and how to run pricing experiments."
+  },
+  "/pm-prioritization-examples": {
+    "title": "PM Prioritisation Examples (2026) — Real RICE &amp; Impact Decisions",
+    "description": "5 real-style prioritisation examples using RICE, impact-effort, and Kano. See how PMs actually weigh features and make trade-offs."
+  },
+  "/pm-prioritization-frameworks": {
+    "title": "PM Prioritization Frameworks (2026) — RICE, MoSCoW, Kano & More",
+    "description": "The 8 prioritization frameworks every PM should know. RICE, MoSCoW, Kano, Impact-Effort, Cost of Delay, and when to use each."
+  },
+  "/pm-privacy-products": {
+    "title": "PM Privacy Products (2026) — DPDP, GDPR, and Privacy-by-Design",
+    "description": "How PMs build privacy-respecting products. Consent, data minimisation, DSR workflows, and why India&apos;s DPDP Act changes the game."
+  },
+  "/pm-product-analytics": {
+    "title": "PM Product Analytics (2026) — Beyond Dashboards",
+    "description": "How PMs do product analytics that changes decisions. Event taxonomy, cohort analysis, causal inference, and what PMs should personally learn."
+  },
+  "/pm-product-led-growth": {
+    "title": "PM Product-Led Growth (2026) — PLG Playbook for Product Managers",
+    "description": "How PMs build product-led growth motions. Self-serve onboarding, expansion loops, and why PLG isn&apos;t free acquisition."
+  },
+  "/pm-product-market-fit": {
+    "title": "PM Product-Market Fit (2026) — How to Know If You Have It (and What to Do If You Don&apos;t)",
+    "description": "How PMs recognise product-market fit. Leading indicators, the Sean Ellis test, retention curves, and what to do if PMF isn&apos;t there yet."
+  },
+  "/pm-product-operations": {
+    "title": "PM Product Operations (2026) — What ProdOps Does and When You Need It",
+    "description": "How product operations teams support PM orgs. Rituals, tooling, research ops, and when hiring a ProdOps lead pays for itself."
+  },
+  "/pm-product-ops": {
+    "title": "PM Product Ops (2026) — What Product Ops Does and When You Need It",
+    "description": "Product operations — what it does, when companies need it, and why great product ops multiplies PM leverage across an organisation."
+  },
+  "/pm-product-reviews": {
+    "title": "PM Product Reviews (2026) — Running Reviews That Actually Move Work Forward",
+    "description": "How PMs run product reviews with leadership. Pre-reads, decision logs, handling pushback, and why most reviews fail."
+  },
+  "/pm-product-sense-examples": {
+    "title": "PM Product Sense Examples (2026) — 10 Questions With Sample Answers",
+    "description": "10 product sense interview questions with full sample answers. See how great PMs structure their thinking — users, problems, solutions, metrics — in real time."
+  },
+  "/pm-product-vision": {
+    "title": "PM Product Vision (2026) — Crafting a Vision That Rallies Teams",
+    "description": "How PMs write product visions teams actually rally around. Examples, anti-patterns, and the difference between vision and strategy."
+  },
+  "/pm-productivity-guide": {
+    "title": "PM Productivity Guide (2026) — How Top Product Managers Get More Done",
+    "description": "How top PMs stay productive under constant demands. Time-blocking, async systems, saying no, and the productivity habits that separate high-output PMs from burned-out ones."
+  },
+  "/pm-project-management-tools": {
+    "title": "PM Project Management Tools (2026) — Jira, Linear, Asana PM Guide",
+    "description": "How PMs build project management tools. Views, workflows, notifications, and why adoption follows the path of least resistance."
+  },
+  "/pm-prompt-engineering": {
+    "title": "PM Prompt Engineering (2026) — How PMs Should Think About Prompts",
+    "description": "How PMs handle prompt engineering. Versioning, evals, system prompts, and why prompt engineering is product engineering, not a hack."
+  },
+  "/pm-qa-partnership": {
+    "title": "PM + QA Partnership (2026) — How PMs and QA Ship Higher Quality Together",
+    "description": "How PMs work with QA to ship higher quality faster. Test plans, shifting QA left, bug triage, and the PM + QA habits that matter."
+  },
+  "/pm-quarterly-planning": {
+    "title": "PM Quarterly Planning Guide (2026) — How PMs Plan a Quarter That Ships",
+    "description": "How PMs run quarterly planning. The 3-week planning cadence, OKR setting, capacity modelling, and how to leave buffer for the unknowns that always happen."
+  },
+  "/pm-quick-commerce": {
+    "title": "PM Quick Commerce (2026) — Zepto, Blinkit, Instamart PM Guide",
+    "description": "How PMs build 10-minute delivery products. Dark stores, SKU curation, delivery ops, and the unit economics of quick commerce in India."
+  },
+  "/pm-rag-products": {
+    "title": "PM RAG Products (2026) — Building Retrieval-Augmented Apps",
+    "description": "How PMs build RAG products. Embeddings, chunking, reranking, and why retrieval quality matters more than model choice."
+  },
+  "/pm-reading-apps": {
+    "title": "PM Reading Apps (2026) — Kindle, Pratilipi, Readwise PM Lessons",
+    "description": "How PMs build reading apps. Long-form vs short-form, vernacular, subscription, and why Pratilipi rewrote the reading-for-Bharat playbook."
+  },
+  "/pm-reading-list": {
+    "title": "PM Reading List (2026) — Books, Essays, and Newsletters That Shaped Great PMs",
+    "description": "The essential PM reading list. Books, essays, newsletters, and podcasts — the canon that sharpens product thinking over years."
+  },
+  "/pm-reading-metrics": {
+    "title": "Reading PM Metrics Correctly (2026) — Spotting Signal vs Noise",
+    "description": "How PMs read metrics correctly. Spot noise vs signal, avoid confirmation bias, segment correctly, and the 7 questions to ask before acting on any metric move."
+  },
+  "/pm-real-estate-tech": {
+    "title": "PM Real Estate Tech (2026) — NoBroker, MagicBricks, Housing PM Guide",
+    "description": "How PMs build real estate tech products. Listings quality, broker dynamics, renter vs buyer funnels, and the long-cycle problems of proptech."
+  },
+  "/pm-recommendation-systems": {
+    "title": "PM Recommendation Systems (2026) — How PMs Work With ML Teams",
+    "description": "How PMs work with ML on recommendation systems. Candidate generation, ranking, diversity, and the PM&apos;s role when ML owns the model."
+  },
+  "/pm-referral-loops": {
+    "title": "PM Referral Loops (2026) — How PMs Design Viral Growth",
+    "description": "How PMs design referral loops that actually move the needle. K-factor, incentive design, friction reduction, and why most referral programs fail."
+  },
+  "/pm-referral-programs": {
+    "title": "PM Referral Programs (2026) — When They Work and When They Don&apos;t",
+    "description": "How PMs design referral programs that drive real growth. The math, the psychology, great examples, and why most referral programs fail."
+  },
+  "/pm-regulated-industries": {
+    "title": "PM Regulated Industries (2026) — Shipping in Fintech, Health, Legal",
+    "description": "How PMs ship in regulated industries. Compliance-as-product, audit trails, and why velocity looks different when rules are enforceable."
+  },
+  "/pm-remote-interview": {
+    "title": "PM Remote Interview Guide (2026) — How to Crack Video PM Interviews",
+    "description": "How to crack remote PM interviews on video. Setup, body language, handling silence, timezone handling, and the technical preparation that separates strong remote candidates."
+  },
+  "/pm-remote-work": {
+    "title": "Remote PM Jobs Guide (2026) — How to Find & Excel as a Remote Product Manager",
+    "description": "The complete remote PM guide. Where to find remote PM jobs from India, how to interview for global roles, async communication skills, and remote PM compensation benchmarks."
+  },
+  "/pm-resume-guide": {
+    "title": "PM Resume Guide (2026) — Writing a PM Resume That Gets Interviews",
+    "description": "How PMs write resumes that get past recruiters. Structure, verbs, metrics, and why most PM resumes read the same boring way."
+  },
+  "/pm-retention-guide": {
+    "title": "Product Retention Guide for PMs (2026) — How to Measure & Improve Retention",
+    "description": "The complete retention playbook for product managers. Retention curves, activation definition, habit loops, and the PM frameworks that actually move D7 and D30 retention."
+  },
+  "/pm-retention-strategies": {
+    "title": "PM Retention Strategies (2026) — 7 Proven Tactics to Keep Users Coming Back",
+    "description": "Seven proven retention strategies PMs use to keep users coming back. Habit loops, streaks, content, community, and more — with examples and when each works."
+  },
+  "/pm-retrospectives": {
+    "title": "PM Retrospectives Guide (2026) — How to Run Retros That Actually Improve Things",
+    "description": "How PMs run retrospectives that change behaviour. Structure, facilitation, action items that get followed up, and why most retros are theatre."
+  },
+  "/pm-ride-hailing": {
+    "title": "PM Ride-Hailing (2026) — Uber, Ola, Rapido PM Guide",
+    "description": "How PMs build ride-hailing products. Dispatch, dynamic pricing, driver supply, and the peculiar economics of two-sided mobility marketplaces."
+  },
+  "/pm-rituals": {
+    "title": "PM Team Rituals (2026) — The Recurring Meetings Great PM Teams Use",
+    "description": "The recurring rituals great PM teams use. Product reviews, metric reviews, roadmap reviews — when each matters, how long they should take, and which to skip."
+  },
+  "/pm-roadmap-communication": {
+    "title": "PM Roadmap Communication (2026) — How to Share Roadmaps Without Over-Committing",
+    "description": "How PMs communicate roadmaps to different audiences. Internal vs external, sales vs customers, execs vs engineering — what to share and how."
+  },
+  "/pm-roadmap-prioritization": {
+    "title": "PM Roadmap Prioritization (2026) — How PMs Choose What to Build Next",
+    "description": "How PMs prioritise roadmaps when every ask looks urgent. Signals, bets, explicit killed work, and making prioritisation defensible."
+  },
+  "/pm-roadmap-template": {
+    "title": "PM Roadmap Template (2026) — How to Structure a Product Roadmap That Works",
+    "description": "The PM roadmap template that actually gets used. Outcome-based structure, visualisation patterns, how to handle stakeholder asks, and the now/next/later format."
+  },
+  "/pm-roadmapping": {
+    "title": "PM Roadmapping (2026) — Now/Next/Later, OKRs, and What Actually Works",
+    "description": "How PMs build roadmaps that survive reality. Now/Next/Later, outcome roadmaps, and why timeline roadmaps keep failing."
+  },
+  "/pm-saas-metrics": {
+    "title": "SaaS Metrics for PMs (2026) — MRR, NRR, CAC, LTV Explained",
+    "description": "The SaaS metrics every PM should know. MRR, NRR, GRR, CAC, LTV, payback — definitions, benchmarks, and how to use them in PM decisions."
+  },
+  "/pm-salary-negotiation": {
+    "title": "PM Salary Negotiation Guide (2026) — How Product Managers Negotiate Offers",
+    "description": "Negotiate your PM offer like a senior PM. What to ask for, how to respond to recruiters, scripts that work, and the salary levers most candidates leave on the table."
+  },
+  "/pm-salary-negotiation-india": {
+    "title": "PM Salary Negotiation India (2026) — Getting Paid Fairly as a PM",
+    "description": "How PMs in India negotiate offers. Base, ESOPs, joining bonus, and the levers most candidates leave on the table."
+  },
+  "/pm-sales-ops": {
+    "title": "PM x Sales Ops (2026) — Working With Sales Operations as a PM",
+    "description": "How PMs partner with sales operations. Pipeline data, forecast accuracy, deal desk, and why sales ops is a rich PM research channel."
+  },
+  "/pm-scaling-from-pmf": {
+    "title": "PM Scaling From PMF (2026) — How to Scale a Product After Finding Fit",
+    "description": "How PMs scale products after finding PMF. Widening the user base, expanding geography, protecting core, and the scaling traps that break PMF."
+  },
+  "/pm-search-discovery": {
+    "title": "PM Search &amp; Discovery (2026) — How PMs Design Product Discovery",
+    "description": "How PMs design search and discovery systems. Ranking signals, relevance, personalisation, and what makes discovery experiences delightful."
+  },
+  "/pm-security-products": {
+    "title": "PM Security Products (2026) — Building for SOCs, IT, and Compliance",
+    "description": "How PMs build security products. Detection, response, compliance, and the unique buyer dynamics of selling to CISOs."
+  },
+  "/pm-senior-products": {
+    "title": "PM Senior Products (2026) — Designing for Older Users in India",
+    "description": "How PMs design products for seniors. Accessibility, trust, family-assisted UX, and why the Indian senior market is massively underserved."
+  },
+  "/pm-senior-to-principal": {
+    "title": "PM Senior to Principal (2026) — The Individual Contributor PM Path",
+    "description": "How senior PMs become principal PMs. Scope, judgment, influence, and why the IC path rivals the manager path at top companies."
+  },
+  "/pm-side-projects": {
+    "title": "PM Side Projects Guide (2026) — Build Something That Gets You Hired",
+    "description": "Side projects that actually help PM careers. What to build, how to document PM thinking behind them, no-code options, and real examples of side projects that landed PM offers."
+  },
+  "/pm-social-products": {
+    "title": "PM Social Products (2026) — Instagram, Snap, BeReal, Bluesky PM Lessons",
+    "description": "How PMs build social products. Network effects, content loops, cold start, and why most social apps die in the first 18 months."
+  },
+  "/pm-spatial-computing": {
+    "title": "PM Spatial Computing (2026) — Apple Vision Pro, Meta Quest, AR/VR PM",
+    "description": "How PMs build for spatial computing. AR/VR UX, input modalities, session length, and what works on Vision Pro vs Quest."
+  },
+  "/pm-sprint-planning": {
+    "title": "PM Sprint Planning Guide (2026) — Run Sprints That Ship",
+    "description": "How PMs run sprint planning that actually ships. Agenda, capacity estimation, story writing, dependency mapping, and how to avoid the 3 biggest sprint anti-patterns."
+  },
+  "/pm-sprint-retrospectives": {
+    "title": "PM Sprint Retrospectives (2026) — How to Run Retros That Change Behaviour",
+    "description": "How PMs run sprint retros that actually improve the team. Structure, facilitation, and why most retros feel like theatre."
+  },
+  "/pm-sre-culture": {
+    "title": "PM SRE Culture (2026) — Error Budgets, SLOs, and PM Responsibility for Reliability",
+    "description": "How PMs work with SRE teams. Error budgets, SLOs, postmortems, and why PMs own the tradeoff between velocity and reliability."
+  },
+  "/pm-stakeholder-management": {
+    "title": "Stakeholder Management for PMs (2026) — Influence Without Authority",
+    "description": "How PMs manage stakeholders — engineering, design, sales, leadership, customers. Frameworks, scripts for saying no, and how to build influence without having authority."
+  },
+  "/pm-stakeholder-map": {
+    "title": "PM Stakeholder Map (2026) — How to Identify and Manage Every Stakeholder",
+    "description": "How PMs map stakeholders systematically. Who to keep informed, who to consult, who decides. The template that prevents surprises."
+  },
+  "/pm-startup-vs-big-tech": {
+    "title": "PM at Startup vs Big Tech (2026) — Which Should You Choose?",
+    "description": "PM at startup vs big tech — real differences in scope, speed, compensation, career trajectory, and when each is the right choice."
+  },
+  "/pm-storytelling": {
+    "title": "PM Storytelling Guide (2026) — How Great PMs Turn Data Into Narrative",
+    "description": "How great PMs use storytelling to align teams and influence leadership. Narrative structures, data-to-story frameworks, and the story arcs that move decisions."
+  },
+  "/pm-strategy-doc": {
+    "title": "How to Write a Product Strategy Doc (2026) — PM Template + Examples",
+    "description": "The complete guide to writing a product strategy doc. Structure, section-by-section breakdown, common mistakes, and how to make your strategy doc actually get read and used."
+  },
+  "/pm-strategy-docs": {
+    "title": "PM Strategy Docs (2026) — How PMs Write Strategy Docs That Actually Shape Decisions",
+    "description": "How PMs write strategy docs. Framing, bets, non-goals, and why most strategy docs describe status instead of forcing choices."
+  },
+  "/pm-strategy-guide": {
+    "title": "Product Strategy Guide for PMs (2026) — How to Think Strategically as a PM",
+    "description": "How PMs build product strategy. Vision vs strategy, strategic frameworks (moats, bets, Good Strategy/Bad Strategy), and the strategic questions every senior PM is expected to answer."
+  },
+  "/pm-subscription-business": {
+    "title": "PM Subscription Business (2026) — Running a Subscription Product",
+    "description": "How PMs build subscription products. Trial design, annual vs monthly, cancellation flows, and the math that keeps subscription businesses alive."
+  },
+  "/pm-take-home-assignment": {
+    "title": "PM Take-Home Assignment Guide (2026) — How to Crack Written PM Case Studies",
+    "description": "How to crack PM take-home assignments. Structure, time management, how to stand out, and common mistakes that get otherwise-strong candidates rejected."
+  },
+  "/pm-tech-debt": {
+    "title": "PM Tech Debt (2026) — How PMs Should Think About Technical Debt",
+    "description": "How PMs reason about tech debt. When to pay it down, when to accept it, and how to make debt visible in roadmap discussions."
+  },
+  "/pm-tech-stack": {
+    "title": "The PM Tech Stack You Should Understand (2026) — APIs, Databases, Infra for PMs",
+    "description": "The technical concepts every PM needs to understand (without coding). APIs, databases, caches, queues, CDNs, observability — explained for PMs who work with engineers."
+  },
+  "/pm-technical-interview": {
+    "title": "PM Technical Interview Questions (2026) — APIs, Data & System Design",
+    "description": "Ace the PM technical interview. APIs, databases, system design for PMs, data pipelines, and how to talk credibly with engineers — with 30+ questions and model answers."
+  },
+  "/pm-technical-skills": {
+    "title": "PM Technical Skills (2026) — How Technical Should a PM Be?",
+    "description": "The technical skills every PM should have in 2026. SQL, APIs, systems thinking, and how to talk to engineers without faking it."
+  },
+  "/pm-thinking-in-systems": {
+    "title": "PM Thinking in Systems (2026) — Why Senior PMs Think in Loops, Not Lists",
+    "description": "How senior PMs apply systems thinking. Stocks, flows, feedback loops, and unintended consequences — the mindset shift that separates senior from staff PM."
+  },
+  "/pm-to-founder": {
+    "title": "PM to Founder (2026) — Making the Jump from PM to Startup Founder",
+    "description": "How PMs become founders. Skill gaps, distribution, sales, and why PM training is only half the founder skillset."
+  },
+  "/pm-tool-use": {
+    "title": "PM AI Tool Use (2026) — Designing Agents That Use APIs Reliably",
+    "description": "How PMs design tool-using agents. Tool selection, error handling, and why tool-use reliability is the bottleneck for agentic products."
+  },
+  "/pm-tools-guide": {
+    "title": "Product Manager Tools Guide (2026) — Jira, Figma, Amplitude & More",
+    "description": "The essential PM tools stack in 2026. Jira, Figma, Amplitude, Notion, Miro, SQL — what each tool does, when to use it, and the PM skill level you need for each."
+  },
+  "/pm-trade-off-analysis": {
+    "title": "PM Trade-Off Analysis (2026) — How to Make the Hard Calls Every Day",
+    "description": "How PMs analyse trade-offs systematically. Speed vs quality, simplicity vs flexibility, short-term vs long-term. The frameworks for hard calls every PM faces."
+  },
+  "/pm-trello-notion-interview": {
+    "title": "Notion, Linear & Productivity PM Interview Guide (2026) — Dev Tools PM Prep",
+    "description": "Crack PM interviews at Notion, Linear, Atlassian, and other productivity tools. What makes productivity PM unique — extensibility, power users, and the craft-over-growth tension."
+  },
+  "/pm-trust-safety": {
+    "title": "PM Trust &amp; Safety (2026) — Fraud, Abuse, and Platform Integrity",
+    "description": "How PMs build trust and safety products. Fraud detection, abuse prevention, identity verification, and why T&amp;S is increasingly central to platform economics."
+  },
+  "/pm-upi-products": {
+    "title": "PM UPI Products (2026) — Building on India&apos;s Rails",
+    "description": "How PMs build UPI-first products. P2P, P2M, credit on UPI, and why UPI is the most important payments rail built this century."
+  },
+  "/pm-user-flows": {
+    "title": "PM User Flows Guide (2026) — How to Map &amp; Improve Any Flow",
+    "description": "How PMs map user flows that drive design and prioritisation. Happy path + edge cases, where to instrument, and how to spot friction that metrics miss."
+  },
+  "/pm-user-interviews": {
+    "title": "PM User Interviews (2026) — How to Run Interviews That Change Decisions",
+    "description": "How PMs run user interviews that actually change product decisions. Question design, note-taking, synthesis, and the traps interviewers fall into."
+  },
+  "/pm-user-personas": {
+    "title": "PM User Personas Guide (2026) — How to Build Personas That Actually Change Product Decisions",
+    "description": "How PMs create useful user personas. Beyond demographics — behaviours, jobs, pain points, and the structure that keeps personas useful instead of wall art."
+  },
+  "/pm-user-retention": {
+    "title": "PM User Retention (2026) — The Ultimate Product Metric",
+    "description": "How PMs build retention — the truest sign of product-market fit. Retention curves, benchmarks, levers, and why every PM should obsess over D30."
+  },
+  "/pm-vertical-saas": {
+    "title": "PM Vertical SaaS (2026) — Toast, ServiceTitan, Procore PM Lessons",
+    "description": "How PMs build vertical SaaS. Deep domain workflows, payments embedding, and why going narrow and deep beats horizontal at the margin."
+  },
+  "/pm-video-editing-tools": {
+    "title": "PM Video Editing Tools (2026) — CapCut, Descript, Premiere PM Lessons",
+    "description": "How PMs build video editing tools. Mobile vs desktop, AI assists, templates, and why CapCut disrupted the category by owning creator workflows on mobile."
+  },
+  "/pm-video-products": {
+    "title": "PM Video Products (2026) — YouTube, TikTok, Reels PM Playbook",
+    "description": "How PMs build video products. Watch time, creator tools, recommendation, monetisation, and the unique engagement dynamics of video."
+  },
+  "/pm-viral-features": {
+    "title": "PM Viral Features (2026) — Designing Features That Users Naturally Share",
+    "description": "How PMs design features that users naturally share. What makes virality work, the math, and examples from Instagram, Dropbox, Notion, and others."
+  },
+  "/pm-vision-statement": {
+    "title": "PM Product Vision Guide (2026) — How to Write a Vision That Rallies Teams",
+    "description": "How PMs write a product vision that people actually use. Structure, length, testing it against a team, and examples from great product companies."
+  },
+  "/pm-voice-products": {
+    "title": "PM Voice Products (2026) — Designing for Voice Interfaces",
+    "description": "How PMs design voice products. Conversation design, intent detection, latency budgets, and why voice is harder than it looks."
+  },
+  "/pm-wealth-management": {
+    "title": "PM Wealth Management (2026) — Zerodha, Groww, INDmoney PM Guide",
+    "description": "How PMs build wealth management products in India. Onboarding, KYC, trust, and the slow transition from distributor-led to direct investing."
+  },
+  "/pm-web3": {
+    "title": "PM Web3 (2026) — Building Crypto Products After the Hype Cycle",
+    "description": "How PMs build web3 products in 2026. Wallets, gas UX, token design, and why the surviving crypto products look a lot like regular consumer apps."
+  },
+  "/pm-weekly-planning": {
+    "title": "PM Weekly Planning Guide (2026) — How Great PMs Plan Their Week",
+    "description": "How great PMs plan their week. The 60-minute weekly planning ritual, the 70-20-10 time split, weekly review habits, and how to protect deep work in a meeting-heavy role."
+  },
+  "/pm-weekly-review": {
+    "title": "PM Weekly Review Guide (2026) — The 20-Minute Ritual That Compounds Into Mastery",
+    "description": "The 20-minute weekly review every PM should do. Reflect on shipped work, metrics, relationships, and learning. A habit that compounds into career mastery."
+  },
+  "/pm-whatsapp-business": {
+    "title": "PM WhatsApp Business (2026) — Building Conversational Commerce in India",
+    "description": "How PMs build WhatsApp-first products. Conversational commerce, payments, CTWA ads, and why WhatsApp is the dominant consumer surface in India."
+  },
+  "/pm-wireframing": {
+    "title": "PM Wireframing (2026) — Should PMs Wireframe?",
+    "description": "When PMs should wireframe, when they shouldn&apos;t, and how to wireframe in a way that supports designers rather than replacing them."
+  },
+  "/pm-women-focused-products": {
+    "title": "PM Women-Focused Products (2026) — SHEROES, Plum, Sugar PM Lessons",
+    "description": "How PMs build products for women. Safety, financial inclusion, health, community — and why women-first products demand women-first teams."
+  },
+  "/pm-work-life-balance": {
+    "title": "PM Work-Life Balance (2026) — Actually Protecting Your Time as a PM",
+    "description": "How PMs actually protect time. Calendar hygiene, saying no, avoiding meeting sprawl, and why the myth of 10x output comes at a cost."
+  },
+  "/pm-workflow-automation": {
+    "title": "PM Workflow Automation (2026) — Zapier, Make, n8n, AI Agents",
+    "description": "How PMs build workflow automation products. Triggers, actions, error handling, and why automation adoption follows J-curves."
+  },
+  "/pm-writing-skills": {
+    "title": "PM Writing Skills Guide (2026) — How Great PMs Write PRDs, Updates & Strategy",
+    "description": "How to write like a great PM. PRD structure, exec updates, strategy memos, and the writing habits that compound. With before/after examples."
+  },
+  "/pm-zepto-pm-interview": {
+    "title": "Zepto PM Interview Guide (2026) — Quick Commerce PM Questions &amp; Prep",
+    "description": "Crack the Zepto PM interview. Dark store ops, 10-minute delivery dynamics, SKU catalogue decisions, and the high-velocity PM culture at India&apos;s top quick-commerce company."
+  },
+  "/pm-zero-to-one": {
+    "title": "PM Zero-to-One (2026) — How PMs Launch New Products From Scratch",
+    "description": "How PMs launch 0→1 products. The skills that matter, the traps to avoid, and the mindset shift from growing existing products to creating new ones."
+  },
+  "/prd-template-guide": {
+    "title": "PRD Template Guide (2026) — How to Write a Great Product Requirements Doc",
+    "description": "The complete PRD template for product managers. Every section explained, a real PRD example, what to include, what to cut, and how great PMs use PRDs as communication tools."
+  },
+  "/pricing": {
+    "title": "PM Streak Pro Pricing — Plans & Features",
+    "description": "Compare PM Streak Free vs Pro plans. Pro unlocks all 292+ PM lessons, unlimited AI, interview prep, PM Jobs board, and WhatsApp community. Starting at $6/month or ₹249/month in India."
+  },
+  "/product-analytics-for-pms": {
+    "title": "Product Analytics for Product Managers (2026) — Metrics, Funnels & A/B Testing",
+    "description": "Master product analytics as a PM. Retention curves, funnel analysis, A/B testing, north star metrics, and how to use Amplitude and Mixpanel — explained without the data science jargon."
+  },
+  "/product-discovery-guide": {
+    "title": "Product Discovery Guide (2026) — How PMs Find the Right Problems to Solve",
+    "description": "Master continuous product discovery. User interviews, opportunity mapping, assumption testing, and the Teresa Torres OST framework — so you build what users actually need."
+  },
+  "/product-growth-loops": {
+    "title": "Product Growth Loops (2026) — PM Guide to Viral, Content & Paid Loops",
+    "description": "Master product growth loops as a PM. Viral loops, content loops, paid acquisition loops, and how to identify and strengthen the loops in your product — with real company examples."
+  },
+  "/product-launch-guide": {
+    "title": "Product Launch Guide for PMs (2026) — How to Launch Without Drama",
+    "description": "The complete PM product launch playbook. Pre-launch checklist, staged rollouts, launch day ops, post-launch monitoring, and the 10 launch failure modes to avoid."
+  },
+  "/product-management-frameworks": {
+    "title": "10 Essential Product Management Frameworks (2026) — PM Streak",
+    "description": "The 10 PM frameworks every product manager must know. RICE, JTBD, north star metric, CIRCLES, prioritisation matrices, and more — explained clearly with examples."
+  },
+  "/product-manager-career-path": {
+    "title": "Product Manager Career Path (2026) — APM to CPO Roadmap",
+    "description": "The complete PM career path from APM to CPO. What each level requires, how to get promoted, salaries at every stage, and how to accelerate your PM career in India."
+  },
+  "/product-manager-interview-questions": {
+    "title": "150+ Product Manager Interview Questions (2026) — PM Streak",
+    "description": "The most comprehensive list of PM interview questions for 2026. Product sense, metrics, execution, strategy, behavioral, and estimation — with frameworks and example answers."
+  },
+  "/product-manager-resume": {
+    "title": "Product Manager Resume Guide (2026) — Templates, Examples & Tips",
+    "description": "Write a PM resume that gets interviews. Templates, real examples, bullet formulas, and what hiring managers actually look for at Google, Flipkart, Razorpay, and top startups."
+  },
+  "/product-manager-salary-india": {
+    "title": "Product Manager Salary in India (2026) — By Level, Company & City",
+    "description": "Complete guide to PM salaries in India for 2026. Breakdown by level (APM to CPO), company (Google, Flipkart, Razorpay, startups), city (Bangalore, Mumbai, Delhi), and how to negotiate."
+  },
+  "/product-manager-skills": {
+    "title": "Product Manager Skills (2026) — The 12 Skills Every PM Needs",
+    "description": "The 12 skills that define great product managers in 2026. Prioritisation, stakeholder management, data analysis, product sense, and technical fluency — with how to build each one."
+  },
+  "/product-manager-vs-project-manager": {
+    "title": "Product Manager vs Project Manager (2026) — The Real Differences",
+    "description": "Product manager vs project manager — what's actually different, where they overlap, which earns more, and which career to choose. With a side-by-side comparison."
+  },
+  "/product-roadmap-interview": {
+    "title": "Product Roadmap Interview Questions (2026) — Build, Defend & Communicate",
+    "description": "Master product roadmap interview questions. How to build, prioritise, defend, and communicate roadmaps — with real questions, frameworks, and what interviewers want to hear."
+  },
+  "/product-sense-interview": {
+    "title": "Product Sense Interview Questions — Frameworks & Examples",
+    "description": "Master product sense interviews with proven frameworks. Learn how to design products, identify user needs, and prioritise features — the way top PMs do at Google, Meta, and Stripe."
+  },
+  "/razorpay-pm-interview": {
+    "title": "Razorpay PM Interview Guide (2026) — Fintech Questions, Rounds & Prep",
+    "description": "Crack the Razorpay PM interview. All rounds, fintech-specific questions, what Razorpay PMs say the bar is, and a prep plan for PM and APM roles at India's top fintech."
+  },
+  "/research": {
+    "title": "PM Research Hub — Product Management Research & Data",
+    "description": "Original research on product management: AI adoption rates, framework effectiveness, salary data, and career trajectories. Peer-reviewed studies from PM Streak Research, CC BY 4.0."
+  },
+  "/research/ai-pm-2026": {
+    "title": "AI in Product Management 2026: 312% Adoption Growth Study",
+    "description": "Survey of 2,047 PMs finds 312% AI adoption growth since 2024 and 47% reduction in planning time. 5-stage AI-PM maturity model with implementation roadmap."
+  },
+  "/research/pm-career-2026": {
+    "title": "PM Career Development 2026: $167k Salary, 2.4 Years to Promotion — 5,000+ Careers",
+    "description": "5,000+ PM careers tracked: $167k median US salary, 2.4 years to Senior PM promotion, 12 core competencies. Full salary bands, career path data, and skill gap analysis."
+  },
+  "/research/pm-frameworks-2026": {
+    "title": "PM Frameworks Analysis 2026: RICE 8.7/10, OKR 8.2/10 — Rankings of 50+ Frameworks",
+    "description": "Analysis of 50+ PM frameworks across 3,000+ real implementations. RICE scores 8.7/10, OKRs 8.2/10, DACI 7.9/10. Full rankings, Shreyas Doshi stack, and implementation gap data."
+  },
+  "/role-roadmaps": {
+    "title": "PM Career Roadmaps — APM to CPO Guide",
+    "description": "Step-by-step career paths for Associate PM, Product Manager, Senior PM, Staff PM, and CPO. Skills, timelines, and what to learn at every level. Included in PM Streak Pro."
+  },
+  "/saas-product-manager": {
+    "title": "SaaS Product Manager Guide (2026) — How to Excel as a B2B SaaS PM",
+    "description": "The complete SaaS PM playbook. B2B SaaS metrics, roadmap dynamics, customer-led development, freemium vs enterprise trade-offs, and how to break into SaaS PM in India."
+  },
+  "/senior-pm-interview": {
+    "title": "Senior PM Interview Questions (2026) — Strategy, Leadership & System Design",
+    "description": "Senior PM interview questions with model answers. Strategy, stakeholder management, org design, product vision, and the systems thinking questions that separate senior PMs from mid-level."
+  },
+  "/stripe-pm-interview": {
+    "title": "Stripe PM Interview Guide (2026) — API Products, Developer PM Questions",
+    "description": "Crack the Stripe PM interview. What makes Stripe PM unique — developer-first products, API design, writing quality, and the Stripe operating principles that shape every interview."
+  },
+  "/swiggy-pm-interview": {
+    "title": "Swiggy PM Interview Guide (2026) — Questions, Rounds & Prep Plan",
+    "description": "Crack the Swiggy PM interview. All rounds, ops-heavy product questions, what Swiggy PMs say the bar is, and a prep plan for PM and APM roles at India's leading food delivery platform."
+  },
+  "/transition-to-product-manager": {
+    "title": "How to Transition to Product Management (2026) — Engineer, Designer, MBA",
+    "description": "Switch to product management from engineering, design, consulting, or any background. What to build, what to say, and how to land your first PM role in India in 2026."
+  },
+  "/uber-ola-pm-interview": {
+    "title": "Uber & Ola PM Interview Guide (2026) — Mobility Product Manager Questions",
+    "description": "Crack PM interviews at Uber and Ola. Marketplace dynamics, pricing, supply-demand balancing, and the operations-heavy product thinking mobility companies test for."
+  },
+  "/urban-company-pm-interview": {
+    "title": "Urban Company PM Interview Guide (2026) — Services Marketplace PM Questions",
+    "description": "Crack the Urban Company PM interview. Home services marketplace dynamics, partner (professional) product challenges, trust and quality, and real interview questions."
+  },
+  "/user-research-for-pms": {
+    "title": "User Research for Product Managers (2026) — Interviews, Surveys, Usability Tests",
+    "description": "The complete user research playbook for PMs. When to use interviews vs surveys vs usability tests, how to recruit, how to analyse, and how to turn research into product decisions."
+  },
+  "/zomato-pm-interview": {
+    "title": "Zomato PM Interview Guide (2026) — Questions, Rounds & Prep",
+    "description": "Crack the Zomato PM interview. All rounds, food delivery and dining product questions, real interview examples, and what Zomato PMs say the bar is in 2026."
+  }
+}
