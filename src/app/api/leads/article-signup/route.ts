@@ -17,7 +17,7 @@ const ALLOWED_ORIGINS = new Set([
   "https://www.ctrlall.app",
 ]);
 
-export function corsHeaders(req: Request): Record<string, string> {
+function corsHeaders(req: Request): Record<string, string> {
   const origin = req.headers.get("origin") ?? "";
   if (!ALLOWED_ORIGINS.has(origin)) return {};
   return {
