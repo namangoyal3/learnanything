@@ -6,7 +6,7 @@ import { AUTHOR_NAME, AUTHOR_URL, AUTHOR_CREDENTIAL } from "@/lib/seo/byline";
 import { pageDates, formatPageDate } from "@/lib/seo/page-dates";
 
 export const metadata: Metadata = {
-  title: "How to Become a Product Manager in India (2026 Roadmap) — PM Streak",
+  title: "How to Become a Product Manager in India (2026 Roadmap)",
   description:
     "The complete 2026 roadmap for becoming a product manager in India. From zero to APM to Senior PM — skills, certifications, APM programs, portfolio, and how to crack your first PM interview.",
   keywords: [

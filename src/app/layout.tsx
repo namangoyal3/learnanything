@@ -112,9 +112,6 @@ const orgJsonLd = {
   description:
     "PM Streak delivers daily 2-minute product management lessons from 300+ expert PM interviews with streak tracking, XP, leaderboards, and AI-powered content generation.",
   foundingDate: "2024",
-  sameAs: [
-    "https://www.producthunt.com/products/pm-streak",
-  ],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer support",

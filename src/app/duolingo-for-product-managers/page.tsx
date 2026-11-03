@@ -6,7 +6,7 @@ import { AUTHOR_NAME, AUTHOR_URL, AUTHOR_CREDENTIAL } from "@/lib/seo/byline";
 import { pageDates, formatPageDate } from "@/lib/seo/page-dates";
 
 export const metadata: Metadata = {
-  title: "Duolingo for Product Managers — PM Streak",
+  title: "Duolingo for Product Managers",
   description:
     "PM Streak is the Duolingo for PMs. Daily 2-minute lessons from 300+ real PM interviews, streak tracking, XP, leaderboards, and AI-powered practice — all in one app.",
   keywords: [

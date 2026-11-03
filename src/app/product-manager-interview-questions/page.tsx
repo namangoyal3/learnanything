@@ -6,7 +6,7 @@ import { AUTHOR_NAME, AUTHOR_URL, AUTHOR_CREDENTIAL } from "@/lib/seo/byline";
 import { pageDates, formatPageDate } from "@/lib/seo/page-dates";
 
 export const metadata: Metadata = {
-  title: "150+ Product Manager Interview Questions (2026) — PM Streak",
+  title: "150+ Product Manager Interview Questions (2026)",
   description:
     "The most comprehensive list of PM interview questions for 2026. Product sense, metrics, execution, strategy, behavioral, and estimation — with frameworks and example answers.",
   keywords: [
