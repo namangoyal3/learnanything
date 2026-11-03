@@ -6,7 +6,7 @@ import { AUTHOR_NAME, AUTHOR_URL, AUTHOR_CREDENTIAL } from "@/lib/seo/byline";
 import { pageDates, formatPageDate } from "@/lib/seo/page-dates";
 
 export const metadata: Metadata = {
-  title: "10 Essential Product Management Frameworks (2026) — PM Streak",
+  title: "10 Essential Product Management Frameworks (2026)",
   description:
     "The 10 PM frameworks every product manager must know. RICE, JTBD, north star metric, CIRCLES, prioritisation matrices, and more — explained clearly with examples.",
   keywords: [
