@@ -100,27 +100,27 @@ const ACCELERATORS = [
 const ENTRY_ROUTES = [
   {
     route: "APM programs",
-    detail: "The direct entry. Companies like Google, Flipkart and Razorpay run structured rotational programs that hire fresh graduates and rotate them across teams with senior mentorship built in. Extremely competitive, but the fastest way to learn the craft properly.",
+    detail: "The direct entry. Companies such as Google and Flipkart have run structured APM programs that hire fresh graduates and rotate them across teams with mentorship built in. These programs are highly competitive and worth preparing for well in advance.",
     builds: "Structured thinking, basic SQL and analytics, and one visible side project that shows product judgment",
   },
   {
     route: "From engineering",
-    detail: "The most common route in India. You bring technical credibility, realistic estimation, and shipping discipline. The hard part is unlearning the instinct to optimise the solution before validating the problem.",
+    detail: "A well-worn route. You bring technical credibility, realistic estimation, and shipping discipline. The hard part is unlearning the instinct to optimise the solution before validating the problem.",
     builds: "Customer empathy, comfort with ambiguity, and the habit of writing decisions down",
   },
   {
     route: "From design or UX research",
-    detail: "You arrive fluent in the user, which is half the job. The gap is the commercial side: connecting flows to metrics the business actually tracks.",
+    detail: "You arrive with user empathy and problem-framing skills. The gap is usually the commercial side: connecting flows to metrics the business tracks.",
     builds: "Business metrics, prioritisation under engineering constraints, and stakeholder communication",
   },
   {
     route: "From consulting, analytics or business ops",
-    detail: "Structured problem-solving and data fluency transfer directly. What is missing is product craft: discovery habits, roadmap thinking, and working with engineers every day rather than in project bursts.",
+    detail: "Structured problem-solving and data fluency transfer well. What is often missing is product craft: discovery habits, roadmap thinking, and working with engineers every day rather than in project bursts.",
     builds: "Product discovery, roadmap ownership, and day-to-day engineering collaboration",
   },
   {
     route: "From customer-facing roles",
-    detail: "Sales, support and customer success sit closest to why customers buy and churn. That insight is genuinely rare among PMs. The gap is technical fluency and owning a roadmap rather than a queue.",
+    detail: "Sales, support and customer success sit closest to why customers buy and churn, and that first-hand insight is valuable in interviews and on the job. The gap is usually technical fluency and owning a roadmap rather than a queue.",
     builds: "Technical vocabulary, SQL, and a track record of turning customer insight into shipped features",
   },
 ];
@@ -151,15 +151,15 @@ const FAQS = [
   },
   {
     q: "Do you need a technical background to become a PM in India?",
-    a: "No. A CS degree helps at infrastructure and platform companies, but most consumer companies prioritise product sense, analytical skill, and communication. Non-technical PMs close the gap with SQL fluency, honest conversations with engineers, and never bluffing about technical detail they do not understand.",
+    a: "Plenty of PMs enter without one. What teams screen for in interviews is product sense, analytical skill, and communication; a technical degree tends to matter more at infrastructure and platform companies. If your background is non-technical, build SQL fluency, have honest conversations with engineers, and never bluff technical detail you do not understand.",
   },
   {
     q: "IC track vs manager track: which pays more?",
-    a: "As a general pattern, companies with a real dual ladder keep senior IC and people-manager pay in the same band, and the tracks only meaningfully diverge at executive levels where equity dominates. Treat that as orientation, not a guarantee — ladders vary widely by company. Early in the fork, choose based on the work that energises you, not the pay. Switching tracks later is common.",
+    a: "Pay structures vary widely by company, so treat this as a question to ask in the process, not a rule: does the company run a dual IC and manager ladder, and how are bands set at each level? Early in the fork, choose based on the work that energises you rather than pay assumptions. People do move between tracks.",
   },
   {
     q: "How long does each PM promotion take in India?",
-    a: "There is no fixed clock, and anyone who gives you one is guessing. As orientation, not a promise: APM to PM is usually the fastest jump because expectations are well defined, PM to Senior PM takes longer because the bar shifts from execution to strategy, and beyond Senior, timing depends less on your performance and more on whether your company has the scope — a Director role has to exist before you can grow into it, which is why many PMs change companies for that jump.",
+    a: "There is no fixed clock, and anyone who gives you one is guessing. What changes at each step is the bar: early promotions reward reliable execution, later ones reward strategy and growing other PMs. Past Senior, the scope available at your company matters as much as your performance, which is one reason some PMs look outside for their next step.",
   },
 ];
 
@@ -234,6 +234,7 @@ export default function ProductManagerCareerPathPage() {
                 ))}
               </tbody>
             </table>
+            <p className="text-xs text-white/40 mt-2">Salary bands are illustrative ranges carried over from this page's original research, not verified compensation data. Check current listings and offer data for your target companies.</p>
           </div>
           <div className="space-y-5">
             {LEVELS.map((level, i) => (
@@ -275,7 +276,7 @@ export default function ProductManagerCareerPathPage() {
         {/* How to break in */}
         <section className="max-w-3xl mx-auto px-4 pb-16">
           <h2 className="text-2xl font-bold text-center mb-3">How to Break Into Product Management</h2>
-          <p className="text-white/60 text-center mb-8">Almost nobody starts as a PM. Five routes in, and what each one still leaves you to build.</p>
+          <p className="text-white/60 text-center mb-8">Most PMs arrive from another role. Five common routes in, and what each one still leaves you to build.</p>
           <div className="space-y-4">
             {ENTRY_ROUTES.map((r) => (
               <div key={r.route} className="bg-[#111] border border-white/10 rounded-xl p-5">
@@ -290,7 +291,7 @@ export default function ProductManagerCareerPathPage() {
         {/* IC vs management fork */}
         <section className="max-w-3xl mx-auto px-4 pb-16">
           <h2 className="text-2xl font-bold text-center mb-3">The Fork After Senior PM: IC vs Management</h2>
-          <p className="text-white/60 text-center mb-8">The ladder splits after Senior PM. Neither track is senior to the other — they are different jobs.</p>
+          <p className="text-white/60 text-center mb-8">The ladder splits after Senior PM. Neither track is senior to the other; they are different jobs.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {FORK.map((f) => (
               <div key={f.track} className="bg-[#111] border border-white/10 rounded-xl p-5">
