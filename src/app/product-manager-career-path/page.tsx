@@ -218,8 +218,6 @@ export default function ProductManagerCareerPathPage() {
               <thead>
                 <tr className="bg-[#1f2228] text-white/80 text-left">
                   <th className="px-4 py-3 font-semibold">Level</th>
-                  <th className="px-4 py-3 font-semibold">Typical years</th>
-                  <th className="px-4 py-3 font-semibold">India salary</th>
                   <th className="px-4 py-3 font-semibold">Judged on</th>
                 </tr>
               </thead>
@@ -227,14 +225,11 @@ export default function ProductManagerCareerPathPage() {
                 {LEVELS.map((level) => (
                   <tr key={level.title} className="border-t border-white/10">
                     <td className="px-4 py-2.5 text-white/80">{level.title}</td>
-                    <td className="px-4 py-2.5 text-white/60">{level.years}</td>
-                    <td className="px-4 py-2.5 text-green-400">{level.salary}</td>
                     <td className="px-4 py-2.5 text-white/60">{level.scope}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <p className="text-xs text-white/40 mt-2">Salary bands are illustrative ranges carried over from this page's original research, not verified compensation data. Check current listings and offer data for your target companies.</p>
           </div>
           <div className="space-y-5">
             {LEVELS.map((level, i) => (
@@ -276,7 +271,7 @@ export default function ProductManagerCareerPathPage() {
         {/* How to break in */}
         <section className="max-w-3xl mx-auto px-4 pb-16">
           <h2 className="text-2xl font-bold text-center mb-3">How to Break Into Product Management</h2>
-          <p className="text-white/60 text-center mb-8">Most PMs arrive from another role. Five common routes in, and what each one still leaves you to build.</p>
+          <p className="text-white/60 text-center mb-8">Five routes to explore, depending on your background, and what each one still leaves you to build.</p>
           <div className="space-y-4">
             {ENTRY_ROUTES.map((r) => (
               <div key={r.route} className="bg-[#111] border border-white/10 rounded-xl p-5">
