@@ -100,7 +100,7 @@ const ACCELERATORS = [
 const ENTRY_ROUTES = [
   {
     route: "APM programs",
-    detail: "The direct entry. Rotational programs at companies like Google, Flipkart and Razorpay hire fresh graduates into structured 12–24 month rotations. Extremely competitive, but the fastest way to learn the craft with senior mentorship built in.",
+    detail: "The direct entry. Companies like Google, Flipkart and Razorpay run structured rotational programs that hire fresh graduates and rotate them across teams with senior mentorship built in. Extremely competitive, but the fastest way to learn the craft properly.",
     builds: "Structured thinking, basic SQL and analytics, and one visible side project that shows product judgment",
   },
   {
@@ -155,11 +155,11 @@ const FAQS = [
   },
   {
     q: "IC track vs manager track: which pays more?",
-    a: "At companies with a real dual ladder, Principal PM and Group PM compensation is comparable. The tracks diverge at the top: VP and CPO packages, especially equity, usually exceed Staff or Principal IC packages unless the company has distinguished IC roles. Early in the fork, choose based on the work that energises you, not the pay — switching tracks later is common.",
+    a: "As a general pattern, companies with a real dual ladder keep senior IC and people-manager pay in the same band, and the tracks only meaningfully diverge at executive levels where equity dominates. Treat that as orientation, not a guarantee — ladders vary widely by company. Early in the fork, choose based on the work that energises you, not the pay. Switching tracks later is common.",
   },
   {
     q: "How long does each PM promotion take in India?",
-    a: "APM to PM typically takes 18–24 months, and PM to Senior PM another 2–3 years. Beyond Senior, timing depends less on individual performance and more on whether your company has scope available: a Director role has to exist before you can grow into it, which is why many PMs change companies for the jump.",
+    a: "There is no fixed clock, and anyone who gives you one is guessing. As orientation, not a promise: APM to PM is usually the fastest jump because expectations are well defined, PM to Senior PM takes longer because the bar shifts from execution to strategy, and beyond Senior, timing depends less on your performance and more on whether your company has the scope — a Director role has to exist before you can grow into it, which is why many PMs change companies for that jump.",
   },
 ];
 
