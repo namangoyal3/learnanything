@@ -97,6 +97,45 @@ const ACCELERATORS = [
   { action: "Develop a public point of view (write, speak, post)", why: "External credibility accelerates internal credibility" },
 ];
 
+const ENTRY_ROUTES = [
+  {
+    route: "APM programs",
+    detail: "The direct entry. Companies such as Google and Flipkart have run structured APM programs that hire fresh graduates and rotate them across teams with mentorship built in. These programs are highly competitive and worth preparing for well in advance.",
+    builds: "Structured thinking, basic SQL and analytics, and one visible side project that shows product judgment",
+  },
+  {
+    route: "From engineering",
+    detail: "A well-worn route. You bring technical credibility, realistic estimation, and shipping discipline. The hard part is unlearning the instinct to optimise the solution before validating the problem.",
+    builds: "Customer empathy, comfort with ambiguity, and the habit of writing decisions down",
+  },
+  {
+    route: "From design or UX research",
+    detail: "You arrive with user empathy and problem-framing skills. The gap is usually the commercial side: connecting flows to metrics the business tracks.",
+    builds: "Business metrics, prioritisation under engineering constraints, and stakeholder communication",
+  },
+  {
+    route: "From consulting, analytics or business ops",
+    detail: "Structured problem-solving and data fluency transfer well. What is often missing is product craft: discovery habits, roadmap thinking, and working with engineers every day rather than in project bursts.",
+    builds: "Product discovery, roadmap ownership, and day-to-day engineering collaboration",
+  },
+  {
+    route: "From customer-facing roles",
+    detail: "Sales, support and customer success sit closest to why customers buy and churn, and that first-hand insight is valuable in interviews and on the job. The gap is usually technical fluency and owning a roadmap rather than a queue.",
+    builds: "Technical vocabulary, SQL, and a track record of turning customer insight into shipped features",
+  },
+];
+
+const FORK = [
+  {
+    track: "Individual contributor (Principal / Staff PM)",
+    detail: "Deeper strategy instead of direct reports. Principal PMs own multi-team product problems, set quality bars, and influence through expertise rather than org charts. Judged on product outcomes across teams.",
+  },
+  {
+    track: "Management (Group PM → Director → VP → CPO)",
+    detail: "Org outcomes instead of personal output. You hire and develop PMs, own roadmaps across product lines, and spend more time on alignment and communication than on any single product decision.",
+  },
+];
+
 const FAQS = [
   {
     q: "How fast can you become a Senior PM in India?",
@@ -109,6 +148,18 @@ const FAQS = [
   {
     q: "What's the difference between a PM at a startup vs a large company?",
     a: "At a startup (Series A–C): you own more surface area, move faster, and build more from scratch — but metrics are noisier and processes are ad hoc. At a large company (Flipkart, Google, Swiggy): deeper specialisation, clearer career ladder, better benchmarking — but slower decisions and more stakeholder complexity. Early-career PMs often learn more at mid-stage startups (Series B–C) where there's enough structure to learn from, but enough chaos to develop judgment.",
+  },
+  {
+    q: "Do you need a technical background to become a PM in India?",
+    a: "Plenty of PMs enter without one. What teams screen for in interviews is product sense, analytical skill, and communication; a technical degree tends to matter more at infrastructure and platform companies. If your background is non-technical, build SQL fluency, have honest conversations with engineers, and never bluff technical detail you do not understand.",
+  },
+  {
+    q: "IC track vs manager track: which pays more?",
+    a: "Pay structures vary widely by company, so treat this as a question to ask in the process, not a rule: does the company run a dual IC and manager ladder, and how are bands set at each level? Early in the fork, choose based on the work that energises you rather than pay assumptions. People do move between tracks.",
+  },
+  {
+    q: "How long does each PM promotion take in India?",
+    a: "There is no fixed clock, and anyone who gives you one is guessing. What changes at each step is the bar: early promotions reward reliable execution, later ones reward strategy and growing other PMs. Past Senior, the scope available at your company matters as much as your performance, which is one reason some PMs look outside for their next step.",
   },
 ];
 
@@ -162,6 +213,24 @@ export default function ProductManagerCareerPathPage() {
         {/* Career ladder */}
         <section className="max-w-4xl mx-auto px-4 pb-16">
           <h2 className="text-2xl font-bold text-center mb-10">The PM Career Ladder</h2>
+          <div className="overflow-x-auto mb-10">
+            <table className="w-full text-sm border border-white/10 rounded-xl overflow-hidden">
+              <thead>
+                <tr className="bg-[#1f2228] text-white/80 text-left">
+                  <th className="px-4 py-3 font-semibold">Level</th>
+                  <th className="px-4 py-3 font-semibold">Judged on</th>
+                </tr>
+              </thead>
+              <tbody>
+                {LEVELS.map((level) => (
+                  <tr key={level.title} className="border-t border-white/10">
+                    <td className="px-4 py-2.5 text-white/80">{level.title}</td>
+                    <td className="px-4 py-2.5 text-white/60">{level.scope}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <div className="space-y-5">
             {LEVELS.map((level, i) => (
               <div key={level.title} className="bg-[#111] border border-white/10 rounded-2xl p-6">
@@ -194,6 +263,35 @@ export default function ProductManagerCareerPathPage() {
                     <p className="text-white/60 text-xs">{level.promoted}</p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* How to break in */}
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-3">How to Break Into Product Management</h2>
+          <p className="text-white/60 text-center mb-8">Five routes to explore, depending on your background, and what each one still leaves you to build.</p>
+          <div className="space-y-4">
+            {ENTRY_ROUTES.map((r) => (
+              <div key={r.route} className="bg-[#111] border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-1.5">{r.route}</h3>
+                <p className="text-sm text-white/60 mb-2">{r.detail}</p>
+                <p className="text-xs text-[#89e219]">Still to build: <span className="text-white/50">{r.builds}</span></p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* IC vs management fork */}
+        <section className="max-w-3xl mx-auto px-4 pb-16">
+          <h2 className="text-2xl font-bold text-center mb-3">The Fork After Senior PM: IC vs Management</h2>
+          <p className="text-white/60 text-center mb-8">The ladder splits after Senior PM. Neither track is senior to the other; they are different jobs.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {FORK.map((f) => (
+              <div key={f.track} className="bg-[#111] border border-white/10 rounded-xl p-5">
+                <h3 className="font-semibold text-white mb-2">{f.track}</h3>
+                <p className="text-sm text-white/60">{f.detail}</p>
               </div>
             ))}
           </div>
